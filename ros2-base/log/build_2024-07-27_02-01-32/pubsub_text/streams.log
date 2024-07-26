@@ -1,0 +1,16 @@
+[0.010s] Invoking command in '/home/yupi/rover_proj/ros2-base/build/pubsub_text': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yupi/rover_proj/ros2-base/build/pubsub_text -- -j4 -l4
+[0.051s] [35m[1mConsolidate compiler generated dependencies of target ethernet_request_node[0m
+[0.070s] [ 50%] [32mBuilding CXX object CMakeFiles/ethernet_request_node.dir/src/ethernet_request_node.cpp.o[0m
+[2.332s] [01m[K/home/yupi/rover_proj/ros2-base/src/pubsub_text/src/ethernet_request_node.cpp:[m[K In constructor ‘[01m[KEthernetRequest::EthernetRequest()[m[K’:
+[2.332s] [01m[K/home/yupi/rover_proj/ros2-base/src/pubsub_text/src/ethernet_request_node.cpp:10:17:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""ms[m[K’
+[2.332s]    10 |                 [01;31m[K2000ms[m[K, std::bind(&EthernetRequest::send_request, this));
+[2.332s]       |                 [01;31m[K^~~~~~[m[K
+[2.339s] [01m[K/home/yupi/rover_proj/ros2-base/src/pubsub_text/src/ethernet_request_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[2.339s] [01m[K/home/yupi/rover_proj/ros2-base/src/pubsub_text/src/ethernet_request_node.cpp:31:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kapin[m[K’ is not a member of ‘[01m[Krclcpp[m[K’; did you mean ‘[01m[Kspin[m[K’?
+[2.339s]    31 |     rclcpp::[01;31m[Kapin[m[K(std::make_shared<EthernetRequest>());
+[2.339s]       |             [01;31m[K^~~~[m[K
+[2.339s]       |             [32m[Kspin[m[K
+[2.899s] gmake[2]: *** [CMakeFiles/ethernet_request_node.dir/build.make:76: CMakeFiles/ethernet_request_node.dir/src/ethernet_request_node.cpp.o] Error 1
+[2.899s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/ethernet_request_node.dir/all] Error 2
+[2.900s] gmake: *** [Makefile:146: all] Error 2
+[2.902s] Invoked command in '/home/yupi/rover_proj/ros2-base/build/pubsub_text' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yupi/rover_proj/ros2-base/build/pubsub_text -- -j4 -l4

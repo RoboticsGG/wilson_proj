@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(text_receiver)
+project(pubsub_text)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -7,28 +7,9 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(std_srvs REQUIRED)
-
-add_executable(ethernet_sub_node src/ethernet_sub_node.cpp)
-ament_target_dependencies(ethernet_sub_node
-  rclcpp
-  std_msgs
-)
-
-add_executable(ethernet_service_node src/ethernet_service_node.cpp)
-ament_target_dependencies(ethernet_service_node
-  rclcpp
-  std_srvs
-)
-
-
-install(TARGETS
-ethernet_sub_node
-ethernet_service_node
-  DESTINATION lib/${PROJECT_NAME})
-
+# uncomment the following section in order to fill in
+# further dependencies manually.
+# find_package(<dependency> REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

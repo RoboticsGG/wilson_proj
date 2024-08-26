@@ -11,6 +11,13 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+add_executable(test_ser_client_node src/test_ser_client_node.cpp)
+ament_target_dependencies(test_ser_client_node rclrpp std_srvs)
+
+install(TARGETS
+  test_ser_client_node
+  DESINATION lib/${PROJECT_NAME})
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights

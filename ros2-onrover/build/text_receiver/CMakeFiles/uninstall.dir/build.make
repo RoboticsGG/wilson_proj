@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yupi/rover_proj/mros2-host/text_receiver
+CMAKE_SOURCE_DIR = /home/yupi/rover_proj/ros2-onrover/src/text_receiver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yupi/rover_proj/mros2-host/build/text_receiver
+CMAKE_BINARY_DIR = /home/yupi/rover_proj/ros2-onrover/build/text_receiver
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/yupi/rover_proj/mros2-host/build/text_receiver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yupi/rover_proj/mros2-host/text_receiver /home/yupi/rover_proj/mros2-host/text_receiver /home/yupi/rover_proj/mros2-host/build/text_receiver /home/yupi/rover_proj/mros2-host/build/text_receiver /home/yupi/rover_proj/mros2-host/build/text_receiver/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yupi/rover_proj/ros2-onrover/build/text_receiver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yupi/rover_proj/ros2-onrover/src/text_receiver /home/yupi/rover_proj/ros2-onrover/src/text_receiver /home/yupi/rover_proj/ros2-onrover/build/text_receiver /home/yupi/rover_proj/ros2-onrover/build/text_receiver /home/yupi/rover_proj/ros2-onrover/build/text_receiver/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

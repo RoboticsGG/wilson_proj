@@ -7,16 +7,19 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_srvs REQUIRED)
+find_package(example_interfaces REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
 add_executable(test_ser_client_node src/test_ser_client_node.cpp)
-ament_target_dependencies(test_ser_client_node rclrpp std_srvs)
+ament_target_dependencies(test_ser_client_node rclcpp std_srvs example_interfaces)
 
 install(TARGETS
   test_ser_client_node
-  DESINATION lib/${PROJECT_NAME})
+  DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

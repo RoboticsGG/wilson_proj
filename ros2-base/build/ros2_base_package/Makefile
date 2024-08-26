@@ -197,6 +197,43 @@ ros2_base_package_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ros2_base_package_uninstall.dir/build.make CMakeFiles/ros2_base_package_uninstall.dir/build
 .PHONY : ros2_base_package_uninstall/fast
 
+#=============================================================================
+# Target rules for targets named test_ser_client_node
+
+# Build rule for target.
+test_ser_client_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_ser_client_node
+.PHONY : test_ser_client_node
+
+# fast build rule for target.
+test_ser_client_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ser_client_node.dir/build.make CMakeFiles/test_ser_client_node.dir/build
+.PHONY : test_ser_client_node/fast
+
+src/test_ser_client_node.o: src/test_ser_client_node.cpp.o
+.PHONY : src/test_ser_client_node.o
+
+# target to build an object file
+src/test_ser_client_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ser_client_node.dir/build.make CMakeFiles/test_ser_client_node.dir/src/test_ser_client_node.cpp.o
+.PHONY : src/test_ser_client_node.cpp.o
+
+src/test_ser_client_node.i: src/test_ser_client_node.cpp.i
+.PHONY : src/test_ser_client_node.i
+
+# target to preprocess a source file
+src/test_ser_client_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ser_client_node.dir/build.make CMakeFiles/test_ser_client_node.dir/src/test_ser_client_node.cpp.i
+.PHONY : src/test_ser_client_node.cpp.i
+
+src/test_ser_client_node.s: src/test_ser_client_node.cpp.s
+.PHONY : src/test_ser_client_node.s
+
+# target to generate assembly for a file
+src/test_ser_client_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ser_client_node.dir/build.make CMakeFiles/test_ser_client_node.dir/src/test_ser_client_node.cpp.s
+.PHONY : src/test_ser_client_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +249,10 @@ help:
 	@echo "... test"
 	@echo "... ros2_base_package_uninstall"
 	@echo "... uninstall"
+	@echo "... test_ser_client_node"
+	@echo "... src/test_ser_client_node.o"
+	@echo "... src/test_ser_client_node.i"
+	@echo "... src/test_ser_client_node.s"
 .PHONY : help
 
 

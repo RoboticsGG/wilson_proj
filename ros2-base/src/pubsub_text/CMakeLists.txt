@@ -9,12 +9,13 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_srvs REQUIRED)
+find_package(example_interfaces REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
 add_executable(ethernet_request_node src/ethernet_request_node.cpp)
-ament_target_dependencies(ethernet_request_node rclcpp std_srvs)
+ament_target_dependencies(ethernet_request_node rclcpp std_srvs example_interfaces)
 
 install(TARGETS
   ethernet_request_node

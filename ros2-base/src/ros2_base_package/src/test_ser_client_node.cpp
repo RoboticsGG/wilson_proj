@@ -23,6 +23,8 @@ public:
         request->a = 3;
         request->b = 5;
 
+        auto future = client_->async_send_request(request);
+
         auto status = future.wait_for(std::chrono::seconds(5));
         if (status == std::future_status::ready) {
             auto response = future.get();
@@ -31,7 +33,6 @@ public:
             RCLCPP_ERROR(this->get_logger(), "Service call timed out.");
         }
 
-        // auto future = client_->async_send_request(request);
         // try {
         //     auto response = future.get();
         //     RCLCPP_INFO(this->get_logger(), "Result: %ld", response->sum);

@@ -3,7 +3,10 @@
 
 using AddTwoInts = example_interfaces::srv::AddTwoInts;
 
+ROS_DOMAIN_ID = 10
+
 class AddTwoIntsClient : public rclcpp::Node
+
 {
 public:
     AddTwoIntsClient() : Node("add_two_ints_client")

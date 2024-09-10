@@ -15,7 +15,7 @@ find_package(example_interfaces REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 add_executable(Tclient_node src/Tclient_node.cpp)
-ament_target_dependencies(test_ser_client_node rclcpp std_srvs example_interfaces)
+ament_target_dependencies(Tclient_node rclcpp std_srvs example_interfaces)
 
 target_include_directories(Tclient_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

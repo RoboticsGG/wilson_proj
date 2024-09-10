@@ -3,8 +3,6 @@
 
 using AddTwoInts = example_interfaces::srv::AddTwoInts;
 
-ROS_DOMAIN_ID = 10
-
 class AddTwoIntsClient : public rclcpp::Node
 
 {
@@ -25,14 +23,21 @@ public:
         request->a = 3;
         request->b = 5;
 
-        auto future = client_->async_send_request(request);
-
-        try {
+        auto status = future.wait_for(std::chrono::seconds(5));
+        if (status == std::future_status::ready) {
             auto response = future.get();
             RCLCPP_INFO(this->get_logger(), "Result: %ld", response->sum);
-        } catch (const std::exception &e) {
-            RCLCPP_ERROR(this->get_logger(), "Service call failed: %s", e.what());
+        } else {
+            RCLCPP_ERROR(this->get_logger(), "Service call timed out.");
         }
+
+        // auto future = client_->async_send_request(request);
+        // try {
+        //     auto response = future.get();
+        //     RCLCPP_INFO(this->get_logger(), "Result: %ld", response->sum);
+        // } catch (const std::exception &e) {
+        //     RCLCPP_ERROR(this->get_logger(), "Service call failed: %s", e.what());
+        // }
     }
 
 private:

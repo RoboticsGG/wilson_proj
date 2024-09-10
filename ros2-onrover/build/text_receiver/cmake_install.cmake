@@ -1,8 +1,8 @@
-# Install script for directory: /home/yupi/rover_proj/mros2-host/text_receiver
+# Install script for directory: /home/yupi/rover_proj/ros2-onrover/src/text_receiver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yupi/rover_proj/mros2-host/install/text_receiver")
+  set(CMAKE_INSTALL_PREFIX "/home/yupi/rover_proj/ros2-onrover/install/text_receiver")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,31 +43,51 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/text_receiver_node" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/text_receiver_node")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_sub_node" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_sub_node")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/text_receiver_node"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_sub_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/text_receiver" TYPE EXECUTABLE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/text_receiver_node")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/text_receiver_node" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/text_receiver_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/text_receiver" TYPE EXECUTABLE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ethernet_sub_node")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_sub_node" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_sub_node")
     file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/text_receiver_node"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_sub_node"
          OLD_RPATH "/opt/ros/humble/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/text_receiver_node")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_sub_node")
     endif()
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/text_receiver")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_service_node" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_service_node")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_service_node"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/text_receiver" TYPE EXECUTABLE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ethernet_service_node")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_service_node" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_service_node")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_service_node"
+         OLD_RPATH "/opt/ros/humble/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/text_receiver/ethernet_service_node")
+    endif()
+  endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/text_receiver")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/text_receiver")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/text_receiver")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -75,7 +95,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver/environment" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver/environment" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -83,42 +103,42 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver/environment" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver/environment" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_index/share/ament_index/resource_index/packages/text_receiver")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_index/share/ament_index/resource_index/packages/text_receiver")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver/cmake" TYPE FILE FILES
-    "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_core/text_receiverConfig.cmake"
-    "/home/yupi/rover_proj/mros2-host/build/text_receiver/ament_cmake_core/text_receiverConfig-version.cmake"
+    "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_core/text_receiverConfig.cmake"
+    "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/ament_cmake_core/text_receiverConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/mros2-host/text_receiver/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/text_receiver" TYPE FILE FILES "/home/yupi/rover_proj/ros2-onrover/src/text_receiver/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -129,5 +149,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/yupi/rover_proj/mros2-host/build/text_receiver/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/yupi/rover_proj/ros2-onrover/build/text_receiver/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

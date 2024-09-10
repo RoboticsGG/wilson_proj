@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 
     auto result = client->async_send_request(request);
 
-    if (rclcpp::spin_until_future_complte(node, result) == rclcpp::FutureReturnCode::SUCCESS)
+    if (rclcpp::spin_until_future_complete(node, result) == rclcpp::FutureReturnCode::SUCCESS)
     {
         RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Sum: %ld", result.get()->sum);
     }

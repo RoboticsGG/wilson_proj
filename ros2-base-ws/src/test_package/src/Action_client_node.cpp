@@ -15,7 +15,7 @@ namespace action_tutorials_cpp
 class FibonacciActionClient : public rclcpp::Node
 {
 public:
-  using Fibonacci = action_tutorials_interfaces::action::Fibonacci;
+  using Fibonacci = test_package::action::Fibonacci;
   using GoalHandleFibonacci = rclcpp_action::ClientGoalHandle<Fibonacci>;
 
   explicit FibonacciActionClient(const rclcpp::NodeOptions & options)

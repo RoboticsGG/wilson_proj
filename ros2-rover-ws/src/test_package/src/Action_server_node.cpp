@@ -18,7 +18,7 @@ public:
   using GoalHandleFibonacci = rclcpp_action::ServerGoalHandle<Fibonacci>;
 
   ACTION_TUTORIALS_CPP_PUBLIC
-  explicit ActionServerNode(const rclcpp::NodeOptions & options = rclcpp::NodeOptions())
+  explicit FibonacciActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions())
   : Node("action_server_node", options)
   {
     using namespace std::placeholders;

@@ -7,7 +7,7 @@
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "rclcpp_components/register_node_macro.hpp"
 
-#include "action_tutorials_cpp/visibility_control.h"
+#include "test_package/visibility_control.h"
 
 namespace action_tutorials_cpp
 {

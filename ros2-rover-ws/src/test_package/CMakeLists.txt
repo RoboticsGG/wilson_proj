@@ -17,6 +17,9 @@ find_package(example_interfaces REQUIRED)
 add_executable(Tserver_node src/Tserver_node.cpp)
 ament_target_dependencies(Tserver_node rclcpp std_srvs example_interfaces)
 
+add_executable(Action_server_node src/Action_server_node.cpp)
+ament_target_dependencies(Action_server_node)
+
 target_include_directories(Tserver_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)

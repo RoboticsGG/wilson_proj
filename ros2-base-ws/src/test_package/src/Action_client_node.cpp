@@ -31,30 +31,44 @@ public:
   }
 
   void send_goal()
-  {
-    using namespace std::placeholders;
+{
+  using namespace std::placeholders;
 
-    this->timer_->cancel();
+  this->timer_->cancel();
 
-    if (!this->client_ptr_->wait_for_action_server()) {
-      RCLCPP_ERROR(this->get_logger(), "Action server not available after waiting");
-      rclcpp::shutdown();
-    }
-
-    auto goal_msg = Fibonacci::Goal();
-    goal_msg.order = 10;
-
-    RCLCPP_INFO(this->get_logger(), "Sending goal");
-
-    auto send_goal_options = rclcpp_action::Client<Fibonacci>::SendGoalOptions();
-    send_goal_options.goal_response_callback =
-      std::bind(&FibonacciActionClient::goal_response_callback, this, _1);
-    send_goal_options.feedback_callback =
-      std::bind(&FibonacciActionClient::feedback_callback, this, _1, _2);
-    send_goal_options.result_callback =
-      std::bind(&FibonacciActionClient::result_callback, this, _1);
-    this->client_ptr_->async_send_goal(goal_msg, send_goal_options);
+  if (!this->client_ptr_->wait_for_action_server()) {
+    RCLCPP_ERROR(this->get_logger(), "Action server not available after waiting");
+    rclcpp::shutdown();
   }
+
+  auto goal_msg = Fibonacci::Goal();
+  goal_msg.order = 10;
+
+  RCLCPP_INFO(this->get_logger(), "Sending goal");
+
+  auto send_goal_options = rclcpp_action::Client<Fibonacci>::SendGoalOptions();
+
+  // Lambda for goal_response_callback
+  send_goal_options.goal_response_callback = 
+    [this](std::shared_future<GoalHandleFibonacci::SharedPtr> future) {
+      this->goal_response_callback(future);
+    };
+
+  // Lambda for feedback_callback
+  send_goal_options.feedback_callback = 
+    [this](GoalHandleFibonacci::SharedPtr goal_handle, const std::shared_ptr<const Fibonacci::Feedback> feedback) {
+      this->feedback_callback(goal_handle, feedback);
+    };
+
+  // Lambda for result_callback
+  send_goal_options.result_callback = 
+    [this](const GoalHandleFibonacci::WrappedResult & result) {
+      this->result_callback(result);
+    };
+
+  this->client_ptr_->async_send_goal(goal_msg, send_goal_options);
+}
+
 
 private:
   rclcpp_action::Client<Fibonacci>::SharedPtr client_ptr_;

@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 
-#include "action_tutorials_interfaces/action/fibonacci.hpp"
+#include "test_package/action/fibonacci.hpp"
 
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"

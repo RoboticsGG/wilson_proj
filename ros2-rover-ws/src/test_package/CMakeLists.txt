@@ -14,11 +14,29 @@ find_package(example_interfaces REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+add_library(Action_server_node SHARED
+  src/Action_server_node.cpp)
+target_include_directories(Action_server_node PRIVATE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_definitions(Action_server_node
+  PRIVATE "ACTION_TUTORIALS_CPP_BUILDING_DLL")
+ament_target_dependencies(Action_server_node
+  "action_tutorials_interfaces"
+  "rclcpp"
+  "rclcpp_action"
+  "rclcpp_components")
+rclcpp_components_register_node(Action_server_node PLUGIN "action_tutorials_cpp::FibonacciActionServer" EXECUTABLE Action_server_node)
+install(TARGETS
+  Action_server_node
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin)
+
+
+
 add_executable(Tserver_node src/Tserver_node.cpp)
 ament_target_dependencies(Tserver_node rclcpp std_srvs example_interfaces)
-
-add_executable(Action_server_node src/Action_server_node.cpp)
-ament_target_dependencies(Action_server_node)
 
 target_include_directories(Tserver_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

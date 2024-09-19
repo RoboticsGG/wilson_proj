@@ -12,7 +12,7 @@ int main(int argc, char **argv)
     rclcpp::init(argc, argv);
 
     if (argc != 3) {
-        RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "usage: add_two_ints_client X Y");
+        RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "usage: Tclient_node X Y");
         return 1;
     }
 

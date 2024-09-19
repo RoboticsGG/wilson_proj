@@ -47,31 +47,12 @@ public:
     RCLCPP_INFO(this->get_logger(), "Sending goal");
 
     auto send_goal_options = rclcpp_action::Client<Fibonacci>::SendGoalOptions();
-
-//---------------------------
-    send_goal_options.goal_response_callback = [this](std::shared_future<std::shared_ptr<rclcpp_action::ClientGoalHandle<Fibonacci>>> future) {
-        auto goal_handle = future.get();
-        this->goal_response_callback(goal_handle);
-    };
-
-    // Use a lambda for the feedback callback
-    send_goal_options.feedback_callback = [this](rclcpp_action::ClientGoalHandle<Fibonacci>::SharedPtr,
-                                                const std::shared_ptr<const Fibonacci::Feedback> feedback) {
-        this->feedback_callback(feedback);
-    };
-
-    // Use a lambda for the result callback
-    send_goal_options.result_callback = [this](const rclcpp_action::ClientGoalHandle<Fibonacci>::WrappedResult & result) {
-        this->result_callback(result);
-    };
-
-//-------------------------------------
-    // send_goal_options.goal_response_callback =
-    //   std::bind(&FibonacciActionClient::goal_response_callback, this, _1);
-    // send_goal_options.feedback_callback =
-    //   std::bind(&FibonacciActionClient::feedback_callback, this, _1, _2);
-    // send_goal_options.result_callback =
-    //   std::bind(&FibonacciActionClient::result_callback, this, _1);
+    send_goal_options.goal_response_callback =
+      std::bind(&FibonacciActionClient::goal_response_callback, this, _1);
+    send_goal_options.feedback_callback =
+      std::bind(&FibonacciActionClient::feedback_callback, this, _1, _2);
+    send_goal_options.result_callback =
+      std::bind(&FibonacciActionClient::result_callback, this, _1);
     this->client_ptr_->async_send_goal(goal_msg, send_goal_options);
   }
 

@@ -19,7 +19,7 @@ public:
   using GoalHandleFibonacci = rclcpp_action::ClientGoalHandle<Fibonacci>;
 
   explicit FibonacciActionClient(const rclcpp::NodeOptions & options)
-  : Node("fibonacci_action_client", options)
+  : Node("action_client_node", options)
   {
     this->client_ptr_ = rclcpp_action::create_client<Fibonacci>(
       this,

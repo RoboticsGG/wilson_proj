@@ -30,6 +30,7 @@ public:
       std::bind(&FibonacciActionClient::send_goal, this));
   }
 
+  
   void send_goal()
 {
   using namespace std::placeholders;
@@ -48,10 +49,14 @@ public:
 
   auto send_goal_options = rclcpp_action::Client<Fibonacci>::SendGoalOptions();
 
-  // Lambda for goal_response_callback
+  // Correct lambda for goal_response_callback with the right signature
   send_goal_options.goal_response_callback = 
-    [this](std::shared_future<GoalHandleFibonacci::SharedPtr> future) {
-      this->goal_response_callback(future);
+    [this](std::shared_ptr<GoalHandleFibonacci> goal_handle) {
+      if (!goal_handle) {
+        RCLCPP_ERROR(this->get_logger(), "Goal was rejected by server");
+      } else {
+        RCLCPP_INFO(this->get_logger(), "Goal accepted by server, waiting for result");
+      }
     };
 
   // Lambda for feedback_callback
@@ -68,6 +73,7 @@ public:
 
   this->client_ptr_->async_send_goal(goal_msg, send_goal_options);
 }
+
 
 
 private:

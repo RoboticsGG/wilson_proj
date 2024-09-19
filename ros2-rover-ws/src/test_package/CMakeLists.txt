@@ -33,8 +33,6 @@ install(TARGETS
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin)
 
-
-
 add_executable(Tserver_node src/Tserver_node.cpp)
 ament_target_dependencies(Tserver_node rclcpp std_srvs example_interfaces)
 

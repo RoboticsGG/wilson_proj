@@ -14,6 +14,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 find_package(ament_cmake REQUIRED)
 find_package(test_package REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_action REQUIRED)
+find_package(rclcpp_components REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(example_interfaces REQUIRED)
 # uncomment the following section in order to fill in

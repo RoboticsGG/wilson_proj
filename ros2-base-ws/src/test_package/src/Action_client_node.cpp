@@ -18,25 +18,30 @@ public:
   using Fibonacci = test_package::action::Fibonacci;
   using GoalHandleFibonacci = rclcpp_action::ClientGoalHandle<Fibonacci>;
 
+/*************************************กำหนดโหนด***************************************************/
   explicit FibonacciActionClient(const rclcpp::NodeOptions & options)
   : Node("action_client_node", options)
+/*****************************************************************************************************/
+/*********************************สร้าง instance สำหรับดำเนินการให้ client********************************************************/
   {
     this->client_ptr_ = rclcpp_action::create_client<Fibonacci>(
       this,
       "fibonacci");
-
+/*****************************************************************************************************/
+/*************************timer กำหนดการเรียกใช้งาน send-goal********************************************************************/
     this->timer_ = this->create_wall_timer(
       std::chrono::milliseconds(500),
       std::bind(&FibonacciActionClient::send_goal, this));
   }
-
-  
+/*****************************************************************************************************/
+/******************************send_goal method**********************************************************/
+/*cancels timer -> waits for action server -> instamtiates new Goal (Fibonacci Goal) ->
+sets the response, feedback, and result callbacks -> sends the goal to the server*/
   void send_goal()
 {
   using namespace std::placeholders;
 
   this->timer_->cancel();
-
   if (!this->client_ptr_->wait_for_action_server()) {
     RCLCPP_ERROR(this->get_logger(), "Action server not available after waiting");
     rclcpp::shutdown();
@@ -48,8 +53,6 @@ public:
   RCLCPP_INFO(this->get_logger(), "Sending goal");
 
   auto send_goal_options = rclcpp_action::Client<Fibonacci>::SendGoalOptions();
-
-  // Correct lambda for goal_response_callback with the right signature
   send_goal_options.goal_response_callback = 
     [this](std::shared_ptr<GoalHandleFibonacci> goal_handle) {
       if (!goal_handle) {
@@ -58,8 +61,6 @@ public:
         RCLCPP_INFO(this->get_logger(), "Goal accepted by server, waiting for result");
       }
     };
-
-  // Lambda for feedback_callback
   send_goal_options.feedback_callback = 
     [this](GoalHandleFibonacci::SharedPtr goal_handle, const std::shared_ptr<const Fibonacci::Feedback> feedback) {
       this->feedback_callback(goal_handle, feedback);
@@ -73,13 +74,13 @@ public:
 
   this->client_ptr_->async_send_goal(goal_msg, send_goal_options);
 }
-
-
+/*****************************************************************************************************/
 
 private:
   rclcpp_action::Client<Fibonacci>::SharedPtr client_ptr_;
   rclcpp::TimerBase::SharedPtr timer_;
 
+/******************response from server after server receives and accepts*******************************************************************/
   void goal_response_callback(std::shared_future<GoalHandleFibonacci::SharedPtr> future)
   {
     auto goal_handle = future.get();
@@ -89,7 +90,8 @@ private:
       RCLCPP_INFO(this->get_logger(), "Goal accepted by server, waiting for result");
     }
   }
-
+/*****************************************************************************************************/
+/*******************handle any feedback from server****************************************************************/
   void feedback_callback(
     GoalHandleFibonacci::SharedPtr,
     const std::shared_ptr<const Fibonacci::Feedback> feedback)
@@ -101,7 +103,8 @@ private:
     }
     RCLCPP_INFO(this->get_logger(), ss.str().c_str());
   }
-
+/*****************************************************************************************************/
+/*************handle result from server after server finished processing*************************************************************/
   void result_callback(const GoalHandleFibonacci::WrappedResult & result)
   {
     switch (result.code) {
@@ -126,6 +129,7 @@ private:
     rclcpp::shutdown();
   }
 };  // class FibonacciActionClient
+/*****************************************************************************************************/
 
 }  // namespace action_tutorials_cpp
 

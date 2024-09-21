@@ -18,7 +18,6 @@ public:
   using GoalHandleFibonacci = rclcpp_action::ServerGoalHandle<Fibonacci>;
 
 /*****************************************กำหนดโหนด****************************************************/
-
   ACTION_TUTORIALS_CPP_PUBLIC
   explicit FibonacciActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions())
   : Node("action_server_node", options)
@@ -34,14 +33,12 @@ public:
       std::bind(&FibonacciActionServer::handle_cancel, this, _1), //callback function for handling cancellation
       std::bind(&FibonacciActionServer::handle_accepted, this, _1)); //callback function for handling goal accept
   }
-
 /*****************************************************************************************************/
 
 private:
   rclcpp_action::Server<Fibonacci>::SharedPtr action_server_;
 
 /******************************Callback รอรับ goal ใหม่*********************************************************/
-
   rclcpp_action::GoalResponse handle_goal(
     const rclcpp_action::GoalUUID & uuid,
     std::shared_ptr<const Fibonacci::Goal> goal)
@@ -50,7 +47,6 @@ private:
     (void)uuid;
     return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
   }
-
 /*****************************************************************************************************/
 /******************************Callback รอรับ cancellation***********************************************/
   rclcpp_action::CancelResponse handle_cancel(
@@ -69,7 +65,7 @@ private:
     std::thread{std::bind(&FibonacciActionServer::execute, this, _1), goal_handle}.detach();
   }
 /*****************************************************************************************************/
-/******************************สร้าง thread แยกเพื่อประมวลผลอื่นๆ************************************/
+/******************************สร้าง thread แยกเพื่อประมวลผลอื่นๆภายใน execute method************************************/
   void execute(const std::shared_ptr<GoalHandleFibonacci> goal_handle)
   {
     RCLCPP_INFO(this->get_logger(), "Executing goal");
@@ -107,9 +103,7 @@ private:
   }
 /*****************************************************************************************************/
 
-
 };  // class FibonacciActionServer
-
 }  // namespace action_tutorials_cpp
 
 RCLCPP_COMPONENTS_REGISTER_NODE(action_tutorials_cpp::FibonacciActionServer)

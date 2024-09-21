@@ -17,22 +17,30 @@ public:
   using Fibonacci = test_package::action::Fibonacci;
   using GoalHandleFibonacci = rclcpp_action::ServerGoalHandle<Fibonacci>;
 
+/*****************************************กำหนดโหนด****************************************************/
+
   ACTION_TUTORIALS_CPP_PUBLIC
   explicit FibonacciActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions())
   : Node("action_server_node", options)
+/*****************************************************************************************************/
   {
     using namespace std::placeholders;
 
+/***********************สร้าง instance สำหรับดำเนินการให้ server*************************************************************/
     this->action_server_ = rclcpp_action::create_server<Fibonacci>(
       this,
       "fibonacci",
-      std::bind(&FibonacciActionServer::handle_goal, this, _1, _2),
-      std::bind(&FibonacciActionServer::handle_cancel, this, _1),
-      std::bind(&FibonacciActionServer::handle_accepted, this, _1));
+      std::bind(&FibonacciActionServer::handle_goal, this, _1, _2), //callback function for handling goals
+      std::bind(&FibonacciActionServer::handle_cancel, this, _1), //callback function for handling cancellation
+      std::bind(&FibonacciActionServer::handle_accepted, this, _1)); //callback function for handling goal accept
   }
+
+/*****************************************************************************************************/
 
 private:
   rclcpp_action::Server<Fibonacci>::SharedPtr action_server_;
+
+/******************************Callback รอรับ goal ใหม่*********************************************************/
 
   rclcpp_action::GoalResponse handle_goal(
     const rclcpp_action::GoalUUID & uuid,
@@ -43,6 +51,8 @@ private:
     return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
   }
 
+/*****************************************************************************************************/
+/******************************Callback รอรับ cancellation***********************************************/
   rclcpp_action::CancelResponse handle_cancel(
     const std::shared_ptr<GoalHandleFibonacci> goal_handle)
   {
@@ -50,14 +60,16 @@ private:
     (void)goal_handle;
     return rclcpp_action::CancelResponse::ACCEPT;
   }
-
+/*****************************************************************************************************/
+/******************************Callback รอรับ goal และประมวลผล goal******************************************************/
   void handle_accepted(const std::shared_ptr<GoalHandleFibonacci> goal_handle)
   {
     using namespace std::placeholders;
     // this needs to return quickly to avoid blocking the executor, so spin up a new thread
     std::thread{std::bind(&FibonacciActionServer::execute, this, _1), goal_handle}.detach();
   }
-
+/*****************************************************************************************************/
+/******************************สร้าง thread แยกเพื่อประมวลผลอื่นๆ************************************/
   void execute(const std::shared_ptr<GoalHandleFibonacci> goal_handle)
   {
     RCLCPP_INFO(this->get_logger(), "Executing goal");
@@ -93,6 +105,9 @@ private:
       RCLCPP_INFO(this->get_logger(), "Goal succeeded");
     }
   }
+/*****************************************************************************************************/
+
+
 };  // class FibonacciActionServer
 
 }  // namespace action_tutorials_cpp

@@ -1,0 +1,213 @@
+[33mCMake Warning at CMakeLists.txt:26 (add_library):
+  Cannot generate a safe runtime search path for target action_client because
+  there is a cycle in the constraint graph:
+
+    dir 0 is [/home/yupi/rover_proj/ros2-base-ws/install/test_package/lib]
+      dir 1 must precede it due to runtime library [libtest_package__rosidl_typesupport_introspection_c.so]
+    dir 1 is [/home/yupi/rover_proj/ros2-base-ws/build/test_package]
+      dir 0 must precede it due to runtime library [libtest_package__rosidl_typesupport_fastrtps_c.so]
+    dir 2 is [/opt/ros/humble/lib]
+
+  Some of these libraries may not be found correctly.
+
+[0m
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:18:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kaction_tutorials_interfaces[m[K’ does not name a type
+   18 |   using Fibonacci = [01;31m[Kaction_tutorials_interfaces[m[K::action::Fibonacci;
+      |                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:19:63:[m[K [01;31m[Kerror: [m[K‘[01m[KFibonacci[m[K’ was not declared in this scope; did you mean ‘[01m[Ktest_package::action::Fibonacci[m[K’?
+   19 |   using GoalHandleFibonacci = rclcpp_action::ClientGoalHandle<[01;31m[KFibonacci[m[K>;
+      |                                                               [01;31m[K^~~~~~~~~[m[K
+      |                                                               [32m[Ktest_package::action::Fibonacci[m[K
+In file included from [01m[K/home/yupi/rover_proj/ros2-base-ws/build/test_package/rosidl_generator_cpp/test_package/action/fibonacci.hpp:7[m[K,
+                 from [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:7[m[K:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/build/test_package/rosidl_generator_cpp/test_package/action/detail/fibonacci__struct.hpp:1041:26:[m[K [01;36m[Knote: [m[K‘[01m[Ktest_package::action::Fibonacci[m[K’ declared here
+ 1041 | typedef struct Fibonacci [01;36m[KFibonacci[m[K;
+      |                          [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:19:72:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   19 |   using GoalHandleFibonacci = rclcpp_action::ClientGoalHandle<Fibonacci[01;31m[K>[m[K;
+      |                                                                        [01;31m[K^[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:60:25:[m[K [01;31m[Kerror: [m[K‘[01m[KFibonacci[m[K’ was not declared in this scope; did you mean ‘[01m[Ktest_package::action::Fibonacci[m[K’?
+   60 |   rclcpp_action::Client<[01;31m[KFibonacci[m[K>::SharedPtr client_ptr_;
+      |                         [01;31m[K^~~~~~~~~[m[K
+      |                         [32m[Ktest_package::action::Fibonacci[m[K
+In file included from [01m[K/home/yupi/rover_proj/ros2-base-ws/build/test_package/rosidl_generator_cpp/test_package/action/fibonacci.hpp:7[m[K,
+                 from [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:7[m[K:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/build/test_package/rosidl_generator_cpp/test_package/action/detail/fibonacci__struct.hpp:1041:26:[m[K [01;36m[Knote: [m[K‘[01m[Ktest_package::action::Fibonacci[m[K’ declared here
+ 1041 | typedef struct Fibonacci [01;36m[KFibonacci[m[K;
+      |                          [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:60:34:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   60 |   rclcpp_action::Client<Fibonacci[01;31m[K>[m[K::SharedPtr client_ptr_;
+      |                                  [01;31m[K^[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:60:37:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   60 |   rclcpp_action::Client<Fibonacci>::[01;31m[KSharedPtr[m[K client_ptr_;
+      |                                     [01;31m[K^~~~~~~~~[m[K
+      |                                              [32m[K;[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:60:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient_ptr_[m[K’ does not name a type
+   60 |   rclcpp_action::Client<Fibonacci>::SharedPtr [01;31m[Kclient_ptr_[m[K;
+      |                                               [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:63:50:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleFibonacci[m[K’ was not declared in this scope
+   63 |   void goal_response_callback(std::shared_future<[01;31m[KGoalHandleFibonacci[m[K::SharedPtr> future)
+      |                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:63:80:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   63 |   void goal_response_callback(std::shared_future<GoalHandleFibonacci::SharedPtr[01;31m[K>[m[K future)
+      |                                                                                [01;31m[K^[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:63:50:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleFibonacci[m[K’ was not declared in this scope
+   63 |   void goal_response_callback(std::shared_future<[01;31m[KGoalHandleFibonacci[m[K::SharedPtr> future)
+      |                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:63:80:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   63 |   void goal_response_callback(std::shared_future<GoalHandleFibonacci::SharedPtr[01;31m[K>[m[K future)
+      |                                                                                [01;31m[K^[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:63:50:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleFibonacci[m[K’ was not declared in this scope
+   63 |   void goal_response_callback(std::shared_future<[01;31m[KGoalHandleFibonacci[m[K::SharedPtr> future)
+      |                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:63:80:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   63 |   void goal_response_callback(std::shared_future<GoalHandleFibonacci::SharedPtr[01;31m[K>[m[K future)
+      |                                                                                [01;31m[K^[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:63:31:[m[K [01;31m[Kerror: [m[Kinvalid template-id
+   63 |   void goal_response_callback([01;31m[Kstd[m[K::shared_future<GoalHandleFibonacci::SharedPtr> future)
+      |                               [01;31m[K^~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:63:50:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleFibonacci[m[K’ has not been declared
+   63 |   void goal_response_callback(std::shared_future<[01;31m[KGoalHandleFibonacci[m[K::SharedPtr> future)
+      |                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:63:31:[m[K [01;31m[Kerror: [m[Kclass template placeholder ‘[01m[Kstd::shared_future[m[K’ not permitted in this context
+   63 |   void goal_response_callback([01;31m[Kstd[m[K::shared_future<GoalHandleFibonacci::SharedPtr> future)
+      |                               [01;31m[K^~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:74:5:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleFibonacci[m[K’ has not been declared
+   74 |     [01;31m[KGoalHandleFibonacci[m[K::SharedPtr,
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:42:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[Ktype name[m[K’ with no type [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+   75 |     const std::shared_ptr<const Fibonacci[01;31m[K::[m[KFeedback> feedback)
+      |                                          [01;31m[K^~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:52:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   75 |     const std::shared_ptr<const Fibonacci::Feedback[01;31m[K>[m[K feedback)
+      |                                                    [01;31m[K^[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:42:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[Ktype name[m[K’ with no type [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+   75 |     const std::shared_ptr<const Fibonacci[01;31m[K::[m[KFeedback> feedback)
+      |                                          [01;31m[K^~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:52:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   75 |     const std::shared_ptr<const Fibonacci::Feedback[01;31m[K>[m[K feedback)
+      |                                                    [01;31m[K^[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:42:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[Ktype name[m[K’ with no type [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+   75 |     const std::shared_ptr<const Fibonacci[01;31m[K::[m[KFeedback> feedback)
+      |                                          [01;31m[K^~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:52:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   75 |     const std::shared_ptr<const Fibonacci::Feedback[01;31m[K>[m[K feedback)
+      |                                                    [01;31m[K^[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:11:[m[K [01;31m[Kerror: [m[Kinvalid template-id
+   75 |     const [01;31m[Kstd[m[K::shared_ptr<const Fibonacci::Feedback> feedback)
+      |           [01;31m[K^~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:42:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[Ktype name[m[K’ with no type [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+   75 |     const std::shared_ptr<const Fibonacci[01;31m[K::[m[KFeedback> feedback)
+      |                                          [01;31m[K^~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:27:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kconst[m[K’
+   75 |     const std::shared_ptr<[01;31m[Kconst[m[K Fibonacci::Feedback> feedback)
+      |                           [01;31m[K^~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:27:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K>[m[K’ before ‘[01m[Kconst[m[K’
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:75:5:[m[K [01;31m[Kerror: [m[Kclass template placeholder ‘[01m[Kstd::shared_ptr[m[K’ not permitted in this context
+   75 |     [01;31m[Kconst[m[K std::shared_ptr<const Fibonacci::Feedback> feedback)
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:85:30:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleFibonacci[m[K’ does not name a type
+   85 |   void result_callback(const [01;31m[KGoalHandleFibonacci[m[K::WrappedResult & result)
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:85:65:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+   85 |   void result_callback(const GoalHandleFibonacci::WrappedResult [01;31m[K&[m[K result)
+      |                                                                 [01;31m[K^[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:85:64:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+   85 |   void result_callback[34m[K([m[Kconst GoalHandleFibonacci::WrappedResult[01;31m[K [m[K[32m[K&[m[K result)
+      |                       [34m[K~[m[K                                        [01;31m[K^[m[K[32m[K~[m[K
+      |                                                                [32m[K)[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:85:65:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   85 |   void result_callback(const GoalHandleFibonacci::WrappedResult [01;31m[K&[m[K result)
+      |                                                                 [01;31m[K^[m[K
+      |                                                                  [32m[K;[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:85:67:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult[m[K’ does not name a type
+   85 |   void result_callback(const GoalHandleFibonacci::WrappedResult & [01;31m[Kresult[m[K)
+      |                                                                   [01;31m[K^~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:[m[K In constructor ‘[01m[Kaction_tutorials_cpp::FibonacciActionClient::FibonacciActionClient(const rclcpp::NodeOptions&)[m[K’:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:24:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass action_tutorials_cpp::FibonacciActionClient[m[K’ has no member named ‘[01m[Kclient_ptr_[m[K’
+   24 |     this->[01;31m[Kclient_ptr_[m[K = rclcpp_action::create_client<Fibonacci>(
+      |           [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:24:54:[m[K [01;31m[Kerror: [m[K‘[01m[KFibonacci[m[K’ was not declared in this scope; did you mean ‘[01m[Ktest_package::action::Fibonacci[m[K’?
+   24 |     this->client_ptr_ = rclcpp_action::create_client<[01;31m[KFibonacci[m[K>(
+      |                                                      [01;31m[K^~~~~~~~~[m[K
+      |                                                      [32m[Ktest_package::action::Fibonacci[m[K
+In file included from [01m[K/home/yupi/rover_proj/ros2-base-ws/build/test_package/rosidl_generator_cpp/test_package/action/fibonacci.hpp:7[m[K,
+                 from [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:7[m[K:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/build/test_package/rosidl_generator_cpp/test_package/action/detail/fibonacci__struct.hpp:1041:26:[m[K [01;36m[Knote: [m[K‘[01m[Ktest_package::action::Fibonacci[m[K’ declared here
+ 1041 | typedef struct Fibonacci [01;36m[KFibonacci[m[K;
+      |                          [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:24:64:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcreate_client<<expression error> >(action_tutorials_cpp::FibonacciActionClient*, const char [10])[m[K’
+   24 |     this->client_ptr_ = [01;31m[Krclcpp_action::create_client<Fibonacci>([m[K
+      |                         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   25 | [01;31m[K      this,[m[K
+      |       [01;31m[K~~~~~[m[K                                                     
+   26 | [01;31m[K      "fibonacci")[m[K;
+      |       [01;31m[K~~~~~~~~~~~~[m[K                                              
+In file included from [01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/rclcpp_action.hpp:38[m[K,
+                 from [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:10[m[K:
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:44:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ActionT> typename rclcpp_action::Client<ActionT>::SharedPtr rclcpp_action::create_client(rclcpp::node_interfaces::NodeBaseInterface::SharedPtr, rclcpp::node_interfaces::NodeGraphInterface::SharedPtr, rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr, rclcpp::node_interfaces::NodeWaitablesInterface::SharedPtr, const string&, rclcpp::CallbackGroup::SharedPtr, const rcl_action_client_options_t&)[m[K’
+   44 | [01;36m[Kcreate_client[m[K(
+      | [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:44:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:24:64:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   24 |     this->client_ptr_ = [01;31m[Krclcpp_action::create_client<Fibonacci>([m[K
+      |                         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   25 | [01;31m[K      this,[m[K
+      |       [01;31m[K~~~~~[m[K                                                     
+   26 | [01;31m[K      "fibonacci")[m[K;
+      |       [01;31m[K~~~~~~~~~~~~[m[K                                              
+In file included from [01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/rclcpp_action.hpp:38[m[K,
+                 from [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:10[m[K:
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:105:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ActionT, class NodeT> typename rclcpp_action::Client<ActionT>::SharedPtr rclcpp_action::create_client(NodeT, const string&, rclcpp::CallbackGroup::SharedPtr, const rcl_action_client_options_t&)[m[K’
+  105 | [01;36m[Kcreate_client[m[K(
+      | [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:105:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:24:64:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   24 |     this->client_ptr_ = [01;31m[Krclcpp_action::create_client<Fibonacci>([m[K
+      |                         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   25 | [01;31m[K      this,[m[K
+      |       [01;31m[K~~~~~[m[K                                                     
+   26 | [01;31m[K      "fibonacci")[m[K;
+      |       [01;31m[K~~~~~~~~~~~~[m[K                                              
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:[m[K In member function ‘[01m[Kvoid action_tutorials_cpp::FibonacciActionClient::send_goal()[m[K’:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:39:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass action_tutorials_cpp::FibonacciActionClient[m[K’ has no member named ‘[01m[Kclient_ptr_[m[K’
+   39 |     if (!this->[01;31m[Kclient_ptr_[m[K->wait_for_action_server()) {
+      |                [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:44:21:[m[K [01;31m[Kerror: [m[K‘[01m[KFibonacci[m[K’ has not been declared
+   44 |     auto goal_msg = [01;31m[KFibonacci[m[K::Goal();
+      |                     [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:49:52:[m[K [01;31m[Kerror: [m[K‘[01m[KFibonacci[m[K’ was not declared in this scope; did you mean ‘[01m[Ktest_package::action::Fibonacci[m[K’?
+   49 |     auto send_goal_options = rclcpp_action::Client<[01;31m[KFibonacci[m[K>::SendGoalOptions();
+      |                                                    [01;31m[K^~~~~~~~~[m[K
+      |                                                    [32m[Ktest_package::action::Fibonacci[m[K
+In file included from [01m[K/home/yupi/rover_proj/ros2-base-ws/build/test_package/rosidl_generator_cpp/test_package/action/fibonacci.hpp:7[m[K,
+                 from [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:7[m[K:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/build/test_package/rosidl_generator_cpp/test_package/action/detail/fibonacci__struct.hpp:1041:26:[m[K [01;36m[Knote: [m[K‘[01m[Ktest_package::action::Fibonacci[m[K’ declared here
+ 1041 | typedef struct Fibonacci [01;36m[KFibonacci[m[K;
+      |                          [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:49:61:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   49 |     auto send_goal_options = rclcpp_action::Client<Fibonacci[01;31m[K>[m[K::SendGoalOptions();
+      |                                                             [01;31m[K^[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:56:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass action_tutorials_cpp::FibonacciActionClient[m[K’ has no member named ‘[01m[Kclient_ptr_[m[K’
+   56 |     this->[01;31m[Kclient_ptr_[m[K->async_send_goal(goal_msg, send_goal_options);
+      |           [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:[m[K In member function ‘[01m[Kvoid action_tutorials_cpp::FibonacciActionClient::goal_response_callback(...)[m[K’:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:65:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kfuture[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::future[m[K’?
+   65 |     auto goal_handle = [01;31m[Kfuture[m[K.get();
+      |                        [01;31m[K^~~~~~[m[K
+      |                        [32m[Kstd::future[m[K
+In file included from [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:2[m[K:
+[01m[K/usr/include/c++/11/future:124:11:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::future[m[K’ declared here
+  124 |     class [01;36m[Kfuture[m[K;
+      |           [01;36m[K^~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:[m[K In member function ‘[01m[Kvoid action_tutorials_cpp::FibonacciActionClient::feedback_callback(...)[m[K’:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:79:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kfeedback[m[K’ was not declared in this scope
+   79 |     for (auto number : [01;31m[Kfeedback[m[K->partial_sequence) {
+      |                        [01;31m[K^~~~~~~~[m[K
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:74:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KSharedPtr[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   74 |     [01;35m[KGoalHandleFibonacci::SharedPtr[m[K,
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/action_client.dir/build.make:76: CMakeFiles/action_client.dir/src/Action_client_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:599: CMakeFiles/action_client.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

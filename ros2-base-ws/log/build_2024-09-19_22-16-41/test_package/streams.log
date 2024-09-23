@@ -1,0 +1,48 @@
+[0.010s] Invoking command in '/home/yupi/rover_proj/ros2-base-ws/build/test_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yupi/rover_proj/ros2-base-ws/build/test_package -- -j4 -l4
+[0.060s] [  2%] Built target test_package__cpp
+[0.061s] [ 10%] Built target test_package__rosidl_generator_c
+[0.066s] [ 16%] Built target fibonacci_action_client
+[0.069s] [ 16%] Built target ament_cmake_python_copy_test_package
+[0.082s] [ 24%] Built target test_package__rosidl_typesupport_cpp
+[0.085s] [ 29%] Built target Tclient_node
+[0.089s] [ 37%] Built target test_package__rosidl_typesupport_fastrtps_c
+[0.091s] [ 45%] Built target test_package__rosidl_typesupport_introspection_c
+[0.103s] [ 54%] Built target test_package__rosidl_typesupport_c
+[0.108s] [ 62%] Built target test_package__rosidl_typesupport_fastrtps_cpp
+[0.112s] [ 70%] Built target test_package__rosidl_typesupport_introspection_cpp
+[0.125s] [35m[1mConsolidate compiler generated dependencies of target action_client[0m
+[0.132s] [ 70%] Built target test_package
+[0.145s] [ 72%] [32mBuilding CXX object CMakeFiles/action_client.dir/src/Action_client_node.cpp.o[0m
+[0.153s] [ 75%] Built target test_package__py
+[0.175s] [ 81%] Built target test_package__rosidl_generator_py
+[0.197s] [ 91%] Built target test_package__rosidl_typesupport_fastrtps_c__pyext
+[0.197s] [ 91%] Built target test_package__rosidl_typesupport_introspection_c__pyext
+[0.220s] [ 97%] Built target test_package__rosidl_typesupport_c__pyext
+[0.323s] running egg_info
+[0.323s] writing test_package.egg-info/PKG-INFO
+[0.324s] writing dependency_links to test_package.egg-info/dependency_links.txt
+[0.324s] writing top-level names to test_package.egg-info/top_level.txt
+[0.326s] reading manifest file 'test_package.egg-info/SOURCES.txt'
+[0.326s] writing manifest file 'test_package.egg-info/SOURCES.txt'
+[0.350s] [ 97%] Built target ament_cmake_python_build_test_package_egg
+[2.370s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:[m[K In lambda function:
+[2.370s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:53:38:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::shared_ptr<rclcpp_action::ClientGoalHandle<test_package::action::Fibonacci> >[m[K’ to ‘[01m[Kstd::shared_future<std::shared_ptr<rclcpp_action::ClientGoalHandle<test_package::action::Fibonacci> > >[m[K’
+[2.370s]    53 |         this->goal_response_callback([01;31m[Kgoal_handle[m[K);
+[2.370s]       |                                      [01;31m[K^~~~~~~~~~~[m[K
+[2.370s]       |                                      [01;31m[K|[m[K
+[2.370s]       |                                      [01;31m[Kstd::shared_ptr<rclcpp_action::ClientGoalHandle<test_package::action::Fibonacci> >[m[K
+[2.370s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:78:82:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid action_tutorials_cpp::FibonacciActionClient::goal_response_callback(std::shared_future<std::shared_ptr<rclcpp_action::ClientGoalHandle<test_package::action::Fibonacci> > >)[m[K’
+[2.370s]    78 |   void goal_response_callback([01;36m[Kstd::shared_future<GoalHandleFibonacci::SharedPtr> future[m[K)
+[2.370s]       |                               [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[2.373s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:[m[K In lambda function:
+[2.373s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:58:32:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kaction_tutorials_cpp::FibonacciActionClient::feedback_callback(const std::shared_ptr<const test_package::action::Fibonacci_Feedback_<std::allocator<void> > >&)[m[K’
+[2.373s]    58 |         [01;31m[Kthis->feedback_callback(feedback)[m[K;
+[2.373s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[2.373s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:88:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid action_tutorials_cpp::FibonacciActionClient::feedback_callback(rclcpp_action::ClientGoalHandle<test_package::action::Fibonacci>::SharedPtr, std::shared_ptr<const test_package::action::Fibonacci_Feedback_<std::allocator<void> > >)[m[K’
+[2.373s]    88 |   void [01;36m[Kfeedback_callback[m[K(
+[2.373s]       |        [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[2.373s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/test_package/src/Action_client_node.cpp:88:8:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[3.069s] gmake[2]: *** [CMakeFiles/action_client.dir/build.make:76: CMakeFiles/action_client.dir/src/Action_client_node.cpp.o] Error 1
+[3.069s] gmake[1]: *** [CMakeFiles/Makefile2:599: CMakeFiles/action_client.dir/all] Error 2
+[3.069s] gmake: *** [Makefile:146: all] Error 2
+[3.071s] Invoked command in '/home/yupi/rover_proj/ros2-base-ws/build/test_package' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yupi/rover_proj/ros2-base-ws/build/test_package -- -j4 -l4

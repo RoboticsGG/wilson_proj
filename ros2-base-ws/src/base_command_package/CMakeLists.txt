@@ -13,31 +13,46 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(base_command_package REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclcpp_action REQUIRED)
+find_package(rclcpp_components REQUIRED)
+find_package(std_srvs)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(carcontrol_node src/carcontrol_node.cpp)
-target_include_directories(carcontrol_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
-target_compile_features(carcontrol_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+add_library(carcontrol_client SHARED
+  src/carcontrol_node.cpp)
+target_include_directories(carcontrol_client
+$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+$<INSTALL_INTERFACE:include>)
 
-install(TARGETS carcontrol_node
-  DESTINATION lib/${PROJECT_NAME})
+target_compile_definitions(carcontrol_client
+  PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
+ament_target_dependencies(carcontrol_client
+  "rclcpp"
+  "rclcpp_action"
+  "rclcpp_components")
+rclcpp_components_register_node(carcontrol_client PLUGIN "carcontrol_cpp::CarControlActionClient" EXECUTABLE carcontrol_client)
+install(TARGETS
+  carcontrol_client
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin)
+  
+# #--------------------------------------------------------------
 
-//--------------------------------------------------------------
+# add_executable(command_node src/command_node.cpp)
+# target_include_directories(command_node PUBLIC
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#   $<INSTALL_INTERFACE:include>)
+# target_compile_features(command_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
-add_executable(command_node src/command_node.cpp)
-target_include_directories(command_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
-target_compile_features(command_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+# install(TARGETS command_node
+#   DESTINATION lib/${PROJECT_NAME})
 
-install(TARGETS command_node
-  DESTINATION lib/${PROJECT_NAME})
-
-//--------------------------------------------------------------
+# #--------------------------------------------------------------
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

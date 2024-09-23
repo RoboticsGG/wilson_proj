@@ -11,14 +11,35 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(motor_drive_node src/motor_drive_node.cpp)
-target_include_directories(motor_drive_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
-target_compile_features(motor_drive_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+add_library(carcontrol_server SHARED
+  src/motor_drive_node.cpp)
+target_include_directories(carcontrol_server
+$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+$<INSTALL_INTERFACE:include>)
 
-install(TARGETS motor_drive_node
-  DESTINATION lib/${PROJECT_NAME})
+target_compile_definitions(carcontrol_server
+  PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
+ament_target_dependencies(carcontrol_server
+  "rclcpp"
+  "rclcpp_action"
+  "rclcpp_components")
+rclcpp_components_register_node(carcontrol_server PLUGIN "carcontrol_cpp::CarControlActionServer" EXECUTABLE carcontrol_server)
+install(TARGETS
+  carcontrol_server
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin)
+
+#------------------------------------------------------------
+# add_executable(motor_drive_node src/motor_drive_node.cpp)
+# target_include_directories(motor_drive_node PUBLIC
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#   $<INSTALL_INTERFACE:include>)
+# target_compile_features(motor_drive_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+
+# install(TARGETS motor_drive_node
+#   DESTINATION lib/${PROJECT_NAME})
+#-------------------------------------------------------------
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

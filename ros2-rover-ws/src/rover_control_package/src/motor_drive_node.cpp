@@ -95,6 +95,8 @@ namespace carcontrol_cpp
           goal_handle->succeed(result);
           RCLCPP_INFO(this->get_logger(), "Goal succeed: Countdown complete");
         }
+
+        RCLCPP_INFO(this->get_logger(), "Waiting for next goal...");
         
       }
 

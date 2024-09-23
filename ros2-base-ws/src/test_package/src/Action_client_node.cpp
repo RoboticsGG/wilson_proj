@@ -66,7 +66,6 @@ sets the response, feedback, and result callbacks -> sends the goal to the serve
       this->feedback_callback(goal_handle, feedback);
     };
 
-  // Lambda for result_callback
   send_goal_options.result_callback = 
     [this](const GoalHandleFibonacci::WrappedResult & result) {
       this->result_callback(result);

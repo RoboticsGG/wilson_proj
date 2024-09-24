@@ -1,0 +1,39 @@
+[0.054s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/rover_control_package': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package -DCMAKE_INSTALL_PREFIX=/home/curry/wilson_proj/ros2-rover-ws/install/rover_control_package
+[0.110s] -- Found ament_cmake: 2.0.6 (/opt/ros/iron/share/ament_cmake/cmake)
+[0.987s] -- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)
+[1.204s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[1.251s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[1.312s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.384s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.022s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[2.031s] -- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[3.063s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.696s] -- Found rclcpp_action: 21.0.7 (/opt/ros/iron/share/rclcpp_action/cmake)
+[4.173s] -- Found rclcpp_components: 21.0.7 (/opt/ros/iron/share/rclcpp_components/cmake)
+[4.508s] -- Found std_srvs: 5.0.1 (/opt/ros/iron/share/std_srvs/cmake)
+[4.686s] -- Found ament_lint_auto: 0.14.4 (/opt/ros/iron/share/ament_lint_auto/cmake)
+[4.981s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[4.982s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/include>
+[4.982s] -- Configured cppcheck exclude dirs and/or files: 
+[4.986s] -- Added test 'lint_cmake' to check CMake code style
+[4.994s] -- Added test 'uncrustify' to check C / C++ code style
+[4.995s] -- Configured uncrustify additional arguments: 
+[4.996s] -- Added test 'xmllint' to check XML markup files
+[5.000s] -- Configuring done
+[5.081s] -- Generating done
+[5.089s] -- Build files have been written to: /home/curry/wilson_proj/ros2-rover-ws/build/rover_control_package
+[5.120s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/rover_control_package' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package -DCMAKE_INSTALL_PREFIX=/home/curry/wilson_proj/ros2-rover-ws/install/rover_control_package
+[5.128s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/rover_control_package': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/rover_control_package -- -j4 -l4
+[5.331s] [ 50%] [32mBuilding CXX object CMakeFiles/carcontrol_server.dir/rclcpp_components/node_main_carcontrol_server.cpp.o[0m
+[5.333s] [ 50%] [32mBuilding CXX object CMakeFiles/carcontrol_ros2_server.dir/src/motor_drive_node.cpp.o[0m
+[5.973s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:5:10:[m[K [01;31m[Kfatal error: [m[Krover_control_package/action/Carcontrol.action: No such file or directory
+[5.973s]     5 | #include [01;31m[K"rover_control_package/action/Carcontrol.action"[m[K
+[5.974s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[5.974s] compilation terminated.
+[5.980s] gmake[2]: *** [CMakeFiles/carcontrol_ros2_server.dir/build.make:76: CMakeFiles/carcontrol_ros2_server.dir/src/motor_drive_node.cpp.o] Error 1
+[5.981s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/carcontrol_ros2_server.dir/all] Error 2
+[5.981s] gmake[1]: *** Waiting for unfinished jobs....
+[19.947s] [ 75%] [32m[1mLinking CXX executable carcontrol_server[0m
+[20.620s] [ 75%] Built target carcontrol_server
+[20.623s] gmake: *** [Makefile:146: all] Error 2
+[20.629s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/rover_control_package' returned '2': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/rover_control_package -- -j4 -l4

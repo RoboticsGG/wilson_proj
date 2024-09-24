@@ -24,7 +24,7 @@ find_package(std_srvs)
 
 add_library(carcontrol_ros2_client SHARED
   src/carcontrol_node.cpp)
-target_include_directories(carcontrol_ros2_client
+target_include_directories(carcontrol_ros2_client PRIVATE
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)
 

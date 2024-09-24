@@ -7,6 +7,8 @@
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "rclcpp_components/register_node_macro.hpp"
 
+#include "rover_control_package/msg/visibility_control.h"
+
 namespace carcontrol_cpp
 {
   class CarControlActionServer : public rclcpp::Node

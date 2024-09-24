@@ -16,21 +16,21 @@ find_package(std_srvs)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_library(carcontrol_server SHARED
+add_library(carcontrol_ros2_server SHARED
   src/motor_drive_node.cpp)
-target_include_directories(carcontrol_server
+target_include_directories(carcontrol_ros2_server
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)
 
-target_compile_definitions(carcontrol_server
+target_compile_definitions(carcontrol_ros2_server
   PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
-ament_target_dependencies(carcontrol_server
+ament_target_dependencies(carcontrol_ros2_server
   "rclcpp"
   "rclcpp_action"
   "rclcpp_components")
-rclcpp_components_register_node(carcontrol_server PLUGIN "carcontrol_cpp::CarControlActionServer" EXECUTABLE carcontrol_server)
+rclcpp_components_register_node(carcontrol_ros2_server PLUGIN "carcontrol_cpp::CarControlActionServer" EXECUTABLE carcontrol_server)
 install(TARGETS
-  carcontrol_server
+  carcontrol_ros2_server
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin)

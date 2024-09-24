@@ -22,21 +22,21 @@ find_package(std_srvs)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_library(carcontrol_client SHARED
+add_library(carcontrol_ros2_client SHARED
   src/carcontrol_node.cpp)
-target_include_directories(carcontrol_client
+target_include_directories(carcontrol_ros2_client
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)
 
-target_compile_definitions(carcontrol_client
+target_compile_definitions(carcontrol_ros2_client
   PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
-ament_target_dependencies(carcontrol_client
+ament_target_dependencies(carcontrol_ros2_client
   "rclcpp"
   "rclcpp_action"
   "rclcpp_components")
-rclcpp_components_register_node(carcontrol_client PLUGIN "carcontrol_cpp::CarControlActionClient" EXECUTABLE carcontrol_client)
+rclcpp_components_register_node(carcontrol_ros2_client PLUGIN "carcontrol_cpp::CarControlActionClient" EXECUTABLE carcontrol_ros2_client)
 install(TARGETS
-  carcontrol_client
+  carcontrol_ros2_client
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin)

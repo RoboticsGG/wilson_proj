@@ -1,5 +1,5 @@
-#ifndef ACTION_TUTORIALS_CPP__VISIBILITY_CONTROL_H_
-#define ACTION_TUTORIALS_CPP__VISIBILITY_CONTROL_H_
+#ifndef CARCONTROL_CPP__VISIBILITY_CONTROL_H_
+#define CARCONTROL_CPP__VISIBILITY_CONTROL_H_
 
 #ifdef __cplusplus
 extern "C"
@@ -11,34 +11,34 @@ extern "C"
 
 #if defined _WIN32 || defined __CYGWIN__
   #ifdef __GNUC__
-    #define ACTION_TUTORIALS_CPP_EXPORT __attribute__ ((dllexport))
-    #define ACTION_TUTORIALS_CPP_IMPORT __attribute__ ((dllimport))
+    #define CARCONTROL_CPP_EXPORT __attribute__ ((dllexport))
+    #define CARCONTROL_CPP_IMPORT __attribute__ ((dllimport))
   #else
-    #define ACTION_TUTORIALS_CPP_EXPORT __declspec(dllexport)
-    #define ACTION_TUTORIALS_CPP_IMPORT __declspec(dllimport)
+    #define CARCONTROL_CPP_EXPORT __declspec(dllexport)
+    #define CARCONTROL_CPP_IMPORT __declspec(dllimport)
   #endif
-  #ifdef ACTION_TUTORIALS_CPP_BUILDING_DLL
-    #define ACTION_TUTORIALS_CPP_PUBLIC ACTION_TUTORIALS_CPP_EXPORT
+  #ifdef CARCONTROL_CPP_BUILDING_DLL
+    #define CARCONTROL_CPP_PUBLIC CARCONTROL_CPP_EXPORT
   #else
-    #define ACTION_TUTORIALS_CPP_PUBLIC ACTION_TUTORIALS_CPP_IMPORT
+    #define CARCONTROL_CPP_PUBLIC CARCONTROL_CPP_IMPORT
   #endif
-  #define ACTION_TUTORIALS_CPP_PUBLIC_TYPE ACTION_TUTORIALS_CPP_PUBLIC
-  #define ACTION_TUTORIALS_CPP_LOCAL
+  #define CARCONTROL_CPP_PUBLIC_TYPE CARCONTROL_CPP_PUBLIC
+  #define CARCONTROL_CPP_LOCAL
 #else
-  #define ACTION_TUTORIALS_CPP_EXPORT __attribute__ ((visibility("default")))
-  #define ACTION_TUTORIALS_CPP_IMPORT
+  #define CARCONTROL_CPP_EXPORT __attribute__ ((visibility("default")))
+  #define CARCONTROL_CPP_IMPORT
   #if __GNUC__ >= 4
-    #define ACTION_TUTORIALS_CPP_PUBLIC __attribute__ ((visibility("default")))
-    #define ACTION_TUTORIALS_CPP_LOCAL  __attribute__ ((visibility("hidden")))
+    #define CARCONTROL_CPP_PUBLIC __attribute__ ((visibility("default")))
+    #define CARCONTROL_CPP_LOCAL  __attribute__ ((visibility("hidden")))
   #else
-    #define ACTION_TUTORIALS_CPP_PUBLIC
-    #define ACTION_TUTORIALS_CPP_LOCAL
+    #define CARCONTROL_CPP_PUBLIC
+    #define CARCONTROL_CPP_LOCAL
   #endif
-  #define ACTION_TUTORIALS_CPP_PUBLIC_TYPE
+  #define CARCONTROL_CPP_PUBLIC_TYPE
 #endif
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif  // ACTION_TUTORIALS_CPP__VISIBILITY_CONTROL_H_
+#endif  // CARCONTROL_CPP__VISIBILITY_CONTROL_H_

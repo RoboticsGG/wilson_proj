@@ -286,7 +286,7 @@ SITE:STRING=thehive
 TinyXML2_DIR:PATH=TinyXML2_DIR-NOTFOUND
 
 //Path to a library.
-_lib:FILEPATH=/opt/ros/iron/lib/libaction_msgs__rosidl_typesupport_fastrtps_cpp.so
+_lib:FILEPATH=/opt/ros/iron/lib/libstd_srvs__rosidl_typesupport_fastrtps_cpp.so
 
 //Path to a file.
 _numpy_h:FILEPATH=/usr/include/python3.10/numpy/numpyconfig.h
@@ -397,7 +397,7 @@ ament_xmllint_BIN:FILEPATH=/opt/ros/iron/bin/ament_xmllint
 builtin_interfaces_DIR:PATH=/opt/ros/iron/share/builtin_interfaces/cmake
 
 //Dependencies for the target
-carcontrol_ros2_server_LIB_DEPENDS:STATIC=general;rclcpp::rclcpp;general;rclcpp_action::rclcpp_action;general;rclcpp_components::component_manager;
+carcontrol_ros2_server_LIB_DEPENDS:STATIC=general;rover_control_package::rover_control_package__rosidl_generator_c;general;rover_control_package::rover_control_package__rosidl_typesupport_fastrtps_c;general;rover_control_package::rover_control_package__rosidl_typesupport_introspection_c;general;rover_control_package::rover_control_package__rosidl_typesupport_c;general;rover_control_package::rover_control_package__rosidl_typesupport_fastrtps_cpp;general;rover_control_package::rover_control_package__rosidl_typesupport_introspection_cpp;general;rover_control_package::rover_control_package__rosidl_typesupport_cpp;general;rover_control_package::rover_control_package__rosidl_generator_py;general;rclcpp::rclcpp;general;rclcpp_action::rclcpp_action;general;rclcpp_components::component_manager;
 
 //Dependencies for the target
 carcontrol_server_LIB_DEPENDS:STATIC=general;rclcpp::rclcpp;general;rclcpp_action::rclcpp_action;general;rclcpp_components::component_manager;
@@ -553,7 +553,7 @@ rosidl_typesupport_introspection_cpp_DIR:PATH=/opt/ros/iron/share/rosidl_typesup
 rover_control_package_BINARY_DIR:STATIC=/home/curry/wilson_proj/ros2-rover-ws/build/rover_control_package
 
 //The directory containing a CMake configuration file for rover_control_package.
-rover_control_package_DIR:PATH=rover_control_package_DIR-NOTFOUND
+rover_control_package_DIR:PATH=/home/curry/wilson_proj/ros2-rover-ws/install/rover_control_package/share/rover_control_package/cmake
 
 //Value Computed by CMake
 rover_control_package_IS_TOP_LEVEL:STATIC=ON

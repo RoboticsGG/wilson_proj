@@ -41,7 +41,7 @@ namespace carcontrol_cpp
       {
         RCLCPP_INFO(this->get_logger(), "Received goal request with direction %s", goal->direction.c_str());
         RCLCPP_INFO(this->get_logger(), "Received goal request with timestop %d", goal->timestop);
-        
+        (void)uuid;
         if(goal->timestop <= 0){
           RCLCPP_WARN(this->get_logger(), "Invalid timestop. Rejecting goal.");
           return rclcpp_action::GoalResponse::REJECT;
@@ -52,6 +52,7 @@ namespace carcontrol_cpp
       rclcpp_action::CancelResponse handle_cancel(
         const std::shared_ptr<GoalHandleCarcontrol> goal_handle) {
         RCLCPP_INFO(this->get_logger(), "Received request to cancel goal");
+        (void)goal_handle;
         return rclcpp_action::CancelResponse::ACCEPT;
       }
 

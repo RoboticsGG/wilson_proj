@@ -24,6 +24,12 @@ find_package(std_srvs)
 
 add_library(carcontrol_ros2_server SHARED
   src/motor_drive_node.cpp)
+
+message("CMAKE_CURRENT_SOURCE_DIR: ${CMAKE_CURRENT_SOURCE_DIR}")
+message("Full include path: ${CMAKE_CURRENT_SOURCE_DIR}/include")
+message("BUILD_INTERFACE path: ${CMAKE_CURRENT_SOURCE_DIR}/include")
+
+
 target_include_directories(carcontrol_ros2_server PRIVATE
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)

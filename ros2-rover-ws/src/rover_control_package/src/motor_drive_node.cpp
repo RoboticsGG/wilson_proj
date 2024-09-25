@@ -15,7 +15,7 @@ namespace carcontrol_cpp
   {
     public:
       using Carcontrol = rover_control_package::action::Carcontrol;
-      using GoalHandleCarcontrol = rclcpp_action::ClientGoalHandle<Carcontrol>
+      using GoalHandleCarcontrol = rclcpp_action::ClientGoalHandle<Carcontrol>;
 
     CARCONTROL_CPP_PUBLIC
     explicit CarControlActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions())

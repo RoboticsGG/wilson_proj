@@ -41,6 +41,7 @@ $<INSTALL_INTERFACE:include>)
 target_compile_definitions(carcontrol_ros2_server
   PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
 ament_target_dependencies(carcontrol_ros2_server
+  "rover_control_package"
   "rclcpp"
   "rclcpp_action"
   "rclcpp_components")

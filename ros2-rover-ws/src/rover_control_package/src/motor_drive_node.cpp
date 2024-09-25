@@ -102,7 +102,7 @@ namespace carcontrol_cpp
         
       }
 
-  }
+  };
 }
 
 RCLCPP_COMPONENTS_REGISTER_NODE(carcontrol_cpp::CarControlActionServer)

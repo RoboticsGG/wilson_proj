@@ -1,0 +1,165 @@
+-- Found rosidl_default_generators: 1.5.0 (/opt/ros/iron/share/rosidl_default_generators/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rosidl_adapter: 4.0.1 (/opt/ros/iron/share/rosidl_adapter/cmake)
+-- Found ament_cmake_ros: 0.11.2 (/opt/ros/iron/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.10.2 (/opt/ros/iron/share/python_cmake_module/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+-- Found rover_control_package: 0.0.0 (/home/curry/wilson_proj/ros2-rover-ws/install/rover_control_package/share/rover_control_package/cmake)
+-- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)
+-- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_action: 21.0.7 (/opt/ros/iron/share/rclcpp_action/cmake)
+-- Found rclcpp_components: 21.0.7 (/opt/ros/iron/share/rclcpp_components/cmake)
+-- Found std_srvs: 5.0.1 (/opt/ros/iron/share/std_srvs/cmake)
+[0m-----------------------------------------------------------[0m
+[0mCMAKE_CURRENT_SOURCE_DIR: /home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package[0m
+[0m-----------------------------------------------------------[0m
+[0mFull include path: /home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/include[0m
+[0m-----------------------------------------------------------[0m
+[0mBUILD_INTERFACE path: /home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/include[0m
+[0m-----------------------------------------------------------[0m
+-- Found ament_lint_auto: 0.14.4 (/opt/ros/iron/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/include>
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+[33mCMake Warning at CMakeLists.txt:25 (add_library):
+  Cannot generate a safe runtime search path for target
+  carcontrol_ros2_server because there is a cycle in the constraint graph:
+
+    dir 0 is [/home/curry/wilson_proj/ros2-rover-ws/install/rover_control_package/lib]
+      dir 1 must precede it due to runtime library [librover_control_package__rosidl_typesupport_introspection_c.so]
+    dir 1 is [/home/curry/wilson_proj/ros2-rover-ws/build/rover_control_package]
+      dir 0 must precede it due to runtime library [librover_control_package__rosidl_typesupport_fastrtps_c.so]
+    dir 2 is [/opt/ros/iron/lib]
+
+  Some of these libraries may not be found correctly.
+
+[0m
+-- Generating done
+-- Build files have been written to: /home/curry/wilson_proj/ros2-rover-ws/build/rover_control_package
+[35m[1mConsolidate compiler generated dependencies of target carcontrol_server[0m
+[  2%] Built target rover_control_package__rosidl_generator_type_description
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_generator_c[0m
+[  2%] Built target ament_cmake_python_copy_rover_control_package
+[  7%] Built target carcontrol_server
+[ 10%] Built target rover_control_package__cpp
+[ 23%] Built target rover_control_package__rosidl_generator_c
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_typesupport_cpp[0m
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_typesupport_fastrtps_c[0m
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_typesupport_introspection_c[0m
+[ 31%] Built target rover_control_package__rosidl_typesupport_cpp
+[ 39%] Built target rover_control_package__rosidl_typesupport_fastrtps_c
+[ 47%] Built target rover_control_package__rosidl_typesupport_introspection_c
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_typesupport_c[0m
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_typesupport_fastrtps_cpp[0m
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_typesupport_introspection_cpp[0m
+[ 55%] Built target rover_control_package__rosidl_typesupport_c
+[ 63%] Built target rover_control_package__rosidl_typesupport_fastrtps_cpp
+[ 71%] Built target rover_control_package__rosidl_typesupport_introspection_cpp
+[ 71%] Built target rover_control_package
+[ 73%] [32mBuilding CXX object CMakeFiles/carcontrol_ros2_server.dir/src/motor_drive_node.cpp.o[0m
+[ 76%] Built target rover_control_package__py
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_generator_py[0m
+[ 81%] Built target rover_control_package__rosidl_generator_py
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_typesupport_fastrtps_c__pyext[0m
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_typesupport_introspection_c__pyext[0m
+[ 86%] Built target rover_control_package__rosidl_typesupport_fastrtps_c__pyext
+[ 92%] Built target rover_control_package__rosidl_typesupport_introspection_c__pyext
+[35m[1mConsolidate compiler generated dependencies of target rover_control_package__rosidl_typesupport_c__pyext[0m
+[ 97%] Built target rover_control_package__rosidl_typesupport_c__pyext
+running egg_info
+writing rover_control_package.egg-info/PKG-INFO
+writing dependency_links to rover_control_package.egg-info/dependency_links.txt
+writing top-level names to rover_control_package.egg-info/top_level.txt
+reading manifest file 'rover_control_package.egg-info/SOURCES.txt'
+writing manifest file 'rover_control_package.egg-info/SOURCES.txt'
+[ 97%] Built target ament_cmake_python_build_rover_control_package_egg
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:21:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kexplicit[m[K’
+   21 |     [01;31m[Kexplicit[m[K CarControlActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions())
+      |     [01;31m[K^~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:53:31:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleCarcontrol[m[K’ was not declared in this scope
+   53 |         const std::shared_ptr<[01;31m[KGoalHandleCarcontrol[m[K> goal_handle) {
+      |                               [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:53:51:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   53 |         const std::shared_ptr<GoalHandleCarcontrol[01;31m[K>[m[K goal_handle) {
+      |                                                   [01;31m[K^[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:58:50:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleCarcontrol[m[K’ was not declared in this scope
+   58 |       void handle_accepted(const std::shared_ptr<[01;31m[KGoalHandleCarcontrol[m[K> goal_handle)
+      |                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:58:70:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   58 |       void handle_accepted(const std::shared_ptr<GoalHandleCarcontrol[01;31m[K>[m[K goal_handle)
+      |                                                                      [01;31m[K^[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:63:42:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleCarcontrol[m[K’ was not declared in this scope
+   63 |       void execute(const std::shared_ptr<[01;31m[KGoalHandleCarcontrol[m[K> goal_handle)
+      |                                          [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:63:62:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   63 |       void execute(const std::shared_ptr<GoalHandleCarcontrol[01;31m[K>[m[K goal_handle)
+      |                                                              [01;31m[K^[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:105:4:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+  105 |   }
+      |    [01;31m[K^[m[K
+      |    [32m[K;[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:[m[K In member function ‘[01m[Krclcpp_action::GoalResponse carcontrol_cpp::CarControlActionServer::handle_goal(const GoalUUID&, std::shared_ptr<const rover_control_package::action::Carcontrol_Goal_<std::allocator<void> > >)[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:38:41:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kuuid[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   38 |         [01;35m[Kconst rclcpp_action::GoalUUID & uuid[m[K,
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:[m[K In member function ‘[01m[Krclcpp_action::CancelResponse carcontrol_cpp::CarControlActionServer::handle_cancel(int)[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:53:53:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_handle[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   53 |         [01;35m[Kconst std::shared_ptr<GoalHandleCarcontrol> goal_handle[m[K) {
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:[m[K In member function ‘[01m[Kvoid carcontrol_cpp::CarControlActionServer::execute(int)[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:67:38:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   67 |         const auto goal = goal_handle[01;31m[K->[m[Kget_goal(); //retrieves the goal
+      |                                      [01;31m[K^~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:74:26:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   74 |           if (goal_handle[01;31m[K->[m[Kis_canceling()){
+      |                          [01;31m[K^~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:77:24:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   77 |             goal_handle[01;31m[K->[m[Kcanceled(result);
+      |                        [01;31m[K^~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:88:20:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   88 |         goal_handle[01;31m[K->[m[Kpublish_feedback(feedback);
+      |                    [01;31m[K^~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:97:22:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   97 |           goal_handle[01;31m[K->[m[Ksucceed(result);
+      |                      [01;31m[K^~[m[K
+In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+                 from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+                 from [01m[K/usr/include/c++/11/unordered_map:40[m[K,
+                 from [01m[K/usr/include/c++/11/functional:61[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:1[m[K:
+/usr/include/c++/11/ext/new_allocator.h: In instantiation of ‘[01m[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = carcontrol_cpp::CarControlActionServer; _Args = {const rclcpp::NodeOptions&}; _Tp = carcontrol_cpp::CarControlActionServer][m[K’:
+[01m[K/usr/include/c++/11/bits/alloc_traits.h:516:17:[m[K   required from ‘[01m[Kstatic void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = carcontrol_cpp::CarControlActionServer; _Args = {const rclcpp::NodeOptions&}; _Tp = carcontrol_cpp::CarControlActionServer; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<carcontrol_cpp::CarControlActionServer>][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr_base.h:519:39:[m[K   required from ‘[01m[Kstd::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args&& ...) [with _Args = {const rclcpp::NodeOptions&}; _Tp = carcontrol_cpp::CarControlActionServer; _Alloc = std::allocator<carcontrol_cpp::CarControlActionServer>; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr_base.h:650:16:[m[K   required from ‘[01m[Kstd::__shared_count<_Lp>::__shared_count(_Tp*&, std::_Sp_alloc_shared_tag<_Alloc>, _Args&& ...) [with _Tp = carcontrol_cpp::CarControlActionServer; _Alloc = std::allocator<carcontrol_cpp::CarControlActionServer>; _Args = {const rclcpp::NodeOptions&}; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr_base.h:1342:14:[m[K   required from ‘[01m[Kstd::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<carcontrol_cpp::CarControlActionServer>; _Args = {const rclcpp::NodeOptions&}; _Tp = carcontrol_cpp::CarControlActionServer; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:409:59:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp>::shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<carcontrol_cpp::CarControlActionServer>; _Args = {const rclcpp::NodeOptions&}; _Tp = carcontrol_cpp::CarControlActionServer][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:862:14:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp> std::allocate_shared(const _Alloc&, _Args&& ...) [with _Tp = carcontrol_cpp::CarControlActionServer; _Alloc = std::allocator<carcontrol_cpp::CarControlActionServer>; _Args = {const rclcpp::NodeOptions&}][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:878:39:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp> std::make_shared(_Args&& ...) [with _Tp = carcontrol_cpp::CarControlActionServer; _Args = {const rclcpp::NodeOptions&}][m[K’
+[01m[K/opt/ros/iron/include/rclcpp_components/rclcpp_components/node_factory_template.hpp:45:40:[m[K   required from ‘[01m[Krclcpp_components::NodeInstanceWrapper rclcpp_components::NodeFactoryTemplate<NodeT>::create_node_instance(const rclcpp::NodeOptions&) [with NodeT = carcontrol_cpp::CarControlActionServer][m[K’
+[01m[K/opt/ros/iron/include/rclcpp_components/rclcpp_components/node_factory_template.hpp:43:3:[m[K   required from here
+[01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcarcontrol_cpp::CarControlActionServer::CarControlActionServer(const rclcpp::NodeOptions&)[m[K’
+  162 |         { [01;31m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+      |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:14:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcarcontrol_cpp::CarControlActionServer::CarControlActionServer()[m[K’ (deleted)
+   14 |   class [01;36m[KCarControlActionServer[m[K : public rclcpp::Node
+      |         [01;36m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:14:9:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:14:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcarcontrol_cpp::CarControlActionServer::CarControlActionServer(const carcontrol_cpp::CarControlActionServer&)[m[K’ (deleted)
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:14:9:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst rclcpp::NodeOptions[m[K’ to ‘[01m[Kconst carcontrol_cpp::CarControlActionServer&[m[K’
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:14:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcarcontrol_cpp::CarControlActionServer::CarControlActionServer(carcontrol_cpp::CarControlActionServer&&)[m[K’ (deleted)
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/rover_control_package/src/motor_drive_node.cpp:14:9:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst rclcpp::NodeOptions[m[K’ to ‘[01m[Kcarcontrol_cpp::CarControlActionServer&&[m[K’
+gmake[2]: *** [CMakeFiles/carcontrol_ros2_server.dir/build.make:76: CMakeFiles/carcontrol_ros2_server.dir/src/motor_drive_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:628: CMakeFiles/carcontrol_ros2_server.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

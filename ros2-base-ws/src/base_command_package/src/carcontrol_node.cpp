@@ -18,7 +18,7 @@ class CarControlActionClient : public rclcpp::Node
 {
     public:
       using Carcontrol = base_command_package::action::Carcontrol;
-      using GoalHandleCarcontrol = rclcpp_action::ClientGoalHandle<Carcontrol>
+      using GoalHandleCarcontrol = rclcpp_action::ClientGoalHandle<Carcontrol>;
 
       explicit CarControlActionClient(const rclcpp::NodeOptions & options)
       : Node("carcontrol_client_node", options)

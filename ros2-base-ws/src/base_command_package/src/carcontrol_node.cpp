@@ -28,13 +28,13 @@ class CarControlActionClient : public rclcpp::Node
             "carcontrol");
 
         this->timer_ = this->create_wall_timer(
-            std::chrono::millisecond(500),
+            std::chrono::milliseconds(500),
             std::bind(&CarControlActionClient::send_goal, this)
         )
       }
 
       void send_goal(){
-        using namespace std::placeholder;
+        using namespace std::placeholders;
 
         this->timer_->cancel();
         if (!this->client_ptr_->wait_for_action_server()){
@@ -43,8 +43,8 @@ class CarControlActionClient : public rclcpp::Node
         }
 
         auto goal_msg = Carcontrol::Goal();
-        goal_msg.direction = "FW"
-        goal_msg.timestop = 10
+        goal_msg.direction = "FW";
+        goal_msg.timestop = 10;
 
         RCLCPP_INFO(this->get_logger(), "Sending goal");
 
@@ -106,7 +106,7 @@ class CarControlActionClient : public rclcpp::Node
                 case rclcpp_action::ResultCode::ABORTED:
                     RCLCPP_ERROR(this->get_logger(), "Goal was aborted");
                     return;
-                case rclcpp_action::ResultCode::CANCELLED:
+                case rclcpp_action::ResultCode::CANCELED:
                     RCLCPP_ERROR(this->get_logger(), "Unknown result code");
                     return;
             }

@@ -95,7 +95,7 @@ class CarControlActionClient : public rclcpp::Node
             for (auto times : feedback->time_remaining){
                 ss << times << " ";
             }
-            RCLCPP_INFO(this->get_logger(), ss,str().c_str());
+            RCLCPP_INFO(this->get_logger(), %s,str().c_str());
         }
 
         void result_callback(const GoalHandleCarcontrol::WrappedResult & result)

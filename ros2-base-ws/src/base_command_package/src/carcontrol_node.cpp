@@ -30,7 +30,7 @@ class CarControlActionClient : public rclcpp::Node
         this->timer_ = this->create_wall_timer(
             std::chrono::milliseconds(500),
             std::bind(&CarControlActionClient::send_goal, this)
-        )
+        );
       }
 
       void send_goal(){
@@ -108,6 +108,9 @@ class CarControlActionClient : public rclcpp::Node
                     return;
                 case rclcpp_action::ResultCode::CANCELED:
                     RCLCPP_ERROR(this->get_logger(), "Unknown result code");
+                    return;
+                default:
+                    RCLCPP_ERROR(this->get_logger(), "Unhandled result code");
                     return;
             }
             std::stringstream ss;

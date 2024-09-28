@@ -25,7 +25,7 @@ namespace carcontrol_cpp
       
       this->action_server_ = rclcpp_action::create_server<Carcontrol>(
         this,
-        "/carcontrol",
+        "carcontrol",
         std::bind(&CarControlActionServer::handle_goal, this, _1, _2),
         std::bind(&CarControlActionServer::handle_cancel, this, _1),
         std::bind(&CarControlActionServer::handle_accepted, this, _1)
@@ -38,15 +38,15 @@ namespace carcontrol_cpp
 
       rclcpp_action::GoalResponse handle_goal(
         const rclcpp_action::GoalUUID & uuid,
-        std::shared_ptr<const Carcontrol::Goal> goal)
+        const std::shared_ptr<const Carcontrol::Goal> goal)
       {
         RCLCPP_INFO(this->get_logger(), "Received goal request with direction %s", goal->direction.c_str());
         RCLCPP_INFO(this->get_logger(), "Received goal request with timestop %d", goal->timestop);
         (void)uuid;
-        if(goal->timestop <= 0){
-          RCLCPP_WARN(this->get_logger(), "Invalid timestop. Rejecting goal.");
-          return rclcpp_action::GoalResponse::REJECT;
-        }
+        // if(goal->timestop <= 0){
+        //   RCLCPP_WARN(this->get_logger(), "Invalid timestop. Rejecting goal.");
+        //   return rclcpp_action::GoalResponse::REJECT;
+        // }
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
       }
 

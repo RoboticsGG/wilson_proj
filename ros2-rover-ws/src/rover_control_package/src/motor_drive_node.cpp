@@ -30,15 +30,16 @@ namespace carcontrol_cpp
         std::bind(&CarControlActionServer::handle_cancel, this, _1),
         std::bind(&CarControlActionServer::handle_accepted, this, _1)
       );
-      RCLCPP_INFO(this->get_logger(), "Create Server");
+      RCLCPP_INFO(this->get_logger(), "Break Point 1");
     }
 
     private:
       rclcpp_action::Server<Carcontrol>::SharedPtr action_server_;
-
+      RCLCPP_INFO(this->get_logger(), "Break Point 2");
       rclcpp_action::GoalResponse handle_goal(
         const rclcpp_action::GoalUUID & uuid,
-        const std::shared_ptr<const Carcontrol::Goal> goal)
+        std::shared_ptr<const Carcontrol::Goal> goal)
+        RCLCPP_INFO(this->get_logger(), goal);
       {
         RCLCPP_INFO(this->get_logger(), "Received goal request with direction %s", goal->direction.c_str());
         RCLCPP_INFO(this->get_logger(), "Received goal request with timestop %d", goal->timestop);

@@ -34,7 +34,7 @@ class CarControlActionClient : public rclcpp::Node
 
       void send_goal(){
         using namespace std::placeholders;
-        RCLCPP_INFO(this->get_logger(), "void Send Goal");
+        RCLCPP_INFO(this->get_logger(), "Break Pont 1");
 
         this->timer_->cancel();
         if (!this->client_ptr_->wait_for_action_server()){

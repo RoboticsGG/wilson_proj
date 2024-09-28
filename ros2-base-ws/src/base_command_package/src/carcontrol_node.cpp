@@ -24,7 +24,7 @@ class CarControlActionClient : public rclcpp::Node
       {
         this->client_ptr_ = rclcpp_action::create_client<Carcontrol>(
             this,
-            "/carcontrol");
+            "carcontrol");
 
         this->timer_ = this->create_wall_timer(
             std::chrono::milliseconds(500),
@@ -37,7 +37,7 @@ class CarControlActionClient : public rclcpp::Node
         RCLCPP_INFO(this->get_logger(), "Attemping to send goal.");
 
         this->timer_->cancel();
-        if (!this->client_ptr_->wait_for_action_server(std::chrono::seconds(1))) {
+        if (!this->client_ptr_->wait_for_action_server(std::chrono::seconds(5))) {
             RCLCPP_ERROR(this->get_logger(), "Action server not available. Shutting down.");
             rclcpp::shutdown();
             return;

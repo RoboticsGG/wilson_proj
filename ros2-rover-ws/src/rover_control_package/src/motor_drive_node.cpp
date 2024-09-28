@@ -39,8 +39,8 @@ namespace carcontrol_cpp
       rclcpp_action::GoalResponse handle_goal(
         const rclcpp_action::GoalUUID & uuid,
         std::shared_ptr<const Carcontrol::Goal> goal)
-        RCLCPP_INFO(this->get_logger(), goal);
       {
+        RCLCPP_INFO(this->get_logger(), goal);
         RCLCPP_INFO(this->get_logger(), "Received goal request with direction %s", goal->direction.c_str());
         RCLCPP_INFO(this->get_logger(), "Received goal request with timestop %d", goal->timestop);
         (void)uuid;

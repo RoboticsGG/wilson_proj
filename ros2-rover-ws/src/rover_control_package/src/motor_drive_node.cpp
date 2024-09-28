@@ -25,11 +25,12 @@ namespace carcontrol_cpp
       
       this->action_server_ = rclcpp_action::create_server<Carcontrol>(
         this,
-        "carcontrol",
+        "/carcontrol",
         std::bind(&CarControlActionServer::handle_goal, this, _1, _2),
         std::bind(&CarControlActionServer::handle_cancel, this, _1),
         std::bind(&CarControlActionServer::handle_accepted, this, _1)
       );
+      RCLCPP_INFO(this->get_logger(), "Create Server");
     }
 
     private:

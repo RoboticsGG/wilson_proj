@@ -30,7 +30,7 @@ namespace carcontrol_cpp
         std::bind(&CarControlActionServer::handle_cancel, this, _1),
         std::bind(&CarControlActionServer::handle_accepted, this, _1)
       );
-      RCLCPP_INFO(this->get_logger(), "Break Point 1");
+      RCLCPP_INFO(this->get_logger(), "Car Control Action Server is ready.");
     }
 
     private:
@@ -40,8 +40,8 @@ namespace carcontrol_cpp
         std::shared_ptr<const Carcontrol::Goal> goal)
       {
         RCLCPP_INFO(this->get_logger(), "Break Point 2");
-        RCLCPP_INFO(this->get_logger(), "Received goal request with direction %s", goal->direction.c_str());
-        RCLCPP_INFO(this->get_logger(), "Received goal request with timestop %d", goal->timestop);
+        RCLCPP_INFO(this->get_logger(), "Received goal request: Direction = %s, Timestop = %d",
+          goal->direction.c_str(), goal->timestop);
         (void)uuid;
         // if(goal->timestop <= 0){
         //   RCLCPP_WARN(this->get_logger(), "Invalid timestop. Rejecting goal.");

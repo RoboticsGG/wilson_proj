@@ -34,19 +34,20 @@ class CarControlActionClient : public rclcpp::Node
 
       void send_goal(){
         using namespace std::placeholders;
-        RCLCPP_INFO(this->get_logger(), "Break Pont 1");
+        RCLCPP_INFO(this->get_logger(), "Attemping to send goal.");
 
         this->timer_->cancel();
-        if (!this->client_ptr_->wait_for_action_server()){
-            RCLCPP_ERROR(this->get_logger(), "Action server not available");
+        if (!this->client_ptr_->wait_for_action_server(std::chrono::seconds(1))) {
+            RCLCPP_ERROR(this->get_logger(), "Action server not available. Shutting down.");
             rclcpp::shutdown();
+            return;
         }
 
         auto goal_msg = Carcontrol::Goal();
         goal_msg.direction = "FW";
         goal_msg.timestop = 10;
 
-        RCLCPP_INFO(this->get_logger(), "Sending goal");
+        RCLCPP_INFO(this->get_logger(), "Sending goal: Direction = %s, Timestop = %d", goal_msg.direction.c_str(), goal_msg.timestop);
 
         auto send_goal_options = rclcpp_action::Client<Carcontrol>::SendGoalOptions();
         send_goal_options.goal_response_callback =
@@ -74,16 +75,6 @@ class CarControlActionClient : public rclcpp::Node
       private:
         rclcpp_action::Client<Carcontrol>::SharedPtr client_ptr_;
         rclcpp::TimerBase::SharedPtr timer_;
-
-        void goal_response_callback(std::shared_future<GoalHandleCarcontrol::SharedPtr> future){
-            auto goal_handle = future.get();
-            if (!goal_handle){
-                RCLCPP_ERROR(this->get_logger(), "Goal was rejected by server");
-            }
-            else {
-                RCLCPP_INFO(this->get_logger(), "Goal accepted by server, waiting for result");
-            }
-        }
 
         void feedback_callback(
             GoalHandleCarcontrol::SharedPtr,
@@ -120,6 +111,16 @@ class CarControlActionClient : public rclcpp::Node
             }
             RCLCPP_INFO(this->get_logger(), ss.str().c_str());
             rclcpp::shutdown();
+        }
+
+        void goal_response_callback(std::shared_future<GoalHandleCarcontrol::SharedPtr> future){
+            auto goal_handle = future.get();
+            if (!goal_handle){
+                RCLCPP_ERROR(this->get_logger(), "Goal was rejected by server");
+            }
+            else {
+                RCLCPP_INFO(this->get_logger(), "Goal accepted by server, waiting for result");
+            }
         }
 
 };

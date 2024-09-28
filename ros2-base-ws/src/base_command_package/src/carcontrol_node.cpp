@@ -10,7 +10,6 @@
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "rclcpp_components/register_node_macro.hpp"
 
-//#include "base_command_package/msg/visibility_control.h"
 
 namespace carcontrol_cpp
 {
@@ -25,7 +24,7 @@ class CarControlActionClient : public rclcpp::Node
       {
         this->client_ptr_ = rclcpp_action::create_client<Carcontrol>(
             this,
-            "carcontrol");
+            "/carcontrol");
 
         this->timer_ = this->create_wall_timer(
             std::chrono::milliseconds(500),

@@ -24,7 +24,7 @@ class CarControlActionClient : public rclcpp::Node
       {
         this->client_ptr_ = rclcpp_action::create_client<Carcontrol>(
             this,
-            "carcontrol");
+            "/carcontrol");
 
         this->timer_ = this->create_wall_timer(
             std::chrono::milliseconds(500),

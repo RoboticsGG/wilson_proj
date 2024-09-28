@@ -29,12 +29,12 @@ class CarControlActionClient : public rclcpp::Node
         this->timer_ = this->create_wall_timer(
             std::chrono::milliseconds(500),
             std::bind(&CarControlActionClient::send_goal, this)
-            RCLCPP_INFO(this->get_logger(), "void Send Goal");
         );
       }
 
       void send_goal(){
         using namespace std::placeholders;
+        RCLCPP_INFO(this->get_logger(), "void Send Goal");
 
         this->timer_->cancel();
         if (!this->client_ptr_->wait_for_action_server()){

@@ -17,6 +17,7 @@
 #include "mros2.h"
 #include "mros2-platform.h"
 #include "std_msgs/msg/string.hpp"
+#include <cstdlib>
 
 void userCallback(std_msgs::msg::String *msg)
 {
@@ -25,6 +26,7 @@ void userCallback(std_msgs::msg::String *msg)
 
 int main()
 {
+  setenv("ROS_DOMAIN_ID", "10", 1);
   /* connect to the network */
   if (mros2_platform::network_connect())
   {

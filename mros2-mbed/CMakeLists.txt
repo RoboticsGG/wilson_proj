@@ -26,7 +26,7 @@ message(STATUS "APP_NAME=${APP_NAME}")
 
 # specify your own file(s) for the application
 set(APP_SRCS
-  workspace/proj_node/${APP_NAME}/app.cpp
+  workspace/${APP_NAME}/app.cpp
 )
 message(STATUS "APP_SRCS=${APP_SRCS}")
 

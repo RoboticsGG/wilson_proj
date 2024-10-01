@@ -11,12 +11,13 @@ using std::placeholders::_1;
 class Echoreplyer : public rclcpp::Node
 {
 public:
+  // Constructor to initialize the node and create the subscriber
   Echoreplyer() : Node("test_sub_node")
   {
-    // Creating a subscriber to "new_topic" with best effort QoS
+    // Creating a subscriber to the "to_linux" topic with best-effort QoS
     subscriber_ = this->create_subscription<std_msgs::msg::String>(
-      "to_linux", // New topic name
-      rclcpp::QoS(10).best_effort(), // Best effort QoS
+      "to_linux", 
+      rclcpp::QoS(10).best_effort(),  // Best-effort QoS (non-reliable delivery)
       std::bind(&Echoreplyer::topic_callback, this, _1)); // Bind callback function
   }
   
@@ -25,10 +26,10 @@ private:
   void topic_callback(const std_msgs::msg::String::SharedPtr msg) const
   {
     // Logging the subscribed message
-    RCLCPP_INFO(this->get_logger(), "Subscribed to new_topic: '%s'", msg->data.c_str());
+    RCLCPP_INFO(this->get_logger(), "Subscribed to to_linux: '%s'", msg->data.c_str());
   }
   
-  // Subscriber object to manage the topic subscription
+  // Subscriber object to manage the subscription
   rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscriber_;
 };
 
@@ -45,4 +46,3 @@ int main(int argc, char * argv[])
 
   return 0;
 }
-

@@ -5,13 +5,14 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+############## Start Define Action #####################
 find_package(rosidl_default_generators REQUIRED)
-
 rosidl_generate_interfaces(${PROJECT_NAME}
   "action/Carcontrol.action"
 )
+############### End Define Action ########################
 
-# find dependencies
+############## Start add find dependencies ######################
 find_package(ament_cmake REQUIRED)
 find_package(base_command_package REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -21,7 +22,9 @@ find_package(std_srvs)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+#################### End add find dependencies ##########################
 
+#################### Start carcontrol_ros2_client Node ###########################
 add_library(carcontrol_ros2_client SHARED
   src/carcontrol_node.cpp)
   
@@ -42,8 +45,7 @@ install(TARGETS
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin)
-  
-# #--------------------------------------------------------------
+#################### End carcontrol_ros2_client Node ###########################
 
 # add_executable(command_node src/command_node.cpp)
 # target_include_directories(command_node PUBLIC

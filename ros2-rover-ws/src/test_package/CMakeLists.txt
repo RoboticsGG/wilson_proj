@@ -20,6 +20,7 @@ find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(chrono REQUIRED)
 find_package(example_interfaces REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -40,7 +41,8 @@ ament_target_dependencies(action_server
   "test_package"
   "rclcpp"
   "rclcpp_action"
-  "rclcpp_components")
+  "rclcpp_components"
+  "chrono")
 rclcpp_components_register_node(action_server PLUGIN "action_tutorials_cpp::FibonacciActionServer" EXECUTABLE action_server_node)
 install(TARGETS
   action_server

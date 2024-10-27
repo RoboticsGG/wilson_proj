@@ -41,8 +41,7 @@ ament_target_dependencies(action_server
   "test_package"
   "rclcpp"
   "rclcpp_action"
-  "rclcpp_components"
-  "chrono")
+  "rclcpp_components")
 rclcpp_components_register_node(action_server PLUGIN "action_tutorials_cpp::FibonacciActionServer" EXECUTABLE action_server_node)
 install(TARGETS
   action_server
@@ -76,7 +75,7 @@ install(TARGETS test_sub_node
 
 #################### Start Test_eth_Pub ################################
 add_executable(TestEthPub_node src/Test_eth_commu_publish.cpp)
-ament_target_dependencies(TestEthPub_node rclcpp std_msgs chrono)
+ament_target_dependencies(TestEthPub_node rclcpp std_msgs)
 
 target_include_directories(TestEthPub_node PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

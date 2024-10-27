@@ -72,6 +72,19 @@ install(TARGETS test_sub_node
   DESTINATION lib/${PROJECT_NAME})
 #################### End Tserver Node ##################################
 
+#################### Start Test_eth_Pub ################################
+add_executable(TestEthPub_node src/Test_eth_commu_publish.cpp)
+ament_target_dependencies(TestEthPub_node rclcpp std_msgs chrono)
+
+target_include_directories(TestEthPub_node PUBLIC
+$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+$<INSTALL_INTERFACE:include>)
+target_compile_features(TestEthPub_node PUBLIC c_std_99 cxx_std_17)
+
+install(TARGETS TestEthPub_node
+  DESTINATION lib/${PROJECT_NAME})
+#################### End Test_eth_Pub ################################
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights

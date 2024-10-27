@@ -135,3 +135,12 @@ class CarControlActionClient : public rclcpp::Node
 }
 
 RCLCPP_COMPONENTS_REGISTER_NODE(carcontrol_cpp::CarControlActionClient)
+
+int main(int argc, char **argv)
+{
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<carcontrol_cpp::CarControlActionClient>(rclcpp::NodeOptions());
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}

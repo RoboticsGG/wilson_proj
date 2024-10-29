@@ -40,6 +40,7 @@ sets the response, feedback, and result callbacks -> sends the goal to the serve
   void send_goal()
 {
   using namespace std::placeholders;
+  RCLCPP_INFO(this->get_logger(), "Attemping to send goal.");
 
   this->timer_->cancel();
   if (!this->client_ptr_->wait_for_action_server()) {

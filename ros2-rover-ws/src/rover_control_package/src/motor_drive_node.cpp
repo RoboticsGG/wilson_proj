@@ -39,7 +39,6 @@ namespace carcontrol_cpp
         const rclcpp_action::GoalUUID & uuid,
         std::shared_ptr<const Carcontrol::Goal> goal)
       {
-        RCLCPP_INFO(this->get_logger(), "Break Point 2");
         RCLCPP_INFO(this->get_logger(), "Received goal request: Direction = %s, Timestop = %d",
           goal->direction.c_str(), goal->timestop);
         (void)uuid;
@@ -108,12 +107,3 @@ namespace carcontrol_cpp
 }
 
 RCLCPP_COMPONENTS_REGISTER_NODE(carcontrol_cpp::CarControlActionServer)
-
-int main(int argc, char **argv)
-{
-    rclcpp::init(argc, argv);
-    auto node = std::make_shared<carcontrol_cpp::CarControlActionServer>(rclcpp::NodeOptions());
-    rclcpp::spin(node);
-    rclcpp::shutdown();
-    return 0;
-}

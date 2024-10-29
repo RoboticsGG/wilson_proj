@@ -10,7 +10,6 @@
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "rclcpp_components/register_node_macro.hpp"
 
-
 namespace carcontrol_cpp
 {
 class CarControlActionClient : public rclcpp::Node
@@ -24,7 +23,7 @@ class CarControlActionClient : public rclcpp::Node
       {
         this->client_ptr_ = rclcpp_action::create_client<Carcontrol>(
             this,
-            "/carcontrol");
+            "carcontrol");
 
         this->timer_ = this->create_wall_timer(
             std::chrono::milliseconds(500),
@@ -37,18 +36,22 @@ class CarControlActionClient : public rclcpp::Node
         RCLCPP_INFO(this->get_logger(), "Attemping to send goal.");
 
         this->timer_->cancel();
-        for (int attempt = 0; attempt < 5; ++attempt) {
-            if (this->client_ptr_->wait_for_action_server(std::chrono::seconds(2))) {
-                break;
-            }
-            RCLCPP_WARN(this->get_logger(), "Waiting for action server...");
-        }
-
-        if (!this->client_ptr_->wait_for_action_server(std::chrono::seconds(2))) {
-            RCLCPP_ERROR(this->get_logger(), "Action server not available. Shutting down.");
+        if (!this->client_ptr_->wait_for_action_server()) {
+            RCLCPP_ERROR(this->get_logger(), "Action server not available after waiting");
             rclcpp::shutdown();
-            return;
         }
+        // for (int attempt = 0; attempt < 5; ++attempt) {
+        //     if (this->client_ptr_->wait_for_action_server(std::chrono::seconds(2))) {
+        //         break;
+        //     }
+        //     RCLCPP_WARN(this->get_logger(), "Waiting for action server...");
+        // }
+
+        // if (!this->client_ptr_->wait_for_action_server(std::chrono::seconds(2))) {
+        //     RCLCPP_ERROR(this->get_logger(), "Action server not available. Shutting down.");
+        //     rclcpp::shutdown();
+        //     return;
+        // }
 
         auto goal_msg = Carcontrol::Goal();
         goal_msg.direction = "FW";
@@ -135,12 +138,3 @@ class CarControlActionClient : public rclcpp::Node
 }
 
 RCLCPP_COMPONENTS_REGISTER_NODE(carcontrol_cpp::CarControlActionClient)
-
-int main(int argc, char **argv)
-{
-    rclcpp::init(argc, argv);
-    auto node = std::make_shared<carcontrol_cpp::CarControlActionClient>(rclcpp::NodeOptions());
-    rclcpp::spin(node);
-    rclcpp::shutdown();
-    return 0;
-}

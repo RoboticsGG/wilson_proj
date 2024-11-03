@@ -14,7 +14,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 ############## Start add find dependencies ######################
 find_package(ament_cmake REQUIRED)
-find_package(rover_control_package REQUIRED)
+#find_package(rover_control_package REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)

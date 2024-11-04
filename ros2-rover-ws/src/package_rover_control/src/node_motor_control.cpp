@@ -21,12 +21,12 @@ namespace motorcontrol_cpp
         {
           using namespace std::placeholders;
 
-          this->action_server_ = rclcpp_action::create_server<Carcontrol>(
-            "motorcontrol",
-            std::bind(&MotorControlActionServer::handle_goal, this, _1, _2),
-            std::bind(&MotorControlActionServer::handle_cancel, this, _1),
-            std::bind(&MotorControlActionServer::handle_accepted, this, _1)
-          );
+          // this->action_server_ = rclcpp_action::create_server<Carcontrol>(
+          //   "motorcontrol",
+          //   std::bind(&MotorControlActionServer::handle_goal, this, _1, _2),
+          //   std::bind(&MotorControlActionServer::handle_cancel, this, _1),
+          //   std::bind(&MotorControlActionServer::handle_accepted, this, _1)
+          // );
           RCLCPP_INFO(this->get_logger(), "Motor Control Action Server is Ready.");
 
         }
@@ -34,7 +34,7 @@ namespace motorcontrol_cpp
 
 }
 
-RCLCPP_COMPONENTS_REGISTER_NODE(motorcontrol_cpp::CarControlActionServer)
+RCLCPP_COMPONENTS_REGISTER_NODE(motorcontrol_cpp::MotorControlActionServer)
 
 // #include <cstdio>
 

@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
 #include "package_rover_control/action/detail/rovercontrol__struct.h"
 #include "package_rover_control/action/detail/rovercontrol__type_support.h"
 #include "package_rover_control/action/detail/rovercontrol__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

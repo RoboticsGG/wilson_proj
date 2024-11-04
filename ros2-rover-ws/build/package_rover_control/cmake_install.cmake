@@ -43,19 +43,371 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_rear_motor" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_rear_motor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/rosidl_interfaces" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/package_rover_control")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/action" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_type_description/package_rover_control/action/Rovercontrol.json")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/package_rover_control/package_rover_control" TYPE DIRECTORY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_c/package_rover_control/" REGEX "/[^/]*\\.h$")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/environment" TYPE FILE FILES "/opt/ros/iron/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/environment" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_environment_hooks/library_path.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_c.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_c.so")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_rear_motor"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_c.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_rover_control" TYPE EXECUTABLE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/node_rear_motor")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_rear_motor" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_rear_motor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/libpackage_rover_control__rosidl_generator_c.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_c.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_c.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_c.so"
+         OLD_RPATH "/opt/ros/iron/lib:"
+         NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_rear_motor")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_c.so")
     endif()
   endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/package_rover_control/package_rover_control" TYPE DIRECTORY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_typesupport_fastrtps_c/package_rover_control/" REGEX "/[^/]*\\.cpp$" EXCLUDE)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_c.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_c.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_c.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/libpackage_rover_control__rosidl_typesupport_fastrtps_c.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_c.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_c.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_c.so"
+         OLD_RPATH "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control:/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_c.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/package_rover_control/package_rover_control" TYPE DIRECTORY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_cpp/package_rover_control/" REGEX "/[^/]*\\.hpp$")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/package_rover_control/package_rover_control" TYPE DIRECTORY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_typesupport_fastrtps_cpp/package_rover_control/" REGEX "/[^/]*\\.cpp$" EXCLUDE)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_cpp.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_cpp.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_cpp.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/libpackage_rover_control__rosidl_typesupport_fastrtps_cpp.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_cpp.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_cpp.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_cpp.so"
+         OLD_RPATH "/opt/ros/iron/lib:/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_fastrtps_cpp.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/package_rover_control/package_rover_control" TYPE DIRECTORY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_typesupport_introspection_c/package_rover_control/" REGEX "/[^/]*\\.h$")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_c.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_c.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_c.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/libpackage_rover_control__rosidl_typesupport_introspection_c.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_c.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_c.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_c.so"
+         OLD_RPATH "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control:/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_c.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_c.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_c.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_c.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/libpackage_rover_control__rosidl_typesupport_c.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_c.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_c.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_c.so"
+         OLD_RPATH "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control:/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_c.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/package_rover_control/package_rover_control" TYPE DIRECTORY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_typesupport_introspection_cpp/package_rover_control/" REGEX "/[^/]*\\.hpp$")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_cpp.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_cpp.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_cpp.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/libpackage_rover_control__rosidl_typesupport_introspection_cpp.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_cpp.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_cpp.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_cpp.so"
+         OLD_RPATH "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control:/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_introspection_cpp.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_cpp.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_cpp.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_cpp.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/libpackage_rover_control__rosidl_typesupport_cpp.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_cpp.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_cpp.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_cpp.so"
+         OLD_RPATH "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control:/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_typesupport_cpp.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/environment" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_environment_hooks/pythonpath.sh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/environment" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_environment_hooks/pythonpath.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control-0.0.0-py3.10.egg-info" TYPE DIRECTORY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_python/package_rover_control/package_rover_control.egg-info/")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control" TYPE DIRECTORY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_py/package_rover_control/" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  execute_process(
+        COMMAND
+        "/usr/bin/python3.10" "-m" "compileall"
+        "/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib/python3.10/site-packages/package_rover_control"
+      )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_py/package_rover_control/package_rover_control_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so"
+         OLD_RPATH "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_py/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control:/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_py/package_rover_control/package_rover_control_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so"
+         OLD_RPATH "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_py/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control:/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_py/package_rover_control/package_rover_control_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so"
+         OLD_RPATH "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_py/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control:/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/package_rover_control/package_rover_control_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_py.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_py.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_py.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_generator_py/package_rover_control/libpackage_rover_control__rosidl_generator_py.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_py.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_py.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_py.so"
+         OLD_RPATH "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control:/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpackage_rover_control__rosidl_generator_py.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/action" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_adapter/package_rover_control/action/Rovercontrol.idl")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/action" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/action/Rovercontrol.action")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_motor_control" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_motor_control")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_motor_control"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_rover_control" TYPE EXECUTABLE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/node_motor_control")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_motor_control" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_motor_control")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_motor_control"
+         OLD_RPATH "/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_rover_control/node_motor_control")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmotorcontrol.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmotorcontrol.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmotorcontrol.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/libmotorcontrol.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmotorcontrol.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmotorcontrol.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmotorcontrol.so"
+         OLD_RPATH "/opt/ros/iron/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmotorcontrol.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -107,6 +459,206 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cExport.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cExport.cmake"
+         "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cExport.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cExport-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cExport.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cExport.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cExport-noconfig.cmake")
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cExport.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cExport.cmake"
+         "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cExport.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cExport-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cExport.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cExport.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cExport-noconfig.cmake")
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cppExport.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cppExport.cmake"
+         "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cppExport.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cppExport-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cppExport.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_cppExport.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cppExport.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cppExport.cmake"
+         "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cppExport.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cppExport-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cppExport.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cppExport.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake")
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cExport.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cExport.cmake"
+         "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cExport.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cExport-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cExport.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cExport.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cExport-noconfig.cmake")
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cExport.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cExport.cmake"
+         "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cExport.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cExport-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cExport.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cExport.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cExport-noconfig.cmake")
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cppExport.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cppExport.cmake"
+         "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cppExport.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cppExport-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cppExport.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cppExport.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_introspection_cppExport-noconfig.cmake")
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cppExport.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cppExport.cmake"
+         "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cppExport.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cppExport-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cppExport.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cppExport.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/package_rover_control__rosidl_typesupport_cppExport-noconfig.cmake")
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_pyExport.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_pyExport.cmake"
+         "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_pyExport.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_pyExport-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_pyExport.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_pyExport.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles/Export/share/package_rover_control/cmake/export_package_rover_control__rosidl_generator_pyExport-noconfig.cmake")
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/rclcpp_components" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_index/share/ament_index/resource_index/rclcpp_components/package_rover_control")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_cmake/rosidl_cmake-extras.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control/cmake" TYPE FILE FILES
     "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_core/package_rover_controlConfig.cmake"
     "/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/ament_cmake_core/package_rover_controlConfig-version.cmake"
@@ -115,6 +667,12 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_rover_control" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/package.xml")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/package_rover_control__py/cmake_install.cmake")
+
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

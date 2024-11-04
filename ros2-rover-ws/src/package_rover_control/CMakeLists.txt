@@ -48,10 +48,6 @@ install(TARGETS
   RUNTIME DESTINATION bin
 )
 
-install(DIRECTORY include/
-  DESTINATION include/${PROJECT_NAME}
-)
-
 # add_executable(node_motor_control src/node_motor_control.cpp)
 
 # target_compile_features(node_motor_control PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17

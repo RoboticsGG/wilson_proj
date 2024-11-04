@@ -27,6 +27,7 @@ target_compile_definitions(motorcontrol
   PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
   
 ament_target_dependencies(motorcontrol
+  "action_interfaces"
   "rclcpp"
   "rclcpp_action"
   "rclcpp_components")

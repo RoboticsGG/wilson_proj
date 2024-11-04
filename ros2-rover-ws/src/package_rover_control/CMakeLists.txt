@@ -49,7 +49,7 @@ install(TARGETS
 )
 
 install(DIRECTORY include/
-  DESTINATION include/
+  DESTINATION include
 )
 
 # add_executable(node_motor_control src/node_motor_control.cpp)

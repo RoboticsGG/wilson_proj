@@ -5,10 +5,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-find_package(rosidl_default_generators REQUIRED)
-rosidl_generate_interfaces(${PROJECT_NAME}
-  "action/Rovercontrol.action"
-)
+
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
@@ -16,6 +13,13 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(std_srvs)
+
+find_package(rosidl_default_generators REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "action/Rovercontrol.action"
+  DEPENDENCIES action_msgs
+)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -41,15 +45,15 @@ install(TARGETS
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin)
 
-# add_executable(node_motor_control src/node_motor_control.cpp)
-# target_include_directories(node_motor_control PUBLIC
-#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-#   $<INSTALL_INTERFACE:include>)
+add_executable(node_motor_control src/node_motor_control.cpp)
+target_include_directories(node_motor_control PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
 
-# target_compile_features(node_motor_control PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+target_compile_features(node_motor_control PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
-# install(TARGETS node_motor_control
-#   DESTINATION lib/${PROJECT_NAME})
+install(TARGETS node_motor_control
+  DESTINATION lib/${PROJECT_NAME})
 
 # if(BUILD_TESTING)
 #   find_package(ament_lint_auto REQUIRED)

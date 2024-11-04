@@ -2,10 +2,11 @@
 #include <memory>
 #include <thread>
 
+#include "action_interfaces/action/rovercontrol.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "rclcpp_components/register_node_macro.hpp"
-#include "action_interfaces/action/rovercontrol.hpp"
+
 
 
 namespace motorcontrol_cpp
@@ -14,7 +15,7 @@ namespace motorcontrol_cpp
   {
     public:
       using Carcontrol = action_interfaces::action::Rovercontrol;
-      using GoalHandleCarcontrol = rclcpp_action::ClientGoalHandle<Carcontrol>;
+      using GoalHandleCarcontrol = rclcpp_action::ServerGoalHandle<Carcontrol>;
       explicit MotorControlActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions()):
         Node("node_motor_control", options)
         {
@@ -26,7 +27,7 @@ namespace motorcontrol_cpp
             std::bind(&MotorControlActionServer::handle_cancel, this, _1),
             std::bind(&MotorControlActionServer::handle_accepted, this, _1)
           );
-          RCLCPP_INFO(this->het_logger(), "Motor Control Action Server is Ready.");
+          RCLCPP_INFO(this->get_logger(), "Motor Control Action Server is Ready.");
 
         }
   };

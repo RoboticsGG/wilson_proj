@@ -43,15 +43,15 @@ install(TARGETS
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin)
 
-# add_executable(node_motor_control src/node_motor_control.cpp)
-# target_include_directories(node_motor_control PUBLIC
-#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-#   $<INSTALL_INTERFACE:include>)
+add_executable(node_motor_control src/node_motor_control.cpp)
+target_include_directories(node_motor_control PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
 
-# target_compile_features(node_motor_control PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+target_compile_features(node_motor_control PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
-# install(TARGETS node_motor_control
-#   DESTINATION lib/${PROJECT_NAME})
+install(TARGETS node_motor_control
+  DESTINATION lib/${PROJECT_NAME})
 
 # if(BUILD_TESTING)
 #   find_package(ament_lint_auto REQUIRED)

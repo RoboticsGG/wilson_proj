@@ -24,36 +24,31 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_library(carcontrol_server SHARED
+add_library(node_motor_control SHARED
   src/node_motor_control.cpp)
 
-target_include_directories(carcontrol_server PRIVATE
+target_include_directories(node_motor_control PRIVATE
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)
   
-target_compile_definitions(carcontrol_server
+target_compile_definitions(node_motor_control
   PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
   
-ament_target_dependencies(carcontrol_server
+ament_target_dependencies(node_motor_control
   "rclcpp"
   "rclcpp_action"
   "rclcpp_components")
-rclcpp_components_register_node(carcontrol_server PLUGIN "motorcontrol_cpp::MotorControlActionServer" EXECUTABLE node_motor_control)
+rclcpp_components_register_node(node_motor_control PLUGIN "motorcontrol_cpp::MotorControlActionServer" EXECUTABLE node_motor_control)
 install(TARGETS
-  carcontrol_server
+  node_motor_control
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin)
+  RUNTIME DESTINATION bin
+  DESTINATION lib/${PROJECT_NAME})
 
 # add_executable(node_motor_control src/node_motor_control.cpp)
-# target_include_directories(node_motor_control PUBLIC
-#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-#   $<INSTALL_INTERFACE:include>)
 
 # target_compile_features(node_motor_control PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
-
-# install(TARGETS node_motor_control
-#   DESTINATION lib/${PROJECT_NAME})
 
 # if(BUILD_TESTING)
 #   find_package(ament_lint_auto REQUIRED)

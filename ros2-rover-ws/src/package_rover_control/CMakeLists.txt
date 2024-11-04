@@ -13,10 +13,10 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(std_srvs)
-
+find_package(action_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-rosidl_generate_interfaces(
+rosidl_generate_interfaces(${PROJECT_NAME}
   "action/Rovercontrol.action"
   DEPENDENCIES action_msgs
 )
@@ -38,13 +38,19 @@ ament_target_dependencies(motorcontrol
   "rclcpp"
   "rclcpp_action"
   "rclcpp_components")
+
 rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorControlActionServer" EXECUTABLE node_motor_control)
+
 install(TARGETS
   motorcontrol
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
-  DESTINATION lib/${PROJECT_NAME})
+)
+
+install(DIRECTORY include/
+  DESTINATION include/${PROJECT_NAME}
+)
 
 # add_executable(node_motor_control src/node_motor_control.cpp)
 

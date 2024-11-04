@@ -13,12 +13,14 @@ namespace motorcontrol_cpp
   class MotorControlActionServer : public rclcpp::Node
   {
     public:
+      using Carcontrol = action_interfaces::action::Rovercontrol;
+      using GoalHandleCarcontrol = rclcpp_action::ClientGoalHandle<Carcontrol>;
       explicit MotorControlActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions()):
         Node("node_motor_control", options)
         {
           using namespace std::placeholders;
 
-          this->action_server_ = rclcpp_action::create_server<motorcontrol>(
+          this->action_server_ = rclcpp_action::create_server<Carcontrol>(
             "motorcontrol",
             std::bind(&MotorControlActionServer::handle_goal, this, _1, _2),
             std::bind(&MotorControlActionServer::handle_cancel, this, _1),
@@ -27,7 +29,7 @@ namespace motorcontrol_cpp
           RCLCPP_INFO(this->het_logger(), "Motor Control Action Server is Ready.");
 
         }
-  }
+  };
 
 }
 

@@ -24,23 +24,23 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_library(node_motor_control SHARED
+add_library(motorcontrol SHARED
   src/node_motor_control.cpp)
 
-target_include_directories(node_motor_control PRIVATE
+target_include_directories(motorcontrol PRIVATE
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)
   
-target_compile_definitions(node_motor_control
+target_compile_definitions(motorcontrol
   PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
   
-ament_target_dependencies(node_motor_control
+ament_target_dependencies(motorcontrol
   "rclcpp"
   "rclcpp_action"
   "rclcpp_components")
-rclcpp_components_register_node(node_motor_control PLUGIN "motorcontrol_cpp::MotorControlActionServer" EXECUTABLE node_motor_control)
+rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorControlActionServer" EXECUTABLE node_motor_control)
 install(TARGETS
-  node_motor_control
+  motorcontrol
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin

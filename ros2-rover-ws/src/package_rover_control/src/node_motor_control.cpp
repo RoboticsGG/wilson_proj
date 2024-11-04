@@ -2,7 +2,7 @@
 #include <memory>
 #include <thread>
 
-#include "package_rover_control/action/carcontrol.hpp"
+#include "package_rover_control/action/Carcontrol.action"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "rclcpp_components/register_node_macro.hpp"
@@ -12,7 +12,7 @@ namespace motorcontrol_cpp
   class MotorControlActionServer : public rclcpp::Node
   {
     public:
-      using motorcontrol = package_rover_control::action::carcontrol;
+      using motorcontrol = package_rover_control::action::Carcontrol;
       using GoalHandleCarcontrol = rclcpp_action::ServerGoalHandle<motorcontrol>;
 
       explicit MotorControlActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions()):

@@ -16,7 +16,7 @@ find_package(std_srvs)
 
 find_package(rosidl_default_generators REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME}
+rosidl_generate_interfaces(
   "action/Rovercontrol.action"
   DEPENDENCIES action_msgs
 )

@@ -16,17 +16,18 @@ namespace motorcontrol_cpp
     public:
       using Carcontrol = action_interfaces::action::Rovercontrol;
       using GoalHandleCarcontrol = rclcpp_action::ServerGoalHandle<Carcontrol>;
-      explicit MotorControlActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions()):
-        Node("node_motor_control", options)
+      explicit MotorControlActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions())
+      : Node("node_motor_control", options)
         {
           using namespace std::placeholders;
 
           this->action_server_ = rclcpp_action::create_server<Carcontrol>(
+            this,
             "motorcontrol",
             std::bind(&MotorControlActionServer::handle_goal, this, _1, _2),
             std::bind(&MotorControlActionServer::handle_cancel, this, _1),
-            std::bind(&MotorControlActionServer::handle_accepted, this, _1)
-          );
+            std::bind(&MotorControlActionServer::handle_accepted, this, _1));
+
           RCLCPP_INFO(this->get_logger(), "Motor Control Action Server is Ready.");
 
         }
@@ -38,7 +39,7 @@ namespace motorcontrol_cpp
         std::shared_ptr<const Carcontrol::Goal> goal)
       {
         RCLCPP_INFO(this->get_logger(), "Received goal request: Direction = %s, Timestop = %d",
-          gola->direction.c_str(), goal->timestop);
+          goal->direction.c_str(), goal->timestop);
         (void)uuid;
         if(gola->timestop <= 0){
           RCLCPP_WARN(this->get_logger(), "Invalid timestop. Rejecting goal.");
@@ -56,7 +57,7 @@ namespace motorcontrol_cpp
 
       void handle_accepted(const std::shared_ptr<GoalHandleCarcontrol> goal_handle)
       {
-        std::thread{std::bind(&MotorControlActionServer::execute, this, goal_handle)}.detect();
+        std::thread{std::bind(&MotorControlActionServer::execute, this, goal_handle)}.detach();
       }
 
       void execute(const std::shared_ptr<GoalHandleCarcontrol> goal_handle)

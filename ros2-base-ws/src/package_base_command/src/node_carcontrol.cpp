@@ -17,7 +17,7 @@ namespace motorcontrol_cpp
       using Carcontrol = action_interfaces::action::Rovercontrol;
       using GoalHandleCarcontrol = rclcpp_action::ClientGoalHandle<Carcontrol>;
 
-      explicit MotorControlActionClient(const rclcpp::NodeOption & options)
+      explicit MotorControlActionClient(const rclcpp::NodeOptions & options)
       : Node("node_motor_control", options)
       {
         this->client_ptr_ = rclcpp_action::create_client<Carcontrol>(
@@ -31,7 +31,7 @@ namespace motorcontrol_cpp
       }
 
       void send_goal(){
-        using namespace std::placeholder;
+        using namespace std::placeholders;
         RCLCPP_INFO(this->get_logger(), "Attemping to send goal.");
 
         this->timer_->cancel();
@@ -82,7 +82,7 @@ namespace motorcontrol_cpp
             for (auto times : feedback->time_remaining){
               ss << times << " ";
             }
-            RCLCPP_INFO(this->get_logger(), ss,str().c_str());
+            RCLCPP_INFO(this->get_logger(), ss.str().c_str());
           }
         
         void result_callback(const GoalHandleCarcontrol::WrappedResult & result)
@@ -102,7 +102,7 @@ namespace motorcontrol_cpp
           }
           std::stringstream ss;
           ss << "Result received: ";
-          for (auto remsg : result.result->ressult_msg){
+          for (auto remsg : result.result->result_msg){
             ss << remsg << " ";
           }
           RCLCPP_INFO(this->get_logger(), ss.str().c_str());

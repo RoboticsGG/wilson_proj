@@ -115,7 +115,7 @@ class CarControlActionClient : public rclcpp::Node
                     return;
             }
             std::stringstream ss;
-            ss << "Result received: ";\
+            ss << "Result received: ";
             for (auto remsg : result.result->result_msg){
                 ss << remsg << " ";
             }

@@ -47,3 +47,5 @@ rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorCont
 
 
 ament_package()
+
+##

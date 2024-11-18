@@ -41,7 +41,7 @@ namespace motorcontrol_cpp
         RCLCPP_INFO(this->get_logger(), "Received goal request: Direction = %s, Timestop = %d",
           goal->direction.c_str(), goal->timestop);
         (void)uuid;
-        if(gola->timestop <= 0){
+        if(goal->timestop <= 0){
           RCLCPP_WARN(this->get_logger(), "Invalid timestop. Rejecting goal.");
           return rclcpp_action::GoalResponse::REJECT;
         }

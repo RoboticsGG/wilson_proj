@@ -20,6 +20,10 @@ namespace motorcontrol_cpp
       explicit MotorControlActionClient(const rclcpp::NodeOptions & options)
       : Node("node_motor_control", options)
       {
+
+        this->declare_parameter<std::string>("direction", "ST");
+        this->declare_parameter<int>("timestop", 10);
+
         this->client_ptr_ = rclcpp_action::create_client<Carcontrol>(
           this,
           "motorcontrol");
@@ -40,9 +44,12 @@ namespace motorcontrol_cpp
           rclcpp::shutdown();
         }
 
+        std::string direction = this->get_parameter("direction").as_string();
+        int timestop = this->get_parameter("timestop").as_int();
+
         auto goal_msg = Carcontrol::Goal();
-        goal_msg.direction = "FW";
-        goal_msg.timestop = 10;
+        goal_msg.direction = direction;
+        goal_msg.timestop = timestop;
 
         RCLCPP_INFO(this->get_logger(), "Sending goal: Direction = %s, Timestop = %d", goal_msg.direction.c_str(), goal_msg.timestop);
 

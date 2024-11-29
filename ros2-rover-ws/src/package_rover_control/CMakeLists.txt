@@ -11,6 +11,7 @@ find_package(action_interfaces REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(std_srvs)
 
 # uncomment the following section in order to fill in

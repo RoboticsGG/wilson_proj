@@ -4,7 +4,7 @@
 
 class Node_Rovercontrol : public rclcpp::Node {
 public:
-    Node_Rovercontrol() : Node("multi_subscriber_node"), last_b_value1_(0), last_b_value2_(0) {
+    Node_Rovercontrol() : Node("node_rovercontrol") {
         topic_speedlimit_subscription_ = this->create_subscription<std_msgs::msg::String>(
             "topic_speedlimit", 10,
             std::bind(&Node_Rovercontrol::topic_speedlimit_callback, this, std::placeholders::_1)

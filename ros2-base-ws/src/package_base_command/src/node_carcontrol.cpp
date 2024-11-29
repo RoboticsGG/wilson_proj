@@ -29,7 +29,7 @@ namespace motorcontrol_cpp
           "motorcontrol");
         
         this->timer_ = this->create_wall_timer(
-          std::chrono::milliseconds(500),
+          std::chrono::milliseconds(500), 
           std::bind(&MotorControlActionClient::send_goal, this)
         );
       }

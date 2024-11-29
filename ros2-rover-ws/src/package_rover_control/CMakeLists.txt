@@ -17,6 +17,7 @@ find_package(std_srvs)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+#---------------------------node_carcontrol---------------------------------------
 add_library(motorcontrol SHARED
   src/node_motor_control.cpp)
 
@@ -39,8 +40,21 @@ install(TARGETS
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
 )
-
 rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorControlActionServer" EXECUTABLE node_motor_control)
+#---------------------------node_carcontrol---------------------------------------
+
+#---------------------------node_rover_control---------------------------------------
+add_executable(node_rovercontrol src/node_rover_control.cpp)
+ament_target_dependencies(node_rovercontrol rclcpp std_msgs)
+
+target_include_directories(node_rovercontrol PUBLIC
+$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+$<INSTALL_INTERFACE:include>)
+target_compile_features(node_rovercontrol PUBLIC c_std_99 cxx_std_17)
+
+install(TARGETS node_rovercontrol
+  DESTINATION lib/${PROJECT_NAME})
+#---------------------------node_rover_control---------------------------------------
 
 # add_executable(node_motor_control src/node_motor_control.cpp)
 

@@ -1,0 +1,33 @@
+-- Found ament_cmake: 2.0.6 (/opt/ros/iron/share/ament_cmake/cmake)
+-- Found action_interfaces: 0.0.0 (/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake)
+-- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)
+-- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_action: 21.0.7 (/opt/ros/iron/share/rclcpp_action/cmake)
+-- Found rclcpp_components: 21.0.7 (/opt/ros/iron/share/rclcpp_components/cmake)
+-- Found std_msgs: 5.0.1 (/opt/ros/iron/share/std_msgs/cmake)
+-- Found std_srvs: 5.0.1 (/opt/ros/iron/share/std_srvs/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control
+[35m[1mConsolidate compiler generated dependencies of target motorcontrol[0m
+[35m[1mConsolidate compiler generated dependencies of target node_motor_control[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o[0m
+[ 33%] [32m[1mLinking CXX executable node_motor_control[0m
+[ 66%] Built target motorcontrol
+[ 83%] Built target node_motor_control
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In constructor ‘[01m[KNode_Rovercontrol::Node_Rovercontrol()[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:7:58:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KNode_Rovercontrol[m[K’ does not have any field named ‘[01m[Klast_b_value1_[m[K’
+    7 |     Node_Rovercontrol() : Node("multi_subscriber_node"), [01;31m[Klast_b_value1_[m[K(0), last_b_value2_(0) {
+      |                                                          [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:7:77:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KNode_Rovercontrol[m[K’ does not have any field named ‘[01m[Klast_b_value2_[m[K’
+    7 |     Node_Rovercontrol() : Node("multi_subscriber_node"), last_b_value1_(0), [01;31m[Klast_b_value2_[m[K(0) {
+      |                                                                             [01;31m[K^~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node_rovercontrol.dir/build.make:76: CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_rovercontrol.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

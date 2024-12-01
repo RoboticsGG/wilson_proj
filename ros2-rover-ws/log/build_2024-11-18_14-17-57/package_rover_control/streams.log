@@ -1,0 +1,70 @@
+[0.092s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4
+[0.287s] [35m[1mConsolidate compiler generated dependencies of target motorcontrol[0m
+[0.349s] [ 50%] Built target node_motor_control
+[0.386s] [ 75%] [32mBuilding CXX object CMakeFiles/motorcontrol.dir/src/node_motor_control.cpp.o[0m
+[11.959s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_motor_control.cpp:[m[K In constructor ‘[01m[Kmotorcontrol_cpp::MotorControlActionServer::MotorControlActionServer(const rclcpp::NodeOptions&)[m[K’:
+[11.960s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_motor_control.cpp:24:74:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcreate_server<motorcontrol_cpp::MotorControlActionServer::Carcontrol>(const char [13], std::_Bind_helper<false, rclcpp_action::GoalResponse (motorcontrol_cpp::MotorControlActionServer::*)(const std::array<unsigned char, 16>&, std::shared_ptr<const action_interfaces::action::Rovercontrol_Goal_<std::allocator<void> > >), motorcontrol_cpp::MotorControlActionServer*, const std::_Placeholder<1>&, const std::_Placeholder<2>&>::type, std::_Bind_helper<false, rclcpp_action::CancelResponse (motorcontrol_cpp::MotorControlActionServer::*)(std::shared_ptr<rclcpp_action::ServerGoalHandle<action_interfaces::action::Rovercontrol> >), motorcontrol_cpp::MotorControlActionServer*, const std::_Placeholder<1>&>::type, std::_Bind_helper<false, void (motorcontrol_cpp::MotorControlActionServer::*)(std::shared_ptr<rclcpp_action::ServerGoalHandle<action_interfaces::action::Rovercontrol> >), motorcontrol_cpp::MotorControlActionServer*, const std::_Placeholder<1>&>::type)[m[K’
+[11.960s]    24 |           this->action_server_ = [01;31m[Krclcpp_action::create_server<Carcontrol>([m[K
+[11.961s]       |                                  [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[11.961s]    25 | [01;31m[K            "motorcontrol",[m[K
+[11.961s]       |             [01;31m[K~~~~~~~~~~~~~~~[m[K                                               
+[11.962s]    26 | [01;31m[K            std::bind(&MotorControlActionServer::handle_goal, this, _1, _2),[m[K
+[11.962s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.962s]    27 | [01;31m[K            std::bind(&MotorControlActionServer::handle_cancel, this, _1),[m[K
+[11.963s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.963s]    28 | [01;31m[K            std::bind(&MotorControlActionServer::handle_accepted, this, _1)[m[K
+[11.964s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.964s]    29 | [01;31m[K          )[m[K;
+[11.965s]       |           [01;31m[K~[m[K                                                               
+[11.966s] In file included from [01m[K/opt/ros/iron/include/rclcpp_action/rclcpp_action/rclcpp_action.hpp:39[m[K,
+[11.966s]                  from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_motor_control.cpp:7[m[K:
+[11.967s] [01m[K/opt/ros/iron/include/rclcpp_action/rclcpp_action/create_server.hpp:58:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktypename rclcpp_action::Server<ActionT>::SharedPtr rclcpp_action::create_server(rclcpp::node_interfaces::NodeBaseInterface::SharedPtr, rclcpp::node_interfaces::NodeClockInterface::SharedPtr, rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr, rclcpp::node_interfaces::NodeWaitablesInterface::SharedPtr, const string&, typename rclcpp_action::Server<ActionT>::GoalCallback, typename rclcpp_action::Server<ActionT>::CancelCallback, typename rclcpp_action::Server<ActionT>::AcceptedCallback, const rcl_action_server_options_t&, rclcpp::CallbackGroup::SharedPtr) [with ActionT = action_interfaces::action::Rovercontrol; typename rclcpp_action::Server<ActionT>::SharedPtr = std::shared_ptr<rclcpp_action::Server<action_interfaces::action::Rovercontrol> >; rclcpp::node_interfaces::NodeBaseInterface::SharedPtr = std::shared_ptr<rclcpp::node_interfaces::NodeBaseInterface>; rclcpp::node_interfaces::NodeClockInterface::SharedPtr = std::shared_ptr<rclcpp::node_interfaces::NodeClockInterface>; rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr = std::shared_ptr<rclcpp::node_interfaces::NodeLoggingInterface>; rclcpp::node_interfaces::NodeWaitablesInterface::SharedPtr = std::shared_ptr<rclcpp::node_interfaces::NodeWaitablesInterface>; std::string = std::__cxx11::basic_string<char>; typename rclcpp_action::Server<ActionT>::GoalCallback = std::function<rclcpp_action::GoalResponse(const std::array<unsigned char, 16>&, std::shared_ptr<const action_interfaces::action::Rovercontrol_Goal_<std::allocator<void> > >)>; typename rclcpp_action::Server<ActionT>::CancelCallback = std::function<rclcpp_action::CancelResponse(std::shared_ptr<rclcpp_action::ServerGoalHandle<action_interfaces::action::Rovercontrol> >)>; typename rclcpp_action::Server<ActionT>::AcceptedCallback = std::function<void(std::shared_ptr<rclcpp_action::ServerGoalHandle<action_interfaces::action::Rovercontrol> >)>; rcl_action_server_options_t = rcl_action_server_options_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>][m[K’
+[11.968s]    58 | [01;36m[Kcreate_server[m[K(
+[11.969s]       | [01;36m[K^~~~~~~~~~~~~[m[K
+[11.970s] [01m[K/opt/ros/iron/include/rclcpp_action/rclcpp_action/create_server.hpp:58:1:[m[K [01;36m[Knote: [m[K  candidate expects 10 arguments, 4 provided
+[11.970s] [01m[K/opt/ros/iron/include/rclcpp_action/rclcpp_action/create_server.hpp:132:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ActionT, class NodeT> typename rclcpp_action::Server<ActionT>::SharedPtr rclcpp_action::create_server(NodeT, const string&, typename rclcpp_action::Server<ActionT>::GoalCallback, typename rclcpp_action::Server<ActionT>::CancelCallback, typename rclcpp_action::Server<ActionT>::AcceptedCallback, const rcl_action_server_options_t&, rclcpp::CallbackGroup::SharedPtr)[m[K’
+[11.971s]   132 | [01;36m[Kcreate_server[m[K(
+[11.971s]       | [01;36m[K^~~~~~~~~~~~~[m[K
+[11.972s] [01m[K/opt/ros/iron/include/rclcpp_action/rclcpp_action/create_server.hpp:132:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[11.973s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_motor_control.cpp:24:74:[m[K [01;36m[Knote: [m[K  candidate expects 7 arguments, 4 provided
+[11.973s]    24 |           this->action_server_ = [01;36m[Krclcpp_action::create_server<Carcontrol>([m[K
+[11.974s]       |                                  [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[11.975s]    25 | [01;36m[K            "motorcontrol",[m[K
+[11.975s]       |             [01;36m[K~~~~~~~~~~~~~~~[m[K                                               
+[11.976s]    26 | [01;36m[K            std::bind(&MotorControlActionServer::handle_goal, this, _1, _2),[m[K
+[11.977s]       |             [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.977s]    27 | [01;36m[K            std::bind(&MotorControlActionServer::handle_cancel, this, _1),[m[K
+[11.978s]       |             [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.978s]    28 | [01;36m[K            std::bind(&MotorControlActionServer::handle_accepted, this, _1)[m[K
+[11.979s]       |             [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.979s]    29 | [01;36m[K          )[m[K;
+[11.980s]       |           [01;36m[K~[m[K                                                               
+[12.863s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[12.864s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/client.hpp:43[m[K,
+[12.864s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[12.865s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[12.865s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[12.866s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[12.866s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[12.866s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[12.867s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[12.867s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[12.868s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[12.868s]                  from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_motor_control.cpp:6[m[K:
+[12.869s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_motor_control.cpp:[m[K In member function ‘[01m[Krclcpp_action::GoalResponse motorcontrol_cpp::MotorControlActionServer::handle_goal(const GoalUUID&, std::shared_ptr<const action_interfaces::action::Rovercontrol_Goal_<std::allocator<void> > >)[m[K’:
+[12.869s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_motor_control.cpp:41:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kgola[m[K’ was not declared in this scope; did you mean ‘[01m[Kgoal[m[K’?
+[12.870s]    41 |           [01;31m[Kgola[m[K->direction.c_str(), goal->timestop);
+[12.870s]       |           [01;31m[K^~~~[m[K
+[12.886s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_motor_control.cpp:43:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kgola[m[K’ was not declared in this scope; did you mean ‘[01m[Kgoal[m[K’?
+[12.886s]    43 |         if([01;31m[Kgola[m[K->timestop <= 0){
+[12.886s]       |            [01;31m[K^~~~[m[K
+[12.887s]       |            [32m[Kgoal[m[K
+[12.912s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_motor_control.cpp:[m[K In member function ‘[01m[Kvoid motorcontrol_cpp::MotorControlActionServer::handle_accepted(std::shared_ptr<rclcpp_action::ServerGoalHandle<action_interfaces::action::Rovercontrol> >)[m[K’:
+[12.913s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_motor_control.cpp:59:87:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::thread[m[K’ has no member named ‘[01m[Kdetect[m[K’; did you mean ‘[01m[Kdetach[m[K’?
+[12.913s]    59 | ad{std::bind(&MotorControlActionServer::execute, this, goal_handle)}.[01;31m[Kdetect[m[K();
+[12.914s]       |                                                                      [01;31m[K^~~~~~[m[K
+[12.914s]       |                                                                      [32m[Kdetach[m[K
+[15.796s] gmake[2]: *** [CMakeFiles/motorcontrol.dir/build.make:76: CMakeFiles/motorcontrol.dir/src/node_motor_control.cpp.o] Error 1
+[15.797s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/motorcontrol.dir/all] Error 2
+[15.798s] gmake: *** [Makefile:146: all] Error 2
+[15.804s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4

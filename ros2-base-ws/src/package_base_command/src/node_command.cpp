@@ -10,7 +10,6 @@ public:
         topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit", 10);
         topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Int32>("topic_destination", 10);
 
-        // Declare parameters
         this->declare_parameter<int>("speedlimit", speedlimit_);
         this->declare_parameter<std::string>("test_text", test_text_);
         this->declare_parameter<int>("des_a", des_a_);
@@ -24,7 +23,6 @@ public:
     }
 
 private:
-    // Callback to handle parameter changes
     rcl_interfaces::msg::SetParametersResult on_parameter_change(
         const std::vector<rclcpp::Parameter> &parameters) {
         for (const auto &param : parameters) {
@@ -39,10 +37,8 @@ private:
             }
         }
 
-        //updated parameters
         publish_parameters();
 
-        // Return
         rcl_interfaces::msg::SetParametersResult result;
         result.successful = true;
         result.reason = "Parameters updated successfully.";

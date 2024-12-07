@@ -22,7 +22,7 @@ public:
 
         topic_destination_subscription_ = this->create_subscription<std_msgs::msg::Int32MultiArray>(
             "topic_destination", 10,
-            std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::1)
+            std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::_1)
         );
 
         topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);

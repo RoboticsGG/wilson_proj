@@ -26,6 +26,11 @@ private:
     rcl_interfaces::msg::SetParametersResult on_parameter_change(
         const std::vector<rclcpp::Parameter> &parameters) {
         for (const auto &param : parameters) {
+            if (param.get_name() == "speedlimit" && param.as_int() < 0){
+                result.successful = false;
+                result.reason = "Speed Limit must be non-negative.";
+                return result;
+            }
             if (param.get_name() == "speedlimit" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
                 speedlimit_ = param.as_int();
             } else if (param.get_name() == "test_text" && param.get_type() == rclcpp::ParameterType::PARAMETER_STRING) {
@@ -53,13 +58,16 @@ private:
         topic_speedlimit_publisher_->publish(speed_message);
 
         // Pub topic_destination
-        auto des_a_message = std_msgs::msg::Int32();
-        auto des_b_message = std_msgs::msg::Int32();
-        des_a_message.data = des_a_;
-        des_b_message.data = des_b_;
-        RCLCPP_INFO(this->get_logger(), "Publishing to topic_destination: %d, %d", des_a_message.data, des_b_message.data);
-        topic_destination_publisher_->publish(des_a_message);
-        topic_destination_publisher_->publish(des_b_message);
+        auto destination_message = std_msgs::msg::Int32MultiArray();
+        destination_message.data = {des_a_, des_b_};
+        topic_destination_publisher_->publish(destination_message);
+        // auto des_a_message = std_msgs::msg::Int32();
+        // auto des_b_message = std_msgs::msg::Int32();
+        // des_a_message.data = des_a_;
+        // des_b_message.data = des_b_;
+        // RCLCPP_INFO(this->get_logger(), "Publishing to topic_destination: %d, %d", des_a_message.data, des_b_message.data);
+        // topic_destination_publisher_->publish(des_a_message);
+        // topic_destination_publisher_->publish(des_b_message);
     }
 
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_speedlimit_publisher_;

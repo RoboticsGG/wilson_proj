@@ -9,7 +9,8 @@ public:
     : Node("node_command"), speedlimit_(30), test_text_("Default"), des_a_(0), des_b_(0) {
 
         topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit", 10);
-        topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Int32>("topic_destination", 10);
+        topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Int32MultiArray>("topic_destination", 10);
+        //topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Int32>("topic_destination", 10);
 
         this->declare_parameter<int>("speedlimit", speedlimit_);
         this->declare_parameter<std::string>("test_text", test_text_);
@@ -26,7 +27,6 @@ public:
 private:
     rcl_interfaces::msg::SetParametersResult on_parameter_change(
         const std::vector<rclcpp::Parameter> &parameters) {
-
         rcl_interfaces::msg::SetParametersResult result;
         result.successful = true;
 
@@ -36,9 +36,8 @@ private:
                     result.successful = false;
                     result.reason = "Speed Limit must be non-negative.";
                     return result;
-                } else if (param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER){
-                    speedlimit_ = param.as_int();
-                }  
+                }
+                speedlimit_ = param.as_int();
             } else if (param.get_name() == "test_text" && param.get_type() == rclcpp::ParameterType::PARAMETER_STRING) {
                 test_text_ = param.as_string();
             } else if (param.get_name() == "des_a" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
@@ -49,8 +48,6 @@ private:
         }
 
         publish_parameters();
-
-        result.reason = "Parameters updated successfully.";
         return result;
     }
 

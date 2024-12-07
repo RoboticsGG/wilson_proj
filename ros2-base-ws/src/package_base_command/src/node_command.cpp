@@ -1,5 +1,6 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
+#include <std_msgs/msg/int32.hpp>
 #include <std_msgs/msg/int32_multi_array.hpp> 
 
 class Node_Command : public rclcpp::Node {

@@ -25,14 +25,19 @@ public:
 private:
     rcl_interfaces::msg::SetParametersResult on_parameter_change(
         const std::vector<rclcpp::Parameter> &parameters) {
+
+        rcl_interfaces::msg::SetParametersResult result;
+        result.successful = true;
+
         for (const auto &param : parameters) {
-            if (param.get_name() == "speedlimit" && param.as_int() < 0){
-                result.successful = false;
-                result.reason = "Speed Limit must be non-negative.";
-                return result;
-            }
-            if (param.get_name() == "speedlimit" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
-                speedlimit_ = param.as_int();
+            if (param.get_name() == "speedlimit"){
+                if (param.as_int() < 0){
+                    result.successful = false;
+                    result.reason = "Speed Limit must be non-negative.";
+                    return result;
+                } else if (param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER){
+                    speedlimit_ = param.as_int();
+                }  
             } else if (param.get_name() == "test_text" && param.get_type() == rclcpp::ParameterType::PARAMETER_STRING) {
                 test_text_ = param.as_string();
             } else if (param.get_name() == "des_a" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
@@ -44,8 +49,6 @@ private:
 
         publish_parameters();
 
-        rcl_interfaces::msg::SetParametersResult result;
-        result.successful = true;
         result.reason = "Parameters updated successfully.";
         return result;
     }
@@ -60,6 +63,7 @@ private:
         // Pub topic_destination
         auto destination_message = std_msgs::msg::Int32MultiArray();
         destination_message.data = {des_a_, des_b_};
+        RCLCPP_INFO(this->get_logger(), "Publishing to topic_destination: [%d, %d]", des_a_, des_b_);
         topic_destination_publisher_->publish(destination_message);
         // auto des_a_message = std_msgs::msg::Int32();
         // auto des_b_message = std_msgs::msg::Int32();
@@ -71,7 +75,7 @@ private:
     }
 
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_speedlimit_publisher_;
-    rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr topic_destination_publisher_;
+    rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr topic_destination_publisher_;
 
     int speedlimit_;
     std::string test_text_;

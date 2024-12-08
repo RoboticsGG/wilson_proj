@@ -2,6 +2,8 @@
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/int32.hpp>
 #include <std_msgs/msg/int32_multi_array.hpp>
+#include <std_msgs/msg/int16.hpp>
+#include <std_msgs/msg/int16_multi_array.hpp>
 #include <sstream>
 #include <vector>
 
@@ -25,7 +27,8 @@ public:
             std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::_1)
         );
 
-        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
+        //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
+        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int16>("pub_rovercontrol", 10);
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(1),  // Set interval to 1 second
@@ -43,6 +46,7 @@ private:
     }
 
     void topic_destination_callback(const std_msgs::msg::Int32MultiArray::SharedPtr msg){
+    //void topic_destination_callback(const std_msgs::msg::Int16MultiArray::SharedPtr msg){
         if (msg->data.size()==2) {
             destination_a_ = msg->data[0];
             destination_b_ = msg->data[1];
@@ -60,7 +64,8 @@ private:
                     Motors_Rovercontrol motor_controller;
                     int result = motor_controller.test(values[0], values[1]); //Example call function
 
-                    auto result_msg = std_msgs::msg::Int32();
+                    //auto result_msg = std_msgs::msg::Int32();
+                    auto result_msg = std_msgs::msg::Int16();
                     result_msg.data = result;
                     topic_motorcontrol_publisher_->publish(result_msg);
 
@@ -135,7 +140,8 @@ private:
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
     rclcpp::Subscription<std_msgs::msg::Int32MultiArray>::SharedPtr topic_destination_subscription_;
     
-    rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr topic_motorcontrol_publisher_;
+    //rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr topic_motorcontrol_publisher_;
+    rclcpp::Publisher<std_msgs::msg::Int16>::SharedPtr topic_motorcontrol_publisher_;
 
     rclcpp::TimerBase::SharedPtr timer_;
     std::string speedlimit_message_;

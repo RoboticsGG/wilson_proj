@@ -8,14 +8,14 @@
 class Node_Command : public rclcpp::Node {
 public:
     Node_Command()
-    : Node("node_command"), speedlimit_(30), test_text_("Default"), des_a_(0), des_b_(0) {
+    : Node("node_command"), speedlimit_(30), test_con_("FW"), des_a_(0), des_b_(0) {
 
         topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit", 10);
         topic_destination_publisher_ = this->create_publisher<std_msgs::msg::UInt16MultiArray>("topic_destination", 10);
         //topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Int32>("topic_destination", 10);
 
         this->declare_parameter<int>("speedlimit", speedlimit_);
-        this->declare_parameter<std::string>("test_text", test_text_);
+        this->declare_parameter<std::string>("test_con", test_con_);
         this->declare_parameter<int>("des_a", des_a_);
         this->declare_parameter<int>("des_b", des_b_);
 
@@ -40,7 +40,7 @@ private:
                     return result;
                 }
                 speedlimit_ = param.as_int();
-            } else if (param.get_name() == "test_text" && param.get_type() == rclcpp::ParameterType::PARAMETER_STRING) {
+            } else if (param.get_name() == "test_con" && param.get_type() == rclcpp::ParameterType::PARAMETER_STRING) {
                 test_text_ = param.as_string();
             } else if (param.get_name() == "des_a" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
                 des_a_ = param.as_int();
@@ -56,7 +56,7 @@ private:
     void publish_parameters() {
         // Pub topic_speedlimit
         auto speed_message = std_msgs::msg::String();
-        speed_message.data = std::to_string(speedlimit_) + ", " + test_text_;
+        speed_message.data = std::to_string(speedlimit_) + ", " + test_con_;
         RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", speed_message.data.c_str());
         topic_speedlimit_publisher_->publish(speed_message);
 

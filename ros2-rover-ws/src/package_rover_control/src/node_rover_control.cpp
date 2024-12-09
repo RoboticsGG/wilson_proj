@@ -29,6 +29,7 @@ public:
 
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
         topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rovercontrol", 10);
+        topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 10);
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(1),  // Set interval to 1 second
@@ -42,7 +43,14 @@ private:
     void topic_speedlimit_callback(const std_msgs::msg::String::SharedPtr msg) {
         speedlimit_message_ = msg->data;
         message_updated_ = true;
+
         RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
+
+        auto pub_testcon = std_msgs::msg::String();
+        pub_testcon.data = speedlimit_message_;
+        topic_testcontrol_publisher_->publish(pub_testcon);
+
+        RCLCPP_INFO(this->get_logger(), "Published to pub_testcontrol: '%s'", pub_testcon.data.c_str());
     }
 
     void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){

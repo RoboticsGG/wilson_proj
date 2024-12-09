@@ -67,7 +67,7 @@ private:
     void timer_callback(){
         if (message_updated_){
             try {
-                // std::vector<int> values = parse_speedlimit_message(speedlimit_message_);
+                // std::vector<int> values = parse_speedlimit_message(speedlimit_message_); //ตัวอย่าง string stream
                 //Motors_Rovercontrol motor_controller;
                 //int result = motor_controller.test(values[0], values[1]); //Example call function
 
@@ -87,39 +87,6 @@ private:
         }
     }
 
-    // void timer_callback(){
-    //     if (!speedlimit_message_.empty()){
-    //         try {
-    //             std::vector<int> values = parse_speedlimit_message(speedlimit_message_);
-    //             if (values.size() == 2){
-    //                 Motors_Rovercontrol motor_controller;
-    //                 int result = motor_controller.test(values[0], values[1]); //compute
-
-    //                 auto result_msg = std::make_shared<std_msgs::msg::Int32>();
-    //                 result_msg->data = result;
-
-    //                 topic_motorcontrol_publisher_->publish(*result_msg);
-
-    //                 RCLCPP_INFO(this->get_logger(), "Publisher Rovercontrol: '%d'", result);
-    //             } else {
-    //                 RCLCPP_WARN(this->get_logger(), "Expected two but got: '%s'", speedlimit_message_.c_str());
-    //             }
-    //         } catch (const std::exception &e){
-    //             RCLCPP_WARN(this->get_logger(), "Error processing speed limit message: '%s'", speedlimit_message_.c_str());
-    //         }
-    //     } else {
-    //         RCLCPP_INFO(this->get_logger(), "Waiting for message on topic_speedlimit...");
-    //     }
-    // }
-
-    // void timer_callback() {
-    //     //logging current value of the message
-    //     if (!speedlimit_message_.empty()) {
-    //         RCLCPP_INFO(this->get_logger(), "Current speed limit: '%s'", speedlimit_message_.c_str());
-    //     } else {
-    //         RCLCPP_INFO(this->get_logger(), "Waiting for messages on topic_speedlimit...");
-    //     }
-    // }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // std::vector<int> parse_speedlimit_message(const std::string &message){
     //     std::vector<int> result;

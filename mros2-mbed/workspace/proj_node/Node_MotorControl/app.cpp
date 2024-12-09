@@ -2,8 +2,11 @@
 #include "mros2-platform.h"
 #include "std_msgs/msg/string.hpp"
 #include "std_msgs/msg/u_int16.hpp"
-
+#include <string>
+#include <iostream>
 #include "mbed.h"
+
+using namespace std;
 
 DigitalIn signalPinA(PF_13);
 DigitalIn signalPinB(PF_14);
@@ -18,13 +21,20 @@ int encoderInB = 0;
 
 string Direction = "";
 
+void parseDirection(const string& direction, int& speed, string& movement) {
+    size_t commaPos = direction.find(',');
+    if (commaPos != string::npos) {
+        speed = stoi(direction.substr(0, commaPos)); 
+        movement = direction.substr(commaPos + 1);    
+    }
+}
+
 void userCallback(std_msgs::msg::String *msg){
     MROS2_INFO("sub msg: '%d'", msg->data);
     Direction = msg->data;
 }
 
 int main(){
-
     signalPinA.mode(PullUp);
     signalPinB.mode(PullUp); 
     MortorEN.write(1);
@@ -51,25 +61,29 @@ int main(){
     osDelay(100);
     MROS2_INFO("ready to pub/sub message\r\n---");
 
-    if (Direction == "FW"){
-        MortorRPWM.period_us(50);
-        MortorRPWM.write(0.90f);
-        MortorLPWM.period_us(50);
-        MortorLPWM.write(0.0f);
-    } else if (Direction == "BW"){
-        MortorRPWM.period_us(50);
-        MortorRPWM.write(0.00f);
-        MortorLPWM.period_us(50);
-        MortorLPWM.write(0.90f);
-    } else {
-        MortorRPWM.period_us(50);
-        MortorRPWM.write(0.00f);
-        MortorLPWM.period_us(50);
-        MortorLPWM.write(0.00f);
-    }
+    int speed = 0;
+    string movement = "";
 
-    auto count = 0;
     while(1){
+         parseDirection(Direction, speed, movement);
+
+        if (movement == "FW") {
+            MortorRPWM.period_us(50);
+            MortorRPWM.write(speed / 100.0f);
+            MortorLPWM.period_us(50);
+            MortorLPWM.write(0.0f);
+        } else if (movement == "BW") {
+            MortorRPWM.period_us(50);
+            MortorRPWM.write(0.0f);
+            MortorLPWM.period_us(50);
+            MortorLPWM.write(speed / 100.0f); 
+        } else {
+            MortorRPWM.period_us(50);
+            MortorRPWM.write(0.0f);
+            MortorLPWM.period_us(50);
+            MortorLPWM.write(0.0f);
+        }
+
         auto msg_incli = std_msgs::msg::String();
         msg_incli.data = "Inclination test";
         MROS2_INFO("Inclination : '%s'", msg_incli.data.c_str());

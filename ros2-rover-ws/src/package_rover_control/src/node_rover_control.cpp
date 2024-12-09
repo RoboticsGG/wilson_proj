@@ -76,7 +76,7 @@ private:
                 result_msg.data = speedlimit_message_;
                 topic_motorcontrol_publisher_->publish(result_msg);
 
-                RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%s'", result_msg);
+                RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%s'", speedlimit_message_.c_str());
             } catch(const std::exception& e) {
                 RCLCPP_INFO(this->get_logger(), "Waiting for updated messages on topic_speedlimit...");
                 // std::cerr << e.what() << '\n';

@@ -146,10 +146,11 @@ private:
     }
 
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
-    rclcpp::Subscription<std_msgs::msg::Int32MultiArray>::SharedPtr topic_destination_subscription_;
+    rclcpp::Subscription<std_msgs::msg::UInt32MultiArray>::SharedPtr topic_destination_subscription_;
     
     //rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr topic_motorcontrol_publisher_;
     rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_motorcontrol_publisher_;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_testcontrol_publisher_;
 
     rclcpp::TimerBase::SharedPtr timer_;
     std::string speedlimit_message_;

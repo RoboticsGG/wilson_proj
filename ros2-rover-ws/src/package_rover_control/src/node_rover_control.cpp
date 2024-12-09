@@ -67,9 +67,9 @@ private:
     void timer_callback(){
         if (message_updated_){
             try {
-                std::vector<int> values = parse_speedlimit_message(speedlimit_message_);
-                Motors_Rovercontrol motor_controller;
-                int result = motor_controller.test(values[0], values[1]); //Example call function
+                // std::vector<int> values = parse_speedlimit_message(speedlimit_message_);
+                //Motors_Rovercontrol motor_controller;
+                //int result = motor_controller.test(values[0], values[1]); //Example call function
 
                 //auto result_msg = std_msgs::msg::Int32();
                 auto result_msg = std_msgs::msg::UInt16();
@@ -120,7 +120,7 @@ private:
     //         RCLCPP_INFO(this->get_logger(), "Waiting for messages on topic_speedlimit...");
     //     }
     // }
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // std::vector<int> parse_speedlimit_message(const std::string &message){
     //     std::vector<int> result;
     //     std::stringstream ss(message);
@@ -140,6 +140,8 @@ private:
 
     //     return result;
     // }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
     rclcpp::Subscription<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_subscription_;

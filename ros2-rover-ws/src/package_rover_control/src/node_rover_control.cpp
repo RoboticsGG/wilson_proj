@@ -72,7 +72,7 @@ private:
                 //int result = motor_controller.test(values[0], values[1]); //Example call function
 
                 //auto result_msg = std_msgs::msg::Int32();
-                auto result_msg = std_msgs::msg::UInt16();
+                auto result_msg = std_msgs::msg::String();
                 result_msg.data = speedlimit_message_;
                 topic_motorcontrol_publisher_->publish(result_msg);
 

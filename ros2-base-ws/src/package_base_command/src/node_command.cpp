@@ -62,7 +62,8 @@ private:
 
         // Pub topic_destination
         auto destination_message = std_msgs::msg::UInt16MultiArray();
-        destination_message.data = {des_a_, des_b_};
+        destination_message.data = {static_cast<uint16_t>(des_a_), static_cast<uint16_t>(des_b_)};
+        //destination_message.data = {des_a_, des_b_};
         RCLCPP_INFO(this->get_logger(), "Publishing to topic_destination: [%d, %d]", des_a_, des_b_);
         topic_destination_publisher_->publish(destination_message);
         // auto des_a_message = std_msgs::msg::Int32();

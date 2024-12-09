@@ -2,8 +2,8 @@
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/int32.hpp>
 #include <std_msgs/msg/int32_multi_array.hpp>
-#include <std_msgs/msg/int16.hpp>
-#include <std_msgs/msg/int16_multi_array.hpp>
+#include <std_msgs/msg/uint16.hpp>
+#include <std_msgs/msg/uint16_multi_array.hpp>
 #include <sstream>
 #include <vector>
 
@@ -22,13 +22,13 @@ public:
             std::bind(&Node_Rovercontrol::topic_speedlimit_callback, this, std::placeholders::_1)
         );
 
-        topic_destination_subscription_ = this->create_subscription<std_msgs::msg::Int32MultiArray>(
+        topic_destination_subscription_ = this->create_subscription<std_msgs::msg::UInt16MultiArray>(
             "topic_destination", 10,
             std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::_1)
         );
 
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
-        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int16>("pub_rovercontrol", 10);
+        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rovercontrol", 10);
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(1),  // Set interval to 1 second
@@ -45,7 +45,7 @@ private:
         RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
     }
 
-    void topic_destination_callback(const std_msgs::msg::Int32MultiArray::SharedPtr msg){
+    void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){
     //void topic_destination_callback(const std_msgs::msg::Int16MultiArray::SharedPtr msg){
         if (msg->data.size()==2) {
             destination_a_ = msg->data[0];

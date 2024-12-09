@@ -1,7 +1,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
-#include <std_msgs/msg/int16.hpp>
-#include <std_msgs/msg/int16_multi_array.hpp> 
+#include <std_msgs/msg/uint16.hpp>
+#include <std_msgs/msg/uint16_multi_array.hpp> 
 #include <std_msgs/msg/int32.hpp>
 #include <std_msgs/msg/int32_multi_array.hpp> 
 
@@ -11,7 +11,7 @@ public:
     : Node("node_command"), speedlimit_(30), test_text_("Default"), des_a_(0), des_b_(0) {
 
         topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit", 10);
-        topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Int32MultiArray>("topic_destination", 10);
+        topic_destination_publisher_ = this->create_publisher<std_msgs::msg::UInt16MultiArray>("topic_destination", 10);
         //topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Int32>("topic_destination", 10);
 
         this->declare_parameter<int>("speedlimit", speedlimit_);
@@ -61,7 +61,7 @@ private:
         topic_speedlimit_publisher_->publish(speed_message);
 
         // Pub topic_destination
-        auto destination_message = std_msgs::msg::Int32MultiArray();
+        auto destination_message = std_msgs::msg::UInt16MultiArray();
         destination_message.data = {des_a_, des_b_};
         RCLCPP_INFO(this->get_logger(), "Publishing to topic_destination: [%d, %d]", des_a_, des_b_);
         topic_destination_publisher_->publish(destination_message);

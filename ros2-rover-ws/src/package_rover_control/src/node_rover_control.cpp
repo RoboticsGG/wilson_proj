@@ -73,7 +73,7 @@ private:
 
                 //auto result_msg = std_msgs::msg::Int32();
                 auto result_msg = std_msgs::msg::UInt16();
-                result_msg.data = result;
+                result_msg.data = speedlimit_message_;
                 topic_motorcontrol_publisher_->publish(result_msg);
 
                 RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%d'", result);

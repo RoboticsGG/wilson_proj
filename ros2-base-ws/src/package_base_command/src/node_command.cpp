@@ -41,7 +41,7 @@ private:
                 }
                 speedlimit_ = param.as_int();
             } else if (param.get_name() == "test_con" && param.get_type() == rclcpp::ParameterType::PARAMETER_STRING) {
-                test_text_ = param.as_string();
+                test_con_ = param.as_string();
             } else if (param.get_name() == "des_a" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
                 des_a_ = param.as_int();
             } else if (param.get_name() == "des_b" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {

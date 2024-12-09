@@ -68,19 +68,15 @@ private:
         if (message_updated_){
             try {
                 std::vector<int> values = parse_speedlimit_message(speedlimit_message_);
-                if (values.size() == 2){
-                    Motors_Rovercontrol motor_controller;
-                    int result = motor_controller.test(values[0], values[1]); //Example call function
+                Motors_Rovercontrol motor_controller;
+                int result = motor_controller.test(values[0], values[1]); //Example call function
 
-                    //auto result_msg = std_msgs::msg::Int32();
-                    auto result_msg = std_msgs::msg::UInt16();
-                    result_msg.data = result;
-                    topic_motorcontrol_publisher_->publish(result_msg);
+                //auto result_msg = std_msgs::msg::Int32();
+                auto result_msg = std_msgs::msg::UInt16();
+                result_msg.data = result;
+                topic_motorcontrol_publisher_->publish(result_msg);
 
-                    RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%d'", result);
-                } else {
-                    RCLCPP_WARN(this->get_logger(), "Expected two integers, but received: '%s'", speedlimit_message_.c_str());
-                }
+                RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%d'", result);
             } catch(const std::exception& e) {
                 RCLCPP_INFO(this->get_logger(), "Waiting for updated messages on topic_speedlimit...");
                 // std::cerr << e.what() << '\n';

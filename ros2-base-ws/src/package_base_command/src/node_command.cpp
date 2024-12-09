@@ -1,7 +1,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
-#include <std_msgs/msg/uint16.hpp>
-#include <std_msgs/msg/uint16_multi_array.hpp> 
+#include <std_msgs/msg/u_int16.hpp>
+#include <std_msgs/msg/u_int16_multi_array.hpp> 
 #include <std_msgs/msg/int32.hpp>
 #include <std_msgs/msg/int32_multi_array.hpp> 
 

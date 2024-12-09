@@ -81,7 +81,7 @@ private:
                 RCLCPP_INFO(this->get_logger(), "Waiting for updated messages on topic_speedlimit...");
                 // std::cerr << e.what() << '\n';
             }
-            message_updated_ = false;
+            //message_updated_ = false; ////////pub เฉพาะตอนค่าเปลี่ยน
         } else {
             RCLCPP_INFO(this->get_logger(), "Waiting for updated messages on topic_speedlimit...");
         }

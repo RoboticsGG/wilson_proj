@@ -81,7 +81,7 @@ private:
                 RCLCPP_INFO(this->get_logger(), "Waiting for updated messages on topic_speedlimit...");
                 // std::cerr << e.what() << '\n';
             }
-            //message_updated_ = false; ////////pub เฉพาะตอนค่าเปลี่ยน
+            message_updated_ = false; ////////pub เฉพาะตอนค่าเปลี่ยน
         } else {
             RCLCPP_INFO(this->get_logger(), "Waiting for updated messages on topic_speedlimit...");
         }
@@ -121,25 +121,25 @@ private:
     //     }
     // }
 
-    std::vector<int> parse_speedlimit_message(const std::string &message){
-        std::vector<int> result;
-        std::stringstream ss(message);
-        std::string token;
+    // std::vector<int> parse_speedlimit_message(const std::string &message){
+    //     std::vector<int> result;
+    //     std::stringstream ss(message);
+    //     std::string token;
 
-        while (std::getline(ss, token, ',')){
-            try{
-                result.push_back(std::stoi(token));
-            } catch (const std::invalid_argument &e){
-                RCLCPP_WARN(this->get_logger(), "Invalid token in message: '%s'", token.c_str());
-            }
-        }
+    //     while (std::getline(ss, token, ',')){
+    //         try{
+    //             result.push_back(std::stoi(token));
+    //         } catch (const std::invalid_argument &e){
+    //             RCLCPP_WARN(this->get_logger(), "Invalid token in message: '%s'", token.c_str());
+    //         }
+    //     }
 
-        if (result.size() != 2){
-            throw std::runtime_error("Invalid number of values in message. Expected 2 integers.");
-        }
+    //     if (result.size() != 2){
+    //         throw std::runtime_error("Invalid number of values in message. Expected 2 integers.");
+    //     }
 
-        return result;
-    }
+    //     return result;
+    // }
 
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
     rclcpp::Subscription<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_subscription_;

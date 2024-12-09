@@ -73,7 +73,7 @@ private:
                     int result = motor_controller.test(values[0], values[1]); //Example call function
 
                     //auto result_msg = std_msgs::msg::Int32();
-                    auto result_msg = std_msgs::msg::Int16();
+                    auto result_msg = std_msgs::msg::UInt16();
                     result_msg.data = result;
                     topic_motorcontrol_publisher_->publish(result_msg);
 
@@ -149,7 +149,7 @@ private:
     rclcpp::Subscription<std_msgs::msg::Int32MultiArray>::SharedPtr topic_destination_subscription_;
     
     //rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr topic_motorcontrol_publisher_;
-    rclcpp::Publisher<std_msgs::msg::Int16>::SharedPtr topic_motorcontrol_publisher_;
+    rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_motorcontrol_publisher_;
 
     rclcpp::TimerBase::SharedPtr timer_;
     std::string speedlimit_message_;

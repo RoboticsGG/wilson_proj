@@ -78,7 +78,7 @@ private:
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr topic_destination_publisher_;
 
     int speedlimit_;
-    std::string test_text_;
+    std::string test_con_;
     int des_a_;
     int des_b_;
 

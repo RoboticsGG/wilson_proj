@@ -28,22 +28,6 @@ string Direction = "ST";
 //         movement = direction.substr(commaPos + 1);    
 //     }
 // }
-void parseDirection(const std::string& direction, int& speed, std::string& movement) {
-    int commaPos = direction.find(',');
-    if (commaPos != -1) {
-        try {
-            speed = std::stoi(direction.substr(0, commaPos)); 
-            movement = direction.substr(commaPos + 1);        
-        } catch (const std::invalid_argument& e) {
-            throw std::runtime_error("Invalid input: Could not convert speed to an integer.");
-        } catch (const std::out_of_range& e) {
-            throw std::runtime_error("Invalid input: Speed value is out of range.");
-        }
-    } else {
-        throw std::runtime_error("Invalid input: No comma found in the direction string.");
-    }
-}
-
 
 void userCallback(std_msgs::msg::String *msg){
     MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
@@ -82,7 +66,7 @@ int main(){
     string movement = "";
 
     while(1){
-         parseDirection(Direction, speed, movement);
+        parseDirection(Direction, speed, movement);
 
         if (movement == "FW") {
             MortorRPWM.period_us(50);

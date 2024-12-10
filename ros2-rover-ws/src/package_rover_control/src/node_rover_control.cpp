@@ -50,11 +50,6 @@ private:
         // pub_testcon.data = speedlimit_message_;
         // topic_testcontrol_publisher_->publish(pub_testcon);
         // RCLCPP_INFO(this->get_logger(), "Published to pub_testcontrol: '%s'", pub_testcon.data.c_str());
-
-        auto result_msg = std_msgs::msg::String();
-        result_msg.data = speedlimit_message_;
-        topic_motorcontrol_publisher_->publish(result_msg);
-        RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%s'", speedlimit_message_.c_str());
     }
 
     void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){
@@ -68,32 +63,32 @@ private:
         }
     }
 
-    // void timer_callback(){
-    //     auto result_msg = std_msgs::msg::String();
-    //     result_msg.data = speedlimit_message_;
-    //     topic_motorcontrol_publisher_->publish(result_msg);
-    //     RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%s'", speedlimit_message_.c_str());
-    //     // if (message_updated_){
-    //     //     try {
-    //     //         // std::vector<int> values = parse_speedlimit_message(speedlimit_message_); //ตัวอย่าง string stream
-    //     //         //Motors_Rovercontrol motor_controller;
-    //     //         //int result = motor_controller.test(values[0], values[1]); //Example call function
+    void timer_callback(){
+        auto result_msg = std_msgs::msg::String();
+        result_msg.data = speedlimit_message_;
+        topic_motorcontrol_publisher_->publish(result_msg);
+        RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%s'", speedlimit_message_.c_str());
+        // if (message_updated_){
+        //     try {
+        //         // std::vector<int> values = parse_speedlimit_message(speedlimit_message_); //ตัวอย่าง string stream
+        //         //Motors_Rovercontrol motor_controller;
+        //         //int result = motor_controller.test(values[0], values[1]); //Example call function
 
-    //     //         //auto result_msg = std_msgs::msg::Int32();
-    //     //         auto result_msg = std_msgs::msg::String();
-    //     //         result_msg.data = speedlimit_message_;
-    //     //         topic_motorcontrol_publisher_->publish(result_msg);
+        //         //auto result_msg = std_msgs::msg::Int32();
+        //         auto result_msg = std_msgs::msg::String();
+        //         result_msg.data = speedlimit_message_;
+        //         topic_motorcontrol_publisher_->publish(result_msg);
 
-    //     //         RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%s'", speedlimit_message_.c_str());
-    //     //     } catch(const std::exception& e) {
-    //     //         RCLCPP_INFO(this->get_logger(), "Waiting for updated messages on topic_speedlimit...");
-    //     //         // std::cerr << e.what() << '\n';
-    //     //     }
-    //     //     message_updated_ = false; ////////pub เฉพาะตอนค่าเปลี่ยน
-    //     // } else {
-    //     //     RCLCPP_INFO(this->get_logger(), "Waiting for updated messages on topic_speedlimit...");
-    //     // }
-    // }
+        //         RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%s'", speedlimit_message_.c_str());
+        //     } catch(const std::exception& e) {
+        //         RCLCPP_INFO(this->get_logger(), "Waiting for updated messages on topic_speedlimit...");
+        //         // std::cerr << e.what() << '\n';
+        //     }
+        //     message_updated_ = false; ////////pub เฉพาะตอนค่าเปลี่ยน
+        // } else {
+        //     RCLCPP_INFO(this->get_logger(), "Waiting for updated messages on topic_speedlimit...");
+        // }
+    }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // std::vector<int> parse_speedlimit_message(const std::string &message){

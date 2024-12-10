@@ -30,7 +30,7 @@ void parseDirection(const string& direction, int& speed, string& movement) {
 }
 
 void userCallback(std_msgs::msg::String *msg){
-    MROS2_INFO("sub msg: '%d'", msg->data);
+    MROS2_INFO("sub msg: '%s'", msg->data);
     Direction = msg->data;
 }
 
@@ -53,10 +53,10 @@ int main(){
     mros2::init(0, NULL);
     MROS2_DEBUG("mROS2 initialization is completed");
 
-    mros2::Node node = mros2::Node::create_node("mros2_node")
+    mros2::Node node = mros2::Node::create_node("mros2_node");
     mros2::Publisher inclination = node.create_publisher<std_msgs::msg::String>("topic_roverinclination", 10);
     mros2::Publisher movefeedback = node.create_publisher<std_msgs::msg::String>("topic_movefeedback", 10);
-    mros2::Subscriber rovercontrol = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, userCallback)
+    mros2::Subscriber rovercontrol = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, userCallback);
 
     osDelay(100);
     MROS2_INFO("ready to pub/sub message\r\n---");

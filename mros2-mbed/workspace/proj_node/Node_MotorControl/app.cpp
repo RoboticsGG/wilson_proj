@@ -36,18 +36,17 @@ int main()
   osDelay(100);
   MROS2_INFO("ready to pub/sub message\r\n---");
 
-  auto count = 0;
   while (1)
   {
-    auto msg_movefeed = std_msgs::msg::String();
-    msg_movefeed.data = "MoveFeedback test";
-    MROS2_INFO("MoveFeedback : '%s'", msg_movefeed.data.c_str());
-    movefeedback.publish(msg_movefeed);
-    osDelay(500);
-    auto msg_incli = std_msgs::msg::String();
-    msg_incli.data = "Inclination test";
-    MROS2_INFO("Inclination : '%s'", msg_incli.data.c_str());
-    inclination.publish(msg_incli);
+    // auto msg_movefeed = std_msgs::msg::String();
+    // msg_movefeed.data = "MoveFeedback test";
+    // MROS2_INFO("MoveFeedback : '%s'", msg_movefeed.data.c_str());
+    // movefeedback.publish(msg_movefeed);
+    // osDelay(500);
+    // auto msg_incli = std_msgs::msg::String();
+    // msg_incli.data = "Inclination test";
+    // MROS2_INFO("Inclination : '%s'", msg_incli.data.c_str());
+    // inclination.publish(msg_incli);
 
     // auto msg = std_msgs::msg::String();
     // msg.data = "Hello from " + std::string(MROS2_PLATFORM_NAME) + " onto " + quote(TARGET_NAME) + ": " + std::to_string(count++);

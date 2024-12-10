@@ -27,11 +27,11 @@ int main()
   MROS2_DEBUG("mROS 2 initialization is completed");
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
+  //mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
   mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("topic_speedlimit", 10, userCallback);
 
   osDelay(100);
-  MROS2_INFO("ready to pub/sub message\r\n---");
+  MROS2_INFO("ready to sub message\r\n---");
 
 //   auto count = 0;
 //   while (1)

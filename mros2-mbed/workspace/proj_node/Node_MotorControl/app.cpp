@@ -28,7 +28,7 @@ int main()
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
   mros2::Subscriber rovercontrol = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, userCallback);
-  mros2::Publisher inclination = node.create_publisher<std_msgs::msg::String>("topic_roverinclination", 10);
+  //mros2::Publisher inclination = node.create_publisher<std_msgs::msg::String>("topic_roverinclination", 10);
   mros2::Publisher movefeedback = node.create_publisher<std_msgs::msg::String>("topic_movefeedback", 10);
   //mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
   //mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("to_stm", 10, userCallback);
@@ -38,11 +38,11 @@ int main()
 
   while (1)
   {
-    // auto msg_movefeed = std_msgs::msg::String();
-    // msg_movefeed.data = "MoveFeedback test";
-    // MROS2_INFO("MoveFeedback : '%s'", msg_movefeed.data.c_str());
-    // movefeedback.publish(msg_movefeed);
-    // osDelay(500);
+    auto msg_movefeed = std_msgs::msg::String();
+    msg_movefeed.data = "MoveFeedback test";
+    MROS2_INFO("MoveFeedback : '%s'", msg_movefeed.data.c_str());
+    movefeedback.publish(msg_movefeed);
+
     // auto msg_incli = std_msgs::msg::String();
     // msg_incli.data = "Inclination test";
     // MROS2_INFO("Inclination : '%s'", msg_incli.data.c_str());

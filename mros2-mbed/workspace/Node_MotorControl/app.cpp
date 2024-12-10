@@ -21,13 +21,29 @@ int encoderInB = 0;
 
 string Direction = "ST";
 
-void parseDirection(const string& direction, int& speed, string& movement) {
-    size_t commaPos = direction.find(',');
-    if (commaPos != string::npos) {
-        speed = stoi(direction.substr(0, commaPos)); 
-        movement = direction.substr(commaPos + 1);    
+// void parseDirection(const string& direction, int& speed, string& movement) {
+//     size_t commaPos = direction.find(',');
+//     if (commaPos != string::npos) {
+//         speed = stoi(direction.substr(0, commaPos)); 
+//         movement = direction.substr(commaPos + 1);    
+//     }
+// }
+void parseDirection(const std::string& direction, int& speed, std::string& movement) {
+    int commaPos = direction.find(',');
+    if (commaPos != -1) {
+        try {
+            speed = std::stoi(direction.substr(0, commaPos)); 
+            movement = direction.substr(commaPos + 1);        
+        } catch (const std::invalid_argument& e) {
+            throw std::runtime_error("Invalid input: Could not convert speed to an integer.");
+        } catch (const std::out_of_range& e) {
+            throw std::runtime_error("Invalid input: Speed value is out of range.");
+        }
+    } else {
+        throw std::runtime_error("Invalid input: No comma found in the direction string.");
     }
 }
+
 
 void userCallback(std_msgs::msg::String *msg){
     MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
@@ -54,9 +70,10 @@ int main(){
     MROS2_DEBUG("mROS2 initialization is completed");
 
     mros2::Node node = mros2::Node::create_node("mros2_node");
+    mros2::Subscriber rovercontrol = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, userCallback);
     mros2::Publisher inclination = node.create_publisher<std_msgs::msg::String>("topic_roverinclination", 10);
     mros2::Publisher movefeedback = node.create_publisher<std_msgs::msg::String>("topic_movefeedback", 10);
-    mros2::Subscriber rovercontrol = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, userCallback);
+    
 
     osDelay(100);
     MROS2_INFO("ready to pub/sub message\r\n---");

@@ -9,7 +9,7 @@ void userCallback(std_msgs::msg::String *msg)
 
 int main()
 {
-  /* connect to the network */
+  ///* connect to the network */
   if (mros2_platform::network_connect())
   {
     MROS2_ERROR("failed to connect and setup network! aborting,,,");

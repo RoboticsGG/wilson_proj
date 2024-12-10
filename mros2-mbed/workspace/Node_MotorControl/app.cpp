@@ -92,7 +92,7 @@ int main(){
         auto msg_movefeed = std_msgs::msg::String();
         msg_movefeed.data = "MoveFeedback test";
         MROS2_INFO("MoveFeedback : '%s'", msg_movefeed.data.c_str());
-        movefeedback.data(msg_movefeed);
+        movefeedback.publish(msg_movefeed);
 
         osDelay(500);
     }

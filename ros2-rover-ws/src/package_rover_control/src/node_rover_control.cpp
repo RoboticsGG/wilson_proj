@@ -31,10 +31,10 @@ public:
         topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
         topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 10);
 
-        timer_ = this->create_wall_timer(
-            std::chrono::seconds(1),  // Set interval to 1 second
-            std::bind(&Node_Rovercontrol::timer_callback, this)
-        );
+        // timer_ = this->create_wall_timer(
+        //     std::chrono::seconds(1),  // Set interval to 1 second
+        //     std::bind(&Node_Rovercontrol::timer_callback, this)
+        // );
 
         RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized and listening...");
     }

@@ -30,6 +30,7 @@ void parseDirection(const string& direction, int& speed, string& movement) {
 }
 
 void userCallback(std_msgs::msg::String *msg){
+    auto msg_received = std_msgs::msg::String();
     msg_received = msg->data;
     MROS2_INFO("sub msg: '%s'", msg_received.c_str());
     Direction = msg->data;

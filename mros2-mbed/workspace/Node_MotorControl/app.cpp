@@ -19,9 +19,9 @@ DigitalOut MortorEN(PE_13);
 int encoderInA = 0;
 int encoderInB = 0;
 
-string Direction = "ST";
+string direction = "ST";
 
-void parseDirection(const string& direction, int& speed, string& movement) {
+void parseDirection(const direction, int& speed, string& movement) {
     size_t commaPos = direction.find(',');
     if (commaPos != string::npos) {
         speed = stoi(direction.substr(0, commaPos)); 
@@ -30,7 +30,8 @@ void parseDirection(const string& direction, int& speed, string& movement) {
 }
 
 void userCallback(std_msgs::msg::String *msg){
-    MROS2_INFO("sub msg: '%s'", msg->data);
+    msg_received = msg->data;
+    MROS2_INFO("sub msg: '%s'", msg_received.c_str());
     Direction = msg->data;
 }
 

@@ -19,7 +19,7 @@ DigitalOut MortorEN(PE_13);
 int encoderInA = 0;
 int encoderInB = 0;
 
-string Direction = "";
+string Direction = "ST";
 
 void parseDirection(const string& direction, int& speed, string& movement) {
     size_t commaPos = direction.find(',');

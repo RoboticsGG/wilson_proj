@@ -38,8 +38,8 @@ int main()
   {
     auto msg = std_msgs::msg::String();
     msg.data = "Hello from " + std::string(MROS2_PLATFORM_NAME) + " onto " + quote(TARGET_NAME) + ": " + std::to_string(count++);
-    MROS2_INFO("publishing msg: '%s'", msg.data.c_str());
-    pub.publish(msg);
+    //MROS2_INFO("publishing msg: '%s'", msg.data.c_str());
+    //pub.publish(msg);
     osDelay(1000);
   }
 

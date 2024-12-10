@@ -46,11 +46,15 @@ private:
 
         RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
 
-        auto pub_testcon = std_msgs::msg::String();
-        pub_testcon.data = speedlimit_message_;
-        topic_testcontrol_publisher_->publish(pub_testcon);
+        // auto pub_testcon = std_msgs::msg::String();
+        // pub_testcon.data = speedlimit_message_;
+        // topic_testcontrol_publisher_->publish(pub_testcon);
+        // RCLCPP_INFO(this->get_logger(), "Published to pub_testcontrol: '%s'", pub_testcon.data.c_str());
 
-        RCLCPP_INFO(this->get_logger(), "Published to pub_testcontrol: '%s'", pub_testcon.data.c_str());
+        auto result_msg = std_msgs::msg::String();
+        result_msg.data = speedlimit_message_;
+        topic_motorcontrol_publisher_->publish(result_msg);
+        RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%s'", speedlimit_message_.c_str());
     }
 
     void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){

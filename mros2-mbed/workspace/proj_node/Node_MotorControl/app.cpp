@@ -8,18 +8,18 @@
 
 using namespace std;
 
-DigitalIn signalPinA(PF_13);
-DigitalIn signalPinB(PF_14);
+// DigitalIn signalPinA(PF_13);
+// DigitalIn signalPinB(PF_14);
 
-PwmOut MortorRPWM(PE_11);
-PwmOut MortorLPWM(PD_15);
+// PwmOut MortorRPWM(PE_11);
+// PwmOut MortorLPWM(PD_15);
 
-DigitalOut MortorEN(PE_13);
+// DigitalOut MortorEN(PE_13);
 
-int encoderInA = 0;
-int encoderInB = 0;
+// int encoderInA = 0;
+// int encoderInB = 0;
 
-string Direction = "ST";
+// string Direction = "ST";
 
 // void parseDirection(const string& direction, int& speed, string& movement) {
 //     size_t commaPos = direction.find(',');
@@ -35,9 +35,9 @@ void userCallback(std_msgs::msg::String *msg){
 }
 
 int main(){
-    signalPinA.mode(PullUp);
-    signalPinB.mode(PullUp); 
-    MortorEN.write(1);
+    // signalPinA.mode(PullUp);
+    // signalPinB.mode(PullUp); 
+    // MortorEN.write(1);
 
     if (mros2_platform::network_connect()){
         MROS2_ERROR("failed to connect and setup network! aborting...");

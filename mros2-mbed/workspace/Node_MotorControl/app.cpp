@@ -2,6 +2,7 @@
 #include "mros2-platform.h"
 #include "std_msgs/msg/string.hpp"
 #include "std_msgs/msg/u_int16.hpp"
+#include <cstdlib>
 #include <string>
 #include <iostream>
 #include "mbed.h"

@@ -91,13 +91,6 @@ private:
         // }
     }
 
-    void timer_callback(){
-        auto result_msg = std_msgs::msg::String();
-        result_msg.data = speedlimit_message_;
-        topic_motorcontrol_publisher_->publish(result_msg);
-        RCLCPP_INFO(this->get_logger(), "Published Rovercontrol result: '%s'", speedlimit_message_.c_str());
-    }
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // std::vector<int> parse_speedlimit_message(const std::string &message){
     //     std::vector<int> result;

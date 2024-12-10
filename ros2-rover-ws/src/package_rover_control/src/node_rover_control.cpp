@@ -42,10 +42,8 @@ public:
 private:
     void topic_speedlimit_callback(const std_msgs::msg::String::SharedPtr msg) {
         speedlimit_message_ = msg->data;
-        message_updated_ = true;
-
+        // message_updated_ = true;
         RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
-
         // auto pub_testcon = std_msgs::msg::String();
         // pub_testcon.data = speedlimit_message_;
         // topic_testcontrol_publisher_->publish(pub_testcon);

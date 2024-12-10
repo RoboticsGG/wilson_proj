@@ -65,7 +65,7 @@ int main(){
     int speed = 0;
     string movement = "";
 
-    while(1){
+    /*while(1){
         parseDirection(Direction, speed, movement);
 
         if (movement == "FW") {
@@ -96,7 +96,7 @@ int main(){
         movefeedback.publish(msg_movefeed);
 
         osDelay(500);
-    }
+    }*/
 
     mros2::spin();
     return 0;

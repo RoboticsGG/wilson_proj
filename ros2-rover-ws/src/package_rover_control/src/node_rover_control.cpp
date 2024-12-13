@@ -84,7 +84,7 @@ private:
 
         auto motor_msg = std_msgs::msg::String();
         motor_msg.data = speedlimit_message_;
-        topic_motorcontrol_publisher_->publisher(motor_msg);
+        topic_motorcontrol_publisher_->publish(motor_msg);
         //RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", motor_msg.data.c_str());
 
         auto test_msg = std_msgs::msg::String();
@@ -96,6 +96,7 @@ private:
     }
 
     void testsub_callback(const std_msgs::msg::String::SharedPtr msg){
+        auto test_message_ = std_msgs::msg::String();
         test_message_ = msg->data;
         RCLCPP_INFO(this->get_logger(), "Received on test: '%s'", test_message_.c_str());
     }

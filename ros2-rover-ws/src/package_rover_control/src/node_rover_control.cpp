@@ -41,7 +41,7 @@ public:
             std::chrono::seconds(4),  // Set interval to 1 second
             std::bind(&Node_Rovercontrol::timer_callback, this)
         );
-
+        RCLCPP_INFO(this->get_logger(), "Version : A");
         RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized and listening...");
     }
 
@@ -50,7 +50,7 @@ private:
         //std::lock_guard<std::mutex> lock(data_mutex_);
         if (speedlimit_message_ != msg->data){
             speedlimit_message_ = msg->data;
-            //RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
+            RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
         }
         // message_updated_ = true;
         // auto pub_testcon = std_msgs::msg::String();

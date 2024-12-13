@@ -29,6 +29,8 @@ public:
             std::chrono::seconds(2),  // Set interval to 1 second
             std::bind(&Node_Command::publish_parameters, this)
         );
+
+        RCLCPP_INFO(this->get_logger(), "Version : A");
     }
 
 private:

@@ -98,7 +98,7 @@ private:
     void testsub_callback(const std_msgs::msg::String::SharedPtr msg){
         auto test_message_ = std_msgs::msg::String();
         test_message_ = msg->data;
-        RCLCPP_INFO(this->get_logger(), "Received on test: '%s'", test_message_.c_str());
+        RCLCPP_INFO(this->get_logger(), "Received on test: '%s'", test_message_.data.c_str());
     }
 
     // void timer_callback(){

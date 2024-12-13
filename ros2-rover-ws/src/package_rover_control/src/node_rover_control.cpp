@@ -28,6 +28,11 @@ public:
             std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::_1)
         );
 
+        topic_test_subscription_ = this->create_subscription<std_msgs::msg::String>(
+            "to_linux", 9,
+            std::bind(&Node_Rovercontrol::testsub_callback, this, std::placeholders::_1)
+        );
+
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
         topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 8);
         topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
@@ -37,7 +42,7 @@ public:
             std::bind(&Node_Rovercontrol::timer_callback, this)
         );
 
-        RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized and listening...");
+        //RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized and listening...");
     }
 
 private:
@@ -45,7 +50,7 @@ private:
         std::lock_guard<std::mutex> lock(data_mutex_);
         if (speedlimit_message_ != msg->data){
             speedlimit_message_ = msg->data;
-            RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
+            //RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
         }
         // message_updated_ = true;
         // auto pub_testcon = std_msgs::msg::String();
@@ -66,11 +71,11 @@ private:
             if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1]){
                  destination_a_ = msg->data[0];
                 destination_b_ = msg->data[1];
-                RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %d, b = %d", destination_a_, destination_b_);
+                //RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %d, b = %d", destination_a_, destination_b_);
             }
            
         } else {
-            RCLCPP_WARN(this->get_logger(), "Invalid destination data. Expected 2 integers but got %zu.", msg->data.size());
+            //RCLCPP_WARN(this->get_logger(), "Invalid destination data. Expected 2 integers but got %zu.", msg->data.size());
         }
     }
 
@@ -80,14 +85,19 @@ private:
         auto motor_msg = std_msgs::msg::String();
         motor_msg.data = speedlimit_message_;
         topic_motorcontrol_publisher_->publisher(motor_msg);
-        RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", motor_msg.data.c_str());
+        //RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", motor_msg.data.c_str());
 
         auto test_msg = std_msgs::msg::String();
         std::stringstream ss;
         ss << "Destination: a=" << destination_a_ << ", b=" << destination_b_;
         test_msg.data = ss.str();
         topic_testcontrol_publisher_->publish(test_msg);
-        RCLCPP_INFO(this->get_logger(), "Published to pub_testcontrol: '%s'", test_msg.data.c_str());
+        //RCLCPP_INFO(this->get_logger(), "Published to pub_testcontrol: '%s'", test_msg.data.c_str());
+    }
+
+    void testsub_callback(const std_msgs::msg::String::SharedPtr msg){
+        test_message_ = msg->data;
+        RCLCPP_INFO(this->get_logger(), "Received on test: '%s'", test_message_.c_str());
     }
 
     // void timer_callback(){
@@ -117,31 +127,10 @@ private:
         // }
     // }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // std::vector<int> parse_speedlimit_message(const std::string &message){
-    //     std::vector<int> result;
-    //     std::stringstream ss(message);
-    //     std::string token;
-
-    //     while (std::getline(ss, token, ',')){
-    //         try{
-    //             result.push_back(std::stoi(token));
-    //         } catch (const std::invalid_argument &e){
-    //             RCLCPP_WARN(this->get_logger(), "Invalid token in message: '%s'", token.c_str());
-    //         }
-    //     }
-
-    //     if (result.size() != 2){
-    //         throw std::runtime_error("Invalid number of values in message. Expected 2 integers.");
-    //     }
-
-    //     return result;
-    // }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
     rclcpp::Subscription<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_subscription_;
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_test_subscription_;
     //rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr topic_motorcontrol_publisher_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_motorcontrol_publisher_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_testcontrol_publisher_;

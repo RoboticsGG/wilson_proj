@@ -43,6 +43,7 @@ int main()
   }
 
   MROS2_INFO("%s start!", MROS2_PLATFORM_NAME);
+  MROS2_INFO("Version A");
   MROS2_INFO("app name: TestSub");
 
   mros2::init(0, NULL);

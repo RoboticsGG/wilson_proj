@@ -29,12 +29,12 @@ public:
         );
 
         topic_test_subscription_ = this->create_subscription<std_msgs::msg::String>(
-            "to_linux", 9,
+            "to_linux", 8,
             std::bind(&Node_Rovercontrol::testsub_callback, this, std::placeholders::_1)
         );
 
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
-        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 8);
+        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 9);
         topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
 
         timer_ = this->create_wall_timer(

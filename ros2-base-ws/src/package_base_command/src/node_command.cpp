@@ -26,7 +26,7 @@ public:
         );
 
         timer_ = this->create_wall_timer(
-            std::chrono::seconds(60),  // Set interval to 1 second
+            std::chrono::seconds(2),  // Set interval to 1 second
             std::bind(&Node_Command::publish_parameters, this)
         );
     }

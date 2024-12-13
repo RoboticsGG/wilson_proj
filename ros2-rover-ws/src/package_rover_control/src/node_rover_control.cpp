@@ -38,7 +38,7 @@ public:
         topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
 
         timer_ = this->create_wall_timer(
-            std::chrono::seconds(10),  // Set interval to 1 second
+            std::chrono::seconds(4),  // Set interval to 1 second
             std::bind(&Node_Rovercontrol::timer_callback, this)
         );
 

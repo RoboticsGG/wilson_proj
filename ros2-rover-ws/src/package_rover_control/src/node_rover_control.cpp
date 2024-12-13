@@ -142,6 +142,8 @@ private:
 
     int destination_a_ = 0;
     int destination_b_ = 0;
+
+    std::mutex data_mutex_;
 };
 
 int main(int argc, char *argv[]) {

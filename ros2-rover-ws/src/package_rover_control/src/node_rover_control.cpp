@@ -42,7 +42,7 @@ public:
             std::bind(&Node_Rovercontrol::timer_callback, this)
         );
 
-        //RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized and listening...");
+        RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized and listening...");
     }
 
 private:
@@ -85,7 +85,7 @@ private:
         auto motor_msg = std_msgs::msg::String();
         motor_msg.data = speedlimit_message_;
         topic_motorcontrol_publisher_->publish(motor_msg);
-        //RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", motor_msg.data.c_str());
+        RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", motor_msg.data.c_str());
 
         auto test_msg = std_msgs::msg::String();
         std::stringstream ss;

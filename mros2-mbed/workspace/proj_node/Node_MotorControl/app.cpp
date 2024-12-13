@@ -49,8 +49,8 @@ int main()
   MROS2_DEBUG("mROS 2 initialization is completed");
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  pub = node.create_publisher<std_msgs::msg::String>("to_linux", 9);
-  sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 8, userCallback);
+  pub = node.create_publisher<std_msgs::msg::String>("to_linux", 8);
+  sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 9, userCallback);
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");
 

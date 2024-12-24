@@ -21,6 +21,10 @@
 #include <string>
 #include <iostream>
 
+int speed = 0;
+string movement = "";
+string Direction = "ST";
+
 void userCallback(std_msgs::msg::String *msg){
     MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
     Direction = msg->data;
@@ -54,8 +58,7 @@ int main(){
     osDelay(100);
     MROS2_INFO("ready to pub/sub message\r\n---");
 
-    int speed = 0;
-    string movement = "";
+
 
     /*while(1){
         parseDirection(Direction, speed, movement);

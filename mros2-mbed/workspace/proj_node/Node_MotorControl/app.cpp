@@ -21,7 +21,10 @@
 
 void userCallback(std_msgs::msg::String *msg)
 {
+  auto count = 0;
+  count ++;
   MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
+  MROS2_INFO(count);
 }
 
 int main()
@@ -46,7 +49,7 @@ int main()
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
   //mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
-  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 9, userCallback);
+  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, userCallback);
 
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");

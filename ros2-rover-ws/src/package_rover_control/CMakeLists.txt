@@ -67,36 +67,6 @@ install(TARGETS node_rovercontrol
   DESTINATION lib/${PROJECT_NAME})
 #---------------------------node_rover_control---------------------------------------
 
-add_executable(pub_node src/pub_node.cpp)
-ament_target_dependencies(pub_node rclcpp std_msgs)
-
-add_executable(sub_node src/sub_node.cpp)
-ament_target_dependencies(sub_node rclcpp std_msgs)
-
-add_executable(echoreply_node src/echoreply_node.cpp)
-ament_target_dependencies(echoreply_node rclcpp std_msgs)
-
-target_include_directories(pub_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
-
-target_include_directories(sub_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
-
-target_include_directories(echoreply_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
-
-install(TARGETS pub_node
-  DESTINATION lib/${PROJECT_NAME})
-
-install(TARGETS sub_node
-  DESTINATION lib/${PROJECT_NAME})
-
-install(TARGETS echoreply_node
-  DESTINATION lib/${PROJECT_NAME})
-
 # add_executable(node_motor_control src/node_motor_control.cpp)
 
 # target_compile_features(node_motor_control PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17

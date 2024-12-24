@@ -24,7 +24,7 @@ void userCallback(std_msgs::msg::String *msg)
   auto count = 0;
   count ++;
   MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
-  MROS2_INFO(count);
+  MROS2_INFO(std::to_string(count++));
 }
 
 int main()

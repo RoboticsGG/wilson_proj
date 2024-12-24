@@ -34,7 +34,7 @@ public:
         );
 
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
-        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 4);
+        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
         topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
 
         timer_ = this->create_wall_timer(

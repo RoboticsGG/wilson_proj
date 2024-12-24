@@ -24,7 +24,7 @@ public:
         );
 
         topic_destination_subscription_ = this->create_subscription<std_msgs::msg::UInt16MultiArray>(
-            "topic_destination", 5,
+            "topic_destination", 10,
             std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::_1)
         );
 
@@ -34,11 +34,11 @@ public:
         );
 
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
-        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 9);
+        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
         topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
 
         timer_ = this->create_wall_timer(
-            std::chrono::seconds(1),  // Set interval to 1 second
+            std::chrono::seconds(2),  // Set interval to 1 second
             std::bind(&Node_Rovercontrol::timer_callback, this)
         );
         RCLCPP_INFO(this->get_logger(), "Version : A");

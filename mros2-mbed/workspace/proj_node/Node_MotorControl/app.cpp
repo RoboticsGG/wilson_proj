@@ -48,7 +48,7 @@ int main()
   //mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
   mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 9, userCallback);
 
-  osDelay(100);
+  osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");
 
   // auto count = 0;

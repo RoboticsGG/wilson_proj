@@ -38,7 +38,7 @@ public:
         topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
 
         timer_ = this->create_wall_timer(
-            std::chrono::seconds(4),  // Set interval to 1 second
+            std::chrono::seconds(1),  // Set interval to 1 second
             std::bind(&Node_Rovercontrol::timer_callback, this)
         );
         RCLCPP_INFO(this->get_logger(), "Version : A");

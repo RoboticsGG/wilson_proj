@@ -59,7 +59,7 @@ void userCallback(std_msgs::msg::String *msg)
   MROS2_INFO("Count: %s", std::to_string(count).c_str());
 }
 
-void splitData(std::string *cmData)
+void splitData(std::string cmData)
 {
   commandTemp = cmData;
   std::stringstream ss(cmData);
@@ -67,6 +67,7 @@ void splitData(std::string *cmData)
 
   if(std::getline(ss, token, ',')){
     frontDirection = std::stoi(token);
+    frontControl(frontDirection);
 
   }
   if(std::getline(ss, token, ',')){
@@ -135,7 +136,6 @@ int main()
   //   pub.publish(msg);
   //   osDelay(1000);
   // }
-  frontControl(frontDirection);
   motorControl();
 
   mros2::spin();

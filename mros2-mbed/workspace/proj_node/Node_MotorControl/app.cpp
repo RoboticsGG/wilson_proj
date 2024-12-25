@@ -14,22 +14,94 @@
  * limitations under the License.
  */
 
+#include "mbed.h"
 #include "mros2.h"
 #include "mros2-platform.h"
 #include "std_msgs/msg/string.hpp"
 #include <cstdlib>
+#include <iostream>
+#include <sstream>
+#include <string>
+
+DigitalIn signalPinR(PF_12);
+DigitalIn signalPinL(PF_14);
+
+PwmOut DirectPWM(PA_6);
+PwmOut MortorRPWM(PE_11);
+PwmOut MortorLPWM(PD_15);
+
+DigitalOut MortorFWEN(PE_13);
+DigitalOut MortorBWEN(PF_13);
+
+int encoderInA = 0;
+int encoderInB = 0;
+float duty = 0.00;
+
+int frontDirection = 90;
+int speed = 0;
+std::string backDirection = "ST";
+
+std::string commandTemp = "";
 
 void userCallback(std_msgs::msg::String *msg)
 {
-  static int count = 0;
+  //static int count = 0;
+  static uint8_t count = 0;
   count ++;
   MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
-   MROS2_INFO("Count: %s", std::to_string(count).c_str());
+  std::string commandReceived = msg->data.c_str();
+  
+  if (commandReceived != commandTemp){
+    splitData(commandReceived);
+    MROS2_INFO("Update control");
+  }
+  
+  MROS2_INFO("Count: %s", std::to_string(count).c_str());
+}
+
+void splitData(std::string *cmData)
+{
+  commandTemp = cmData;
+  std::stringstream ss(cmData);
+  std::string token;
+
+  if(std::getline(ss, token, ',')){
+    frontDirection = std::stoi(token);
+
+  }
+  if(std::getline(ss, token, ',')){
+    speed = std::stoi(token);
+  }
+  if(std::getline(ss, token, ',')){
+    backDirection = token;
+  }
+}
+
+void frontControl(int degree)
+{
+  duty = 0.05f + (degree / 180.0f) * (0.10f - 0.05f); //180=left, 90=center, 0=right
+  DirectPWM.period_ms(20);
+  DirectPWM.write(duty);
+}
+
+void motorControl()
+{
+  signalPinR.mode(PullUp);
+  signalPinL.mode(PullUp); 
+
+  MortorFWEN.write(1);
+  MortorBWEN.write(0);
+
+  MortorRPWM.period_us(20);
+  MortorRPWM.write(0.50f);
+
+  MortorLPWM.period_us(20);
+  MortorLPWM.write(0.50f);
 }
 
 int main()
 {
-  //setenv("ROS_DOMAIN_ID", "10", 1);
+  
   /* connect to the network */
   if (mros2_platform::network_connect())
   {
@@ -63,6 +135,8 @@ int main()
   //   pub.publish(msg);
   //   osDelay(1000);
   // }
+  frontControl(frontDirection);
+  motorControl();
 
   mros2::spin();
   return 0;

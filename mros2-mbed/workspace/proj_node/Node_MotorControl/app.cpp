@@ -161,7 +161,6 @@ int main()
   //   pub.publish(msg);
   //   osDelay(1000);
   // }
-  motorControl();
 
   mros2::spin();
   return 0;

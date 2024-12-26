@@ -41,7 +41,9 @@ int encoderInB = 0;
 float duty = 0.00;
 
 int frontDirection = 90;
-int speed = 0;
+int period_PWM = 0;
+int dutycycle_PWM = 0;
+float percent_dutycycle = 0.00;
 std::string backDirection = "ST";
 
 std::string commandTemp = "";
@@ -70,15 +72,18 @@ void splitData(std::string cmData)
 
   if(std::getline(ss, token, ',')){
     frontDirection = std::stoi(token);
-    frontControl(frontDirection);
-
   }
   if(std::getline(ss, token, ',')){
-    speed = std::stoi(token);
+    period_PWM = std::stoi(token);
+  }
+  if(std::getline(ss, token, ',')){
+    dutycucle_PWM = std::stoi(token);
   }
   if(std::getline(ss, token, ',')){
     backDirection = token;
   }
+  frontControl(frontDirection);
+  motorControl(period_PWM, dutycycle_PWM, backDirection);
 }
 
 void frontControl(int degree)
@@ -88,25 +93,41 @@ void frontControl(int degree)
   DirectPWM.write(duty);
 }
 
-void motorControl()
+void motorControl(int period_PWM, float dutycycle_PWM, std:string direction)
 {
+  percent_dutycycle = dutycycle_PWM/100;
   signalPinR.mode(PullUp);
-  signalPinL.mode(PullUp); 
+  signalPinL.mode(PullUp);
 
-  MortorFWEN.write(1);
+  MortorFWEN.write(0);
   MortorBWEN.write(0);
 
-  MortorRPWM.period_us(20);
-  MortorRPWM.write(0.50f);
+  // MortorRPWM.period_us(20);
+  // MortorRPWM.write(0.00f);
+  // MortorLPWM.period_us(20);
+  // MortorLPWM.write(0.00f);
 
-  MortorLPWM.period_us(20);
-  MortorLPWM.write(0.50f);
+  if(direction == "FW"){
+    MortorFWEN.write(1);
+    MortorBWEN.write(0);
+  } 
+  else if (direction == "BW"){
+    MortorFWEN.write(0);
+    MortorBWEN.write(1);
+  } else {
+    MortorFWEN.write(0);
+    MortorBWEN.write(0);
+  }
+
+  MortorRPWM.period_us(period_PWM);
+  MortorRPWM.write(percent_dutycycle);
+  MortorLPWM.period_us(period_PWM);
+  MortorLPWM.write(percent_dutycycle);
+  
 }
 
 int main()
 {
-  
-  /* connect to the network */
   if (mros2_platform::network_connect())
   {
     MROS2_ERROR("failed to connect and setup network! aborting,,,");

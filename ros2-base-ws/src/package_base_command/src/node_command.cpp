@@ -10,7 +10,7 @@ public:
     Node_Command()
     : Node("node_command"), speedlimit_(30), test_con_("FW"), des_a_(0), des_b_(0) {
 
-        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit", 9);
+        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_rovercontrol", 9);
         topic_destination_publisher_ = this->create_publisher<std_msgs::msg::UInt16MultiArray>("topic_destination", 8);
         //topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Int32>("topic_destination", 10);
 

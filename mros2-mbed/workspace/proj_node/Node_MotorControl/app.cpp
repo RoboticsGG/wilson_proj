@@ -25,6 +25,7 @@
 
 void splitData(std::string cmData);
 void frontControl(int degree);
+void motorControl(int period_PWM, float dutycycle_PWM, std:string direction);
 
 DigitalIn signalPinR(PF_12);
 DigitalIn signalPinL(PF_14);
@@ -77,7 +78,7 @@ void splitData(std::string cmData)
     period_PWM = std::stoi(token);
   }
   if(std::getline(ss, token, ',')){
-    dutycucle_PWM = std::stoi(token);
+    dutycycle_PWM = std::stoi(token);
   }
   if(std::getline(ss, token, ',')){
     backDirection = token;

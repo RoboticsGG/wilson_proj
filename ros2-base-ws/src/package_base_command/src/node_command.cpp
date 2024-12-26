@@ -63,9 +63,14 @@ private:
     void publish_parameters() {
         // Pub topic_speedlimit
         auto speed_message = std_msgs::msg::String();
-        speed_message.data = std::to_string(speedlimit_) + "," + test_con_;
+        speed_message.data = std::to_string(speedlimit_);
         RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", speed_message.data.c_str());
         topic_speedlimit_publisher_->publish(speed_message);
+
+        // auto speed_message = std_msgs::msg::String();
+        // speed_message.data = std::to_string(speedlimit_) + "," + test_con_; //Example to add string
+        // RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", speed_message.data.c_str());
+        // topic_speedlimit_publisher_->publish(speed_message);
 
         // Pub topic_destination
         auto destination_message = std_msgs::msg::UInt16MultiArray();

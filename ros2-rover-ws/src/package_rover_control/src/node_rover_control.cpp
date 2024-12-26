@@ -62,9 +62,15 @@ private:
 
     void timer_callback(){
         auto motor_msg = std_msgs::msg::String();
-        motor_msg.data = speedlimit_message_;
+        //motor_msg.data = speedlimit_message_;
+        motor_msg.data = "90,20,50,FW"
         topic_motorcontrol_publisher_->publish(motor_msg);
         RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", motor_msg.data.c_str());
+
+        // auto speed_message = std_msgs::msg::String();
+        // speed_message.data = std::to_string(speedlimit_) + "," + test_con_; //Example to add string
+        // RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", speed_message.data.c_str());
+        // topic_speedlimit_publisher_->publish(speed_message);
 
         // auto test_msg = std_msgs::msg::String();
         // std::stringstream ss;

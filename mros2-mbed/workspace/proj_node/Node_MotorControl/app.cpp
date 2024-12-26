@@ -23,6 +23,9 @@
 #include <sstream>
 #include <string>
 
+void splitData(std::string cmData);
+void frontControl(int degree);
+
 DigitalIn signalPinR(PF_12);
 DigitalIn signalPinL(PF_14);
 

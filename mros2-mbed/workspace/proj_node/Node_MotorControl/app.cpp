@@ -94,7 +94,7 @@ void frontControl(int degree)
   DirectPWM.write(duty);
 }
 
-void motorControl(int period_PWM, float dutycycle_PWM, std:string direction)
+void motorControl(int period_PWM, float dutycycle_PWM, std::string direction)
 {
   percent_dutycycle = dutycycle_PWM/100;
   signalPinR.mode(PullUp);

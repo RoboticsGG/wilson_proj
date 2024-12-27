@@ -30,7 +30,7 @@ public:
 
         topic_rovercontrol_subscription_ = this->create_subscription<std_msgs::msg::String>(
             "topic_rovercontrol", 9,
-            std::bind(&Node_Rovercontrol::topic_rovercontrol_callback, this, std::placeholder::_1)
+            std::bind(&Node_Rovercontrol::topic_rovercontrol_callback, this, std::placeholders::_1)
         );
 
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
@@ -105,7 +105,7 @@ private:
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_motorcontrol_publisher_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_testcontrol_publisher_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_rovercontrol_publisher_;
-    
+
     rclcpp::TimerBase::SharedPtr timer_;
 
     std::string speedlimit_message_;

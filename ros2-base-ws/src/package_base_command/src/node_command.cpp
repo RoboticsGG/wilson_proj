@@ -2,22 +2,27 @@
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/u_int16.hpp>
 #include <std_msgs/msg/u_int16_multi_array.hpp> 
-#include <std_msgs/msg/int32.hpp>
-#include <std_msgs/msg/int32_multi_array.hpp> 
 
 class Node_Command : public rclcpp::Node {
 public:
     Node_Command()
-    : Node("node_command"), speedlimit_(30), test_con_("FW"), des_a_(0), des_b_(0) {
+    : Node("node_command"), speedlimit_(30), test_con_("FW"), des_a_(0), des_b_(0), frontDirection_(90), period_PWM_(20), dutycycle_PWM_(50), backDirection_("FW") {
 
-        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_rovercontrol", 9);
+        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit", 9);
         topic_destination_publisher_ = this->create_publisher<std_msgs::msg::UInt16MultiArray>("topic_destination", 8);
+        topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_rovercontrol", 9);
         //topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Int32>("topic_destination", 10);
 
-        this->declare_parameter<int>("speedlimit", speedlimit_);
+        this->declare_parameter<uint8_t>("speedlimit", speedlimit_);
         this->declare_parameter<std::string>("test_con", test_con_);
         this->declare_parameter<int>("des_a", des_a_);
         this->declare_parameter<int>("des_b", des_b_);
+
+        //demo_control_rover
+        this->declare_parameter<uint8_t>("frontDirection", frontDirection_);
+        this->declare_parameter<uint8_t>("period_PWM", period_PWM_);
+        this->declare_parameter<uint8_t>("dutycycle_PWM", dutycycle_PWM_);
+        this->declare_parameter<std::string>("backDirection", backDirection_);
 
         //publish_parameters();
 
@@ -41,18 +46,21 @@ private:
 
         for (const auto &param : parameters) {
             if (param.get_name() == "speedlimit"){
-                if (param.as_int() < 0){
-                    result.successful = false;
-                    result.reason = "Speed Limit must be non-negative.";
-                    return result;
-                }
-                speedlimit_ = param.as_int();
+                speedlimit_ = param.as_uint8();
             } else if (param.get_name() == "test_con" && param.get_type() == rclcpp::ParameterType::PARAMETER_STRING) {
                 test_con_ = param.as_string();
             } else if (param.get_name() == "des_a" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
                 des_a_ = param.as_int();
             } else if (param.get_name() == "des_b" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
                 des_b_ = param.as_int();
+            } else if (param.get_name() == "frontDirection" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
+                frontDirection_ = param.as_uint8();
+            } else if (param.get_name() == "period_PWM" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
+                period_PWM_ = param.as_uint8();
+            } else if (param.get_name() == "dutycycle_PWM" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
+                dutycycle_PWM_ = param.as_uint8(); 
+            } else if (param.get_name() == "backDirection" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
+                backDirection_ = param.as_string();
             }
         }
 
@@ -78,16 +86,28 @@ private:
         //destination_message.data = {des_a_, des_b_};
         RCLCPP_INFO(this->get_logger(), "Publishing to topic_destination: [%d, %d]", des_a_, des_b_);
         topic_destination_publisher_->publish(destination_message);
+
+        //demo_pub_control_rover
+        auto control_message = std_msgs::msg::String();
+        control_message.data = std::to_string(frontDirection_) + "," + std::to_string(period_PWM_) + "," + std::to_string(dutycycle_PWM_) + "," + backDirection_;
+        RCLCPP_INFO(this->get_logger(), "Publisher to topic_rovercontrol '%s'", control_message.data.c_str());
+        topic_rovercontrol_publisher_->publish(control_message);
     }
 
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_speedlimit_publisher_;
     rclcpp::Publisher<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 
-    int speedlimit_;
+    uint8_t speedlimit_;
     std::string test_con_;
     int des_a_;
     int des_b_;
+
+    //demo_control_rover
+    uint8_t frontDirection_;
+    uint8_t period_PWM_;
+    uint8_t dutycycle_PWM_;
+    std::string backDirection_;
 
     // Parameter change callback handle
     rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr parameter_callback_handle_;

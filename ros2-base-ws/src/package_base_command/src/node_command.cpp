@@ -46,7 +46,7 @@ private:
 
         for (const auto &param : parameters) {
             if (param.get_name() == "speedlimit"){
-                speedlimit_ = param.as_uint8();
+                speedlimit_ = static_cast<uint8_t>(param.as_int());
             } else if (param.get_name() == "test_con" && param.get_type() == rclcpp::ParameterType::PARAMETER_STRING) {
                 test_con_ = param.as_string();
             } else if (param.get_name() == "des_a" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {

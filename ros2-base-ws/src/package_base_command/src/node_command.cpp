@@ -54,11 +54,11 @@ private:
             } else if (param.get_name() == "des_b" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
                 des_b_ = param.as_int();
             } else if (param.get_name() == "frontDirection" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
-                frontDirection_ = param.as_uint8();
+                frontDirection_ = static_cast<uint8_t>(param.as_int());
             } else if (param.get_name() == "period_PWM" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
-                period_PWM_ = param.as_uint8();
+                period_PWM_ = static_cast<uint8_t>(param.as_int());
             } else if (param.get_name() == "dutycycle_PWM" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
-                dutycycle_PWM_ = param.as_uint8(); 
+                dutycycle_PWM_ = static_cast<uint8_t>(param.as_int());
             } else if (param.get_name() == "backDirection" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
                 backDirection_ = param.as_string();
             }
@@ -96,6 +96,7 @@ private:
 
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_speedlimit_publisher_;
     rclcpp::Publisher<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_publisher_;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_rovercontrol_publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 
     uint8_t speedlimit_;

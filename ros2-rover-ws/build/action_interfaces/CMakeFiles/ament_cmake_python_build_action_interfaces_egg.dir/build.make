@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_build_action_interfaces_egg.dir/compiler_d
 include CMakeFiles/ament_cmake_python_build_action_interfaces_egg.dir/progress.make
 
 CMakeFiles/ament_cmake_python_build_action_interfaces_egg:
-	cd /home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces/ament_cmake_python/action_interfaces && /usr/bin/python3.10 setup.py egg_info
+	cd /home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces/ament_cmake_python/action_interfaces && /usr/bin/python3 setup.py egg_info
 
 ament_cmake_python_build_action_interfaces_egg: CMakeFiles/ament_cmake_python_build_action_interfaces_egg
 ament_cmake_python_build_action_interfaces_egg: CMakeFiles/ament_cmake_python_build_action_interfaces_egg.dir/build.make

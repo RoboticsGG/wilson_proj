@@ -55,7 +55,7 @@ add_library(action_interfaces::action_interfaces__rosidl_typesupport_fastrtps_cp
 
 set_target_properties(action_interfaces::action_interfaces__rosidl_typesupport_fastrtps_cpp PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include/action_interfaces"
-  INTERFACE_LINK_LIBRARIES "fastcdr;rmw::rmw;rosidl_runtime_c::rosidl_runtime_c;rosidl_runtime_cpp::rosidl_runtime_cpp;rosidl_typesupport_interface::rosidl_typesupport_interface;rosidl_typesupport_fastrtps_cpp::rosidl_typesupport_fastrtps_cpp;service_msgs::service_msgs__rosidl_typesupport_fastrtps_cpp;builtin_interfaces::builtin_interfaces__rosidl_typesupport_fastrtps_cpp;action_msgs::action_msgs__rosidl_typesupport_fastrtps_cpp;unique_identifier_msgs::unique_identifier_msgs__rosidl_typesupport_fastrtps_cpp;action_interfaces::action_interfaces__rosidl_generator_c;action_interfaces::action_interfaces__rosidl_generator_cpp"
+  INTERFACE_LINK_LIBRARIES "fastcdr;rmw::rmw;rosidl_runtime_c::rosidl_runtime_c;rosidl_runtime_cpp::rosidl_runtime_cpp;rosidl_typesupport_interface::rosidl_typesupport_interface;rosidl_typesupport_fastrtps_cpp::rosidl_typesupport_fastrtps_cpp;action_msgs::action_msgs__rosidl_typesupport_fastrtps_cpp;builtin_interfaces::builtin_interfaces__rosidl_typesupport_fastrtps_cpp;unique_identifier_msgs::unique_identifier_msgs__rosidl_typesupport_fastrtps_cpp;action_interfaces::action_interfaces__rosidl_generator_cpp"
 )
 
 if(CMAKE_VERSION VERSION_LESS 2.8.12)
@@ -94,7 +94,7 @@ unset(_IMPORT_CHECK_TARGETS)
 # Make sure the targets which have been exported in some other
 # export set exist.
 unset(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets)
-foreach(_target "action_interfaces::action_interfaces__rosidl_generator_c" "action_interfaces::action_interfaces__rosidl_generator_cpp" )
+foreach(_target "action_interfaces::action_interfaces__rosidl_generator_cpp" )
   if(NOT TARGET "${_target}" )
     set(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets "${${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets} ${_target}")
   endif()

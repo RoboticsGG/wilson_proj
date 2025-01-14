@@ -1,0 +1,48 @@
+[0.050s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4
+[0.374s] [35m[1mConsolidate compiler generated dependencies of target node_rovercontrol[0m
+[0.502s] [ 33%] Built target motorcontrol
+[0.511s] [ 66%] Built target node_motor_control
+[0.545s] [ 83%] [32mBuilding CXX object CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o[0m
+[11.571s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::topic_speedlimit_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[11.572s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:50:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata_mutex_[m[K’ was not declared in this scope
+[11.572s]    50 |         std::lock_guard<std::mutex> lock([01;31m[Kdata_mutex_[m[K);
+[11.572s]       |                                          [01;31m[K^~~~~~~~~~~[m[K
+[11.608s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::topic_destination_callback(std_msgs::msg::UInt16MultiArray_<std::allocator<void> >::SharedPtr)[m[K’:
+[11.608s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:69:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata_mutex_[m[K’ was not declared in this scope
+[11.609s]    69 |         std::lock_guard<std::mutex> lock([01;31m[Kdata_mutex_[m[K);
+[11.610s]       |                                          [01;31m[K^~~~~~~~~~~[m[K
+[11.637s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::timer_callback()[m[K’:
+[11.637s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:83:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata_mutex_[m[K’ was not declared in this scope
+[11.637s]    83 |         std::lock_guard<std::mutex> lock([01;31m[Kdata_mutex_[m[K);
+[11.638s]       |                                          [01;31m[K^~~~~~~~~~~[m[K
+[11.641s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::testsub_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[11.642s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:100:30:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kstd_msgs::msg::String_<std::allocator<void> >[m[K’ and ‘[01m[Kstd_msgs::msg::String_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’})
+[11.642s]   100 |         test_message_ = msg->[01;31m[Kdata[m[K;
+[11.643s]       |                              [01;31m[K^~~~[m[K
+[11.643s] In file included from [01m[K/opt/ros/iron/include/std_msgs/std_msgs/msg/string.hpp:7[m[K,
+[11.644s]                  from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:2[m[K:
+[11.644s] [01m[K/opt/ros/iron/include/std_msgs/std_msgs/msg/detail/string__struct.hpp:32:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd_msgs::msg::String_<std::allocator<void> >& std_msgs::msg::String_<std::allocator<void> >::operator=(const std_msgs::msg::String_<std::allocator<void> >&)[m[K’
+[11.644s]    32 | struct [01;36m[KString_[m[K
+[11.645s]       |        [01;36m[K^~~~~~~[m[K
+[11.645s] [01m[K/opt/ros/iron/include/std_msgs/std_msgs/msg/detail/string__struct.hpp:32:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd_msgs::msg::String_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’} to ‘[01m[Kconst std_msgs::msg::String_<std::allocator<void> >&[m[K’
+[11.646s] [01m[K/opt/ros/iron/include/std_msgs/std_msgs/msg/detail/string__struct.hpp:32:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd_msgs::msg::String_<std::allocator<void> >& std_msgs::msg::String_<std::allocator<void> >::operator=(std_msgs::msg::String_<std::allocator<void> >&&)[m[K’
+[11.646s] [01m[K/opt/ros/iron/include/std_msgs/std_msgs/msg/detail/string__struct.hpp:32:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd_msgs::msg::String_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’} to ‘[01m[Kstd_msgs::msg::String_<std::allocator<void> >&&[m[K’
+[11.646s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[11.647s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/client.hpp:43[m[K,
+[11.647s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[11.647s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[11.648s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[11.648s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[11.648s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[11.649s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[11.649s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[11.649s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[11.650s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[11.650s]                  from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:1[m[K:
+[11.650s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:101:81:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct std_msgs::msg::String_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kc_str[m[K’
+[11.651s]   101 |         RCLCPP_INFO(this->get_logger(), "Received on test: '%s'", test_message_.[01;31m[Kc_str[m[K());
+[11.651s]       |                                                                                 [01;31m[K^~~~~[m[K
+[23.119s] gmake[2]: *** [CMakeFiles/node_rovercontrol.dir/build.make:76: CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o] Error 1
+[23.120s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_rovercontrol.dir/all] Error 2
+[23.121s] gmake: *** [Makefile:146: all] Error 2
+[23.127s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4

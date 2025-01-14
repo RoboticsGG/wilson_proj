@@ -166,39 +166,6 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c,
 }
 #endif
 
-// already included above
-// #include <stddef.h>
-// already included above
-// #include "rosidl_runtime_c/message_type_support_struct.h"
-// already included above
-// #include "rosidl_typesupport_interface/macros.h"
-// already included above
-// #include "action_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h"
-
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_PUBLIC_action_interfaces
-size_t get_serialized_size_action_interfaces__action__Rovercontrol_SendGoal_Event(
-  const void * untyped_ros_message,
-  size_t current_alignment);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_PUBLIC_action_interfaces
-size_t max_serialized_size_action_interfaces__action__Rovercontrol_SendGoal_Event(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_PUBLIC_action_interfaces
-const rosidl_message_type_support_t *
-ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, action_interfaces, action, Rovercontrol_SendGoal_Event)();
-
-#ifdef __cplusplus
-}
-#endif
-
 #include "rosidl_runtime_c/service_type_support_struct.h"
 // already included above
 // #include "rosidl_typesupport_interface/macros.h"
@@ -279,39 +246,6 @@ size_t max_serialized_size_action_interfaces__action__Rovercontrol_GetResult_Res
 ROSIDL_TYPESUPPORT_FASTRTPS_C_PUBLIC_action_interfaces
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, action_interfaces, action, Rovercontrol_GetResult_Response)();
-
-#ifdef __cplusplus
-}
-#endif
-
-// already included above
-// #include <stddef.h>
-// already included above
-// #include "rosidl_runtime_c/message_type_support_struct.h"
-// already included above
-// #include "rosidl_typesupport_interface/macros.h"
-// already included above
-// #include "action_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h"
-
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_PUBLIC_action_interfaces
-size_t get_serialized_size_action_interfaces__action__Rovercontrol_GetResult_Event(
-  const void * untyped_ros_message,
-  size_t current_alignment);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_PUBLIC_action_interfaces
-size_t max_serialized_size_action_interfaces__action__Rovercontrol_GetResult_Event(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_PUBLIC_action_interfaces
-const rosidl_message_type_support_t *
-ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, action_interfaces, action, Rovercontrol_GetResult_Event)();
 
 #ifdef __cplusplus
 }

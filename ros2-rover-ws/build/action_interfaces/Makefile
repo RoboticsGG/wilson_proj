@@ -211,19 +211,6 @@ action_interfaces/fast:
 .PHONY : action_interfaces/fast
 
 #=============================================================================
-# Target rules for targets named action_interfaces__rosidl_generator_type_description
-
-# Build rule for target.
-action_interfaces__rosidl_generator_type_description: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 action_interfaces__rosidl_generator_type_description
-.PHONY : action_interfaces__rosidl_generator_type_description
-
-# fast build rule for target.
-action_interfaces__rosidl_generator_type_description/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/action_interfaces__rosidl_generator_type_description.dir/build.make CMakeFiles/action_interfaces__rosidl_generator_type_description.dir/build
-.PHONY : action_interfaces__rosidl_generator_type_description/fast
-
-#=============================================================================
 # Target rules for targets named action_interfaces__rosidl_generator_c
 
 # Build rule for target.
@@ -418,30 +405,6 @@ action_interfaces__py/fast:
 	$(MAKE) $(MAKESILENT) -f action_interfaces__py/CMakeFiles/action_interfaces__py.dir/build.make action_interfaces__py/CMakeFiles/action_interfaces__py.dir/build
 .PHONY : action_interfaces__py/fast
 
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.o: rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.o
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.o
-
-# target to build an object file
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/action_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/action_interfaces__rosidl_generator_c.dir/rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.o
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.o
-
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.i: rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.i
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.i
-
-# target to preprocess a source file
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/action_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/action_interfaces__rosidl_generator_c.dir/rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.i
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.i
-
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.s: rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.s
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.s
-
-# target to generate assembly for a file
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/action_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/action_interfaces__rosidl_generator_c.dir/rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.s
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.c.s
-
 rosidl_generator_c/action_interfaces/action/detail/rovercontrol__functions.o: rosidl_generator_c/action_interfaces/action/detail/rovercontrol__functions.c.o
 .PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__functions.o
 
@@ -465,30 +428,6 @@ rosidl_generator_c/action_interfaces/action/detail/rovercontrol__functions.s: ro
 rosidl_generator_c/action_interfaces/action/detail/rovercontrol__functions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/action_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/action_interfaces__rosidl_generator_c.dir/rosidl_generator_c/action_interfaces/action/detail/rovercontrol__functions.c.s
 .PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__functions.c.s
-
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.o: rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.o
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.o
-
-# target to build an object file
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/action_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/action_interfaces__rosidl_generator_c.dir/rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.o
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.o
-
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.i: rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.i
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.i
-
-# target to preprocess a source file
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/action_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/action_interfaces__rosidl_generator_c.dir/rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.i
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.i
-
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.s: rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.s
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.s
-
-# target to generate assembly for a file
-rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/action_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/action_interfaces__rosidl_generator_c.dir/rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.s
-.PHONY : rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.c.s
 
 rosidl_generator_py/action_interfaces/_action_interfaces_s.ep.rosidl_typesupport_c.o: rosidl_generator_py/action_interfaces/_action_interfaces_s.ep.rosidl_typesupport_c.c.o
 .PHONY : rosidl_generator_py/action_interfaces/_action_interfaces_s.ep.rosidl_typesupport_c.o
@@ -746,7 +685,6 @@ help:
 	@echo "... action_interfaces"
 	@echo "... action_interfaces__cpp"
 	@echo "... action_interfaces__py"
-	@echo "... action_interfaces__rosidl_generator_type_description"
 	@echo "... action_interfaces_uninstall"
 	@echo "... ament_cmake_python_build_action_interfaces_egg"
 	@echo "... ament_cmake_python_copy_action_interfaces"
@@ -762,15 +700,9 @@ help:
 	@echo "... action_interfaces__rosidl_typesupport_introspection_c"
 	@echo "... action_interfaces__rosidl_typesupport_introspection_c__pyext"
 	@echo "... action_interfaces__rosidl_typesupport_introspection_cpp"
-	@echo "... rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.o"
-	@echo "... rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.i"
-	@echo "... rosidl_generator_c/action_interfaces/action/detail/rovercontrol__description.s"
 	@echo "... rosidl_generator_c/action_interfaces/action/detail/rovercontrol__functions.o"
 	@echo "... rosidl_generator_c/action_interfaces/action/detail/rovercontrol__functions.i"
 	@echo "... rosidl_generator_c/action_interfaces/action/detail/rovercontrol__functions.s"
-	@echo "... rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.o"
-	@echo "... rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.i"
-	@echo "... rosidl_generator_c/action_interfaces/action/detail/rovercontrol__type_support.s"
 	@echo "... rosidl_generator_py/action_interfaces/_action_interfaces_s.ep.rosidl_typesupport_c.o"
 	@echo "... rosidl_generator_py/action_interfaces/_action_interfaces_s.ep.rosidl_typesupport_c.i"
 	@echo "... rosidl_generator_py/action_interfaces/_action_interfaces_s.ep.rosidl_typesupport_c.s"

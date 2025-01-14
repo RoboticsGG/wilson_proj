@@ -1,0 +1,23 @@
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::topic_speedlimit_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:50:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata_mutex_[m[K’ was not declared in this scope
+   50 |         std::lock_guard<std::mutex> lock([01;31m[Kdata_mutex_[m[K);
+      |                                          [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::topic_destination_callback(std_msgs::msg::UInt16MultiArray_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:69:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata_mutex_[m[K’ was not declared in this scope
+   69 |         std::lock_guard<std::mutex> lock([01;31m[Kdata_mutex_[m[K);
+      |                                          [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::timer_callback()[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:83:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata_mutex_[m[K’ was not declared in this scope
+   83 |         std::lock_guard<std::mutex> lock([01;31m[Kdata_mutex_[m[K);
+      |                                          [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:87:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class rclcpp::Publisher<std_msgs::msg::String_<std::allocator<void> > >[m[K’ {aka ‘[01m[Kclass rclcpp::Publisher<std_msgs::msg::String_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Kpublisher[m[K’; did you mean ‘[01m[KPublisher[m[K’?
+   87 |         topic_motorcontrol_publisher_->[01;31m[Kpublisher[m[K(motor_msg);
+      |                                        [01;31m[K^~~~~~~~~[m[K
+      |                                        [32m[KPublisher[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::testsub_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:99:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktest_message_[m[K’ was not declared in this scope
+   99 |         [01;31m[Ktest_message_[m[K = msg->data;
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node_rovercontrol.dir/build.make:76: CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_rovercontrol.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

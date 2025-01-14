@@ -27,7 +27,7 @@ if(NOT "" STREQUAL "")
     set(_msg "${_msg} ()")
   endif()
   # optionally quiet the deprecation message
-  if(NOT package_test_DEPRECATED_QUIET)
+  if(NOT ${package_test_DEPRECATED_QUIET})
     message(DEPRECATION "${_msg}")
   endif()
 endif()

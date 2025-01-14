@@ -7,5 +7,6 @@
 #include "action_interfaces/action/detail/rovercontrol__struct.hpp"
 #include "action_interfaces/action/detail/rovercontrol__builder.hpp"
 #include "action_interfaces/action/detail/rovercontrol__traits.hpp"
+#include "action_interfaces/action/detail/rovercontrol__type_support.hpp"
 
 #endif  // ACTION_INTERFACES__ACTION__ROVERCONTROL_HPP_

@@ -15,6 +15,7 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces/rosidl_generator_cpp/action_interfaces/action/detail/rovercontrol__builder.hpp" "/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces/rosidl_generator_cpp/action_interfaces/action/rovercontrol.hpp"
   "/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces/rosidl_generator_cpp/action_interfaces/action/detail/rovercontrol__struct.hpp" "/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces/rosidl_generator_cpp/action_interfaces/action/rovercontrol.hpp"
   "/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces/rosidl_generator_cpp/action_interfaces/action/detail/rovercontrol__traits.hpp" "/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces/rosidl_generator_cpp/action_interfaces/action/rovercontrol.hpp"
+  "/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces/rosidl_generator_cpp/action_interfaces/action/detail/rovercontrol__type_support.hpp" "/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces/rosidl_generator_cpp/action_interfaces/action/rovercontrol.hpp"
   )
 
 

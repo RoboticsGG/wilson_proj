@@ -38,6 +38,7 @@ typedef struct action_interfaces__action__Rovercontrol_Goal__Sequence
   size_t capacity;
 } action_interfaces__action__Rovercontrol_Goal__Sequence;
 
+
 // Constants defined in the message
 
 // Include directives for member types
@@ -61,6 +62,7 @@ typedef struct action_interfaces__action__Rovercontrol_Result__Sequence
   size_t capacity;
 } action_interfaces__action__Rovercontrol_Result__Sequence;
 
+
 // Constants defined in the message
 
 // Include directives for member types
@@ -82,6 +84,7 @@ typedef struct action_interfaces__action__Rovercontrol_Feedback__Sequence
   /// The number of allocated items in data
   size_t capacity;
 } action_interfaces__action__Rovercontrol_Feedback__Sequence;
+
 
 // Constants defined in the message
 
@@ -108,6 +111,7 @@ typedef struct action_interfaces__action__Rovercontrol_SendGoal_Request__Sequenc
   size_t capacity;
 } action_interfaces__action__Rovercontrol_SendGoal_Request__Sequence;
 
+
 // Constants defined in the message
 
 // Include directives for member types
@@ -131,41 +135,6 @@ typedef struct action_interfaces__action__Rovercontrol_SendGoal_Response__Sequen
   size_t capacity;
 } action_interfaces__action__Rovercontrol_SendGoal_Response__Sequence;
 
-// Constants defined in the message
-
-// Include directives for member types
-// Member 'info'
-#include "service_msgs/msg/detail/service_event_info__struct.h"
-
-// constants for array fields with an upper bound
-// request
-enum
-{
-  action_interfaces__action__Rovercontrol_SendGoal_Event__request__MAX_SIZE = 1
-};
-// response
-enum
-{
-  action_interfaces__action__Rovercontrol_SendGoal_Event__response__MAX_SIZE = 1
-};
-
-/// Struct defined in action/Rovercontrol in the package action_interfaces.
-typedef struct action_interfaces__action__Rovercontrol_SendGoal_Event
-{
-  service_msgs__msg__ServiceEventInfo info;
-  action_interfaces__action__Rovercontrol_SendGoal_Request__Sequence request;
-  action_interfaces__action__Rovercontrol_SendGoal_Response__Sequence response;
-} action_interfaces__action__Rovercontrol_SendGoal_Event;
-
-// Struct for a sequence of action_interfaces__action__Rovercontrol_SendGoal_Event.
-typedef struct action_interfaces__action__Rovercontrol_SendGoal_Event__Sequence
-{
-  action_interfaces__action__Rovercontrol_SendGoal_Event * data;
-  /// The number of valid items in data
-  size_t size;
-  /// The number of allocated items in data
-  size_t capacity;
-} action_interfaces__action__Rovercontrol_SendGoal_Event__Sequence;
 
 // Constants defined in the message
 
@@ -189,6 +158,7 @@ typedef struct action_interfaces__action__Rovercontrol_GetResult_Request__Sequen
   /// The number of allocated items in data
   size_t capacity;
 } action_interfaces__action__Rovercontrol_GetResult_Request__Sequence;
+
 
 // Constants defined in the message
 
@@ -214,42 +184,6 @@ typedef struct action_interfaces__action__Rovercontrol_GetResult_Response__Seque
   size_t capacity;
 } action_interfaces__action__Rovercontrol_GetResult_Response__Sequence;
 
-// Constants defined in the message
-
-// Include directives for member types
-// Member 'info'
-// already included above
-// #include "service_msgs/msg/detail/service_event_info__struct.h"
-
-// constants for array fields with an upper bound
-// request
-enum
-{
-  action_interfaces__action__Rovercontrol_GetResult_Event__request__MAX_SIZE = 1
-};
-// response
-enum
-{
-  action_interfaces__action__Rovercontrol_GetResult_Event__response__MAX_SIZE = 1
-};
-
-/// Struct defined in action/Rovercontrol in the package action_interfaces.
-typedef struct action_interfaces__action__Rovercontrol_GetResult_Event
-{
-  service_msgs__msg__ServiceEventInfo info;
-  action_interfaces__action__Rovercontrol_GetResult_Request__Sequence request;
-  action_interfaces__action__Rovercontrol_GetResult_Response__Sequence response;
-} action_interfaces__action__Rovercontrol_GetResult_Event;
-
-// Struct for a sequence of action_interfaces__action__Rovercontrol_GetResult_Event.
-typedef struct action_interfaces__action__Rovercontrol_GetResult_Event__Sequence
-{
-  action_interfaces__action__Rovercontrol_GetResult_Event * data;
-  /// The number of valid items in data
-  size_t size;
-  /// The number of allocated items in data
-  size_t capacity;
-} action_interfaces__action__Rovercontrol_GetResult_Event__Sequence;
 
 // Constants defined in the message
 

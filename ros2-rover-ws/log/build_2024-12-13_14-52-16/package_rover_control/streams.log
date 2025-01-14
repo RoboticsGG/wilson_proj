@@ -1,0 +1,28 @@
+[0.159s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4
+[0.517s] [ 33%] Built target node_motor_control
+[0.550s] [ 66%] Built target motorcontrol
+[0.566s] [ 83%] [32mBuilding CXX object CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o[0m
+[11.520s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::topic_speedlimit_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[11.521s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:50:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata_mutex_[m[K’ was not declared in this scope
+[11.521s]    50 |         std::lock_guard<std::mutex> lock([01;31m[Kdata_mutex_[m[K);
+[11.521s]       |                                          [01;31m[K^~~~~~~~~~~[m[K
+[11.557s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::topic_destination_callback(std_msgs::msg::UInt16MultiArray_<std::allocator<void> >::SharedPtr)[m[K’:
+[11.557s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:69:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata_mutex_[m[K’ was not declared in this scope
+[11.558s]    69 |         std::lock_guard<std::mutex> lock([01;31m[Kdata_mutex_[m[K);
+[11.559s]       |                                          [01;31m[K^~~~~~~~~~~[m[K
+[11.585s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::timer_callback()[m[K’:
+[11.586s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:83:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata_mutex_[m[K’ was not declared in this scope
+[11.586s]    83 |         std::lock_guard<std::mutex> lock([01;31m[Kdata_mutex_[m[K);
+[11.587s]       |                                          [01;31m[K^~~~~~~~~~~[m[K
+[11.587s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:87:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class rclcpp::Publisher<std_msgs::msg::String_<std::allocator<void> > >[m[K’ {aka ‘[01m[Kclass rclcpp::Publisher<std_msgs::msg::String_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Kpublisher[m[K’; did you mean ‘[01m[KPublisher[m[K’?
+[11.587s]    87 |         topic_motorcontrol_publisher_->[01;31m[Kpublisher[m[K(motor_msg);
+[11.588s]       |                                        [01;31m[K^~~~~~~~~[m[K
+[11.588s]       |                                        [32m[KPublisher[m[K
+[11.619s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::testsub_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[11.620s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:99:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktest_message_[m[K’ was not declared in this scope
+[11.620s]    99 |         [01;31m[Ktest_message_[m[K = msg->data;
+[11.620s]       |         [01;31m[K^~~~~~~~~~~~~[m[K
+[23.095s] gmake[2]: *** [CMakeFiles/node_rovercontrol.dir/build.make:76: CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o] Error 1
+[23.095s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_rovercontrol.dir/all] Error 2
+[23.096s] gmake: *** [Makefile:146: all] Error 2
+[23.103s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4

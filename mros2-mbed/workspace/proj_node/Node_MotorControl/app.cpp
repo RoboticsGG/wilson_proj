@@ -41,13 +41,14 @@ int encoderInA = 0;
 int encoderInB = 0;
 float duty = 0.00;
 
-int frontDirection = 90;
+int frontDirection = "forward";
+int frontDegree = 0;
 int period_PWM = 0;
 int dutycycle_PWM = 0;
 float percent_dutycycle = 0.00;
-std::string backDirection = "ST";
+std::string backDirection = "forward";
 
-std::string commandTemp = "";
+// std::string commandTemp = "";
 
 void userCallback(std_msgs::msg::String *msg)
 {
@@ -57,10 +58,10 @@ void userCallback(std_msgs::msg::String *msg)
   MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
   std::string commandReceived = msg->data.c_str();
   
-  if (commandReceived != commandTemp){
-    splitData(commandReceived);
-    MROS2_INFO("Update control");
-  }
+  // if (commandReceived != commandTemp){
+  //   splitData(commandReceived);
+  //   MROS2_INFO("Update control");
+  // }
   
   MROS2_INFO("Count: %s", std::to_string(count).c_str());
 }
@@ -72,7 +73,10 @@ void splitData(std::string cmData)
   std::string token;
 
   if(std::getline(ss, token, ',')){
-    frontDirection = std::stoi(token);
+    frontDirection = token;
+  }
+  if(std::getline(ss, token, ',')){
+    frontDegree = std::stoi(token);
   }
   if(std::getline(ss, token, ',')){
     period_PWM = std::stoi(token);
@@ -83,18 +87,33 @@ void splitData(std::string cmData)
   if(std::getline(ss, token, ',')){
     backDirection = token;
   }
-  frontControl(frontDirection);
+  frontControl(frontDirection, frontDegree);
   motorControl(period_PWM, dutycycle_PWM, backDirection);
 }
 
-void frontControl(int degree)
+void frontControl(std::string frontDirection, int diff_degree)
 {
+  int degree = 0;
+  if (frontDirection == "left")
+  {
+    degree = 100 - diff_degree;
+  }
+  else if (frontDirection == "right")
+  {
+    degree = 100 + diff_degree;
+  }
+  else if (frontDirection == "forward")
+  {
+    degree = 100;
+  } else {
+    degree = 100;
+  }
   duty = 0.05f + (degree / 180.0f) * (0.10f - 0.05f); //180=left, 90=center, 0=right
   DirectPWM.period_ms(20);
   DirectPWM.write(duty);
 }
 
-void motorControl(int period_PWM, float dutycycle_PWM, std::string direction)
+void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection)
 {
   percent_dutycycle = dutycycle_PWM/100;
   signalPinR.mode(PullUp);
@@ -108,11 +127,11 @@ void motorControl(int period_PWM, float dutycycle_PWM, std::string direction)
   // MortorLPWM.period_us(20);
   // MortorLPWM.write(0.00f);
 
-  if(direction == "FW"){
+  if(direction == "forward"){
     MortorFWEN.write(1);
     MortorBWEN.write(0);
   } 
-  else if (direction == "BW"){
+  else if (direction == "backward"){
     MortorFWEN.write(0);
     MortorBWEN.write(1);
   } else {

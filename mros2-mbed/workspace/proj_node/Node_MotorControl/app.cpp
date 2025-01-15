@@ -87,6 +87,7 @@ void splitData(std::string cmData)
   if(std::getline(ss, token, ',')){
     backDirection = token;
   }
+  
   frontControl(frontDirection, frontDegree);
   motorControl(period_PWM, dutycycle_PWM, backDirection);
 }

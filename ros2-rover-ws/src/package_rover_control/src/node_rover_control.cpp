@@ -86,7 +86,7 @@ private:
     void timer_callback(){
         auto rovercon_msg = std_msgs::msg::String();
         //motor_msg.data = speedlimit_message_;
-        rovercon_msg.data = rovercontrol_message_ + "," + period_PWM_message_ + speedlimit_message_ + "," + back_direction_message_;
+        rovercon_msg.data = rovercontrol_message_ + "," + period_PWM_message_ + "," + speedlimit_message_ + "," + back_direction_message_;
         topic_rovercontrol_publisher_->publish(rovercon_msg);
         RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
     }

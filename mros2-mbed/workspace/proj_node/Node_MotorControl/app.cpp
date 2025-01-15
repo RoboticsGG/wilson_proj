@@ -92,7 +92,7 @@ void splitData(std::string cmData)
   motorControl(period_PWM, dutycycle_PWM, backDirection);
 }
 
-void frontControl(std::string frontDirection, int diff_degree)
+void frontControl(std::string frontDirection, float diff_degree)
 {
   int degree = 0;
   if (frontDirection == "left")

@@ -11,7 +11,7 @@ from std_msgs.msg import String
 class ImageProcess(Node):
     def __init__(self):
         super().__init__('image_process')
-        self.publisher_ = self.create_publisher(String, 'direction_topic', 10)
+        self.publisher_ = self.create_publisher(String, 'topic_direction', 10)
         self.timer_period = 1
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
 

@@ -11,8 +11,8 @@ from std_msgs.msg import String
 class ImageProcess(Node):
     def __init__(self):
         super().__init__('image_process')
-        self.publisher_ = self.create_publisher(String, 'ditection_topic', 10)
-        self.timer_period = 0.5
+        self.publisher_ = self.create_publisher(String, 'direction_topic', 10)
+        self.timer_period = 1
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
 
         self.bag_file_path = r"/home/curry/rover_sample_data/sec.bag"

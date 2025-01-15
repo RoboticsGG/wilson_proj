@@ -49,6 +49,7 @@ private:
                 des_a_ = param.as_int();
             } else if (param.get_name() == "des_b" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
                 des_b_ = param.as_int();
+            }
             // } else if (param.get_name() == "frontDirection" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
             //     frontDirection_ = static_cast<uint8_t>(param.as_int());
             // } else if (param.get_name() == "period_PWM" && param.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {

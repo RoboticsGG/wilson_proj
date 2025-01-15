@@ -39,7 +39,7 @@ class ImageProcess(Node):
         msg.data = combined_message
         self.publisher_.publish(msg)
 
-    def fix_crop_image(h, s, v):
+    def fix_crop_image(self, h, s, v):
         top = [0, 280]
         low = [600, 720]
         left = [0, 350]

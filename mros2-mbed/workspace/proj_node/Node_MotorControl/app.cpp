@@ -57,6 +57,7 @@ void userCallback(std_msgs::msg::String *msg)
   count ++;
   MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
   std::string commandReceived = msg->data.c_str();
+  splitData(commandReceived);
   
   // if (commandReceived != commandTemp){
   //   splitData(commandReceived);

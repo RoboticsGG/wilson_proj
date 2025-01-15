@@ -16,65 +16,13 @@ class ImageProcess(Node):
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
 
         self.bag_file_path = r"/home/curry/rover_sample_data/sec.bag"
-        self.latest_data = {"direction": "", "degree_diff": "0"}
+        self.latest_data = {"direction": "forward", "degree_diff": "0"}
         self.data_lock = threading.Lock()
 
         self.bag_processing_thread = threading.Thread(target=self.read_bag_continuously)
         self.bag_processing_thread.daemon = True
         self.bag_processing_thread.start()
 
-    def read_bag_continuously(self):
-        while rclpy.ok():  # Continue until ROS is shutdown
-            pipeline = rs.pipeline()
-            config = rs.config()
-
-            try:
-                print(f"Reading bag file: {self.bag_file_path}")
-                config.enable_device_from_file(self.bag_file_path)
-                config.enable_stream(rs.stream.color, 1280, 720, rs.format.rgb8, 30)
-                pipeline.start(config)
-                print("Pipeline started successfully.")
-
-                while rclpy.ok():  # Process frames until the end of the file
-                    try:
-                        frames = pipeline.wait_for_frames()
-                        color_frame = frames.get_color_frame()
-                        if not color_frame:
-                            continue
-
-                        color_image = np.asarray(color_frame.get_data())
-                        hsv_img = cv2.cvtColor(color_image, cv2.COLOR_RGB2HSV)
-                        h, s, v = cv2.split(hsv_img)
-                        crop_img = self.fix_crop_image(h, s, v)
-
-                        gray_white = self.filter_white_lines(crop_img)
-                        edges = self.detect_line(gray_white)
-                        center_x, _ = self.contour_find_line(edges, color_image)
-
-                        direction, degree_diff = self.control_robot(center_x, 625)
-
-                        # Update shared data
-                        with self.data_lock:
-                            self.latest_data["direction"] = direction
-                            self.latest_data["degree_diff"] = degree_diff
-
-                    except RuntimeError:
-                        print("End of bag file reached.")
-                        break
-
-            except Exception as e:
-                self.get_logger().error(f"Error reading bag file: {e}")
-
-            finally:
-                try:
-                    pipeline.stop()
-                except RuntimeError as stop_error:
-                    self.get_logger().error(f"Pipeline stop error: {stop_error}")
-                cv2.destroyAllWindows()
-
-            # Wait briefly before restarting the pipeline to avoid resource contention
-            print("Restarting the pipeline...")
-            time.sleep(1)
 
     def timer_callback(self):
         # bag_file_path = r"/home/curry/rover_sample_data/sec.bag"
@@ -181,6 +129,59 @@ class ImageProcess(Node):
                 #print("Move forward")
         else:
             print("No line detected")
+
+    def read_bag_continuously(self):
+        while rclpy.ok():  # Continue until ROS is shutdown
+            pipeline = rs.pipeline()
+            config = rs.config()
+
+            try:
+                print(f"Reading bag file: {self.bag_file_path}")
+                config.enable_device_from_file(self.bag_file_path)
+                config.enable_stream(rs.stream.color, 1280, 720, rs.format.rgb8, 30)
+                pipeline.start(config)
+                print("Pipeline started successfully.")
+
+                while rclpy.ok():  # Process frames until the end of the file
+                    try:
+                        frames = pipeline.wait_for_frames()
+                        color_frame = frames.get_color_frame()
+                        if not color_frame:
+                            continue
+
+                        color_image = np.asarray(color_frame.get_data())
+                        hsv_img = cv2.cvtColor(color_image, cv2.COLOR_RGB2HSV)
+                        h, s, v = cv2.split(hsv_img)
+                        crop_img = self.fix_crop_image(h, s, v)
+
+                        gray_white = self.filter_white_lines(crop_img)
+                        edges = self.detect_line(gray_white)
+                        center_x, _ = self.contour_find_line(edges, color_image)
+
+                        direction, degree_diff = self.control_robot(center_x, 625)
+
+                        # Update shared data
+                        with self.data_lock:
+                            self.latest_data["direction"] = direction
+                            self.latest_data["degree_diff"] = degree_diff
+
+                    except RuntimeError:
+                        print("End of bag file reached.")
+                        break
+
+            except Exception as e:
+                self.get_logger().error(f"Error reading bag file: {e}")
+
+            finally:
+                try:
+                    pipeline.stop()
+                except RuntimeError as stop_error:
+                    self.get_logger().error(f"Pipeline stop error: {stop_error}")
+                cv2.destroyAllWindows()
+
+            # Wait briefly before restarting the pipeline to avoid resource contention
+            print("Restarting the pipeline...")
+            time.sleep(1)
 
 
     # def read_bag_with_opencv(bag_file_path):

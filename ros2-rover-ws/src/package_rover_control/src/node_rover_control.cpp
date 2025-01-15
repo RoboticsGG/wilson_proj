@@ -52,6 +52,13 @@ public:
     }
 
 private:
+    void topic_direction_callback(const std_msgs::msg::String::SharedPtr msg){
+        if (rovercontrol_message_ != msg->data){
+            rovercontrol_message_ = msg->data;
+            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: '%s'", rovercontrol_message_.c_str());
+        }
+    }
+
     void topic_speedlimit_callback(const std_msgs::msg::String::SharedPtr msg) {
         if (speedlimit_message_ != msg->data){
             speedlimit_message_ = msg->data;
@@ -60,7 +67,6 @@ private:
     }
 
     void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){
-    //void topic_destination_callback(const std_msgs::msg::Int16MultiArray::SharedPtr msg){
         if (msg->data.size()==2) {
             if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1]){
                  destination_a_ = msg->data[0];
@@ -70,12 +76,7 @@ private:
         } 
     }
 
-    void topic_direction_callback(const std_msgs::msg::String::SharedPtr msg){
-        if (rovercontrol_message_ != msg->data){
-            rovercontrol_message_ = msg->data;
-            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: '%s'", rovercontrol_message_.c_str());
-        }
-    }
+    
 
     // void topic_rovercontrol_callback(const std_msgs::msg::String::SharedPtr msg){
     //     if (rovercontrol_message_ != msg->data){
@@ -87,19 +88,20 @@ private:
     void timer_callback(){
         auto rovercon_msg = std_msgs::msg::String();
         //motor_msg.data = speedlimit_message_;
-        rovercon_msg.data = rovercontrol_message_;
+        rovercon_msg.data = rovercontrol_message_ + "," + speedlimit_message_;
         topic_rovercontrol_publisher_->publish(rovercon_msg);
         RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
     }
 
-    void testsub_callback(const std_msgs::msg::String::SharedPtr msg){
-        auto test_message_ = std_msgs::msg::String();
-        test_message_.data = msg->data;
-        RCLCPP_INFO(this->get_logger(), "Received on test: '%s'", test_message_.data.c_str());
-    }
+    // void testsub_callback(const std_msgs::msg::String::SharedPtr msg){
+    //     auto test_message_ = std_msgs::msg::String();
+    //     test_message_.data = msg->data;
+    //     RCLCPP_INFO(this->get_logger(), "Received on test: '%s'", test_message_.data.c_str());
+    // }
 
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
     rclcpp::Subscription<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_subscription_;
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_direction_subscription_;
     // rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_rovercontrol_subscription_;
 
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_motorcontrol_publisher_;
@@ -108,8 +110,8 @@ private:
 
     rclcpp::TimerBase::SharedPtr timer_;
 
-    std::string speedlimit_message_;
-    std::string rovercontrol_message_;
+    std::string speedlimit_message_ = "0";
+    std::string rovercontrol_message_ = "forward,0";
     bool message_updated_;
 
     int destination_a_ = 0;

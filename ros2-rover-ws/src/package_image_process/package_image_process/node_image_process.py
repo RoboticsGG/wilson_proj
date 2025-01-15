@@ -14,7 +14,7 @@ class ImageProcess(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def timer_callback(self):
-        bag_file_path = r"D:/Playground_Project/ROS2_TestCode/Proj_Sample_Data/first.bag"
+        bag_file_path = r"/home/curry/rover_sample_data/sec.bag"
         direction, degree_diff = ImageProcess.read_bag_with_opencv(bag_file_path)
         degree_diff_str = str(degree_diff)
         combined_message = f"{direction},{degree_diff_str}"

@@ -28,14 +28,19 @@ public:
             std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::_1)
         );
 
-        topic_rovercontrol_subscription_ = this->create_subscription<std_msgs::msg::String>(
-            "topic_rovercontrol", 9,
-            std::bind(&Node_Rovercontrol::topic_rovercontrol_callback, this, std::placeholders::_1)
+        topic_direction_subscription_ = this->create_subscription<std_msgs::msg::String>(
+            "topic_direction", 9,
+            std::bind(&Node_Rovercontrol::topic_direction_callback, this, std::placeholders::_1)
         );
+
+        // topic_rovercontrol_subscription_ = this->create_subscription<std_msgs::msg::String>(
+        //     "topic_rovercontrol", 9,
+        //     std::bind(&Node_Rovercontrol::topic_rovercontrol_callback, this, std::placeholders::_1)
+        // );
 
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
         topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_motorcontrol", 7);
-        topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
+        // topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
         topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
 
         timer_ = this->create_wall_timer(
@@ -65,12 +70,19 @@ private:
         } 
     }
 
-    void topic_rovercontrol_callback(const std_msgs::msg::String::SharedPtr msg){
+    void topic_direction_callback(const std_msgs::msg::String::SharedPtr msg){
         if (rovercontrol_message_ != msg->data){
             rovercontrol_message_ = msg->data;
-            RCLCPP_INFO(this->get_logger(), "Received on topic_rovercontrol_subscription_: '%s'", rovercontrol_message_.c_str());
+            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: '%s'", rovercontrol_message_.c_str());
         }
     }
+
+    // void topic_rovercontrol_callback(const std_msgs::msg::String::SharedPtr msg){
+    //     if (rovercontrol_message_ != msg->data){
+    //         rovercontrol_message_ = msg->data;
+    //         RCLCPP_INFO(this->get_logger(), "Received on topic_rovercontrol_subscription_: '%s'", rovercontrol_message_.c_str());
+    //     }
+    // }
 
     void timer_callback(){
         auto rovercon_msg = std_msgs::msg::String();
@@ -78,18 +90,6 @@ private:
         rovercon_msg.data = rovercontrol_message_;
         topic_rovercontrol_publisher_->publish(rovercon_msg);
         RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
-
-        // auto speed_message = std_msgs::msg::String();
-        // speed_message.data = std::to_string(speedlimit_) + "," + test_con_; //Example to add string
-        // RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", speed_message.data.c_str());
-        // topic_speedlimit_publisher_->publish(speed_message);
-
-        // auto test_msg = std_msgs::msg::String();
-        // std::stringstream ss;
-        // ss << "Destination: a=" << destination_a_ << ", b=" << destination_b_;
-        // test_msg.data = ss.str();
-        // topic_testcontrol_publisher_->publish(test_msg);
-        //RCLCPP_INFO(this->get_logger(), "Published to pub_testcontrol: '%s'", test_msg.data.c_str());
     }
 
     void testsub_callback(const std_msgs::msg::String::SharedPtr msg){
@@ -100,10 +100,10 @@ private:
 
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
     rclcpp::Subscription<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_subscription_;
-    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_rovercontrol_subscription_;
+    // rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_rovercontrol_subscription_;
 
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_motorcontrol_publisher_;
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_testcontrol_publisher_;
+    // rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_testcontrol_publisher_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_rovercontrol_publisher_;
 
     rclcpp::TimerBase::SharedPtr timer_;

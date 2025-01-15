@@ -24,8 +24,8 @@
 #include <string>
 
 void splitData(std::string cmData);
-void frontControl(std::string frontDirection, int diff_degree)
-void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection)
+void frontControl(std::string frontDirection, int diff_degree);
+void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection);
 
 DigitalIn signalPinR(PF_12);
 DigitalIn signalPinL(PF_14);

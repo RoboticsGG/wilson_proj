@@ -18,6 +18,7 @@ class ImageProcess(Node):
         direction, degree_diff = ImageProcess.read_bag_with_opencv(bag_file_path)
         degree_diff_str = str(degree_diff)
         combined_message = f"{direction},{degree_diff_str}"
+        print(combined_message)
         msg = String()
         msg.data = combined_message
         self.publisher_.publish(msg)

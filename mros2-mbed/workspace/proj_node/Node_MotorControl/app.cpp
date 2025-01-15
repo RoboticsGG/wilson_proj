@@ -41,7 +41,7 @@ int encoderInA = 0;
 int encoderInB = 0;
 float duty = 0.00;
 
-int frontDirection = "forward";
+std::string frontDirection = "forward";
 int frontDegree = 0;
 int period_PWM = 0;
 int dutycycle_PWM = 0;

@@ -87,6 +87,12 @@ void splitData(std::string cmData)
   if(std::getline(ss, token, ',')){
     backDirection = token;
   }
+  MROS2_INFO("frontDirection: %s", frontDirection);
+  MROS2_INFO("Count: %s", std::to_string(frontDegree).c_str());
+  MROS2_INFO("Count: %s", std::to_string(period_PWM).c_str());
+  MROS2_INFO("Count: %s", std::to_string(dutycycle_PWM).c_str());
+  MROS2_INFO("backDirection: %s", backDirection);
+
 
   frontControl(frontDirection, frontDegree);
   motorControl(period_PWM, dutycycle_PWM, backDirection);

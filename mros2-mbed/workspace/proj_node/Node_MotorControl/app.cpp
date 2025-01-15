@@ -24,8 +24,8 @@
 #include <string>
 
 void splitData(std::string cmData);
-void frontControl(int degree);
-void motorControl(int period_PWM, float dutycycle_PWM, std::string direction);
+void frontControl(std::string frontDirection, int diff_degree)
+void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection)
 
 DigitalIn signalPinR(PF_12);
 DigitalIn signalPinL(PF_14);
@@ -87,7 +87,7 @@ void splitData(std::string cmData)
   if(std::getline(ss, token, ',')){
     backDirection = token;
   }
-  
+
   frontControl(frontDirection, frontDegree);
   motorControl(period_PWM, dutycycle_PWM, backDirection);
 }

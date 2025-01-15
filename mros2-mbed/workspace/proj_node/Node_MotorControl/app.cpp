@@ -68,7 +68,7 @@ void userCallback(std_msgs::msg::String *msg)
 
 void splitData(std::string cmData)
 {
-  commandTemp = cmData;
+  // commandTemp = cmData;
   std::stringstream ss(cmData);
   std::string token;
 

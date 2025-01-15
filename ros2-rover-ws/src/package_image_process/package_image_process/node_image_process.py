@@ -61,7 +61,7 @@ class ImageProcess(Node):
         v[:, right[0]:right[1]] = 0
         return cv2.merge([h, s, v])
 
-    def filter_white_lines(image):
+    def filter_white_lines(self, image):
         blurred = cv2.GaussianBlur(image, (1, 1), 0)
         white_lower = np.array([0, 0, 200], dtype=np.uint8)
         white_upper = np.array([179, 50, 255], dtype=np.uint8)
@@ -71,12 +71,12 @@ class ImageProcess(Node):
         gray_white = cv2.cvtColor(gray_white, cv2.COLOR_BGR2GRAY)
         return gray_white
 
-    def detect_line(image):
+    def detect_line(self, image):
         edges = cv2.Canny(image, 150, 200)
         return edges
 
     #modified using Hough
-    def find_line_center(edges, color_image):
+    def find_line_center(self, edges, color_image):
         lines = cv2.HoughLinesP(edges, 1, np.pi / 180, threshold=100, minLineLength=50, maxLineGap=10)
         if lines is not None:
             for line in lines:
@@ -92,7 +92,7 @@ class ImageProcess(Node):
                         return center_x, center_y
         return None, None
 
-    def contour_find_line(edges, color_image):
+    def contour_find_line(self, edges, color_image):
         contours, _ = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         if contours:
             max_contour = max(contours, key=cv2.contourArea)
@@ -108,7 +108,7 @@ class ImageProcess(Node):
     #     cv2.circle(color_image, (625, 440), 5, (0, 0, 255), -1)
     #     return None
 
-    def control_robot(contour_center_x, img_center):
+    def control_robot(self, contour_center_x, img_center):
         if contour_center_x is not None:
             if (contour_center_x < img_center) and (img_center - contour_center_x > 42):
                 pixel_diff = img_center - contour_center_x

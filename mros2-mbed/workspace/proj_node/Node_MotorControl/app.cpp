@@ -18,7 +18,6 @@
 #include "mros2.h"
 #include "mros2-platform.h"
 #include "std_msgs/msg/string.hpp"
-//#include <cstdlib>
 #include <sstream>
 #include <string>
 
@@ -56,7 +55,7 @@ uint8_t EN_B = 0;
 
 void userCallback(std_msgs::msg::String *msg)
 {
-  // MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
+  MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
   std::string commandReceived = msg->data.c_str();
 
   const char* parsedFrontDir = "fw";

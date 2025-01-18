@@ -130,8 +130,8 @@ void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection
   // MortorLPWM.write(0.00f);
 
   if(backDirection == "forward"){
-    MortorFWEN.write(1);
-    MortorBWEN.write(0);
+    MortorFWEN.write(0);
+    MortorBWEN.write(1);
   } 
   else if (backDirection == "backward"){
     MortorFWEN.write(0);

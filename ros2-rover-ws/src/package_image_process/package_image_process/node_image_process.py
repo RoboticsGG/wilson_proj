@@ -119,21 +119,20 @@ class ImageProcess(Node):
                 return direction, degree_diff_str
             elif (contour_center_x > img_center) and (contour_center_x - img_center > 42):
                 pixel_diff = contour_center_x - img_center
+                degree_diff = (180/1280) * pixel_diff
                 degree_diff_int = int(degree_diff)
                 degree_diff_str = f"{degree_diff_int}" 
                 direction = "ri"
                 #print("Turn right : ", degree_diff)
                 return direction, degree_diff_str
             else:
+                degree_diff = 0
                 degree_diff_str = "0"
                 direction = "fw"
                 return direction, degree_diff_str
                 #print("Move forward")
         else:
             print("No line detected")
-            degree_diff_str = "0"
-            direction = "fw"
-            return direction, degree_diff_str
 
     def read_bag_continuously(self):
         while rclpy.ok():  # Continue until ROS is shutdown

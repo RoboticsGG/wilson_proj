@@ -68,7 +68,7 @@ void parseCommandData(const std::string& cmData)
 {
     std::stringstream ss(cmData);
     std::string token;
-
+    
     if (std::getline(ss, token, ',')) {
         frontDirection = token;  
     }
@@ -101,6 +101,8 @@ void frontControl(std::string frontDirection, uint8_t diff_degree)
     degree = servo_center;
   }
   duty = 0.05f + (degree / 180.0f) * (0.10f - 0.05f); //180=left, 90=center, 0=right
+  DirectPWM.period_ms(20);
+  DirectPWM.write(duty);
 }
 
 void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection)
@@ -120,20 +122,16 @@ void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection
     EN_A = 0;
     EN_B = 0;
   }
-}
-
-int main()
-{
-
-  DirectPWM.period_ms(20);
-  DirectPWM.write(duty);
   MortorFWEN.write(EN_A);
   MortorBWEN.write(EN_B);
   MortorRPWM.period_us(period_PWM);
   MortorRPWM.write(percent_dutycycle);
   MortorLPWM.period_us(period_PWM);
   MortorLPWM.write(percent_dutycycle);
+}
 
+int main()
+{
   if (mros2_platform::network_connect())
   {
     MROS2_ERROR("failed to connect and setup network! aborting,,,");

@@ -24,7 +24,7 @@
 void splitData(std::string cmData);
 void frontControl(std::string frontDirection, uint8_t diff_degree);
 void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection);
-void parseCommandData(const std::string& cmData, std::string& outFrontDir, uint8_t& outFrontAng, uint8_t& outDutyCycle, std::string& outBackDir);
+void parseCommandData(const std::string& cmData);
 
 DigitalIn signalPinR(PF_12);
 DigitalIn signalPinL(PF_14);
@@ -58,48 +58,28 @@ void userCallback(std_msgs::msg::String *msg)
   MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
   std::string commandReceived = msg->data.c_str();
 
-  std::string parsedFrontDir = "fw";
-  uint8_t parsedFrontAng = 0;
+  parseCommandData(commandReceived);
+  frontControl(frontDirection, frontDegree);
+  motorControl(period_PWM, dutycycle_PWM, backDirection);
 
-  uint8_t parsedDutyCycle = 0;
-  std::string parsedBackDir = "fw";
-
-  parseCommandData(commandReceived, parsedFrontDir, parsedFrontAng, parsedDutyCycle, parsedBackDir);
-
-  if ((frontDirection != parsedFrontDir) || (frontDegree != parsedFrontAng)) {
-    frontDirection = parsedFrontDir;
-    frontDegree = parsedFrontAng;
-    frontControl(frontDirection, frontDegree);
-  } 
-
-  if ((dutycycle_PWM != parsedDutyCycle) || (backDirection != parsedBackDir)) {
-    dutycycle_PWM = parsedDutyCycle;
-    backDirection = parsedBackDir;
-    motorControl(period_PWM, dutycycle_PWM, backDirection);
-  }
 }
 
-void parseCommandData(const std::string& cmData, std::string& outFrontDir, uint8_t& outFrontAng, uint8_t& outDutyCycle, std::string& outBackDir)
+void parseCommandData(const std::string& cmData)
 {
     std::stringstream ss(cmData);
     std::string token;
 
-    outFrontDir = "fw";
-    outFrontAng = 0;
-    outDutyCycle = 0;
-    outBackDir = "fw";
-
     if (std::getline(ss, token, ',')) {
-        outFrontDir = token;  
+        frontDirection = token;  
     }
     if (std::getline(ss, token, ',')) {
-        outFrontAng = static_cast<uint8_t>(std::stoi(token));
+        frontDegree = static_cast<uint8_t>(std::stoi(token));
     }
     if (std::getline(ss, token, ',')) {
-        outDutyCycle = static_cast<uint8_t>(std::stoi(token));
+        dutycycle_PWM = static_cast<uint8_t>(std::stoi(token));
     }
     if (std::getline(ss, token, ',')) {
-        outBackDir = token; 
+        backDirection = token; 
     }
 }
 
@@ -147,7 +127,6 @@ int main()
 
   DirectPWM.period_ms(20);
   DirectPWM.write(duty);
-
   MortorFWEN.write(EN_A);
   MortorBWEN.write(EN_B);
   MortorRPWM.period_us(period_PWM);

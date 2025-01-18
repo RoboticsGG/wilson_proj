@@ -26,6 +26,7 @@
 void splitData(std::string cmData);
 void frontControl(std::string frontDirection, float diff_degree);
 void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection);
+void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8_t& outFrontAng, uint8_t& outDutyCycle, const char*& outBackDir);
 
 DigitalIn signalPinR(PF_12);
 DigitalIn signalPinL(PF_14);

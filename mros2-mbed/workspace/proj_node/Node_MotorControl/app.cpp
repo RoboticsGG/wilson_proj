@@ -79,7 +79,7 @@ void userCallback(std_msgs::msg::String *msg)
   }
 }
 
-void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8_t& outFrontAng, uint8_t& outDutyCycle, const char*& outBackDir)
+void parseCommandData(const std::string& cmData, std::string& outFrontDir, uint8_t& outFrontAng, uint8_t& outDutyCycle, std::string& outBackDir)
 {
     std::stringstream ss(cmData);
     std::string token;

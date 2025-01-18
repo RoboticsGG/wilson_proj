@@ -123,7 +123,7 @@ void frontControl(std::string frontDirection, uint8_t diff_degree)
   }
 
   duty = 0.05f + (degree / 180.0f) * (1.00f - 0.05f); //180=left, 90=center, 0=right
-  MROS2_INFO(duty);
+  MROS2_INFO("Calculated duty: %.2f", duty);
   DirectPWM.period_ms(20);
   DirectPWM.write(duty);
 }

@@ -105,7 +105,7 @@ void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8
     }
 }
 
-void frontControl(std::string frontDirection, float diff_degree)
+void frontControl(std::string frontDirection, uint8_t diff_degree)
 {
   int degree = 0;
   if (frontDirection == "lf")

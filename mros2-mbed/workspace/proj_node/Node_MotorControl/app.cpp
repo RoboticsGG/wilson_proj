@@ -24,7 +24,7 @@
 void splitData(std::string cmData);
 void frontControl(std::string frontDirection, uint8_t diff_degree);
 void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection);
-void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8_t& outFrontAng, uint8_t& outDutyCycle, const char*& outBackDir);
+void parseCommandData(const std::string& cmData, std::string& outFrontDir, uint8_t& outFrontAng, uint8_t& outDutyCycle, std::string& outBackDir);
 
 DigitalIn signalPinR(PF_12);
 DigitalIn signalPinL(PF_14);
@@ -90,7 +90,7 @@ void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8
     outBackDir = "fw";
 
     if (std::getline(ss, token, ',')) {
-        outFrontDir = token.c_str();  
+        outFrontDir = token;  
     }
     if (std::getline(ss, token, ',')) {
         outFrontAng = static_cast<uint8_t>(std::stoi(token));
@@ -99,7 +99,7 @@ void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8
         outDutyCycle = static_cast<uint8_t>(std::stoi(token));
     }
     if (std::getline(ss, token, ',')) {
-        outBackDir = token.c_str(); 
+        outBackDir = token; 
     }
     //MROS2_INFO("parsed frontDir: '%s', frontAng: '%d', dutyCycle: '%d', backDir: '%s'", outFrontDir, outFrontAng, outDutyCycle, outBackDir);
 }
@@ -122,7 +122,7 @@ void frontControl(std::string frontDirection, uint8_t diff_degree)
     degree = servo_center;
   }
 
-  duty = 0.05f + (degree / 180.0f) * (0.10f - 0.05f); //180=left, 90=center, 0=right
+  duty = degree / 180 //180=left, 90=center, 0=right
   MROS2_INFO("Calculated duty: %.2f", duty);
   DirectPWM.period_ms(20);
   DirectPWM.write(duty);

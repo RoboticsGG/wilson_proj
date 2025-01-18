@@ -23,11 +23,12 @@
 
 void splitData(std::string cmData);
 void frontControl(std::string frontDirection, uint8_t diff_degree);
-void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection);
+void backControl(std::string backDirection);
 void parseCommandData(const std::string& cmData);
+void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float percent_dutycycle);
 
-DigitalIn signalPinR(PF_12);
-DigitalIn signalPinL(PF_14);
+// DigitalIn signalPinR(PF_12);
+// DigitalIn signalPinL(PF_14);
 
 PwmOut DirectPWM(PA_6);
 PwmOut MortorRPWM(PE_11);
@@ -36,36 +37,42 @@ PwmOut MortorLPWM(PD_15);
 DigitalOut MortorFWEN(PE_13);
 DigitalOut MortorBWEN(PF_13);
 
-uint8_t encoderInA = 0;
-uint8_t encoderInB = 0;
-float duty = 0.00f;
+// uint8_t encoderInA = 0;
+// uint8_t encoderInB = 0;
 
-std::string frontDirection = "fw";
+
 uint8_t servo_center = 100;
-uint8_t frontDegree = 0;
-uint8_t period_PWM = 20;
-uint8_t dutycycle_PWM = 0;
-float percent_dutycycle = 0.00f;
-
-std::string backDirection = "fw";
-uint8_t EN_A = 0;
-uint8_t EN_B = 0;
-
-// std::string commandTemp = "";
 
 void userCallback(std_msgs::msg::String *msg)
 {
+  float dutycy = 0.00f;
+  uint8_t EN_A = 0;
+  uint8_t EN_B = 0;
+  uint8_t period_PWM = 20;
+  float percent_dutycycle = 0.00f;
+
+  std::string frontDirection = "fw";
+  uint8_t frontDegree = 0;
+  uint8_t dutycycle_PWM = 0;
+  std::string backDirection = "fw";
+
   MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
   std::string commandReceived = msg->data.c_str();
 
-  parseCommandData(commandReceived);
-  frontControl(frontDirection, frontDegree);
-  motorControl(period_PWM, dutycycle_PWM, backDirection);
+  frontDirection, frontDegree, dutycycle_PWM, backDirection = parseCommandData(commandReceived);
 
+  dutycy = frontControl(frontDirection, frontDegree);
+  percent_dutycycle, EN_A, EN_B = backControl(backDirection);
+  motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
 }
 
 void parseCommandData(const std::string& cmData)
 {
+    std::string frontDirection = "fw";
+    uint8_t frontDegree = 0;
+    uint8_t dutycycle_PWM = 0;
+    std::string backDirection = "fw";
+
     std::stringstream ss(cmData);
     std::string token;
     
@@ -81,11 +88,15 @@ void parseCommandData(const std::string& cmData)
     if (std::getline(ss, token, ',')) {
         backDirection = token; 
     }
+
+    return frontDirection, frontDegree, dutycycle_PWM, backDirection;
 }
 
 void frontControl(std::string frontDirection, uint8_t diff_degree)
 {
   uint8_t degree = 0;
+  float cal_duty = 0.00f;
+
   if (frontDirection == "lf")
   {
     degree = servo_center - diff_degree;
@@ -100,28 +111,38 @@ void frontControl(std::string frontDirection, uint8_t diff_degree)
   } else {
     degree = servo_center;
   }
-  duty = 0.05f + (degree / 180.0f) * (0.10f - 0.05f); //180=left, 90=center, 0=right
-  DirectPWM.period_ms(20);
-  DirectPWM.write(duty);
+  cal_duty = 0.05f + (degree / 180.0f) * (0.10f - 0.05f); //180=left, 90=center, 0=right
+
+  return cal_duty;
 }
 
-void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection)
+void backControl(std::string backDirection)
 {
-  percent_dutycycle = dutycycle_PWM/100;
-  signalPinR.mode(PullUp);
-  signalPinL.mode(PullUp);
+  uint8_t EN_A_ = 0;
+  uint8_t EN_B_ = 0;
+  float cal_percent_dutycycle = 0.00f;
+  cal_percent_dutycycle = dutycycle_PWM/100;
+  // signalPinR.mode(PullUp);
+  // signalPinL.mode(PullUp);
 
   if(backDirection == "fw"){
-    EN_A = 1;
-    EN_B = 0;
+    EN_A_ = 1;
+    EN_B_ = 0;
   } 
   else if (backDirection == "bw"){
-    EN_A = 0;
-    EN_B = 1;
+    EN_A_ = 0;
+    EN_B_ = 1;
   } else {
-    EN_A = 0;
-    EN_B = 0;
+    EN_A_ = 0;
+    EN_B_ = 0;
   }
+  return cal_percent_dutycycle, EN_A_, EN_B_;
+  
+}
+
+void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float percent_dutycycle){
+  DirectPWM.period_ms(20);
+  DirectPWM.write(duty);
   MortorFWEN.write(EN_A);
   MortorBWEN.write(EN_B);
   MortorRPWM.period_us(period_PWM);

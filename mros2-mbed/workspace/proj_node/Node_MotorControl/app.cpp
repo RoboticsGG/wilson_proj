@@ -42,7 +42,7 @@ uint8_t encoderInB = 0;
 float duty = 0.00f;
 
 std::string frontDirection = "fw";
-uint8_t servo_center
+uint8_t servo_center = 100;
 uint8_t frontDegree = 0;
 uint8_t period_PWM = 20;
 uint8_t dutycycle_PWM = 0;
@@ -56,44 +56,52 @@ uint8_t EN_B = 0;
 
 void userCallback(std_msgs::msg::String *msg)
 {
-  // static uint8_t count = 0;
-  // count ++;
   // MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
   std::string commandReceived = msg->data.c_str();
-  splitData(commandReceived);
-  
-  // if (commandReceived != commandTemp){
-  //   splitData(commandReceived);
-  //   MROS2_INFO("Update control");
-  // }
-  
-  MROS2_INFO("Count: %s", std::to_string(count).c_str());
+
+  const char* parsedFrontDir = "fw";
+  uint8_t parsedFrontAng = 0;
+
+  uint8_t parsedDutyCycle = 0;
+  const char* parsedBackDir = "fw";
+
+  parseCommandData(commandReceived, parsedFrontDir, parsedFrontAng, parsedDutyCycle, parsedBackDir);
+
+  if ((frontDirection != parsedFrontDir) || (frontDegree != parsedFrontAng)) {
+    frontDirection = parsedFrontDir;
+    frontDegree = parsedFrontAng;
+    frontControl(frontDirection, frontDegree);
+  }
+
+  if ((dutycycle_PWM != parsedDutyCycle) || (backDirection != parsedBackDir)) {
+    dutycycle_PWM = parsedDutyCycle;
+    backDirection = parsedBackDir;
+    motorControl(period_PWM, dutycycle_PWM, backDirection);
+  }
 }
 
-void splitData(std::string cmData)
+void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8_t& outFrontAng, uint8_t& outDutyCycle, const char*& outBackDir)
 {
-  // commandTemp = cmData;
-  std::stringstream ss(cmData);
-  std::string token;
+    std::stringstream ss(cmData);
+    std::string token;
 
-  if(std::getline(ss, token, ',')){
-    frontDirection = token;
-  }
-  if(std::getline(ss, token, ',')){
-    frontDegree = std::stoi(token);
-  }
-  // if(std::getline(ss, token, ',')){
-  //   period_PWM = std::stoi(token);
-  // }
-  if(std::getline(ss, token, ',')){
-    dutycycle_PWM = std::stoi(token);
-  }
-  if(std::getline(ss, token, ',')){
-    backDirection = token;
-  }
+    outFrontDir = "fw";
+    outFrontAng = 0;
+    outDutyCycle = 0;
+    outBackDir = "fw";
 
-  frontControl(frontDirection, frontDegree);
-  motorControl(period_PWM, dutycycle_PWM, backDirection);
+    if (std::getline(ss, token, ',')) {
+        outFrontDir = token.c_str();  
+    }
+    if (std::getline(ss, token, ',')) {
+        outFrontAng = static_cast<uint8_t>(std::stoi(token));
+    }
+    if (std::getline(ss, token, ',')) {
+        outDutyCycle = static_cast<uint8_t>(std::stoi(token));
+    }
+    if (std::getline(ss, token, ',')) {
+        outBackDir = token.c_str(); 
+    }
 }
 
 void frontControl(std::string frontDirection, float diff_degree)
@@ -101,19 +109,19 @@ void frontControl(std::string frontDirection, float diff_degree)
   int degree = 0;
   if (frontDirection == "lf")
   {
-    degree = 100 - diff_degree;
+    degree = servo_center - diff_degree;
   }
   else if (frontDirection == "ri")
   {
-    degree = 100 + diff_degree;
+    degree = servo_center + diff_degree;
   }
   else if (frontDirection == "fw")
   {
-    degree = 100;
+    degree = servo_center;
   } else {
-    degree = 100;
+    degree = servo_center;
   }
-  duty = 0.05f + (degree / 180.0f) * (0.10f - 0.05f); //180=left, 90=center, 0=right
+  duty = 0.05f + (degree / 180.0f) * (1.00f - 0.05f); //180=left, 90=center, 0=right
   DirectPWM.period_ms(20);
   DirectPWM.write(duty);
 }
@@ -123,13 +131,6 @@ void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection
   percent_dutycycle = dutycycle_PWM/100;
   signalPinR.mode(PullUp);
   signalPinL.mode(PullUp);
-
-  // MortorFWEN.write(0);
-  // MortorBWEN.write(0);
-  // MortorRPWM.period_us(20);
-  // MortorRPWM.write(0.00f);
-  // MortorLPWM.period_us(20);
-  // MortorLPWM.write(0.00f);
 
   if(backDirection == "fw"){
     EN_A = 1;
@@ -149,7 +150,6 @@ void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection
   MortorRPWM.write(percent_dutycycle);
   MortorLPWM.period_us(period_PWM);
   MortorLPWM.write(percent_dutycycle);
-  
 }
 
 int main()

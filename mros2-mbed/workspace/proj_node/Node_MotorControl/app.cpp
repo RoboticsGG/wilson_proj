@@ -55,7 +55,7 @@ uint8_t EN_B = 0;
 
 void userCallback(std_msgs::msg::String *msg)
 {
-  MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
+  //MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
   std::string commandReceived = msg->data.c_str();
 
   const char* parsedFrontDir = "fw";
@@ -66,11 +66,11 @@ void userCallback(std_msgs::msg::String *msg)
 
   parseCommandData(commandReceived, parsedFrontDir, parsedFrontAng, parsedDutyCycle, parsedBackDir);
 
-  // if ((frontDirection != parsedFrontDir) || (frontDegree != parsedFrontAng)) {
-  //   frontDirection = parsedFrontDir;
-  //   frontDegree = parsedFrontAng;
-  //   frontControl(frontDirection, frontDegree);
-  // } 
+  if ((frontDirection != parsedFrontDir) || (frontDegree != parsedFrontAng)) {
+    frontDirection = parsedFrontDir;
+    frontDegree = parsedFrontAng;
+    frontControl(frontDirection, frontDegree);
+  } 
 
   if ((dutycycle_PWM != parsedDutyCycle) || (backDirection != parsedBackDir)) {
     dutycycle_PWM = parsedDutyCycle;
@@ -101,13 +101,12 @@ void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8
     if (std::getline(ss, token, ',')) {
         outBackDir = token.c_str(); 
     }
-    frontControl(outFrontDir, outFrontAng);
     MROS2_INFO("parsed frontDir: '%s', frontAng: '%d', dutyCycle: '%d', backDir: '%s'", outFrontDir, outFrontAng, outDutyCycle, outBackDir);
 }
 
 void frontControl(std::string frontDirection, uint8_t diff_degree)
 {
-  int degree = 0;
+  uint8_t degree = 0;
   if (frontDirection == "lf")
   {
     degree = servo_center - diff_degree;

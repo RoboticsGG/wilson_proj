@@ -101,7 +101,6 @@ void parseCommandData(const std::string& cmData, std::string& outFrontDir, uint8
     if (std::getline(ss, token, ',')) {
         outBackDir = token; 
     }
-    //MROS2_INFO("parsed frontDir: '%s', frontAng: '%d', dutyCycle: '%d', backDir: '%s'", outFrontDir, outFrontAng, outDutyCycle, outBackDir);
 }
 
 void frontControl(std::string frontDirection, uint8_t diff_degree)
@@ -174,7 +173,7 @@ int main()
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
   //mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
-  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 5, userCallback);
+  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, userCallback);
 
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");

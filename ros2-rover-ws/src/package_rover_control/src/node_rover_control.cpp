@@ -41,7 +41,7 @@ public:
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_motorcontrol", 7);
         // topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
-        topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 5);
+        topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(2),  // Set interval to 1 second

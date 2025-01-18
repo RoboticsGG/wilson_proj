@@ -101,6 +101,8 @@ void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8
     if (std::getline(ss, token, ',')) {
         outBackDir = token.c_str(); 
     }
+
+    MROS2_INFO("parsed frontDir: '%s', frontAng: '%d', dutyCycle: '%d', backDir: '%s'", outFrontDir, outFrontAng, outDutyCycle, outBackDir);
 }
 
 void frontControl(std::string frontDirection, uint8_t diff_degree)

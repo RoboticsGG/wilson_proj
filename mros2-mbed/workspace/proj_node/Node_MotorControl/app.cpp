@@ -70,9 +70,7 @@ void userCallback(std_msgs::msg::String *msg)
     frontDirection = parsedFrontDir;
     frontDegree = parsedFrontAng;
     frontControl(frontDirection, frontDegree);
-  } else {
-    frontControl(frontDirection, frontDegree);
-  }
+  } 
 
   if ((dutycycle_PWM != parsedDutyCycle) || (backDirection != parsedBackDir)) {
     dutycycle_PWM = parsedDutyCycle;

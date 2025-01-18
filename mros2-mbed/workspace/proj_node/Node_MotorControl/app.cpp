@@ -66,11 +66,11 @@ void userCallback(std_msgs::msg::String *msg)
 
   parseCommandData(commandReceived, parsedFrontDir, parsedFrontAng, parsedDutyCycle, parsedBackDir);
 
-  if ((frontDirection != parsedFrontDir) || (frontDegree != parsedFrontAng)) {
-    frontDirection = parsedFrontDir;
-    frontDegree = parsedFrontAng;
-    frontControl(frontDirection, frontDegree);
-  } 
+  // if ((frontDirection != parsedFrontDir) || (frontDegree != parsedFrontAng)) {
+  //   frontDirection = parsedFrontDir;
+  //   frontDegree = parsedFrontAng;
+  //   frontControl(frontDirection, frontDegree);
+  // } 
 
   if ((dutycycle_PWM != parsedDutyCycle) || (backDirection != parsedBackDir)) {
     dutycycle_PWM = parsedDutyCycle;
@@ -101,7 +101,7 @@ void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8
     if (std::getline(ss, token, ',')) {
         outBackDir = token.c_str(); 
     }
-
+    frontControl(outFrontDir, outFrontAng);
     MROS2_INFO("parsed frontDir: '%s', frontAng: '%d', dutyCycle: '%d', backDir: '%s'", outFrontDir, outFrontAng, outDutyCycle, outBackDir);
 }
 

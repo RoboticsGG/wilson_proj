@@ -58,11 +58,11 @@ void userCallback(std_msgs::msg::String *msg)
   //MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
   std::string commandReceived = msg->data.c_str();
 
-  const char* parsedFrontDir = "fw";
+  std::string parsedFrontDir = "fw";
   uint8_t parsedFrontAng = 0;
 
   uint8_t parsedDutyCycle = 0;
-  const char* parsedBackDir = "fw";
+  std::string parsedBackDir = "fw";
 
   parseCommandData(commandReceived, parsedFrontDir, parsedFrontAng, parsedDutyCycle, parsedBackDir);
 

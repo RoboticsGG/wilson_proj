@@ -126,9 +126,9 @@ class ImageProcess(Node):
                 #print("Turn right : ", degree_diff)
                 return direction, degree_diff_str
             else:
-                degree_diff = "0"
+                degree_diff_str = "0"
                 direction = "fw"
-                return direction, degree_diff
+                return direction, degree_diff_str
                 #print("Move forward")
         else:
             print("No line detected")
@@ -185,54 +185,6 @@ class ImageProcess(Node):
             # Wait briefly before restarting the pipeline to avoid resource contention
             print("Restarting the pipeline...")
             time.sleep(1)
-
-
-    # def read_bag_with_opencv(bag_file_path):
-    #     pipeline = rs.pipeline()
-    #     config = rs.config()
-    #     try:
-    #         print(f"Reading bag file: {bag_file_path}")
-    #         config.enable_device_from_file(bag_file_path)
-    #         config.enable_stream(rs.stream.color, 1280, 720, rs.format.rgb8, 30)
-    #         pipeline.start(config)
-    #         print("Pipeline started successfully.")
-
-    #         while True:
-    #             try:
-    #                 frames = pipeline.wait_for_frames()
-    #             except RuntimeError as e:
-    #                 print(f"Error while waiting for frames: {e}")
-    #                 break
-
-    #             color_frame = frames.get_color_frame()
-    #             if not color_frame:
-    #                 print("No color frame available, skipping frame.")
-    #                 continue
-
-    #             color_image = np.asarray(color_frame.get_data())
-    #             hsv_img = cv2.cvtColor(color_image, cv2.COLOR_RGB2HSV)
-    #             h, s, v = cv2.split(hsv_img)
-    #             crop_img = ImageProcess.function_FixCropImage(h, s, v)
-
-    #             gray_white = ImageProcess.filter_white_lines(crop_img)
-    #             edges = ImageProcess.detect_line(gray_white)
-
-    #             center_x, center_y = ImageProcess.contour_find_line(gray_white, color_image)
-    #             center_x1, center_y1 = ImageProcess.find_line_center(edges, color_image)
-
-    #             direction, degree_diff = ImageProcess.control_robot(center_x, 625)
-
-    #             return direction, degree_diff
-
-    #     except Exception as e:
-    #         print(f"Error reading bag file: {e}")
-
-    #     finally:
-    #         try:
-    #             pipeline.stop()
-    #         except RuntimeError as stop_error:
-    #             print(f"Pipeline stop error: {stop_error}")
-    #         cv2.destroyAllWindows()
 
 def main(args=None):
     rclpy.init(args=args)

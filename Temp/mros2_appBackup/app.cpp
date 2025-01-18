@@ -46,7 +46,7 @@ int frontDegree = 0;
 int period_PWM = 0;
 int dutycycle_PWM = 0;
 float percent_dutycycle = 0.00;
-std::string backDirection = "backward";
+std::string backDirection = "forward";
 
 // std::string commandTemp = "";
 

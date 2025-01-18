@@ -101,7 +101,7 @@ void parseCommandData(const std::string& cmData, const char*& outFrontDir, uint8
     if (std::getline(ss, token, ',')) {
         outBackDir = token.c_str(); 
     }
-    MROS2_INFO("parsed frontDir: '%s', frontAng: '%d', dutyCycle: '%d', backDir: '%s'", outFrontDir, outFrontAng, outDutyCycle, outBackDir);
+    //MROS2_INFO("parsed frontDir: '%s', frontAng: '%d', dutyCycle: '%d', backDir: '%s'", outFrontDir, outFrontAng, outDutyCycle, outBackDir);
 }
 
 void frontControl(std::string frontDirection, uint8_t diff_degree)
@@ -122,6 +122,7 @@ void frontControl(std::string frontDirection, uint8_t diff_degree)
     degree = servo_center;
   }
   duty = 0.05f + (degree / 180.0f) * (1.00f - 0.05f); //180=left, 90=center, 0=right
+  MROS2_INFO("Duty: '%f'", duty);
   DirectPWM.period_ms(20);
   DirectPWM.write(duty);
 }

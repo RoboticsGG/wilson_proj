@@ -55,7 +55,7 @@ uint8_t EN_B = 0;
 
 void userCallback(std_msgs::msg::String *msg)
 {
-  //MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
+  MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
   std::string commandReceived = msg->data.c_str();
 
   std::string parsedFrontDir = "fw";
@@ -101,7 +101,7 @@ void parseCommandData(const std::string& cmData, std::string& outFrontDir, uint8
     if (std::getline(ss, token, ',')) {
         outBackDir = token; 
     }
-    MROS2_INFO("parsed frontDir: '%s', frontAng: '%d', dutyCycle: '%d', backDir: '%s'", outFrontDir, outFrontAng, outDutyCycle, outBackDir);
+    //MROS2_INFO("parsed frontDir: '%s', frontAng: '%d', dutyCycle: '%d', backDir: '%s'", outFrontDir, outFrontAng, outDutyCycle, outBackDir);
 }
 
 void frontControl(std::string frontDirection, uint8_t diff_degree)

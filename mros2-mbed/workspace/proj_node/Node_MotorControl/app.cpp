@@ -39,13 +39,14 @@ DigitalOut MortorBWEN(PF_13);
 
 uint8_t encoderInA = 0;
 uint8_t encoderInB = 0;
-float duty = 0.00;
+float duty = 0.00f;
 
 std::string frontDirection = "fw";
+uint8_t servo_center
 uint8_t frontDegree = 0;
-uint8_t period_PWM = 0;
+uint8_t period_PWM = 20;
 uint8_t dutycycle_PWM = 0;
-float percent_dutycycle = 0.00;
+float percent_dutycycle = 0.00f;
 
 std::string backDirection = "fw";
 uint8_t EN_A = 0;
@@ -81,9 +82,9 @@ void splitData(std::string cmData)
   if(std::getline(ss, token, ',')){
     frontDegree = std::stoi(token);
   }
-  if(std::getline(ss, token, ',')){
-    period_PWM = std::stoi(token);
-  }
+  // if(std::getline(ss, token, ',')){
+  //   period_PWM = std::stoi(token);
+  // }
   if(std::getline(ss, token, ',')){
     dutycycle_PWM = std::stoi(token);
   }

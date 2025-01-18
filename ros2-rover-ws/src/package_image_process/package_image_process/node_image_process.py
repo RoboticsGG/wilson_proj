@@ -4,7 +4,6 @@ import numpy as np
 import rclpy
 import threading
 import time
-
 from rclpy.node import Node
 from std_msgs.msg import String
 
@@ -132,6 +131,9 @@ class ImageProcess(Node):
                 #print("Move forward")
         else:
             print("No line detected")
+            degree_diff_str = "0"
+            direction = "fw"
+            return direction, degree_diff_str
 
     def read_bag_continuously(self):
         while rclpy.ok():  # Continue until ROS is shutdown

@@ -46,7 +46,10 @@ int frontDegree = 0;
 int period_PWM = 0;
 int dutycycle_PWM = 0;
 float percent_dutycycle = 0.00;
+
 std::string backDirection = "backward";
+int EN_A = 0;
+int EN_B = 0;
 
 // std::string commandTemp = "";
 
@@ -121,26 +124,27 @@ void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection
   signalPinR.mode(PullUp);
   signalPinL.mode(PullUp);
 
-  MortorFWEN.write(0);
-  MortorBWEN.write(0);
-
+  // MortorFWEN.write(0);
+  // MortorBWEN.write(0);
   // MortorRPWM.period_us(20);
   // MortorRPWM.write(0.00f);
   // MortorLPWM.period_us(20);
   // MortorLPWM.write(0.00f);
 
   if(backDirection == "forward"){
-    MortorFWEN.write(0);
-    MortorBWEN.write(1);
+    EN_A = 1;
+    EN_B = 0;
   } 
   else if (backDirection == "backward"){
-    MortorFWEN.write(0);
-    MortorBWEN.write(1);
+    EN_A = 0;
+    EN_B = 1;
   } else {
-    MortorFWEN.write(0);
-    MortorBWEN.write(0);
+    EN_A = 0;
+    EN_B = 0;
   }
 
+  MortorFWEN.write(EN_A);
+  MortorBWEN.write(EN_B);
   MortorRPWM.period_us(period_PWM);
   MortorRPWM.write(percent_dutycycle);
   MortorLPWM.period_us(period_PWM);

@@ -37,28 +37,27 @@ PwmOut MortorLPWM(PD_15);
 DigitalOut MortorFWEN(PE_13);
 DigitalOut MortorBWEN(PF_13);
 
-int encoderInA = 0;
-int encoderInB = 0;
+uint8_t encoderInA = 0;
+uint8_t encoderInB = 0;
 float duty = 0.00;
 
-std::string frontDirection = "forward";
-int frontDegree = 0;
-int period_PWM = 0;
-int dutycycle_PWM = 0;
+std::string frontDirection = "fw";
+uint8_t frontDegree = 0;
+uint8_t period_PWM = 0;
+uint8_t dutycycle_PWM = 0;
 float percent_dutycycle = 0.00;
 
-std::string backDirection = "backward";
-int EN_A = 0;
-int EN_B = 0;
+std::string backDirection = "fw";
+uint8_t EN_A = 0;
+uint8_t EN_B = 0;
 
 // std::string commandTemp = "";
 
 void userCallback(std_msgs::msg::String *msg)
 {
-  //static int count = 0;
-  static uint8_t count = 0;
-  count ++;
-  MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
+  // static uint8_t count = 0;
+  // count ++;
+  // MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
   std::string commandReceived = msg->data.c_str();
   splitData(commandReceived);
   
@@ -99,15 +98,15 @@ void splitData(std::string cmData)
 void frontControl(std::string frontDirection, float diff_degree)
 {
   int degree = 0;
-  if (frontDirection == "left")
+  if (frontDirection == "lf")
   {
     degree = 100 - diff_degree;
   }
-  else if (frontDirection == "right")
+  else if (frontDirection == "ri")
   {
     degree = 100 + diff_degree;
   }
-  else if (frontDirection == "forward")
+  else if (frontDirection == "fw")
   {
     degree = 100;
   } else {
@@ -131,11 +130,11 @@ void motorControl(int period_PWM, float dutycycle_PWM, std::string backDirection
   // MortorLPWM.period_us(20);
   // MortorLPWM.write(0.00f);
 
-  if(backDirection == "forward"){
+  if(backDirection == "fw"){
     EN_A = 1;
     EN_B = 0;
   } 
-  else if (backDirection == "backward"){
+  else if (backDirection == "bw"){
     EN_A = 0;
     EN_B = 1;
   } else {

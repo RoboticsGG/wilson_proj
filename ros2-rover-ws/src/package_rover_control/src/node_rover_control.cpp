@@ -39,9 +39,9 @@ public:
         // );
 
         //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
-        topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_motorcontrol", 7);
+        //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_motorcontrol", 7);
         // topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
-        topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
+        topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 5);
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(2),  // Set interval to 1 second
@@ -102,16 +102,16 @@ private:
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_direction_subscription_;
     // rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_rovercontrol_subscription_;
 
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_motorcontrol_publisher_;
+    //rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_motorcontrol_publisher_;
     // rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_testcontrol_publisher_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_rovercontrol_publisher_;
 
     rclcpp::TimerBase::SharedPtr timer_;
 
-    std::string rovercontrol_message_ = "forward,0";
+    std::string rovercontrol_message_ = "fw,0";
     std::string period_PWM_message_ = "20";
     std::string speedlimit_message_ = "0";
-    std::string back_direction_message_ = "forward";
+    std::string back_direction_message_ = "fw";
     
     
     bool message_updated_;

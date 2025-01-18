@@ -126,7 +126,7 @@ class ImageProcess(Node):
                 #print("Turn right : ", degree_diff)
                 return direction, degree_diff_str
             else:
-                degree_diff = 0
+                degree_diff = "0"
                 direction = "fw"
                 return direction, degree_diff
                 #print("Move forward")

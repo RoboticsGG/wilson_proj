@@ -59,6 +59,7 @@ void userCallback(std_msgs::msg::String *msg) {
     auto [percent_dutycycle, EN_A, EN_B] = backControl(backDirection, dutycycle_PWM);
 
     motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
+    print_memory_info();
 }
 
 std::tuple<std::string, uint8_t, uint8_t, std::string> parseCommandData(const std::string& cmData) {
@@ -127,6 +128,23 @@ void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float 
   MortorRPWM.write(percent_dutycycle);
   MortorLPWM.period_us(period_PWM);
   MortorLPWM.write(percent_dutycycle);
+}
+
+void print_memory_info() {
+    // allocate enough room for every thread's stack statistics
+    int cnt = osThreadGetCount();
+    mbed_stats_stack_t *stats = (mbed_stats_stack_t*) malloc(cnt * sizeof(mbed_stats_stack_t));
+
+    cnt = mbed_stats_stack_get_each(stats, cnt);
+    for (int i = 0; i < cnt; i++) {
+        MROS2_INFO("Thread: 0x%lX, Stack size: %lu / %lu\r\n", stats[i].thread_id, stats[i].max_size, stats[i].reserved_size);
+    }
+    free(stats);
+
+    // Grab the heap statistics
+    mbed_stats_heap_t heap_stats;
+    mbed_stats_heap_get(&heap_stats);
+    MROS2_INFO("Heap size: %lu / %lu bytes\r\n", heap_stats.current_size, heap_stats.reserved_size);
 }
 
 int main()

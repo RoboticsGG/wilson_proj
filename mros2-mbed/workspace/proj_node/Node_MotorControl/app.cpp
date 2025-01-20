@@ -61,7 +61,7 @@ void userCallback(std_msgs::msg::String *msg) {
 
     motorDrive(0.05, 1, 0, period_PWM, 20);
     //motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
-    print_memory_info();
+    print_memory_info("Inside userCallback");
 }
 
 std::tuple<std::string, uint8_t, uint8_t, std::string> parseCommandData(const std::string& cmData) {
@@ -132,22 +132,48 @@ void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float 
   MortorLPWM.write(percent_dutycycle);
 }
 
-void print_memory_info() {
-    // allocate enough room for every thread's stack statistics
+// void print_memory_info() {
+//     // allocate enough room for every thread's stack statistics
+//     int cnt = osThreadGetCount();
+//     mbed_stats_stack_t *stats = (mbed_stats_stack_t*) malloc(cnt * sizeof(mbed_stats_stack_t));
+
+//     cnt = mbed_stats_stack_get_each(stats, cnt);
+//     for (int i = 0; i < cnt; i++) {
+//         MROS2_INFO("Thread: 0x%lX, Stack size: %lu / %lu\r\n", stats[i].thread_id, stats[i].max_size, stats[i].reserved_size);
+//     }
+//     free(stats);
+
+//     // Grab the heap statistics
+//     mbed_stats_heap_t heap_stats;
+//     mbed_stats_heap_get(&heap_stats);
+//     MROS2_INFO("Heap size: %lu / %lu bytes\r\n", heap_stats.current_size, heap_stats.reserved_size);
+// }
+
+void print_memory_info(const char* context) {
+    // Print stack statistics for all threads
     int cnt = osThreadGetCount();
-    mbed_stats_stack_t *stats = (mbed_stats_stack_t*) malloc(cnt * sizeof(mbed_stats_stack_t));
+    mbed_stats_stack_t* stats = (mbed_stats_stack_t*)malloc(cnt * sizeof(mbed_stats_stack_t));
 
     cnt = mbed_stats_stack_get_each(stats, cnt);
+    MROS2_INFO("Context: %s", context);
     for (int i = 0; i < cnt; i++) {
-        MROS2_INFO("Thread: 0x%lX, Stack size: %lu / %lu\r\n", stats[i].thread_id, stats[i].max_size, stats[i].reserved_size);
+        MROS2_INFO("Thread: 0x%lX, Stack size: %lu / %lu\r\n",
+                   stats[i].thread_id, stats[i].max_size, stats[i].reserved_size);
     }
     free(stats);
 
-    // Grab the heap statistics
+    // Print heap statistics
     mbed_stats_heap_t heap_stats;
     mbed_stats_heap_get(&heap_stats);
     MROS2_INFO("Heap size: %lu / %lu bytes\r\n", heap_stats.current_size, heap_stats.reserved_size);
+
+    // Current thread stack usage
+    mbed_stats_stack_t current_stack;
+    mbed_stats_stack_get(&current_stack);
+    MROS2_INFO("Current thread stack usage: %lu / %lu\r\n",
+               current_stack.max_size, current_stack.reserved_size);
 }
+
 
 int main()
 {

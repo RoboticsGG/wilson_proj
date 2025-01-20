@@ -30,7 +30,7 @@ std::tuple<std::string, uint8_t, uint8_t, std::string> parseCommandData(const st
 float frontControl(const std::string& frontDirection, uint8_t diff_degree);
 std::tuple<float, uint8_t, uint8_t> backControl(const std::string& backDirection, uint8_t dutycycle_PWM);
 void motorDrive(float duty, uint8_t EN_A, uint8_t EN_B, uint8_t period_PWM, float percent_dutycycle);
-void print_memory_info();
+void print_memory_info("Inside userCallback");
 
 // DigitalIn signalPinR(PF_12);
 // DigitalIn signalPinL(PF_14);

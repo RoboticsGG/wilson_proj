@@ -11,7 +11,7 @@ class ImageProcess(Node):
     def __init__(self):
         super().__init__('image_process')
         self.publisher_ = self.create_publisher(String, 'topic_direction', 10)
-        self.timer_period = 2
+        self.timer_period = 1
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
 
         self.bag_file_path = r"/home/curry/rover_sample_data/sec.bag"

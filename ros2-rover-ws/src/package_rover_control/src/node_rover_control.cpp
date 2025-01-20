@@ -41,6 +41,7 @@ public:
 
 private:
     void topic_direction_callback(const std_msgs::msg::String::SharedPtr msg){
+        std::lock_guard<std::mutex> lock(data_lock_);
         if (rovercontrol_message_ != msg->data){
             rovercontrol_message_ = msg->data;
             RCLCPP_INFO(this->get_logger(), "Received on topic_direction: '%s'", rovercontrol_message_.c_str());
@@ -48,6 +49,7 @@ private:
     }
 
     void topic_speedlimit_callback(const std_msgs::msg::String::SharedPtr msg) {
+        std::lock_guard<std::mutex> lock(data_lock_);
         if (speedlimit_message_ != msg->data){
             speedlimit_message_ = msg->data;
             RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
@@ -56,6 +58,7 @@ private:
 
     void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){
         if (msg->data.size()==2) {
+            td::lock_guard<std::mutex> lock(data_lock_);
             if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1]){
                  destination_a_ = msg->data[0];
                 destination_b_ = msg->data[1];
@@ -67,7 +70,7 @@ private:
 
 
     void timer_callback(){
-        std::lock_guard<std::mutex> lock(mutex_);
+        std::lock_guard<std::mutex> lock(data_lock_);
         auto rovercon_msg = std_msgs::msg::String();
         rovercon_msg.data = rovercontrol_message_ + "," + speedlimit_message_ + "," + back_direction_message_;
         topic_rovercontrol_publisher_->publish(rovercon_msg);

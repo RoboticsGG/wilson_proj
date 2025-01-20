@@ -22,7 +22,7 @@
 #include <string>
 #include <tuple>
 
-#define MROS2_MEMORY_POOL_SIZE 8192
+#define MROS2_MEMORY_POOL_SIZE 131072
 
 // void frontControl(std::string frontDirection, uint8_t diff_degree);
 // void backControl(std::string backDirection);

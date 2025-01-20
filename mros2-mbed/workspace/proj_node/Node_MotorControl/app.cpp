@@ -50,7 +50,7 @@ uint8_t servo_center = 100;
 
 void userCallback(std_msgs::msg::String *msg) {
     uint8_t period_PWM = 20;
-    print_memory_info("Inside userCallback");
+    print_memory_info();
     MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
     // std::string commandReceived = msg->data.c_str();
     // auto [frontDirection, frontDegree, dutycycle_PWM, backDirection] = parseCommandData(commandReceived);
@@ -146,13 +146,12 @@ void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float 
 //     MROS2_INFO("Heap size: %lu / %lu bytes\r\n", heap_stats.current_size, heap_stats.reserved_size);
 // }
 
-void print_memory_info(const char* context) {
+void print_memory_info() {
     // Print stack statistics for all threads
     int cnt = osThreadGetCount();
     mbed_stats_stack_t* stats = (mbed_stats_stack_t*)malloc(cnt * sizeof(mbed_stats_stack_t));
 
     cnt = mbed_stats_stack_get_each(stats, cnt);
-    MROS2_INFO("Context: %s", context);
     for (int i = 0; i < cnt; i++) {
         MROS2_INFO("Thread: 0x%lX, Stack size: %lu / %lu\r\n",
                    stats[i].thread_id, stats[i].max_size, stats[i].reserved_size);

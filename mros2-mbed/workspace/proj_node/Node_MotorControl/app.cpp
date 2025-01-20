@@ -50,7 +50,7 @@ uint8_t servo_center = 100;
 
 void userCallback(std_msgs::msg::String *msg) {
     uint8_t period_PWM = 20;
-    print_memory_info();
+    //print_memory_info();
     MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
     // std::string commandReceived = msg->data.c_str();
     // auto [frontDirection, frontDegree, dutycycle_PWM, backDirection] = parseCommandData(commandReceived);

@@ -148,15 +148,15 @@ void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float 
 
 void print_memory_info() {
     // Print stack statistics for all threads
-    int cnt = osThreadGetCount();
-    mbed_stats_stack_t* stats = (mbed_stats_stack_t*)malloc(cnt * sizeof(mbed_stats_stack_t));
+    // int cnt = osThreadGetCount();
+    // mbed_stats_stack_t* stats = (mbed_stats_stack_t*)malloc(cnt * sizeof(mbed_stats_stack_t));
 
-    cnt = mbed_stats_stack_get_each(stats, cnt);
-    for (int i = 0; i < cnt; i++) {
-        MROS2_INFO("Thread: 0x%lX, Stack size: %lu / %lu\r\n",
-                   stats[i].thread_id, stats[i].max_size, stats[i].reserved_size);
-    }
-    free(stats);
+    // cnt = mbed_stats_stack_get_each(stats, cnt);
+    // for (int i = 0; i < cnt; i++) {
+    //     MROS2_INFO("Thread: 0x%lX, Stack size: %lu / %lu\r\n",
+    //                stats[i].thread_id, stats[i].max_size, stats[i].reserved_size);
+    // }
+    // free(stats);
 
     // Print heap statistics
     mbed_stats_heap_t heap_stats;

@@ -50,7 +50,7 @@ uint8_t servo_center = 100;
 
 void userCallback(std_msgs::msg::String *msg) {
     uint8_t period_PWM = 20;
-    //print_memory_info();
+    print_memory_info();
     MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
     // std::string commandReceived = msg->data.c_str();
     // auto [frontDirection, frontDegree, dutycycle_PWM, backDirection] = parseCommandData(commandReceived);
@@ -191,7 +191,6 @@ int main()
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
   //mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
-  print_memory_info();
   mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, userCallback);
 
   osDelay(1000);

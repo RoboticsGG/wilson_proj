@@ -58,7 +58,7 @@ private:
 
     void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){
         if (msg->data.size()==2) {
-            td::lock_guard<std::mutex> lock(data_lock_);
+            std::lock_guard<std::mutex> lock(data_lock_);
             if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1]){
                  destination_a_ = msg->data[0];
                 destination_b_ = msg->data[1];

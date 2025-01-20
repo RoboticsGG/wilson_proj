@@ -1,11 +1,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
-#include <std_msgs/msg/int32.hpp>
-#include <std_msgs/msg/int32_multi_array.hpp>
-#include <std_msgs/msg/u_int16.hpp>
 #include <std_msgs/msg/u_int16_multi_array.hpp>
-#include <sstream>
-#include <vector>
+#include <string>
 #include <mutex>
 
 class Motors_Rovercontrol {
@@ -32,19 +28,11 @@ public:
             "topic_direction", 9,
             std::bind(&Node_Rovercontrol::topic_direction_callback, this, std::placeholders::_1)
         );
-
-        // topic_rovercontrol_subscription_ = this->create_subscription<std_msgs::msg::String>(
-        //     "topic_rovercontrol", 9,
-        //     std::bind(&Node_Rovercontrol::topic_rovercontrol_callback, this, std::placeholders::_1)
-        // );
-
-        //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::Int32>("pub_rovercontrol", 10);
-        //topic_motorcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_motorcontrol", 7);
-        // topic_testcontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_testcontrol", 2);
+   
         topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
 
         timer_ = this->create_wall_timer(
-            std::chrono::seconds(2),  // Set interval to 1 second
+            std::chrono::seconds(2), 
             std::bind(&Node_Rovercontrol::timer_callback, this)
         );
         RCLCPP_INFO(this->get_logger(), "Version : A");
@@ -76,49 +64,31 @@ private:
         } 
     }
 
-    // void topic_rovercontrol_callback(const std_msgs::msg::String::SharedPtr msg){
-    //     if (rovercontrol_message_ != msg->data){
-    //         rovercontrol_message_ = msg->data;
-    //         RCLCPP_INFO(this->get_logger(), "Received on topic_rovercontrol_subscription_: '%s'", rovercontrol_message_.c_str());
-    //     }
-    // }
+
 
     void timer_callback(){
+        std::lock_guard<std::mutex> lock(mutex_);
         auto rovercon_msg = std_msgs::msg::String();
-        //motor_msg.data = speedlimit_message_;
         rovercon_msg.data = rovercontrol_message_ + "," + speedlimit_message_ + "," + back_direction_message_;
         topic_rovercontrol_publisher_->publish(rovercon_msg);
         RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
     }
 
-    // void testsub_callback(const std_msgs::msg::String::SharedPtr msg){
-    //     auto test_message_ = std_msgs::msg::String();
-    //     test_message_.data = msg->data;
-    //     RCLCPP_INFO(this->get_logger(), "Received on test: '%s'", test_message_.data.c_str());
-    // }
 
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
     rclcpp::Subscription<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_subscription_;
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_direction_subscription_;
-    // rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_rovercontrol_subscription_;
-
-    //rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_motorcontrol_publisher_;
-    // rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_testcontrol_publisher_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_rovercontrol_publisher_;
-
     rclcpp::TimerBase::SharedPtr timer_;
 
     std::string rovercontrol_message_ = "fw,0";
-    //std::string period_PWM_message_ = "20";
     std::string speedlimit_message_ = "0";
     std::string back_direction_message_ = "fw";
-    
-    
-    bool message_updated_;
 
     int destination_a_ = 0;
     int destination_b_ = 0;
 
+    std::mutex data_lock_;
 };
 
 int main(int argc, char *argv[]) {

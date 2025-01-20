@@ -61,7 +61,7 @@ void userCallback(std_msgs::msg::String *msg) {
 
     motorDrive(0.05, 1, 0, period_PWM, 20);
     //motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
-    print_memory_info();
+    //print_memory_info();
 }
 
 std::tuple<std::string, uint8_t, uint8_t, std::string> parseCommandData(const std::string& cmData) {

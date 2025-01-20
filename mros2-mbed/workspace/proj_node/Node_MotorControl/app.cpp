@@ -50,18 +50,15 @@ uint8_t servo_center = 100;
 
 void userCallback(std_msgs::msg::String *msg) {
     uint8_t period_PWM = 20;
-
+    print_memory_info("Inside userCallback");
     MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
     // std::string commandReceived = msg->data.c_str();
-
     // auto [frontDirection, frontDegree, dutycycle_PWM, backDirection] = parseCommandData(commandReceived);
-
     // float dutycy = frontControl(frontDirection, frontDegree);
     // auto [percent_dutycycle, EN_A, EN_B] = backControl(backDirection, dutycycle_PWM);
 
     motorDrive(0.05, 1, 0, period_PWM, 20);
     //motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
-    print_memory_info("Inside userCallback");
 }
 
 std::tuple<std::string, uint8_t, uint8_t, std::string> parseCommandData(const std::string& cmData) {

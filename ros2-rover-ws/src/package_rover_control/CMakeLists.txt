@@ -55,7 +55,7 @@ rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorCont
 #---------------------------node_carcontrol---------------------------------------
 
 #---------------------------node_rover_control---------------------------------------
-add_executable(node_rovercontrol src/node_rover_control.cpp)
+add_executable(node_rovercontrol src/node_rover_control_b.cpp)
 ament_target_dependencies(node_rovercontrol rclcpp std_msgs)
 
 target_include_directories(node_rovercontrol PUBLIC

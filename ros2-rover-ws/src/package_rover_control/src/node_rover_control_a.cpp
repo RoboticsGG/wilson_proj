@@ -80,7 +80,7 @@ private:
 
     void timer_callback() {
         std::stringstream ss;
-        ss << rovercontrol_message_ << "," << speedlimitmessage << "," << back_directionmessage;
+        ss << rovercontrol_message_ << "," << speedlimit_message_ << "," << back_direction_message_;
         std_msgs::msg::String rovercon_msg;
         rovercon_msg.data = ss.str();
         topic_rovercontrolpublisher->publish(rovercon_msg);

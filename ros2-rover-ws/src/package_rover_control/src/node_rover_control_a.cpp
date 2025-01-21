@@ -1,52 +1,112 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
-#include <std_msgs/msg/u_int16.hpp>
-#include <std_msgs/msg/u_int16_multi_array.hpp> 
-#include <cstdlib>
-#include <ctime>
+#include <std_msgs/msg/u_int16_multi_array.hpp>
+#include <string>
+#include <sstream>
+#include <mutex>
 
-class Node_Command : public rclcpp::Node {
+class Motors_Rovercontrol {
 public:
-    Node_Command()
-    : Node("node_command") {
-    // : Node("node_command"), speedlimit_(30), des_a_(0), des_b_(0), frontDirection_(90), period_PWM_(20), dutycycle_PWM_(50), backDirection_("FW") {
+    int test(int a, int b){
+        return a+b; //เขียนประมวลผลค่าเพื่อควบคุม rover เผื่อถ้าบน mbed เขียนยาก
+    }
+};
 
-        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit_t", 10);
-
-
-        timer_ = this->create_wall_timer(
-            // std::chrono::seconds(1)
-            std::chrono::milliseconds(250), 
-            std::bind(&Node_Command::publish_parameters, this)
+class Node_Rovercontrol : public rclcpp::Node {
+public:
+    Node_Rovercontrol() : Node("node_rovercontrol") {
+        topic_speedlimit_subscription_ = this->create_subscription<std_msgs::msg::String>(
+            "topic_speedlimit_t", 10,
+            std::bind(&Node_Rovercontrol::topic_speedlimit_callback, this, std::placeholders::_1)
         );
 
+        topic_destination_subscription_ = this->create_subscription<std_msgs::msg::UInt16MultiArray>(
+            "topic_destination", 10,
+            std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::_1)
+        );
+
+        topic_direction_subscription_ = this->create_subscription<std_msgs::msg::String>(
+            "topic_direction", 10,
+            std::bind(&Node_Rovercontrol::topic_direction_callback, this, std::placeholders::_1)
+        );
+   
+        topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
+
+        timer_ = this->create_wall_timer(
+            std::chrono::seconds(2), 
+            std::bind(&Node_Rovercontrol::timer_callback, this)
+        );
         RCLCPP_INFO(this->get_logger(), "Version : A");
+        RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized and listening...");
     }
 
 private:
-    uint8_t generate_random_speedlimit() {
-        return static_cast<uint8_t>(10 + std::rand() % 90); // Generate random number between 10 and 99
+    void topic_direction_callback(const std_msgs::msg::String::SharedPtr msg){
+        std::lock_guard<std::mutex> lock(data_lock_);
+        if (rovercontrol_message_ != msg->data){
+            rovercontrol_message_ = msg->data;
+            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: '%s'", rovercontrol_message_.c_str());
+        }
     }
 
-    void publish_parameters() {
-        // Pub topic_speedlimit
-        speedlimit_ = generate_random_speedlimit();
-        auto speed_message = std_msgs::msg::String();
-        speed_message.data = std::to_string(speedlimit_);
-        RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", speed_message.data.c_str());
-        topic_speedlimit_publisher_->publish(speed_message);
-
+    void topic_speedlimit_callback(const std_msgs::msg::String::SharedPtr msg) {
+        std::lock_guard<std::mutex> lock(data_lock_);
+        if (speedlimit_message_ != msg->data){
+            speedlimit_message_ = msg->data;
+            RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
+        }
     }
 
-    uint8_t speedlimit_;
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_speedlimit_publisher_;
+    void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){
+        if (msg->data.size()==2) {
+            std::lock_guard<std::mutex> lock(data_lock_);
+            if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1]){
+                 destination_a_ = msg->data[0];
+                destination_b_ = msg->data[1];
+                //RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %d, b = %d", destination_a_, destination_b_);
+            }
+        } 
+    }
+
+
+
+    // void timer_callback(){
+    //     std::lock_guard<std::mutex> lock(data_lock_);
+    //     auto rovercon_msg = std_msgs::msg::String();
+    //     rovercon_msg.data = rovercontrol_message_ + "," + speedlimit_message_ + "," + back_direction_message_;
+    //     topic_rovercontrol_publisher_->publish(rovercon_msg);
+    //     RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
+    // }
+
+    void timer_callback() {
+        std::stringstream ss;
+        ss << rovercontrol_message_ << "," << speedlimit_message_ << "," << back_direction_message_;
+        std_msgs::msg::String rovercon_msg;
+        rovercon_msg.data = ss.str();
+        topic_rovercontrol_publisher_->publish(rovercon_msg);
+        RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
+  }
+
+
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
+    rclcpp::Subscription<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_subscription_;
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_direction_subscription_;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_rovercontrol_publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
-    rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr parameter_callback_handle_;
+
+    std::string rovercontrol_message_ = "fw,0";
+    std::string speedlimit_message_ = "0";
+    std::string back_direction_message_ = "fw";
+
+    int destination_a_ = 0;
+    int destination_b_ = 0;
+
+    std::mutex data_lock_;
 };
 
 int main(int argc, char *argv[]) {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<Node_Command>());
+    rclcpp::spin(std::make_shared<Node_Rovercontrol>());
     rclcpp::shutdown();
     return 0;
 }

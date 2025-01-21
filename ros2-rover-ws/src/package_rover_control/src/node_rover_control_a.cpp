@@ -83,7 +83,7 @@ private:
         ss << rovercontrol_message_ << "," << speedlimit_message_ << "," << back_direction_message_;
         std_msgs::msg::String rovercon_msg;
         rovercon_msg.data = ss.str();
-        topic_rovercontrolpublisher->publish(rovercon_msg);
+        topic_rovercontrol_publisher_->publish(rovercon_msg);
         RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
   }
 

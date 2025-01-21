@@ -2,7 +2,6 @@
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/u_int16.hpp>
 #include <std_msgs/msg/u_int16_multi_array.hpp>
-#include <mutex>
 
 class Node_Command : public rclcpp::Node {
 public:
@@ -66,7 +65,6 @@ private:
     }
 
     void publish_parameters() {
-        std::lock_guard<std::mutex> lock(data_lock_); 
         // Pub topic_speedlimit
         auto speed_message = std_msgs::msg::String();
         speed_message.data = std::to_string(speedlimit_);
@@ -95,8 +93,6 @@ private:
     uint8_t speedlimit_;
     int des_a_;
     int des_b_;
-
-    std::mutex data_lock_;
 
     //demo_control_rover
     // uint8_t frontDirection_;

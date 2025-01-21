@@ -1,56 +1,95 @@
-#include <chrono>
-#include <functional>
-#include <memory>
+#include <rclcpp/rclcpp.hpp>
+#include <std_msgs/msg/string.hpp>
+#include <std_msgs/msg/u_int16_multi_array.hpp>
 #include <string>
 
-#include "rclcpp/rclcpp.hpp"
-#include "geometry_msgs/msg/point.hpp"
-#include "geometry_msgs/msg/quaternion.hpp"
-#include "geometry_msgs/msg/pose.hpp"
+// class Motors_Rovercontrol {
+// public:
+//     int test(int a, int b){
+//         return a+b; //เขียนประมวลผลค่าเพื่อควบคุม rover เผื่อถ้าบน mbed เขียนยาก
+//     }
+// };
 
-using namespace std::chrono_literals;
-
-/* This example creates a subclass of Node and uses std::bind() to register a
-* member function as a callback from the timer. */
-
-class Publisher : public rclcpp::Node
-{
+class Node_Rovercontrol : public rclcpp::Node {
 public:
-  Publisher()
-    : Node("pub_pose"), count_(0)
-  {
-    publisher_ = this->create_publisher<geometry_msgs::msg::Pose>("cmd_vel", 10);
-    timer_ = this->create_wall_timer(1000ms, std::bind(&Publisher::timer_callback, this));
-  }
+    Node_Rovercontrol() : Node("node_rovercontrol") {
+        topic_speedlimit_subscription_ = this->create_subscription<std_msgs::msg::String>(
+            "topic_speedlimit", 9,
+            std::bind(&Node_Rovercontrol::topic_speedlimit_callback, this, std::placeholders::_1)
+        );
+
+        topic_destination_subscription_ = this->create_subscription<std_msgs::msg::UInt16MultiArray>(
+            "topic_destination", 8,
+            std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::_1)
+        );
+
+        topic_direction_subscription_ = this->create_subscription<std_msgs::msg::String>(
+            "topic_direction", 9,
+            std::bind(&Node_Rovercontrol::topic_direction_callback, this, std::placeholders::_1)
+        );
+   
+        topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
+
+        timer_ = this->create_wall_timer(
+            std::chrono::seconds(2), 
+            std::bind(&Node_Rovercontrol::timer_callback, this)
+        );
+        RCLCPP_INFO(this->get_logger(), "Version : A");
+        RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized and listening...");
+    }
 
 private:
-  void timer_callback()
-  {
-    auto point = geometry_msgs::msg::Point();
-    auto quaternion = geometry_msgs::msg::Quaternion();
-    auto pose = geometry_msgs::msg::Pose();
-    point.x = count_/1.0;
-    point.y = count_/1.0;
-    point.z = count_/1.0;
-    quaternion.x = count_/1.0;
-    quaternion.y = count_/1.0;
-    quaternion.z = count_/1.0;
-    quaternion.w = count_/1.0;
-    pose.position = point;
-    pose.orientation = quaternion;
-    RCLCPP_INFO(this->get_logger(), "Publishing msg: { position: {x: %f, y: %f, z: %f }, orientation: {x: %f, y: %f, z: %f, w: %f } }" , pose.position.x, pose.position.y, pose.position.z, pose.orientation.x, pose.orientation.y, pose.orientation.z, pose.orientation.w );
-    publisher_->publish(pose);
-    count_++;
-  }
-  rclcpp::TimerBase::SharedPtr timer_;
-  rclcpp::Publisher<geometry_msgs::msg::Pose>::SharedPtr publisher_;
-  uint16_t count_;
+    void topic_direction_callback(const std_msgs::msg::String::SharedPtr msg){
+        if (rovercontrol_message_ != msg->data){
+            rovercontrol_message_ = msg->data;
+            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: '%s'", rovercontrol_message_.c_str());
+        }
+    }
+
+    void topic_speedlimit_callback(const std_msgs::msg::String::SharedPtr msg) {
+        if (speedlimit_message_ != msg->data){
+            speedlimit_message_ = msg->data;
+            RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
+        }
+    }
+
+    void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){
+        if (msg->data.size()==2) {
+            if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1]){
+                 destination_a_ = msg->data[0];
+                destination_b_ = msg->data[1];
+            }
+        } 
+    }
+
+
+
+    void timer_callback(){
+        auto rovercon_msg = std_msgs::msg::String();
+        rovercon_msg.data = rovercontrol_message_ + "," + speedlimit_message_ + "," + back_direction_message_;
+        topic_rovercontrol_publisher_->publish(rovercon_msg);
+        RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
+    }
+
+
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
+    rclcpp::Subscription<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_subscription_;
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_direction_subscription_;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_rovercontrol_publisher_;
+    rclcpp::TimerBase::SharedPtr timer_;
+
+    std::string rovercontrol_message_ = "fw,0";
+    std::string speedlimit_message_ = "0";
+    std::string back_direction_message_ = "fw";
+
+    int destination_a_ = 0;
+    int destination_b_ = 0;
+
 };
 
-int main(int argc, char * argv[])
-{
-  rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<Publisher>());
-  rclcpp::shutdown();
-  return 0;
+int main(int argc, char *argv[]) {
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<Node_Rovercontrol>());
+    rclcpp::shutdown();
+    return 0;
 }

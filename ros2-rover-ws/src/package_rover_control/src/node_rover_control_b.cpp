@@ -65,10 +65,10 @@ private:
 
 
     void timer_callback(){
-        auto rovercon_msg = std_msgs::msg::String();
-        rovercon_msg.data = rovercontrol_message_ + "," + speedlimit_message_ + "," + back_direction_message_;
-        topic_rovercontrol_publisher_->publish(rovercon_msg);
-        RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
+        auto rovercon_msg_a = std_msgs::msg::String();
+        rovercon_msg_a.data = rovercontrol_message_ + "," + speedlimit_message_ + "," + back_direction_message_;
+        topic_rovercontrol_publisher_->publish(rovercon_msg_a);
+        //RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
     }
 
 

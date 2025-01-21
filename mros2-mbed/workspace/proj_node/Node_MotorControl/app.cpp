@@ -19,23 +19,9 @@
 #include "mros2-platform.h"
 #include "std_msgs/msg/string.hpp"
 
-void print_memory_info();
 
-void userCallback(std_msgs::msg::String *msg) {
-    print_memory_info();
+void userCallback(std_msgs::msg::String::SharedPtr msg) {
     MROS2_INFO("subscribed msg: '%s'\r\n", msg->data.c_str());
-}
-
-void print_memory_info() {
-    // Print heap statistics
-    mbed_stats_heap_t heap_stats;
-    mbed_stats_heap_get(&heap_stats);
-    MROS2_INFO("Heap size: %lu / %lu bytes\r", heap_stats.current_size, heap_stats.reserved_size);
-    // Current thread stack usage
-    mbed_stats_stack_t current_stack;
-    mbed_stats_stack_get(&current_stack);
-    MROS2_INFO("Current thread stack usage: %lu / %lu\r",
-               current_stack.max_size, current_stack.reserved_size);
 }
 
 

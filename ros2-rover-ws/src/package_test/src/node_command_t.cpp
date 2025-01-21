@@ -12,12 +12,7 @@ public:
     // : Node("node_command"), speedlimit_(30), des_a_(0), des_b_(0), frontDirection_(90), period_PWM_(20), dutycycle_PWM_(50), backDirection_("FW") {
 
         topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit_t", 10);
-        
-        // this->declare_parameter<uint8_t>("speedlimit", speedlimit_);
 
-        // parameter_callback_handle_ = this->add_on_set_parameters_callback(
-        //     std::bind(&Node_Command::on_parameter_change, this, std::placeholders::_1)
-        // );
 
         timer_ = this->create_wall_timer(
             // std::chrono::seconds(1)
@@ -32,20 +27,6 @@ private:
     uint8_t generate_random_speedlimit() {
         return static_cast<uint8_t>(10 + std::rand() % 90); // Generate random number between 10 and 99
     }
-    // rcl_interfaces::msg::SetParametersResult on_parameter_change(
-    //     const std::vector<rclcpp::Parameter> &parameters) {
-    //     rcl_interfaces::msg::SetParametersResult result;
-    //     result.successful = true;
-
-    //     for (const auto &param : parameters) {
-    //         if (param.get_name() == "speedlimit"){
-    //             speedlimit_ = static_cast<uint8_t>(param.as_int());
-    //         }
-    //     }
-
-    //     publish_parameters();
-    //     return result;
-    // }
 
     void publish_parameters() {
         // Pub topic_speedlimit
@@ -57,10 +38,9 @@ private:
 
     }
 
+    uint8_t speedlimit_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_speedlimit_publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
-
-    uint8_t speedlimit_;
     rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr parameter_callback_handle_;
 };
 

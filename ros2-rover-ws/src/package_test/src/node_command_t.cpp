@@ -6,16 +6,16 @@
 class Node_Command : public rclcpp::Node {
 public:
     Node_Command()
-    : Node("node_command"), speedlimit_(30){
+    : Node("node_command"), speedlimit_(generate_random_speedlimit()) {
     // : Node("node_command"), speedlimit_(30), des_a_(0), des_b_(0), frontDirection_(90), period_PWM_(20), dutycycle_PWM_(50), backDirection_("FW") {
 
         topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit_t", 10);
         
-        this->declare_parameter<uint8_t>("speedlimit", speedlimit_);
+        // this->declare_parameter<uint8_t>("speedlimit", speedlimit_);
 
-        parameter_callback_handle_ = this->add_on_set_parameters_callback(
-            std::bind(&Node_Command::on_parameter_change, this, std::placeholders::_1)
-        );
+        // parameter_callback_handle_ = this->add_on_set_parameters_callback(
+        //     std::bind(&Node_Command::on_parameter_change, this, std::placeholders::_1)
+        // );
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(2), 
@@ -26,20 +26,25 @@ public:
     }
 
 private:
-    rcl_interfaces::msg::SetParametersResult on_parameter_change(
-        const std::vector<rclcpp::Parameter> &parameters) {
-        rcl_interfaces::msg::SetParametersResult result;
-        result.successful = true;
 
-        for (const auto &param : parameters) {
-            if (param.get_name() == "speedlimit"){
-                speedlimit_ = static_cast<uint8_t>(param.as_int());
-            }
-        }
-
-        publish_parameters();
-        return result;
+    uint8_t generate_random_speedlimit() {
+        std::srand(static_cast<unsigned int>(std::time(nullptr))); // Seed the random number generator
+        return static_cast<uint8_t>(10 + std::rand() % 90); // Generate random number between 10 and 99
     }
+    // rcl_interfaces::msg::SetParametersResult on_parameter_change(
+    //     const std::vector<rclcpp::Parameter> &parameters) {
+    //     rcl_interfaces::msg::SetParametersResult result;
+    //     result.successful = true;
+
+    //     for (const auto &param : parameters) {
+    //         if (param.get_name() == "speedlimit"){
+    //             speedlimit_ = static_cast<uint8_t>(param.as_int());
+    //         }
+    //     }
+
+    //     publish_parameters();
+    //     return result;
+    // }
 
     void publish_parameters() {
         // Pub topic_speedlimit

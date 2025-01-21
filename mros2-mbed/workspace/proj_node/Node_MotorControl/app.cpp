@@ -19,9 +19,6 @@
 #include "mros2-platform.h"
 #include "std_msgs/msg/string.hpp"
 
-#include "FreeRTOS.h"
-#include "task.h"
-
 void userCallback(std_msgs::msg::String *msg);
 
 int main()
@@ -54,6 +51,4 @@ int main()
 
 void userCallback(std_msgs::msg::String *msg) {
     MROS2_INFO("subscribed msg: '%s'\r\n", msg->data.c_str());
-    size_t freeHeap = xPortGetFreeHeapSize();
-    MROS2_INFO("Free Heap Size: %zu\n", freeHeap);
 }

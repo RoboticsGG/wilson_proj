@@ -64,14 +64,14 @@ install(TARGETS echoreply_node
 
 #---------------------------node_command---------------------------------------
 add_executable(node_command src/node_command_t.cpp)
-ament_target_dependencies(node_command_t rclcpp std_msgs)
+ament_target_dependencies(node_command rclcpp std_msgs)
 
-target_include_directories(node_command_t PUBLIC
+target_include_directories(node_command PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)
-target_compile_features(node_command_t PUBLIC c_std_99 cxx_std_17)
+target_compile_features(node_command PUBLIC c_std_99 cxx_std_17)
 
-install(TARGETS node_command_t
+install(TARGETS node_command
   DESTINATION lib/${PROJECT_NAME})
 #---------------------------node_command---------------------------------------
 

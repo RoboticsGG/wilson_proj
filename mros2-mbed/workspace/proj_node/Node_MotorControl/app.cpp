@@ -18,14 +18,8 @@
 #include "mros2.h"
 #include "mros2-platform.h"
 #include "std_msgs/msg/string.hpp"
-#include "rclcpp/rclcpp.hpp"
 
-void userCallback(const std_msgs::msg::String::SharedPtr msg);
-
-void userCallback(std_msgs::msg::String::SharedPtr msg) {
-    MROS2_INFO("subscribed msg: '%s'\r\n", msg->data.c_str());
-}
-
+void userCallback(std_msgs::msg::String *msg);
 
 int main()
 {
@@ -53,4 +47,8 @@ int main()
 
   mros2::spin();
   return 0;
+}
+
+void userCallback(std_msgs::msg::String *msg) {
+    MROS2_INFO("subscribed msg: '%s'\r\n", msg->data.c_str());
 }

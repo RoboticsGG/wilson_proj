@@ -20,7 +20,7 @@ public:
         // );
 
         timer_ = this->create_wall_timer(
-            std::chrono::seconds(2), 
+            std::chrono::seconds(0.25), 
             std::bind(&Node_Command::publish_parameters, this)
         );
 

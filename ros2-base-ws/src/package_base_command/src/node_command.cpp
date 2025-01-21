@@ -15,8 +15,8 @@ public:
 
 
         timer_ = this->create_wall_timer(
-            // std::chrono::seconds(1)
-            std::chrono::milliseconds(250), 
+            std::chrono::seconds(1)
+            //std::chrono::milliseconds(250), 
             std::bind(&Node_Command::publish_parameters, this)
         );
 

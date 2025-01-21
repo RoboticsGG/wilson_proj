@@ -6,15 +6,12 @@
 class Node_Command : public rclcpp::Node {
 public:
     Node_Command()
-    : Node("node_command"), speedlimit_(30), des_a_(0), des_b_(0) {
+    : Node("node_command"), speedlimit_(30){
     // : Node("node_command"), speedlimit_(30), des_a_(0), des_b_(0), frontDirection_(90), period_PWM_(20), dutycycle_PWM_(50), backDirection_("FW") {
 
         topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit_t", 9);
-        topic_destination_publisher_ = this->create_publisher<std_msgs::msg::UInt16MultiArray>("topic_destination", 8);
-
+        
         this->declare_parameter<uint8_t>("speedlimit", speedlimit_);
-        this->declare_parameter<int>("des_a", des_a_);
-        this->declare_parameter<int>("des_b", des_b_);
 
         parameter_callback_handle_ = this->add_on_set_parameters_callback(
             std::bind(&Node_Command::on_parameter_change, this, std::placeholders::_1)
@@ -54,13 +51,9 @@ private:
     }
 
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_speedlimit_publisher_;
-    rclcpp::Publisher<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 
     uint8_t speedlimit_;
-    int des_a_;
-    int des_b_;
-
     rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr parameter_callback_handle_;
 };
 

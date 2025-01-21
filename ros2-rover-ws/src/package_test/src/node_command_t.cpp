@@ -9,7 +9,7 @@ public:
     : Node("node_command"), speedlimit_(30){
     // : Node("node_command"), speedlimit_(30), des_a_(0), des_b_(0), frontDirection_(90), period_PWM_(20), dutycycle_PWM_(50), backDirection_("FW") {
 
-        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit_t", 10);
+        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::String>("topic_speedlimit_t", 10);
         
         this->declare_parameter<uint8_t>("speedlimit", speedlimit_);
 
@@ -43,14 +43,14 @@ private:
 
     void publish_parameters() {
         // Pub topic_speedlimit
-        auto speed_message = std_msgs::msg::String();
+        auto speed_message = std_msgs::String();
         speed_message.data = std::to_string(speedlimit_);
         RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", speed_message.data.c_str());
         topic_speedlimit_publisher_->publish(speed_message);
 
     }
 
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_speedlimit_publisher_;
+    rclcpp::Publisher<std_msgs::String>::SharedPtr topic_speedlimit_publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 
     uint8_t speedlimit_;

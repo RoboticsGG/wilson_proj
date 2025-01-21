@@ -14,22 +14,22 @@ public:
 class Node_Rovercontrol : public rclcpp::Node {
 public:
     Node_Rovercontrol() : Node("node_rovercontrol") {
-        topic_speedlimit_subscription_ = this->create_subscription<std_msgs::msg::String>(
+        topic_speedlimit_subscription_ = this->create_subscription<std_msgs::String>(
             "topic_speedlimit_t", 10,
             std::bind(&Node_Rovercontrol::topic_speedlimit_callback, this, std::placeholders::_1)
         );
 
-        topic_destination_subscription_ = this->create_subscription<std_msgs::msg::UInt16MultiArray>(
+        topic_destination_subscription_ = this->create_subscription<std_msgs::UInt16MultiArray>(
             "topic_destination", 10,
             std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::_1)
         );
 
-        topic_direction_subscription_ = this->create_subscription<std_msgs::msg::String>(
+        topic_direction_subscription_ = this->create_subscription<std_msgs::String>(
             "topic_direction", 10,
             std::bind(&Node_Rovercontrol::topic_direction_callback, this, std::placeholders::_1)
         );
    
-        topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
+        topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::String>("pub_rovercontrol", 10);
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(2), 
@@ -40,7 +40,7 @@ public:
     }
 
 private:
-    void topic_direction_callback(const std_msgs::msg::String::SharedPtr msg){
+    void topic_direction_callback(const std_msgs::String::SharedPtr msg){
         std::lock_guard<std::mutex> lock(data_lock_);
         if (rovercontrol_message_ != msg->data){
             rovercontrol_message_ = msg->data;
@@ -48,7 +48,7 @@ private:
         }
     }
 
-    void topic_speedlimit_callback(const std_msgs::msg::String::SharedPtr msg) {
+    void topic_speedlimit_callback(const std_msgs::String::SharedPtr msg) {
         std::lock_guard<std::mutex> lock(data_lock_);
         if (speedlimit_message_ != msg->data){
             speedlimit_message_ = msg->data;
@@ -56,7 +56,7 @@ private:
         }
     }
 
-    void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){
+    void topic_destination_callback(const std_msgs::UInt16MultiArray::SharedPtr msg){
         if (msg->data.size()==2) {
             std::lock_guard<std::mutex> lock(data_lock_);
             if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1]){

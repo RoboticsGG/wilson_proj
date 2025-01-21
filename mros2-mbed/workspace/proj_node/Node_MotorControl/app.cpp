@@ -22,8 +22,6 @@
 #include <string>
 #include <tuple>
 
-#define MROS2_MEMORY_POOL_SIZE 131072
-
 // void frontControl(std::string frontDirection, uint8_t diff_degree);
 // void backControl(std::string backDirection);
 // void parseCommandData(const std::string& cmData);
@@ -164,7 +162,6 @@ void print_memory_info() {
     mbed_stats_heap_t heap_stats;
     mbed_stats_heap_get(&heap_stats);
     MROS2_INFO("Heap size: %lu / %lu bytes\r", heap_stats.current_size, heap_stats.reserved_size);
-
     // Current thread stack usage
     mbed_stats_stack_t current_stack;
     mbed_stats_stack_get(&current_stack);

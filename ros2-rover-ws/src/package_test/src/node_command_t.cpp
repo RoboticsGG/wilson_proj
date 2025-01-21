@@ -9,7 +9,7 @@ public:
     : Node("node_command"), speedlimit_(30){
     // : Node("node_command"), speedlimit_(30), des_a_(0), des_b_(0), frontDirection_(90), period_PWM_(20), dutycycle_PWM_(50), backDirection_("FW") {
 
-        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit_t", 9);
+        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit_t", 10);
         
         this->declare_parameter<uint8_t>("speedlimit", speedlimit_);
 

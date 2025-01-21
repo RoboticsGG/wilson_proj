@@ -9,8 +9,8 @@ public:
     : Node("node_command"), speedlimit_(30), des_a_(0), des_b_(0) {
     // : Node("node_command"), speedlimit_(30), des_a_(0), des_b_(0), frontDirection_(90), period_PWM_(20), dutycycle_PWM_(50), backDirection_("FW") {
 
-        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit", 9);
-        topic_destination_publisher_ = this->create_publisher<std_msgs::msg::UInt16MultiArray>("topic_destination", 8);
+        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit", 10);
+        topic_destination_publisher_ = this->create_publisher<std_msgs::msg::UInt16MultiArray>("topic_destination", 10);
         // topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_rovercontrol", 9);
 
         this->declare_parameter<uint8_t>("speedlimit", speedlimit_);

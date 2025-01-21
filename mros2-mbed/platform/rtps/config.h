@@ -69,7 +69,7 @@ const uint8_t MAX_TYPENAME_LENGTH = 60;
 const uint8_t MAX_TOPICNAME_LENGTH = 40;
 
 const int HEARTBEAT_STACKSIZE = 2048;          // byte //////////////////
-const int THREAD_POOL_WRITER_STACKSIZE = 2048; // byte //////////////////
+const int THREAD_POOL_WRITER_STACKSIZE = 8192; // byte //////////////////
 const int THREAD_POOL_READER_STACKSIZE = 2048; // byte /////////////////
 const uint16_t SPDP_WRITER_STACKSIZE = 2048;    // byte /////////////////
 

@@ -29,7 +29,7 @@ class ImageProcess(Node):
             degree_diff = self.latest_data["degree_diff"]
         combined_message = Float32MultiArray()
         combined_message.data = [float(direction), float(degree_diff)]
-        
+
         self.get_logger().info(f"Publishing: {combined_message.data}, type = {type(combined_message.data)}")
         self.publisher_.publish(combined_message)
 
@@ -144,7 +144,7 @@ class ImageProcess(Node):
 
                         gray_white = self.filter_white_lines(crop_img)
                         edges = self.detect_line(gray_white)
-                        center_x, _ = self.contour_find_line(edges, color_image)
+                        center_x, _ = self.contour_find_line(edges)
 
                         direction, degree_diff = self.control_robot(center_x, 625)
 

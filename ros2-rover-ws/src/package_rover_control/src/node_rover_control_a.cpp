@@ -72,7 +72,7 @@ private:
                 RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
             } else {
             RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
-        } else {
+        }} else {
             RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_destination.");
         }
     }

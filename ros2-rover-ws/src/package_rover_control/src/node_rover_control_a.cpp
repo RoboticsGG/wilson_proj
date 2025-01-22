@@ -66,9 +66,9 @@ private:
         if (msg->data.size()==2) {
             std::lock_guard<std::mutex> lock(data_lock_);
             if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1]){
-                 destination_a_ = msg->data[0];
+                destination_a_ = msg->data[0];
                 destination_b_ = msg->data[1];
-                //RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %d, b = %d", destination_a_, destination_b_);
+                RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %d, b = %d", destination_a_, destination_b_);
             }
         } 
     }

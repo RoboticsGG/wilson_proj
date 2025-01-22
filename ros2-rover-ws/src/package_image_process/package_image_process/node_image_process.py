@@ -30,7 +30,7 @@ class ImageProcess(Node):
         combined_message = Float32MultiArray()
         combined_message.data = [float(direction), float(degree_diff)]
 
-        self.get_logger().info(f"Publishing: {combined_message.data}, type = {type(combined_message.data)}")
+        self.get_logger().info(f"Publishing: {combined_message.data}, type1 = {type(combined_message.data[0])}, type2 = {type(combined_message.data[1])}")
         self.publisher_.publish(combined_message)
 
     def fix_crop_image(self, h, s, v):

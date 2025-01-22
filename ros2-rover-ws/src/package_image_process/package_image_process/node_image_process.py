@@ -32,7 +32,7 @@ class ImageProcess(Node):
         degree_diff = int(degree_diff * 100) / 100.0
 
         combined_message = Float32MultiArray()
-        combined_message.data = [float(direction), float(degree_diff)]
+        combined_message.data = [float(direction), degree_diff]
 
         self.get_logger().info(f"Publishing: {combined_message.data}")
         self.publisher_.publish(combined_message)

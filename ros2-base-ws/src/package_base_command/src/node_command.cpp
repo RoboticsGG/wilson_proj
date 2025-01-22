@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <mutex>
+#include <algorithm> // For std::clamp
 
 uint8_t speedlimit_ = 0;
 int des_a_ = 0;
@@ -13,18 +14,25 @@ public:
     Node_Command()
     : Node("node_command") {
 
-        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit_t", 10);
+        // Create publisher with a larger queue size
+        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>(
+            "topic_speedlimit_t", 
+            rclcpp::QoS(10).keep_last(100)
+        );
 
+        // Declare parameters
         this->declare_parameter<int>("speedlimit", static_cast<int>(speedlimit_));
         this->declare_parameter<int>("des_a", des_a_);
         this->declare_parameter<int>("des_b", des_b_);
 
+        // Set parameter callback
         parameter_callback_handle_ = this->add_on_set_parameters_callback(
             std::bind(&Node_Command::on_parameter_change, this, std::placeholders::_1)
         );
 
+        // Create a timer with a reduced frequency to lessen resource usage
         timer_ = this->create_wall_timer(
-            std::chrono::seconds(1),
+            std::chrono::milliseconds(500), // Publish every 500 ms
             std::bind(&Node_Command::publish_parameters, this)
         );
 
@@ -44,8 +52,10 @@ private:
                     result.successful = false;
                     result.reason = "speedlimit must be between 10 and 100.";
                 } else {
-                    std::lock_guard<std::mutex> lock(parameter_mutex_);
-                    speedlimit_ = static_cast<uint8_t>(new_value);
+                    {
+                        std::lock_guard<std::mutex> lock(parameter_mutex_);
+                        speedlimit_ = static_cast<uint8_t>(std::clamp(new_value, 0, 255));
+                    }
                     RCLCPP_INFO(this->get_logger(), "Updated speedlimit to %d", speedlimit_);
                 }
             }

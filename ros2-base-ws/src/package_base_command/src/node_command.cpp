@@ -19,7 +19,7 @@ public:
 
         // Timer to periodically publish the speed limit
         timer_ = this->create_wall_timer(
-            std::chrono::milliseconds(250), // Publish every 250ms
+            std::chrono::milliseconds(500), // Publish every 500ms
             std::bind(&Node_Command::publish_parameters, this)
         );
 

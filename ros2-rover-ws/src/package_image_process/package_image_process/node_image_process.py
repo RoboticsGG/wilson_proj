@@ -24,15 +24,11 @@ class ImageProcess(Node):
 
 
     def timer_callback(self):
-        # bag_file_path = r"/home/curry/rover_sample_data/sec.bag"
-        # direction, degree_diff = ImageProcess.read_bag_with_opencv(bag_file_path)
-
         with self.data_lock:
             direction = self.latest_data["direction"]
             degree_diff = self.latest_data["degree_diff"]
-        #degree_diff_str = str(degree_diff)
-        combined_message = f"{direction},{degree_diff}"
-        self.get_logger().info(f"Publishing: {combined_message}")
+        combined_message = {direction},{degree_diff}
+        self.get_logger().info(f"Publishing: {combined_message}, type = {type(combined_message)}")
 
         msg = String()
         msg.data = combined_message
@@ -75,12 +71,11 @@ class ImageProcess(Node):
         return edges
 
     #modified using Hough
-    def find_line_center(self, edges, color_image):
+    def find_line_center(self, edges):
         lines = cv2.HoughLinesP(edges, 1, np.pi / 180, threshold=100, minLineLength=50, maxLineGap=10)
         if lines is not None:
             for line in lines:
                 for x1, y1, x2, y2 in line:
-                    # Filter based on line length and angle
                     length = np.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
                     angle = np.abs(np.arctan2(y2 - y1, x2 - x1) * 180 / np.pi)
                     if length > 100 and (80 < angle < 100 or angle < 10 or angle > 170):
@@ -91,7 +86,7 @@ class ImageProcess(Node):
                         return center_x, center_y
         return None, None
 
-    def contour_find_line(self, edges, color_image):
+    def contour_find_line(self, edges):
         contours, _ = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         if contours:
             max_contour = max(contours, key=cv2.contourArea)
@@ -103,33 +98,23 @@ class ImageProcess(Node):
             return center_x, center_y
         return None, None
 
-    # def refer_point(color_image):
-    #     cv2.circle(color_image, (625, 440), 5, (0, 0, 255), -1)
-    #     return None
 
     def control_robot(self, contour_center_x, img_center):
         if contour_center_x is not None:
             if (contour_center_x < img_center) and (img_center - contour_center_x > 42):
                 pixel_diff = img_center - contour_center_x
                 degree_diff = (180/1280) * pixel_diff
-                degree_diff_int = int(degree_diff)
-                degree_diff_str = f"{degree_diff_int}" 
-                direction = "lf"
-                #print("Turn left : ", degree_diff)
-                return direction, degree_diff_str
+                direction = 1 #left
+                return direction, degree_diff
             elif (contour_center_x > img_center) and (contour_center_x - img_center > 42):
                 pixel_diff = contour_center_x - img_center
                 degree_diff = (180/1280) * pixel_diff
-                degree_diff_int = int(degree_diff)
-                degree_diff_str = f"{degree_diff_int}" 
-                direction = "ri"
-                #print("Turn right : ", degree_diff)
-                return direction, degree_diff_str
+                direction = 3 #right
+                return direction, degree_diff
             else:
-                degree_diff = 0
-                degree_diff_str = "0"
-                direction = "fw"
-                return direction, degree_diff_str
+                degree_diff = 0.00
+                direction = 2 #forward
+                return direction, degree_diff
                 #print("Move forward")
         else:
             print("No line detected")
@@ -189,11 +174,8 @@ class ImageProcess(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-
     image_process = ImageProcess()
-
     rclpy.spin(image_process)
-
     image_process.destroy_node()
     rclpy.shutdown()
 

@@ -42,23 +42,23 @@ public:
 
 private:
     void topic_direct_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg) {
+    if (msg->data.size() >= 2) { // Ensure there are at least 2 elements
         std::lock_guard<std::mutex> lock(data_lock_);
-        if (msg->data != ro_ctrl_msg_) { // Compare vectors directly
-            ro_ctrl_msg_ = msg->data;
-            std::ostringstream oss;
-            oss << "Received on topic_direction: ";
-            for (const auto &val : ro_ctrl_msg_) {
-                oss << val << " ";
-            }
-            RCLCPP_INFO(this->get_logger(), "%s", oss.str().c_str());
+        if (msg->data[0] != ro_ctrl_msg1_ || msg->data[1] != ro_ctrl_msg2_) {
+            ro_ctrl_msg1_ = msg->data[0];
+            ro_ctrl_msg2_ = msg->data[1];
+            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: x = %.2f, y = %.2f", ro_ctrl_msg1_, ro_ctrl_msg2_);
         }
+    } else {
+        RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_direction.");
     }
+}
 
     void topic_spd_callback(const std_msgs::msg::UInt8::SharedPtr msg) {
         std::lock_guard<std::mutex> lock(data_lock_);
         if (spd_msg_ != msg->data){
             spd_msg_ = msg->data;
-            RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", spd_msg_.c_str());
+            RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%d'", spd_msg_);
         }
     }
 
@@ -95,7 +95,9 @@ private:
 
     rclcpp::TimerBase::SharedPtr timer_;
 
-    std::vector<float> ro_ctrl_msg_;
+    //std::vector<float> ro_ctrl_msg_;
+    float ro_ctrl_msg1_;
+    float ro_ctrl_msg2_;
     uint8_t spd_msg_;
     float destination_a_;
     float destination_b_;

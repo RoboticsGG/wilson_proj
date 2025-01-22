@@ -12,7 +12,7 @@ public:
     
 
         topic_spd_pub_ = this->create_publisher<std_msgs::msg::UInt8>("topic_speedlimit_t", 10);
-        topic_des_pub = this->create_publisher<std_msgs::msg::Float32MultiArray>("topic_destination_t", 10);
+        topic_des_pub = this->create_publisher<std_msgs::msg::Float32MultiArray>("topic_destination", 10);
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(1), 

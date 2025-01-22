@@ -5,7 +5,7 @@ import rclpy
 import threading
 import time
 from rclpy.node import Node
-from std_msgs.msg import String
+from std_msgs.msg import String, Float32MultiArray
 
 class ImageProcess(Node):
     def __init__(self):
@@ -15,7 +15,7 @@ class ImageProcess(Node):
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
 
         self.bag_file_path = r"/home/curry/rover_sample_data/sec.bag"
-        self.latest_data = {"direction": "forward", "degree_diff": "0"}
+        self.latest_data = {"direction": 2, "degree_diff": 0.0}
         self.data_lock = threading.Lock()
 
         self.bag_processing_thread = threading.Thread(target=self.read_bag_continuously)
@@ -27,12 +27,11 @@ class ImageProcess(Node):
         with self.data_lock:
             direction = self.latest_data["direction"]
             degree_diff = self.latest_data["degree_diff"]
-        combined_message = {direction},{degree_diff}
-        self.get_logger().info(f"Publishing: {combined_message}, type = {type(combined_message)}")
-
-        msg = String()
-        msg.data = combined_message
-        self.publisher_.publish(msg)
+        combined_message = Float32MultiArray()
+        combined_message.data = [float(direction), float(degree_diff)]
+        
+        self.get_logger().info(f"Publishing: {combined_message.data}, type = {type(combined_message.data)}")
+        self.publisher_.publish(combined_message)
 
     def fix_crop_image(self, h, s, v):
         top = [0, 280]

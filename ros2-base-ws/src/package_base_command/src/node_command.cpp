@@ -11,8 +11,8 @@ public:
     : Node("node_command") {
     
 
-        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::UInt8>("topic_speedlimit_t", 10);
-        topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("topic_destination_t", 10);
+        topic_spd_pub_ = this->create_publisher<std_msgs::msg::UInt8>("topic_speedlimit_t", 10);
+        topic_des_pub = this->create_publisher<std_msgs::msg::Float32MultiArray>("topic_destination_t", 10);
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(1), 
@@ -29,18 +29,24 @@ private:
 
     void publish_parameters() {
         speedlimit_ = generate_random_speedlimit();
-        auto speed_message = std_msgs::msg::UInt8();
-        speed_message.data = speedlimit_;
-        RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", std::to_string(speed_message.data).c_str());
-        topic_speedlimit_publisher_->publish(speed_message);
+        auto spd_lmt_msg = std_msgs::msg::UInt8();
+        spd_lmt_msg.data = speedlimit_;
+        RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", std::to_string(spd_lmt_msg.data).c_str());
+        topic_spd_pub_->publish(spd_lmt_msg);
 
+        destination_ = {1.0f, 2.0f, 3.0f}; // Example data
+        auto des_msg = std_msgs::msg::Float32MultiArray();
+        des_msg.data = destination_; 
+        RCLCPP_INFO(this->get_logger(), "Publishing to topic_destination: '[1.0, 2.0, 3.0]'");
+        topic_des_pub->publish(des_msg);
     }
 
     uint8_t speedlimit_;
-    rclcpp::Publisher<std_msgs::msg::UInt8>::SharedPtr topic_speedlimit_publisher_;
-    rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_destination_publisher_;
+    std::vector<float> destination_;
+
+    rclcpp::Publisher<std_msgs::msg::UInt8>::SharedPtr topic_spd_pub_;
+    rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_des_pub;
     rclcpp::TimerBase::SharedPtr timer_;
-    rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr parameter_callback_handle_;
 };
 
 int main(int argc, char *argv[]) {

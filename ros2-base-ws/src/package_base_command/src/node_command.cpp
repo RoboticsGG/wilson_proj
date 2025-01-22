@@ -38,6 +38,7 @@ private:
 
     uint8_t speedlimit_;
     rclcpp::Publisher<std_msgs::msg::UInt8>::SharedPtr topic_speedlimit_publisher_;
+    rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_destination_publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr parameter_callback_handle_;
 };

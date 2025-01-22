@@ -42,14 +42,17 @@ public:
 
 private:
     void topic_direct_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg) {
-    if (msg->data.size() == 2) { // Assuming direction has exactly two values
         std::lock_guard<std::mutex> lock(data_lock_);
-        if (ro_ctrl_msg_.size() != 2 || ro_ctrl_msg_[0] != msg->data[0] || ro_ctrl_msg_[1] != msg->data[1]) {
+        if (msg->data != ro_ctrl_msg_) { // Compare vectors directly
             ro_ctrl_msg_ = msg->data;
-            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: x = %.2f, y = %.2f", ro_ctrl_msg_[0], ro_ctrl_msg_[1]);
+            std::ostringstream oss;
+            oss << "Received on topic_direction: ";
+            for (const auto &val : ro_ctrl_msg_) {
+                oss << val << " ";
+            }
+            RCLCPP_INFO(this->get_logger(), "%s", oss.str().c_str());
         }
     }
-}
 
     void topic_spd_callback(const std_msgs::msg::UInt8::SharedPtr msg) {
         std::lock_guard<std::mutex> lock(data_lock_);
@@ -92,12 +95,11 @@ private:
 
     rclcpp::TimerBase::SharedPtr timer_;
 
-    std::string ro_ctrl_msg_ = "fw,0";
-    std::string spd_msg_ = "0";
-    std::string back_direction_message_ = "fw";
-
-    int destination_a_ = 0;
-    int destination_b_ = 0;
+    std::vector<float> ro_ctrl_msg_;
+    uint8_t spd_msg_;
+    float destination_a_;
+    float destination_b_;
+    uint8_t back_ctrl_msg_;
 
     std::mutex data_lock_;
 };

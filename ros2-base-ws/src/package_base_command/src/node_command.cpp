@@ -31,7 +31,7 @@ private:
         speedlimit_ = generate_random_speedlimit();
         auto speed_message = std_msgs::msg::UInt8();
         speed_message.data = speedlimit_;
-        RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", speed_message.data.c_str());
+        RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", std::to_string(speed_message.data).c_str());
         topic_speedlimit_publisher_->publish(speed_message);
 
     }

@@ -27,6 +27,9 @@ class ImageProcess(Node):
         with self.data_lock:
             direction = self.latest_data["direction"]
             degree_diff = self.latest_data["degree_diff"]
+
+        degree_diff = round(degree_diff, 2)
+        
         combined_message = Float32MultiArray()
         combined_message.data = [float(direction), float(degree_diff)]
 

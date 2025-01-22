@@ -1,7 +1,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
-#include <std_msgs/msg/u_int16.hpp>
-#include <std_msgs/msg/u_int16_multi_array.hpp> 
+#include <std_msgs/msg/u_int8.hpp>
+#include <std_msgs/msg/float32_multi_array.hpp>
 #include <cstdlib>
 #include <ctime>
 
@@ -9,14 +9,13 @@ class Node_Command : public rclcpp::Node {
 public:
     Node_Command()
     : Node("node_command") {
-    // : Node("node_command"), speedlimit_(30), des_a_(0), des_b_(0), frontDirection_(90), period_PWM_(20), dutycycle_PWM_(50), backDirection_("FW") {
+    
 
-        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::String>("topic_speedlimit_t", 10);
-
+        topic_speedlimit_publisher_ = this->create_publisher<std_msgs::msg::UInt8>("topic_speedlimit_t", 10);
+        topic_destination_publisher_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("topic_destination_t", 10);
 
         timer_ = this->create_wall_timer(
-            // std::chrono::seconds(1)
-            std::chrono::milliseconds(250), 
+            std::chrono::seconds(1), 
             std::bind(&Node_Command::publish_parameters, this)
         );
 
@@ -29,17 +28,16 @@ private:
     }
 
     void publish_parameters() {
-        // Pub topic_speedlimit
         speedlimit_ = generate_random_speedlimit();
-        auto speed_message = std_msgs::msg::String();
-        speed_message.data = std::to_string(speedlimit_);
+        auto speed_message = std_msgs::msg::UInt8();
+        speed_message.data = speedlimit_;
         RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", speed_message.data.c_str());
         topic_speedlimit_publisher_->publish(speed_message);
 
     }
 
     uint8_t speedlimit_;
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_speedlimit_publisher_;
+    rclcpp::Publisher<std_msgs::msg::UInt8>::SharedPtr topic_speedlimit_publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr parameter_callback_handle_;
 };

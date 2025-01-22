@@ -20,6 +20,10 @@ public:
         this->declare_parameter<int>("des_a", des_a_);
         this->declare_parameter<int>("des_b", des_b_);
 
+        parameter_callback_handle_ = this->add_on_set_parameters_callback(
+            std::bind(&Node_Command::on_parameter_change, this, std::placeholders::_1)
+        );
+
         timer_ = this->create_wall_timer(
             std::chrono::seconds(1),
             //std::chrono::milliseconds(250), 

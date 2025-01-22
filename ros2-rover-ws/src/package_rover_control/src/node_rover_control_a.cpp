@@ -3,7 +3,6 @@
 #include <std_msgs/msg/u_int8.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
 #include <string>
-#include <sstream>
 #include <mutex>
 
 class Motors_Rovercontrol {
@@ -42,13 +41,15 @@ public:
     }
 
 private:
-    void topic_direct_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg){
+    void topic_direct_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg) {
+    if (msg->data.size() == 2) { // Assuming direction has exactly two values
         std::lock_guard<std::mutex> lock(data_lock_);
-        if (ro_ctrl_msg_ != msg->data){
+        if (ro_ctrl_msg_.size() != 2 || ro_ctrl_msg_[0] != msg->data[0] || ro_ctrl_msg_[1] != msg->data[1]) {
             ro_ctrl_msg_ = msg->data;
-            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: '%s'", ro_ctrl_msg_.c_str());
+            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: x = %.2f, y = %.2f", ro_ctrl_msg_[0], ro_ctrl_msg_[1]);
         }
     }
+}
 
     void topic_spd_callback(const std_msgs::msg::UInt8::SharedPtr msg) {
         std::lock_guard<std::mutex> lock(data_lock_);
@@ -88,7 +89,7 @@ private:
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
 
     rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_ro_con_pub_;
-    
+
     rclcpp::TimerBase::SharedPtr timer_;
 
     std::string ro_ctrl_msg_ = "fw,0";

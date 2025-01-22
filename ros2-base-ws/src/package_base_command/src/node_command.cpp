@@ -5,6 +5,10 @@
 #include <cstdlib>
 #include <ctime>
 
+uint8_t speedlimit_ = 0;
+int des_a_ = 0;
+int des_b_ = 0;
+
 class Node_Command : public rclcpp::Node {
 public:
     Node_Command()
@@ -59,7 +63,6 @@ private:
 
     }
 
-    uint8_t speedlimit_ = 0;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_speedlimit_publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr parameter_callback_handle_;

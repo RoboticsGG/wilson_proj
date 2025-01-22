@@ -63,7 +63,7 @@ private:
     }
 
     void topic_des_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg){
-        if (msg->data.size()==3) {
+        if (msg->data.size()>=3) {
             std::lock_guard<std::mutex> lock(data_lock_);
             if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1] || destination_c_ != msg->data[2]){
                 destination_a_ = msg->data[0];

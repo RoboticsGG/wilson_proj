@@ -67,7 +67,7 @@ void rocon_FdirectCallback(std_msgs::msg::UInt16 *msg) {
     MROS2_INFO("subscribed Front Direct msg: '%d'\r\n", msg->data);
 }
 void rocon_angleCallback(std_msgs::msg::Float32 *msg) {
-    MROS2_INFO("subscribed Angle msg: '%d'\r\n", msg->data);
+    MROS2_INFO("subscribed Angle msg: '%f'\r\n", msg->data);
 }
 void rocon_speedCallback(std_msgs::msg::UInt16 *msg) {
     MROS2_INFO("subscribed Speed msg: '%d'\r\n", msg->data);

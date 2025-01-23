@@ -121,7 +121,7 @@ private:
     //rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_ro_con_pub_;
     
     rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_fDr_pub_;
-    rclcpp::Publisher<std_msgs::msg::Uint16>::SharedPtr topic_rocon_bDr_pub_;
+    rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_bDr_pub_;
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr topic_rocon_ang_pub_;
     rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_spd_pub_;
     

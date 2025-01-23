@@ -20,9 +20,8 @@
 #include "std_msgs/msg/string.hpp"
 #include <std_msgs/msg/float32.hpp>
 
-void userCallback(std_msgs::msg::Float32MultiArray *msg);
 void rocon_FdirectCallback(std_msgs::msg::UInt16 *msg);
-void rocon_angleCallback(std_msgs::msg::Float32 *msg);
+void rocon_angleCallback(std_msgs::msg::Float *msg);
 void rocon_speedCallback(std_msgs::msg::UInt16 *msg);
 void rocon_BdirectCallback(std_msgs::msg::UInt16 *msg);
 

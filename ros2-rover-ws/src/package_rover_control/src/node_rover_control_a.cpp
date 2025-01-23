@@ -82,7 +82,8 @@ private:
 
     void timer_callback() {
         RCLCPP_INFO(this->get_logger(), "################################################");
-        rover_con_ = {ro_ctrl_msg1_, ro_ctrl_msg2_, static_cast<float>(spd_msg_)};
+        f_spd_msg_ = static_cast<float>(spd_msg_)
+        rover_con_ = {ro_ctrl_msg1_, ro_ctrl_msg2_, f_spd_msg_};
         auto rover_con_msg = std_msgs::msg::Float32MultiArray();
         rover_con_msg.data = rover_con_;
         topic_ro_con_pub_->publish(rover_con_msg);
@@ -103,6 +104,7 @@ private:
     float ro_ctrl_msg1_;
     float ro_ctrl_msg2_;
     uint8_t spd_msg_;
+    float f_spd_msg_;
     float destination_a_;
     float destination_b_;
     float destination_c_;

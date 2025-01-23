@@ -27,6 +27,25 @@ void rocon_angleCallback(std_msgs::msg::Float32 *msg);
 void rocon_speedCallback(std_msgs::msg::UInt16 *msg);
 void rocon_BdirectCallback(std_msgs::msg::UInt16 *msg);
 
+void testCallback(std_msgs::msg::String *msg)
+{
+  MROS2_INFO("subscribed msg: '%s'\r\n", msg->data.c_str());
+}
+
+void rocon_FdirectCallback(std_msgs::msg::UInt16 *msg) {
+    MROS2_INFO("subscribed Front Direct msg: '%d'\r\n", msg->data);
+}
+void rocon_angleCallback(std_msgs::msg::Float32 *msg) {
+    MROS2_INFO("subscribed Angle msg: '%f'\r\n", msg->data);
+}
+void rocon_speedCallback(std_msgs::msg::UInt16 *msg) {
+    MROS2_INFO("subscribed Speed msg: '%d'\r\n", msg->data);
+}
+void rocon_BdirectCallback(std_msgs::msg::UInt16 *msg) {
+    MROS2_INFO("subscribed Back Direct msg: '%d'\r\n", msg->data);
+}
+
+
 int main()
 {
   if (mros2_platform::network_connect())
@@ -59,20 +78,3 @@ int main()
   return 0;
 }
 
-void testCallback(std_msgs::msg::String *msg)
-{
-  MROS2_INFO("subscribed msg: '%s'\r\n", msg->data.c_str());
-}
-
-void rocon_FdirectCallback(std_msgs::msg::UInt16 *msg) {
-    MROS2_INFO("subscribed Front Direct msg: '%d'\r\n", msg->data);
-}
-void rocon_angleCallback(std_msgs::msg::Float32 *msg) {
-    MROS2_INFO("subscribed Angle msg: '%f'\r\n", msg->data);
-}
-void rocon_speedCallback(std_msgs::msg::UInt16 *msg) {
-    MROS2_INFO("subscribed Speed msg: '%d'\r\n", msg->data);
-}
-void rocon_BdirectCallback(std_msgs::msg::UInt16 *msg) {
-    MROS2_INFO("subscribed Back Direct msg: '%d'\r\n", msg->data);
-}

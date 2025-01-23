@@ -21,11 +21,10 @@
 #include "std_msgs/msg/float32.hpp"
 #include <cstdlib>
 
-mros2::Subscriber sub_Fdirect;
-mros2::Subscriber sub_angle;
-mros2::Subscriber sub_speed;
-mros2::Subscriber sub_Bdirect;
-
+void testCallback(std_msgs::msg::String *msg)
+{
+  MROS2_INFO("subscribed msg: '%s'\r\n", msg->data.c_str());
+}
 
 void rocon_FdirectCallback(std_msgs::msg::UInt16 *msg) {
     MROS2_INFO("subscribed Front Direct msg: '%d'\r\n", msg->data);
@@ -62,6 +61,7 @@ int main()
   MROS2_DEBUG("mROS 2 initialization is completed");
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
+  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, testCallback);
   mros2::Subscriber sub_Fdirect = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_Fdirec", 10, rocon_FdirectCallback);
   mros2::Subscriber sub_angle = node.create_subscription<std_msgs::msg::Float32>("pub_rocon_angle", 10, rocon_angleCallback);
   mros2::Subscriber sub_speed = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_speed", 10, rocon_speedCallback);

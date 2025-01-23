@@ -51,7 +51,7 @@ int main()
   mros2::Node node = mros2::Node::create_node("mros2_node");
   mros2::Subscriber sub = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_angle", 10, userCallback);
   mros2::Subscriber sub1 = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_Fdirec", 10, userCallback1);
-  osDelay(100);
+  osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");
 
   mros2::spin();

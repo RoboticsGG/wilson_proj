@@ -45,7 +45,6 @@ void rocon_BdirectCallback(std_msgs::msg::UInt16 *msg) {
     MROS2_INFO("subscribed Back Direct msg: '%d'\r\n", msg->data);
 }
 
-
 int main()
 {
   if (mros2_platform::network_connect())

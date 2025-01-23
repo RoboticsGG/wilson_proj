@@ -35,7 +35,7 @@ public:
    
         //topic_rocon_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("pub_rovercontrol", 10);
 
-        topic_rocon_fDr_pub_ = this->create_publisher<std_msgs::msg::Uint16>("pub_rocon_Fdirec", 10);
+        topic_rocon_fDr_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Fdirec", 10);
         topic_rocon_ang_pub_ = this->create_publisher<std_msgs::msg::Float32>("pub_rocon_angle", 10);
         topic_rocon_spd_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_speed", 10);
         topic_rocon_bDr_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10);
@@ -135,7 +135,6 @@ private:
     float destination_a_;
     float destination_b_;
     float destination_c_;
-    uint8_t back_ctrl_msg_;
 
     std::vector<float> rover_con_;
 

@@ -21,6 +21,10 @@
 #include <std_msgs/msg/float32.hpp>
 
 void userCallback(std_msgs::msg::Float32MultiArray *msg);
+void rocon_FdirectCallback(std_msgs::msg::UInt16 *msg);
+void rocon_angleCallback(std_msgs::msg::Float32 *msg);
+void rocon_speedCallback(std_msgs::msg::UInt16 *msg);
+void rocon_BdirectCallback(std_msgs::msg::UInt16 *msg);
 
 int main()
 {
@@ -41,10 +45,10 @@ int main()
   MROS2_DEBUG("mROS 2 initialization is completed");
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  mros2::Subscriber sub_Fdirect = node.create_subscription<std_msgs::msg::Float32>("pub_rocon_Fdirec", 10, rocon_FdirectCallback);
+  mros2::Subscriber sub_Fdirect = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_Fdirec", 10, rocon_FdirectCallback);
   mros2::Subscriber sub_angle = node.create_subscription<std_msgs::msg::Float32>("pub_rocon_angle", 10, rocon_angleCallback);
-  mros2::Subscriber sub_speed = node.create_subscription<std_msgs::msg::Float32>("pub_rocon_speed", 10, rocon_speedCallback);
-  mros2::Subscriber sub_Bdirect = node.create_subscription<std_msgs::msg::Float32>("pub_rocon_Bdirec", 10, rocon_BdirectCallback);
+  mros2::Subscriber sub_speed = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_speed", 10, rocon_speedCallback);
+  mros2::Subscriber sub_Bdirect = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10, rocon_BdirectCallback);
 
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");
@@ -53,15 +57,15 @@ int main()
   return 0;
 }
 
-void rocon_FdirectCallback(std_msgs::msg::Float32 *msg) {
+void rocon_FdirectCallback(std_msgs::msg::UInt16 *msg) {
     MROS2_INFO("subscribed Front Direct msg: '%s'\r\n", msg->data.c_str());
 }
 void rocon_angleCallback(std_msgs::msg::Float32 *msg) {
     MROS2_INFO("subscribed Angle msg: '%s'\r\n", msg->data.c_str());
 }
-void rocon_speedCallback(std_msgs::msg::Float32 *msg) {
+void rocon_speedCallback(std_msgs::msg::UInt16 *msg) {
     MROS2_INFO("subscribed Speed msg: '%s'\r\n", msg->data.c_str());
 }
-void rocon_BdirectCallback(std_msgs::msg::Float32 *msg) {
+void rocon_BdirectCallback(std_msgs::msg::UInt16 *msg) {
     MROS2_INFO("subscribed Back Direct msg: '%s'\r\n", msg->data.c_str());
 }

@@ -14,19 +14,18 @@
  * limitations under the License.
  */
 
+#include "mbed.h"
 #include "mros2.h"
 #include "mros2-platform.h"
-#include "std_msgs/msg/string.hpp"
-#include <cstdlib>
+#include "std_msgs/msg/u_int16.hpp"
 
-void userCallback(std_msgs::msg::String *msg)
+void userCallback(std_msgs::msg::UInt16 *msg)
 {
-  MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
+  MROS2_INFO("subscribed msg: '%d'", msg->data);
 }
 
 int main()
 {
-  //setenv("ROS_DOMAIN_ID", "10", 1);
   /* connect to the network */
   if (mros2_platform::network_connect())
   {
@@ -39,27 +38,15 @@ int main()
   }
 
   MROS2_INFO("%s start!", MROS2_PLATFORM_NAME);
-  MROS2_INFO("app name: echoback_string");
+  MROS2_INFO("app name: sub_uint16");
 
   mros2::init(0, NULL);
   MROS2_DEBUG("mROS 2 initialization is completed");
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
-  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("to_stm", 10, userCallback);
-
+  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_angle", 10, userCallback);
   osDelay(100);
   MROS2_INFO("ready to pub/sub message\r\n---");
-
-  auto count = 0;
-  while (1)
-  {
-    auto msg = std_msgs::msg::String();
-    msg.data = "Hello from " + std::string(MROS2_PLATFORM_NAME) + " onto " + quote(TARGET_NAME) + ": " + std::to_string(count++);
-    MROS2_INFO("publishing msg: '%s'", msg.data.c_str());
-    pub.publish(msg);
-    osDelay(1000);
-  }
 
   mros2::spin();
   return 0;

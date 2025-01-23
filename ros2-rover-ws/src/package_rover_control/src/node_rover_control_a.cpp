@@ -82,8 +82,8 @@ private:
 
     void timer_callback() {
         RCLCPP_INFO(this->get_logger(), "################################################");
-        rover_con_ = {ro_ctrl_msg1_, ro_ctrl_msg2_, spd_msg_};
-        rover_con_msg = std_msgs::msg::Float32MultiArray();
+        rover_con_ = {ro_ctrl_msg1_, ro_ctrl_msg2_, static_cast<float>(spd_msg_)};
+        auto rover_con_msg = std_msgs::msg::Float32MultiArray();
         rover_con_msg.data = rover_con_;
         topic_ro_con_pub_->publish(rover_con_msg);
         RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%.2f, %.2f, %.1f]", rover_con_msg[0], rover_con_msg[1], rover_con_msg[2]);

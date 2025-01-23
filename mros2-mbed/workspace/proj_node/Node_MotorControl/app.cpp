@@ -21,7 +21,7 @@
 #include "std_msgs/msg/u_int16.hpp"
 #include "std_msgs/msg/float32.hpp"
 
-void testCallback(std_msgs::msg::String *msg);
+// void testCallback(std_msgs::msg::String *msg);
 // void rocon_FdirectCallback(std_msgs::msg::UInt16 *msg);
 // void rocon_angleCallback(std_msgs::msg::Float32 *msg);
 // void rocon_speedCallback(std_msgs::msg::UInt16 *msg);

@@ -18,8 +18,9 @@
 #include "mros2.h"
 #include "mros2-platform.h"
 #include "std_msgs/msg/string.hpp"
+#include <std_msgs/msg/float32_multi_array.hpp>
 
-void userCallback(std_msgs::msg::String *msg);
+void userCallback(std_msgs::msg::Float32MultiArray *msg);
 
 int main()
 {
@@ -40,7 +41,7 @@ int main()
   MROS2_DEBUG("mROS 2 initialization is completed");
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, userCallback);
+  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::Float32MultiArray>("pub_rovercontrol", 10, userCallback);
 
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");
@@ -49,6 +50,6 @@ int main()
   return 0;
 }
 
-void userCallback(std_msgs::msg::String *msg) {
+void userCallback(std_msgs::msg::Float32MultiArray *msg) {
     MROS2_INFO("subscribed msg: '%s'\r\n", msg->data.c_str());
 }

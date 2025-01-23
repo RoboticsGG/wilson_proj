@@ -1,34 +1,36 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
-#include <std_msgs/msg/u_int16_multi_array.hpp>
+#include <std_msgs/msg/u_int8.hpp>
+#include <std_msgs/msg/float32_multi_array.hpp>
 #include <string>
+#include <mutex>
 
-// class Motors_Rovercontrol {
-// public:
-//     int test(int a, int b){
-//         return a+b; //เขียนประมวลผลค่าเพื่อควบคุม rover เผื่อถ้าบน mbed เขียนยาก
-//     }
-// };
+class Motors_Rovercontrol {
+public:
+    int test(int a, int b){
+        return a+b; //เขียนประมวลผลค่าเพื่อควบคุม rover เผื่อถ้าบน mbed เขียนยาก
+    }
+};
 
 class Node_Rovercontrol : public rclcpp::Node {
 public:
     Node_Rovercontrol() : Node("node_rovercontrol") {
-        topic_speedlimit_subscription_ = this->create_subscription<std_msgs::msg::String>(
-            "topic_speedlimit", 9,
-            std::bind(&Node_Rovercontrol::topic_speedlimit_callback, this, std::placeholders::_1)
+        topic_spd_sub_ = this->create_subscription<std_msgs::msg::UInt8>(
+            "topic_speedlimit_t", 10,
+            std::bind(&Node_Rovercontrol::topic_spd_callback, this, std::placeholders::_1)
         );
 
-        topic_destination_subscription_ = this->create_subscription<std_msgs::msg::UInt16MultiArray>(
-            "topic_destination", 8,
-            std::bind(&Node_Rovercontrol::topic_destination_callback, this, std::placeholders::_1)
+        topic_des_sub_ = this->create_subscription<std_msgs::msg::Float32MultiArray>(
+            "topic_destination", 10,
+            std::bind(&Node_Rovercontrol::topic_des_callback, this, std::placeholders::_1)
         );
 
-        topic_direction_subscription_ = this->create_subscription<std_msgs::msg::String>(
-            "topic_direction", 9,
-            std::bind(&Node_Rovercontrol::topic_direction_callback, this, std::placeholders::_1)
+        topic_direct_sub_ = this->create_subscription<std_msgs::msg::Float32MultiArray>(
+            "topic_direction", 10,
+            std::bind(&Node_Rovercontrol::topic_direct_callback, this, std::placeholders::_1)
         );
    
-        topic_rovercontrol_publisher_ = this->create_publisher<std_msgs::msg::String>("pub_rovercontrol", 10);
+        topic_ro_con_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("pub_rovercontrol", 10);
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(2), 
@@ -39,52 +41,74 @@ public:
     }
 
 private:
-    void topic_direction_callback(const std_msgs::msg::String::SharedPtr msg){
-        if (rovercontrol_message_ != msg->data){
-            rovercontrol_message_ = msg->data;
-            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: '%s'", rovercontrol_message_.c_str());
+    void topic_direct_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg) {
+    if (msg->data.size() >= 2) { // Ensure there are at least 2 elements
+        std::lock_guard<std::mutex> lock(data_lock_);
+        if (msg->data[0] != ro_ctrl_msg1_ || msg->data[1] != ro_ctrl_msg2_) {
+            ro_ctrl_msg1_ = msg->data[0];
+            ro_ctrl_msg2_ = msg->data[1];
+            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: x = %.2f, y = %.2f", ro_ctrl_msg1_, ro_ctrl_msg2_);
+        }
+    } else {
+        RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_direction.");
+    }
+}
+
+    void topic_spd_callback(const std_msgs::msg::UInt8::SharedPtr msg) {
+        std::lock_guard<std::mutex> lock(data_lock_);
+        if (spd_msg_ != msg->data){
+            spd_msg_ = msg->data;
+            RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%d'", spd_msg_);
         }
     }
 
-    void topic_speedlimit_callback(const std_msgs::msg::String::SharedPtr msg) {
-        if (speedlimit_message_ != msg->data){
-            speedlimit_message_ = msg->data;
-            RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%s'", speedlimit_message_.c_str());
-        }
-    }
-
-    void topic_destination_callback(const std_msgs::msg::UInt16MultiArray::SharedPtr msg){
-        if (msg->data.size()==2) {
-            if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1]){
-                 destination_a_ = msg->data[0];
+    void topic_des_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg){
+        if (msg->data.size()>=3) {
+            std::lock_guard<std::mutex> lock(data_lock_);
+            if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1] || destination_c_ != msg->data[2]){
+                destination_a_ = msg->data[0];
                 destination_b_ = msg->data[1];
-            }
-        } 
+                destination_c_ = msg->data[2];
+                RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
+            } else {
+            RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
+        }} else {
+            RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_destination.");
+        }
     }
 
 
 
-    void timer_callback(){
-        auto rovercon_msg_a = std_msgs::msg::String();
-        rovercon_msg_a.data = rovercontrol_message_ + "," + speedlimit_message_ + "," + back_direction_message_;
-        topic_rovercontrol_publisher_->publish(rovercon_msg_a);
-        //RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
-    }
+
+    void timer_callback() {
+        // std::stringstream ss;
+        // ss << ro_ctrl_msg_ << "," << spd_msg_ << "," << back_direction_message_;
+        // std_msgs::msg::String rovercon_msg;
+        // rovercon_msg.data = ss.str();
+        // topic_ro_con_pub_->publish(rovercon_msg);
+        // RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
+        RCLCPP_INFO(this->get_logger(), "------------------------------------------------");
+  }
 
 
-    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_speedlimit_subscription_;
-    rclcpp::Subscription<std_msgs::msg::UInt16MultiArray>::SharedPtr topic_destination_subscription_;
-    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr topic_direction_subscription_;
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr topic_rovercontrol_publisher_;
+    rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr topic_spd_sub_;
+    rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_des_sub_;
+    rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
+
+    rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_ro_con_pub_;
+
     rclcpp::TimerBase::SharedPtr timer_;
 
-    std::string rovercontrol_message_ = "fw,0";
-    std::string speedlimit_message_ = "0";
-    std::string back_direction_message_ = "fw";
+    //std::vector<float> ro_ctrl_msg_;
+    float ro_ctrl_msg1_;
+    float ro_ctrl_msg2_;
+    uint8_t spd_msg_;
+    float destination_a_;
+    float destination_b_;
+    float destination_c_;
+    uint8_t back_ctrl_msg_;
 
-    int destination_a_ = 0;
-    int destination_b_ = 0;
-
+    std::mutex data_lock_;
 };
 
 int main(int argc, char *argv[]) {

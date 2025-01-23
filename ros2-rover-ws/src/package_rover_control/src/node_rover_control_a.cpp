@@ -81,12 +81,12 @@ private:
 
 
     void timer_callback() {
-        // std::stringstream ss;
-        // ss << ro_ctrl_msg_ << "," << spd_msg_ << "," << back_direction_message_;
-        // std_msgs::msg::String rovercon_msg;
-        // rovercon_msg.data = ss.str();
-        // topic_ro_con_pub_->publish(rovercon_msg);
-        // RCLCPP_INFO(this->get_logger(), "Published to pub_rovercontrol: '%s'", rovercon_msg.data.c_str());
+        RCLCPP_INFO(this->get_logger(), "################################################");
+        rover_con_ = {ro_ctrl_msg1_, ro_ctrl_msg2_, spd_msg_};
+        rover_con_msg = std_msgs::msg::Float32MultiArray();
+        rover_con_msg.data = rover_con_;
+        topic_ro_con_pub_->publish(rover_con_msg);
+        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%.2f, %.2f, %d]", rover_con_[0], rover_con_[1], rover_con_[2]);
         RCLCPP_INFO(this->get_logger(), "------------------------------------------------");
   }
 
@@ -107,6 +107,8 @@ private:
     float destination_b_;
     float destination_c_;
     uint8_t back_ctrl_msg_;
+
+    std::vector<float> rover_con_;
 
     std::mutex data_lock_;
 };

@@ -82,7 +82,7 @@ private:
 
     void timer_callback() {
         RCLCPP_INFO(this->get_logger(), "################################################");
-        f_spd_msg_ = static_cast<float>(spd_msg_)
+        f_spd_msg_ = static_cast<float>(spd_msg_);
         rover_con_ = {ro_ctrl_msg1_, ro_ctrl_msg2_, f_spd_msg_};
         auto rover_con_msg = std_msgs::msg::Float32MultiArray();
         rover_con_msg.data = rover_con_;

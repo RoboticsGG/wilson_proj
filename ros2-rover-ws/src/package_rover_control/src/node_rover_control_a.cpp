@@ -1,7 +1,10 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/u_int8.hpp>
+#include <std_msgs/msg/u_int16.hpp>
+#include <std_msgs/msg/float32.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
+
 #include <string>
 #include <mutex>
 
@@ -30,7 +33,12 @@ public:
             std::bind(&Node_Rovercontrol::topic_direct_callback, this, std::placeholders::_1)
         );
    
-        topic_ro_con_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("pub_rovercontrol", 10);
+        //topic_rocon_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("pub_rovercontrol", 10);
+
+        topic_rocon_fDr_pub_ = this->create_publisher<std_msgs::msg::Uint16>("pub_rocon_Fdirec", 10);
+        topic_rocon_ang_pub_ = this->create_publisher<std_msgs::msg::Float32>("pub_rocon_angle", 10);
+        topic_rocon_spd_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_speed", 10);
+        topic_rocon_bDr_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10);
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(2), 
@@ -81,13 +89,26 @@ private:
 
 
     void timer_callback() {
-        RCLCPP_INFO(this->get_logger(), "################################################");
-        f_spd_msg_ = static_cast<float>(spd_msg_);
-        rover_con_ = {ro_ctrl_msg1_, ro_ctrl_msg2_, f_spd_msg_};
-        auto rover_con_msg = std_msgs::msg::Float32MultiArray();
-        rover_con_msg.data = rover_con_;
-        topic_ro_con_pub_->publish(rover_con_msg);
-        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%.2f, %.2f, %.1f]", rover_con_msg.data[0], rover_con_msg.data[1], rover_con_msg.data[2]);
+        fDr_msg_ = static_cast<uint16_t>(ro_ctrl_msg1_);
+        i16_spd_msg_ = static_cast<uint16_t>(spd_msg_);
+        bDr_msg_ = static_cast<uint16_t>(1); // 1 = FW, 0 = BW
+
+        auto rocon_fDr_msg = std_msgs::msg::Uint16();
+        auto rocon_angle_msg = std_msgs::msg::Float32();
+        auto rocon_spd_msg = std_msgs::msg::UInt16(); 
+        auto rocon_bDr_msg = std_msgs::msg::UInt16();
+
+        rocon_fDr_msg.data = ro_ctrl_msg1_;
+        rocon_angle_msg.data = ro_ctrl_msg2_;
+        rocon_spd_msg.data = i16_spd_msg_;
+        rocon_bDr_msg.data = bDr_msg_;
+
+        topic_rocon_fDr_pub_->publish(rocon_fDr_msg);
+        topic_rocon_ang_pub_->publish(rocon_angle_msg);
+        topic_rocon_spd_pub_->publish(rocon_spd_msg);
+        topic_rocon_bDr_pub_->publish(rocon_bDr_msg);
+
+        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", rocon_fDr_msg.data, rocon_angle_msg.data, rocon_spd_msg.data, rocon_bDr_msg.data);
         RCLCPP_INFO(this->get_logger(), "################################################");
   }
 
@@ -96,7 +117,11 @@ private:
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_des_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
 
-    rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_ro_con_pub_;
+    //rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_ro_con_pub_;
+    rclcpp::Publisher<std_msgs::msg::Uint16>::SharedPtr topic_rocon_fDr_pub_;
+    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr topic_rocon_ang_pub_;
+    rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_spd_pub_;
+    rclcpp::Publisher<std_msgs::msg::Uint16>::SharedPtr topic_rocon_bDr_pub_;
 
     rclcpp::TimerBase::SharedPtr timer_;
 
@@ -104,7 +129,7 @@ private:
     float ro_ctrl_msg1_;
     float ro_ctrl_msg2_;
     uint8_t spd_msg_;
-    float f_spd_msg_;
+    uint8_t i16_spd_msg_;
     float destination_a_;
     float destination_b_;
     float destination_c_;

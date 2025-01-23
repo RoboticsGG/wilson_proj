@@ -87,7 +87,7 @@ private:
         auto rover_con_msg = std_msgs::msg::Float32MultiArray();
         rover_con_msg.data = rover_con_;
         topic_ro_con_pub_->publish(rover_con_msg);
-        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%.2f, %.2f, %.1f]", rover_con_ms.data[0], rover_con_msg.data[1], rover_con_msg.data[2]);
+        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%.2f, %.2f, %.1f]", rover_con_msg.data[0], rover_con_msg.data[1], rover_con_msg.data[2]);
         RCLCPP_INFO(this->get_logger(), "------------------------------------------------");
   }
 

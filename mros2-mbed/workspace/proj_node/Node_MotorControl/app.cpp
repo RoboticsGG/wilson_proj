@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#include "mbed.h"
 #include "mros2.h"
 #include "mros2-platform.h"
 #include "std_msgs/msg/string.hpp"
 #include "std_msgs/msg/u_int16.hpp"
 #include "std_msgs/msg/float32.hpp"
+#include <cstdlib>
 
 // void testCallback(std_msgs::msg::String *msg);
 // void rocon_FdirectCallback(std_msgs::msg::UInt16 *msg);

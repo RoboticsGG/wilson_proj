@@ -47,7 +47,7 @@ private:
         if (msg->data[0] != ro_ctrl_msg1_ || msg->data[1] != ro_ctrl_msg2_) {
             ro_ctrl_msg1_ = msg->data[0];
             ro_ctrl_msg2_ = msg->data[1];
-            RCLCPP_INFO(this->get_logger(), "Received on topic_direction: x = %.2f, y = %.2f", ro_ctrl_msg1_, ro_ctrl_msg2_);
+            //RCLCPP_INFO(this->get_logger(), "Received on topic_direction: x = %.2f, y = %.2f", ro_ctrl_msg1_, ro_ctrl_msg2_);
         }
     } else {
         RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_direction.");
@@ -58,7 +58,7 @@ private:
         std::lock_guard<std::mutex> lock(data_lock_);
         if (spd_msg_ != msg->data){
             spd_msg_ = msg->data;
-            RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%d'", spd_msg_);
+            //RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%d'", spd_msg_);
         }
     }
 
@@ -69,9 +69,9 @@ private:
                 destination_a_ = msg->data[0];
                 destination_b_ = msg->data[1];
                 destination_c_ = msg->data[2];
-                RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
+                //RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
             } else {
-            RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
+            //RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
         }} else {
             RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_destination.");
         }
@@ -88,7 +88,7 @@ private:
         rover_con_msg.data = rover_con_;
         topic_ro_con_pub_->publish(rover_con_msg);
         RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%.2f, %.2f, %.1f]", rover_con_msg.data[0], rover_con_msg.data[1], rover_con_msg.data[2]);
-        RCLCPP_INFO(this->get_logger(), "------------------------------------------------");
+        RCLCPP_INFO(this->get_logger(), "################################################");
   }
 
 

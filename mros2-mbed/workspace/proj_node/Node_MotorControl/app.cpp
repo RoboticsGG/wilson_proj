@@ -62,10 +62,10 @@ int main()
   MROS2_DEBUG("mROS 2 initialization is completed");
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  mros2::Subscriber sub_Fdirect = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_Fdirec", 10, rocon_FdirectCallback);
-  mros2::Subscriber sub_angle = node.create_subscription<std_msgs::msg::Float32>("pub_rocon_angle", 10, rocon_angleCallback);
-  mros2::Subscriber sub_speed = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_speed", 10, rocon_speedCallback);
-  mros2::Subscriber sub_Bdirect = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10, rocon_BdirectCallback);
+  sub_Fdirect = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_Fdirec", 10, rocon_FdirectCallback);
+  sub_angle = node.create_subscription<std_msgs::msg::Float32>("pub_rocon_angle", 10, rocon_angleCallback);
+  sub_speed = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_speed", 10, rocon_speedCallback);
+  sub_Bdirect = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10, rocon_BdirectCallback);
 
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");

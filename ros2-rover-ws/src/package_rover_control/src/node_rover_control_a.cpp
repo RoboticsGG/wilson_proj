@@ -36,9 +36,10 @@ public:
         //topic_rocon_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("pub_rovercontrol", 10);
 
         topic_rocon_fDr_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Fdirec", 10);
+        topic_rocon_bDr_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10);
         topic_rocon_ang_pub_ = this->create_publisher<std_msgs::msg::Float32>("pub_rocon_angle", 10);
         topic_rocon_spd_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_speed", 10);
-        topic_rocon_bDr_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10);
+        
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(2), 
@@ -118,10 +119,12 @@ private:
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
 
     //rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_ro_con_pub_;
+    
     rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_fDr_pub_;
+    rclcpp::Publisher<std_msgs::msg::Uint16>::SharedPtr topic_rocon_bDr_pub_;
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr topic_rocon_ang_pub_;
     rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_spd_pub_;
-    rclcpp::Publisher<std_msgs::msg::Uint16>::SharedPtr topic_rocon_bDr_pub_;
+    
 
     rclcpp::TimerBase::SharedPtr timer_;
 

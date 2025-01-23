@@ -1,23 +1,15 @@
 {
-  "config": {
-    "lwip.mem-size": 262144, 
-    "lwip.ipv4-enabled": true,
-    "lwip.ipv6-enabled": false,
-    "lwip.use-mbed-trace": true 
-  },
   "target_overrides": {
     "*": {
-      "platform.heap-stats-enabled": true,
       "platform.stdio-baud-rate": 115200,
-      "platform.stdio-convert-newlines": true,
       "rtos.main-thread-stack-size": 8192,
       "lwip.pbuf-pool-size": 20,
       "lwip.socket-max": 8,
       "lwip.udp-socket-max": 8,
       "target.printf_lib": "std"
     },
-    "NUCLEO_F767ZI": {
-      "platform.stdio-baud-rate": 115200
+    "K64F": {
+      "platform.stdio-baud-rate": 9600
     }
   }
 }

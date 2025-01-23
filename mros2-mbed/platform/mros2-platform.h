@@ -18,7 +18,7 @@
 
 /* convert TARGET_NAME to put into message */
 #define quote(x) std::string(q(x))
-#define q(x) 
+#define q(x) #x
 
 
 namespace mros2_platform

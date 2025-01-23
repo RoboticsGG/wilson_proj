@@ -93,7 +93,7 @@ private:
         i16_spd_msg_ = static_cast<uint16_t>(spd_msg_);
         bDr_msg_ = static_cast<uint16_t>(1); // 1 = FW, 0 = BW
 
-        auto rocon_fDr_msg = std_msgs::msg::Uint16();
+        auto rocon_fDr_msg = std_msgs::msg::UInt16();
         auto rocon_angle_msg = std_msgs::msg::Float32();
         auto rocon_spd_msg = std_msgs::msg::UInt16(); 
         auto rocon_bDr_msg = std_msgs::msg::UInt16();
@@ -118,7 +118,7 @@ private:
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
 
     //rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_ro_con_pub_;
-    rclcpp::Publisher<std_msgs::msg::Uint16>::SharedPtr topic_rocon_fDr_pub_;
+    rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_fDr_pub_;
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr topic_rocon_ang_pub_;
     rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_spd_pub_;
     rclcpp::Publisher<std_msgs::msg::Uint16>::SharedPtr topic_rocon_bDr_pub_;
@@ -128,8 +128,10 @@ private:
     //std::vector<float> ro_ctrl_msg_;
     float ro_ctrl_msg1_;
     float ro_ctrl_msg2_;
+    uint16_t fDr_msg_;
     uint8_t spd_msg_;
-    uint8_t i16_spd_msg_;
+    uint16_t i16_spd_msg_;
+    uint16_t bDr_msg_;
     float destination_a_;
     float destination_b_;
     float destination_c_;

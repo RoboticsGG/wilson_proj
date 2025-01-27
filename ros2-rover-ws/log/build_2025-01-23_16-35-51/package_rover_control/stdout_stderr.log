@@ -1,0 +1,31 @@
+[35m[1mConsolidate compiler generated dependencies of target node_rovercontrol[0m
+[ 33%] Built target motorcontrol
+[ 66%] Built target node_motor_control
+[ 83%] [32mBuilding CXX object CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o[0m
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:124:38:[m[K [01;31m[Kerror: [m[K‘[01m[KUint16[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KUInt16[m[K’?
+  124 |     rclcpp::Publisher<std_msgs::msg::[01;31m[KUint16[m[K>::SharedPtr topic_rocon_bDr_pub_;
+      |                                      [01;31m[K^~~~~~[m[K
+      |                                      [32m[KUInt16[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:124:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  124 |     rclcpp::Publisher<std_msgs::msg::Uint16[01;31m[K>[m[K::SharedPtr topic_rocon_bDr_pub_;
+      |                                            [01;31m[K^[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:124:47:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+  124 |     rclcpp::Publisher<std_msgs::msg::Uint16>::[01;31m[KSharedPtr[m[K topic_rocon_bDr_pub_;
+      |                                               [01;31m[K^~~~~~~~~[m[K
+      |                                                        [32m[K;[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:124:57:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopic_rocon_bDr_pub_[m[K’ does not name a type
+  124 |     rclcpp::Publisher<std_msgs::msg::Uint16>::SharedPtr [01;31m[Ktopic_rocon_bDr_pub_[m[K;
+      |                                                         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:[m[K In constructor ‘[01m[KNode_Rovercontrol::Node_Rovercontrol()[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:41:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopic_rocon_bDr_pub_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktopic_rocon_fDr_pub_[m[K’?
+   41 |         [01;31m[Ktopic_rocon_bDr_pub_[m[K = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |         [32m[Ktopic_rocon_fDr_pub_[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::timer_callback()[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:109:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopic_rocon_bDr_pub_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktopic_rocon_fDr_pub_[m[K’?
+  109 |         [01;31m[Ktopic_rocon_bDr_pub_[m[K->publish(rocon_bDr_msg);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |         [32m[Ktopic_rocon_fDr_pub_[m[K
+gmake[2]: *** [CMakeFiles/node_rovercontrol.dir/build.make:76: CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_rovercontrol.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

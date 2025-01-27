@@ -249,6 +249,19 @@ echoreply_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoreply_node.dir/build.make CMakeFiles/echoreply_node.dir/build
 .PHONY : echoreply_node/fast
 
+#=============================================================================
+# Target rules for targets named node_command
+
+# Build rule for target.
+node_command: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 node_command
+.PHONY : node_command
+
+# fast build rule for target.
+node_command/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_command.dir/build.make CMakeFiles/node_command.dir/build
+.PHONY : node_command/fast
+
 src/echoreply_node.o: src/echoreply_node.cpp.o
 .PHONY : src/echoreply_node.o
 
@@ -272,6 +285,30 @@ src/echoreply_node.s: src/echoreply_node.cpp.s
 src/echoreply_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoreply_node.dir/build.make CMakeFiles/echoreply_node.dir/src/echoreply_node.cpp.s
 .PHONY : src/echoreply_node.cpp.s
+
+src/node_command_t.o: src/node_command_t.cpp.o
+.PHONY : src/node_command_t.o
+
+# target to build an object file
+src/node_command_t.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_command.dir/build.make CMakeFiles/node_command.dir/src/node_command_t.cpp.o
+.PHONY : src/node_command_t.cpp.o
+
+src/node_command_t.i: src/node_command_t.cpp.i
+.PHONY : src/node_command_t.i
+
+# target to preprocess a source file
+src/node_command_t.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_command.dir/build.make CMakeFiles/node_command.dir/src/node_command_t.cpp.i
+.PHONY : src/node_command_t.cpp.i
+
+src/node_command_t.s: src/node_command_t.cpp.s
+.PHONY : src/node_command_t.s
+
+# target to generate assembly for a file
+src/node_command_t.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_command.dir/build.make CMakeFiles/node_command.dir/src/node_command_t.cpp.s
+.PHONY : src/node_command_t.cpp.s
 
 src/node_server_act.o: src/node_server_act.cpp.o
 .PHONY : src/node_server_act.o
@@ -361,12 +398,16 @@ help:
 	@echo "... package_test_uninstall"
 	@echo "... uninstall"
 	@echo "... echoreply_node"
+	@echo "... node_command"
 	@echo "... node_server_act"
 	@echo "... pub_node"
 	@echo "... sub_node"
 	@echo "... src/echoreply_node.o"
 	@echo "... src/echoreply_node.i"
 	@echo "... src/echoreply_node.s"
+	@echo "... src/node_command_t.o"
+	@echo "... src/node_command_t.i"
+	@echo "... src/node_command_t.s"
 	@echo "... src/node_server_act.o"
 	@echo "... src/node_server_act.i"
 	@echo "... src/node_server_act.s"

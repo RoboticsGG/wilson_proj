@@ -646,4 +646,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/pub_node.dir/DependInfo.cmake"
   "CMakeFiles/sub_node.dir/DependInfo.cmake"
   "CMakeFiles/echoreply_node.dir/DependInfo.cmake"
+  "CMakeFiles/node_command.dir/DependInfo.cmake"
   )

@@ -1,0 +1,18 @@
+[0.109s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4
+[0.384s] [35m[1mConsolidate compiler generated dependencies of target node_rovercontrol[0m
+[0.475s] [ 33%] Built target motorcontrol
+[0.551s] [ 66%] Built target node_motor_control
+[0.589s] [ 83%] [32mBuilding CXX object CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o[0m
+[10.733s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::timer_callback()[m[K’:
+[10.733s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:85:53:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K((Node_Rovercontrol*)this)->Node_Rovercontrol::spd_msg_[m[K’ from ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+[10.734s]    85 |         rover_con_ = {ro_ctrl_msg1_, ro_ctrl_msg2_, [01;35m[Kspd_msg_[m[K};
+[10.734s]       |                                                     [01;35m[K^~~~~~~~[m[K
+[10.734s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:85:53:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K((Node_Rovercontrol*)this)->Node_Rovercontrol::spd_msg_[m[K’ from ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} to ‘[01m[Kfloat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+[10.755s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:86:9:[m[K [01;31m[Kerror: [m[K‘[01m[Krover_con_msg[m[K’ was not declared in this scope; did you mean ‘[01m[Krover_con_[m[K’?
+[10.755s]    86 |         [01;31m[Krover_con_msg[m[K = std_msgs::msg::Float32MultiArray();
+[10.756s]       |         [01;31m[K^~~~~~~~~~~~~[m[K
+[10.756s]       |         [32m[Krover_con_[m[K
+[22.048s] gmake[2]: *** [CMakeFiles/node_rovercontrol.dir/build.make:76: CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o] Error 1
+[22.049s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_rovercontrol.dir/all] Error 2
+[22.049s] gmake: *** [Makefile:146: all] Error 2
+[22.056s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4

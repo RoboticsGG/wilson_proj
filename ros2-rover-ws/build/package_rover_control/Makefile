@@ -284,29 +284,29 @@ src/node_motor_control.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/src/node_motor_control.cpp.s
 .PHONY : src/node_motor_control.cpp.s
 
-src/node_rover_control.o: src/node_rover_control.cpp.o
-.PHONY : src/node_rover_control.o
+src/node_rover_control_a.o: src/node_rover_control_a.cpp.o
+.PHONY : src/node_rover_control_a.o
 
 # target to build an object file
-src/node_rover_control.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o
-.PHONY : src/node_rover_control.cpp.o
+src/node_rover_control_a.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o
+.PHONY : src/node_rover_control_a.cpp.o
 
-src/node_rover_control.i: src/node_rover_control.cpp.i
-.PHONY : src/node_rover_control.i
+src/node_rover_control_a.i: src/node_rover_control_a.cpp.i
+.PHONY : src/node_rover_control_a.i
 
 # target to preprocess a source file
-src/node_rover_control.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.i
-.PHONY : src/node_rover_control.cpp.i
+src/node_rover_control_a.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.i
+.PHONY : src/node_rover_control_a.cpp.i
 
-src/node_rover_control.s: src/node_rover_control.cpp.s
-.PHONY : src/node_rover_control.s
+src/node_rover_control_a.s: src/node_rover_control_a.cpp.s
+.PHONY : src/node_rover_control_a.s
 
 # target to generate assembly for a file
-src/node_rover_control.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.s
-.PHONY : src/node_rover_control.cpp.s
+src/node_rover_control_a.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.s
+.PHONY : src/node_rover_control_a.cpp.s
 
 # Help Target
 help:
@@ -332,9 +332,9 @@ help:
 	@echo "... src/node_motor_control.o"
 	@echo "... src/node_motor_control.i"
 	@echo "... src/node_motor_control.s"
-	@echo "... src/node_rover_control.o"
-	@echo "... src/node_rover_control.i"
-	@echo "... src/node_rover_control.s"
+	@echo "... src/node_rover_control_a.o"
+	@echo "... src/node_rover_control_a.i"
+	@echo "... src/node_rover_control_a.s"
 .PHONY : help
 
 

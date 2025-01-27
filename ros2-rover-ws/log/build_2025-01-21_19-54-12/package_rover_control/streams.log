@@ -1,0 +1,22 @@
+[0.104s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4
+[0.382s] [35m[1mConsolidate compiler generated dependencies of target node_rovercontrol[0m
+[0.503s] [ 33%] Built target node_motor_control
+[0.558s] [ 66%] Built target motorcontrol
+[0.560s] [ 83%] [32mBuilding CXX object CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o[0m
+[10.848s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::timer_callback()[m[K’:
+[10.848s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:83:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kspeedlimitmessage[m[K’ was not declared in this scope; did you mean ‘[01m[Kspeedlimit_message_[m[K’?
+[10.849s]    83 |         ss << rovercontrol_message_ << "," << [01;31m[Kspeedlimitmessage[m[K << "," << back_directionmessage;
+[10.849s]       |                                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[10.849s]       |                                               [32m[Kspeedlimit_message_[m[K
+[10.870s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:83:75:[m[K [01;31m[Kerror: [m[K‘[01m[Kback_directionmessage[m[K’ was not declared in this scope; did you mean ‘[01m[Kback_direction_message_[m[K’?
+[10.870s]    83 |         ss << rovercontrol_message_ << "," << speedlimitmessage << "," << [01;31m[Kback_directionmessage[m[K;
+[10.870s]       |                                                                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[10.871s]       |                                                                           [32m[Kback_direction_message_[m[K
+[10.892s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:86:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopic_rovercontrolpublisher[m[K’ was not declared in this scope; did you mean ‘[01m[Ktopic_rovercontrol_publisher_[m[K’?
+[10.892s]    86 |         [01;31m[Ktopic_rovercontrolpublisher[m[K->publish(rovercon_msg);
+[10.893s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[10.893s]       |         [32m[Ktopic_rovercontrol_publisher_[m[K
+[22.278s] gmake[2]: *** [CMakeFiles/node_rovercontrol.dir/build.make:76: CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o] Error 1
+[22.279s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_rovercontrol.dir/all] Error 2
+[22.280s] gmake: *** [Makefile:146: all] Error 2
+[22.286s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4

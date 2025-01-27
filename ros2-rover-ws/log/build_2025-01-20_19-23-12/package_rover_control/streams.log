@@ -1,0 +1,30 @@
+[0.110s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4
+[0.464s] [35m[1mConsolidate compiler generated dependencies of target node_rovercontrol[0m
+[0.524s] [ 33%] Built target motorcontrol
+[0.582s] [ 66%] Built target node_motor_control
+[0.642s] [ 83%] [32mBuilding CXX object CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o[0m
+[10.898s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::topic_destination_callback(std_msgs::msg::UInt16MultiArray_<std::allocator<void> >::SharedPtr)[m[K’:
+[10.898s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:61:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ktd[m[K’ has not been declared
+[10.899s]    61 |             [01;31m[Ktd[m[K::lock_guard<std::mutex> lock(data_lock_);
+[10.899s]       |             [01;31m[K^~[m[K
+[10.899s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:61:38:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[10.899s]    61 |             td::lock_guard<std::mutex[01;31m[K>[m[K lock(data_lock_);
+[10.900s]       |                                      [01;31m[K^[m[K
+[10.900s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:61:44:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Klock(std::mutex&)[m[K’
+[10.900s]    61 |             td::lock_guard<std::mutex> [01;31m[Klock(data_lock_)[m[K;
+[10.901s]       |                                        [01;31m[K~~~~^~~~~~~~~~~~[m[K
+[10.901s] In file included from [01m[K/usr/include/c++/11/future:38[m[K,
+[10.901s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+[10.901s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[10.901s]                  from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:1[m[K:
+[10.902s] [01m[K/usr/include/c++/11/mutex:591:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _L1, class _L2, class ... _L3> void std::lock(_L1&, _L2&, _L3& ...)[m[K’
+[10.902s]   591 |     [01;36m[Klock[m[K(_L1& __l1, _L2& __l2, _L3&... __l3)
+[10.902s]       |     [01;36m[K^~~~[m[K
+[10.902s] [01m[K/usr/include/c++/11/mutex:591:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[10.923s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp:61:44:[m[K [01;36m[Knote: [m[K  candidate expects at least 2 arguments, 1 provided
+[10.923s]    61 |             td::lock_guard<std::mutex> [01;36m[Klock(data_lock_)[m[K;
+[10.924s]       |                                        [01;36m[K~~~~^~~~~~~~~~~~[m[K
+[22.409s] gmake[2]: *** [CMakeFiles/node_rovercontrol.dir/build.make:76: CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o] Error 1
+[22.410s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_rovercontrol.dir/all] Error 2
+[22.411s] gmake: *** [Makefile:146: all] Error 2
+[22.418s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4

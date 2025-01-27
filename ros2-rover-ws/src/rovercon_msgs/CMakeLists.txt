@@ -11,8 +11,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/sub_rocon.msg"
-  "msg/main_rocon.msg"
+  "msg/SubRocon.msg"
+  "msg/MainRocon.msg"
  )
 # uncomment the following section in order to fill in
 # further dependencies manually.

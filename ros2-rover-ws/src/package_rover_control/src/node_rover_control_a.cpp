@@ -90,14 +90,14 @@ private:
 
 
     void timer_callback() {
-        fDr_msg_ = static_cast<uint16_t>(ro_ctrl_msg1_);
-        i16_spd_msg_ = static_cast<uint16_t>(spd_msg_);
-        bDr_msg_ = static_cast<uint16_t>(1); // 1 = FW, 0 = BW
+        // fDr_msg_ = static_cast<uint16_t>(ro_ctrl_msg1_);
+        // i16_spd_msg_ = static_cast<uint16_t>(spd_msg_);
+        // bDr_msg_ = static_cast<uint16_t>(1); // 1 = FW, 0 = BW
 
-        rover_con_ = {fDr_msg_, ro_ctrl_msg2_, i16_spd_msg_, bDr_msg_};
-        auto rover_con_msg = std_msgs::msg::Float32MultiArray();
-        rover_con_msg.data = rover_con_;
-        topic_ro_con_pub_->publish(rover_con_msg);
+        // rover_con_ = {ro_ctrl_msg1_, ro_ctrl_msg2_, spd_msg_, bDr_msg_};
+        // auto rover_con_msg = std_msgs::msg::Float32MultiArray();
+        // rover_con_msg.data = rover_con_;
+        // topic_ro_con_pub_->publish(rover_con_msg);
 
         // auto rocon_fDr_msg = std_msgs::msg::UInt16();
         // auto rocon_angle_msg = std_msgs::msg::Float32();
@@ -123,7 +123,7 @@ private:
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_des_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
 
-    rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_ro_con_pub_;
+    rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_rocon_pub_;
     
     // rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_fDr_pub_;
     // rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_bDr_pub_;

@@ -1,4 +1,4 @@
-uint16_t ro_ctrl_msg1_
-float32 ro_ctrl_msg2_
-uint16_t spd_msg_
-u_int16 bDr_msg_
+uint16 roctrlMsg1
+float32 roctrlMsg2
+uint16 spdMsg
+uint16 bDrMsg

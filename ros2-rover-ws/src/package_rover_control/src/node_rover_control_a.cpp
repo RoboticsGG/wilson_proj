@@ -114,7 +114,7 @@ private:
         // topic_rocon_spd_pub_->publish(rocon_spd_msg);
         // topic_rocon_bDr_pub_->publish(rocon_bDr_msg);
 
-        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", rover_con_msg.data[0], rover_con_msg.data[1], rover_con_msg.data[2], rover_con_msg.data[3]);
+        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%.1f, %.2f, %.1f, %.1f]", rover_con_msg.data[0], rover_con_msg.data[1], rover_con_msg.data[2], rover_con_msg.data[3]);
         RCLCPP_INFO(this->get_logger(), "################################################");
   }
 

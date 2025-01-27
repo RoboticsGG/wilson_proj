@@ -1,1 +1,1 @@
-rover_con_msg/msg/sub_rocon rovercon
+rovercon_msg/msg/sub_rocon rovercon_msg

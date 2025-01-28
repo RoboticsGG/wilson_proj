@@ -18,8 +18,8 @@
 #include "mros2.h"
 #include "mros2-platform.h"
 #include "std_msgs/msg/u_int16.hpp"
-#include "rovercon_msgs/msg/sub_rocon.hpp"
-#include "rovercon_msgs/msg/main_rocon.hpp"
+#include "rovercon_msgs/msg/subrocon.hpp"
+#include "rovercon_msgs/msg/mainrocon.hpp"
 
 void userCallback(rovercon_msgs::msg::main_rocon *msg)
 {

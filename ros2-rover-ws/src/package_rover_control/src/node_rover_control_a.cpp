@@ -8,8 +8,8 @@
 #include <string>
 #include <mutex>
 
-#include <msgs_rovercon/msg/SubRocon.hpp>
-#include <msgs_mainrocon/msgs/MainRocon.hpp>
+#include <msgs_rovercon/msg/sub_rocon.hpp>
+#include <msgs_mainrocon/msgs/main_rocon.hpp>
 
 class Motors_Rovercontrol {
 public:

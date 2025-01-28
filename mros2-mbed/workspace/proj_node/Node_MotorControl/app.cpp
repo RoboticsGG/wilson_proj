@@ -21,7 +21,7 @@
 #include "rovercon_msgs/msg/subrocon.hpp"
 #include "rovercon_msgs/msg/mainrocon.hpp"
 
-void userCallback(rovercon_msgs::msg::main_rocon *msg)
+void userCallback(rovercon_msgs::msg::mainrocon *msg)
 {
   MROS2_INFO("subscribed msg main_rocon: fdr_msg=%d, ro_ctrl_msg=%.2f, spd_msg=%d, bdr_msg=%d",
              msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
@@ -47,7 +47,7 @@ int main()
   MROS2_DEBUG("mROS 2 initialization is completed");
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  mros2::Subscriber sub = node.create_subscription<rovercon_msgs::msg::main_rocon>("pub_rocon_angle", 10, userCallback);
+  mros2::Subscriber sub = node.create_subscription<rovercon_msgs::msg::mainrocon>("pub_rocon_angle", 10, userCallback);
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");
 

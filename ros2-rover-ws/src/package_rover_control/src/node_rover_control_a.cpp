@@ -36,7 +36,9 @@ public:
             std::bind(&Node_Rovercontrol::topic_direct_callback, this, std::placeholders::_1)
         );
    
-        topic_rocon_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("pub_rovercontrol", 10);
+        //topic_rocon_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("pub_rovercontrol", 10);
+        topic_rocon_pub_ = this->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
+
 
         // topic_rocon_fDr_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Fdirec", 10);
         // topic_rocon_bDr_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10);
@@ -141,7 +143,9 @@ private:
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_des_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
 
-    rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_rocon_pub_;
+    //rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr topic_rocon_pub_;
+    rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
+
     
     // rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_fDr_pub_;
     // rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr topic_rocon_bDr_pub_;

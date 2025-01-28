@@ -23,6 +23,8 @@ find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(std_srvs)
+find_package(msgs_rovercon REQUIRED)
+find_package(msgs_mainrocon REQUIRED)
 
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -43,7 +45,9 @@ ament_target_dependencies(motorcontrol
   "action_interfaces"
   "rclcpp"
   "rclcpp_action"
-  "rclcpp_components")
+  "rclcpp_components"
+  "msgs_rovercon"
+  "msgs_mainrocon")
 
 install(TARGETS
   motorcontrol

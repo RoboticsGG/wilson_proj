@@ -20,10 +20,10 @@ extern "C"
 /// Struct defined in msg/SubRocon in the package rovercon_msgs.
 typedef struct rovercon_msgs__msg__SubRocon
 {
-  uint16_t roctrl_msg1;
-  float roctrl_msg2;
-  uint16_t spd_msg;
-  uint16_t b_dr_msg;
+  uint8_t fdr_msg;
+  float ro_ctrl_msg;
+  uint8_t spd_msg;
+  uint8_t bdr_msg;
 } rovercon_msgs__msg__SubRocon;
 
 // Struct for a sequence of rovercon_msgs__msg__SubRocon.

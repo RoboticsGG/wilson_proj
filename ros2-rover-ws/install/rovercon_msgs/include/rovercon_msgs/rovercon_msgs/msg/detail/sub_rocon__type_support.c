@@ -33,14 +33,14 @@ void rovercon_msgs__msg__SubRocon__rosidl_typesupport_introspection_c__SubRocon_
 
 static rosidl_typesupport_introspection_c__MessageMember rovercon_msgs__msg__SubRocon__rosidl_typesupport_introspection_c__SubRocon_message_member_array[4] = {
   {
-    "roctrl_msg1",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_UINT16,  // type
+    "fdr_msg",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(rovercon_msgs__msg__SubRocon, roctrl_msg1),  // bytes offset in struct
+    offsetof(rovercon_msgs__msg__SubRocon, fdr_msg),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -50,14 +50,14 @@ static rosidl_typesupport_introspection_c__MessageMember rovercon_msgs__msg__Sub
     NULL  // resize(index) function pointer
   },
   {
-    "roctrl_msg2",  // name
+    "ro_ctrl_msg",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(rovercon_msgs__msg__SubRocon, roctrl_msg2),  // bytes offset in struct
+    offsetof(rovercon_msgs__msg__SubRocon, ro_ctrl_msg),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -68,7 +68,7 @@ static rosidl_typesupport_introspection_c__MessageMember rovercon_msgs__msg__Sub
   },
   {
     "spd_msg",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_UINT16,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -84,14 +84,14 @@ static rosidl_typesupport_introspection_c__MessageMember rovercon_msgs__msg__Sub
     NULL  // resize(index) function pointer
   },
   {
-    "b_dr_msg",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_UINT16,  // type
+    "bdr_msg",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(rovercon_msgs__msg__SubRocon, b_dr_msg),  // bytes offset in struct
+    offsetof(rovercon_msgs__msg__SubRocon, bdr_msg),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer

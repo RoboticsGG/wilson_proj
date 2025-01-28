@@ -25,17 +25,17 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: roctrl_msg1
+  // member: fdr_msg
   {
-    out << "roctrl_msg1: ";
-    rosidl_generator_traits::value_to_yaml(msg.roctrl_msg1, out);
+    out << "fdr_msg: ";
+    rosidl_generator_traits::value_to_yaml(msg.fdr_msg, out);
     out << ", ";
   }
 
-  // member: roctrl_msg2
+  // member: ro_ctrl_msg
   {
-    out << "roctrl_msg2: ";
-    rosidl_generator_traits::value_to_yaml(msg.roctrl_msg2, out);
+    out << "ro_ctrl_msg: ";
+    rosidl_generator_traits::value_to_yaml(msg.ro_ctrl_msg, out);
     out << ", ";
   }
 
@@ -46,10 +46,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: b_dr_msg
+  // member: bdr_msg
   {
-    out << "b_dr_msg: ";
-    rosidl_generator_traits::value_to_yaml(msg.b_dr_msg, out);
+    out << "bdr_msg: ";
+    rosidl_generator_traits::value_to_yaml(msg.bdr_msg, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -58,23 +58,23 @@ inline void to_block_style_yaml(
   const SubRocon & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: roctrl_msg1
+  // member: fdr_msg
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "roctrl_msg1: ";
-    rosidl_generator_traits::value_to_yaml(msg.roctrl_msg1, out);
+    out << "fdr_msg: ";
+    rosidl_generator_traits::value_to_yaml(msg.fdr_msg, out);
     out << "\n";
   }
 
-  // member: roctrl_msg2
+  // member: ro_ctrl_msg
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "roctrl_msg2: ";
-    rosidl_generator_traits::value_to_yaml(msg.roctrl_msg2, out);
+    out << "ro_ctrl_msg: ";
+    rosidl_generator_traits::value_to_yaml(msg.ro_ctrl_msg, out);
     out << "\n";
   }
 
@@ -88,13 +88,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: b_dr_msg
+  // member: bdr_msg
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "b_dr_msg: ";
-    rosidl_generator_traits::value_to_yaml(msg.b_dr_msg, out);
+    out << "bdr_msg: ";
+    rosidl_generator_traits::value_to_yaml(msg.bdr_msg, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

@@ -32,14 +32,14 @@ cdr_serialize(
   const rovercon_msgs::msg::SubRocon & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: roctrl_msg1
-  cdr << ros_message.roctrl_msg1;
-  // Member: roctrl_msg2
-  cdr << ros_message.roctrl_msg2;
+  // Member: fdr_msg
+  cdr << ros_message.fdr_msg;
+  // Member: ro_ctrl_msg
+  cdr << ros_message.ro_ctrl_msg;
   // Member: spd_msg
   cdr << ros_message.spd_msg;
-  // Member: b_dr_msg
-  cdr << ros_message.b_dr_msg;
+  // Member: bdr_msg
+  cdr << ros_message.bdr_msg;
   return true;
 }
 
@@ -49,17 +49,17 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   rovercon_msgs::msg::SubRocon & ros_message)
 {
-  // Member: roctrl_msg1
-  cdr >> ros_message.roctrl_msg1;
+  // Member: fdr_msg
+  cdr >> ros_message.fdr_msg;
 
-  // Member: roctrl_msg2
-  cdr >> ros_message.roctrl_msg2;
+  // Member: ro_ctrl_msg
+  cdr >> ros_message.ro_ctrl_msg;
 
   // Member: spd_msg
   cdr >> ros_message.spd_msg;
 
-  // Member: b_dr_msg
-  cdr >> ros_message.b_dr_msg;
+  // Member: bdr_msg
+  cdr >> ros_message.bdr_msg;
 
   return true;
 }
@@ -77,15 +77,15 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: roctrl_msg1
+  // Member: fdr_msg
   {
-    size_t item_size = sizeof(ros_message.roctrl_msg1);
+    size_t item_size = sizeof(ros_message.fdr_msg);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: roctrl_msg2
+  // Member: ro_ctrl_msg
   {
-    size_t item_size = sizeof(ros_message.roctrl_msg2);
+    size_t item_size = sizeof(ros_message.ro_ctrl_msg);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -95,9 +95,9 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: b_dr_msg
+  // Member: bdr_msg
   {
-    size_t item_size = sizeof(ros_message.b_dr_msg);
+    size_t item_size = sizeof(ros_message.bdr_msg);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -125,16 +125,15 @@ max_serialized_size_SubRocon(
   is_plain = true;
 
 
-  // Member: roctrl_msg1
+  // Member: fdr_msg
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint16_t);
-    current_alignment += array_size * sizeof(uint16_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: roctrl_msg2
+  // Member: ro_ctrl_msg
   {
     size_t array_size = 1;
 
@@ -147,18 +146,16 @@ max_serialized_size_SubRocon(
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint16_t);
-    current_alignment += array_size * sizeof(uint16_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: b_dr_msg
+  // Member: bdr_msg
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint16_t);
-    current_alignment += array_size * sizeof(uint16_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
   }
 
   size_t ret_val = current_alignment - initial_alignment;
@@ -169,7 +166,7 @@ max_serialized_size_SubRocon(
     using DataType = rovercon_msgs::msg::SubRocon;
     is_plain =
       (
-      offsetof(DataType, b_dr_msg) +
+      offsetof(DataType, bdr_msg) +
       last_member_size
       ) == ret_val;
   }

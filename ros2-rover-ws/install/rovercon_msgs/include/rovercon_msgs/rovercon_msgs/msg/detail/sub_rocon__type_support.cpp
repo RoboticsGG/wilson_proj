@@ -39,14 +39,14 @@ void SubRocon_fini_function(void * message_memory)
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMember SubRocon_message_member_array[4] = {
   {
-    "roctrl_msg1",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
+    "fdr_msg",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(rovercon_msgs::msg::SubRocon, roctrl_msg1),  // bytes offset in struct
+    offsetof(rovercon_msgs::msg::SubRocon, fdr_msg),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -56,14 +56,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SubRocon_mess
     nullptr  // resize(index) function pointer
   },
   {
-    "roctrl_msg2",  // name
+    "ro_ctrl_msg",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(rovercon_msgs::msg::SubRocon, roctrl_msg2),  // bytes offset in struct
+    offsetof(rovercon_msgs::msg::SubRocon, ro_ctrl_msg),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -74,7 +74,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SubRocon_mess
   },
   {
     "spd_msg",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
@@ -90,14 +90,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SubRocon_mess
     nullptr  // resize(index) function pointer
   },
   {
-    "b_dr_msg",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
+    "bdr_msg",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(rovercon_msgs::msg::SubRocon, b_dr_msg),  // bytes offset in struct
+    offsetof(rovercon_msgs::msg::SubRocon, bdr_msg),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer

@@ -67,7 +67,6 @@ include CMakeFiles/rovercon_msgs.dir/compiler_depend.make
 include CMakeFiles/rovercon_msgs.dir/progress.make
 
 CMakeFiles/rovercon_msgs: /home/curry/wilson_proj/ros2-rover-ws/src/rovercon_msgs/msg/SubRocon.msg
-CMakeFiles/rovercon_msgs: /home/curry/wilson_proj/ros2-rover-ws/src/rovercon_msgs/msg/MainRocon.msg
 
 rovercon_msgs: CMakeFiles/rovercon_msgs
 rovercon_msgs: CMakeFiles/rovercon_msgs.dir/build.make

@@ -1,12 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/rovercon_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rovercon_msgs/msg/detail/main_rocon__type_support.c.o"
-  "CMakeFiles/rovercon_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rovercon_msgs/msg/detail/main_rocon__type_support.c.o.d"
   "CMakeFiles/rovercon_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rovercon_msgs/msg/detail/sub_rocon__type_support.c.o"
   "CMakeFiles/rovercon_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rovercon_msgs/msg/detail/sub_rocon__type_support.c.o.d"
   "librovercon_msgs__rosidl_typesupport_introspection_c.pdb"
   "librovercon_msgs__rosidl_typesupport_introspection_c.so"
-  "rosidl_typesupport_introspection_c/rovercon_msgs/msg/detail/main_rocon__rosidl_typesupport_introspection_c.h"
-  "rosidl_typesupport_introspection_c/rovercon_msgs/msg/detail/main_rocon__type_support.c"
   "rosidl_typesupport_introspection_c/rovercon_msgs/msg/detail/sub_rocon__rosidl_typesupport_introspection_c.h"
   "rosidl_typesupport_introspection_c/rovercon_msgs/msg/detail/sub_rocon__type_support.c"
 )

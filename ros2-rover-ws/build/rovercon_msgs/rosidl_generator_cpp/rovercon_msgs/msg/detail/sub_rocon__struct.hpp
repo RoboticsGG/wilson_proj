@@ -38,10 +38,10 @@ struct SubRocon_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->roctrl_msg1 = 0;
-      this->roctrl_msg2 = 0.0f;
+      this->fdr_msg = 0;
+      this->ro_ctrl_msg = 0.0f;
       this->spd_msg = 0;
-      this->b_dr_msg = 0;
+      this->bdr_msg = 0;
     }
   }
 
@@ -51,50 +51,50 @@ struct SubRocon_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->roctrl_msg1 = 0;
-      this->roctrl_msg2 = 0.0f;
+      this->fdr_msg = 0;
+      this->ro_ctrl_msg = 0.0f;
       this->spd_msg = 0;
-      this->b_dr_msg = 0;
+      this->bdr_msg = 0;
     }
   }
 
   // field types and members
-  using _roctrl_msg1_type =
-    uint16_t;
-  _roctrl_msg1_type roctrl_msg1;
-  using _roctrl_msg2_type =
+  using _fdr_msg_type =
+    uint8_t;
+  _fdr_msg_type fdr_msg;
+  using _ro_ctrl_msg_type =
     float;
-  _roctrl_msg2_type roctrl_msg2;
+  _ro_ctrl_msg_type ro_ctrl_msg;
   using _spd_msg_type =
-    uint16_t;
+    uint8_t;
   _spd_msg_type spd_msg;
-  using _b_dr_msg_type =
-    uint16_t;
-  _b_dr_msg_type b_dr_msg;
+  using _bdr_msg_type =
+    uint8_t;
+  _bdr_msg_type bdr_msg;
 
   // setters for named parameter idiom
-  Type & set__roctrl_msg1(
-    const uint16_t & _arg)
+  Type & set__fdr_msg(
+    const uint8_t & _arg)
   {
-    this->roctrl_msg1 = _arg;
+    this->fdr_msg = _arg;
     return *this;
   }
-  Type & set__roctrl_msg2(
+  Type & set__ro_ctrl_msg(
     const float & _arg)
   {
-    this->roctrl_msg2 = _arg;
+    this->ro_ctrl_msg = _arg;
     return *this;
   }
   Type & set__spd_msg(
-    const uint16_t & _arg)
+    const uint8_t & _arg)
   {
     this->spd_msg = _arg;
     return *this;
   }
-  Type & set__b_dr_msg(
-    const uint16_t & _arg)
+  Type & set__bdr_msg(
+    const uint8_t & _arg)
   {
-    this->b_dr_msg = _arg;
+    this->bdr_msg = _arg;
     return *this;
   }
 
@@ -140,16 +140,16 @@ struct SubRocon_
   // comparison operators
   bool operator==(const SubRocon_ & other) const
   {
-    if (this->roctrl_msg1 != other.roctrl_msg1) {
+    if (this->fdr_msg != other.fdr_msg) {
       return false;
     }
-    if (this->roctrl_msg2 != other.roctrl_msg2) {
+    if (this->ro_ctrl_msg != other.ro_ctrl_msg) {
       return false;
     }
     if (this->spd_msg != other.spd_msg) {
       return false;
     }
-    if (this->b_dr_msg != other.b_dr_msg) {
+    if (this->bdr_msg != other.bdr_msg) {
       return false;
     }
     return true;

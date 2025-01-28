@@ -21,15 +21,15 @@ namespace msg
 namespace builder
 {
 
-class Init_SubRocon_b_dr_msg
+class Init_SubRocon_bdr_msg
 {
 public:
-  explicit Init_SubRocon_b_dr_msg(::rovercon_msgs::msg::SubRocon & msg)
+  explicit Init_SubRocon_bdr_msg(::rovercon_msgs::msg::SubRocon & msg)
   : msg_(msg)
   {}
-  ::rovercon_msgs::msg::SubRocon b_dr_msg(::rovercon_msgs::msg::SubRocon::_b_dr_msg_type arg)
+  ::rovercon_msgs::msg::SubRocon bdr_msg(::rovercon_msgs::msg::SubRocon::_bdr_msg_type arg)
   {
-    msg_.b_dr_msg = std::move(arg);
+    msg_.bdr_msg = std::move(arg);
     return std::move(msg_);
   }
 
@@ -43,25 +43,25 @@ public:
   explicit Init_SubRocon_spd_msg(::rovercon_msgs::msg::SubRocon & msg)
   : msg_(msg)
   {}
-  Init_SubRocon_b_dr_msg spd_msg(::rovercon_msgs::msg::SubRocon::_spd_msg_type arg)
+  Init_SubRocon_bdr_msg spd_msg(::rovercon_msgs::msg::SubRocon::_spd_msg_type arg)
   {
     msg_.spd_msg = std::move(arg);
-    return Init_SubRocon_b_dr_msg(msg_);
+    return Init_SubRocon_bdr_msg(msg_);
   }
 
 private:
   ::rovercon_msgs::msg::SubRocon msg_;
 };
 
-class Init_SubRocon_roctrl_msg2
+class Init_SubRocon_ro_ctrl_msg
 {
 public:
-  explicit Init_SubRocon_roctrl_msg2(::rovercon_msgs::msg::SubRocon & msg)
+  explicit Init_SubRocon_ro_ctrl_msg(::rovercon_msgs::msg::SubRocon & msg)
   : msg_(msg)
   {}
-  Init_SubRocon_spd_msg roctrl_msg2(::rovercon_msgs::msg::SubRocon::_roctrl_msg2_type arg)
+  Init_SubRocon_spd_msg ro_ctrl_msg(::rovercon_msgs::msg::SubRocon::_ro_ctrl_msg_type arg)
   {
-    msg_.roctrl_msg2 = std::move(arg);
+    msg_.ro_ctrl_msg = std::move(arg);
     return Init_SubRocon_spd_msg(msg_);
   }
 
@@ -69,16 +69,16 @@ private:
   ::rovercon_msgs::msg::SubRocon msg_;
 };
 
-class Init_SubRocon_roctrl_msg1
+class Init_SubRocon_fdr_msg
 {
 public:
-  Init_SubRocon_roctrl_msg1()
+  Init_SubRocon_fdr_msg()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_SubRocon_roctrl_msg2 roctrl_msg1(::rovercon_msgs::msg::SubRocon::_roctrl_msg1_type arg)
+  Init_SubRocon_ro_ctrl_msg fdr_msg(::rovercon_msgs::msg::SubRocon::_fdr_msg_type arg)
   {
-    msg_.roctrl_msg1 = std::move(arg);
-    return Init_SubRocon_roctrl_msg2(msg_);
+    msg_.fdr_msg = std::move(arg);
+    return Init_SubRocon_ro_ctrl_msg(msg_);
   }
 
 private:
@@ -96,7 +96,7 @@ template<>
 inline
 auto build<::rovercon_msgs::msg::SubRocon>()
 {
-  return rovercon_msgs::msg::builder::Init_SubRocon_roctrl_msg1();
+  return rovercon_msgs::msg::builder::Init_SubRocon_fdr_msg();
 }
 
 }  // namespace rovercon_msgs

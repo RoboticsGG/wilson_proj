@@ -17,10 +17,10 @@ rovercon_msgs__msg__SubRocon__init(rovercon_msgs__msg__SubRocon * msg)
   if (!msg) {
     return false;
   }
-  // roctrl_msg1
-  // roctrl_msg2
+  // fdr_msg
+  // ro_ctrl_msg
   // spd_msg
-  // b_dr_msg
+  // bdr_msg
   return true;
 }
 
@@ -30,10 +30,10 @@ rovercon_msgs__msg__SubRocon__fini(rovercon_msgs__msg__SubRocon * msg)
   if (!msg) {
     return;
   }
-  // roctrl_msg1
-  // roctrl_msg2
+  // fdr_msg
+  // ro_ctrl_msg
   // spd_msg
-  // b_dr_msg
+  // bdr_msg
 }
 
 bool
@@ -42,20 +42,20 @@ rovercon_msgs__msg__SubRocon__are_equal(const rovercon_msgs__msg__SubRocon * lhs
   if (!lhs || !rhs) {
     return false;
   }
-  // roctrl_msg1
-  if (lhs->roctrl_msg1 != rhs->roctrl_msg1) {
+  // fdr_msg
+  if (lhs->fdr_msg != rhs->fdr_msg) {
     return false;
   }
-  // roctrl_msg2
-  if (lhs->roctrl_msg2 != rhs->roctrl_msg2) {
+  // ro_ctrl_msg
+  if (lhs->ro_ctrl_msg != rhs->ro_ctrl_msg) {
     return false;
   }
   // spd_msg
   if (lhs->spd_msg != rhs->spd_msg) {
     return false;
   }
-  // b_dr_msg
-  if (lhs->b_dr_msg != rhs->b_dr_msg) {
+  // bdr_msg
+  if (lhs->bdr_msg != rhs->bdr_msg) {
     return false;
   }
   return true;
@@ -69,14 +69,14 @@ rovercon_msgs__msg__SubRocon__copy(
   if (!input || !output) {
     return false;
   }
-  // roctrl_msg1
-  output->roctrl_msg1 = input->roctrl_msg1;
-  // roctrl_msg2
-  output->roctrl_msg2 = input->roctrl_msg2;
+  // fdr_msg
+  output->fdr_msg = input->fdr_msg;
+  // ro_ctrl_msg
+  output->ro_ctrl_msg = input->ro_ctrl_msg;
   // spd_msg
   output->spd_msg = input->spd_msg;
-  // b_dr_msg
-  output->b_dr_msg = input->b_dr_msg;
+  // bdr_msg
+  output->bdr_msg = input->bdr_msg;
   return true;
 }
 

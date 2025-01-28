@@ -71,11 +71,6 @@ CMakeFiles/rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/sub
 CMakeFiles/rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/sub_rocon__struct.hpp
 CMakeFiles/rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/sub_rocon__traits.hpp
 CMakeFiles/rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/sub_rocon__type_support.hpp
-CMakeFiles/rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/main_rocon.hpp
-CMakeFiles/rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__builder.hpp
-CMakeFiles/rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__struct.hpp
-CMakeFiles/rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__traits.hpp
-CMakeFiles/rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__type_support.hpp
 CMakeFiles/rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
 
 rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
@@ -94,7 +89,6 @@ rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp: /opt/ros/humble/share/rosi
 rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__struct.hpp.em
 rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__traits.hpp.em
 rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp: rosidl_adapter/rovercon_msgs/msg/SubRocon.idl
-rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp: rosidl_adapter/rovercon_msgs/msg/MainRocon.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/rovercon_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/curry/wilson_proj/ros2-rover-ws/build/rovercon_msgs/rosidl_generator_cpp__arguments.json
 
@@ -110,31 +104,11 @@ rosidl_generator_cpp/rovercon_msgs/msg/detail/sub_rocon__traits.hpp: rosidl_gene
 rosidl_generator_cpp/rovercon_msgs/msg/detail/sub_rocon__type_support.hpp: rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rovercon_msgs/msg/detail/sub_rocon__type_support.hpp
 
-rosidl_generator_cpp/rovercon_msgs/msg/main_rocon.hpp: rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rovercon_msgs/msg/main_rocon.hpp
-
-rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__builder.hpp: rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__builder.hpp
-
-rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__struct.hpp: rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__struct.hpp
-
-rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__traits.hpp: rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__traits.hpp
-
-rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__type_support.hpp: rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__type_support.hpp
-
 rovercon_msgs__cpp: CMakeFiles/rovercon_msgs__cpp
-rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__builder.hpp
-rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__struct.hpp
-rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__traits.hpp
-rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/main_rocon__type_support.hpp
 rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/sub_rocon__builder.hpp
 rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/sub_rocon__struct.hpp
 rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/sub_rocon__traits.hpp
 rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/detail/sub_rocon__type_support.hpp
-rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/main_rocon.hpp
 rovercon_msgs__cpp: rosidl_generator_cpp/rovercon_msgs/msg/sub_rocon.hpp
 rovercon_msgs__cpp: CMakeFiles/rovercon_msgs__cpp.dir/build.make
 .PHONY : rovercon_msgs__cpp

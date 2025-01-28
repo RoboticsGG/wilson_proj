@@ -8,13 +8,10 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 
-find_package(rovercon_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/SubRocon.msg"
-  "msg/MainRocon.msg"
-  DEPENDENCIES rovercon_msgs# Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
+  "msg/Rocon.msg"# Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
 )
 # uncomment the following section in order to fill in
 # further dependencies manually.

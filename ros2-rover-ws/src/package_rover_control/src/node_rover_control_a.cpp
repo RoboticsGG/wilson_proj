@@ -9,7 +9,7 @@
 #include <mutex>
 
 #include <msgs_rovercon/msg/sub_rocon.hpp>
-#include <msgs_mainrocon/msgs/main_rocon.hpp>
+#include <msgs_mainrocon/msg/main_rocon.hpp>
 
 class Motors_Rovercontrol {
 public:

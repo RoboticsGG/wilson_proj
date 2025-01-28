@@ -66,7 +66,7 @@ include CMakeFiles/rovercon_msgs.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/rovercon_msgs.dir/progress.make
 
-CMakeFiles/rovercon_msgs: /home/curry/wilson_proj/ros2-rover-ws/src/rovercon_msgs/msg/SubRocon.msg
+CMakeFiles/rovercon_msgs: /home/curry/wilson_proj/ros2-rover-ws/src/rovercon_msgs/msg/Rocon.msg
 
 rovercon_msgs: CMakeFiles/rovercon_msgs
 rovercon_msgs: CMakeFiles/rovercon_msgs.dir/build.make

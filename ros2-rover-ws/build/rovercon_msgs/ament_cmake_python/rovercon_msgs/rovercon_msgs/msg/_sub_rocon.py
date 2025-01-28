@@ -57,22 +57,34 @@ class SubRocon(metaclass=Metaclass_SubRocon):
     """Message class 'SubRocon'."""
 
     __slots__ = [
-        '_a',
+        '_fdr_msg',
+        '_ro_ctrl_msg',
+        '_spd_msg',
+        '_bdr_msg',
     ]
 
     _fields_and_field_types = {
-        'a': 'float',
+        'fdr_msg': 'uint8',
+        'ro_ctrl_msg': 'float',
+        'spd_msg': 'uint8',
+        'bdr_msg': 'uint8',
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.a = kwargs.get('a', float())
+        self.fdr_msg = kwargs.get('fdr_msg', int())
+        self.ro_ctrl_msg = kwargs.get('ro_ctrl_msg', float())
+        self.spd_msg = kwargs.get('spd_msg', int())
+        self.bdr_msg = kwargs.get('bdr_msg', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -103,7 +115,13 @@ class SubRocon(metaclass=Metaclass_SubRocon):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.a != other.a:
+        if self.fdr_msg != other.fdr_msg:
+            return False
+        if self.ro_ctrl_msg != other.ro_ctrl_msg:
+            return False
+        if self.spd_msg != other.spd_msg:
+            return False
+        if self.bdr_msg != other.bdr_msg:
             return False
         return True
 
@@ -113,16 +131,61 @@ class SubRocon(metaclass=Metaclass_SubRocon):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def a(self):
-        """Message field 'a'."""
-        return self._a
+    def fdr_msg(self):
+        """Message field 'fdr_msg'."""
+        return self._fdr_msg
 
-    @a.setter
-    def a(self, value):
+    @fdr_msg.setter
+    def fdr_msg(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'fdr_msg' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'fdr_msg' field must be an unsigned integer in [0, 255]"
+        self._fdr_msg = value
+
+    @builtins.property
+    def ro_ctrl_msg(self):
+        """Message field 'ro_ctrl_msg'."""
+        return self._ro_ctrl_msg
+
+    @ro_ctrl_msg.setter
+    def ro_ctrl_msg(self, value):
         if __debug__:
             assert \
                 isinstance(value, float), \
-                "The 'a' field must be of type 'float'"
+                "The 'ro_ctrl_msg' field must be of type 'float'"
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'a' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._a = value
+                "The 'ro_ctrl_msg' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._ro_ctrl_msg = value
+
+    @builtins.property
+    def spd_msg(self):
+        """Message field 'spd_msg'."""
+        return self._spd_msg
+
+    @spd_msg.setter
+    def spd_msg(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'spd_msg' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'spd_msg' field must be an unsigned integer in [0, 255]"
+        self._spd_msg = value
+
+    @builtins.property
+    def bdr_msg(self):
+        """Message field 'bdr_msg'."""
+        return self._bdr_msg
+
+    @bdr_msg.setter
+    def bdr_msg(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'bdr_msg' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'bdr_msg' field must be an unsigned integer in [0, 255]"
+        self._bdr_msg = value

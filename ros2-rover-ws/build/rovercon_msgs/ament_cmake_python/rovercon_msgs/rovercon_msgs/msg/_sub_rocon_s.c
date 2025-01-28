@@ -50,13 +50,40 @@ bool rovercon_msgs__msg__sub_rocon__convert_from_py(PyObject * _pymsg, void * _r
     assert(strncmp("rovercon_msgs.msg._sub_rocon.SubRocon", full_classname_dest, 37) == 0);
   }
   rovercon_msgs__msg__SubRocon * ros_message = _ros_message;
-  {  // a
-    PyObject * field = PyObject_GetAttrString(_pymsg, "a");
+  {  // fdr_msg
+    PyObject * field = PyObject_GetAttrString(_pymsg, "fdr_msg");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->fdr_msg = (uint8_t)PyLong_AsUnsignedLong(field);
+    Py_DECREF(field);
+  }
+  {  // ro_ctrl_msg
+    PyObject * field = PyObject_GetAttrString(_pymsg, "ro_ctrl_msg");
     if (!field) {
       return false;
     }
     assert(PyFloat_Check(field));
-    ros_message->a = (float)PyFloat_AS_DOUBLE(field);
+    ros_message->ro_ctrl_msg = (float)PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // spd_msg
+    PyObject * field = PyObject_GetAttrString(_pymsg, "spd_msg");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->spd_msg = (uint8_t)PyLong_AsUnsignedLong(field);
+    Py_DECREF(field);
+  }
+  {  // bdr_msg
+    PyObject * field = PyObject_GetAttrString(_pymsg, "bdr_msg");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->bdr_msg = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
 
@@ -81,11 +108,44 @@ PyObject * rovercon_msgs__msg__sub_rocon__convert_to_py(void * raw_ros_message)
     }
   }
   rovercon_msgs__msg__SubRocon * ros_message = (rovercon_msgs__msg__SubRocon *)raw_ros_message;
-  {  // a
+  {  // fdr_msg
     PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->a);
+    field = PyLong_FromUnsignedLong(ros_message->fdr_msg);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "a", field);
+      int rc = PyObject_SetAttrString(_pymessage, "fdr_msg", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // ro_ctrl_msg
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->ro_ctrl_msg);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "ro_ctrl_msg", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // spd_msg
+    PyObject * field = NULL;
+    field = PyLong_FromUnsignedLong(ros_message->spd_msg);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "spd_msg", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // bdr_msg
+    PyObject * field = NULL;
+    field = PyLong_FromUnsignedLong(ros_message->bdr_msg);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "bdr_msg", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

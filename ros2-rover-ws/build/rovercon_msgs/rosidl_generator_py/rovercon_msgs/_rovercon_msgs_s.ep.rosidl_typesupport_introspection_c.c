@@ -24,39 +24,39 @@ static struct PyModuleDef rovercon_msgs__module = {
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_runtime_c/service_type_support_struct.h"
 #include "rosidl_runtime_c/action_type_support_struct.h"
-#include "rovercon_msgs/msg/detail/sub_rocon__type_support.h"
-#include "rovercon_msgs/msg/detail/sub_rocon__struct.h"
-#include "rovercon_msgs/msg/detail/sub_rocon__functions.h"
+#include "rovercon_msgs/msg/detail/rocon__type_support.h"
+#include "rovercon_msgs/msg/detail/rocon__struct.h"
+#include "rovercon_msgs/msg/detail/rocon__functions.h"
 
-static void * rovercon_msgs__msg__sub_rocon__create_ros_message(void)
+static void * rovercon_msgs__msg__rocon__create_ros_message(void)
 {
-  return rovercon_msgs__msg__SubRocon__create();
+  return rovercon_msgs__msg__Rocon__create();
 }
 
-static void rovercon_msgs__msg__sub_rocon__destroy_ros_message(void * raw_ros_message)
+static void rovercon_msgs__msg__rocon__destroy_ros_message(void * raw_ros_message)
 {
-  rovercon_msgs__msg__SubRocon * ros_message = (rovercon_msgs__msg__SubRocon *)raw_ros_message;
-  rovercon_msgs__msg__SubRocon__destroy(ros_message);
+  rovercon_msgs__msg__Rocon * ros_message = (rovercon_msgs__msg__Rocon *)raw_ros_message;
+  rovercon_msgs__msg__Rocon__destroy(ros_message);
 }
 
 ROSIDL_GENERATOR_C_IMPORT
-bool rovercon_msgs__msg__sub_rocon__convert_from_py(PyObject * _pymsg, void * ros_message);
+bool rovercon_msgs__msg__rocon__convert_from_py(PyObject * _pymsg, void * ros_message);
 ROSIDL_GENERATOR_C_IMPORT
-PyObject * rovercon_msgs__msg__sub_rocon__convert_to_py(void * raw_ros_message);
+PyObject * rovercon_msgs__msg__rocon__convert_to_py(void * raw_ros_message);
 
 
 ROSIDL_GENERATOR_C_IMPORT
 const rosidl_message_type_support_t *
-ROSIDL_GET_MSG_TYPE_SUPPORT(rovercon_msgs, msg, SubRocon);
+ROSIDL_GET_MSG_TYPE_SUPPORT(rovercon_msgs, msg, Rocon);
 
 int8_t
-_register_msg_type__msg__sub_rocon(PyObject * pymodule)
+_register_msg_type__msg__rocon(PyObject * pymodule)
 {
   int8_t err;
 
   PyObject * pyobject_create_ros_message = NULL;
   pyobject_create_ros_message = PyCapsule_New(
-    (void *)&rovercon_msgs__msg__sub_rocon__create_ros_message,
+    (void *)&rovercon_msgs__msg__rocon__create_ros_message,
     NULL, NULL);
   if (!pyobject_create_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -64,7 +64,7 @@ _register_msg_type__msg__sub_rocon(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "create_ros_message_msg__msg__sub_rocon",
+    "create_ros_message_msg__msg__rocon",
     pyobject_create_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -75,7 +75,7 @@ _register_msg_type__msg__sub_rocon(PyObject * pymodule)
 
   PyObject * pyobject_destroy_ros_message = NULL;
   pyobject_destroy_ros_message = PyCapsule_New(
-    (void *)&rovercon_msgs__msg__sub_rocon__destroy_ros_message,
+    (void *)&rovercon_msgs__msg__rocon__destroy_ros_message,
     NULL, NULL);
   if (!pyobject_destroy_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -83,7 +83,7 @@ _register_msg_type__msg__sub_rocon(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "destroy_ros_message_msg__msg__sub_rocon",
+    "destroy_ros_message_msg__msg__rocon",
     pyobject_destroy_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -94,7 +94,7 @@ _register_msg_type__msg__sub_rocon(PyObject * pymodule)
 
   PyObject * pyobject_convert_from_py = NULL;
   pyobject_convert_from_py = PyCapsule_New(
-    (void *)&rovercon_msgs__msg__sub_rocon__convert_from_py,
+    (void *)&rovercon_msgs__msg__rocon__convert_from_py,
     NULL, NULL);
   if (!pyobject_convert_from_py) {
     // previously added objects will be removed when the module is destroyed
@@ -102,7 +102,7 @@ _register_msg_type__msg__sub_rocon(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_from_py_msg__msg__sub_rocon",
+    "convert_from_py_msg__msg__rocon",
     pyobject_convert_from_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -113,7 +113,7 @@ _register_msg_type__msg__sub_rocon(PyObject * pymodule)
 
   PyObject * pyobject_convert_to_py = NULL;
   pyobject_convert_to_py = PyCapsule_New(
-    (void *)&rovercon_msgs__msg__sub_rocon__convert_to_py,
+    (void *)&rovercon_msgs__msg__rocon__convert_to_py,
     NULL, NULL);
   if (!pyobject_convert_to_py) {
     // previously added objects will be removed when the module is destroyed
@@ -121,7 +121,7 @@ _register_msg_type__msg__sub_rocon(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_to_py_msg__msg__sub_rocon",
+    "convert_to_py_msg__msg__rocon",
     pyobject_convert_to_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -132,7 +132,7 @@ _register_msg_type__msg__sub_rocon(PyObject * pymodule)
 
   PyObject * pyobject_type_support = NULL;
   pyobject_type_support = PyCapsule_New(
-    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(rovercon_msgs, msg, SubRocon),
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(rovercon_msgs, msg, Rocon),
     NULL, NULL);
   if (!pyobject_type_support) {
     // previously added objects will be removed when the module is destroyed
@@ -140,7 +140,7 @@ _register_msg_type__msg__sub_rocon(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "type_support_msg__msg__sub_rocon",
+    "type_support_msg__msg__rocon",
     pyobject_type_support);
   if (err) {
     // the created capsule needs to be decremented
@@ -161,7 +161,7 @@ PyInit_rovercon_msgs_s__rosidl_typesupport_introspection_c(void)
   }
   int8_t err;
 
-  err = _register_msg_type__msg__sub_rocon(pymodule);
+  err = _register_msg_type__msg__rocon(pymodule);
   if (err) {
     Py_XDECREF(pymodule);
     return NULL;

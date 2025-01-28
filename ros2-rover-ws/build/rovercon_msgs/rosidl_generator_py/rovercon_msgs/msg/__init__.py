@@ -1,1 +1,1 @@
-from rovercon_msgs.msg._sub_rocon import SubRocon  # noqa: F401
+from rovercon_msgs.msg._rocon import Rocon  # noqa: F401

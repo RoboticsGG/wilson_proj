@@ -256,7 +256,7 @@ Python3_EXECUTABLE:FILEPATH=/usr/bin/python3
 SITE:STRING=thehive
 
 //Path to a library.
-_lib:FILEPATH=/opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_cpp.so
+_lib:FILEPATH=/opt/ros/humble/lib/librosidl_typesupport_cpp.so
 
 //Path to a file.
 _numpy_h:FILEPATH=/usr/include/python3.10/numpy/numpyconfig.h
@@ -426,6 +426,9 @@ rosidl_typesupport_introspection_cpp_DIR:PATH=/opt/ros/humble/share/rosidl_types
 //Value Computed by CMake
 rovercon_msgs_BINARY_DIR:STATIC=/home/curry/wilson_proj/ros2-rover-ws/build/rovercon_msgs
 
+//The directory containing a CMake configuration file for rovercon_msgs.
+rovercon_msgs_DIR:PATH=/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/share/rovercon_msgs/cmake
+
 //Value Computed by CMake
 rovercon_msgs_IS_TOP_LEVEL:STATIC=ON
 
@@ -576,7 +579,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

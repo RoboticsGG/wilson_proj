@@ -69,9 +69,9 @@ include rovercon_msgs__py/CMakeFiles/rovercon_msgs__py.dir/progress.make
 rovercon_msgs__py/CMakeFiles/rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 rovercon_msgs__py/CMakeFiles/rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_introspection_c.c
 rovercon_msgs__py/CMakeFiles/rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_c.c
-rovercon_msgs__py/CMakeFiles/rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/msg/_sub_rocon.py
+rovercon_msgs__py/CMakeFiles/rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/msg/_rocon.py
 rovercon_msgs__py/CMakeFiles/rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/msg/__init__.py
-rovercon_msgs__py/CMakeFiles/rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/msg/_sub_rocon_s.c
+rovercon_msgs__py/CMakeFiles/rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/msg/_rocon_s.c
 
 rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/lib/rosidl_generator_py/rosidl_generator_py
 rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_py/__init__.py
@@ -86,7 +86,7 @@ rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtp
 rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/rosidl_generator_py/resource/_msg.py.em
 rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/rosidl_generator_py/resource/_srv_pkg_typesupport_entry_point.c.em
 rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/rosidl_generator_py/resource/_srv.py.em
-rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/rovercon_msgs/msg/SubRocon.idl
+rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/rovercon_msgs/msg/Rocon.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/rovercon_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
 	cd /home/curry/wilson_proj/ros2-rover-ws/build/rovercon_msgs/rovercon_msgs__py && /usr/bin/python3 /opt/ros/humble/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/curry/wilson_proj/ros2-rover-ws/build/rovercon_msgs/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
 
@@ -96,21 +96,21 @@ rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_introsp
 rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_c.c: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_c.c
 
-rosidl_generator_py/rovercon_msgs/msg/_sub_rocon.py: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/rovercon_msgs/msg/_sub_rocon.py
+rosidl_generator_py/rovercon_msgs/msg/_rocon.py: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/rovercon_msgs/msg/_rocon.py
 
 rosidl_generator_py/rovercon_msgs/msg/__init__.py: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/rovercon_msgs/msg/__init__.py
 
-rosidl_generator_py/rovercon_msgs/msg/_sub_rocon_s.c: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/rovercon_msgs/msg/_sub_rocon_s.c
+rosidl_generator_py/rovercon_msgs/msg/_rocon_s.c: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/rovercon_msgs/msg/_rocon_s.c
 
 rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_c.c
 rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/_rovercon_msgs_s.ep.rosidl_typesupport_introspection_c.c
 rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/msg/__init__.py
-rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/msg/_sub_rocon.py
-rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/msg/_sub_rocon_s.c
+rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/msg/_rocon.py
+rovercon_msgs__py: rosidl_generator_py/rovercon_msgs/msg/_rocon_s.c
 rovercon_msgs__py: rovercon_msgs__py/CMakeFiles/rovercon_msgs__py
 rovercon_msgs__py: rovercon_msgs__py/CMakeFiles/rovercon_msgs__py.dir/build.make
 .PHONY : rovercon_msgs__py

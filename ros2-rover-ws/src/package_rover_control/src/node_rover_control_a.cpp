@@ -102,11 +102,11 @@ private:
         subrocon.spd_msg = spd_msg_;
         subrocon.bdr_msg = static_cast<uint8_t>(1);
 
-        mainrocon.mainrocin_msg = subrocon;
+        mainrocon.mainrocon_msg = subrocon;
 
         topic_rocon_pub_->publish(mainrocon);
 
-        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", mainrocon.mainrocin_msg.fdr_msg, mainrocon.mainrocin_msg.ro_ctrl_msg, mainrocon.mainrocin_msg.spd_msg, mainrocon.mainrocin_msg.bdr_msg);
+        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", mainrocon.mainrocon_msg.fdr_msg, mainrocon.mainrocon_msg.ro_ctrl_msg, mainrocon.mainrocon_msg.spd_msg, mainrocon.mainrocon_msg.bdr_msg);
 
         // fDr_msg_ = static_cast<uint16_t>(ro_ctrl_msg1_);
         // i16_spd_msg_ = static_cast<uint16_t>(spd_msg_);

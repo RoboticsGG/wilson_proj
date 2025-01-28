@@ -18,8 +18,10 @@
 #include "mros2.h"
 #include "mros2-platform.h"
 #include "std_msgs/msg/u_int16.hpp"
+#include "rovercon_msgs/msg/sub_rocon.hpp"
+#include "rovercon_msgs/msg/main_rocon.hpp"
 
-void userCallback(std_msgs::msg::UInt16 *msg)
+void userCallback(rovercon_msgs::msg::main_rocon *msg)
 {
   MROS2_INFO("subscribed msg 0 : '%d'", msg->data);
 }
@@ -44,7 +46,7 @@ int main()
   MROS2_DEBUG("mROS 2 initialization is completed");
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_angle", 10, userCallback);
+  mros2::Subscriber sub = node.create_subscription<rovercon_msgs::msg::main_rocon>("pub_rocon_angle", 10, userCallback);
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");
 

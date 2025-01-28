@@ -1,0 +1,25 @@
+[0.016s] Invoking command in '/home/yupi/rover_proj/ros2-base-ws/build/package_base_command': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yupi/rover_proj/ros2-base-ws/build/package_base_command -- -j4 -l4
+[0.095s] [35m[1mConsolidate compiler generated dependencies of target node_command[0m
+[0.130s] [ 16%] [32m[1mLinking CXX shared library libmotorcontrol.so[0m
+[0.137s] [ 33%] [32m[1mLinking CXX executable node_motor_control[0m
+[0.150s] [ 50%] [32mBuilding CXX object CMakeFiles/node_command.dir/src/node_command.cpp.o[0m
+[0.567s] [ 66%] Built target node_motor_control
+[0.693s] [ 83%] Built target motorcontrol
+[2.675s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:[m[K In constructor ‘[01m[KNode_Command::Node_Command()[m[K’:
+[2.675s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:16:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kdes_a_[m[K’ was not declared in this scope
+[2.675s]    16 |         this->declare_parameter<int>("des_a", [01;31m[Kdes_a_[m[K);
+[2.675s]       |                                               [01;31m[K^~~~~~[m[K
+[2.679s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:17:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kdes_b_[m[K’ was not declared in this scope
+[2.679s]    17 |         this->declare_parameter<int>("des_b", [01;31m[Kdes_b_[m[K);
+[2.679s]       |                                               [01;31m[K^~~~~~[m[K
+[2.693s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:[m[K In member function ‘[01m[Krcl_interfaces::msg::SetParametersResult Node_Command::on_parameter_change(const std::vector<rclcpp::Parameter>&)[m[K’:
+[2.693s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:38:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdes_a_[m[K’ was not declared in this scope
+[2.693s]    38 |                 [01;31m[Kdes_a_[m[K = param.as_int();
+[2.693s]       |                 [01;31m[K^~~~~~[m[K
+[2.698s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:40:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdes_b_[m[K’ was not declared in this scope
+[2.698s]    40 |                 [01;31m[Kdes_b_[m[K = param.as_int();
+[2.698s]       |                 [01;31m[K^~~~~~[m[K
+[3.456s] gmake[2]: *** [CMakeFiles/node_command.dir/build.make:76: CMakeFiles/node_command.dir/src/node_command.cpp.o] Error 1
+[3.456s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_command.dir/all] Error 2
+[3.456s] gmake: *** [Makefile:146: all] Error 2
+[3.458s] Invoked command in '/home/yupi/rover_proj/ros2-base-ws/build/package_base_command' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yupi/rover_proj/ros2-base-ws/build/package_base_command -- -j4 -l4

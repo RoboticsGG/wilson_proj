@@ -447,3 +447,55 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_393c2/fast && gmake[1]: Entering directory '/home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_393c2.dir/build.make CMakeFiles/cmTC_393c2.dir/build
+gmake[2]: Entering directory '/home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_393c2.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu99 -o CMakeFiles/cmTC_393c2.dir/CheckIncludeFile.c.o -c /home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_393c2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_393c2.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_393c2.dir/CheckIncludeFile.c.o -o cmTC_393c2 
+gmake[2]: Leaving directory '/home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_32756/fast && gmake[1]: Entering directory '/home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_32756.dir/build.make CMakeFiles/cmTC_32756.dir/build
+gmake[2]: Entering directory '/home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_32756.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu99 -o CMakeFiles/cmTC_32756.dir/src.c.o -c /home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_32756
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32756.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_32756.dir/src.c.o -o cmTC_32756 
+gmake[2]: Leaving directory '/home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/yupi/rover_proj/ros2-base-ws/build/package_test/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+

@@ -210,6 +210,69 @@ node_client_act/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_client_act.dir/build.make CMakeFiles/node_client_act.dir/build
 .PHONY : node_client_act/fast
 
+#=============================================================================
+# Target rules for targets named pub_node
+
+# Build rule for target.
+pub_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pub_node
+.PHONY : pub_node
+
+# fast build rule for target.
+pub_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pub_node.dir/build.make CMakeFiles/pub_node.dir/build
+.PHONY : pub_node/fast
+
+#=============================================================================
+# Target rules for targets named sub_node
+
+# Build rule for target.
+sub_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sub_node
+.PHONY : sub_node
+
+# fast build rule for target.
+sub_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sub_node.dir/build.make CMakeFiles/sub_node.dir/build
+.PHONY : sub_node/fast
+
+#=============================================================================
+# Target rules for targets named echoreply_node
+
+# Build rule for target.
+echoreply_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 echoreply_node
+.PHONY : echoreply_node
+
+# fast build rule for target.
+echoreply_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoreply_node.dir/build.make CMakeFiles/echoreply_node.dir/build
+.PHONY : echoreply_node/fast
+
+src/echoreply_node.o: src/echoreply_node.cpp.o
+.PHONY : src/echoreply_node.o
+
+# target to build an object file
+src/echoreply_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoreply_node.dir/build.make CMakeFiles/echoreply_node.dir/src/echoreply_node.cpp.o
+.PHONY : src/echoreply_node.cpp.o
+
+src/echoreply_node.i: src/echoreply_node.cpp.i
+.PHONY : src/echoreply_node.i
+
+# target to preprocess a source file
+src/echoreply_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoreply_node.dir/build.make CMakeFiles/echoreply_node.dir/src/echoreply_node.cpp.i
+.PHONY : src/echoreply_node.cpp.i
+
+src/echoreply_node.s: src/echoreply_node.cpp.s
+.PHONY : src/echoreply_node.s
+
+# target to generate assembly for a file
+src/echoreply_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoreply_node.dir/build.make CMakeFiles/echoreply_node.dir/src/echoreply_node.cpp.s
+.PHONY : src/echoreply_node.cpp.s
+
 src/node_client_act.o: src/node_client_act.cpp.o
 .PHONY : src/node_client_act.o
 
@@ -234,6 +297,54 @@ src/node_client_act.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_client_act.dir/build.make CMakeFiles/node_client_act.dir/src/node_client_act.cpp.s
 .PHONY : src/node_client_act.cpp.s
 
+src/pub_node.o: src/pub_node.cpp.o
+.PHONY : src/pub_node.o
+
+# target to build an object file
+src/pub_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pub_node.dir/build.make CMakeFiles/pub_node.dir/src/pub_node.cpp.o
+.PHONY : src/pub_node.cpp.o
+
+src/pub_node.i: src/pub_node.cpp.i
+.PHONY : src/pub_node.i
+
+# target to preprocess a source file
+src/pub_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pub_node.dir/build.make CMakeFiles/pub_node.dir/src/pub_node.cpp.i
+.PHONY : src/pub_node.cpp.i
+
+src/pub_node.s: src/pub_node.cpp.s
+.PHONY : src/pub_node.s
+
+# target to generate assembly for a file
+src/pub_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pub_node.dir/build.make CMakeFiles/pub_node.dir/src/pub_node.cpp.s
+.PHONY : src/pub_node.cpp.s
+
+src/sub_node.o: src/sub_node.cpp.o
+.PHONY : src/sub_node.o
+
+# target to build an object file
+src/sub_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sub_node.dir/build.make CMakeFiles/sub_node.dir/src/sub_node.cpp.o
+.PHONY : src/sub_node.cpp.o
+
+src/sub_node.i: src/sub_node.cpp.i
+.PHONY : src/sub_node.i
+
+# target to preprocess a source file
+src/sub_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sub_node.dir/build.make CMakeFiles/sub_node.dir/src/sub_node.cpp.i
+.PHONY : src/sub_node.cpp.i
+
+src/sub_node.s: src/sub_node.cpp.s
+.PHONY : src/sub_node.s
+
+# target to generate assembly for a file
+src/sub_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sub_node.dir/build.make CMakeFiles/sub_node.dir/src/sub_node.cpp.s
+.PHONY : src/sub_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -249,10 +360,22 @@ help:
 	@echo "... test"
 	@echo "... package_test_uninstall"
 	@echo "... uninstall"
+	@echo "... echoreply_node"
 	@echo "... node_client_act"
+	@echo "... pub_node"
+	@echo "... sub_node"
+	@echo "... src/echoreply_node.o"
+	@echo "... src/echoreply_node.i"
+	@echo "... src/echoreply_node.s"
 	@echo "... src/node_client_act.o"
 	@echo "... src/node_client_act.i"
 	@echo "... src/node_client_act.s"
+	@echo "... src/pub_node.o"
+	@echo "... src/pub_node.i"
+	@echo "... src/pub_node.s"
+	@echo "... src/sub_node.o"
+	@echo "... src/sub_node.i"
+	@echo "... src/sub_node.s"
 .PHONY : help
 
 

@@ -198,24 +198,74 @@ package_base_command_uninstall/fast:
 .PHONY : package_base_command_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named node_carcontrol
+# Target rules for targets named motorcontrol
 
 # Build rule for target.
-node_carcontrol: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 node_carcontrol
-.PHONY : node_carcontrol
+motorcontrol: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 motorcontrol
+.PHONY : motorcontrol
 
 # fast build rule for target.
-node_carcontrol/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_carcontrol.dir/build.make CMakeFiles/node_carcontrol.dir/build
-.PHONY : node_carcontrol/fast
+motorcontrol/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/build
+.PHONY : motorcontrol/fast
+
+#=============================================================================
+# Target rules for targets named node_motor_control
+
+# Build rule for target.
+node_motor_control: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 node_motor_control
+.PHONY : node_motor_control
+
+# fast build rule for target.
+node_motor_control/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/build
+.PHONY : node_motor_control/fast
+
+#=============================================================================
+# Target rules for targets named node_command
+
+# Build rule for target.
+node_command: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 node_command
+.PHONY : node_command
+
+# fast build rule for target.
+node_command/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_command.dir/build.make CMakeFiles/node_command.dir/build
+.PHONY : node_command/fast
+
+rclcpp_components/node_main_node_motor_control.o: rclcpp_components/node_main_node_motor_control.cpp.o
+.PHONY : rclcpp_components/node_main_node_motor_control.o
+
+# target to build an object file
+rclcpp_components/node_main_node_motor_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/rclcpp_components/node_main_node_motor_control.cpp.o
+.PHONY : rclcpp_components/node_main_node_motor_control.cpp.o
+
+rclcpp_components/node_main_node_motor_control.i: rclcpp_components/node_main_node_motor_control.cpp.i
+.PHONY : rclcpp_components/node_main_node_motor_control.i
+
+# target to preprocess a source file
+rclcpp_components/node_main_node_motor_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/rclcpp_components/node_main_node_motor_control.cpp.i
+.PHONY : rclcpp_components/node_main_node_motor_control.cpp.i
+
+rclcpp_components/node_main_node_motor_control.s: rclcpp_components/node_main_node_motor_control.cpp.s
+.PHONY : rclcpp_components/node_main_node_motor_control.s
+
+# target to generate assembly for a file
+rclcpp_components/node_main_node_motor_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/rclcpp_components/node_main_node_motor_control.cpp.s
+.PHONY : rclcpp_components/node_main_node_motor_control.cpp.s
 
 src/node_carcontrol.o: src/node_carcontrol.cpp.o
 .PHONY : src/node_carcontrol.o
 
 # target to build an object file
 src/node_carcontrol.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_carcontrol.dir/build.make CMakeFiles/node_carcontrol.dir/src/node_carcontrol.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/src/node_carcontrol.cpp.o
 .PHONY : src/node_carcontrol.cpp.o
 
 src/node_carcontrol.i: src/node_carcontrol.cpp.i
@@ -223,7 +273,7 @@ src/node_carcontrol.i: src/node_carcontrol.cpp.i
 
 # target to preprocess a source file
 src/node_carcontrol.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_carcontrol.dir/build.make CMakeFiles/node_carcontrol.dir/src/node_carcontrol.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/src/node_carcontrol.cpp.i
 .PHONY : src/node_carcontrol.cpp.i
 
 src/node_carcontrol.s: src/node_carcontrol.cpp.s
@@ -231,8 +281,32 @@ src/node_carcontrol.s: src/node_carcontrol.cpp.s
 
 # target to generate assembly for a file
 src/node_carcontrol.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_carcontrol.dir/build.make CMakeFiles/node_carcontrol.dir/src/node_carcontrol.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/src/node_carcontrol.cpp.s
 .PHONY : src/node_carcontrol.cpp.s
+
+src/node_command.o: src/node_command.cpp.o
+.PHONY : src/node_command.o
+
+# target to build an object file
+src/node_command.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_command.dir/build.make CMakeFiles/node_command.dir/src/node_command.cpp.o
+.PHONY : src/node_command.cpp.o
+
+src/node_command.i: src/node_command.cpp.i
+.PHONY : src/node_command.i
+
+# target to preprocess a source file
+src/node_command.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_command.dir/build.make CMakeFiles/node_command.dir/src/node_command.cpp.i
+.PHONY : src/node_command.cpp.i
+
+src/node_command.s: src/node_command.cpp.s
+.PHONY : src/node_command.s
+
+# target to generate assembly for a file
+src/node_command.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_command.dir/build.make CMakeFiles/node_command.dir/src/node_command.cpp.s
+.PHONY : src/node_command.cpp.s
 
 # Help Target
 help:
@@ -249,10 +323,18 @@ help:
 	@echo "... test"
 	@echo "... package_base_command_uninstall"
 	@echo "... uninstall"
-	@echo "... node_carcontrol"
+	@echo "... motorcontrol"
+	@echo "... node_command"
+	@echo "... node_motor_control"
+	@echo "... rclcpp_components/node_main_node_motor_control.o"
+	@echo "... rclcpp_components/node_main_node_motor_control.i"
+	@echo "... rclcpp_components/node_main_node_motor_control.s"
 	@echo "... src/node_carcontrol.o"
 	@echo "... src/node_carcontrol.i"
 	@echo "... src/node_carcontrol.s"
+	@echo "... src/node_command.o"
+	@echo "... src/node_command.i"
+	@echo "... src/node_command.s"
 .PHONY : help
 
 

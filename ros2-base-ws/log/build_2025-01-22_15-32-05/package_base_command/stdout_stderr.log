@@ -1,0 +1,27 @@
+[35m[1mConsolidate compiler generated dependencies of target node_command[0m
+[ 33%] Built target motorcontrol
+[ 66%] Built target node_motor_control
+[ 83%] [32mBuilding CXX object CMakeFiles/node_command.dir/src/node_command.cpp.o[0m
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:[m[K In constructor ‘[01m[KNode_Command::Node_Command()[m[K’:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:15:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopic_destination_publisher_[m[K’ was not declared in this scope
+   15 |         [01;31m[Ktopic_destination_publisher_[m[K = this->create_publisher<std_msgs::msg::Float32MultiArray>("topic_destination_t", 10);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:1[m[K:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:[m[K In member function ‘[01m[Kvoid Node_Command::publish_parameters()[m[K’:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:34:100:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kc_str[m[K’ in ‘[01m[Kspeed_message.std_msgs::msg::UInt8_<std::allocator<void> >::data[m[K’, which is of non-class type ‘[01m[Kstd_msgs::msg::UInt8_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kunsigned char[m[K’}
+   34 |         RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", speed_message.data.[01;31m[Kc_str[m[K());
+      |                                                                                                    [01;31m[K^~~~~[m[K
+gmake[2]: *** [CMakeFiles/node_command.dir/build.make:76: CMakeFiles/node_command.dir/src/node_command.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_command.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

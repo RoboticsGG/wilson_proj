@@ -1,0 +1,41 @@
+[0.018s] Invoking command in '/home/yupi/rover_proj/ros2-base-ws/build/package_base_command': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yupi/rover_proj/ros2-base-ws/build/package_base_command -- -j4 -l4
+[0.100s] [ 16%] [32mBuilding CXX object CMakeFiles/node_command.dir/src/node_command.cpp.o[0m
+[0.102s] [ 50%] Built target node_motor_control
+[0.110s] [ 83%] Built target motorcontrol
+[2.396s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:[m[K In constructor ‘[01m[KNode_Command::Node_Command()[m[K’:
+[2.397s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:20:13:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kstd[m[K’
+[2.397s]    20 |             [01;31m[Kstd[m[K::bind(&Node_Command::publish_parameters, this)
+[2.397s]       |             [01;31m[K^~~[m[K
+[2.397s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:17:41:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+[2.397s]    17 |         timer_ = this->create_wall_timer[01;36m[K([m[K
+[2.397s]       |                                         [01;36m[K^[m[K
+[2.397s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:17:41:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KNode_Command::create_wall_timer(std::chrono::seconds)[m[K’
+[2.397s]    17 |         timer_ = [01;31m[Kthis->create_wall_timer([m[K
+[2.397s]       |                  [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[2.397s]    18 | [01;31m[K            std::chrono::seconds(1)[m[K
+[2.397s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~[m[K      
+[2.397s]    19 | [01;31m[K            //std::chrono::milliseconds(250),[m[K
+[2.397s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.397s]    20 | [01;31m[K            std[m[K::bind(&Node_Command::publish_parameters, this)
+[2.397s]       |             [01;31m[K~~~[m[K                          
+[2.397s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[2.398s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[2.398s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.398s]                  from [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:1[m[K:
+[2.398s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:238:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class DurationRepT, class DurationT, class CallbackT> typename rclcpp::WallTimer<CallbackT>::SharedPtr rclcpp::Node::create_wall_timer(std::chrono::duration<_Rep1, _Period1>, CallbackT, rclcpp::CallbackGroup::SharedPtr)[m[K’
+[2.398s]   238 |   [01;36m[Kcreate_wall_timer[m[K(
+[2.398s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[2.398s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:238:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.398s] [01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:17:41:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+[2.398s]    17 |         timer_ = [01;36m[Kthis->create_wall_timer([m[K
+[2.398s]       |                  [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[2.398s]    18 | [01;36m[K            std::chrono::seconds(1)[m[K
+[2.398s]       |             [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~[m[K      
+[2.398s]    19 | [01;36m[K            //std::chrono::milliseconds(250),[m[K
+[2.398s]       |             [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.398s]    20 | [01;36m[K            std[m[K::bind(&Node_Command::publish_parameters, this)
+[2.398s]       |             [01;36m[K~~~[m[K                          
+[3.163s] gmake[2]: *** [CMakeFiles/node_command.dir/build.make:76: CMakeFiles/node_command.dir/src/node_command.cpp.o] Error 1
+[3.163s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_command.dir/all] Error 2
+[3.163s] gmake: *** [Makefile:146: all] Error 2
+[3.165s] Invoked command in '/home/yupi/rover_proj/ros2-base-ws/build/package_base_command' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yupi/rover_proj/ros2-base-ws/build/package_base_command -- -j4 -l4

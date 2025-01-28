@@ -1,0 +1,12 @@
+[35m[1mConsolidate compiler generated dependencies of target node_command[0m
+[ 33%] Built target motorcontrol
+[ 50%] [32mBuilding CXX object CMakeFiles/node_command.dir/src/node_command.cpp.o[0m
+[ 83%] Built target node_motor_control
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:[m[K In member function ‘[01m[Krcl_interfaces::msg::SetParametersResult Node_Command::on_parameter_change(const std::vector<rclcpp::Parameter>&)[m[K’:
+[01m[K/home/yupi/rover_proj/ros2-base-ws/src/package_base_command/src/node_command.cpp:49:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst class rclcpp::Parameter[m[K’ has no member named ‘[01m[Kas_uint8[m[K’; did you mean ‘[01m[Kas_int[m[K’?
+   49 |                 speedlimit_ = param.[01;31m[Kas_uint8[m[K();
+      |                                     [01;31m[K^~~~~~~~[m[K
+      |                                     [32m[Kas_int[m[K
+gmake[2]: *** [CMakeFiles/node_command.dir/build.make:76: CMakeFiles/node_command.dir/src/node_command.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_command.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

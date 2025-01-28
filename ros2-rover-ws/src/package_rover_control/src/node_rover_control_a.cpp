@@ -94,7 +94,7 @@ private:
 
     void timer_callback() {
 
-        auto subrocon = msgs_rocon::msg::SubRocon();
+        auto subrocon = msgs_rovercon::msg::SubRocon();
         auto mainrocon = msgs_mainrocon::msg::MainRocon();
 
         subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);

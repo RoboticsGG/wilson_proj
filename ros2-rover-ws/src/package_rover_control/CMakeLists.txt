@@ -37,6 +37,7 @@ add_library(motorcontrol SHARED
 target_include_directories(motorcontrol PRIVATE
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)
+
   
 target_compile_definitions(motorcontrol
   PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
@@ -60,11 +61,13 @@ rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorCont
 
 #---------------------------node_rover_control---------------------------------------
 add_executable(node_rovercontrol src/node_rover_control_a.cpp)
-ament_target_dependencies(node_rovercontrol rclcpp std_msgs)
 
 target_include_directories(node_rovercontrol PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)
+
+ament_target_dependencies(node_rovercontrol rclcpp std_msgs msgs_rovercon msgs_mainrocon)
+
 target_compile_features(node_rovercontrol PUBLIC c_std_99 cxx_std_17)
 
 install(TARGETS node_rovercontrol

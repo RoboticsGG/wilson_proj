@@ -23,8 +23,9 @@
 
 void userCallback(rovercon_msgs::msg::mainrocon *msg)
 {
-  MROS2_INFO("subscribed msg main_rocon: fdr_msg=%d, ro_ctrl_msg=%.2f, spd_msg=%d, bdr_msg=%d",
-             msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
+    MROS2_INFO("Subscribe topic pub_rovercontrol");
+  // MROS2_INFO("subscribed msg main_rocon: fdr_msg=%d, ro_ctrl_msg=%.2f, spd_msg=%d, bdr_msg=%d",
+  //            msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
 }
 
 int main()

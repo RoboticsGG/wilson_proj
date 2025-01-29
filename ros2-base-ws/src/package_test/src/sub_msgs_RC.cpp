@@ -14,7 +14,7 @@ class Subscriber : public rclcpp::Node
 public:
   Subscriber() : Node("sub_mainrocon")
   {
-    subscriber_ = this->create_subscription<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", rclcpp::QoS(10).best_effort(), std::bind(&Subscriber::topic_callback, this, _1));
+    subscriber_ = this->create_subscription<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10, std::bind(&Subscriber::topic_callback, this, _1));
   }
 
 private:

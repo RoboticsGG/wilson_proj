@@ -51,17 +51,16 @@ int main()
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
 
-  mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
+  //mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
   
-
-  MROS2_INFO("Publishing message to to_linux");
-  auto msg = std_msgs::msg::String();
-  msg.data = "Hello, mROS 2!";
-  pub.publish(msg);
+  // MROS2_INFO("Publishing message to to_linux");
+  // auto msg = std_msgs::msg::String();
+  // msg.data = "Hello, mROS 2!";
+  // pub.publish(msg);
   //ThisThread::sleep_for(1000);
   
   mros2::Subscriber sub = node.create_subscription<rovercon_msgs::msg::mainrocon>("pub_rovercontrol", 10, userCallback);
-  osDelay(1000);
+  osDelay(500);
   MROS2_INFO("ready to pub/sub message\r\n---");
 
   mros2::spin();

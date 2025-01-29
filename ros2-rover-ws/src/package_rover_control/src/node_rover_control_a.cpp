@@ -99,20 +99,20 @@ private:
         auto subrocon = msgs_rovercon::msg::SubRocon();
         auto mainrocon = msgs_mainrocon::msg::MainRocon();
 
-        subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
+        subrocon.fdr_msg = static_cast<uint16_t>(ro_ctrl_msg1_);
         subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
-        subrocon.spd_msg = spd_msg_;
-        subrocon.bdr_msg = static_cast<uint8_t>(1);
+        subrocon.spd_msg = static_cast<uint16_t>(spd_msg_);
+        subrocon.bdr_msg = static_cast<uint16_t>(1);
 
         mainrocon.mainrocon_msg = subrocon;
 
         topic_rocon_pub_->publish(mainrocon);
 
-        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", mainrocon.mainrocon_msg.fdr_msg, mainrocon.mainrocon_msg.ro_ctrl_msg, mainrocon.mainrocon_msg.spd_msg, mainrocon.mainrocon_msg.bdr_msg);
+        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%.1f, %.2f, %.1f, %.1f]", mainrocon.mainrocon_msg.fdr_msg, mainrocon.mainrocon_msg.ro_ctrl_msg, mainrocon.mainrocon_msg.spd_msg, mainrocon.mainrocon_msg.bdr_msg);
 
-        // fDr_msg_ = static_cast<uint16_t>(ro_ctrl_msg1_);
-        // i16_spd_msg_ = static_cast<uint16_t>(spd_msg_);
-        // bDr_msg_ = static_cast<uint16_t>(1); // 1 = FW, 0 = BW
+        fDr_msg_ = static_cast<uint16_t>(ro_ctrl_msg1_);
+        i16_spd_msg_ = static_cast<uint16_t>(spd_msg_);
+        bDr_msg_ = static_cast<uint16_t>(1); // 1 = FW, 0 = BW
 
         // rover_con_ = {ro_ctrl_msg1_, ro_ctrl_msg2_, spd_msg_, bDr_msg_};
         // auto rover_con_msg = std_msgs::msg::Float32MultiArray();

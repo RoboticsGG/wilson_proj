@@ -41,7 +41,7 @@ int main()
   }
 
   MROS2_INFO("%s start!", MROS2_PLATFORM_NAME);
-  MROS2_INFO("app name: sub_uint16");
+  MROS2_INFO("app name: new data package");
 
   mros2::init(0, NULL);
   MROS2_DEBUG("mROS 2 initialization is completed");

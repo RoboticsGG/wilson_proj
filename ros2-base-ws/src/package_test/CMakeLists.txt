@@ -19,6 +19,8 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(msgs_rovercon REQUIRED)
+find_package(msgs_mainrocon REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -33,6 +35,9 @@ ament_target_dependencies(sub_node rclcpp std_msgs)
 
 add_executable(echoreply_node src/echoreply_node.cpp)
 ament_target_dependencies(echoreply_node rclcpp std_msgs)
+
+add_executable(node_rov_datasub src/sub_msgs_RC.cpp)
+ament_target_dependencies(node_rov_datasub rclcpp std_msgs msgs_rovercon msgs_mainrocon)
 
 target_include_directories(node_client_act PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -51,6 +56,10 @@ target_include_directories(echoreply_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
 
+target_include_directories(node_rov_datasub PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+
 install(TARGETS node_client_act
   DESTINATION lib/${PROJECT_NAME})
 
@@ -62,6 +71,10 @@ install(TARGETS sub_node
 
 install(TARGETS echoreply_node
   DESTINATION lib/${PROJECT_NAME})
+
+install(TARGETS node_rov_datasub
+  DESTINATION lib/${PROJECT_NAME})
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

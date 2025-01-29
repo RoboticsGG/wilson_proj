@@ -60,8 +60,8 @@ int main()
     pub.publish(msg);
     ThisThread::sleep_for(1000);
   }
-  //mros2::Subscriber sub = node.create_subscription<rovercon_msgs::msg::mainrocon>("pub_rovercontrol", 10, userCallback);
-  //osDelay(1000);
+  mros2::Subscriber sub = node.create_subscription<rovercon_msgs::msg::mainrocon>("pub_rovercontrol", 10, userCallback);
+  osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");
 
   mros2::spin();

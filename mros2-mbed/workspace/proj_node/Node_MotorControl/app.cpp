@@ -17,7 +17,8 @@
 #include "mbed.h"
 #include "mros2.h"
 #include "mros2-platform.h"
-#include "std_msgs/msg/u_int16.hpp"
+#include "std_msgs/msg/u_int8.hpp"
+#include "std_msgs/msg/float32.hpp"
 #include "rovercon_msgs/msg/subrocon.hpp"
 #include "rovercon_msgs/msg/mainrocon.hpp"
 

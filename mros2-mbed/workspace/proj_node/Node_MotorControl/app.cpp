@@ -19,6 +19,7 @@
 #include "mros2-platform.h"
 #include "std_msgs/msg/u_int8.hpp"
 #include "std_msgs/msg/float32.hpp"
+#include "std_msgs/msg/string.hpp"
 #include "rovercon_msgs/msg/subrocon.hpp"
 #include "rovercon_msgs/msg/mainrocon.hpp"
 

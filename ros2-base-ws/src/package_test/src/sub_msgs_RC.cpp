@@ -18,7 +18,7 @@ public:
   }
 
 private:
-  void topic_callback(const geometry_msgs::msg::Twist::SharedPtr message) const
+  void topic_callback(const msgs_mainrocon::msg::MainRocon::SharedPtr message) const
   {
     RCLCPP_INFO(this->get_logger(), "Subscribed msg: fdr_msg=%d, ro_ctrl_msg=%.2f, spd_msg=%d, bdr_msg=%d", message->mainrocon_msg.fdr_msg, message->mainrocon_msg.ro_ctrl_msg, message->mainrocon_msg.spd_msg, message->mainrocon_msg.bdr_msg);
   }

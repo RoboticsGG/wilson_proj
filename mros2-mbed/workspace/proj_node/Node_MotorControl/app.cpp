@@ -22,13 +22,18 @@
 #include "std_msgs/msg/string.hpp"
 #include "rovercon_msgs/msg/sub_rocon.hpp"
 #include "rovercon_msgs/msg/main_rocon.hpp"
+#include "geometry_msgs/msg/pose.hpp"
 
-void userCallback(rovercon_msgs::msg::main_rocon *msg)
+// void userCallback(rovercon_msgs::msg::main_rocon *msg)
+// {
+//     MROS2_INFO("Subscribe topic pub_rovercontrol");
+// }
+
+void userCallback(geometry_msgs::msg::Pose *msg)
 {
-    MROS2_INFO("Subscribe topic pub_rovercontrol");
-  // MROS2_INFO("subscribed msg main_rocon: fdr_msg=%d, ro_ctrl_msg=%.2f, spd_msg=%d, bdr_msg=%d",
-  //            msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
+  MROS2_INFO("subscribed Pose msg!!");
 }
+
 
 int main()
 {
@@ -59,7 +64,9 @@ int main()
   // pub.publish(msg);
   //ThisThread::sleep_for(1000);
   
-  mros2::Subscriber sub = node.create_subscription<rovercon_msgs::msg::main_rocon>("pub_rovercontrol", 10, userCallback);
+  //mros2::Subscriber sub = node.create_subscription<rovercon_msgs::msg::main_rocon>("pub_rovercontrol", 10, userCallback);
+    mros2::Subscriber sub = node.create_subscription<geometry_msgs::msg::Pose>("cmd_vel", 10, userCallback);
+
   osDelay(500);
   MROS2_INFO("ready to pub/sub message\r\n---");
 

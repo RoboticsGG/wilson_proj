@@ -40,9 +40,9 @@ $<INSTALL_INTERFACE:include>)
 install(TARGETS node_rovercontrol
   DESTINATION lib/${PROJECT_NAME})
 
-  install(DIRECTORY
-  launch
-  DESTINATION share/${PROJECT_NAME})
+# install(DIRECTORY
+#   launch
+#   DESTINATION share/${PROJECT_NAME})
 
 target_compile_features(node_rovercontrol PUBLIC c_std_99 cxx_std_17)
 

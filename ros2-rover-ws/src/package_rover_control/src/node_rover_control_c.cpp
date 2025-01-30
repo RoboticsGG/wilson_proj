@@ -19,7 +19,7 @@ public:
   Publisher()
     : Node("pub_pose"), count_(0)
   {
-    publisher_ = this->create_publisher<geometry_msgs::msg::Pose>("pub_rovercontrol", 10);
+    publisher_ = this->create_publisher<geometry_msgs::msg::Pose>("cmd_vel", 10);
     timer_ = this->create_wall_timer(1000ms, std::bind(&Publisher::timer_callback, this));
   }
 

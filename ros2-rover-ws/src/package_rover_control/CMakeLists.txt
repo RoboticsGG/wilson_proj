@@ -18,8 +18,9 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-#find_package(action_interfaces REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(geometry_msgs REQUIRED)
+#find_package(action_interfaces REQUIRED)
 #find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(std_msgs REQUIRED)
@@ -27,13 +28,10 @@ find_package(std_srvs)
 find_package(msgs_rovercon REQUIRED)
 find_package(msgs_mainrocon REQUIRED)
 
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
 
 #---------------------------node_rover_control---------------------------------------
-add_executable(node_rovercontrol src/node_rover_control_a.cpp)
-ament_target_dependencies(node_rovercontrol rclcpp std_msgs msgs_rovercon msgs_mainrocon)
+add_executable(node_rovercontrol src/node_rover_control_c.cpp)
+ament_target_dependencies(node_rovercontrol rclcpp geometry_msgs std_msgs msgs_rovercon msgs_mainrocon)
 
 target_include_directories(node_rovercontrol PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

@@ -31,35 +31,6 @@ find_package(msgs_mainrocon REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-#---------------------------node_carcontrol---------------------------------------
-add_library(motorcontrol SHARED
-  src/node_motor_control.cpp)
-
-target_include_directories(motorcontrol PRIVATE
-$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-$<INSTALL_INTERFACE:include>)
-
-  
-target_compile_definitions(motorcontrol
-  PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
-  
-ament_target_dependencies(motorcontrol
-  "action_interfaces"
-  "rclcpp"
-  "rclcpp_action"
-  "rclcpp_components"
-  "msgs_rovercon"
-  "msgs_mainrocon")
-
-install(TARGETS
-  motorcontrol
-  ARCHIVE DESTINATION lib
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
-)
-rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorControlActionServer" EXECUTABLE node_motor_control)
-#---------------------------node_carcontrol---------------------------------------
-
 #---------------------------node_rover_control---------------------------------------
 add_executable(node_rovercontrol src/node_rover_control_a.cpp)
 ament_target_dependencies(node_rovercontrol rclcpp std_msgs msgs_rovercon msgs_mainrocon)
@@ -85,6 +56,38 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 #---------------------------node_rover_control---------------------------------------
+
+
+#---------------------------node_carcontrol---------------------------------------
+# add_library(motorcontrol SHARED
+#   src/node_motor_control.cpp)
+
+# target_include_directories(motorcontrol PRIVATE
+# $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+# $<INSTALL_INTERFACE:include>)
+
+  
+# target_compile_definitions(motorcontrol
+#   PRIVATE "CARCONTROL_CPP_BUILDING_DLL")
+  
+# ament_target_dependencies(motorcontrol
+#   "action_interfaces"
+#   "rclcpp"
+#   "rclcpp_action"
+#   "rclcpp_components"
+#   "msgs_rovercon"
+#   "msgs_mainrocon")
+
+# install(TARGETS
+#   motorcontrol
+#   ARCHIVE DESTINATION lib
+#   LIBRARY DESTINATION lib
+#   RUNTIME DESTINATION bin
+# )
+# rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorControlActionServer" EXECUTABLE node_motor_control)
+#---------------------------node_carcontrol---------------------------------------
+
+
 
 # add_executable(node_motor_control src/node_motor_control.cpp)
 

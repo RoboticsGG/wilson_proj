@@ -18,9 +18,9 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(action_interfaces REQUIRED)
+#find_package(action_interfaces REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(rclcpp_action REQUIRED)
+#find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(std_srvs)
@@ -41,6 +41,10 @@ $<INSTALL_INTERFACE:include>)
 
 install(TARGETS node_rovercontrol
   DESTINATION lib/${PROJECT_NAME})
+
+  install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME})
 
 target_compile_features(node_rovercontrol PUBLIC c_std_99 cxx_std_17)
 

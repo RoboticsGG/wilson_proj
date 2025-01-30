@@ -49,7 +49,7 @@ int main()
   }
 
   MROS2_INFO("%s start!", MROS2_PLATFORM_NAME);
-  MROS2_INFO("app name: new data package");
+  MROS2_INFO("app name: DataPack_V2");
 
   mros2::init(0, NULL);
   MROS2_DEBUG("mROS 2 initialization is completed");

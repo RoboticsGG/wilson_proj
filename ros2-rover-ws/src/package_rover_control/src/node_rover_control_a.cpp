@@ -13,12 +13,12 @@
 #include <msgs_rovercon/msg/sub_rocon.hpp>
 #include <msgs_mainrocon/msg/main_rocon.hpp>
 
-class Motors_Rovercontrol {
-public:
-    int test(int a, int b){
-        return a+b; //เขียนประมวลผลค่าเพื่อควบคุม rover เผื่อถ้าบน mbed เขียนยาก
-    }
-};
+// class Motors_Rovercontrol {
+// public:
+//     int test(int a, int b){
+//         return a+b; //เขียนประมวลผลค่าเพื่อควบคุม rover เผื่อถ้าบน mbed เขียนยาก
+//     }
+// };
 
 class Node_Rovercontrol : public rclcpp::Node {
 public:
@@ -27,17 +27,14 @@ public:
             "topic_speedlimit_t", 10,
             std::bind(&Node_Rovercontrol::topic_spd_callback, this, std::placeholders::_1)
         );
-
         topic_des_sub_ = this->create_subscription<std_msgs::msg::Float32MultiArray>(
             "topic_destination", 10,
             std::bind(&Node_Rovercontrol::topic_des_callback, this, std::placeholders::_1)
         );
-
         topic_direct_sub_ = this->create_subscription<std_msgs::msg::Float32MultiArray>(
             "topic_direction", 10,
             std::bind(&Node_Rovercontrol::topic_direct_callback, this, std::placeholders::_1)
         );
-   
         //topic_rocon_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("pub_rovercontrol", 10);
         topic_rocon_pub_ = this->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
 

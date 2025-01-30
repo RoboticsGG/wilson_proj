@@ -65,7 +65,7 @@ int main()
   //ThisThread::sleep_for(1000);
   
   //mros2::Subscriber sub = node.create_subscription<rovercon_msgs::msg::main_rocon>("pub_rovercontrol", 10, userCallback);
-  mros2::Subscriber sub = node.create_subscription<geometry_msgs::msg::Pose>("cmd_vel", 10, userCallback);
+  mros2::Subscriber sub = node.create_subscription<geometry_msgs::msg::Pose>("pub_rovercontrol", 10, userCallback);
 
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");

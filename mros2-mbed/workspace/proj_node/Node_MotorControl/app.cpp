@@ -20,11 +20,11 @@
 #include "std_msgs/msg/u_int8.hpp"
 #include "std_msgs/msg/float32.hpp"
 #include "std_msgs/msg/string.hpp"
-#include "rovercon_msgs/msg/sub_rocon.hpp"
-#include "rovercon_msgs/msg/main_rocon.hpp"
-#include "geometry_msgs/msg/pose.hpp"
+#include "msgs_mainrocon/msg/sub_rocon.hpp"
+#include "msgs_mainrocon/msg/main_rocon.hpp"
+//#include "geometry_msgs/msg/pose.hpp"
 
-void userCallback(rovercon_msgs::msg::MainRocon *msg)
+void userCallback(msgs_mainrocon::msg::MainRocon *msg)
 {
     MROS2_INFO("Subscribe topic pub_rovercontrol");
 }
@@ -64,7 +64,7 @@ int main()
   // pub.publish(msg);
   //ThisThread::sleep_for(1000);
   
-  mros2::Subscriber sub = node.create_subscription<rovercon_msgs::msg::MainRocon>("pub_rovercontrol", 10, userCallback);
+  mros2::Subscriber sub = node.create_subscription<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10, userCallback);
   //mros2::Subscriber sub = node.create_subscription<geometry_msgs::msg::Pose>("pub_rovercontrol", 10, userCallback);
 
   osDelay(1000);

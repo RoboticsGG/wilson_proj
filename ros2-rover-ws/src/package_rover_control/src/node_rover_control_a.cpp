@@ -4,7 +4,7 @@
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 #include <std_msgs/msg/u_int16.hpp>
-#include <std_msgs/msg/float32.hpp>
+#include <std_msgs/msg/float64.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
 
 #include <string>
@@ -98,10 +98,10 @@ private:
         auto subrocon = msgs_rovercon::msg::SubRocon();
         auto mainrocon = msgs_mainrocon::msg::MainRocon();
 
-        subrocon.fdr_msg = static_cast<uint16_t>(ro_ctrl_msg1_);
-        subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
-        subrocon.spd_msg = static_cast<uint16_t>(spd_msg_);
-        subrocon.bdr_msg = static_cast<uint16_t>(1);
+        subrocon.fdr_msg = static_cast<double>(ro_ctrl_msg1_);
+        subrocon.ro_ctrl_msg = static_cast<double>(ro_ctrl_msg2_);
+        subrocon.spd_msg = static_cast<double>(spd_msg_);
+        subrocon.bdr_msg = static_cast<double>(1);
 
         mainrocon.mainrocon_msg = subrocon;
 
@@ -157,16 +157,16 @@ private:
     //std::vector<float> ro_ctrl_msg_;
     float ro_ctrl_msg1_;
     float ro_ctrl_msg2_;
-    uint16_t fDr_msg_;
     uint8_t spd_msg_;
-    uint16_t i16_spd_msg_;
-    uint16_t bDr_msg_;
     float destination_a_;
     float destination_b_;
     float destination_c_;
 
+    //uint16_t fDr_msg_;
+    //uint16_t i16_spd_msg_;
+    //uint16_t bDr_msg_;
+    
     std::vector<float> rover_con_;
-
     std::mutex data_lock_;
 };
 

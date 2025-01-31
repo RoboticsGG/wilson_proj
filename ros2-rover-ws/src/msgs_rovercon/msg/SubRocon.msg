@@ -1,4 +1,4 @@
-float32 fdr_msg
-float32 ro_ctrl_msg
-float32 spd_msg
-float32 bdr_msg
+float64 fdr_msg
+float64 ro_ctrl_msg
+float64 spd_msg
+float64 bdr_msg

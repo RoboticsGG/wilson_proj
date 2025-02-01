@@ -44,15 +44,15 @@ void userCallback(msgs_mainrocon::msg::MainRocon *msg)
 {
     MROS2_INFO("Subscribe topic pub_rovercontrol");
 
-    //MROS2_INFO("fdr_msg: %.1f", msg->mainrocon_msg.fdr_msg);
-    //MROS2_INFO("ro_ctrl_msg: %.2f", msg->mainrocon_msg.ro_ctrl_msg);
-    float dutycy = frontControl(msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg);
+    MROS2_INFO("fdr_msg: %d", msg->mainrocon_msg.fdr_msg);
+    MROS2_INFO("ro_ctrl_msg: %.2f", msg->mainrocon_msg.ro_ctrl_msg);
+    //float dutycy = frontControl(msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg);
 
-    //MROS2_INFO("spd_msg: %.1f", msg->mainrocon_msg.spd_msg);
-    //MROS2_INFO("bdr_msg: %.1f", msg->mainrocon_msg.bdr_msg);
-    auto [percent_dutycycle, EN_A, EN_B] = backControl(msg->mainrocon_msg.bdr_msg, msg->mainrocon_msg.spd_msg);
+    MROS2_INFO("spd_msg: %d", msg->mainrocon_msg.spd_msg);
+    MROS2_INFO("bdr_msg: %d", msg->mainrocon_msg.bdr_msg);
+    //auto [percent_dutycycle, EN_A, EN_B] = backControl(msg->mainrocon_msg.bdr_msg, msg->mainrocon_msg.spd_msg);
 
-    motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
+    //motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
 }
 
 float frontControl(double frontDirection, double diff_degree) {

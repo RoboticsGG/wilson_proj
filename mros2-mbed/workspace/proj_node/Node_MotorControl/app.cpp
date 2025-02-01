@@ -22,10 +22,12 @@
 #include "std_msgs/msg/string.hpp"
 #include "msgs_mainrocon/msg/sub_rocon.hpp"
 #include "msgs_mainrocon/msg/main_rocon.hpp"
+
+#include <tuple>
 //#include "geometry_msgs/msg/pose.hpp"
 
 float frontControl(double frontDirection, double diff_degree);
-float backControl(double backDirection, double dutycycle_PWM);
+std::tuple<float, uint8_t, uint8_t> backControl(double backDirection, double dutycycle_PWM);
 void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float percent_dutycycle);
 
 PwmOut DirectPWM(PA_6);
@@ -56,9 +58,9 @@ void userCallback(msgs_mainrocon::msg::MainRocon *msg)
 float frontControl(double frontDirection, double diff_degree) {
     uint8_t degree = 0;
 
-    if (frontDirection == "1.0") {
+    if (frontDirection == 1.0) {
         degree = servo_center - diff_degree;
-    } else if (frontDirection == "3.0") {
+    } else if (frontDirection == 3.0) {
         degree = servo_center + diff_degree;
     } else {
         degree = servo_center;
@@ -67,7 +69,7 @@ float frontControl(double frontDirection, double diff_degree) {
     return 0.05f + (degree / 180.0f) * (0.10f - 0.05f); 
 }
 
-float backControl(double backDirection, double dutycycle_PWM) {
+std::tuple<float, uint8_t, uint8_t> backControl(double backDirection, double dutycycle_PWM) {
     uint8_t EN_A = 0;
     uint8_t EN_B = 0;
     float cal_percent_dutycycle = dutycycle_PWM / 100.0f;
@@ -86,6 +88,8 @@ float backControl(double backDirection, double dutycycle_PWM) {
 }
 
 void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float percent_dutycycle){
+  duty = std::max(0.0f, std::min(1.0f, duty));
+
   ////////////////////////////////////
   DirectPWM.period_ms(20);
   DirectPWM.write(duty);

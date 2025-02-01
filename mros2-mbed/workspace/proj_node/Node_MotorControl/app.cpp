@@ -28,12 +28,10 @@ void userCallback(msgs_mainrocon::msg::MainRocon *msg)
 {
     MROS2_INFO("Subscribe topic pub_rovercontrol");
 
-    msgs_rovercon::msg::SubRocon sub_msg = msg->mainrocon_msg;
-
-    MROS2_INFO("fdr_msg: %.2f", sub_msg.fdr_msg);
-    MROS2_INFO("ro_ctrl_msg: %.2f", sub_msg.ro_ctrl_msg);
-    MROS2_INFO("spd_msg: %.2f", sub_msg.spd_msg);
-    MROS2_INFO("bdr_msg: %.2f", sub_msg.bdr_msg);
+    MROS2_INFO("fdr_msg: %.1f", msg->mainrocon_msg.fdr_msg);
+    MROS2_INFO("ro_ctrl_msg: %.2f", msg->mainrocon_msg.ro_ctrl_msg);
+    MROS2_INFO("spd_msg: %.1f", msg->mainrocon_msg.spd_msg);
+    MROS2_INFO("bdr_msg: %.1f", msg->mainrocon_msg.bdr_msg);
 }
 
 int main()

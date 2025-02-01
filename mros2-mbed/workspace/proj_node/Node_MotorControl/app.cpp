@@ -36,6 +36,7 @@ DigitalOut MortorFWEN(PE_13);
 DigitalOut MortorBWEN(PF_13);
 
 uint8_t servo_center = 100;
+uint8_t period_PWM = 20;
 
 void userCallback(msgs_mainrocon::msg::MainRocon *msg)
 {

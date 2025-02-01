@@ -27,7 +27,7 @@
 //#include "geometry_msgs/msg/pose.hpp"
 
 float frontControl(uint8_t frontDirection, float diff_degree);
-std::tuple<float, uint8_t, uint8_t> backControl(double backDirection, double dutycycle_PWM);
+std::tuple<float, uint8_t, uint8_t> backControl(uint8_t backDirection, uint8_t dutycycle_PWM);
 void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float percent_dutycycle);
 
 PwmOut DirectPWM(PA_6);

@@ -24,14 +24,77 @@
 #include "msgs_mainrocon/msg/main_rocon.hpp"
 //#include "geometry_msgs/msg/pose.hpp"
 
+float frontControl(double frontDirection, double diff_degree);
+float backControl(double backDirection, double dutycycle_PWM);
+void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float percent_dutycycle);
+
+PwmOut DirectPWM(PA_6);
+PwmOut MortorRPWM(PE_11);
+PwmOut MortorLPWM(PD_15);
+
+DigitalOut MortorFWEN(PE_13);
+DigitalOut MortorBWEN(PF_13);
+
+uint8_t servo_center = 100;
+
 void userCallback(msgs_mainrocon::msg::MainRocon *msg)
 {
     MROS2_INFO("Subscribe topic pub_rovercontrol");
 
-    MROS2_INFO("fdr_msg: %.1f", msg->mainrocon_msg.fdr_msg);
-    MROS2_INFO("ro_ctrl_msg: %.2f", msg->mainrocon_msg.ro_ctrl_msg);
-    MROS2_INFO("spd_msg: %.1f", msg->mainrocon_msg.spd_msg);
-    MROS2_INFO("bdr_msg: %.1f", msg->mainrocon_msg.bdr_msg);
+    //MROS2_INFO("fdr_msg: %.1f", msg->mainrocon_msg.fdr_msg);
+    //MROS2_INFO("ro_ctrl_msg: %.2f", msg->mainrocon_msg.ro_ctrl_msg);
+    float dutycy = frontControl(msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg);
+
+    //MROS2_INFO("spd_msg: %.1f", msg->mainrocon_msg.spd_msg);
+    //MROS2_INFO("bdr_msg: %.1f", msg->mainrocon_msg.bdr_msg);
+    auto [percent_dutycycle, EN_A, EN_B] = backControl(msg->mainrocon_msg.bdr_msg, msg->mainrocon_msg.spd_msg);
+
+    motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
+}
+
+float frontControl(double frontDirection, double diff_degree) {
+    uint8_t degree = 0;
+
+    if (frontDirection == "1.0") {
+        degree = servo_center - diff_degree;
+    } else if (frontDirection == "3.0") {
+        degree = servo_center + diff_degree;
+    } else {
+        degree = servo_center;
+    }
+
+    return 0.05f + (degree / 180.0f) * (0.10f - 0.05f); 
+}
+
+float backControl(double backDirection, double dutycycle_PWM) {
+    uint8_t EN_A = 0;
+    uint8_t EN_B = 0;
+    float cal_percent_dutycycle = dutycycle_PWM / 100.0f;
+
+    if (backDirection == 1.0) {
+        EN_A = 1;
+        EN_B = 0;
+    } else if (backDirection == 2.0) {
+        EN_A = 0;
+        EN_B = 1;
+    } else {
+        EN_A = 0;
+        EN_B = 0;
+    }
+    return {cal_percent_dutycycle, EN_A, EN_B};
+}
+
+void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float percent_dutycycle){
+  ////////////////////////////////////
+  DirectPWM.period_ms(20);
+  DirectPWM.write(duty);
+  ////////////////////////////////////
+  MortorFWEN.write(EN_A);
+  MortorBWEN.write(EN_B);
+  MortorRPWM.period_us(period_PWM);
+  MortorRPWM.write(percent_dutycycle);
+  MortorLPWM.period_us(period_PWM);
+  MortorLPWM.write(percent_dutycycle);
 }
 
 int main()

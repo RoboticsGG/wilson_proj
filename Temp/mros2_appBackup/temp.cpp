@@ -14,36 +14,29 @@
  * limitations under the License.
  */
 
+#include "mbed.h"
 #include "mros2.h"
 #include "mros2-platform.h"
-#include "std_msgs/msg/string.hpp"
-#include "std_msgs/msg/u_int16.hpp"
+#include "std_msgs/msg/u_int8.hpp"
 #include "std_msgs/msg/float32.hpp"
-#include <cstdlib>
+#include "std_msgs/msg/string.hpp"
+#include "msgs_mainrocon/msg/sub_rocon.hpp"
+#include "msgs_mainrocon/msg/main_rocon.hpp"
+//#include "geometry_msgs/msg/pose.hpp"
 
-void testCallback(std_msgs::msg::String *msg)
+void userCallback(msgs_mainrocon::msg::MainRocon *msg)
 {
-  MROS2_INFO("subscribed msg: '%s'\r\n", msg->data.c_str());
-}
+    MROS2_INFO("Subscribe topic pub_rovercontrol");
 
-void rocon_FdirectCallback(std_msgs::msg::UInt16 *msg) {
-    MROS2_INFO("subscribed Front Direct msg: '%d'\r\n", msg->data);
-}
-
-void rocon_angleCallback(std_msgs::msg::Float32 *msg) {
-    MROS2_INFO("subscribed Angle msg: '%f'\r\n", msg->data);
-}
-
-void rocon_speedCallback(std_msgs::msg::UInt16 *msg) {
-    MROS2_INFO("subscribed Speed msg: '%d'\r\n", msg->data);
-}
-
-void rocon_BdirectCallback(std_msgs::msg::UInt16 *msg) {
-    MROS2_INFO("subscribed Back Direct msg: '%d'\r\n", msg->data);
+    MROS2_INFO("fdr_msg: %.1f", msg->mainrocon_msg.fdr_msg);
+    MROS2_INFO("ro_ctrl_msg: %.2f", msg->mainrocon_msg.ro_ctrl_msg);
+    MROS2_INFO("spd_msg: %.1f", msg->mainrocon_msg.spd_msg);
+    MROS2_INFO("bdr_msg: %.1f", msg->mainrocon_msg.bdr_msg);
 }
 
 int main()
 {
+  /* connect to the network */
   if (mros2_platform::network_connect())
   {
     MROS2_ERROR("failed to connect and setup network! aborting,,,");
@@ -55,18 +48,16 @@ int main()
   }
 
   MROS2_INFO("%s start!", MROS2_PLATFORM_NAME);
-  MROS2_INFO("app name: Sub_From_RPI4_V2");
+  MROS2_INFO("app name: DataPack_V2");
 
   mros2::init(0, NULL);
   MROS2_DEBUG("mROS 2 initialization is completed");
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  mros2::Subscriber sub = node.create_subscription<std_msgs::msg::String>("pub_rovercontrol", 10, testCallback);
-  mros2::Subscriber sub_Fdirect = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_Fdirec", 10, rocon_FdirectCallback);
-  mros2::Subscriber sub_angle = node.create_subscription<std_msgs::msg::Float32>("pub_rocon_angle", 10, rocon_angleCallback);
-  mros2::Subscriber sub_speed = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_speed", 10, rocon_speedCallback);
-  mros2::Subscriber sub_Bdirect = node.create_subscription<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10, rocon_BdirectCallback);
-
+  //mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
+  
+  mros2::Subscriber sub = node.create_subscription<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10, userCallback);
+  
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");
 

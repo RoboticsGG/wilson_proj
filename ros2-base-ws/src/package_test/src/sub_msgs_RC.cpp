@@ -20,7 +20,7 @@ public:
 private:
   void topic_callback(const msgs_mainrocon::msg::MainRocon::SharedPtr message) const
   {
-    RCLCPP_INFO(this->get_logger(), "Subscribed msg: fdr_msg=%.1f, ro_ctrl_msg=%.2f, spd_msg=%.1f, bdr_msg=%.1f", message->mainrocon_msg.fdr_msg, message->mainrocon_msg.ro_ctrl_msg, message->mainrocon_msg.spd_msg, message->mainrocon_msg.bdr_msg);
+    RCLCPP_INFO(this->get_logger(), "Subscribed msg: fdr_msg=%d, ro_ctrl_msg=%.2f, spd_msg=%d, bdr_msg=%d", message->mainrocon_msg.fdr_msg, message->mainrocon_msg.ro_ctrl_msg, message->mainrocon_msg.spd_msg, message->mainrocon_msg.bdr_msg);
   }
   rclcpp::Subscription<msgs_mainrocon::msg::MainRocon>::SharedPtr subscriber_;
 };

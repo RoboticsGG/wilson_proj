@@ -24,7 +24,7 @@ class Node_Rovercontrol : public rclcpp::Node {
 public:
     Node_Rovercontrol() : Node("node_rovercontrol") {
         topic_spd_sub_ = this->create_subscription<std_msgs::msg::UInt8>(
-            "topic_speedlimit_t", 10,
+            "topic_speedlimit", 10,
             std::bind(&Node_Rovercontrol::topic_spd_callback, this, std::placeholders::_1)
         );
         topic_des_sub_ = this->create_subscription<std_msgs::msg::Float32MultiArray>(

@@ -10,7 +10,7 @@ public:
         publisher_ = this->create_publisher<msgs_positions::msg::GnssData>("gnss_data", 10);
         //processJSON(R"({"time":"2025-02-04 09:42:25","numSatellites":6,"fix":false,"latitude":37.7749,"longitude":-122.4194})");
         timer_ = this->create_wall_timer(
-          std::chrono::second(1), std::bind(&GNSSPublisher::publishData, this));
+          std::chrono::seconds(1), std::bind(&GNSSPublisher::publishData, this));
     }
 
 private:

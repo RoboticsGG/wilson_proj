@@ -43,17 +43,21 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_sub_destination" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_sub_destination")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_destination" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_destination")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_sub_destination"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_destination"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route" TYPE EXECUTABLE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route/node_sub_destination")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_sub_destination" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_sub_destination")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route" TYPE EXECUTABLE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route/node_destination")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_destination" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_destination")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_destination"
+         OLD_RPATH "/opt/ros/humble/lib:"
+         NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_sub_destination")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_navigate_route/node_destination")
     endif()
   endif()
 endif()

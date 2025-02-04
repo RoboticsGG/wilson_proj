@@ -1,0 +1,52 @@
+[0.055s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions -- -j4 -l4
+[0.166s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.802s] -- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)
+[1.199s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.265s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.344s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.439s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.573s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.754s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[2.607s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[2.607s]   execute_process(/usr/bin/python3 -m rosidl_adapter --package-name
+[2.608s]   msgs_positions --arguments-file
+[2.608s]   /home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_adapter__arguments__msgs_positions.json
+[2.608s]   --output-dir
+[2.608s]   /home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_adapter/msgs_positions
+[2.609s]   --output-file
+[2.609s]   /home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_adapter/msgs_positions.idls)
+[2.610s]   returned error code 1:
+[2.610s] 
+[2.610s]   Error processing ' uint32 seq' of 'msgs_positions/NavSatFix': 'string index
+[2.611s]   out of range'
+[2.611s] 
+[2.611s]   Traceback (most recent call last):
+[2.612s] 
+[2.612s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[2.612s]       return _run_code(code, main_globals, None,
+[2.613s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[2.613s]       exec(code, run_globals)
+[2.613s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[2.614s]       sys.exit(main())
+[2.614s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[2.615s]       abs_idl_file = convert_to_idl(
+[2.615s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl
+[2.616s]       return convert_msg_to_idl(
+[2.617s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl
+[2.619s]       msg = parse_message_string(package_name, input_file.stem, content)
+[2.620s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 520, in parse_message_string
+[2.621s]       Type(type_string, context_package_name=pkg_name),
+[2.621s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 241, in __init__
+[2.622s]       self.is_array = type_string[-1] == ']'
+[2.622s] 
+[2.623s]   IndexError: string index out of range
+[2.625s] 
+[2.626s] Call Stack (most recent call first):
+[2.626s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[2.627s]   CMakeLists.txt:16 (rosidl_generate_interfaces)
+[2.627s] 
+[2.627s] [0m
+[2.628s] -- Configuring incomplete, errors occurred!
+[2.628s] See also "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/CMakeFiles/CMakeOutput.log".
+[2.632s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[2.639s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions -- -j4 -l4

@@ -1,5 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
-#include "sensor_msgs/msg/nav_sat_fix.hpp"
+#include "msgs_positions/msg/nav_sat_fix.hpp"
 #include <serial/serial.h>
 #include <string>
 #include <iostream>

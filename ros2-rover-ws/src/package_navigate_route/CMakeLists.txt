@@ -11,13 +11,13 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(node_sub_destination src/node_sub_destination.cpp)
-target_include_directories(node_sub_destination PUBLIC
+add_executable(node_destination src/node_destination.cpp)
+target_include_directories(node_destination PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-target_compile_features(node_sub_destination PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+target_compile_features(node_destination PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
-install(TARGETS node_sub_destination
+install(TARGETS node_destination
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

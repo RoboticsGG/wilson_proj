@@ -20,6 +20,8 @@ include_directories(/usr/include/jsoncpp)
 add_executable(node_destination src/node_destination.cpp)
 ament_target_dependencies(node_destination rclcpp std_msgs jsoncpp)
 
+target_link_libraries(node_destination jsoncpp)
+
 target_include_directories(node_destination PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)

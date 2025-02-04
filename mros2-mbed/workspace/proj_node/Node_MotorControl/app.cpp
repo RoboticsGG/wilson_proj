@@ -26,8 +26,8 @@
 #include <tuple>
 //#include "geometry_msgs/msg/pose.hpp"
 
-float frontControl(double frontDirection, double diff_degree);
-std::tuple<float, uint8_t, uint8_t> backControl(double backDirection, double dutycycle_PWM);
+float frontControl(uint8_t frontDirection, float diff_degree);
+std::tuple<float, uint8_t, uint8_t> backControl(uint8_t backDirection, uint8_t dutycycle_PWM);
 void motorDrive(float duty,uint8_t EN_A,uint8_t EN_B ,uint8_t period_PWM, float percent_dutycycle);
 
 PwmOut DirectPWM(PA_6);
@@ -42,25 +42,27 @@ uint8_t period_PWM = 20;
 
 void userCallback(msgs_mainrocon::msg::MainRocon *msg)
 {
-    MROS2_INFO("Subscribe topic pub_rovercontrol");
+    MROS2_INFO("########## Subscribe topic pub_rovercontrol ###############");
 
-    //MROS2_INFO("fdr_msg: %.1f", msg->mainrocon_msg.fdr_msg);
+    //MROS2_INFO("fdr_msg: %d", msg->mainrocon_msg.fdr_msg);
     //MROS2_INFO("ro_ctrl_msg: %.2f", msg->mainrocon_msg.ro_ctrl_msg);
     float dutycy = frontControl(msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg);
 
-    //MROS2_INFO("spd_msg: %.1f", msg->mainrocon_msg.spd_msg);
-    //MROS2_INFO("bdr_msg: %.1f", msg->mainrocon_msg.bdr_msg);
+    //MROS2_INFO("spd_msg: %d", msg->mainrocon_msg.spd_msg);
+    //MROS2_INFO("bdr_msg: %d", msg->mainrocon_msg.bdr_msg);
     auto [percent_dutycycle, EN_A, EN_B] = backControl(msg->mainrocon_msg.bdr_msg, msg->mainrocon_msg.spd_msg);
 
     motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
+
+    MROS2_INFO("fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d", msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
 }
 
-float frontControl(double frontDirection, double diff_degree) {
+float frontControl(uint8_t frontDirection, float diff_degree) {
     uint8_t degree = 0;
 
-    if (frontDirection == 1.0) {
+    if (frontDirection == 1) {
         degree = servo_center - diff_degree;
-    } else if (frontDirection == 3.0) {
+    } else if (frontDirection == 3) {
         degree = servo_center + diff_degree;
     } else {
         degree = servo_center;
@@ -69,7 +71,7 @@ float frontControl(double frontDirection, double diff_degree) {
     return 0.05f + (degree / 180.0f) * (0.10f - 0.05f); 
 }
 
-std::tuple<float, uint8_t, uint8_t> backControl(double backDirection, double dutycycle_PWM) {
+std::tuple<float, uint8_t, uint8_t> backControl(uint8_t backDirection, uint8_t dutycycle_PWM) {
     uint8_t EN_A = 0;
     uint8_t EN_B = 0;
     float cal_percent_dutycycle = dutycycle_PWM / 100.0f;

@@ -24,7 +24,7 @@ public:
 
 private:
     uint8_t generate_random_speedlimit() {
-        return static_cast<uint8_t>(10 + std::rand() % 90); // Generate random number between 10 and 99
+        return static_cast<uint8_t>(10 + std::rand() % 50); // Generate random number between 10 and 50
     }
 
     void publish_parameters() {

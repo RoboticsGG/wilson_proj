@@ -12,7 +12,6 @@ find_package(std_msgs REQUIRED)
 find_package(jsoncpp REQUIRED)
 
 include_directories(/usr/include/jsoncpp)
-
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)

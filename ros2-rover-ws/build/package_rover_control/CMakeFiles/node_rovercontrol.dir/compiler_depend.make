@@ -719,11 +719,11 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16__builder.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16__traits.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16__type_support.hpp \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/float64.hpp \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__struct.hpp \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__builder.hpp \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__traits.hpp \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__type_support.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/float32.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__builder.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__type_support.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/float32_multi_array.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__struct.hpp \
@@ -732,32 +732,8 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__traits.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__type_support.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/sub_rocon.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__struct.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__builder.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__traits.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__type_support.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_generator_cpp__visibility_control.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/main_rocon.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__struct.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__builder.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__traits.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__type_support.hpp \
-  /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/rosidl_generator_cpp__visibility_control.hpp
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__type_support.hpp
 
-
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/rosidl_generator_cpp__visibility_control.hpp:
-
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__traits.hpp:
-
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__struct.hpp:
-
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__type_support.hpp:
-
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__builder.hpp:
-
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/sub_rocon.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp:
 
@@ -767,9 +743,11 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/float32_multi_array.hpp:
 
-/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__traits.hpp:
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__traits.hpp:
 
-/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__struct.hpp:
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__struct.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/float32.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16__traits.hpp:
 
@@ -802,8 +780,6 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
 /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/dynamic_storage.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_service.hpp:
-
-/opt/ros/humble/include/std_msgs/std_msgs/msg/float64.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_event_handler.hpp:
 
@@ -1047,6 +1023,8 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
 
 /usr/include/c++/11/bits/ostream_insert.h:
 
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__type_support.hpp:
+
 /usr/include/aarch64-linux-gnu/bits/locale.h:
 
 /usr/include/locale.h:
@@ -1081,8 +1059,6 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
 
 /usr/include/aarch64-linux-gnu/c++/11/bits/ctype_base.h:
 
-/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__builder.hpp:
-
 /usr/include/c++/11/cerrno:
 
 /usr/include/aarch64-linux-gnu/c++/11/bits/error_constants.h:
@@ -1102,8 +1078,6 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
 /usr/include/aarch64-linux-gnu/bits/typesizes.h:
 
 /usr/include/c++/11/bits/nested_exception.h:
-
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__struct.hpp:
 
 /opt/ros/humble/include/rmw/rmw/publisher_options.h:
 
@@ -1343,13 +1317,9 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
 
 /opt/ros/humble/include/rcl/rcl/network_flow_endpoints.h:
 
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__type_support.hpp:
-
 /usr/include/aarch64-linux-gnu/bits/sched.h:
 
 /usr/include/strings.h:
-
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_generator_cpp__visibility_control.hpp:
 
 /usr/include/c++/11/bits/stl_pair.h:
 
@@ -1434,8 +1404,6 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
 /usr/include/aarch64-linux-gnu/c++/11/bits/messages_members.h:
 
 /usr/include/asm-generic/posix_types.h:
-
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/main_rocon.hpp:
 
 /usr/include/stdc-predef.h:
 
@@ -1716,6 +1684,8 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
 /usr/include/c++/11/bits/enable_special_members.h:
 
 /usr/include/c++/11/bits/basic_ios.tcc:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_value.hpp:
 
@@ -2003,10 +1973,6 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
 
 /opt/ros/humble/include/tracetools/tracetools/tracetools.h:
 
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__builder.hpp:
-
-/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__type_support.hpp:
-
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int8__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp:
@@ -2056,8 +2022,6 @@ CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wil
 /usr/include/wctype.h:
 
 /opt/ros/humble/include/rmw/rmw/topic_endpoint_info.h:
-
-/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__traits.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h:
 

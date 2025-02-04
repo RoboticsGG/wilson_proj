@@ -198,6 +198,32 @@ package_rover_control_uninstall/fast:
 .PHONY : package_rover_control_uninstall/fast
 
 #=============================================================================
+# Target rules for targets named motorcontrol
+
+# Build rule for target.
+motorcontrol: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 motorcontrol
+.PHONY : motorcontrol
+
+# fast build rule for target.
+motorcontrol/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/build
+.PHONY : motorcontrol/fast
+
+#=============================================================================
+# Target rules for targets named node_motor_control
+
+# Build rule for target.
+node_motor_control: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 node_motor_control
+.PHONY : node_motor_control
+
+# fast build rule for target.
+node_motor_control/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/build
+.PHONY : node_motor_control/fast
+
+#=============================================================================
 # Target rules for targets named node_rovercontrol
 
 # Build rule for target.
@@ -209,6 +235,54 @@ node_rovercontrol: cmake_check_build_system
 node_rovercontrol/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/build
 .PHONY : node_rovercontrol/fast
+
+rclcpp_components/node_main_node_motor_control.o: rclcpp_components/node_main_node_motor_control.cpp.o
+.PHONY : rclcpp_components/node_main_node_motor_control.o
+
+# target to build an object file
+rclcpp_components/node_main_node_motor_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/rclcpp_components/node_main_node_motor_control.cpp.o
+.PHONY : rclcpp_components/node_main_node_motor_control.cpp.o
+
+rclcpp_components/node_main_node_motor_control.i: rclcpp_components/node_main_node_motor_control.cpp.i
+.PHONY : rclcpp_components/node_main_node_motor_control.i
+
+# target to preprocess a source file
+rclcpp_components/node_main_node_motor_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/rclcpp_components/node_main_node_motor_control.cpp.i
+.PHONY : rclcpp_components/node_main_node_motor_control.cpp.i
+
+rclcpp_components/node_main_node_motor_control.s: rclcpp_components/node_main_node_motor_control.cpp.s
+.PHONY : rclcpp_components/node_main_node_motor_control.s
+
+# target to generate assembly for a file
+rclcpp_components/node_main_node_motor_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/rclcpp_components/node_main_node_motor_control.cpp.s
+.PHONY : rclcpp_components/node_main_node_motor_control.cpp.s
+
+src/node_motor_control.o: src/node_motor_control.cpp.o
+.PHONY : src/node_motor_control.o
+
+# target to build an object file
+src/node_motor_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/src/node_motor_control.cpp.o
+.PHONY : src/node_motor_control.cpp.o
+
+src/node_motor_control.i: src/node_motor_control.cpp.i
+.PHONY : src/node_motor_control.i
+
+# target to preprocess a source file
+src/node_motor_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/src/node_motor_control.cpp.i
+.PHONY : src/node_motor_control.cpp.i
+
+src/node_motor_control.s: src/node_motor_control.cpp.s
+.PHONY : src/node_motor_control.s
+
+# target to generate assembly for a file
+src/node_motor_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/src/node_motor_control.cpp.s
+.PHONY : src/node_motor_control.cpp.s
 
 src/node_rover_control_a.o: src/node_rover_control_a.cpp.o
 .PHONY : src/node_rover_control_a.o
@@ -249,7 +323,15 @@ help:
 	@echo "... test"
 	@echo "... package_rover_control_uninstall"
 	@echo "... uninstall"
+	@echo "... motorcontrol"
+	@echo "... node_motor_control"
 	@echo "... node_rovercontrol"
+	@echo "... rclcpp_components/node_main_node_motor_control.o"
+	@echo "... rclcpp_components/node_main_node_motor_control.i"
+	@echo "... rclcpp_components/node_main_node_motor_control.s"
+	@echo "... src/node_motor_control.o"
+	@echo "... src/node_motor_control.i"
+	@echo "... src/node_motor_control.s"
 	@echo "... src/node_rover_control_a.o"
 	@echo "... src/node_rover_control_a.i"
 	@echo "... src/node_rover_control_a.s"

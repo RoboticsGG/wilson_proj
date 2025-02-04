@@ -63,6 +63,8 @@ CMAKE_BINARY_DIR = /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_con
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/motorcontrol.dir/all
+all: CMakeFiles/node_motor_control.dir/all
 all: CMakeFiles/node_rovercontrol.dir/all
 .PHONY : all
 
@@ -73,6 +75,8 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/package_rover_control_uninstall.dir/clean
+clean: CMakeFiles/motorcontrol.dir/clean
+clean: CMakeFiles/node_motor_control.dir/clean
 clean: CMakeFiles/node_rovercontrol.dir/clean
 .PHONY : clean
 
@@ -129,13 +133,65 @@ CMakeFiles/package_rover_control_uninstall.dir/clean:
 .PHONY : CMakeFiles/package_rover_control_uninstall.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/motorcontrol.dir
+
+# All Build rule for target.
+CMakeFiles/motorcontrol.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles --progress-num=1,2 "Built target motorcontrol"
+.PHONY : CMakeFiles/motorcontrol.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/motorcontrol.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/motorcontrol.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles 0
+.PHONY : CMakeFiles/motorcontrol.dir/rule
+
+# Convenience name for target.
+motorcontrol: CMakeFiles/motorcontrol.dir/rule
+.PHONY : motorcontrol
+
+# clean rule for target.
+CMakeFiles/motorcontrol.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motorcontrol.dir/build.make CMakeFiles/motorcontrol.dir/clean
+.PHONY : CMakeFiles/motorcontrol.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/node_motor_control.dir
+
+# All Build rule for target.
+CMakeFiles/node_motor_control.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles --progress-num=3,4 "Built target node_motor_control"
+.PHONY : CMakeFiles/node_motor_control.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/node_motor_control.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/node_motor_control.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles 0
+.PHONY : CMakeFiles/node_motor_control.dir/rule
+
+# Convenience name for target.
+node_motor_control: CMakeFiles/node_motor_control.dir/rule
+.PHONY : node_motor_control
+
+# clean rule for target.
+CMakeFiles/node_motor_control.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_motor_control.dir/build.make CMakeFiles/node_motor_control.dir/clean
+.PHONY : CMakeFiles/node_motor_control.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/node_rovercontrol.dir
 
 # All Build rule for target.
 CMakeFiles/node_rovercontrol.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles --progress-num=1,2 "Built target node_rovercontrol"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles --progress-num=5,6 "Built target node_rovercontrol"
 .PHONY : CMakeFiles/node_rovercontrol.dir/all
 
 # Build rule for subdir invocation for target.

@@ -1,0 +1,434 @@
+[0.000000] (-) TimerEvent: {}
+[0.001414] (-) JobUnselected: {'identifier': 'action_interfaces'}
+[0.001531] (-) JobUnselected: {'identifier': 'msgs_mainrocon'}
+[0.001609] (-) JobUnselected: {'identifier': 'package_image_process'}
+[0.001685] (-) JobUnselected: {'identifier': 'package_navigate_route'}
+[0.001759] (-) JobUnselected: {'identifier': 'package_position_process'}
+[0.001833] (-) JobUnselected: {'identifier': 'package_rover_control'}
+[0.001905] (-) JobUnselected: {'identifier': 'package_test'}
+[0.001985] (msgs_rovercon) JobQueued: {'identifier': 'msgs_rovercon', 'dependencies': OrderedDict()}
+[0.002065] (msgs_rovercon) JobStarted: {'identifier': 'msgs_rovercon'}
+[0.064457] (msgs_rovercon) JobProgress: {'identifier': 'msgs_rovercon', 'progress': 'cmake'}
+[0.069798] (msgs_rovercon) JobProgress: {'identifier': 'msgs_rovercon', 'progress': 'build'}
+[0.073027] (msgs_rovercon) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon', '--', '-j4', '-l4'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.81.237 44340 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '59'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.81.237 44340 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble')]), 'shell': False}
+[0.098953] (-) TimerEvent: {}
+[0.199677] (-) TimerEvent: {}
+[0.300620] (-) TimerEvent: {}
+[0.401676] (-) TimerEvent: {}
+[0.502919] (-) TimerEvent: {}
+[0.604231] (-) TimerEvent: {}
+[0.705391] (-) TimerEvent: {}
+[0.806718] (-) TimerEvent: {}
+[0.907889] (-) TimerEvent: {}
+[1.008768] (-) TimerEvent: {}
+[1.109552] (-) TimerEvent: {}
+[1.210663] (-) TimerEvent: {}
+[1.311674] (-) TimerEvent: {}
+[1.354634] (msgs_rovercon) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.411895] (-) TimerEvent: {}
+[1.512785] (-) TimerEvent: {}
+[1.613428] (-) TimerEvent: {}
+[1.714005] (-) TimerEvent: {}
+[1.814640] (-) TimerEvent: {}
+[1.915221] (-) TimerEvent: {}
+[2.015843] (-) TimerEvent: {}
+[2.116586] (-) TimerEvent: {}
+[2.217679] (-) TimerEvent: {}
+[2.259882] (msgs_rovercon) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[2.295863] (msgs_rovercon) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.317848] (-) TimerEvent: {}
+[2.325066] (msgs_rovercon) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[2.418040] (-) TimerEvent: {}
+[2.518904] (-) TimerEvent: {}
+[2.619597] (-) TimerEvent: {}
+[2.671175] (msgs_rovercon) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.719788] (-) TimerEvent: {}
+[2.820583] (-) TimerEvent: {}
+[2.921335] (-) TimerEvent: {}
+[3.022062] (-) TimerEvent: {}
+[3.122738] (-) TimerEvent: {}
+[3.223305] (-) TimerEvent: {}
+[3.323945] (-) TimerEvent: {}
+[3.424593] (-) TimerEvent: {}
+[3.525339] (-) TimerEvent: {}
+[3.626543] (-) TimerEvent: {}
+[3.727170] (-) TimerEvent: {}
+[3.827889] (-) TimerEvent: {}
+[3.928695] (-) TimerEvent: {}
+[4.029357] (-) TimerEvent: {}
+[4.114597] (msgs_rovercon) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[4.129561] (-) TimerEvent: {}
+[4.230360] (-) TimerEvent: {}
+[4.331245] (-) TimerEvent: {}
+[4.432195] (-) TimerEvent: {}
+[4.532833] (-) TimerEvent: {}
+[4.633510] (-) TimerEvent: {}
+[4.734492] (-) TimerEvent: {}
+[4.835162] (-) TimerEvent: {}
+[4.935883] (-) TimerEvent: {}
+[5.036655] (-) TimerEvent: {}
+[5.056436] (msgs_rovercon) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[5.136817] (-) TimerEvent: {}
+[5.237532] (-) TimerEvent: {}
+[5.338303] (-) TimerEvent: {}
+[5.439050] (-) TimerEvent: {}
+[5.539792] (-) TimerEvent: {}
+[5.640941] (-) TimerEvent: {}
+[5.741967] (-) TimerEvent: {}
+[5.842681] (-) TimerEvent: {}
+[5.943595] (-) TimerEvent: {}
+[6.044579] (-) TimerEvent: {}
+[6.145473] (-) TimerEvent: {}
+[6.246352] (-) TimerEvent: {}
+[6.248958] (msgs_rovercon) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[6.346501] (-) TimerEvent: {}
+[6.373356] (msgs_rovercon) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[6.446647] (-) TimerEvent: {}
+[6.505424] (msgs_rovercon) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[6.506322] (msgs_rovercon) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[6.506829] (msgs_rovercon) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[6.546849] (-) TimerEvent: {}
+[6.566256] (msgs_rovercon) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[6.647021] (-) TimerEvent: {}
+[6.706173] (msgs_rovercon) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[6.720427] (msgs_rovercon) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[6.738952] (msgs_rovercon) StdoutLine: {'line': b'-- Configuring done\n'}
+[6.747192] (-) TimerEvent: {}
+[6.847912] (-) TimerEvent: {}
+[6.948629] (-) TimerEvent: {}
+[7.007586] (msgs_rovercon) StdoutLine: {'line': b'-- Generating done\n'}
+[7.048801] (-) TimerEvent: {}
+[7.058719] (msgs_rovercon) StdoutLine: {'line': b'-- Build files have been written to: /home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon\n'}
+[7.149013] (-) TimerEvent: {}
+[7.197277] (msgs_rovercon) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[7.249282] (-) TimerEvent: {}
+[7.250602] (msgs_rovercon) StdoutLine: {'line': b'[  6%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[7.311346] (msgs_rovercon) StdoutLine: {'line': b'[  6%] Built target ament_cmake_python_copy_msgs_rovercon\n'}
+[7.349505] (-) TimerEvent: {}
+[7.450644] (-) TimerEvent: {}
+[7.551403] (-) TimerEvent: {}
+[7.653478] (-) TimerEvent: {}
+[7.754501] (-) TimerEvent: {}
+[7.856943] (-) TimerEvent: {}
+[7.960080] (-) TimerEvent: {}
+[8.061514] (-) TimerEvent: {}
+[8.163144] (-) TimerEvent: {}
+[8.264716] (-) TimerEvent: {}
+[8.366432] (-) TimerEvent: {}
+[8.468097] (-) TimerEvent: {}
+[8.572403] (-) TimerEvent: {}
+[8.657143] (msgs_rovercon) StdoutLine: {'line': b'[  6%] Built target msgs_rovercon__cpp\n'}
+[8.672615] (-) TimerEvent: {}
+[8.685156] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_generator_c\x1b[0m\n'}
+[8.715296] (msgs_rovercon) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[8.716117] (msgs_rovercon) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[8.754635] (msgs_rovercon) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding C object CMakeFiles/msgs_rovercon__rosidl_generator_c.dir/rosidl_generator_c/msgs_rovercon/msg/detail/sub_rocon__functions.c.o\x1b[0m\n'}
+[8.772845] (-) TimerEvent: {}
+[8.873593] (-) TimerEvent: {}
+[8.975075] (-) TimerEvent: {}
+[9.027907] (msgs_rovercon) StdoutLine: {'line': b'running egg_info\n'}
+[9.032869] (msgs_rovercon) StdoutLine: {'line': b'writing msgs_rovercon.egg-info/PKG-INFO\n'}
+[9.034777] (msgs_rovercon) StdoutLine: {'line': b'writing dependency_links to msgs_rovercon.egg-info/dependency_links.txt\n'}
+[9.036570] (msgs_rovercon) StdoutLine: {'line': b'writing top-level names to msgs_rovercon.egg-info/top_level.txt\n'}
+[9.075280] (-) TimerEvent: {}
+[9.107230] (msgs_rovercon) StdoutLine: {'line': b"reading manifest file 'msgs_rovercon.egg-info/SOURCES.txt'\n"}
+[9.160296] (msgs_rovercon) StdoutLine: {'line': b"writing manifest file 'msgs_rovercon.egg-info/SOURCES.txt'\n"}
+[9.175526] (-) TimerEvent: {}
+[9.277329] (-) TimerEvent: {}
+[9.321494] (msgs_rovercon) StdoutLine: {'line': b'[ 16%] Built target ament_cmake_python_build_msgs_rovercon_egg\n'}
+[9.375651] (msgs_rovercon) StdoutLine: {'line': b'[ 19%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[9.377583] (-) TimerEvent: {}
+[9.478792] (-) TimerEvent: {}
+[9.579507] (-) TimerEvent: {}
+[9.680239] (-) TimerEvent: {}
+[9.780934] (-) TimerEvent: {}
+[9.881638] (-) TimerEvent: {}
+[9.982493] (-) TimerEvent: {}
+[10.047685] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[10.082624] (-) TimerEvent: {}
+[10.088331] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[10.115773] (msgs_rovercon) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/msgs_rovercon__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/msgs_rovercon/msg/detail/sub_rocon__type_support.cpp.o\x1b[0m\n'}
+[10.159059] (msgs_rovercon) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/msgs_rovercon__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/msgs_rovercon/msg/detail/dds_fastrtps/sub_rocon__type_support.cpp.o\x1b[0m\n'}
+[10.182818] (-) TimerEvent: {}
+[10.284086] (-) TimerEvent: {}
+[10.384812] (-) TimerEvent: {}
+[10.485507] (-) TimerEvent: {}
+[10.537041] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_typesupport_cpp\x1b[0m\n'}
+[10.585750] (-) TimerEvent: {}
+[10.609420] (msgs_rovercon) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/msgs_rovercon__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/msgs_rovercon/msg/sub_rocon__type_support.cpp.o\x1b[0m\n'}
+[10.685988] (-) TimerEvent: {}
+[10.787590] (-) TimerEvent: {}
+[10.888302] (-) TimerEvent: {}
+[10.988992] (-) TimerEvent: {}
+[11.089642] (-) TimerEvent: {}
+[11.190315] (-) TimerEvent: {}
+[11.311330] (-) TimerEvent: {}
+[11.412210] (-) TimerEvent: {}
+[11.513071] (-) TimerEvent: {}
+[11.613984] (-) TimerEvent: {}
+[11.714763] (-) TimerEvent: {}
+[11.815605] (-) TimerEvent: {}
+[11.916436] (-) TimerEvent: {}
+[12.017305] (-) TimerEvent: {}
+[12.118120] (-) TimerEvent: {}
+[12.219107] (-) TimerEvent: {}
+[12.320010] (-) TimerEvent: {}
+[12.420837] (-) TimerEvent: {}
+[12.521676] (-) TimerEvent: {}
+[12.622715] (-) TimerEvent: {}
+[12.656292] (msgs_rovercon) StdoutLine: {'line': b'[ 35%] \x1b[32m\x1b[1mLinking CXX shared library libmsgs_rovercon__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[12.657779] (msgs_rovercon) StdoutLine: {'line': b'[ 35%] \x1b[32m\x1b[1mLinking C shared library libmsgs_rovercon__rosidl_generator_c.so\x1b[0m\n'}
+[12.722859] (-) TimerEvent: {}
+[12.823884] (-) TimerEvent: {}
+[12.925200] (-) TimerEvent: {}
+[12.932184] (msgs_rovercon) StdoutLine: {'line': b'[ 35%] Built target msgs_rovercon__rosidl_generator_c\n'}
+[12.935860] (msgs_rovercon) StdoutLine: {'line': b'[ 35%] Built target msgs_rovercon__rosidl_typesupport_cpp\n'}
+[12.994409] (msgs_rovercon) StdoutLine: {'line': b'[ 38%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[13.009495] (msgs_rovercon) StdoutLine: {'line': b'[ 41%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[13.025484] (-) TimerEvent: {}
+[13.126547] (-) TimerEvent: {}
+[13.227697] (-) TimerEvent: {}
+[13.328667] (msgs_rovercon) StdoutLine: {'line': b'[ 45%] \x1b[32m\x1b[1mLinking CXX shared library libmsgs_rovercon__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[13.329527] (-) TimerEvent: {}
+[13.430506] (-) TimerEvent: {}
+[13.531349] (-) TimerEvent: {}
+[13.562368] (msgs_rovercon) StdoutLine: {'line': b'[ 45%] Built target msgs_rovercon__rosidl_typesupport_introspection_cpp\n'}
+[13.627046] (msgs_rovercon) StdoutLine: {'line': b'[ 48%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[13.631559] (-) TimerEvent: {}
+[13.732467] (-) TimerEvent: {}
+[13.833467] (-) TimerEvent: {}
+[13.934370] (-) TimerEvent: {}
+[14.035209] (-) TimerEvent: {}
+[14.136057] (-) TimerEvent: {}
+[14.163470] (msgs_rovercon) StdoutLine: {'line': b'[ 51%] \x1b[32m\x1b[1mLinking CXX shared library libmsgs_rovercon__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[14.236409] (-) TimerEvent: {}
+[14.338481] (-) TimerEvent: {}
+[14.440397] (-) TimerEvent: {}
+[14.449068] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[14.470501] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[14.524845] (msgs_rovercon) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding C object CMakeFiles/msgs_rovercon__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/msgs_rovercon/msg/detail/sub_rocon__type_support.c.o\x1b[0m\n'}
+[14.540640] (-) TimerEvent: {}
+[14.556797] (msgs_rovercon) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/msgs_rovercon__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/msgs_rovercon/msg/detail/sub_rocon__type_support_c.cpp.o\x1b[0m\n'}
+[14.627379] (msgs_rovercon) StdoutLine: {'line': b'[ 58%] Built target msgs_rovercon__rosidl_typesupport_fastrtps_cpp\n'}
+[14.640886] (-) TimerEvent: {}
+[14.729209] (msgs_rovercon) StdoutLine: {'line': b'[ 61%] \x1b[32m\x1b[1mLinking C shared library libmsgs_rovercon__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[14.741112] (-) TimerEvent: {}
+[14.842647] (-) TimerEvent: {}
+[14.895170] (msgs_rovercon) StdoutLine: {'line': b'[ 61%] Built target msgs_rovercon__rosidl_typesupport_introspection_c\n'}
+[14.911074] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_typesupport_c\x1b[0m\n'}
+[14.942815] (-) TimerEvent: {}
+[14.963323] (msgs_rovercon) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/msgs_rovercon__rosidl_typesupport_c.dir/rosidl_typesupport_c/msgs_rovercon/msg/sub_rocon__type_support.cpp.o\x1b[0m\n'}
+[15.043028] (-) TimerEvent: {}
+[15.126232] (msgs_rovercon) StdoutLine: {'line': b'[ 67%] \x1b[32m\x1b[1mLinking CXX shared library libmsgs_rovercon__rosidl_typesupport_c.so\x1b[0m\n'}
+[15.143225] (-) TimerEvent: {}
+[15.244114] (-) TimerEvent: {}
+[15.310378] (msgs_rovercon) StdoutLine: {'line': b'[ 67%] Built target msgs_rovercon__rosidl_typesupport_c\n'}
+[15.344275] (-) TimerEvent: {}
+[15.444996] (-) TimerEvent: {}
+[15.545678] (-) TimerEvent: {}
+[15.646388] (-) TimerEvent: {}
+[15.747175] (-) TimerEvent: {}
+[15.847955] (-) TimerEvent: {}
+[15.948666] (-) TimerEvent: {}
+[16.038108] (msgs_rovercon) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX shared library libmsgs_rovercon__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[16.048863] (-) TimerEvent: {}
+[16.149644] (-) TimerEvent: {}
+[16.250651] (-) TimerEvent: {}
+[16.352250] (-) TimerEvent: {}
+[16.401915] (msgs_rovercon) StdoutLine: {'line': b'[ 70%] Built target msgs_rovercon__rosidl_typesupport_fastrtps_c\n'}
+[16.452470] (-) TimerEvent: {}
+[16.508893] (msgs_rovercon) StdoutLine: {'line': b'[ 70%] Built target msgs_rovercon\n'}
+[16.552707] (-) TimerEvent: {}
+[16.613310] (msgs_rovercon) StdoutLine: {'line': b'[ 74%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[16.652862] (-) TimerEvent: {}
+[16.753501] (-) TimerEvent: {}
+[16.854175] (-) TimerEvent: {}
+[16.954826] (-) TimerEvent: {}
+[17.055452] (-) TimerEvent: {}
+[17.156175] (-) TimerEvent: {}
+[17.256864] (-) TimerEvent: {}
+[17.357527] (-) TimerEvent: {}
+[17.458125] (-) TimerEvent: {}
+[17.558724] (-) TimerEvent: {}
+[17.659339] (-) TimerEvent: {}
+[17.760033] (-) TimerEvent: {}
+[17.861304] (-) TimerEvent: {}
+[17.913828] (msgs_rovercon) StdoutLine: {'line': b'[ 74%] Built target msgs_rovercon__py\n'}
+[17.961514] (-) TimerEvent: {}
+[17.965866] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_generator_py\x1b[0m\n'}
+[18.034296] (msgs_rovercon) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding C object CMakeFiles/msgs_rovercon__rosidl_generator_py.dir/rosidl_generator_py/msgs_rovercon/msg/_sub_rocon_s.c.o\x1b[0m\n'}
+[18.061836] (-) TimerEvent: {}
+[18.162703] (-) TimerEvent: {}
+[18.263365] (-) TimerEvent: {}
+[18.364083] (-) TimerEvent: {}
+[18.464848] (-) TimerEvent: {}
+[18.565601] (-) TimerEvent: {}
+[18.666290] (-) TimerEvent: {}
+[18.713562] (msgs_rovercon) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/msgs_rovercon/libmsgs_rovercon__rosidl_generator_py.so\x1b[0m\n'}
+[18.766518] (-) TimerEvent: {}
+[18.867244] (-) TimerEvent: {}
+[18.905769] (msgs_rovercon) StdoutLine: {'line': b'[ 80%] Built target msgs_rovercon__rosidl_generator_py\n'}
+[18.960270] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[18.961236] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[18.963265] (msgs_rovercon) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target msgs_rovercon__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[18.967354] (-) TimerEvent: {}
+[19.031725] (msgs_rovercon) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding C object CMakeFiles/msgs_rovercon__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/msgs_rovercon/_msgs_rovercon_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[19.033308] (msgs_rovercon) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/msgs_rovercon__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_rovercon/_msgs_rovercon_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[19.035763] (msgs_rovercon) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/msgs_rovercon__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/msgs_rovercon/_msgs_rovercon_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[19.067759] (-) TimerEvent: {}
+[19.169848] (-) TimerEvent: {}
+[19.271341] (-) TimerEvent: {}
+[19.372919] (-) TimerEvent: {}
+[19.474619] (-) TimerEvent: {}
+[19.494443] (msgs_rovercon) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[19.507383] (msgs_rovercon) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[19.551097] (msgs_rovercon) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[19.574872] (-) TimerEvent: {}
+[19.677192] (-) TimerEvent: {}
+[19.681837] (msgs_rovercon) StdoutLine: {'line': b'[100%] Built target msgs_rovercon__rosidl_typesupport_c__pyext\n'}
+[19.697899] (msgs_rovercon) StdoutLine: {'line': b'[100%] Built target msgs_rovercon__rosidl_typesupport_introspection_c__pyext\n'}
+[19.743435] (msgs_rovercon) StdoutLine: {'line': b'[100%] Built target msgs_rovercon__rosidl_typesupport_fastrtps_c__pyext\n'}
+[19.777400] (-) TimerEvent: {}
+[19.792047] (msgs_rovercon) CommandEnded: {'returncode': 0}
+[19.794194] (msgs_rovercon) JobProgress: {'identifier': 'msgs_rovercon', 'progress': 'install'}
+[19.832683] (msgs_rovercon) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.81.237 44340 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '59'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.81.237 44340 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble')]), 'shell': False}
+[19.872404] (msgs_rovercon) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[19.873022] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/ament_index/resource_index/rosidl_interfaces/msgs_rovercon\n'}
+[19.873462] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[19.876449] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[19.876874] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[19.877286] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__struct.h\n'}
+[19.877669] (-) TimerEvent: {}
+[19.879192] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__functions.c\n'}
+[19.880456] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__type_support.h\n'}
+[19.881685] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__functions.h\n'}
+[19.883538] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_generator_c__visibility_control.h\n'}
+[19.884034] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/sub_rocon.h\n'}
+[19.885879] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/library_path.sh\n'}
+[19.886522] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/library_path.dsv\n'}
+[19.890196] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_generator_c.so\n'}
+[19.893138] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_generator_c.so" to ""\n'}
+[19.893754] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[19.894452] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[19.894952] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[19.895485] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__rosidl_typesupport_fastrtps_c.h\n'}
+[19.897082] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[19.899378] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_fastrtps_c.so\n'}
+[19.902279] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[19.902886] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[19.903564] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[19.904082] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[19.904497] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[19.904912] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__type_support.c\n'}
+[19.906693] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__rosidl_typesupport_introspection_c.h\n'}
+[19.909982] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_introspection_c.so\n'}
+[19.912630] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_introspection_c.so" to ""\n'}
+[19.914727] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_c.so\n'}
+[19.917404] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_c.so" to ""\n'}
+[19.917968] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[19.918611] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[19.919157] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[19.919591] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[19.920039] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__builder.hpp\n'}
+[19.921370] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__type_support.hpp\n'}
+[19.922719] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__traits.hpp\n'}
+[19.924126] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__struct.hpp\n'}
+[19.925362] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/sub_rocon.hpp\n'}
+[19.926980] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[19.928106] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[19.928699] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[19.929208] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/dds_fastrtps\n'}
+[19.929811] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[19.931802] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[19.934464] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_fastrtps_cpp.so\n'}
+[19.937806] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[19.938403] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[19.939172] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[19.939918] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[19.940438] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__rosidl_typesupport_introspection_cpp.hpp\n'}
+[19.941921] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__type_support.cpp\n'}
+[19.945335] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_introspection_cpp.so\n'}
+[19.948181] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[19.950105] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_cpp.so\n'}
+[19.952821] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_cpp.so" to ""\n'}
+[19.953307] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/pythonpath.sh\n'}
+[19.953700] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/pythonpath.dsv\n'}
+[19.955106] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon-0.0.0-py3.10.egg-info\n'}
+[19.955636] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[19.960566] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[19.961768] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[19.963108] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[19.964524] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon\n'}
+[19.965080] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/_msgs_rovercon_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[19.967230] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg\n'}
+[19.967922] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg/_sub_rocon.py\n'}
+[19.969637] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg/__init__.py\n'}
+[19.971120] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg/_sub_rocon_s.c\n'}
+[19.972586] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[19.974301] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/libmsgs_rovercon__rosidl_generator_py.so\n'}
+[19.975943] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/__init__.py\n'}
+[19.977101] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/_msgs_rovercon_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[19.977793] (-) TimerEvent: {}
+[19.978722] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[19.980336] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/_msgs_rovercon_s.ep.rosidl_typesupport_c.c\n'}
+[19.981765] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[20.077964] (-) TimerEvent: {}
+[20.156223] (msgs_rovercon) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon'...\n"}
+[20.157376] (msgs_rovercon) StdoutLine: {'line': b"Compiling '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/__init__.py'...\n"}
+[20.158445] (msgs_rovercon) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg'...\n"}
+[20.159459] (msgs_rovercon) StdoutLine: {'line': b"Compiling '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg/__init__.py'...\n"}
+[20.160321] (msgs_rovercon) StdoutLine: {'line': b"Compiling '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg/_sub_rocon.py'...\n"}
+[20.178450] (-) TimerEvent: {}
+[20.183899] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[20.186613] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[20.188190] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[20.191341] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[20.193048] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[20.196286] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[20.199240] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_generator_py.so\n'}
+[20.202332] (msgs_rovercon) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_generator_py.so" to ""\n'}
+[20.202933] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/msg/SubRocon.idl\n'}
+[20.204583] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/msg/SubRocon.msg\n'}
+[20.205914] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/ament_index/resource_index/package_run_dependencies/msgs_rovercon\n'}
+[20.206466] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/ament_index/resource_index/parent_prefix_path/msgs_rovercon\n'}
+[20.208478] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/ament_prefix_path.sh\n'}
+[20.209000] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/ament_prefix_path.dsv\n'}
+[20.210432] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/path.sh\n'}
+[20.211058] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/path.dsv\n'}
+[20.212281] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/local_setup.bash\n'}
+[20.212736] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/local_setup.sh\n'}
+[20.213166] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/local_setup.zsh\n'}
+[20.213557] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/local_setup.dsv\n'}
+[20.215443] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.dsv\n'}
+[20.216736] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/ament_index/resource_index/packages/msgs_rovercon\n'}
+[20.217551] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_generator_cExport.cmake\n'}
+[20.218007] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_generator_cExport-noconfig.cmake\n'}
+[20.218941] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[20.219404] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[20.220286] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_introspection_cExport.cmake\n'}
+[20.220746] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[20.221580] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_cExport.cmake\n'}
+[20.222051] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[20.222939] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_generator_cppExport.cmake\n'}
+[20.223769] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[20.224272] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[20.225145] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[20.225607] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[20.226589] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_cppExport.cmake\n'}
+[20.227161] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[20.227939] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_generator_pyExport.cmake\n'}
+[20.228391] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_generator_pyExport-noconfig.cmake\n'}
+[20.228814] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/rosidl_cmake-extras.cmake\n'}
+[20.229325] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[20.229748] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[20.230200] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[20.230656] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[20.231086] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[20.231551] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[20.232015] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_roverconConfig.cmake\n'}
+[20.232380] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_roverconConfig-version.cmake\n'}
+[20.232770] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.xml\n'}
+[20.239069] (msgs_rovercon) CommandEnded: {'returncode': 0}
+[20.278559] (-) TimerEvent: {}
+[20.357284] (msgs_rovercon) JobEnded: {'identifier': 'msgs_rovercon', 'rc': 0}
+[20.360008] (-) EventReactorShutdown: {}

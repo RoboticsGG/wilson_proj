@@ -1,0 +1,53 @@
+[0.062s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/curry/wilson_proj/ros2-rover-ws/src/msgs_mainrocon -DCMAKE_INSTALL_PREFIX=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon
+[0.121s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.715s] -- Found msgs_rovercon: 0.0.0 (/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake)
+[0.868s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.878s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.901s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.939s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.988s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.026s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.812s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[1.813s]   execute_process(/usr/bin/python3 -m rosidl_adapter --package-name
+[1.813s]   msgs_mainrocon --arguments-file
+[1.814s]   /home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon/rosidl_adapter__arguments__msgs_mainrocon.json
+[1.814s]   --output-dir
+[1.814s]   /home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon/rosidl_adapter/msgs_mainrocon
+[1.815s]   --output-file
+[1.815s]   /home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon/rosidl_adapter/msgs_mainrocon.idls)
+[1.815s]   returned error code 1:
+[1.815s] 
+[1.816s]   Error processing 'msgs_rovercon/msg/SubRocon mainrocon_msg' of
+[1.816s]   'msgs_mainrocon/MainRocon': 'msgs_rovercon/msg/SubRocon'
+[1.816s] 
+[1.817s]   Traceback (most recent call last):
+[1.817s] 
+[1.817s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[1.818s]       return _run_code(code, main_globals, None,
+[1.818s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[1.819s]       exec(code, run_globals)
+[1.819s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[1.819s]       sys.exit(main())
+[1.820s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[1.820s]       abs_idl_file = convert_to_idl(
+[1.821s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl
+[1.821s]       return convert_msg_to_idl(
+[1.822s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl
+[1.822s]       msg = parse_message_string(package_name, input_file.stem, content)
+[1.823s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 520, in parse_message_string
+[1.824s]       Type(type_string, context_package_name=pkg_name),
+[1.825s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 277, in __init__
+[1.826s]       super(Type, self).__init__(
+[1.827s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 190, in __init__
+[1.828s]       raise InvalidResourceName(type_string)
+[1.829s] 
+[1.831s]   rosidl_adapter.parser.InvalidResourceName: msgs_rovercon/msg/SubRocon
+[1.831s] 
+[1.831s] Call Stack (most recent call first):
+[1.832s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[1.832s]   CMakeLists.txt:14 (rosidl_generate_interfaces)
+[1.832s] 
+[1.833s] [0m
+[1.833s] -- Configuring incomplete, errors occurred!
+[1.833s] See also "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon/CMakeFiles/CMakeOutput.log".
+[1.837s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/curry/wilson_proj/ros2-rover-ws/src/msgs_mainrocon -DCMAKE_INSTALL_PREFIX=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon

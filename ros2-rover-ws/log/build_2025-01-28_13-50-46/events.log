@@ -1,0 +1,124 @@
+[0.000000] (-) TimerEvent: {}
+[0.001545] (-) JobUnselected: {'identifier': 'action_interfaces'}
+[0.002057] (-) JobUnselected: {'identifier': 'msgs_rovercon'}
+[0.002145] (-) JobUnselected: {'identifier': 'package_image_process'}
+[0.002222] (-) JobUnselected: {'identifier': 'package_navigate_route'}
+[0.002298] (-) JobUnselected: {'identifier': 'package_position_process'}
+[0.002750] (-) JobUnselected: {'identifier': 'package_rover_control'}
+[0.002921] (-) JobUnselected: {'identifier': 'package_test'}
+[0.003008] (msgs_mainrocon) JobQueued: {'identifier': 'msgs_mainrocon', 'dependencies': OrderedDict([('msgs_rovercon', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon')])}
+[0.003108] (msgs_mainrocon) JobStarted: {'identifier': 'msgs_mainrocon'}
+[0.060764] (msgs_mainrocon) JobProgress: {'identifier': 'msgs_mainrocon', 'progress': 'cmake'}
+[0.063477] (msgs_mainrocon) Command: {'cmd': ['/usr/bin/cmake', '/home/curry/wilson_proj/ros2-rover-ws/src/msgs_mainrocon', '-DCMAKE_INSTALL_PREFIX=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.90.88 60813 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '489'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.90.88 60813 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble')]), 'shell': False}
+[0.099112] (-) TimerEvent: {}
+[0.200065] (-) TimerEvent: {}
+[0.301117] (-) TimerEvent: {}
+[0.351871] (msgs_mainrocon) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.401254] (-) TimerEvent: {}
+[0.502042] (-) TimerEvent: {}
+[0.602811] (-) TimerEvent: {}
+[0.611909] (msgs_mainrocon) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.644981] (msgs_mainrocon) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.703021] (-) TimerEvent: {}
+[0.803827] (-) TimerEvent: {}
+[0.904631] (-) TimerEvent: {}
+[0.985691] (msgs_mainrocon) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.004773] (-) TimerEvent: {}
+[1.013137] (msgs_mainrocon) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.013971] (msgs_mainrocon) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.015297] (msgs_mainrocon) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.026030] (msgs_mainrocon) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.104983] (-) TimerEvent: {}
+[1.205686] (-) TimerEvent: {}
+[1.306595] (-) TimerEvent: {}
+[1.394897] (msgs_mainrocon) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.406736] (-) TimerEvent: {}
+[1.424052] (msgs_mainrocon) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.425018] (msgs_mainrocon) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.426612] (msgs_mainrocon) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.461178] (msgs_mainrocon) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.506878] (-) TimerEvent: {}
+[1.607817] (-) TimerEvent: {}
+[1.708478] (-) TimerEvent: {}
+[1.809113] (-) TimerEvent: {}
+[1.909734] (-) TimerEvent: {}
+[2.010423] (-) TimerEvent: {}
+[2.111151] (-) TimerEvent: {}
+[2.212060] (-) TimerEvent: {}
+[2.246492] (msgs_mainrocon) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[2.312266] (-) TimerEvent: {}
+[2.412929] (-) TimerEvent: {}
+[2.513696] (-) TimerEvent: {}
+[2.614678] (-) TimerEvent: {}
+[2.715314] (-) TimerEvent: {}
+[2.815951] (-) TimerEvent: {}
+[2.915150] (msgs_mainrocon) StdoutLine: {'line': b'-- Found msgs_rovercon: 0.0.0 (/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake)\n'}
+[2.916062] (-) TimerEvent: {}
+[3.016931] (-) TimerEvent: {}
+[3.117641] (-) TimerEvent: {}
+[3.218258] (-) TimerEvent: {}
+[3.258277] (msgs_mainrocon) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[3.318421] (-) TimerEvent: {}
+[3.319430] (msgs_mainrocon) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[3.394079] (msgs_mainrocon) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[3.418567] (-) TimerEvent: {}
+[3.483657] (msgs_mainrocon) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.518773] (-) TimerEvent: {}
+[3.610347] (msgs_mainrocon) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.620013] (-) TimerEvent: {}
+[3.698442] (msgs_mainrocon) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[3.720183] (-) TimerEvent: {}
+[3.820812] (-) TimerEvent: {}
+[3.921544] (-) TimerEvent: {}
+[4.022305] (-) TimerEvent: {}
+[4.123159] (-) TimerEvent: {}
+[4.223838] (-) TimerEvent: {}
+[4.324577] (-) TimerEvent: {}
+[4.425290] (-) TimerEvent: {}
+[4.515620] (msgs_mainrocon) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):\n'}
+[4.516220] (msgs_mainrocon) StderrLine: {'line': b'  execute_process(/usr/bin/python3 -m rosidl_adapter --package-name\n'}
+[4.516704] (msgs_mainrocon) StderrLine: {'line': b'  msgs_mainrocon --arguments-file\n'}
+[4.517075] (msgs_mainrocon) StderrLine: {'line': b'  /home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon/rosidl_adapter__arguments__msgs_mainrocon.json\n'}
+[4.517370] (msgs_mainrocon) StderrLine: {'line': b'  --output-dir\n'}
+[4.517717] (msgs_mainrocon) StderrLine: {'line': b'  /home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon/rosidl_adapter/msgs_mainrocon\n'}
+[4.518013] (msgs_mainrocon) StderrLine: {'line': b'  --output-file\n'}
+[4.518272] (msgs_mainrocon) StderrLine: {'line': b'  /home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon/rosidl_adapter/msgs_mainrocon.idls)\n'}
+[4.518536] (msgs_mainrocon) StderrLine: {'line': b'  returned error code 1:\n'}
+[4.518791] (msgs_mainrocon) StderrLine: {'line': b'\n'}
+[4.519044] (msgs_mainrocon) StderrLine: {'line': b"  Error processing 'msgs_rovercon/msg/SubRocon mainrocon_msg' of\n"}
+[4.519321] (msgs_mainrocon) StderrLine: {'line': b"  'msgs_mainrocon/MainRocon': 'msgs_rovercon/msg/SubRocon'\n"}
+[4.519599] (msgs_mainrocon) StderrLine: {'line': b'\n'}
+[4.519894] (msgs_mainrocon) StderrLine: {'line': b'  Traceback (most recent call last):\n'}
+[4.520208] (msgs_mainrocon) StderrLine: {'line': b'\n'}
+[4.520505] (msgs_mainrocon) StderrLine: {'line': b'    File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main\n'}
+[4.520808] (msgs_mainrocon) StderrLine: {'line': b'      return _run_code(code, main_globals, None,\n'}
+[4.521103] (msgs_mainrocon) StderrLine: {'line': b'    File "/usr/lib/python3.10/runpy.py", line 86, in _run_code\n'}
+[4.521399] (msgs_mainrocon) StderrLine: {'line': b'      exec(code, run_globals)\n'}
+[4.521776] (msgs_mainrocon) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>\n'}
+[4.522140] (msgs_mainrocon) StderrLine: {'line': b'      sys.exit(main())\n'}
+[4.522542] (msgs_mainrocon) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main\n'}
+[4.522850] (msgs_mainrocon) StderrLine: {'line': b'      abs_idl_file = convert_to_idl(\n'}
+[4.523163] (msgs_mainrocon) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl\n'}
+[4.523483] (msgs_mainrocon) StderrLine: {'line': b'      return convert_msg_to_idl(\n'}
+[4.523808] (msgs_mainrocon) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl\n'}
+[4.524226] (msgs_mainrocon) StderrLine: {'line': b'      msg = parse_message_string(package_name, input_file.stem, content)\n'}
+[4.524627] (msgs_mainrocon) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 520, in parse_message_string\n'}
+[4.524988] (msgs_mainrocon) StderrLine: {'line': b'      Type(type_string, context_package_name=pkg_name),\n'}
+[4.525336] (-) TimerEvent: {}
+[4.526035] (msgs_mainrocon) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 277, in __init__\n'}
+[4.526943] (msgs_mainrocon) StderrLine: {'line': b'      super(Type, self).__init__(\n'}
+[4.527452] (msgs_mainrocon) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 190, in __init__\n'}
+[4.528065] (msgs_mainrocon) StderrLine: {'line': b'      raise InvalidResourceName(type_string)\n'}
+[4.528581] (msgs_mainrocon) StderrLine: {'line': b'\n'}
+[4.529059] (msgs_mainrocon) StderrLine: {'line': b'  rosidl_adapter.parser.InvalidResourceName: msgs_rovercon/msg/SubRocon\n'}
+[4.529486] (msgs_mainrocon) StderrLine: {'line': b'\n'}
+[4.529873] (msgs_mainrocon) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[4.530170] (msgs_mainrocon) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)\n'}
+[4.530446] (msgs_mainrocon) StderrLine: {'line': b'  CMakeLists.txt:14 (rosidl_generate_interfaces)\n'}
+[4.530738] (msgs_mainrocon) StderrLine: {'line': b'\n'}
+[4.531014] (msgs_mainrocon) StderrLine: {'line': b'\x1b[0m\n'}
+[4.531274] (msgs_mainrocon) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[4.531553] (msgs_mainrocon) StdoutLine: {'line': b'See also "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon/CMakeFiles/CMakeOutput.log".\n'}
+[4.535731] (msgs_mainrocon) CommandEnded: {'returncode': 1}
+[4.620808] (msgs_mainrocon) JobEnded: {'identifier': 'msgs_mainrocon', 'rc': 1}
+[4.623825] (-) EventReactorShutdown: {}

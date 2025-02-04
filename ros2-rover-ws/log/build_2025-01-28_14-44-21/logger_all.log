@@ -1,0 +1,605 @@
+[0.468s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.469s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffffac95e410>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffacb033a0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffacb033a0>>, mixin_verb=('build',))
+[1.290s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.290s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.290s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.290s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.290s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.291s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.291s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/curry/wilson_proj/ros2-rover-ws'
+[1.291s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.293s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.293s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.293s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.337s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.337s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.338s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.338s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.338s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.339s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.339s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.343s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.343s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.343s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.343s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.343s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/action_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/action_interfaces) by extension 'ignore'
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/action_interfaces) by extension 'ignore_ament_install'
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/action_interfaces) by extensions ['colcon_pkg']
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/action_interfaces) by extension 'colcon_pkg'
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/action_interfaces) by extensions ['colcon_meta']
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/action_interfaces) by extension 'colcon_meta'
+[1.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/action_interfaces) by extensions ['ros']
+[1.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/action_interfaces) by extension 'ros'
+[1.355s] DEBUG:colcon.colcon_core.package_identification:Package 'src/action_interfaces' with type 'ros.ament_cmake' and name 'action_interfaces'
+[1.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[1.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extension 'ignore'
+[1.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) ignored
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extension 'ignore'
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) ignored
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[1.358s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extension 'ignore'
+[1.358s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) ignored
+[1.358s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_mainrocon) by extensions ['ignore', 'ignore_ament_install']
+[1.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_mainrocon) by extension 'ignore'
+[1.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_mainrocon) by extension 'ignore_ament_install'
+[1.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_mainrocon) by extensions ['colcon_pkg']
+[1.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_mainrocon) by extension 'colcon_pkg'
+[1.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_mainrocon) by extensions ['colcon_meta']
+[1.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_mainrocon) by extension 'colcon_meta'
+[1.360s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_mainrocon) by extensions ['ros']
+[1.360s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_mainrocon) by extension 'ros'
+[1.363s] DEBUG:colcon.colcon_core.package_identification:Package 'src/msgs_mainrocon' with type 'ros.ament_cmake' and name 'msgs_mainrocon'
+[1.363s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_rovercon) by extensions ['ignore', 'ignore_ament_install']
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_rovercon) by extension 'ignore'
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_rovercon) by extension 'ignore_ament_install'
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_rovercon) by extensions ['colcon_pkg']
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_rovercon) by extension 'colcon_pkg'
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_rovercon) by extensions ['colcon_meta']
+[1.365s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_rovercon) by extension 'colcon_meta'
+[1.365s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_rovercon) by extensions ['ros']
+[1.365s] Level 1:colcon.colcon_core.package_identification:_identify(src/msgs_rovercon) by extension 'ros'
+[1.367s] DEBUG:colcon.colcon_core.package_identification:Package 'src/msgs_rovercon' with type 'ros.ament_cmake' and name 'msgs_rovercon'
+[1.367s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_image_process) by extensions ['ignore', 'ignore_ament_install']
+[1.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_image_process) by extension 'ignore'
+[1.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_image_process) by extension 'ignore_ament_install'
+[1.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_image_process) by extensions ['colcon_pkg']
+[1.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_image_process) by extension 'colcon_pkg'
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_image_process) by extensions ['colcon_meta']
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_image_process) by extension 'colcon_meta'
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_image_process) by extensions ['ros']
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_image_process) by extension 'ros'
+[1.371s] DEBUG:colcon.colcon_core.package_identification:Package 'src/package_image_process' with type 'ros.ament_python' and name 'package_image_process'
+[1.372s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_navigate_route) by extensions ['ignore', 'ignore_ament_install']
+[1.372s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_navigate_route) by extension 'ignore'
+[1.372s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_navigate_route) by extension 'ignore_ament_install'
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_navigate_route) by extensions ['colcon_pkg']
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_navigate_route) by extension 'colcon_pkg'
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_navigate_route) by extensions ['colcon_meta']
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_navigate_route) by extension 'colcon_meta'
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_navigate_route) by extensions ['ros']
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_navigate_route) by extension 'ros'
+[1.375s] DEBUG:colcon.colcon_core.package_identification:Package 'src/package_navigate_route' with type 'ros.ament_cmake' and name 'package_navigate_route'
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_position_process) by extensions ['ignore', 'ignore_ament_install']
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_position_process) by extension 'ignore'
+[1.377s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_position_process) by extension 'ignore_ament_install'
+[1.377s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_position_process) by extensions ['colcon_pkg']
+[1.377s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_position_process) by extension 'colcon_pkg'
+[1.377s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_position_process) by extensions ['colcon_meta']
+[1.377s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_position_process) by extension 'colcon_meta'
+[1.377s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_position_process) by extensions ['ros']
+[1.377s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_position_process) by extension 'ros'
+[1.379s] DEBUG:colcon.colcon_core.package_identification:Package 'src/package_position_process' with type 'ros.ament_cmake' and name 'package_position_process'
+[1.380s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_rover_control) by extensions ['ignore', 'ignore_ament_install']
+[1.380s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_rover_control) by extension 'ignore'
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_rover_control) by extension 'ignore_ament_install'
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_rover_control) by extensions ['colcon_pkg']
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_rover_control) by extension 'colcon_pkg'
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_rover_control) by extensions ['colcon_meta']
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_rover_control) by extension 'colcon_meta'
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_rover_control) by extensions ['ros']
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_rover_control) by extension 'ros'
+[1.385s] DEBUG:colcon.colcon_core.package_identification:Package 'src/package_rover_control' with type 'ros.ament_cmake' and name 'package_rover_control'
+[1.385s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_test) by extensions ['ignore', 'ignore_ament_install']
+[1.386s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_test) by extension 'ignore'
+[1.386s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_test) by extension 'ignore_ament_install'
+[1.386s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_test) by extensions ['colcon_pkg']
+[1.386s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_test) by extension 'colcon_pkg'
+[1.386s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_test) by extensions ['colcon_meta']
+[1.386s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_test) by extension 'colcon_meta'
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_test) by extensions ['ros']
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(src/package_test) by extension 'ros'
+[1.390s] DEBUG:colcon.colcon_core.package_identification:Package 'src/package_test' with type 'ros.ament_cmake' and name 'package_test'
+[1.390s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.390s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.391s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.391s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.391s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.512s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.512s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.524s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 9 installed packages in /home/curry/wilson_proj/ros2-rover-ws/install
+[1.533s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 270 installed packages in /opt/ros/humble
+[1.542s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.710s] Level 5:colcon.colcon_core.verb:set package 'action_interfaces' build argument 'cmake_args' from command line to 'None'
+[1.710s] Level 5:colcon.colcon_core.verb:set package 'action_interfaces' build argument 'cmake_target' from command line to 'None'
+[1.711s] Level 5:colcon.colcon_core.verb:set package 'action_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.711s] Level 5:colcon.colcon_core.verb:set package 'action_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[1.711s] Level 5:colcon.colcon_core.verb:set package 'action_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[1.711s] Level 5:colcon.colcon_core.verb:set package 'action_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[1.711s] Level 5:colcon.colcon_core.verb:set package 'action_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[1.711s] Level 5:colcon.colcon_core.verb:set package 'action_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[1.711s] Level 5:colcon.colcon_core.verb:set package 'action_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.711s] DEBUG:colcon.colcon_core.verb:Building package 'action_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces', 'merge_install': False, 'path': '/home/curry/wilson_proj/ros2-rover-ws/src/action_interfaces', 'symlink_install': False, 'test_result_base': None}
+[1.713s] Level 5:colcon.colcon_core.verb:set package 'msgs_rovercon' build argument 'cmake_args' from command line to 'None'
+[1.713s] Level 5:colcon.colcon_core.verb:set package 'msgs_rovercon' build argument 'cmake_target' from command line to 'None'
+[1.713s] Level 5:colcon.colcon_core.verb:set package 'msgs_rovercon' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.713s] Level 5:colcon.colcon_core.verb:set package 'msgs_rovercon' build argument 'cmake_clean_cache' from command line to 'False'
+[1.713s] Level 5:colcon.colcon_core.verb:set package 'msgs_rovercon' build argument 'cmake_clean_first' from command line to 'False'
+[1.713s] Level 5:colcon.colcon_core.verb:set package 'msgs_rovercon' build argument 'cmake_force_configure' from command line to 'False'
+[1.714s] Level 5:colcon.colcon_core.verb:set package 'msgs_rovercon' build argument 'ament_cmake_args' from command line to 'None'
+[1.714s] Level 5:colcon.colcon_core.verb:set package 'msgs_rovercon' build argument 'catkin_cmake_args' from command line to 'None'
+[1.714s] Level 5:colcon.colcon_core.verb:set package 'msgs_rovercon' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.714s] DEBUG:colcon.colcon_core.verb:Building package 'msgs_rovercon' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon', 'merge_install': False, 'path': '/home/curry/wilson_proj/ros2-rover-ws/src/msgs_rovercon', 'symlink_install': False, 'test_result_base': None}
+[1.715s] Level 5:colcon.colcon_core.verb:set package 'package_image_process' build argument 'cmake_args' from command line to 'None'
+[1.715s] Level 5:colcon.colcon_core.verb:set package 'package_image_process' build argument 'cmake_target' from command line to 'None'
+[1.716s] Level 5:colcon.colcon_core.verb:set package 'package_image_process' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.716s] Level 5:colcon.colcon_core.verb:set package 'package_image_process' build argument 'cmake_clean_cache' from command line to 'False'
+[1.716s] Level 5:colcon.colcon_core.verb:set package 'package_image_process' build argument 'cmake_clean_first' from command line to 'False'
+[1.716s] Level 5:colcon.colcon_core.verb:set package 'package_image_process' build argument 'cmake_force_configure' from command line to 'False'
+[1.716s] Level 5:colcon.colcon_core.verb:set package 'package_image_process' build argument 'ament_cmake_args' from command line to 'None'
+[1.716s] Level 5:colcon.colcon_core.verb:set package 'package_image_process' build argument 'catkin_cmake_args' from command line to 'None'
+[1.716s] Level 5:colcon.colcon_core.verb:set package 'package_image_process' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.716s] DEBUG:colcon.colcon_core.verb:Building package 'package_image_process' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/curry/wilson_proj/ros2-rover-ws/build/package_image_process', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process', 'merge_install': False, 'path': '/home/curry/wilson_proj/ros2-rover-ws/src/package_image_process', 'symlink_install': False, 'test_result_base': None}
+[1.718s] Level 5:colcon.colcon_core.verb:set package 'package_navigate_route' build argument 'cmake_args' from command line to 'None'
+[1.718s] Level 5:colcon.colcon_core.verb:set package 'package_navigate_route' build argument 'cmake_target' from command line to 'None'
+[1.718s] Level 5:colcon.colcon_core.verb:set package 'package_navigate_route' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.718s] Level 5:colcon.colcon_core.verb:set package 'package_navigate_route' build argument 'cmake_clean_cache' from command line to 'False'
+[1.718s] Level 5:colcon.colcon_core.verb:set package 'package_navigate_route' build argument 'cmake_clean_first' from command line to 'False'
+[1.718s] Level 5:colcon.colcon_core.verb:set package 'package_navigate_route' build argument 'cmake_force_configure' from command line to 'False'
+[1.718s] Level 5:colcon.colcon_core.verb:set package 'package_navigate_route' build argument 'ament_cmake_args' from command line to 'None'
+[1.718s] Level 5:colcon.colcon_core.verb:set package 'package_navigate_route' build argument 'catkin_cmake_args' from command line to 'None'
+[1.718s] Level 5:colcon.colcon_core.verb:set package 'package_navigate_route' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.719s] DEBUG:colcon.colcon_core.verb:Building package 'package_navigate_route' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route', 'merge_install': False, 'path': '/home/curry/wilson_proj/ros2-rover-ws/src/package_navigate_route', 'symlink_install': False, 'test_result_base': None}
+[1.720s] Level 5:colcon.colcon_core.verb:set package 'package_position_process' build argument 'cmake_args' from command line to 'None'
+[1.720s] Level 5:colcon.colcon_core.verb:set package 'package_position_process' build argument 'cmake_target' from command line to 'None'
+[1.720s] Level 5:colcon.colcon_core.verb:set package 'package_position_process' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.720s] Level 5:colcon.colcon_core.verb:set package 'package_position_process' build argument 'cmake_clean_cache' from command line to 'False'
+[1.720s] Level 5:colcon.colcon_core.verb:set package 'package_position_process' build argument 'cmake_clean_first' from command line to 'False'
+[1.721s] Level 5:colcon.colcon_core.verb:set package 'package_position_process' build argument 'cmake_force_configure' from command line to 'False'
+[1.721s] Level 5:colcon.colcon_core.verb:set package 'package_position_process' build argument 'ament_cmake_args' from command line to 'None'
+[1.721s] Level 5:colcon.colcon_core.verb:set package 'package_position_process' build argument 'catkin_cmake_args' from command line to 'None'
+[1.721s] Level 5:colcon.colcon_core.verb:set package 'package_position_process' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.721s] DEBUG:colcon.colcon_core.verb:Building package 'package_position_process' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process', 'merge_install': False, 'path': '/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process', 'symlink_install': False, 'test_result_base': None}
+[1.722s] Level 5:colcon.colcon_core.verb:set package 'package_test' build argument 'cmake_args' from command line to 'None'
+[1.722s] Level 5:colcon.colcon_core.verb:set package 'package_test' build argument 'cmake_target' from command line to 'None'
+[1.723s] Level 5:colcon.colcon_core.verb:set package 'package_test' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.723s] Level 5:colcon.colcon_core.verb:set package 'package_test' build argument 'cmake_clean_cache' from command line to 'False'
+[1.723s] Level 5:colcon.colcon_core.verb:set package 'package_test' build argument 'cmake_clean_first' from command line to 'False'
+[1.723s] Level 5:colcon.colcon_core.verb:set package 'package_test' build argument 'cmake_force_configure' from command line to 'False'
+[1.723s] Level 5:colcon.colcon_core.verb:set package 'package_test' build argument 'ament_cmake_args' from command line to 'None'
+[1.723s] Level 5:colcon.colcon_core.verb:set package 'package_test' build argument 'catkin_cmake_args' from command line to 'None'
+[1.723s] Level 5:colcon.colcon_core.verb:set package 'package_test' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.723s] DEBUG:colcon.colcon_core.verb:Building package 'package_test' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/curry/wilson_proj/ros2-rover-ws/build/package_test', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/curry/wilson_proj/ros2-rover-ws/install/package_test', 'merge_install': False, 'path': '/home/curry/wilson_proj/ros2-rover-ws/src/package_test', 'symlink_install': False, 'test_result_base': None}
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'msgs_mainrocon' build argument 'cmake_args' from command line to 'None'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'msgs_mainrocon' build argument 'cmake_target' from command line to 'None'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'msgs_mainrocon' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'msgs_mainrocon' build argument 'cmake_clean_cache' from command line to 'False'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'msgs_mainrocon' build argument 'cmake_clean_first' from command line to 'False'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'msgs_mainrocon' build argument 'cmake_force_configure' from command line to 'False'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'msgs_mainrocon' build argument 'ament_cmake_args' from command line to 'None'
+[1.726s] Level 5:colcon.colcon_core.verb:set package 'msgs_mainrocon' build argument 'catkin_cmake_args' from command line to 'None'
+[1.726s] Level 5:colcon.colcon_core.verb:set package 'msgs_mainrocon' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.726s] DEBUG:colcon.colcon_core.verb:Building package 'msgs_mainrocon' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon', 'merge_install': False, 'path': '/home/curry/wilson_proj/ros2-rover-ws/src/msgs_mainrocon', 'symlink_install': False, 'test_result_base': None}
+[1.727s] Level 5:colcon.colcon_core.verb:set package 'package_rover_control' build argument 'cmake_args' from command line to 'None'
+[1.727s] Level 5:colcon.colcon_core.verb:set package 'package_rover_control' build argument 'cmake_target' from command line to 'None'
+[1.727s] Level 5:colcon.colcon_core.verb:set package 'package_rover_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.727s] Level 5:colcon.colcon_core.verb:set package 'package_rover_control' build argument 'cmake_clean_cache' from command line to 'False'
+[1.728s] Level 5:colcon.colcon_core.verb:set package 'package_rover_control' build argument 'cmake_clean_first' from command line to 'False'
+[1.728s] Level 5:colcon.colcon_core.verb:set package 'package_rover_control' build argument 'cmake_force_configure' from command line to 'False'
+[1.728s] Level 5:colcon.colcon_core.verb:set package 'package_rover_control' build argument 'ament_cmake_args' from command line to 'None'
+[1.728s] Level 5:colcon.colcon_core.verb:set package 'package_rover_control' build argument 'catkin_cmake_args' from command line to 'None'
+[1.728s] Level 5:colcon.colcon_core.verb:set package 'package_rover_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.728s] DEBUG:colcon.colcon_core.verb:Building package 'package_rover_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control', 'merge_install': False, 'path': '/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control', 'symlink_install': False, 'test_result_base': None}
+[1.729s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.732s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.733s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/curry/wilson_proj/ros2-rover-ws/src/msgs_rovercon' with build type 'ament_cmake'
+[1.734s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/curry/wilson_proj/ros2-rover-ws/src/msgs_rovercon'
+[1.744s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.745s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.745s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.766s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/curry/wilson_proj/ros2-rover-ws/src/action_interfaces' with build type 'ament_cmake'
+[1.767s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/curry/wilson_proj/ros2-rover-ws/src/action_interfaces'
+[1.768s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.768s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.791s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/curry/wilson_proj/ros2-rover-ws/src/package_image_process' with build type 'ament_python'
+[1.792s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_image_process', 'ament_prefix_path')
+[1.793s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/hook/ament_prefix_path.ps1'
+[1.796s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/hook/ament_prefix_path.dsv'
+[1.799s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/hook/ament_prefix_path.sh'
+[1.803s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.803s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.824s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/curry/wilson_proj/ros2-rover-ws/src/package_navigate_route' with build type 'ament_cmake'
+[1.825s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/curry/wilson_proj/ros2-rover-ws/src/package_navigate_route'
+[1.826s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.826s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.867s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon -- -j4 -l4
+[1.892s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces -- -j4 -l4
+[4.137s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/curry/wilson_proj/ros2-rover-ws/src/package_image_process'
+[4.138s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.138s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.202s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route -- -j4 -l4
+[4.542s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route -- -j4 -l4
+[4.860s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route
+[4.943s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(package_navigate_route)
+[4.946s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/package_navigate_route
+[4.959s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route' for CMake module files
+[4.962s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route' for CMake config files
+[4.964s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_navigate_route', 'cmake_prefix_path')
+[4.966s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/hook/cmake_prefix_path.ps1'
+[4.969s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/hook/cmake_prefix_path.dsv'
+[4.971s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/hook/cmake_prefix_path.sh'
+[4.976s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/lib'
+[4.977s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/bin'
+[4.977s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/lib/pkgconfig/package_navigate_route.pc'
+[4.978s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/lib/python3.10/site-packages'
+[4.979s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/bin'
+[4.982s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/package.ps1'
+[4.986s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/package.dsv'
+[4.990s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/package.sh'
+[4.994s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/package.bash'
+[4.997s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/package.zsh'
+[5.000s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/colcon-core/packages/package_navigate_route)
+[5.010s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces -- -j4 -l4
+[5.026s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon -- -j4 -l4
+[5.040s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon
+[5.181s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(package_navigate_route)
+[5.183s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route' for CMake module files
+[5.186s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route' for CMake config files
+[5.189s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_navigate_route', 'cmake_prefix_path')
+[5.190s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/hook/cmake_prefix_path.ps1'
+[5.195s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/hook/cmake_prefix_path.dsv'
+[5.198s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/hook/cmake_prefix_path.sh'
+[5.201s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/lib'
+[5.202s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/bin'
+[5.203s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/lib/pkgconfig/package_navigate_route.pc'
+[5.204s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/lib/python3.10/site-packages'
+[5.206s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/bin'
+[5.208s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/package.ps1'
+[5.211s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/package.dsv'
+[5.216s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/package.sh'
+[5.219s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/package.bash'
+[5.222s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/package_navigate_route/package.zsh'
+[5.225s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route/share/colcon-core/packages/package_navigate_route)
+[5.227s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process' with build type 'ament_cmake'
+[5.228s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process'
+[5.229s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.229s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.282s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_position_process -- -j4 -l4
+[5.411s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(msgs_rovercon)
+[5.412s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon' for CMake module files
+[5.417s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon' for CMake config files
+[5.422s] Level 1:colcon.colcon_core.shell:create_environment_hook('msgs_rovercon', 'cmake_prefix_path')
+[5.423s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/cmake_prefix_path.ps1'
+[5.430s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/cmake_prefix_path.dsv'
+[5.437s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon
+[5.437s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/cmake_prefix_path.sh'
+[5.442s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib'
+[5.442s] Level 1:colcon.colcon_core.shell:create_environment_hook('msgs_rovercon', 'ld_library_path_lib')
+[5.444s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/ld_library_path_lib.ps1'
+[5.447s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/ld_library_path_lib.dsv'
+[5.451s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/ld_library_path_lib.sh'
+[5.454s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/bin'
+[5.454s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/pkgconfig/msgs_rovercon.pc'
+[5.455s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/python3.10/site-packages'
+[5.457s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/bin'
+[5.459s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.ps1'
+[5.462s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.dsv'
+[5.464s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.sh'
+[5.467s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.bash'
+[5.470s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.zsh'
+[5.473s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/colcon-core/packages/msgs_rovercon)
+[5.476s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(msgs_rovercon)
+[5.478s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon' for CMake module files
+[5.483s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon' for CMake config files
+[5.487s] Level 1:colcon.colcon_core.shell:create_environment_hook('msgs_rovercon', 'cmake_prefix_path')
+[5.489s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/cmake_prefix_path.ps1'
+[5.491s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/cmake_prefix_path.dsv'
+[5.493s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/cmake_prefix_path.sh'
+[5.497s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib'
+[5.497s] Level 1:colcon.colcon_core.shell:create_environment_hook('msgs_rovercon', 'ld_library_path_lib')
+[5.498s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/ld_library_path_lib.ps1'
+[5.501s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/ld_library_path_lib.dsv'
+[5.503s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/hook/ld_library_path_lib.sh'
+[5.506s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/bin'
+[5.507s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/pkgconfig/msgs_rovercon.pc'
+[5.508s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/python3.10/site-packages'
+[5.509s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/bin'
+[5.511s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.ps1'
+[5.515s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.dsv'
+[5.518s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.sh'
+[5.521s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.bash'
+[5.524s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.zsh'
+[5.527s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/colcon-core/packages/msgs_rovercon)
+[5.531s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/curry/wilson_proj/ros2-rover-ws/src/msgs_mainrocon' with build type 'ament_cmake'
+[5.533s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/curry/wilson_proj/ros2-rover-ws/src/msgs_mainrocon'
+[5.534s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.534s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.571s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces
+[5.598s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon': CMAKE_PREFIX_PATH=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon -- -j4 -l4
+[5.686s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_position_process -- -j4 -l4
+[5.988s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/package_position_process
+[6.051s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(action_interfaces)
+[6.052s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces' for CMake module files
+[6.057s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces' for CMake config files
+[6.063s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces
+[6.069s] Level 1:colcon.colcon_core.shell:create_environment_hook('action_interfaces', 'cmake_prefix_path')
+[6.070s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/cmake_prefix_path.ps1'
+[6.077s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/cmake_prefix_path.dsv'
+[6.080s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/cmake_prefix_path.sh'
+[6.091s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib'
+[6.092s] Level 1:colcon.colcon_core.shell:create_environment_hook('action_interfaces', 'ld_library_path_lib')
+[6.093s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/ld_library_path_lib.ps1'
+[6.097s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/ld_library_path_lib.dsv'
+[6.107s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/ld_library_path_lib.sh'
+[6.123s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/bin'
+[6.126s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/pkgconfig/action_interfaces.pc'
+[6.128s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages'
+[6.128s] Level 1:colcon.colcon_core.shell:create_environment_hook('action_interfaces', 'pythonpath')
+[6.130s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/pythonpath.ps1'
+[6.133s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/pythonpath.dsv'
+[6.136s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/pythonpath.sh'
+[6.140s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/bin'
+[6.143s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.ps1'
+[6.146s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.dsv'
+[6.150s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.sh'
+[6.153s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.bash'
+[6.156s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.zsh'
+[6.159s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/colcon-core/packages/action_interfaces)
+[6.177s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(package_position_process)
+[6.178s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process' for CMake module files
+[6.182s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process' for CMake config files
+[6.186s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/package_position_process
+[6.193s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_position_process', 'cmake_prefix_path')
+[6.194s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/hook/cmake_prefix_path.ps1'
+[6.209s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/hook/cmake_prefix_path.dsv'
+[6.211s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/hook/cmake_prefix_path.sh'
+[6.215s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/lib'
+[6.216s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/bin'
+[6.217s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/lib/pkgconfig/package_position_process.pc'
+[6.218s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/lib/python3.10/site-packages'
+[6.221s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/bin'
+[6.223s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/package.ps1'
+[6.227s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/package.dsv'
+[6.230s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/package.sh'
+[6.234s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/package.bash'
+[6.236s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/package.zsh'
+[6.240s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/colcon-core/packages/package_position_process)
+[6.534s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(package_position_process)
+[6.553s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process' for CMake module files
+[6.558s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process' for CMake config files
+[6.563s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_position_process', 'cmake_prefix_path')
+[6.574s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/hook/cmake_prefix_path.ps1'
+[6.579s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/hook/cmake_prefix_path.dsv'
+[6.583s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/hook/cmake_prefix_path.sh'
+[6.590s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/lib'
+[6.593s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/bin'
+[6.594s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/lib/pkgconfig/package_position_process.pc'
+[6.596s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/lib/python3.10/site-packages'
+[6.598s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/bin'
+[6.604s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/package.ps1'
+[6.617s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/package.dsv'
+[6.632s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/package.sh'
+[6.640s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/package.bash'
+[6.655s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/package_position_process/package.zsh'
+[6.661s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process/share/colcon-core/packages/package_position_process)
+[6.668s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/curry/wilson_proj/ros2-rover-ws/src/package_test' with build type 'ament_cmake'
+[6.671s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/curry/wilson_proj/ros2-rover-ws/src/package_test'
+[6.673s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.673s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.759s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_test': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_test -- -j4 -l4
+[6.785s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/src/package_image_process': PYTHONPATH=/home/curry/wilson_proj/ros2-rover-ws/build/package_image_process/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/package_image_process build --build-base /home/curry/wilson_proj/ros2-rover-ws/build/package_image_process/build install --record /home/curry/wilson_proj/ros2-rover-ws/build/package_image_process/install.log --single-version-externally-managed install_data
+[7.365s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(action_interfaces)
+[7.366s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces' for CMake module files
+[7.373s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces' for CMake config files
+[7.378s] Level 1:colcon.colcon_core.shell:create_environment_hook('action_interfaces', 'cmake_prefix_path')
+[7.380s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/cmake_prefix_path.ps1'
+[7.382s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/cmake_prefix_path.dsv'
+[7.386s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/cmake_prefix_path.sh'
+[7.389s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib'
+[7.390s] Level 1:colcon.colcon_core.shell:create_environment_hook('action_interfaces', 'ld_library_path_lib')
+[7.391s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/ld_library_path_lib.ps1'
+[7.394s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/ld_library_path_lib.dsv'
+[7.398s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/ld_library_path_lib.sh'
+[7.401s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/bin'
+[7.401s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/pkgconfig/action_interfaces.pc'
+[7.403s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages'
+[7.403s] Level 1:colcon.colcon_core.shell:create_environment_hook('action_interfaces', 'pythonpath')
+[7.404s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/pythonpath.ps1'
+[7.407s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/pythonpath.dsv'
+[7.410s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/hook/pythonpath.sh'
+[7.413s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/bin'
+[7.415s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.ps1'
+[7.418s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.dsv'
+[7.422s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.sh'
+[7.425s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.bash'
+[7.427s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.zsh'
+[7.430s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/colcon-core/packages/action_interfaces)
+[7.511s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_test' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_test -- -j4 -l4
+[7.776s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_test': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/package_test
+[7.839s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(package_test)
+[7.840s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test' for CMake module files
+[7.843s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test' for CMake config files
+[7.846s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_test', 'cmake_prefix_path')
+[7.847s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/hook/cmake_prefix_path.ps1'
+[7.850s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_test' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/package_test
+[7.850s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/hook/cmake_prefix_path.dsv'
+[7.853s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/hook/cmake_prefix_path.sh'
+[7.856s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib'
+[7.856s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/bin'
+[7.856s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib/pkgconfig/package_test.pc'
+[7.858s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib/python3.10/site-packages'
+[7.859s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/bin'
+[7.860s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.ps1'
+[7.863s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.dsv'
+[7.865s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.sh'
+[7.868s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.bash'
+[7.870s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.zsh'
+[7.872s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/colcon-core/packages/package_test)
+[8.141s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(package_test)
+[8.142s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test' for CMake module files
+[8.145s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test' for CMake config files
+[8.148s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_test', 'cmake_prefix_path')
+[8.149s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/hook/cmake_prefix_path.ps1'
+[8.151s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/hook/cmake_prefix_path.dsv'
+[8.153s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/hook/cmake_prefix_path.sh'
+[8.156s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib'
+[8.157s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/bin'
+[8.157s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib/pkgconfig/package_test.pc'
+[8.158s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib/python3.10/site-packages'
+[8.159s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/bin'
+[8.161s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.ps1'
+[8.163s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.dsv'
+[8.166s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.sh'
+[8.169s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.bash'
+[8.172s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.zsh'
+[8.174s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/colcon-core/packages/package_test)
+[8.431s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon' returned '0': CMAKE_PREFIX_PATH=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon -- -j4 -l4
+[8.441s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon': CMAKE_PREFIX_PATH=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon
+[8.790s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(msgs_mainrocon)
+[8.792s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon' for CMake module files
+[8.798s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon' returned '0': CMAKE_PREFIX_PATH=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon
+[8.802s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon' for CMake config files
+[8.809s] Level 1:colcon.colcon_core.shell:create_environment_hook('msgs_mainrocon', 'cmake_prefix_path')
+[8.811s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/cmake_prefix_path.ps1'
+[8.816s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/cmake_prefix_path.dsv'
+[8.820s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/cmake_prefix_path.sh'
+[8.825s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib'
+[8.826s] Level 1:colcon.colcon_core.shell:create_environment_hook('msgs_mainrocon', 'ld_library_path_lib')
+[8.828s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/ld_library_path_lib.ps1'
+[8.832s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/ld_library_path_lib.dsv'
+[8.835s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/ld_library_path_lib.sh'
+[8.838s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/bin'
+[8.839s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/pkgconfig/msgs_mainrocon.pc'
+[8.840s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/python3.10/site-packages'
+[8.842s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/bin'
+[8.844s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.ps1'
+[8.848s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.dsv'
+[8.852s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.sh'
+[8.855s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.bash'
+[8.858s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.zsh'
+[8.861s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/colcon-core/packages/msgs_mainrocon)
+[8.865s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(msgs_mainrocon)
+[8.866s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon' for CMake module files
+[8.870s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon' for CMake config files
+[8.874s] Level 1:colcon.colcon_core.shell:create_environment_hook('msgs_mainrocon', 'cmake_prefix_path')
+[8.875s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/cmake_prefix_path.ps1'
+[8.877s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/cmake_prefix_path.dsv'
+[8.879s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/cmake_prefix_path.sh'
+[8.881s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib'
+[8.882s] Level 1:colcon.colcon_core.shell:create_environment_hook('msgs_mainrocon', 'ld_library_path_lib')
+[8.883s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/ld_library_path_lib.ps1'
+[8.885s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/ld_library_path_lib.dsv'
+[8.886s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/hook/ld_library_path_lib.sh'
+[8.888s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/bin'
+[8.889s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/pkgconfig/msgs_mainrocon.pc'
+[8.890s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/python3.10/site-packages'
+[8.890s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/bin'
+[8.892s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.ps1'
+[8.894s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.dsv'
+[8.897s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.sh'
+[8.899s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.bash'
+[8.902s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.zsh'
+[8.904s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/colcon-core/packages/msgs_mainrocon)
+[8.907s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control' with build type 'ament_cmake'
+[8.907s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control'
+[8.908s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[8.909s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[8.933s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process' for CMake module files
+[8.935s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/src/package_image_process' returned '0': PYTHONPATH=/home/curry/wilson_proj/ros2-rover-ws/build/package_image_process/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/package_image_process build --build-base /home/curry/wilson_proj/ros2-rover-ws/build/package_image_process/build install --record /home/curry/wilson_proj/ros2-rover-ws/build/package_image_process/install.log --single-version-externally-managed install_data
+[8.938s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process' for CMake config files
+[8.940s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_image_process', 'cmake_prefix_path')
+[8.941s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/hook/cmake_prefix_path.ps1'
+[8.944s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/hook/cmake_prefix_path.dsv'
+[8.946s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/hook/cmake_prefix_path.sh'
+[8.949s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib'
+[8.950s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/bin'
+[8.950s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/pkgconfig/package_image_process.pc'
+[8.951s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages'
+[8.952s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_image_process', 'pythonpath')
+[8.953s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/hook/pythonpath.ps1'
+[8.955s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/hook/pythonpath.dsv'
+[8.957s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/hook/pythonpath.sh'
+[8.960s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/bin'
+[8.960s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(package_image_process)
+[8.961s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/package.ps1'
+[8.964s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/package.dsv'
+[8.967s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/package.sh'
+[8.969s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/package.bash'
+[8.971s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/package_image_process/package.zsh'
+[8.974s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/share/colcon-core/packages/package_image_process)
+[8.994s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4
+[10.746s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4
+[10.948s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(package_rover_control)
+[10.949s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control' for CMake module files
+[10.953s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control' for CMake config files
+[10.954s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_rover_control', 'cmake_prefix_path')
+[10.955s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/hook/cmake_prefix_path.ps1'
+[10.958s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/hook/cmake_prefix_path.dsv'
+[10.960s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/hook/cmake_prefix_path.sh'
+[10.963s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib'
+[10.963s] Level 1:colcon.colcon_core.shell:create_environment_hook('package_rover_control', 'ld_library_path_lib')
+[10.964s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/hook/ld_library_path_lib.ps1'
+[10.966s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/hook/ld_library_path_lib.dsv'
+[10.968s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/hook/ld_library_path_lib.sh'
+[10.970s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/bin'
+[10.971s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib/pkgconfig/package_rover_control.pc'
+[10.971s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib/python3.10/site-packages'
+[10.972s] Level 1:colcon.colcon_core.environment:checking '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/bin'
+[10.974s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/package.ps1'
+[10.976s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/package.dsv'
+[10.978s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/package.sh'
+[10.981s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/package.bash'
+[10.983s] INFO:colcon.colcon_core.shell:Creating package script '/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/package.zsh'
+[10.985s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/colcon-core/packages/package_rover_control)
+[10.997s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[10.997s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[10.997s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[10.998s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[11.025s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[11.025s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[11.026s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[11.030s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[11.031s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[11.032s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/curry/wilson_proj/ros2-rover-ws/install/local_setup.ps1'
+[11.035s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/curry/wilson_proj/ros2-rover-ws/install/_local_setup_util_ps1.py'
+[11.043s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/curry/wilson_proj/ros2-rover-ws/install/setup.ps1'
+[11.050s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/curry/wilson_proj/ros2-rover-ws/install/local_setup.sh'
+[11.053s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/curry/wilson_proj/ros2-rover-ws/install/_local_setup_util_sh.py'
+[11.055s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/curry/wilson_proj/ros2-rover-ws/install/setup.sh'
+[11.062s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/curry/wilson_proj/ros2-rover-ws/install/local_setup.bash'
+[11.065s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/curry/wilson_proj/ros2-rover-ws/install/setup.bash'
+[11.072s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/curry/wilson_proj/ros2-rover-ws/install/local_setup.zsh'
+[11.074s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/curry/wilson_proj/ros2-rover-ws/install/setup.zsh'

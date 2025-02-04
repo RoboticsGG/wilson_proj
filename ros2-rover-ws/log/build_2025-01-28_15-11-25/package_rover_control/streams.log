@@ -1,0 +1,109 @@
+[0.085s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4
+[0.296s] [35m[1mConsolidate compiler generated dependencies of target node_rovercontrol[0m
+[0.363s] [ 33%] Built target node_motor_control
+[0.368s] [ 66%] Built target motorcontrol
+[0.397s] [ 83%] [32mBuilding CXX object CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o[0m
+[10.364s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:[m[K In member function ‘[01m[Kvoid Node_Rovercontrol::timer_callback()[m[K’:
+[10.365s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:107:34:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Publisher<std_msgs::msg::Float32MultiArray_<std::allocator<void> > >::publish(msgs_mainrocon::msg::MainRocon_<std::allocator<void> >&)[m[K’
+[10.366s]   107 |         [01;31m[Ktopic_rocon_pub_->publish(mainrocon)[m[K;
+[10.367s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[10.367s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[10.367s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[10.368s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[10.368s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[10.368s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[10.369s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[10.369s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[10.369s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[10.370s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[10.370s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[10.370s]                  from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:1[m[K:
+[10.371s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:251:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::ros_message_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::ros_message_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type> >::type>) [with T = T; MessageT = std_msgs::msg::Float32MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[10.371s]   251 |   [01;36m[Kpublish[m[K(std::unique_ptr<T, ROSMessageTypeDeleter> msg)
+[10.372s]       |   [01;36m[K^~~~~~~[m[K
+[10.372s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:251:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[10.372s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:107:34:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmsgs_mainrocon::msg::MainRocon_<std::allocator<void> >[m[K’ is not derived from ‘[01m[Kstd::unique_ptr<T, std::default_delete<std_msgs::msg::Float32MultiArray_<std::allocator<void> > > >[m[K’
+[10.373s]   107 |         [01;36m[Ktopic_rocon_pub_->publish(mainrocon)[m[K;
+[10.373s]       |         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[10.373s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[10.374s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[10.374s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[10.375s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[10.375s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[10.375s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[10.376s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[10.376s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[10.376s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[10.376s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[10.377s]                  from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:1[m[K:
+[10.377s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(const T&) [with T = T; MessageT = std_msgs::msg::Float32MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[10.377s]   292 |   [01;36m[Kpublish[m[K(const T & msg)
+[10.378s]       |   [01;36m[K^~~~~~~[m[K
+[10.378s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:292:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[10.378s] In file included from [01m[K/usr/include/c++/11/bits/move.h:57[m[K,
+[10.379s]                  from [01m[K/usr/include/c++/11/bits/stl_pair.h:59[m[K,
+[10.379s]                  from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+[10.380s]                  from [01m[K/usr/include/c++/11/memory:63[m[K,
+[10.380s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+[10.380s]                  from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:1[m[K:
+[10.381s] /usr/include/c++/11/type_traits: In substitution of ‘[01m[Ktemplate<bool _Cond, class _Tp> using enable_if_t = typename std::enable_if::type [with bool _Cond = false; _Tp = void][m[K’:
+[10.381s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:292:3:[m[K   required by substitution of ‘[01m[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, std_msgs::msg::Float32MultiArray_<std::allocator<void> > >::value), void> rclcpp::Publisher<std_msgs::msg::Float32MultiArray_<std::allocator<void> > >::publish<T>(const T&) [with T = msgs_mainrocon::msg::MainRocon_<std::allocator<void> >][m[K’
+[10.381s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:107:34:[m[K   required from here
+[10.382s] [01m[K/usr/include/c++/11/type_traits:2579:11:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, void>[m[K’
+[10.382s]  2579 |     using [01;31m[Kenable_if_t[m[K = typename enable_if<_Cond, _Tp>::type;
+[10.382s]       |           [01;31m[K^~~~~~~~~~~[m[K
+[10.383s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[10.383s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[10.384s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[10.384s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[10.384s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[10.385s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[10.385s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[10.385s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[10.386s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[10.387s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[10.387s]                  from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:1[m[K:
+[10.387s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:322:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::custom_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::custom_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type> >::type>) [with T = T; MessageT = std_msgs::msg::Float32MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[10.388s]   322 |   [01;36m[Kpublish[m[K(std::unique_ptr<T, PublishedTypeDeleter> msg)
+[10.388s]       |   [01;36m[K^~~~~~~[m[K
+[10.389s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:322:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[10.389s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:107:34:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmsgs_mainrocon::msg::MainRocon_<std::allocator<void> >[m[K’ is not derived from ‘[01m[Kstd::unique_ptr<T, std::default_delete<std_msgs::msg::Float32MultiArray_<std::allocator<void> > > >[m[K’
+[10.389s]   107 |         [01;36m[Ktopic_rocon_pub_->publish(mainrocon)[m[K;
+[10.390s]       |         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[10.390s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[10.390s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[10.391s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[10.391s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[10.391s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[10.392s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[10.392s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[10.392s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[10.393s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[10.393s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[10.393s]                  from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp:1[m[K:
+[10.394s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:364:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(const T&) [with T = T; MessageT = std_msgs::msg::Float32MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[10.394s]   364 |   [01;36m[Kpublish[m[K(const T & msg)
+[10.395s]       |   [01;36m[K^~~~~~~[m[K
+[10.395s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:364:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[10.395s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:383:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rcl_serialized_message_t&) [with MessageT = std_msgs::msg::Float32MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>; rcl_serialized_message_t = rcutils_uint8_array_s][m[K’
+[10.396s]   383 |   [01;36m[Kpublish[m[K(const rcl_serialized_message_t & serialized_msg)
+[10.396s]       |   [01;36m[K^~~~~~~[m[K
+[10.396s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:383:44:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kmsgs_mainrocon::msg::MainRocon_<std::allocator<void> >[m[K’ to ‘[01m[Kconst rcl_serialized_message_t&[m[K’ {aka ‘[01m[Kconst rcutils_uint8_array_s&[m[K’}
+[10.397s]   383 |   publish([01;36m[Kconst rcl_serialized_message_t & serialized_msg[m[K)
+[10.397s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[10.398s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:389:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rclcpp::SerializedMessage&) [with MessageT = std_msgs::msg::Float32MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[10.398s]   389 |   [01;36m[Kpublish[m[K(const SerializedMessage & serialized_msg)
+[10.398s]       |   [01;36m[K^~~~~~~[m[K
+[10.399s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:389:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kmsgs_mainrocon::msg::MainRocon_<std::allocator<void> >[m[K’ to ‘[01m[Kconst rclcpp::SerializedMessage&[m[K’
+[10.399s]   389 |   publish([01;36m[Kconst SerializedMessage & serialized_msg[m[K)
+[10.399s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[10.400s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:403:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(rclcpp::LoanedMessage<typename rclcpp::TypeAdapter<MessageT>::ros_message_type, AllocatorT>&&) [with MessageT = std_msgs::msg::Float32MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>; typename rclcpp::TypeAdapter<MessageT>::ros_message_type = std_msgs::msg::Float32MultiArray_<std::allocator<void> >][m[K’
+[10.400s]   403 |   [01;36m[Kpublish[m[K(rclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg)
+[10.400s]       |   [01;36m[K^~~~~~~[m[K
+[10.401s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:403:64:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kmsgs_mainrocon::msg::MainRocon_<std::allocator<void> >[m[K’ to ‘[01m[Krclcpp::LoanedMessage<std_msgs::msg::Float32MultiArray_<std::allocator<void> >, std::allocator<void> >&&[m[K’
+[10.401s]   403 |   publish([01;36m[Krclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg[m[K)
+[10.401s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[21.647s] gmake[2]: *** [CMakeFiles/node_rovercontrol.dir/build.make:76: CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o] Error 1
+[21.648s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/node_rovercontrol.dir/all] Error 2
+[21.649s] gmake: *** [Makefile:146: all] Error 2
+[21.656s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control -- -j4 -l4

@@ -14,9 +14,8 @@ class GNSSPublisher : public rclcpp::Node {
 public:
     GNSSPublisher() : Node("gnss_publisher") {
         publisher_ = this->create_publisher<msgs_positions::msg::GnssData>("gnss_data", 10);
-
-        // Open Serial Port
-        serial_port_ = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY | O_NDELAY);
+        serial_port_ = openSerialPort("/dev/ttyUSB0");
+        
         if (serial_port_ == -1) {
             RCLCPP_ERROR(this->get_logger(), "Error opening serial port: /dev/ttyUSB0");
             return;

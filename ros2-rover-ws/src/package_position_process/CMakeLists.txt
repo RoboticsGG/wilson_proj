@@ -10,6 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(jsoncpp REQUIRED)
+find_package(msgs_positions REQUIRED)
 
 include_directories(/usr/include/jsoncpp)
 # uncomment the following section in order to fill in
@@ -17,7 +18,7 @@ include_directories(/usr/include/jsoncpp)
 # find_package(<dependency> REQUIRED)
 
 add_executable(node_gnss src/node_gnss.cpp)
-ament_target_dependencies(node_gnss rclcpp std_msgs jsoncpp)
+ament_target_dependencies(node_gnss rclcpp std_msgs jsoncpp msgs_positions)
 
 target_link_libraries(node_gnss jsoncpp)
 

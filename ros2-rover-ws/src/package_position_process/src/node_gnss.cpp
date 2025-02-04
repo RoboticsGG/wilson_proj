@@ -88,37 +88,48 @@ private:
     //     }
     // }
     void processJSON(const std::string &json_data) {
-      Json::CharReaderBuilder reader;
-      Json::Value root;
-      std::string errs;
+    Json::CharReaderBuilder reader;
+    Json::Value root;
+    std::string errs;
 
-      std::istringstream ss(json_data);
-      if (Json::parseFromStream(reader, ss, &root, &errs)) {
-          // Extract specific values (modify these keys as needed)
-          std::string time = root.get("time", "N/A").asString();
-          int numSatellites = root.get("numSatellites", 0).asInt();
-          bool fix = root.get("fix", false).asBool();
-          double latitude = root.get("latitude", 0.0).asDouble();
-          double longitude = root.get("longitude", 0.0).asDouble();
+    std::istringstream ss(json_data);
+    if (Json::parseFromStream(reader, ss, &root, &errs)) {
+        // Extract values
+        std::string date_time = root.get("time", "N/A").asString();
+        int numSatellites = root.get("numSatellites", 0).asInt();
+        bool fix = root.get("fix", false).asBool();
+        double latitude = root.get("latitude", 0.0).asDouble();
+        double longitude = root.get("longitude", 0.0).asDouble();
 
-          // Format extracted data as a string
-          std::ostringstream formatted_msg;
-          formatted_msg << "Time: " << time 
-                        << ", Satellites: " << numSatellites 
-                        << ", Fix: " << (fix ? "Yes" : "No") 
-                        << ", Lat: " << latitude 
-                        << ", Lon: " << longitude;
+        // Split date and time
+        std::string date = "N/A";
+        std::string time = "N/A";
+        size_t space_pos = date_time.find(" ");
+        if (space_pos != std::string::npos) {
+            date = date_time.substr(0, space_pos);  // Extract date
+            time = date_time.substr(space_pos + 1); // Extract time
+        }
 
-          // Publish formatted data
-          std_msgs::msg::String msg;
-          msg.data = formatted_msg.str();
-          publisher_->publish(msg);
+        // Format extracted data
+        std::ostringstream formatted_msg;
+        formatted_msg << "Date: " << date
+                      << ", Time: " << time
+                      << ", Satellites: " << numSatellites
+                      << ", Fix: " << (fix ? "Yes" : "No")
+                      << ", Lat: " << latitude
+                      << ", Lon: " << longitude;
 
-          RCLCPP_INFO(this->get_logger(), "Published: %s", formatted_msg.str().c_str());
-      } else {
-          RCLCPP_WARN(this->get_logger(), "Invalid JSON data: %s", json_data.c_str());
-      }
-  }
+        // Publish formatted data
+        std_msgs::msg::String msg;
+        msg.data = formatted_msg.str();
+        publisher_->publish(msg);
+
+        RCLCPP_INFO(this->get_logger(), "Published: %s", formatted_msg.str().c_str());
+    } else {
+        RCLCPP_WARN(this->get_logger(), "Invalid JSON data: %s", json_data.c_str());
+    }
+}
+
 
 };
 

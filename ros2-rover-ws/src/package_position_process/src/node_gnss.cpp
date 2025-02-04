@@ -9,7 +9,8 @@ public:
     GNSSPublisher() : Node("gnss_publisher") {
         publisher_ = this->create_publisher<msgs_positions::msg::GnssData>("gnss_data", 10);
         //processJSON(R"({"time":"2025-02-04 09:42:25","numSatellites":6,"fix":false,"latitude":37.7749,"longitude":-122.4194})");
-        timer_ = this->create_wall_timer(1s, std::bind(&GNSSPublisher::publishData, this));
+        timer_ = this->create_wall_timer(
+          std::chrono::second(1), std::bind(&GNSSPublisher::publishData, this));
     }
 
 private:
@@ -34,7 +35,7 @@ private:
             std::string date = date_time.substr(0, date_time.find(" "));
             std::string time = date_time.substr(date_time.find(" ") + 1);
 
-            auto msg = package_navigate_route::msg::GnssData();
+            auto msg = msgs_positions::msg::GnssData();
             msg.date = date;
             msg.time = time;
             msg.num_satellites = numSatellites;

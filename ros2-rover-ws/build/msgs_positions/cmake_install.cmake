@@ -356,11 +356,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msgs_positions/msg" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_adapter/msgs_positions/msg/NavSatFix.idl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msgs_positions/msg" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_adapter/msgs_positions/msg/GnssData.idl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msgs_positions/msg" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/src/msgs_positions/msg/NavSatFix.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msgs_positions/msg" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/src/msgs_positions/msg/GnssData.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

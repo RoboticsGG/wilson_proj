@@ -66,7 +66,7 @@ include CMakeFiles/msgs_positions.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/msgs_positions.dir/progress.make
 
-CMakeFiles/msgs_positions: /home/curry/wilson_proj/ros2-rover-ws/src/msgs_positions/msg/NavSatFix.msg
+CMakeFiles/msgs_positions: /home/curry/wilson_proj/ros2-rover-ws/src/msgs_positions/msg/GnssData.msg
 CMakeFiles/msgs_positions: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 CMakeFiles/msgs_positions: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 CMakeFiles/msgs_positions: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl

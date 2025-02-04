@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/msgs_positions__cpp"
-  "rosidl_generator_cpp/msgs_positions/msg/detail/nav_sat_fix__builder.hpp"
-  "rosidl_generator_cpp/msgs_positions/msg/detail/nav_sat_fix__struct.hpp"
-  "rosidl_generator_cpp/msgs_positions/msg/detail/nav_sat_fix__traits.hpp"
-  "rosidl_generator_cpp/msgs_positions/msg/detail/nav_sat_fix__type_support.hpp"
-  "rosidl_generator_cpp/msgs_positions/msg/nav_sat_fix.hpp"
+  "rosidl_generator_cpp/msgs_positions/msg/detail/gnss_data__builder.hpp"
+  "rosidl_generator_cpp/msgs_positions/msg/detail/gnss_data__struct.hpp"
+  "rosidl_generator_cpp/msgs_positions/msg/detail/gnss_data__traits.hpp"
+  "rosidl_generator_cpp/msgs_positions/msg/detail/gnss_data__type_support.hpp"
+  "rosidl_generator_cpp/msgs_positions/msg/gnss_data.hpp"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -15,8 +15,8 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_c.c" "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_introspection_c.c" "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/msg/__init__.py" "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_fastrtps_c.c"
-  "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/msg/_nav_sat_fix.py" "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_fastrtps_c.c"
-  "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/msg/_nav_sat_fix_s.c" "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/msg/_gnss_data.py" "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/msg/_gnss_data_s.c" "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions/rosidl_generator_py/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_fastrtps_c.c"
   )
 
 

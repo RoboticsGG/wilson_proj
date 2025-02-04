@@ -1,11 +1,4 @@
 std_msgs/Header header
-  uint32 seq
-  time stamp
-  string frame_id
-uint8 COVARIANCE_TYPE_UNKNOWN=0
-uint8 COVARIANCE_TYPE_APPROXIMATED=1
-uint8 COVARIANCE_TYPE_DIAGONAL_KNOWN=2
-uint8 COVARIANCE_TYPE_KNOWN=3
 float64 latitude
 float64 longitude
 float64 altitude

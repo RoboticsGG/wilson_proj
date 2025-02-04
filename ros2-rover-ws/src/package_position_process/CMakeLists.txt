@@ -17,7 +17,7 @@ include_directories(/usr/include/jsoncpp)
 # find_package(<dependency> REQUIRED)
 
 add_executable(node_gnss src/node_gnss.cpp)
-ament_target_dependencies(node_destination rclcpp std_msgs jsoncpp)
+ament_target_dependencies(node_gnss rclcpp std_msgs jsoncpp)
 
 target_link_libraries(node_gnss jsoncpp)
 

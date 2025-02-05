@@ -34,11 +34,10 @@ private:
 
     void topic_des_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg){
         if (msg->data.size()>=3) {
-            std::lock_guard<std::mutex> lock(data_lock_);
             if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1] ){
                 destination_a_ = msg->data[0];
                 destination_b_ = msg->data[1];
-                RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
+                RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f", destination_a_, destination_b_;
             } else {
             //RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
         }} else {

@@ -16,10 +16,10 @@ public:
             std::bind(&PoseProcessor::topic_cur_callback, this, std::placeholders::_1)
         );
 
-        timer_ = this->create_wall_timer(
-            std::chrono::seconds(1), 
-            std::bind(&PoseProcessor::processData, this)
-        );
+        // timer_ = this->create_wall_timer(
+        //     std::chrono::seconds(1), 
+        //     std::bind(&PoseProcessor::processData, this)
+        // );
     }
 
 private:
@@ -28,9 +28,9 @@ private:
     rclcpp::Subscription<msgs_positions::msg::GnssData>::SharedPtr cur_pose_sub_;
     rclcpp::TimerBase::SharedPtr timer_;
 
-    void processData() {
-        pass;
-    }
+    // void processData() {
+    //     pass;
+    // }
 
     void topic_des_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg){
         if (msg->data.size()>=3) {
@@ -61,4 +61,14 @@ private:
 
         
     }
+
+    float destination_a_;
+    float destination_b_;
 };
+
+int main(int argc, char *argv[]) {
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<PoseProcessor>());
+    rclcpp::shutdown();
+    return 0;
+}

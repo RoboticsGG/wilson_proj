@@ -34,10 +34,10 @@ private:
         RCLCPP_INFO(this->get_logger(), "Publishing to topic_speedlimit: '%s'", std::to_string(spd_lmt_msg.data).c_str());
         topic_spd_pub_->publish(spd_lmt_msg);
 
-        destination_ = {1.0f, 2.0f, 3.0f}; // Example data
+        destination_ = {1.0f, 2.0f}; // Example data
         auto des_msg = std_msgs::msg::Float32MultiArray();
         des_msg.data = destination_; 
-        RCLCPP_INFO(this->get_logger(), "Publishing to topic_destination: '[1.0, 2.0, 3.0]'");
+        RCLCPP_INFO(this->get_logger(), "Publishing to topic_destination: '[1.0, 2.0]'");
         topic_des_pub->publish(des_msg);
     }
 

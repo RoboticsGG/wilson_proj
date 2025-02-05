@@ -20,6 +20,9 @@ include_directories(/usr/include/jsoncpp)
 add_executable(node_gnss src/node_gnss.cpp)
 ament_target_dependencies(node_gnss rclcpp std_msgs jsoncpp msgs_positions)
 
+add_executable(node_position_process src/node_position_process.cpp)
+ament_target_dependencies(node_position_process rclcpp std_msgs msgs_positions)
+
 target_link_libraries(node_gnss jsoncpp)
 
 target_include_directories(node_gnss PUBLIC

@@ -28,9 +28,17 @@ target_link_libraries(node_gnss jsoncpp)
 target_include_directories(node_gnss PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
+
+target_include_directories(node_position_process PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+
 target_compile_features(node_gnss PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
 install(TARGETS node_gnss
+  DESTINATION lib/${PROJECT_NAME})
+
+  install(TARGETS node_position_process
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

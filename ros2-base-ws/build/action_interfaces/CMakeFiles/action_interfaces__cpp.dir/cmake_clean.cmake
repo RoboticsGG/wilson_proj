@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "rosidl_generator_cpp/action_interfaces/action/detail/rovercontrol__builder.hpp"
   "rosidl_generator_cpp/action_interfaces/action/detail/rovercontrol__struct.hpp"
   "rosidl_generator_cpp/action_interfaces/action/detail/rovercontrol__traits.hpp"
+  "rosidl_generator_cpp/action_interfaces/action/detail/rovercontrol__type_support.hpp"
   "rosidl_generator_cpp/action_interfaces/action/rovercontrol.hpp"
 )
 

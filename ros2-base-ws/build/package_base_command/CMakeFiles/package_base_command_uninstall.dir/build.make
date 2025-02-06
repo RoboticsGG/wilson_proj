@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yupi/rover_proj/ros2-base-ws/src/package_base_command
+CMAKE_SOURCE_DIR = /home/yupi/wilson_proj/ros2-base-ws/src/package_base_command
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yupi/rover_proj/ros2-base-ws/build/package_base_command
+CMAKE_BINARY_DIR = /home/yupi/wilson_proj/ros2-base-ws/build/package_base_command
 
 # Utility rule file for package_base_command_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/package_base_command_uninstall.dir/compiler_depend.make
 include CMakeFiles/package_base_command_uninstall.dir/progress.make
 
 CMakeFiles/package_base_command_uninstall:
-	/usr/bin/cmake -P /home/yupi/rover_proj/ros2-base-ws/build/package_base_command/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/yupi/wilson_proj/ros2-base-ws/build/package_base_command/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 package_base_command_uninstall: CMakeFiles/package_base_command_uninstall
 package_base_command_uninstall: CMakeFiles/package_base_command_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/package_base_command_uninstall.dir/clean:
 .PHONY : CMakeFiles/package_base_command_uninstall.dir/clean
 
 CMakeFiles/package_base_command_uninstall.dir/depend:
-	cd /home/yupi/rover_proj/ros2-base-ws/build/package_base_command && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yupi/rover_proj/ros2-base-ws/src/package_base_command /home/yupi/rover_proj/ros2-base-ws/src/package_base_command /home/yupi/rover_proj/ros2-base-ws/build/package_base_command /home/yupi/rover_proj/ros2-base-ws/build/package_base_command /home/yupi/rover_proj/ros2-base-ws/build/package_base_command/CMakeFiles/package_base_command_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yupi/wilson_proj/ros2-base-ws/build/package_base_command && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yupi/wilson_proj/ros2-base-ws/src/package_base_command /home/yupi/wilson_proj/ros2-base-ws/src/package_base_command /home/yupi/wilson_proj/ros2-base-ws/build/package_base_command /home/yupi/wilson_proj/ros2-base-ws/build/package_base_command /home/yupi/wilson_proj/ros2-base-ws/build/package_base_command/CMakeFiles/package_base_command_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/package_base_command_uninstall.dir/depend
 

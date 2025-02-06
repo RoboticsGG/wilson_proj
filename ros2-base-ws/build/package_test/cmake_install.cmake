@@ -1,8 +1,8 @@
-# Install script for directory: /home/yupi/rover_proj/ros2-base-ws/src/package_test
+# Install script for directory: /home/yupi/wilson_proj/ros2-base-ws/src/package_test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yupi/rover_proj/ros2-base-ws/install/package_test")
+  set(CMAKE_INSTALL_PREFIX "/home/yupi/wilson_proj/ros2-base-ws/install/package_test")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/node_client_act"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_test" TYPE EXECUTABLE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/node_client_act")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_test" TYPE EXECUTABLE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/node_client_act")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/node_client_act" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/node_client_act")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -65,7 +65,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/pub_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_test" TYPE EXECUTABLE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/pub_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_test" TYPE EXECUTABLE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/pub_node")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/pub_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/pub_node")
     file(RPATH_CHANGE
@@ -85,7 +85,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/sub_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_test" TYPE EXECUTABLE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/sub_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_test" TYPE EXECUTABLE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/sub_node")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/sub_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/sub_node")
     file(RPATH_CHANGE
@@ -105,7 +105,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/echoreply_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_test" TYPE EXECUTABLE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/echoreply_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_test" TYPE EXECUTABLE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/echoreply_node")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/echoreply_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/echoreply_node")
     file(RPATH_CHANGE
@@ -119,11 +119,31 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/package_test")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/node_rov_datasub" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/node_rov_datasub")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/node_rov_datasub"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/package_test" TYPE EXECUTABLE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/node_rov_datasub")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/node_rov_datasub" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/node_rov_datasub")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/node_rov_datasub"
+         OLD_RPATH "/opt/ros/humble/lib:/home/yupi/wilson_proj/ros2-base-ws/install/msgs_mainrocon/lib:/home/yupi/wilson_proj/ros2-base-ws/install/msgs_rovercon/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_test/node_rov_datasub")
+    endif()
+  endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/package_test")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/package_test")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/package_test")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -131,7 +151,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test/environment" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test/environment" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -139,42 +159,42 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test/environment" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test/environment" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_index/share/ament_index/resource_index/packages/package_test")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_index/share/ament_index/resource_index/packages/package_test")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test/cmake" TYPE FILE FILES
-    "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_core/package_testConfig.cmake"
-    "/home/yupi/rover_proj/ros2-base-ws/build/package_test/ament_cmake_core/package_testConfig-version.cmake"
+    "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_core/package_testConfig.cmake"
+    "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/ament_cmake_core/package_testConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/rover_proj/ros2-base-ws/src/package_test/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/package_test" TYPE FILE FILES "/home/yupi/wilson_proj/ros2-base-ws/src/package_test/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -185,5 +205,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/yupi/rover_proj/ros2-base-ws/build/package_test/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/yupi/wilson_proj/ros2-base-ws/build/package_test/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,8 +1,8 @@
-# Install script for directory: /home/yupi/rover_proj/ros2-base-ws/build/action_interfaces/action_interfaces__py
+# Install script for directory: /home/yupi/wilson_proj/ros2-base-ws/build/action_interfaces/action_interfaces__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yupi/rover_proj/ros2-base-ws/install/action_interfaces")
+  set(CMAKE_INSTALL_PREFIX "/home/yupi/wilson_proj/ros2-base-ws/install/action_interfaces")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

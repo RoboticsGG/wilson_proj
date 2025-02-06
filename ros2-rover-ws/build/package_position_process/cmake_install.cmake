@@ -54,7 +54,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_position_process/node_gnss")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_position_process/node_gnss"
-         OLD_RPATH "/opt/ros/humble/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib:"
+         OLD_RPATH "/opt/ros/humble/lib:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_position_process/node_gnss")
@@ -74,7 +74,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_position_process/node_position_process")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_position_process/node_position_process"
-         OLD_RPATH "/opt/ros/humble/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib:"
+         OLD_RPATH "/opt/ros/humble/lib:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_position_process/node_position_process")

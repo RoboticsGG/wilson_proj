@@ -75,16 +75,15 @@ private:
     }
 
     void topic_cur_callback(const msgs_positions::msg::GnssData::SharedPtr msg) {
-        auto cur_pose_msg = msgs_positions::msg::GnssData();
-        cur_pose_msg.date = msg->date;
-        cur_pose_msg.time = msg->time;
-        cur_pose_msg.num_satellites = msg->num_satellites;
-        cur_pose_msg.fix = msg->fix;
-        cur_pose_msg.latitude = msg->latitude;
-        cur_pose_msg.longitude = msg->longitude;
+        cur_pose_msg_.date = msg->date;
+        cur_pose_msg_.time = msg->time;
+        cur_pose_msg_.num_satellites = msg->num_satellites;
+        cur_pose_msg_.fix = msg->fix;
+        cur_pose_msg_.latitude = msg->latitude;
+        cur_pose_msg_.longitude = msg->longitude;
 
         RCLCPP_INFO(this->get_logger(), "Received GNSS Data: Date=%s, Time=%s, Sat=%d, Fix=%d, Lat=%f, Lon=%f",
-                    cur_pose_msg.date.c_str(), cur_pose_msg.time.c_str(), cur_pose_msg.num_satellites, cur_pose_msg.fix, cur_pose_msg.latitude, cur_pose_msg.longitude);
+                    cur_pose_msg_.date.c_str(), cur_pose_msg_.time.c_str(), cur_pose_msg_.num_satellites, cur_pose_msg_.fix, cur_pose_msg_.latitude, cur_pose_msg_.longitude);
 
         
     }

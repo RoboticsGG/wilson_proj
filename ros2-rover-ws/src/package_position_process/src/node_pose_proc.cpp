@@ -1,7 +1,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
-#include <msgs_positions/msg/gnss_data.hpp>
+#include <ifaces_position/msg/gnss_data.hpp>
 #include <cmath>
 
 class PoseProcessor : public rclcpp::Node {
@@ -11,7 +11,7 @@ public:
             "topic_destination", 10,
             std::bind(&PoseProcessor::topic_des_callback, this, std::placeholders::_1)
         );
-        cur_pose_sub_ = this->create_subscription<msgs_positions::msg::GnssData>(
+        cur_pose_sub_ = this->create_subscription<ifaces_position::msg::GnssData>(
             "gnss_data", 10,
             std::bind(&PoseProcessor::topic_cur_callback, this, std::placeholders::_1)
         );
@@ -23,11 +23,11 @@ public:
     }
 
 private:
-    rclcpp::Publisher<msgs_positions::msg::GnssData>::SharedPtr publisher_;
+    rclcpp::Publisher<ifaces_position::msg::GnssData>::SharedPtr publisher_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr des_pose_sub_;
-    rclcpp::Subscription<msgs_positions::msg::GnssData>::SharedPtr cur_pose_sub_;
+    rclcpp::Subscription<ifaces_position::msg::GnssData>::SharedPtr cur_pose_sub_;
     rclcpp::TimerBase::SharedPtr timer_;
-    msgs_positions::msg::GnssData cur_pose_msg_;
+    ifaces_position::msg::GnssData cur_pose_msg_;
 
     float destination_a_;
     float destination_b_;
@@ -74,7 +74,7 @@ private:
         }
     }
 
-    void topic_cur_callback(const msgs_positions::msg::GnssData::SharedPtr msg) {
+    void topic_cur_callback(const ifaces_position::msg::GnssData::SharedPtr msg) {
         cur_pose_msg_.date = msg->date;
         cur_pose_msg_.time = msg->time;
         cur_pose_msg_.num_satellites = msg->num_satellites;

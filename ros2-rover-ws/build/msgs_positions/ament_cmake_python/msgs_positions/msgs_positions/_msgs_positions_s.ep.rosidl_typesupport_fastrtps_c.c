@@ -24,39 +24,39 @@ static struct PyModuleDef msgs_positions__module = {
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_runtime_c/service_type_support_struct.h"
 #include "rosidl_runtime_c/action_type_support_struct.h"
-#include "msgs_positions/msg/detail/nav_sat_fix__type_support.h"
-#include "msgs_positions/msg/detail/nav_sat_fix__struct.h"
-#include "msgs_positions/msg/detail/nav_sat_fix__functions.h"
+#include "msgs_positions/msg/detail/gnss_data__type_support.h"
+#include "msgs_positions/msg/detail/gnss_data__struct.h"
+#include "msgs_positions/msg/detail/gnss_data__functions.h"
 
-static void * msgs_positions__msg__nav_sat_fix__create_ros_message(void)
+static void * msgs_positions__msg__gnss_data__create_ros_message(void)
 {
-  return msgs_positions__msg__NavSatFix__create();
+  return msgs_positions__msg__GnssData__create();
 }
 
-static void msgs_positions__msg__nav_sat_fix__destroy_ros_message(void * raw_ros_message)
+static void msgs_positions__msg__gnss_data__destroy_ros_message(void * raw_ros_message)
 {
-  msgs_positions__msg__NavSatFix * ros_message = (msgs_positions__msg__NavSatFix *)raw_ros_message;
-  msgs_positions__msg__NavSatFix__destroy(ros_message);
+  msgs_positions__msg__GnssData * ros_message = (msgs_positions__msg__GnssData *)raw_ros_message;
+  msgs_positions__msg__GnssData__destroy(ros_message);
 }
 
 ROSIDL_GENERATOR_C_IMPORT
-bool msgs_positions__msg__nav_sat_fix__convert_from_py(PyObject * _pymsg, void * ros_message);
+bool msgs_positions__msg__gnss_data__convert_from_py(PyObject * _pymsg, void * ros_message);
 ROSIDL_GENERATOR_C_IMPORT
-PyObject * msgs_positions__msg__nav_sat_fix__convert_to_py(void * raw_ros_message);
+PyObject * msgs_positions__msg__gnss_data__convert_to_py(void * raw_ros_message);
 
 
 ROSIDL_GENERATOR_C_IMPORT
 const rosidl_message_type_support_t *
-ROSIDL_GET_MSG_TYPE_SUPPORT(msgs_positions, msg, NavSatFix);
+ROSIDL_GET_MSG_TYPE_SUPPORT(msgs_positions, msg, GnssData);
 
 int8_t
-_register_msg_type__msg__nav_sat_fix(PyObject * pymodule)
+_register_msg_type__msg__gnss_data(PyObject * pymodule)
 {
   int8_t err;
 
   PyObject * pyobject_create_ros_message = NULL;
   pyobject_create_ros_message = PyCapsule_New(
-    (void *)&msgs_positions__msg__nav_sat_fix__create_ros_message,
+    (void *)&msgs_positions__msg__gnss_data__create_ros_message,
     NULL, NULL);
   if (!pyobject_create_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -64,7 +64,7 @@ _register_msg_type__msg__nav_sat_fix(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "create_ros_message_msg__msg__nav_sat_fix",
+    "create_ros_message_msg__msg__gnss_data",
     pyobject_create_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -75,7 +75,7 @@ _register_msg_type__msg__nav_sat_fix(PyObject * pymodule)
 
   PyObject * pyobject_destroy_ros_message = NULL;
   pyobject_destroy_ros_message = PyCapsule_New(
-    (void *)&msgs_positions__msg__nav_sat_fix__destroy_ros_message,
+    (void *)&msgs_positions__msg__gnss_data__destroy_ros_message,
     NULL, NULL);
   if (!pyobject_destroy_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -83,7 +83,7 @@ _register_msg_type__msg__nav_sat_fix(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "destroy_ros_message_msg__msg__nav_sat_fix",
+    "destroy_ros_message_msg__msg__gnss_data",
     pyobject_destroy_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -94,7 +94,7 @@ _register_msg_type__msg__nav_sat_fix(PyObject * pymodule)
 
   PyObject * pyobject_convert_from_py = NULL;
   pyobject_convert_from_py = PyCapsule_New(
-    (void *)&msgs_positions__msg__nav_sat_fix__convert_from_py,
+    (void *)&msgs_positions__msg__gnss_data__convert_from_py,
     NULL, NULL);
   if (!pyobject_convert_from_py) {
     // previously added objects will be removed when the module is destroyed
@@ -102,7 +102,7 @@ _register_msg_type__msg__nav_sat_fix(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_from_py_msg__msg__nav_sat_fix",
+    "convert_from_py_msg__msg__gnss_data",
     pyobject_convert_from_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -113,7 +113,7 @@ _register_msg_type__msg__nav_sat_fix(PyObject * pymodule)
 
   PyObject * pyobject_convert_to_py = NULL;
   pyobject_convert_to_py = PyCapsule_New(
-    (void *)&msgs_positions__msg__nav_sat_fix__convert_to_py,
+    (void *)&msgs_positions__msg__gnss_data__convert_to_py,
     NULL, NULL);
   if (!pyobject_convert_to_py) {
     // previously added objects will be removed when the module is destroyed
@@ -121,7 +121,7 @@ _register_msg_type__msg__nav_sat_fix(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_to_py_msg__msg__nav_sat_fix",
+    "convert_to_py_msg__msg__gnss_data",
     pyobject_convert_to_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -132,7 +132,7 @@ _register_msg_type__msg__nav_sat_fix(PyObject * pymodule)
 
   PyObject * pyobject_type_support = NULL;
   pyobject_type_support = PyCapsule_New(
-    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(msgs_positions, msg, NavSatFix),
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(msgs_positions, msg, GnssData),
     NULL, NULL);
   if (!pyobject_type_support) {
     // previously added objects will be removed when the module is destroyed
@@ -140,7 +140,7 @@ _register_msg_type__msg__nav_sat_fix(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "type_support_msg__msg__nav_sat_fix",
+    "type_support_msg__msg__gnss_data",
     pyobject_type_support);
   if (err) {
     // the created capsule needs to be decremented
@@ -161,7 +161,7 @@ PyInit_msgs_positions_s__rosidl_typesupport_fastrtps_c(void)
   }
   int8_t err;
 
-  err = _register_msg_type__msg__nav_sat_fix(pymodule);
+  err = _register_msg_type__msg__gnss_data(pymodule);
   if (err) {
     Py_XDECREF(pymodule);
     return NULL;

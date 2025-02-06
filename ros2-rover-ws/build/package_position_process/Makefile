@@ -210,6 +210,19 @@ node_gnss/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_gnss.dir/build.make CMakeFiles/node_gnss.dir/build
 .PHONY : node_gnss/fast
 
+#=============================================================================
+# Target rules for targets named node_position_process
+
+# Build rule for target.
+node_position_process: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 node_position_process
+.PHONY : node_position_process
+
+# fast build rule for target.
+node_position_process/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_position_process.dir/build.make CMakeFiles/node_position_process.dir/build
+.PHONY : node_position_process/fast
+
 src/node_gnss.o: src/node_gnss.cpp.o
 .PHONY : src/node_gnss.o
 
@@ -234,6 +247,30 @@ src/node_gnss.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_gnss.dir/build.make CMakeFiles/node_gnss.dir/src/node_gnss.cpp.s
 .PHONY : src/node_gnss.cpp.s
 
+src/node_pose_proc.o: src/node_pose_proc.cpp.o
+.PHONY : src/node_pose_proc.o
+
+# target to build an object file
+src/node_pose_proc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_position_process.dir/build.make CMakeFiles/node_position_process.dir/src/node_pose_proc.cpp.o
+.PHONY : src/node_pose_proc.cpp.o
+
+src/node_pose_proc.i: src/node_pose_proc.cpp.i
+.PHONY : src/node_pose_proc.i
+
+# target to preprocess a source file
+src/node_pose_proc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_position_process.dir/build.make CMakeFiles/node_position_process.dir/src/node_pose_proc.cpp.i
+.PHONY : src/node_pose_proc.cpp.i
+
+src/node_pose_proc.s: src/node_pose_proc.cpp.s
+.PHONY : src/node_pose_proc.s
+
+# target to generate assembly for a file
+src/node_pose_proc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_position_process.dir/build.make CMakeFiles/node_position_process.dir/src/node_pose_proc.cpp.s
+.PHONY : src/node_pose_proc.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -250,9 +287,13 @@ help:
 	@echo "... package_position_process_uninstall"
 	@echo "... uninstall"
 	@echo "... node_gnss"
+	@echo "... node_position_process"
 	@echo "... src/node_gnss.o"
 	@echo "... src/node_gnss.i"
 	@echo "... src/node_gnss.s"
+	@echo "... src/node_pose_proc.o"
+	@echo "... src/node_pose_proc.i"
+	@echo "... src/node_pose_proc.s"
 .PHONY : help
 
 

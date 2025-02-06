@@ -1,0 +1,11 @@
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_gnss.cpp:[m[K In constructor ‘[01m[KGNSSPublisher::GNSSPublisher()[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_gnss.cpp:12:42:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""s[m[K’
+   12 |         timer_ = this->create_wall_timer([01;31m[K1s[m[K, std::bind(&GNSSPublisher::publishData, this));
+      |                                          [01;31m[K^~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_gnss.cpp:[m[K In member function ‘[01m[Kvoid GNSSPublisher::publishData()[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_gnss.cpp:37:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kpackage_navigate_route[m[K’ has not been declared
+   37 |             auto msg = [01;31m[Kpackage_navigate_route[m[K::msg::GnssData();
+      |                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node_gnss.dir/build.make:76: CMakeFiles/node_gnss.dir/src/node_gnss.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/node_gnss.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

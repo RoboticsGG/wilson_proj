@@ -1,0 +1,158 @@
+[0.000000] (-) TimerEvent: {}
+[0.001623] (-) JobUnselected: {'identifier': 'action_interfaces'}
+[0.002130] (-) JobUnselected: {'identifier': 'msgs_mainrocon'}
+[0.002215] (-) JobUnselected: {'identifier': 'msgs_positions'}
+[0.002292] (-) JobUnselected: {'identifier': 'msgs_rovercon'}
+[0.002367] (-) JobUnselected: {'identifier': 'package_image_process'}
+[0.002443] (-) JobUnselected: {'identifier': 'package_rover_control'}
+[0.002516] (-) JobUnselected: {'identifier': 'package_test'}
+[0.002597] (package_position_process) JobQueued: {'identifier': 'package_position_process', 'dependencies': OrderedDict([('msgs_positions', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions')])}
+[0.002689] (package_position_process) JobStarted: {'identifier': 'package_position_process'}
+[0.059301] (package_position_process) JobProgress: {'identifier': 'package_position_process', 'progress': 'cmake'}
+[0.061972] (package_position_process) JobProgress: {'identifier': 'package_position_process', 'progress': 'build'}
+[0.064564] (package_position_process) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process', '--', '-j4', '-l4'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.81.237 48558 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/2'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '62'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.81.237 48558 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble')]), 'shell': False}
+[0.099060] (-) TimerEvent: {}
+[0.199755] (-) TimerEvent: {}
+[0.287127] (package_position_process) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target node_gnss\x1b[0m\n'}
+[0.299873] (-) TimerEvent: {}
+[0.389614] (package_position_process) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/node_gnss.dir/src/node_gnss.cpp.o\x1b[0m\n'}
+[0.400066] (-) TimerEvent: {}
+[0.500781] (-) TimerEvent: {}
+[0.601455] (-) TimerEvent: {}
+[0.702139] (-) TimerEvent: {}
+[0.802866] (-) TimerEvent: {}
+[0.903515] (-) TimerEvent: {}
+[1.004175] (-) TimerEvent: {}
+[1.104844] (-) TimerEvent: {}
+[1.205512] (-) TimerEvent: {}
+[1.306206] (-) TimerEvent: {}
+[1.406855] (-) TimerEvent: {}
+[1.507534] (-) TimerEvent: {}
+[1.608232] (-) TimerEvent: {}
+[1.708899] (-) TimerEvent: {}
+[1.809542] (-) TimerEvent: {}
+[1.910195] (-) TimerEvent: {}
+[2.010835] (-) TimerEvent: {}
+[2.111535] (-) TimerEvent: {}
+[2.212282] (-) TimerEvent: {}
+[2.312973] (-) TimerEvent: {}
+[2.413686] (-) TimerEvent: {}
+[2.514402] (-) TimerEvent: {}
+[2.615139] (-) TimerEvent: {}
+[2.715824] (-) TimerEvent: {}
+[2.816710] (-) TimerEvent: {}
+[2.917403] (-) TimerEvent: {}
+[3.018092] (-) TimerEvent: {}
+[3.118845] (-) TimerEvent: {}
+[3.219598] (-) TimerEvent: {}
+[3.320358] (-) TimerEvent: {}
+[3.421144] (-) TimerEvent: {}
+[3.521823] (-) TimerEvent: {}
+[3.622576] (-) TimerEvent: {}
+[3.723337] (-) TimerEvent: {}
+[3.824039] (-) TimerEvent: {}
+[3.924980] (-) TimerEvent: {}
+[4.025679] (-) TimerEvent: {}
+[4.126402] (-) TimerEvent: {}
+[4.227129] (-) TimerEvent: {}
+[4.327819] (-) TimerEvent: {}
+[4.428685] (-) TimerEvent: {}
+[4.529375] (-) TimerEvent: {}
+[4.630201] (-) TimerEvent: {}
+[4.731024] (-) TimerEvent: {}
+[4.831743] (-) TimerEvent: {}
+[4.932490] (-) TimerEvent: {}
+[5.033229] (-) TimerEvent: {}
+[5.133922] (-) TimerEvent: {}
+[5.234668] (-) TimerEvent: {}
+[5.335386] (-) TimerEvent: {}
+[5.436081] (-) TimerEvent: {}
+[5.536840] (-) TimerEvent: {}
+[5.637541] (-) TimerEvent: {}
+[5.738226] (-) TimerEvent: {}
+[5.838964] (-) TimerEvent: {}
+[5.939789] (-) TimerEvent: {}
+[6.040512] (-) TimerEvent: {}
+[6.141218] (-) TimerEvent: {}
+[6.241976] (-) TimerEvent: {}
+[6.342680] (-) TimerEvent: {}
+[6.443370] (-) TimerEvent: {}
+[6.544100] (-) TimerEvent: {}
+[6.644847] (-) TimerEvent: {}
+[6.745575] (-) TimerEvent: {}
+[6.846276] (-) TimerEvent: {}
+[6.946977] (-) TimerEvent: {}
+[7.047696] (-) TimerEvent: {}
+[7.148382] (-) TimerEvent: {}
+[7.249061] (-) TimerEvent: {}
+[7.349787] (-) TimerEvent: {}
+[7.450554] (-) TimerEvent: {}
+[7.551304] (-) TimerEvent: {}
+[7.652004] (-) TimerEvent: {}
+[7.752762] (-) TimerEvent: {}
+[7.853472] (-) TimerEvent: {}
+[7.954230] (-) TimerEvent: {}
+[8.054916] (-) TimerEvent: {}
+[8.155647] (-) TimerEvent: {}
+[8.256368] (-) TimerEvent: {}
+[8.357109] (-) TimerEvent: {}
+[8.457810] (-) TimerEvent: {}
+[8.558583] (-) TimerEvent: {}
+[8.659513] (-) TimerEvent: {}
+[8.760265] (-) TimerEvent: {}
+[8.860960] (-) TimerEvent: {}
+[8.961757] (-) TimerEvent: {}
+[9.062506] (-) TimerEvent: {}
+[9.163315] (-) TimerEvent: {}
+[9.264028] (-) TimerEvent: {}
+[9.364777] (-) TimerEvent: {}
+[9.465525] (-) TimerEvent: {}
+[9.566251] (-) TimerEvent: {}
+[9.667045] (-) TimerEvent: {}
+[9.767789] (-) TimerEvent: {}
+[9.868529] (-) TimerEvent: {}
+[9.969206] (-) TimerEvent: {}
+[10.069921] (-) TimerEvent: {}
+[10.170648] (-) TimerEvent: {}
+[10.254060] (package_position_process) StderrLine: {'line': b'\x1b[01m\x1b[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_gnss.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KGNSSPublisher::GNSSPublisher()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[10.254706] (package_position_process) StderrLine: {'line': b'\x1b[01m\x1b[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_gnss.cpp:17:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KopenSerialPort\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[10.255092] (package_position_process) StderrLine: {'line': b'   17 |         serial_port_ = \x1b[01;31m\x1b[KopenSerialPort\x1b[m\x1b[K("/dev/ttyUSB0");\n'}
+[10.255431] (package_position_process) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[10.270858] (-) TimerEvent: {}
+[10.371613] (-) TimerEvent: {}
+[10.472344] (-) TimerEvent: {}
+[10.573035] (-) TimerEvent: {}
+[10.673740] (-) TimerEvent: {}
+[10.774460] (-) TimerEvent: {}
+[10.875154] (-) TimerEvent: {}
+[10.975898] (-) TimerEvent: {}
+[11.076645] (-) TimerEvent: {}
+[11.177333] (-) TimerEvent: {}
+[11.278025] (-) TimerEvent: {}
+[11.378721] (-) TimerEvent: {}
+[11.479422] (-) TimerEvent: {}
+[11.580177] (-) TimerEvent: {}
+[11.680924] (-) TimerEvent: {}
+[11.781609] (-) TimerEvent: {}
+[11.882300] (-) TimerEvent: {}
+[11.983011] (-) TimerEvent: {}
+[12.083734] (-) TimerEvent: {}
+[12.184432] (-) TimerEvent: {}
+[12.285185] (-) TimerEvent: {}
+[12.385870] (-) TimerEvent: {}
+[12.486583] (-) TimerEvent: {}
+[12.587299] (-) TimerEvent: {}
+[12.688011] (-) TimerEvent: {}
+[12.788796] (-) TimerEvent: {}
+[12.889464] (-) TimerEvent: {}
+[12.990165] (-) TimerEvent: {}
+[13.090954] (-) TimerEvent: {}
+[13.177232] (package_position_process) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/node_gnss.dir/build.make:76: CMakeFiles/node_gnss.dir/src/node_gnss.cpp.o] Error 1\n'}
+[13.178154] (package_position_process) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/node_gnss.dir/all] Error 2\n'}
+[13.179012] (package_position_process) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[13.186080] (package_position_process) CommandEnded: {'returncode': 2}
+[13.192129] (-) TimerEvent: {}
+[13.293046] (-) TimerEvent: {}
+[13.394082] (-) TimerEvent: {}
+[13.400256] (package_position_process) JobEnded: {'identifier': 'package_position_process', 'rc': 2}
+[13.412084] (-) EventReactorShutdown: {}

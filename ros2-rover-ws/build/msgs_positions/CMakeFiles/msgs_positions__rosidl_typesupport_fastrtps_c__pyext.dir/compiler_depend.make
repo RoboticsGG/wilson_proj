@@ -241,33 +241,31 @@ CMakeFiles/msgs_positions__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_gener
   /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h \
-  rosidl_generator_c/msgs_positions/msg/detail/nav_sat_fix__type_support.h \
+  rosidl_generator_c/msgs_positions/msg/detail/gnss_data__type_support.h \
   rosidl_generator_c/msgs_positions/msg/rosidl_generator_c__visibility_control.h \
-  rosidl_generator_c/msgs_positions/msg/detail/nav_sat_fix__struct.h \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.h \
-  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h \
+  rosidl_generator_c/msgs_positions/msg/detail/gnss_data__struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
-  rosidl_generator_c/msgs_positions/msg/detail/nav_sat_fix__functions.h
+  rosidl_generator_c/msgs_positions/msg/detail/gnss_data__functions.h
 
 
-rosidl_generator_c/msgs_positions/msg/detail/nav_sat_fix__functions.h:
+rosidl_generator_c/msgs_positions/msg/detail/gnss_data__functions.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h:
 
-rosidl_generator_c/msgs_positions/msg/detail/nav_sat_fix__struct.h:
-
 rosidl_generator_c/msgs_positions/msg/rosidl_generator_c__visibility_control.h:
 
+rosidl_generator_c/msgs_positions/msg/detail/gnss_data__type_support.h:
+
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h:
+
+rosidl_generator_c/msgs_positions/msg/detail/gnss_data__struct.h:
 
 /usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h:
 
 /usr/include/python3.10/eval.h:
 
 /usr/include/python3.10/cpython/import.h:
-
-/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.h:
 
 /usr/include/python3.10/import.h:
 
@@ -291,8 +289,6 @@ rosidl_generator_c/msgs_positions/msg/rosidl_generator_c__visibility_control.h:
 
 /usr/include/pthread.h:
 
-rosidl_generator_c/msgs_positions/msg/detail/nav_sat_fix__type_support.h:
-
 /usr/include/python3.10/pythread.h:
 
 /usr/include/python3.10/pyerrors.h:
@@ -304,8 +300,6 @@ rosidl_generator_c/msgs_positions/msg/detail/nav_sat_fix__type_support.h:
 /usr/include/python3.10/cpython/ceval.h:
 
 /usr/include/python3.10/genericaliasobject.h:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h:
 
 /usr/include/python3.10/descrobject.h:
 

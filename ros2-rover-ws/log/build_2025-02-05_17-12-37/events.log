@@ -1,0 +1,1023 @@
+[0.000000] (-) TimerEvent: {}
+[0.001297] (action_interfaces) JobQueued: {'identifier': 'action_interfaces', 'dependencies': OrderedDict()}
+[0.001529] (msgs_positions) JobQueued: {'identifier': 'msgs_positions', 'dependencies': OrderedDict()}
+[0.001802] (msgs_rovercon) JobQueued: {'identifier': 'msgs_rovercon', 'dependencies': OrderedDict()}
+[0.001957] (package_image_process) JobQueued: {'identifier': 'package_image_process', 'dependencies': OrderedDict()}
+[0.002040] (package_test) JobQueued: {'identifier': 'package_test', 'dependencies': OrderedDict()}
+[0.002120] (msgs_mainrocon) JobQueued: {'identifier': 'msgs_mainrocon', 'dependencies': OrderedDict([('msgs_rovercon', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon')])}
+[0.002207] (package_position_process) JobQueued: {'identifier': 'package_position_process', 'dependencies': OrderedDict([('msgs_positions', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions')])}
+[0.002289] (package_rover_control) JobQueued: {'identifier': 'package_rover_control', 'dependencies': OrderedDict([('msgs_rovercon', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon'), ('msgs_mainrocon', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon')])}
+[0.002379] (msgs_rovercon) JobStarted: {'identifier': 'msgs_rovercon'}
+[0.026885] (msgs_positions) JobStarted: {'identifier': 'msgs_positions'}
+[0.043396] (action_interfaces) JobStarted: {'identifier': 'action_interfaces'}
+[0.061225] (package_image_process) JobStarted: {'identifier': 'package_image_process'}
+[0.094053] (msgs_rovercon) JobProgress: {'identifier': 'msgs_rovercon', 'progress': 'cmake'}
+[0.096847] (msgs_rovercon) JobProgress: {'identifier': 'msgs_rovercon', 'progress': 'build'}
+[0.099508] (msgs_rovercon) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon', '--', '-j4', '-l4'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.110058] (-) TimerEvent: {}
+[0.112760] (msgs_positions) JobProgress: {'identifier': 'msgs_positions', 'progress': 'cmake'}
+[0.116194] (msgs_positions) JobProgress: {'identifier': 'msgs_positions', 'progress': 'build'}
+[0.117620] (msgs_positions) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions', '--', '-j4', '-l4'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.130280] (action_interfaces) JobProgress: {'identifier': 'action_interfaces', 'progress': 'cmake'}
+[0.133808] (action_interfaces) JobProgress: {'identifier': 'action_interfaces', 'progress': 'build'}
+[0.135225] (action_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces', '--', '-j4', '-l4'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.211164] (-) TimerEvent: {}
+[0.313031] (-) TimerEvent: {}
+[0.403358] (msgs_positions) StdoutLine: {'line': b'[  9%] Built target msgs_positions__rosidl_generator_c\n'}
+[0.413288] (-) TimerEvent: {}
+[0.464712] (msgs_rovercon) StdoutLine: {'line': b'[  9%] Built target msgs_rovercon__rosidl_generator_c\n'}
+[0.478525] (msgs_positions) StdoutLine: {'line': b'[ 12%] Built target msgs_positions__cpp\n'}
+[0.509237] (msgs_rovercon) StdoutLine: {'line': b'[ 12%] Built target msgs_rovercon__cpp\n'}
+[0.513563] (-) TimerEvent: {}
+[0.583273] (action_interfaces) StdoutLine: {'line': b'[  3%] Built target action_interfaces__cpp\n'}
+[0.598783] (action_interfaces) StdoutLine: {'line': b'[ 12%] Built target action_interfaces__rosidl_generator_c\n'}
+[0.613779] (-) TimerEvent: {}
+[0.631427] (action_interfaces) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_action_interfaces\n'}
+[0.660446] (msgs_rovercon) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_msgs_rovercon\n'}
+[0.679779] (msgs_positions) StdoutLine: {'line': b'[ 22%] Built target msgs_positions__rosidl_typesupport_fastrtps_c\n'}
+[0.714003] (-) TimerEvent: {}
+[0.725041] (msgs_positions) StdoutLine: {'line': b'[ 32%] Built target msgs_positions__rosidl_typesupport_introspection_c\n'}
+[0.740963] (msgs_positions) StdoutLine: {'line': b'[ 41%] Built target msgs_positions__rosidl_typesupport_c\n'}
+[0.751334] (msgs_positions) StdoutLine: {'line': b'[ 32%] Built target ament_cmake_python_copy_msgs_positions\n'}
+[0.784548] (msgs_rovercon) StdoutLine: {'line': b'[ 22%] Built target msgs_rovercon__rosidl_typesupport_c\n'}
+[0.814240] (-) TimerEvent: {}
+[0.846418] (msgs_rovercon) StdoutLine: {'line': b'[ 32%] Built target msgs_rovercon__rosidl_typesupport_fastrtps_c\n'}
+[0.886311] (msgs_rovercon) StdoutLine: {'line': b'[ 41%] Built target msgs_rovercon__rosidl_typesupport_introspection_c\n'}
+[0.914446] (-) TimerEvent: {}
+[0.951515] (msgs_positions) StdoutLine: {'line': b'[ 51%] Built target msgs_positions__rosidl_typesupport_introspection_cpp\n'}
+[0.970091] (action_interfaces) StdoutLine: {'line': b'[ 22%] Built target action_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[0.988719] (action_interfaces) StdoutLine: {'line': b'[ 32%] Built target action_interfaces__rosidl_typesupport_cpp\n'}
+[1.001381] (msgs_rovercon) StdoutLine: {'line': b'[ 51%] Built target msgs_rovercon__rosidl_typesupport_fastrtps_cpp\n'}
+[1.014679] (-) TimerEvent: {}
+[1.024244] (action_interfaces) StdoutLine: {'line': b'[ 41%] Built target action_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[1.043201] (action_interfaces) StdoutLine: {'line': b'[ 51%] Built target action_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[1.055277] (msgs_positions) StdoutLine: {'line': b'[ 61%] Built target msgs_positions__rosidl_typesupport_cpp\n'}
+[1.101913] (msgs_rovercon) StdoutLine: {'line': b'[ 61%] Built target msgs_rovercon__rosidl_typesupport_cpp\n'}
+[1.114914] (-) TimerEvent: {}
+[1.117681] (msgs_rovercon) StdoutLine: {'line': b'[ 70%] Built target msgs_rovercon__rosidl_typesupport_introspection_cpp\n'}
+[1.142539] (action_interfaces) StdoutLine: {'line': b'[ 61%] Built target action_interfaces__rosidl_typesupport_introspection_c\n'}
+[1.153049] (msgs_positions) StdoutLine: {'line': b'[ 70%] Built target msgs_positions__rosidl_typesupport_fastrtps_cpp\n'}
+[1.215252] (action_interfaces) StdoutLine: {'line': b'[ 70%] Built target action_interfaces__rosidl_typesupport_c\n'}
+[1.216033] (-) TimerEvent: {}
+[1.263120] (msgs_rovercon) StdoutLine: {'line': b'[ 70%] Built target msgs_rovercon\n'}
+[1.316434] (-) TimerEvent: {}
+[1.323998] (msgs_positions) StdoutLine: {'line': b'[ 70%] Built target msgs_positions\n'}
+[1.397231] (msgs_rovercon) StdoutLine: {'line': b'[ 74%] Built target msgs_rovercon__py\n'}
+[1.398755] (action_interfaces) StdoutLine: {'line': b'[ 70%] Built target action_interfaces\n'}
+[1.416659] (-) TimerEvent: {}
+[1.517919] (-) TimerEvent: {}
+[1.542715] (msgs_positions) StdoutLine: {'line': b'[ 74%] Built target msgs_positions__py\n'}
+[1.618165] (-) TimerEvent: {}
+[1.672239] (action_interfaces) StdoutLine: {'line': b'[ 74%] Built target action_interfaces__py\n'}
+[1.678034] (msgs_rovercon) StdoutLine: {'line': b'[ 80%] Built target msgs_rovercon__rosidl_generator_py\n'}
+[1.704831] (msgs_positions) StdoutLine: {'line': b'[ 80%] Built target msgs_positions__rosidl_generator_py\n'}
+[1.718394] (-) TimerEvent: {}
+[1.820072] (-) TimerEvent: {}
+[1.922059] (-) TimerEvent: {}
+[1.934219] (msgs_rovercon) StdoutLine: {'line': b'[ 87%] Built target msgs_rovercon__rosidl_typesupport_fastrtps_c__pyext\n'}
+[1.946297] (action_interfaces) StdoutLine: {'line': b'[ 80%] Built target action_interfaces__rosidl_generator_py\n'}
+[2.015506] (msgs_positions) StdoutLine: {'line': b'[ 90%] Built target msgs_positions__rosidl_typesupport_c__pyext\n'}
+[2.017203] (msgs_positions) StdoutLine: {'line': b'[ 93%] Built target msgs_positions__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.022351] (-) TimerEvent: {}
+[2.074623] (msgs_rovercon) StdoutLine: {'line': b'[ 93%] Built target msgs_rovercon__rosidl_typesupport_c__pyext\n'}
+[2.110898] (msgs_rovercon) StdoutLine: {'line': b'[100%] Built target msgs_rovercon__rosidl_typesupport_introspection_c__pyext\n'}
+[2.122590] (-) TimerEvent: {}
+[2.124103] (msgs_positions) StdoutLine: {'line': b'[100%] Built target msgs_positions__rosidl_typesupport_introspection_c__pyext\n'}
+[2.207019] (action_interfaces) StdoutLine: {'line': b'[ 87%] Built target action_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.215086] (action_interfaces) StdoutLine: {'line': b'[ 93%] Built target action_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[2.222846] (-) TimerEvent: {}
+[2.230992] (action_interfaces) StdoutLine: {'line': b'[100%] Built target action_interfaces__rosidl_typesupport_c__pyext\n'}
+[2.323039] (-) TimerEvent: {}
+[2.423892] (-) TimerEvent: {}
+[2.524716] (-) TimerEvent: {}
+[2.625673] (-) TimerEvent: {}
+[2.726624] (-) TimerEvent: {}
+[2.827579] (-) TimerEvent: {}
+[2.928681] (-) TimerEvent: {}
+[3.030856] (-) TimerEvent: {}
+[3.131813] (-) TimerEvent: {}
+[3.168686] (msgs_rovercon) StdoutLine: {'line': b'running egg_info\n'}
+[3.173367] (msgs_rovercon) StdoutLine: {'line': b'writing msgs_rovercon.egg-info/PKG-INFO\n'}
+[3.174803] (msgs_rovercon) StdoutLine: {'line': b'writing dependency_links to msgs_rovercon.egg-info/dependency_links.txt\n'}
+[3.175962] (msgs_rovercon) StdoutLine: {'line': b'writing top-level names to msgs_rovercon.egg-info/top_level.txt\n'}
+[3.188275] (msgs_rovercon) StdoutLine: {'line': b"reading manifest file 'msgs_rovercon.egg-info/SOURCES.txt'\n"}
+[3.191652] (msgs_rovercon) StdoutLine: {'line': b"writing manifest file 'msgs_rovercon.egg-info/SOURCES.txt'\n"}
+[3.232208] (-) TimerEvent: {}
+[3.334979] (-) TimerEvent: {}
+[3.391982] (msgs_rovercon) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_msgs_rovercon_egg\n'}
+[3.435280] (-) TimerEvent: {}
+[3.449037] (msgs_rovercon) CommandEnded: {'returncode': 0}
+[3.451013] (msgs_positions) StdoutLine: {'line': b'running egg_info\n'}
+[3.455397] (msgs_rovercon) JobProgress: {'identifier': 'msgs_rovercon', 'progress': 'install'}
+[3.455798] (msgs_positions) StdoutLine: {'line': b'writing msgs_positions.egg-info/PKG-INFO\n'}
+[3.457405] (msgs_positions) StdoutLine: {'line': b'writing dependency_links to msgs_positions.egg-info/dependency_links.txt\n'}
+[3.458975] (msgs_positions) StdoutLine: {'line': b'writing top-level names to msgs_positions.egg-info/top_level.txt\n'}
+[3.471801] (msgs_positions) StdoutLine: {'line': b"reading manifest file 'msgs_positions.egg-info/SOURCES.txt'\n"}
+[3.475336] (msgs_positions) StdoutLine: {'line': b"writing manifest file 'msgs_positions.egg-info/SOURCES.txt'\n"}
+[3.517342] (msgs_rovercon) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_rovercon'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[3.535528] (-) TimerEvent: {}
+[3.540159] (action_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[3.547960] (action_interfaces) StdoutLine: {'line': b'writing action_interfaces.egg-info/PKG-INFO\n'}
+[3.550834] (action_interfaces) StdoutLine: {'line': b'writing dependency_links to action_interfaces.egg-info/dependency_links.txt\n'}
+[3.552946] (action_interfaces) StdoutLine: {'line': b'writing top-level names to action_interfaces.egg-info/top_level.txt\n'}
+[3.571999] (action_interfaces) StdoutLine: {'line': b"reading manifest file 'action_interfaces.egg-info/SOURCES.txt'\n"}
+[3.578603] (action_interfaces) StdoutLine: {'line': b"writing manifest file 'action_interfaces.egg-info/SOURCES.txt'\n"}
+[3.597097] (msgs_rovercon) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.600979] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/ament_index/resource_index/rosidl_interfaces/msgs_rovercon\n'}
+[3.604383] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[3.607737] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[3.610733] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[3.614435] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__struct.h\n'}
+[3.617436] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__functions.c\n'}
+[3.623455] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__type_support.h\n'}
+[3.627308] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__functions.h\n'}
+[3.629091] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_generator_c__visibility_control.h\n'}
+[3.631478] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/sub_rocon.h\n'}
+[3.634141] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/library_path.sh\n'}
+[3.636505] (-) TimerEvent: {}
+[3.649942] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/library_path.dsv\n'}
+[3.651427] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_generator_c.so\n'}
+[3.652711] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[3.657267] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[3.658239] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[3.659192] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__rosidl_typesupport_fastrtps_c.h\n'}
+[3.661219] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[3.663121] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_fastrtps_c.so\n'}
+[3.664672] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[3.665829] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[3.667102] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[3.673465] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[3.679222] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__type_support.c\n'}
+[3.680021] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__rosidl_typesupport_introspection_c.h\n'}
+[3.682191] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_introspection_c.so\n'}
+[3.683859] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_c.so\n'}
+[3.685284] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[3.686082] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[3.686894] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[3.688943] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[3.690291] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__builder.hpp\n'}
+[3.691877] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__type_support.hpp\n'}
+[3.693146] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__traits.hpp\n'}
+[3.694362] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__struct.hpp\n'}
+[3.695386] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/sub_rocon.hpp\n'}
+[3.696294] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[3.697577] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[3.698621] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[3.699834] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/dds_fastrtps\n'}
+[3.700911] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.702444] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[3.704936] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_fastrtps_cpp.so\n'}
+[3.706154] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon\n'}
+[3.708256] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg\n'}
+[3.709750] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail\n'}
+[3.710559] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.711989] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/include/msgs_rovercon/msgs_rovercon/msg/detail/sub_rocon__type_support.cpp\n'}
+[3.712690] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_introspection_cpp.so\n'}
+[3.714035] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_typesupport_cpp.so\n'}
+[3.715848] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/pythonpath.sh\n'}
+[3.717567] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/pythonpath.dsv\n'}
+[3.718611] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon-0.0.0-py3.10.egg-info\n'}
+[3.719362] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[3.720089] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[3.721091] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[3.721838] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[3.722881] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon\n'}
+[3.723779] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/_msgs_rovercon_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[3.725302] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg\n'}
+[3.726679] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg/_sub_rocon.py\n'}
+[3.728054] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg/__init__.py\n'}
+[3.729381] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg/_sub_rocon_s.c\n'}
+[3.731828] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.733044] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/libmsgs_rovercon__rosidl_generator_py.so\n'}
+[3.734527] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/__init__.py\n'}
+[3.735300] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/_msgs_rovercon_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[3.735882] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.736621] (-) TimerEvent: {}
+[3.738133] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/_msgs_rovercon_s.ep.rosidl_typesupport_c.c\n'}
+[3.739162] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.751996] (msgs_positions) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_msgs_positions_egg\n'}
+[3.778447] (action_interfaces) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_action_interfaces_egg\n'}
+[3.808959] (msgs_positions) CommandEnded: {'returncode': 0}
+[3.810880] (msgs_positions) JobProgress: {'identifier': 'msgs_positions', 'progress': 'install'}
+[3.811121] (msgs_positions) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_positions'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[3.836862] (-) TimerEvent: {}
+[3.846050] (action_interfaces) CommandEnded: {'returncode': 0}
+[3.859840] (msgs_positions) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.861397] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/ament_index/resource_index/rosidl_interfaces/msgs_positions\n'}
+[3.862237] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions\n'}
+[3.863166] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg\n'}
+[3.864243] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/gnss_data.h\n'}
+[3.865376] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail\n'}
+[3.866354] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__functions.h\n'}
+[3.867636] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__struct.h\n'}
+[3.868101] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__functions.c\n'}
+[3.876971] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__functions.c\n'}
+[3.877908] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__type_support.h\n'}
+[3.878748] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__type_support.h\n'}
+[3.879547] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__struct.h\n'}
+[3.880348] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__functions.h\n'}
+[3.881081] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/rosidl_generator_c__visibility_control.h\n'}
+[3.881962] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/nav_sat_fix.h\n'}
+[3.882601] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/environment/library_path.sh\n'}
+[3.883228] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/environment/library_path.dsv\n'}
+[3.883904] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib/libmsgs_positions__rosidl_generator_c.so\n'}
+[3.884460] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions\n'}
+[3.885210] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg\n'}
+[3.885663] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail\n'}
+[3.886253] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__rosidl_typesupport_fastrtps_c.h\n'}
+[3.897310] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__rosidl_typesupport_fastrtps_c.h\n'}
+[3.898242] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[3.899060] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib/libmsgs_positions__rosidl_typesupport_fastrtps_c.so\n'}
+[3.899902] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions\n'}
+[3.900745] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg\n'}
+[3.901463] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[3.902222] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail\n'}
+[3.902963] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__builder.hpp\n'}
+[3.903574] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__traits.hpp\n'}
+[3.904035] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__traits.hpp\n'}
+[3.904817] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__builder.hpp\n'}
+[3.905334] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__type_support.hpp\n'}
+[3.905809] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__struct.hpp\n'}
+[3.909230] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__struct.hpp\n'}
+[3.909968] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__type_support.hpp\n'}
+[3.910672] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/gnss_data.hpp\n'}
+[3.914759] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/nav_sat_fix.hpp\n'}
+[3.915578] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions\n'}
+[3.916416] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg\n'}
+[3.917052] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail\n'}
+[3.917944] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.918873] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/dds_fastrtps\n'}
+[3.919615] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.920340] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[3.922756] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib/libmsgs_positions__rosidl_typesupport_fastrtps_cpp.so\n'}
+[3.923277] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions\n'}
+[3.923988] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg\n'}
+[3.924637] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[3.925394] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail\n'}
+[3.925943] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__type_support.c\n'}
+[3.926453] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__rosidl_typesupport_introspection_c.h\n'}
+[3.926923] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__rosidl_typesupport_introspection_c.h\n'}
+[3.927511] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__type_support.c\n'}
+[3.927973] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib/libmsgs_positions__rosidl_typesupport_introspection_c.so\n'}
+[3.928433] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib/libmsgs_positions__rosidl_typesupport_c.so\n'}
+[3.929119] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions\n'}
+[3.929541] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg\n'}
+[3.929943] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail\n'}
+[3.930346] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__type_support.cpp\n'}
+[3.930829] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__type_support.cpp\n'}
+[3.932276] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/gnss_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.934014] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/include/msgs_positions/msgs_positions/msg/detail/nav_sat_fix__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.936765] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib/libmsgs_positions__rosidl_typesupport_introspection_cpp.so\n'}
+[3.937922] (-) TimerEvent: {}
+[3.939716] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib/libmsgs_positions__rosidl_typesupport_cpp.so\n'}
+[3.940769] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/environment/pythonpath.sh\n'}
+[3.942170] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/environment/pythonpath.dsv\n'}
+[3.943385] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions-0.0.0-py3.10.egg-info\n'}
+[3.944885] (msgs_positions) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[3.946295] (msgs_positions) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[3.948040] (msgs_positions) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[3.949320] (msgs_positions) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[3.950434] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions\n'}
+[3.951756] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msgs_positions_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.952800] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[3.953952] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/libmsgs_positions__rosidl_generator_py.so\n'}
+[3.954972] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msg\n'}
+[3.955887] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msg/_nav_sat_fix_s.c\n'}
+[3.957068] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msg/_nav_sat_fix.py\n'}
+[3.957895] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msg/_gnss_data_s.c\n'}
+[3.958779] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msg/__init__.py\n'}
+[3.959773] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msg/_gnss_data.py\n'}
+[3.960649] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[3.961766] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/__init__.py\n'}
+[3.962934] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msgs_positions_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.963669] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msgs_positions_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.964321] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/_msgs_positions_s.ep.rosidl_typesupport_c.c\n'}
+[3.965446] (msgs_rovercon) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon'...\n"}
+[3.966252] (msgs_rovercon) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msg'...\n"}
+[3.971476] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.974028] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.976624] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages/msgs_rovercon/msgs_rovercon_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.979040] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib/libmsgs_rovercon__rosidl_generator_py.so\n'}
+[3.980488] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/msg/SubRocon.idl\n'}
+[3.981872] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/msg/SubRocon.msg\n'}
+[3.983120] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/ament_index/resource_index/package_run_dependencies/msgs_rovercon\n'}
+[3.984252] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/ament_index/resource_index/parent_prefix_path/msgs_rovercon\n'}
+[3.985490] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/ament_prefix_path.sh\n'}
+[3.986665] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/ament_prefix_path.dsv\n'}
+[3.987181] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/path.sh\n'}
+[3.987631] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/environment/path.dsv\n'}
+[3.988283] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/local_setup.bash\n'}
+[3.989059] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/local_setup.sh\n'}
+[3.989509] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/local_setup.zsh\n'}
+[3.989876] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/local_setup.dsv\n'}
+[3.990552] (msgs_rovercon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.dsv\n'}
+[3.991043] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/ament_index/resource_index/packages/msgs_rovercon\n'}
+[3.994003] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_generator_cExport.cmake\n'}
+[3.994690] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_generator_cExport-noconfig.cmake\n'}
+[3.995418] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[3.996126] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[3.997218] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_introspection_cExport.cmake\n'}
+[3.998054] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[3.998817] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_cExport.cmake\n'}
+[4.000254] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[4.001631] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_generator_cppExport.cmake\n'}
+[4.003442] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[4.003977] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[4.004962] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[4.005792] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[4.007460] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_cppExport.cmake\n'}
+[4.011544] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_rovercon__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[4.012453] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_generator_pyExport.cmake\n'}
+[4.014085] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/export_msgs_rovercon__rosidl_generator_pyExport-noconfig.cmake\n'}
+[4.015376] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/rosidl_cmake-extras.cmake\n'}
+[4.015911] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[4.016456] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[4.017174] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[4.017822] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[4.018373] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[4.019461] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[4.021449] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_roverconConfig.cmake\n'}
+[4.023223] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/cmake/msgs_roverconConfig-version.cmake\n'}
+[4.023887] (msgs_rovercon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/share/msgs_rovercon/package.xml\n'}
+[4.040786] (msgs_rovercon) CommandEnded: {'returncode': 0}
+[4.042312] (-) TimerEvent: {}
+[4.125704] (msgs_positions) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions'...\n"}
+[4.126984] (msgs_positions) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msg'...\n"}
+[4.142990] (-) TimerEvent: {}
+[4.167607] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msgs_positions_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.168918] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msgs_positions_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.171689] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages/msgs_positions/msgs_positions_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.174659] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib/libmsgs_positions__rosidl_generator_py.so\n'}
+[4.177980] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/msg/GnssData.idl\n'}
+[4.179823] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/msg/GnssData.msg\n'}
+[4.181946] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/ament_index/resource_index/package_run_dependencies/msgs_positions\n'}
+[4.184080] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/ament_index/resource_index/parent_prefix_path/msgs_positions\n'}
+[4.186991] (msgs_rovercon) JobEnded: {'identifier': 'msgs_rovercon', 'rc': 0}
+[4.193857] (msgs_mainrocon) JobStarted: {'identifier': 'msgs_mainrocon'}
+[4.194566] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/environment/ament_prefix_path.sh\n'}
+[4.195135] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/environment/ament_prefix_path.dsv\n'}
+[4.195491] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/environment/path.sh\n'}
+[4.195989] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/environment/path.dsv\n'}
+[4.196658] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/local_setup.bash\n'}
+[4.197395] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/local_setup.sh\n'}
+[4.199462] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/local_setup.zsh\n'}
+[4.200284] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/local_setup.dsv\n'}
+[4.201738] (msgs_positions) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/package.dsv\n'}
+[4.204485] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/ament_index/resource_index/packages/msgs_positions\n'}
+[4.207017] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/export_msgs_positions__rosidl_generator_cExport.cmake\n'}
+[4.208516] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/export_msgs_positions__rosidl_generator_cExport-noconfig.cmake\n'}
+[4.212154] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/export_msgs_positions__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[4.212947] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/export_msgs_positions__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[4.217432] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/export_msgs_positions__rosidl_generator_cppExport.cmake\n'}
+[4.218018] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/export_msgs_positions__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[4.218501] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/export_msgs_positions__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[4.222382] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/msgs_positions__rosidl_typesupport_introspection_cExport.cmake\n'}
+[4.224094] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/msgs_positions__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[4.226682] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/msgs_positions__rosidl_typesupport_cExport.cmake\n'}
+[4.228306] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/msgs_positions__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[4.230963] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/msgs_positions__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[4.232647] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/msgs_positions__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[4.238921] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/msgs_positions__rosidl_typesupport_cppExport.cmake\n'}
+[4.239531] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/msgs_positions__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[4.239994] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/export_msgs_positions__rosidl_generator_pyExport.cmake\n'}
+[4.243474] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/export_msgs_positions__rosidl_generator_pyExport-noconfig.cmake\n'}
+[4.244099] (-) TimerEvent: {}
+[4.245164] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/rosidl_cmake-extras.cmake\n'}
+[4.246257] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[4.246737] (msgs_mainrocon) JobProgress: {'identifier': 'msgs_mainrocon', 'progress': 'cmake'}
+[4.246862] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[4.247358] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[4.247998] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[4.248918] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[4.249497] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[4.249911] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/msgs_positionsConfig.cmake\n'}
+[4.250490] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/cmake/msgs_positionsConfig-version.cmake\n'}
+[4.250974] (msgs_positions) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/share/msgs_positions/package.xml\n'}
+[4.258957] (msgs_mainrocon) JobProgress: {'identifier': 'msgs_mainrocon', 'progress': 'build'}
+[4.259312] (msgs_mainrocon) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon', '--', '-j4', '-l4'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/opt/ros/humble')]), 'shell': False}
+[4.269032] (msgs_positions) CommandEnded: {'returncode': 0}
+[4.344278] (-) TimerEvent: {}
+[4.372101] (msgs_positions) JobEnded: {'identifier': 'msgs_positions', 'rc': 0}
+[4.379479] (package_test) JobStarted: {'identifier': 'package_test'}
+[4.395338] (action_interfaces) JobProgress: {'identifier': 'action_interfaces', 'progress': 'install'}
+[4.396740] (action_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/action_interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[4.427242] (package_test) JobProgress: {'identifier': 'package_test', 'progress': 'cmake'}
+[4.431073] (package_test) JobProgress: {'identifier': 'package_test', 'progress': 'build'}
+[4.438110] (package_test) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/curry/wilson_proj/ros2-rover-ws/build/package_test', '--', '-j4', '-l4'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/package_test', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/package_test'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[4.442454] (action_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[4.443577] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/ament_index/resource_index/rosidl_interfaces/action_interfaces\n'}
+[4.444998] (-) TimerEvent: {}
+[4.446114] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces\n'}
+[4.446992] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/msg\n'}
+[4.447415] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[4.448219] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action\n'}
+[4.449274] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/rovercontrol.h\n'}
+[4.450239] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail\n'}
+[4.451037] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__functions.h\n'}
+[4.456761] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__struct.h\n'}
+[4.457256] (action_interfaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__type_support.c\n'}
+[4.457708] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__description.c\n'}
+[4.458240] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__functions.c\n'}
+[4.458745] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__type_support.h\n'}
+[4.459299] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/environment/library_path.sh\n'}
+[4.459743] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/environment/library_path.dsv\n'}
+[4.460245] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/libaction_interfaces__rosidl_generator_c.so\n'}
+[4.460976] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces\n'}
+[4.461519] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/msg\n'}
+[4.462012] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[4.462595] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action\n'}
+[4.463176] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail\n'}
+[4.463766] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__rosidl_typesupport_fastrtps_c.h\n'}
+[4.478289] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/libaction_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[4.478930] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces\n'}
+[4.479464] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/msg\n'}
+[4.480090] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[4.480600] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action\n'}
+[4.481145] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail\n'}
+[4.481643] (action_interfaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__type_support.c\n'}
+[4.482073] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__rosidl_typesupport_introspection_c.h\n'}
+[4.482530] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/libaction_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[4.483011] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/libaction_interfaces__rosidl_typesupport_c.so\n'}
+[4.493343] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces\n'}
+[4.494050] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/msg\n'}
+[4.494691] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[4.495337] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action\n'}
+[4.495731] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/rovercontrol.hpp\n'}
+[4.496423] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail\n'}
+[4.497167] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__builder.hpp\n'}
+[4.497810] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__traits.hpp\n'}
+[4.498413] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__struct.hpp\n'}
+[4.499062] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__type_support.hpp\n'}
+[4.499817] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces\n'}
+[4.500380] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/msg\n'}
+[4.500929] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[4.501301] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action\n'}
+[4.501723] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail\n'}
+[4.505273] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/dds_fastrtps\n'}
+[4.513366] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[4.513925] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/libaction_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[4.514464] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces\n'}
+[4.515006] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action\n'}
+[4.515585] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail\n'}
+[4.516115] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__rosidl_typesupport_introspection_cpp.hpp\n'}
+[4.516892] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/include/action_interfaces/action_interfaces/action/detail/rovercontrol__type_support.cpp\n'}
+[4.521566] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/libaction_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[4.522073] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/libaction_interfaces__rosidl_typesupport_cpp.so\n'}
+[4.522587] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/environment/pythonpath.sh\n'}
+[4.523152] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/environment/pythonpath.dsv\n'}
+[4.523682] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces-0.0.0-py3.10.egg-info\n'}
+[4.524323] (action_interfaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[4.541203] (action_interfaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[4.541703] (action_interfaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[4.542267] (action_interfaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[4.542857] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces\n'}
+[4.543357] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.543873] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.544321] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action\n'}
+[4.545018] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action/_rovercontrol.py\n'}
+[4.545545] (-) TimerEvent: {}
+[4.546264] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action/__init__.py\n'}
+[4.546921] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action/_rovercontrol_s.c\n'}
+[4.547518] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/_action_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[4.548132] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/_action_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[4.549006] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.549708] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/__init__.py\n'}
+[4.562553] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/_action_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[4.563131] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/libaction_interfaces__rosidl_generator_py.so\n'}
+[4.563819] (msgs_mainrocon) StdoutLine: {'line': b'[  3%] Built target msgs_mainrocon__cpp\n'}
+[4.576377] (msgs_mainrocon) StdoutLine: {'line': b'[ 12%] Built target msgs_mainrocon__rosidl_generator_c\n'}
+[4.645791] (-) TimerEvent: {}
+[4.746816] (-) TimerEvent: {}
+[4.753413] (msgs_mainrocon) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_msgs_mainrocon\n'}
+[4.773602] (msgs_mainrocon) StdoutLine: {'line': b'[ 22%] Built target msgs_mainrocon__rosidl_typesupport_fastrtps_cpp\n'}
+[4.814134] (msgs_mainrocon) StdoutLine: {'line': b'[ 32%] Built target msgs_mainrocon__rosidl_typesupport_cpp\n'}
+[4.846999] (-) TimerEvent: {}
+[4.852751] (action_interfaces) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces'...\n"}
+[4.854946] (action_interfaces) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action'...\n"}
+[4.868299] (msgs_mainrocon) StdoutLine: {'line': b'[ 41%] Built target msgs_mainrocon__rosidl_typesupport_introspection_cpp\n'}
+[4.944406] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.947226] (-) TimerEvent: {}
+[4.948510] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.952001] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages/action_interfaces/action_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.954254] (package_test) StdoutLine: {'line': b'[ 20%] Built target node_server_act\n'}
+[4.955252] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/libaction_interfaces__rosidl_generator_py.so\n'}
+[4.956610] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/action/Rovercontrol.idl\n'}
+[4.958213] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/action/Rovercontrol.action\n'}
+[4.959226] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/ament_index/resource_index/package_run_dependencies/action_interfaces\n'}
+[4.960976] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/ament_index/resource_index/parent_prefix_path/action_interfaces\n'}
+[4.962411] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/environment/ament_prefix_path.sh\n'}
+[4.962989] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/environment/ament_prefix_path.dsv\n'}
+[4.963628] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/environment/path.sh\n'}
+[4.964173] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/environment/path.dsv\n'}
+[4.965466] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/local_setup.bash\n'}
+[4.973565] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/local_setup.sh\n'}
+[4.974317] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/local_setup.zsh\n'}
+[4.975432] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/local_setup.dsv\n'}
+[4.986165] (action_interfaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.dsv\n'}
+[4.995063] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/ament_index/resource_index/packages/action_interfaces\n'}
+[4.996578] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/export_action_interfaces__rosidl_generator_cExport.cmake\n'}
+[4.997353] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/export_action_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[4.998951] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/export_action_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[4.999839] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/export_action_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[5.001423] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/action_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[5.010569] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/action_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[5.011901] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/action_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[5.017745] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/action_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[5.019000] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/export_action_interfaces__rosidl_generator_cppExport.cmake\n'}
+[5.020323] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/export_action_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[5.021422] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/export_action_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[5.022669] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/action_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[5.029784] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/action_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[5.031309] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/action_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[5.032162] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/action_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[5.034044] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/export_action_interfaces__rosidl_generator_pyExport.cmake\n'}
+[5.041611] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/export_action_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[5.044054] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[5.044941] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[5.047495] (-) TimerEvent: {}
+[5.049554] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[5.050745] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[5.052849] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[5.053911] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[5.056359] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[5.057205] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/action_interfacesConfig.cmake\n'}
+[5.064512] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/cmake/action_interfacesConfig-version.cmake\n'}
+[5.065500] (action_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/share/action_interfaces/package.xml\n'}
+[5.066340] (msgs_mainrocon) StdoutLine: {'line': b'[ 51%] Built target msgs_mainrocon__rosidl_typesupport_introspection_c\n'}
+[5.070218] (msgs_mainrocon) StdoutLine: {'line': b'[ 61%] Built target msgs_mainrocon__rosidl_typesupport_fastrtps_c\n'}
+[5.093771] (action_interfaces) CommandEnded: {'returncode': 0}
+[5.101506] (msgs_mainrocon) StdoutLine: {'line': b'[ 70%] Built target msgs_mainrocon__rosidl_typesupport_c\n'}
+[5.121046] (package_test) StdoutLine: {'line': b'[ 40%] Built target sub_node\n'}
+[5.133436] (package_test) StdoutLine: {'line': b'[ 60%] Built target pub_node\n'}
+[5.140466] (package_test) StdoutLine: {'line': b'[ 80%] Built target echoreply_node\n'}
+[5.147637] (-) TimerEvent: {}
+[5.231116] (package_test) StdoutLine: {'line': b'[100%] Built target node_command\n'}
+[5.232170] (msgs_mainrocon) StdoutLine: {'line': b'[ 70%] Built target msgs_mainrocon\n'}
+[5.247926] (-) TimerEvent: {}
+[5.294752] (package_test) CommandEnded: {'returncode': 0}
+[5.348227] (-) TimerEvent: {}
+[5.393056] (msgs_mainrocon) StdoutLine: {'line': b'[ 74%] Built target msgs_mainrocon__py\n'}
+[5.448609] (-) TimerEvent: {}
+[5.517981] (msgs_mainrocon) StdoutLine: {'line': b'[ 80%] Built target msgs_mainrocon__rosidl_generator_py\n'}
+[5.548712] (-) TimerEvent: {}
+[5.649688] (-) TimerEvent: {}
+[5.751108] (-) TimerEvent: {}
+[5.768182] (msgs_mainrocon) StdoutLine: {'line': b'[ 87%] Built target msgs_mainrocon__rosidl_typesupport_introspection_c__pyext\n'}
+[5.774822] (msgs_mainrocon) StdoutLine: {'line': b'[ 93%] Built target msgs_mainrocon__rosidl_typesupport_c__pyext\n'}
+[5.779210] (msgs_mainrocon) StdoutLine: {'line': b'[100%] Built target msgs_mainrocon__rosidl_typesupport_fastrtps_c__pyext\n'}
+[5.806241] (package_test) JobProgress: {'identifier': 'package_test', 'progress': 'install'}
+[5.807929] (package_test) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/curry/wilson_proj/ros2-rover-ws/build/package_test'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/package_test', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/package_test'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[5.843547] (package_image_process) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/package_image_process', 'build', '--build-base', '/home/curry/wilson_proj/ros2-rover-ws/build/package_image_process/build', 'install', '--record', '/home/curry/wilson_proj/ros2-rover-ws/build/package_image_process/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/src/package_image_process', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'curry', 'SSH_CLIENT': '172.30.89.42 50505 22', 'LC_TIME': 'en_US.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/curry', 'OLDPWD': '/home/curry/wilson_proj', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'en_US.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'ROS_DISTRO': 'humble', 'LOGNAME': 'curry', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '276', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'PAPERSIZE': 'letter', 'LC_ADDRESS': 'en_US.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_DOMAIN_ID': '2', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'PWD': '/home/curry/wilson_proj/ros2-rover-ws/build/package_image_process', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '172.30.89.42 50505 172.30.81.58 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/curry/wilson_proj/ros2-rover-ws/build/package_image_process/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1'}, 'shell': False}
+[5.853030] (-) TimerEvent: {}
+[5.854187] (package_test) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[5.856202] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib/package_test/node_server_act\n'}
+[5.858260] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib/package_test/pub_node\n'}
+[5.862208] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib/package_test/sub_node\n'}
+[5.867390] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib/package_test/echoreply_node\n'}
+[5.871072] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/lib/package_test/node_command\n'}
+[5.873866] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/ament_index/resource_index/package_run_dependencies/package_test\n'}
+[5.875424] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/ament_index/resource_index/parent_prefix_path/package_test\n'}
+[5.876929] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/environment/ament_prefix_path.sh\n'}
+[5.878828] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/environment/ament_prefix_path.dsv\n'}
+[5.880576] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/environment/path.sh\n'}
+[5.882264] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/environment/path.dsv\n'}
+[5.884074] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/local_setup.bash\n'}
+[5.885733] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/local_setup.sh\n'}
+[5.887290] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/local_setup.zsh\n'}
+[5.889188] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/local_setup.dsv\n'}
+[5.890731] (package_test) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.dsv\n'}
+[5.893738] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/ament_index/resource_index/packages/package_test\n'}
+[5.895487] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/cmake/package_testConfig.cmake\n'}
+[5.896968] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/cmake/package_testConfig-version.cmake\n'}
+[5.898576] (package_test) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_test/share/package_test/package.xml\n'}
+[5.908745] (package_test) CommandEnded: {'returncode': 0}
+[5.953555] (-) TimerEvent: {}
+[6.026080] (action_interfaces) JobEnded: {'identifier': 'action_interfaces', 'rc': 0}
+[6.029616] (package_position_process) JobStarted: {'identifier': 'package_position_process'}
+[6.056129] (-) TimerEvent: {}
+[6.077802] (package_position_process) JobProgress: {'identifier': 'package_position_process', 'progress': 'cmake'}
+[6.081725] (package_position_process) JobProgress: {'identifier': 'package_position_process', 'progress': 'build'}
+[6.083522] (package_position_process) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process', '--', '-j4', '-l4'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions:/opt/ros/humble')]), 'shell': False}
+[6.156348] (-) TimerEvent: {}
+[6.228173] (package_test) JobEnded: {'identifier': 'package_test', 'rc': 0}
+[6.256594] (-) TimerEvent: {}
+[6.314028] (package_position_process) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target node_position_process\x1b[0m\n'}
+[6.356786] (-) TimerEvent: {}
+[6.383009] (package_position_process) StdoutLine: {'line': b'[ 50%] Built target node_gnss\n'}
+[6.419241] (package_position_process) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/node_position_process.dir/src/node_pose_proc.cpp.o\x1b[0m\n'}
+[6.456974] (-) TimerEvent: {}
+[6.557810] (-) TimerEvent: {}
+[6.658614] (-) TimerEvent: {}
+[6.759392] (-) TimerEvent: {}
+[6.770055] (msgs_mainrocon) StdoutLine: {'line': b'running egg_info\n'}
+[6.774297] (msgs_mainrocon) StdoutLine: {'line': b'writing msgs_mainrocon.egg-info/PKG-INFO\n'}
+[6.775580] (msgs_mainrocon) StdoutLine: {'line': b'writing dependency_links to msgs_mainrocon.egg-info/dependency_links.txt\n'}
+[6.776741] (msgs_mainrocon) StdoutLine: {'line': b'writing top-level names to msgs_mainrocon.egg-info/top_level.txt\n'}
+[6.787258] (msgs_mainrocon) StdoutLine: {'line': b"reading manifest file 'msgs_mainrocon.egg-info/SOURCES.txt'\n"}
+[6.790123] (msgs_mainrocon) StdoutLine: {'line': b"writing manifest file 'msgs_mainrocon.egg-info/SOURCES.txt'\n"}
+[6.859629] (-) TimerEvent: {}
+[6.938448] (msgs_mainrocon) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_msgs_mainrocon_egg\n'}
+[6.959831] (-) TimerEvent: {}
+[6.988904] (msgs_mainrocon) CommandEnded: {'returncode': 0}
+[6.990221] (msgs_mainrocon) JobProgress: {'identifier': 'msgs_mainrocon', 'progress': 'install'}
+[6.990390] (msgs_mainrocon) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/msgs_mainrocon'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/opt/ros/humble')]), 'shell': False}
+[7.026194] (msgs_mainrocon) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[7.027305] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/ament_index/resource_index/rosidl_interfaces/msgs_mainrocon\n'}
+[7.028056] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon\n'}
+[7.028968] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg\n'}
+[7.029459] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/main_rocon.h\n'}
+[7.029896] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail\n'}
+[7.030263] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__functions.c\n'}
+[7.031162] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__type_support.h\n'}
+[7.032061] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__functions.h\n'}
+[7.032642] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__struct.h\n'}
+[7.033570] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/rosidl_generator_c__visibility_control.h\n'}
+[7.034133] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/environment/library_path.sh\n'}
+[7.034768] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/environment/library_path.dsv\n'}
+[7.035730] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/libmsgs_mainrocon__rosidl_generator_c.so\n'}
+[7.036317] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon\n'}
+[7.037376] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg\n'}
+[7.037905] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail\n'}
+[7.038397] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__rosidl_typesupport_fastrtps_c.h\n'}
+[7.039040] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[7.039517] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/libmsgs_mainrocon__rosidl_typesupport_fastrtps_c.so\n'}
+[7.040158] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon\n'}
+[7.040930] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg\n'}
+[7.041893] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[7.043477] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail\n'}
+[7.044351] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__type_support.c\n'}
+[7.045768] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__rosidl_typesupport_introspection_c.h\n'}
+[7.046601] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/libmsgs_mainrocon__rosidl_typesupport_introspection_c.so\n'}
+[7.047640] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/libmsgs_mainrocon__rosidl_typesupport_c.so\n'}
+[7.049168] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon\n'}
+[7.050064] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg\n'}
+[7.050837] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[7.051806] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail\n'}
+[7.052857] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__type_support.hpp\n'}
+[7.054268] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__traits.hpp\n'}
+[7.055331] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__builder.hpp\n'}
+[7.056097] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__struct.hpp\n'}
+[7.056499] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/main_rocon.hpp\n'}
+[7.057150] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon\n'}
+[7.057788] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg\n'}
+[7.058221] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail\n'}
+[7.058769] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[7.059523] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/dds_fastrtps\n'}
+[7.060351] (-) TimerEvent: {}
+[7.061927] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[7.062784] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/libmsgs_mainrocon__rosidl_typesupport_fastrtps_cpp.so\n'}
+[7.063178] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon\n'}
+[7.063588] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg\n'}
+[7.063981] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail\n'}
+[7.064374] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__type_support.cpp\n'}
+[7.065364] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/include/msgs_mainrocon/msgs_mainrocon/msg/detail/main_rocon__rosidl_typesupport_introspection_cpp.hpp\n'}
+[7.065795] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/libmsgs_mainrocon__rosidl_typesupport_introspection_cpp.so\n'}
+[7.066444] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/libmsgs_mainrocon__rosidl_typesupport_cpp.so\n'}
+[7.067246] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/environment/pythonpath.sh\n'}
+[7.067893] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/environment/pythonpath.dsv\n'}
+[7.068338] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon-0.0.0-py3.10.egg-info\n'}
+[7.068979] (msgs_mainrocon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[7.069576] (msgs_mainrocon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[7.071135] (msgs_mainrocon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[7.072615] (msgs_mainrocon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[7.074168] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon\n'}
+[7.074974] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msgs_mainrocon_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.075742] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msgs_mainrocon_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.076478] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msgs_mainrocon_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.077550] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msg\n'}
+[7.078503] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msg/_main_rocon.py\n'}
+[7.079489] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msg/_main_rocon_s.c\n'}
+[7.080009] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msg/__init__.py\n'}
+[7.080591] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/libmsgs_mainrocon__rosidl_generator_py.so\n'}
+[7.081109] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/_msgs_mainrocon_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[7.081490] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/__init__.py\n'}
+[7.081820] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/_msgs_mainrocon_s.ep.rosidl_typesupport_c.c\n'}
+[7.082189] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/_msgs_mainrocon_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[7.160592] (-) TimerEvent: {}
+[7.243550] (msgs_mainrocon) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon'...\n"}
+[7.245474] (msgs_mainrocon) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msg'...\n"}
+[7.260771] (-) TimerEvent: {}
+[7.278659] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msgs_mainrocon_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.279567] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msgs_mainrocon_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.283532] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages/msgs_mainrocon/msgs_mainrocon_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.286771] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib/libmsgs_mainrocon__rosidl_generator_py.so\n'}
+[7.289189] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/msg/MainRocon.idl\n'}
+[7.290462] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/msg/MainRocon.msg\n'}
+[7.291761] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/ament_index/resource_index/package_run_dependencies/msgs_mainrocon\n'}
+[7.293283] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/ament_index/resource_index/parent_prefix_path/msgs_mainrocon\n'}
+[7.294768] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/environment/ament_prefix_path.sh\n'}
+[7.296078] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/environment/ament_prefix_path.dsv\n'}
+[7.297441] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/environment/path.sh\n'}
+[7.298878] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/environment/path.dsv\n'}
+[7.300151] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/local_setup.bash\n'}
+[7.301504] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/local_setup.sh\n'}
+[7.302892] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/local_setup.zsh\n'}
+[7.304429] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/local_setup.dsv\n'}
+[7.305794] (msgs_mainrocon) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.dsv\n'}
+[7.308047] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/ament_index/resource_index/packages/msgs_mainrocon\n'}
+[7.309895] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/export_msgs_mainrocon__rosidl_generator_cExport.cmake\n'}
+[7.311433] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/export_msgs_mainrocon__rosidl_generator_cExport-noconfig.cmake\n'}
+[7.313499] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/export_msgs_mainrocon__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[7.315117] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/export_msgs_mainrocon__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[7.316980] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/msgs_mainrocon__rosidl_typesupport_introspection_cExport.cmake\n'}
+[7.318498] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/msgs_mainrocon__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[7.320440] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/msgs_mainrocon__rosidl_typesupport_cExport.cmake\n'}
+[7.322019] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/msgs_mainrocon__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[7.323915] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/export_msgs_mainrocon__rosidl_generator_cppExport.cmake\n'}
+[7.326076] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/export_msgs_mainrocon__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[7.327549] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/export_msgs_mainrocon__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[7.329637] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/msgs_mainrocon__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[7.331161] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/msgs_mainrocon__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[7.333035] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/msgs_mainrocon__rosidl_typesupport_cppExport.cmake\n'}
+[7.334591] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/msgs_mainrocon__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[7.336675] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/export_msgs_mainrocon__rosidl_generator_pyExport.cmake\n'}
+[7.338183] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/export_msgs_mainrocon__rosidl_generator_pyExport-noconfig.cmake\n'}
+[7.339591] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/rosidl_cmake-extras.cmake\n'}
+[7.341119] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[7.342563] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[7.344128] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[7.345538] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[7.346329] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[7.347110] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[7.347637] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/msgs_mainroconConfig.cmake\n'}
+[7.348318] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/cmake/msgs_mainroconConfig-version.cmake\n'}
+[7.348980] (msgs_mainrocon) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/share/msgs_mainrocon/package.xml\n'}
+[7.364576] (msgs_mainrocon) CommandEnded: {'returncode': 0}
+[7.365887] (-) TimerEvent: {}
+[7.366665] (package_image_process) StdoutLine: {'line': b'running egg_info\n'}
+[7.367360] (package_image_process) StdoutLine: {'line': b'writing ../../build/package_image_process/package_image_process.egg-info/PKG-INFO\n'}
+[7.367744] (package_image_process) StdoutLine: {'line': b'writing dependency_links to ../../build/package_image_process/package_image_process.egg-info/dependency_links.txt\n'}
+[7.368109] (package_image_process) StdoutLine: {'line': b'writing entry points to ../../build/package_image_process/package_image_process.egg-info/entry_points.txt\n'}
+[7.368448] (package_image_process) StdoutLine: {'line': b'writing requirements to ../../build/package_image_process/package_image_process.egg-info/requires.txt\n'}
+[7.368895] (package_image_process) StdoutLine: {'line': b'writing top-level names to ../../build/package_image_process/package_image_process.egg-info/top_level.txt\n'}
+[7.373868] (package_image_process) StdoutLine: {'line': b"reading manifest file '../../build/package_image_process/package_image_process.egg-info/SOURCES.txt'\n"}
+[7.374591] (package_image_process) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[7.377824] (package_image_process) StdoutLine: {'line': b"writing manifest file '../../build/package_image_process/package_image_process.egg-info/SOURCES.txt'\n"}
+[7.378671] (package_image_process) StdoutLine: {'line': b'running build\n'}
+[7.379029] (package_image_process) StdoutLine: {'line': b'running build_py\n'}
+[7.379903] (package_image_process) StdoutLine: {'line': b'running install\n'}
+[7.381383] (package_image_process) StdoutLine: {'line': b'running install_lib\n'}
+[7.387425] (package_image_process) StdoutLine: {'line': b'running install_data\n'}
+[7.388093] (package_image_process) StdoutLine: {'line': b'running install_egg_info\n'}
+[7.396643] (package_image_process) StdoutLine: {'line': b"removing '/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages/package_image_process-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[7.398749] (package_image_process) StdoutLine: {'line': b'Copying ../../build/package_image_process/package_image_process.egg-info to /home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages/package_image_process-0.0.0-py3.10.egg-info\n'}
+[7.405922] (package_image_process) StdoutLine: {'line': b'running install_scripts\n'}
+[7.466072] (-) TimerEvent: {}
+[7.475181] (msgs_mainrocon) JobEnded: {'identifier': 'msgs_mainrocon', 'rc': 0}
+[7.481325] (package_rover_control) JobStarted: {'identifier': 'package_rover_control'}
+[7.496779] (package_image_process) StdoutLine: {'line': b'Installing node_image_process script to /home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/package_image_process\n'}
+[7.499549] (package_image_process) StdoutLine: {'line': b"writing list of installed files to '/home/curry/wilson_proj/ros2-rover-ws/build/package_image_process/install.log'\n"}
+[7.536599] (package_rover_control) JobProgress: {'identifier': 'package_rover_control', 'progress': 'cmake'}
+[7.542446] (package_rover_control) JobProgress: {'identifier': 'package_rover_control', 'progress': 'build'}
+[7.544853] (package_rover_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control', '--', '-j4', '-l4'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/opt/ros/humble')]), 'shell': False}
+[7.566430] (-) TimerEvent: {}
+[7.648713] (package_image_process) CommandEnded: {'returncode': 0}
+[7.666703] (-) TimerEvent: {}
+[7.692158] (package_image_process) JobEnded: {'identifier': 'package_image_process', 'rc': 0}
+[7.766956] (-) TimerEvent: {}
+[7.822519] (package_rover_control) StdoutLine: {'line': b'[100%] Built target node_rovercontrol\n'}
+[7.863535] (package_rover_control) CommandEnded: {'returncode': 0}
+[7.867813] (-) TimerEvent: {}
+[7.970475] (-) TimerEvent: {}
+[7.979351] (package_rover_control) JobProgress: {'identifier': 'package_rover_control', 'progress': 'install'}
+[7.980350] (package_rover_control) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.89.42 50505 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '276'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.89.42 50505 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/opt/ros/humble')]), 'shell': False}
+[8.012580] (package_rover_control) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.013938] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib/package_rover_control/node_rovercontrol\n'}
+[8.015428] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/ament_index/resource_index/package_run_dependencies/package_rover_control\n'}
+[8.016044] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/ament_index/resource_index/parent_prefix_path/package_rover_control\n'}
+[8.016616] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/environment/ament_prefix_path.sh\n'}
+[8.017148] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/environment/ament_prefix_path.dsv\n'}
+[8.017582] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/environment/path.sh\n'}
+[8.018036] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/environment/path.dsv\n'}
+[8.018432] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/local_setup.bash\n'}
+[8.018849] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/local_setup.sh\n'}
+[8.019508] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/local_setup.zsh\n'}
+[8.020043] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/local_setup.dsv\n'}
+[8.020441] (package_rover_control) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/package.dsv\n'}
+[8.021618] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/ament_index/resource_index/packages/package_rover_control\n'}
+[8.022147] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/cmake/package_rover_controlConfig.cmake\n'}
+[8.022607] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/cmake/package_rover_controlConfig-version.cmake\n'}
+[8.023135] (package_rover_control) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/share/package_rover_control/package.xml\n'}
+[8.029106] (package_rover_control) CommandEnded: {'returncode': 0}
+[8.070933] (-) TimerEvent: {}
+[8.172691] (-) TimerEvent: {}
+[8.227414] (package_rover_control) JobEnded: {'identifier': 'package_rover_control', 'rc': 0}
+[8.272872] (-) TimerEvent: {}
+[8.373649] (-) TimerEvent: {}
+[8.474358] (-) TimerEvent: {}
+[8.575149] (-) TimerEvent: {}
+[8.675889] (-) TimerEvent: {}
+[8.776729] (-) TimerEvent: {}
+[8.877788] (-) TimerEvent: {}
+[8.978604] (-) TimerEvent: {}
+[9.079414] (-) TimerEvent: {}
+[9.180180] (-) TimerEvent: {}
+[9.281014] (-) TimerEvent: {}
+[9.381763] (-) TimerEvent: {}
+[9.482474] (-) TimerEvent: {}
+[9.583220] (-) TimerEvent: {}
+[9.684044] (-) TimerEvent: {}
+[9.784751] (-) TimerEvent: {}
+[9.885501] (-) TimerEvent: {}
+[9.986200] (-) TimerEvent: {}
+[10.086918] (-) TimerEvent: {}
+[10.187646] (-) TimerEvent: {}
+[10.288367] (-) TimerEvent: {}
+[10.389166] (-) TimerEvent: {}
+[10.489915] (-) TimerEvent: {}
+[10.590663] (-) TimerEvent: {}
+[10.691443] (-) TimerEvent: {}
+[10.792177] (-) TimerEvent: {}
+[10.893010] (-) TimerEvent: {}
+[10.993760] (-) TimerEvent: {}
+[11.094475] (-) TimerEvent: {}
+[11.195245] (-) TimerEvent: {}
+[11.295972] (-) TimerEvent: {}
+[11.396760] (-) TimerEvent: {}
+[11.497484] (-) TimerEvent: {}
+[11.598226] (-) TimerEvent: {}
+[11.698982] (-) TimerEvent: {}
+[11.799697] (-) TimerEvent: {}
+[11.900417] (-) TimerEvent: {}
+[12.001238] (-) TimerEvent: {}
+[12.101952] (-) TimerEvent: {}
+[12.202673] (-) TimerEvent: {}
+[12.303408] (-) TimerEvent: {}
+[12.404223] (-) TimerEvent: {}
+[12.504966] (-) TimerEvent: {}
+[12.605725] (-) TimerEvent: {}
+[12.706479] (-) TimerEvent: {}
+[12.807216] (-) TimerEvent: {}
+[12.908061] (-) TimerEvent: {}
+[13.008804] (-) TimerEvent: {}
+[13.109575] (-) TimerEvent: {}
+[13.210282] (-) TimerEvent: {}
+[13.311001] (-) TimerEvent: {}
+[13.411757] (-) TimerEvent: {}
+[13.512473] (-) TimerEvent: {}
+[13.613238] (-) TimerEvent: {}
+[13.713973] (-) TimerEvent: {}
+[13.814719] (-) TimerEvent: {}
+[13.915602] (-) TimerEvent: {}
+[14.016350] (-) TimerEvent: {}
+[14.117088] (-) TimerEvent: {}
+[14.217845] (-) TimerEvent: {}
+[14.318604] (-) TimerEvent: {}
+[14.419418] (-) TimerEvent: {}
+[14.520114] (-) TimerEvent: {}
+[14.620879] (-) TimerEvent: {}
+[14.721579] (-) TimerEvent: {}
+[14.822341] (-) TimerEvent: {}
+[14.923073] (-) TimerEvent: {}
+[15.023801] (-) TimerEvent: {}
+[15.124582] (-) TimerEvent: {}
+[15.225343] (-) TimerEvent: {}
+[15.326130] (-) TimerEvent: {}
+[15.426927] (-) TimerEvent: {}
+[15.527646] (-) TimerEvent: {}
+[15.628391] (-) TimerEvent: {}
+[15.729118] (-) TimerEvent: {}
+[15.829823] (-) TimerEvent: {}
+[15.930557] (-) TimerEvent: {}
+[16.031262] (-) TimerEvent: {}
+[16.131970] (-) TimerEvent: {}
+[16.232704] (-) TimerEvent: {}
+[16.333407] (-) TimerEvent: {}
+[16.434163] (-) TimerEvent: {}
+[16.450954] (package_position_process) StderrLine: {'line': b'\x1b[01m\x1b[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid PoseProcessor::topic_des_callback(std_msgs::msg::Float32MultiArray_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[16.451639] (package_position_process) StderrLine: {'line': b'\x1b[01m\x1b[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:37:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdata_lock_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[16.452037] (package_position_process) StderrLine: {'line': b'   37 |             std::lock_guard<std::mutex> lock(\x1b[01;31m\x1b[Kdata_lock_\x1b[m\x1b[K);\n'}
+[16.452392] (package_position_process) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[16.471029] (package_position_process) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[16.471674] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[16.472061] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[16.472397] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[16.472797] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[16.473148] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[16.473527] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[16.473852] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[16.474166] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[16.474499] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[16.474851] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[16.475205] (package_position_process) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1\x1b[m\x1b[K:\n'}
+[16.475559] (package_position_process) StderrLine: {'line': b'\x1b[01m\x1b[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:41:144:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdestination_c_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kdestination_a_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[16.475933] (package_position_process) StderrLine: {'line': b'   41 |                 RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, \x1b[01;31m\x1b[Kdestination_c_\x1b[m\x1b[K);\n'}
+[16.476286] (package_position_process) StderrLine: {'line': b'      |                                                                                                                                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[16.534357] (-) TimerEvent: {}
+[16.635182] (-) TimerEvent: {}
+[16.735921] (-) TimerEvent: {}
+[16.836682] (-) TimerEvent: {}
+[16.937381] (-) TimerEvent: {}
+[17.038139] (-) TimerEvent: {}
+[17.138889] (-) TimerEvent: {}
+[17.239652] (-) TimerEvent: {}
+[17.340377] (-) TimerEvent: {}
+[17.441153] (-) TimerEvent: {}
+[17.541990] (-) TimerEvent: {}
+[17.642726] (-) TimerEvent: {}
+[17.743485] (-) TimerEvent: {}
+[17.844200] (-) TimerEvent: {}
+[17.944941] (-) TimerEvent: {}
+[18.045747] (-) TimerEvent: {}
+[18.146459] (-) TimerEvent: {}
+[18.247169] (-) TimerEvent: {}
+[18.347910] (-) TimerEvent: {}
+[18.448684] (-) TimerEvent: {}
+[18.549400] (-) TimerEvent: {}
+[18.650138] (-) TimerEvent: {}
+[18.750875] (-) TimerEvent: {}
+[18.851594] (-) TimerEvent: {}
+[18.952340] (-) TimerEvent: {}
+[19.053211] (-) TimerEvent: {}
+[19.153933] (-) TimerEvent: {}
+[19.254756] (-) TimerEvent: {}
+[19.355479] (-) TimerEvent: {}
+[19.456226] (-) TimerEvent: {}
+[19.557048] (-) TimerEvent: {}
+[19.657772] (-) TimerEvent: {}
+[19.758486] (-) TimerEvent: {}
+[19.859212] (-) TimerEvent: {}
+[19.959979] (-) TimerEvent: {}
+[20.060714] (-) TimerEvent: {}
+[20.161573] (-) TimerEvent: {}
+[20.262305] (-) TimerEvent: {}
+[20.363024] (-) TimerEvent: {}
+[20.463729] (-) TimerEvent: {}
+[20.564461] (-) TimerEvent: {}
+[20.665206] (-) TimerEvent: {}
+[20.765920] (-) TimerEvent: {}
+[20.866636] (-) TimerEvent: {}
+[20.967363] (-) TimerEvent: {}
+[21.068070] (-) TimerEvent: {}
+[21.168871] (-) TimerEvent: {}
+[21.269596] (-) TimerEvent: {}
+[21.370315] (-) TimerEvent: {}
+[21.471012] (-) TimerEvent: {}
+[21.571749] (-) TimerEvent: {}
+[21.672618] (-) TimerEvent: {}
+[21.773341] (-) TimerEvent: {}
+[21.874103] (-) TimerEvent: {}
+[21.974879] (-) TimerEvent: {}
+[22.075751] (-) TimerEvent: {}
+[22.176574] (-) TimerEvent: {}
+[22.277280] (-) TimerEvent: {}
+[22.378009] (-) TimerEvent: {}
+[22.478738] (-) TimerEvent: {}
+[22.579506] (-) TimerEvent: {}
+[22.680245] (-) TimerEvent: {}
+[22.781048] (-) TimerEvent: {}
+[22.881761] (-) TimerEvent: {}
+[22.982465] (-) TimerEvent: {}
+[23.083199] (-) TimerEvent: {}
+[23.183937] (-) TimerEvent: {}
+[23.284677] (-) TimerEvent: {}
+[23.385430] (-) TimerEvent: {}
+[23.486136] (-) TimerEvent: {}
+[23.586873] (-) TimerEvent: {}
+[23.687592] (-) TimerEvent: {}
+[23.788303] (-) TimerEvent: {}
+[23.889071] (-) TimerEvent: {}
+[23.989789] (-) TimerEvent: {}
+[24.090595] (-) TimerEvent: {}
+[24.191339] (-) TimerEvent: {}
+[24.292069] (-) TimerEvent: {}
+[24.392802] (-) TimerEvent: {}
+[24.493494] (-) TimerEvent: {}
+[24.594256] (-) TimerEvent: {}
+[24.694967] (-) TimerEvent: {}
+[24.795732] (-) TimerEvent: {}
+[24.896445] (-) TimerEvent: {}
+[24.997176] (-) TimerEvent: {}
+[25.097923] (-) TimerEvent: {}
+[25.198616] (-) TimerEvent: {}
+[25.299307] (-) TimerEvent: {}
+[25.400025] (-) TimerEvent: {}
+[25.500716] (-) TimerEvent: {}
+[25.601410] (-) TimerEvent: {}
+[25.702097] (-) TimerEvent: {}
+[25.802843] (-) TimerEvent: {}
+[25.903553] (-) TimerEvent: {}
+[26.004203] (-) TimerEvent: {}
+[26.104902] (-) TimerEvent: {}
+[26.205559] (-) TimerEvent: {}
+[26.306214] (-) TimerEvent: {}
+[26.406911] (-) TimerEvent: {}
+[26.507579] (-) TimerEvent: {}
+[26.608298] (-) TimerEvent: {}
+[26.709111] (-) TimerEvent: {}
+[26.809822] (-) TimerEvent: {}
+[26.910552] (-) TimerEvent: {}
+[27.011362] (-) TimerEvent: {}
+[27.112091] (-) TimerEvent: {}
+[27.212834] (-) TimerEvent: {}
+[27.313530] (-) TimerEvent: {}
+[27.414244] (-) TimerEvent: {}
+[27.515111] (-) TimerEvent: {}
+[27.592476] (package_position_process) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/node_position_process.dir/build.make:76: CMakeFiles/node_position_process.dir/src/node_pose_proc.cpp.o] Error 1\n'}
+[27.593425] (package_position_process) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node_position_process.dir/all] Error 2\n'}
+[27.594315] (package_position_process) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[27.600462] (package_position_process) CommandEnded: {'returncode': 2}
+[27.615291] (-) TimerEvent: {}
+[27.716083] (-) TimerEvent: {}
+[27.782475] (package_position_process) JobEnded: {'identifier': 'package_position_process', 'rc': 2}
+[27.794140] (-) EventReactorShutdown: {}

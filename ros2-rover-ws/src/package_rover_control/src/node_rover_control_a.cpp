@@ -10,6 +10,7 @@
 
 #include <msgs_rovercon/msg/sub_rocon.hpp>
 #include <msgs_mainrocon/msg/main_rocon.hpp>
+#include <ifaces_rover/srv/spd_limit.hpp>
 
 // class Motors_Rovercontrol {
 // public:
@@ -21,27 +22,16 @@
 class Node_Rovercontrol : public rclcpp::Node {
 public:
     Node_Rovercontrol() : Node("node_rovercontrol") {
-        topic_spd_sub_ = this->create_subscription<std_msgs::msg::UInt8>(
-            "topic_speedlimit", 10,
-            std::bind(&Node_Rovercontrol::topic_spd_callback, this, std::placeholders::_1)
+        spd_service_ = this->create_service<ifaces_rover::srv::SpdLimit>("spd_limit",
+            std::bind(&Node_Rovercontrol::handle_spd_request, this, std::placeholders::_1)
         );
-        topic_des_sub_ = this->create_subscription<std_msgs::msg::Float32MultiArray>(
-            "topic_destination", 10,
-            std::bind(&Node_Rovercontrol::topic_des_callback, this, std::placeholders::_1)
-        );
+
         topic_direct_sub_ = this->create_subscription<std_msgs::msg::Float32MultiArray>(
             "topic_direction", 10,
             std::bind(&Node_Rovercontrol::topic_direct_callback, this, std::placeholders::_1)
         );
-        //topic_rocon_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("pub_rovercontrol", 10);
+
         topic_rocon_pub_ = this->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
-
-
-        // topic_rocon_fDr_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Fdirec", 10);
-        // topic_rocon_bDr_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_Bdirec", 10);
-        // topic_rocon_ang_pub_ = this->create_publisher<std_msgs::msg::Float32>("pub_rocon_angle", 10);
-        // topic_rocon_spd_pub_ = this->create_publisher<std_msgs::msg::UInt16>("pub_rocon_speed", 10);
-        
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(2), 
@@ -53,7 +43,7 @@ public:
 
 private:
     void topic_direct_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg) {
-    if (msg->data.size() >= 2) { // Ensure there are at least 2 elements
+    if (msg->data.size() >= 2) {
         std::lock_guard<std::mutex> lock(data_lock_);
         if (msg->data[0] != ro_ctrl_msg1_ || msg->data[1] != ro_ctrl_msg2_) {
             ro_ctrl_msg1_ = msg->data[0];
@@ -62,75 +52,45 @@ private:
         }
     } else {
         RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_direction.");
+        }
     }
-}
 
-    void topic_spd_callback(const std_msgs::msg::UInt8::SharedPtr msg) {
+    void handle_spd_request(const std::shared_ptr<ifaces_rover::srv::SpdLimit::Request> request,
+                            std::shared_ptr<ifaces_rover::srv::SpdLimit::Response> response) {
         std::lock_guard<std::mutex> lock(data_lock_);
-        if (spd_msg_ != msg->data){
-            spd_msg_ = msg->data;
-            //RCLCPP_INFO(this->get_logger(), "Received on topic_speedlimit: '%d'", spd_msg_);
-        }
+        spd_msg_ = request->rover_spd;
+        response->spd_result = "Speed Limit set to " + std::to_string(request->rover_spd);
+        RCLCPP_INFO(this->get_logger(), "Speed Limit set to %d", request->rover_spd);
     }
-
-    void topic_des_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg){
-        if (msg->data.size()>=3) {
-            std::lock_guard<std::mutex> lock(data_lock_);
-            if (destination_a_ != msg->data[0] || destination_b_ != msg->data[1] ){
-                destination_a_ = msg->data[0];
-                destination_b_ = msg->data[1];
-                //RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
-            } else {
-            //RCLCPP_INFO(this->get_logger(), "Received on topic_destination: a = %.2f, b = %.2f, c = %.2f", destination_a_, destination_b_, destination_c_);
-        }} else {
-            RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_destination.");
-        }
-    }
-
 
 
 
     void timer_callback() {
-
         auto subrocon = msgs_rovercon::msg::SubRocon();
         auto mainrocon = msgs_mainrocon::msg::MainRocon();
 
         subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
-        // subrocon.ro_ctrl_msg = static_cast<double>(ro_ctrl_msg2_);
         subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
-        // subrocon.spd_msg = static_cast<double>(spd_msg_);
         subrocon.spd_msg = spd_msg_;
         subrocon.bdr_msg = 1;
 
         mainrocon.mainrocon_msg = subrocon;
-
         topic_rocon_pub_->publish(mainrocon);
 
         RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %.d]", mainrocon.mainrocon_msg.fdr_msg, mainrocon.mainrocon_msg.ro_ctrl_msg, mainrocon.mainrocon_msg.spd_msg, mainrocon.mainrocon_msg.bdr_msg);
-        // RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%.1f, %.2f, %.1f, %.1f]", rover_con_msg.data[0], rover_con_msg.data[1], rover_con_msg.data[2], rover_con_msg.data[3]);
         RCLCPP_INFO(this->get_logger(), "################################################");
   }
 
-
-    rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr topic_spd_sub_;
-    rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_des_sub_;
+    rclcpp::Service<ifaces_rover::srv::SpdLimit>::SharedPtr spd_service_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
-
     rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
-
-
-
     rclcpp::TimerBase::SharedPtr timer_;
 
     //std::vector<float> ro_ctrl_msg_;
     float ro_ctrl_msg1_;
     float ro_ctrl_msg2_;
     uint8_t spd_msg_;
-    float destination_a_;
-    float destination_b_;
 
-    
-    std::vector<float> rover_con_;
     std::mutex data_lock_;
 };
 

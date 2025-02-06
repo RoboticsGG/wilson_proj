@@ -13,6 +13,7 @@ find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(std_srvs)
+find_package(ifaces_base REQUIRED)
 
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -43,7 +44,7 @@ rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorCont
 
 #---------------------------node_command---------------------------------------
 add_executable(node_command src/node_command.cpp)
-ament_target_dependencies(node_command rclcpp std_msgs)
+ament_target_dependencies(node_command rclcpp std_msgs ifaces_base)
 
 target_include_directories(node_command PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

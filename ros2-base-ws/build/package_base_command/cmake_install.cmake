@@ -97,7 +97,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_base_command/node_command")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_base_command/node_command"
-         OLD_RPATH "/opt/ros/humble/lib:/home/yupi/wilson_proj/ros2-base-ws/install/ifaces_base/lib:"
+         OLD_RPATH "/opt/ros/humble/lib:/home/yupi/wilson_proj/ros2-base-ws/install/service_ifaces/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_base_command/node_command")

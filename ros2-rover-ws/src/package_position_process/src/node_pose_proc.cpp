@@ -45,7 +45,7 @@ private:
         des_lat_ = request->des_lat;
         des_long_ = request->des_long;
 
-        response->des_result = "Destination set to (" + std::to_string(des_lat_) + ", " + std::to_string(des_long_) + ")";
+        response->result_fser = "Destination set to (" + std::to_string(des_lat_) + ", " + std::to_string(des_long_) + ")";
         RCLCPP_INFO(this->get_logger(), "Destination set via service: Lat=%.6f, Lon=%.6f", des_lat_, des_long_);
     }
 

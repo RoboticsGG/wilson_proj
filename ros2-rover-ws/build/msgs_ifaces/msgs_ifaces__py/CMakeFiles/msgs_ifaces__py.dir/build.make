@@ -53,10 +53,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces
+=======
+CMAKE_SOURCE_DIR = /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 # Utility rule file for msgs_ifaces__py.
 
@@ -119,8 +126,13 @@ rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_fastrtps_c.
 rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/UInt8MultiArray.idl
 rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/builtin_interfaces/msg/Duration.idl
 rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/builtin_interfaces/msg/Time.idl
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
 	cd /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py && /usr/bin/python3 /opt/ros/humble/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
+	cd /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py && /usr/bin/python3 /opt/ros/humble/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c: rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c
@@ -152,10 +164,18 @@ msgs_ifaces__py/CMakeFiles/msgs_ifaces__py.dir/build: msgs_ifaces__py
 .PHONY : msgs_ifaces__py/CMakeFiles/msgs_ifaces__py.dir/build
 
 msgs_ifaces__py/CMakeFiles/msgs_ifaces__py.dir/clean:
+<<<<<<< HEAD
 	cd /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py && $(CMAKE_COMMAND) -P CMakeFiles/msgs_ifaces__py.dir/cmake_clean.cmake
 .PHONY : msgs_ifaces__py/CMakeFiles/msgs_ifaces__py.dir/clean
 
 msgs_ifaces__py/CMakeFiles/msgs_ifaces__py.dir/depend:
 	cd /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py/CMakeFiles/msgs_ifaces__py.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py && $(CMAKE_COMMAND) -P CMakeFiles/msgs_ifaces__py.dir/cmake_clean.cmake
+.PHONY : msgs_ifaces__py/CMakeFiles/msgs_ifaces__py.dir/clean
+
+msgs_ifaces__py/CMakeFiles/msgs_ifaces__py.dir/depend:
+	cd /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py/CMakeFiles/msgs_ifaces__py.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 .PHONY : msgs_ifaces__py/CMakeFiles/msgs_ifaces__py.dir/depend
 

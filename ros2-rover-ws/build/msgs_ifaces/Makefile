@@ -57,10 +57,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces
+=======
+CMAKE_SOURCE_DIR = /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +149,15 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces//CMakeFiles/progress.marks
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles 0
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 .PHONY : all
 
 # The main clean target

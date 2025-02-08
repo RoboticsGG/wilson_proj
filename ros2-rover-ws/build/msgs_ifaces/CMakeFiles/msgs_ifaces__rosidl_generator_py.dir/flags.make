@@ -4,7 +4,11 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DRCUTILS_ENABLE_FAULT_INJECTION -DROS_PACKAGE_NAME=\"msgs_ifaces\" -Dmsgs_ifaces__rosidl_generator_py_EXPORTS
 
+<<<<<<< HEAD
 C_INCLUDES = -I/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c -I/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py -I/usr/include/python3.10 -isystem /opt/ros/humble/include/std_msgs -isystem /opt/ros/humble/include/builtin_interfaces -isystem /opt/ros/humble/include/rosidl_runtime_c -isystem /opt/ros/humble/include/rcutils -isystem /opt/ros/humble/include/rosidl_typesupport_interface
+=======
+C_INCLUDES = -I/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c -I/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py -I/usr/include/python3.10 -isystem /opt/ros/humble/include/std_msgs -isystem /opt/ros/humble/include/builtin_interfaces -isystem /opt/ros/humble/include/rosidl_runtime_c -isystem /opt/ros/humble/include/rcutils -isystem /opt/ros/humble/include/rosidl_typesupport_interface
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 C_FLAGS = -fPIC -Wall -Wextra
 

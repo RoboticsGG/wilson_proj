@@ -20,9 +20,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "rosidl_cmake/rosidl_cmake-extras.cmake"
   "rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake"
   "rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake"
+<<<<<<< HEAD
   "/home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces/CMakeLists.txt"
   "/home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces/msg/GnssData.msg"
   "/home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces/package.xml"
+=======
+  "/home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces/CMakeLists.txt"
+  "/home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces/msg/GnssData.msg"
+  "/home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces/package.xml"
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
   "/opt/ros/humble/lib/cmake/fastcdr/fastcdr-config-version.cmake"
   "/opt/ros/humble/lib/cmake/fastcdr/fastcdr-config.cmake"
   "/opt/ros/humble/lib/cmake/fastcdr/fastcdr-dynamic-targets-none.cmake"

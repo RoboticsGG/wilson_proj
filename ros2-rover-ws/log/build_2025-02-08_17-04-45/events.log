@@ -1,0 +1,540 @@
+[0.000000] (-) TimerEvent: {}
+[0.001707] (-) JobUnselected: {'identifier': 'action_interfaces'}
+[0.002234] (-) JobUnselected: {'identifier': 'ifaces_position'}
+[0.002710] (-) JobUnselected: {'identifier': 'msgs_ifaces'}
+[0.002896] (-) JobUnselected: {'identifier': 'msgs_mainrocon'}
+[0.003230] (-) JobUnselected: {'identifier': 'msgs_rovercon'}
+[0.003402] (-) JobUnselected: {'identifier': 'package_image_process'}
+[0.003498] (-) JobUnselected: {'identifier': 'package_position_process'}
+[0.003580] (-) JobUnselected: {'identifier': 'package_rover_control'}
+[0.003675] (-) JobUnselected: {'identifier': 'package_test'}
+[0.003763] (service_ifaces) JobQueued: {'identifier': 'service_ifaces', 'dependencies': OrderedDict()}
+[0.003851] (service_ifaces) JobStarted: {'identifier': 'service_ifaces'}
+[0.051272] (service_ifaces) JobProgress: {'identifier': 'service_ifaces', 'progress': 'cmake'}
+[0.053452] (service_ifaces) Command: {'cmd': ['/usr/bin/cmake', '/home/curry/wilson_proj/ros2-rover-ws/src/service_ifaces', '-DCMAKE_INSTALL_PREFIX=/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.91.192 58717 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover/lib:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj/ros2-rover-ws/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '401'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.91.192 58717 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble')]), 'shell': False}
+[0.099224] (-) TimerEvent: {}
+[0.199964] (-) TimerEvent: {}
+[0.300868] (-) TimerEvent: {}
+[0.366616] (service_ifaces) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.401055] (-) TimerEvent: {}
+[0.501916] (-) TimerEvent: {}
+[0.602980] (-) TimerEvent: {}
+[0.641873] (service_ifaces) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.677686] (service_ifaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.703183] (-) TimerEvent: {}
+[0.803953] (-) TimerEvent: {}
+[0.904759] (-) TimerEvent: {}
+[1.005459] (-) TimerEvent: {}
+[1.046092] (service_ifaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.072605] (service_ifaces) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.073376] (service_ifaces) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.074735] (service_ifaces) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.085458] (service_ifaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.105630] (-) TimerEvent: {}
+[1.206368] (-) TimerEvent: {}
+[1.307243] (-) TimerEvent: {}
+[1.407991] (-) TimerEvent: {}
+[1.477324] (service_ifaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.503394] (service_ifaces) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.504367] (service_ifaces) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.505903] (service_ifaces) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.508093] (-) TimerEvent: {}
+[1.546665] (service_ifaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.608261] (-) TimerEvent: {}
+[1.708998] (-) TimerEvent: {}
+[1.810042] (-) TimerEvent: {}
+[1.910925] (-) TimerEvent: {}
+[2.011636] (-) TimerEvent: {}
+[2.112334] (-) TimerEvent: {}
+[2.212955] (-) TimerEvent: {}
+[2.313621] (-) TimerEvent: {}
+[2.409795] (service_ifaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[2.413813] (-) TimerEvent: {}
+[2.514527] (-) TimerEvent: {}
+[2.615205] (-) TimerEvent: {}
+[2.716091] (-) TimerEvent: {}
+[2.817379] (-) TimerEvent: {}
+[2.918013] (-) TimerEvent: {}
+[3.018654] (-) TimerEvent: {}
+[3.119299] (-) TimerEvent: {}
+[3.206904] (service_ifaces) StdoutLine: {'line': b'-- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)\n'}
+[3.219433] (-) TimerEvent: {}
+[3.320046] (-) TimerEvent: {}
+[3.420698] (-) TimerEvent: {}
+[3.521430] (-) TimerEvent: {}
+[3.622059] (-) TimerEvent: {}
+[3.632522] (service_ifaces) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[3.706035] (service_ifaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[3.722216] (-) TimerEvent: {}
+[3.793669] (service_ifaces) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[3.822425] (-) TimerEvent: {}
+[3.896029] (service_ifaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.922570] (-) TimerEvent: {}
+[4.023202] (-) TimerEvent: {}
+[4.040741] (service_ifaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[4.123363] (-) TimerEvent: {}
+[4.224002] (-) TimerEvent: {}
+[4.224596] (service_ifaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[4.324216] (-) TimerEvent: {}
+[4.424919] (-) TimerEvent: {}
+[4.525557] (-) TimerEvent: {}
+[4.626305] (-) TimerEvent: {}
+[4.726904] (-) TimerEvent: {}
+[4.827597] (-) TimerEvent: {}
+[4.928325] (-) TimerEvent: {}
+[5.028934] (-) TimerEvent: {}
+[5.129579] (-) TimerEvent: {}
+[5.230509] (-) TimerEvent: {}
+[5.331724] (-) TimerEvent: {}
+[5.432400] (-) TimerEvent: {}
+[5.532968] (-) TimerEvent: {}
+[5.633596] (-) TimerEvent: {}
+[5.664448] (service_ifaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[5.733750] (-) TimerEvent: {}
+[5.834411] (-) TimerEvent: {}
+[5.935010] (-) TimerEvent: {}
+[6.035671] (-) TimerEvent: {}
+[6.136308] (-) TimerEvent: {}
+[6.236922] (-) TimerEvent: {}
+[6.337585] (-) TimerEvent: {}
+[6.438236] (-) TimerEvent: {}
+[6.538915] (-) TimerEvent: {}
+[6.639676] (-) TimerEvent: {}
+[6.740812] (-) TimerEvent: {}
+[6.841650] (-) TimerEvent: {}
+[6.942340] (-) TimerEvent: {}
+[7.043017] (-) TimerEvent: {}
+[7.143640] (-) TimerEvent: {}
+[7.244258] (-) TimerEvent: {}
+[7.344898] (-) TimerEvent: {}
+[7.445609] (-) TimerEvent: {}
+[7.546347] (-) TimerEvent: {}
+[7.555795] (service_ifaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[7.646566] (-) TimerEvent: {}
+[7.747341] (-) TimerEvent: {}
+[7.847949] (-) TimerEvent: {}
+[7.948649] (-) TimerEvent: {}
+[8.049287] (-) TimerEvent: {}
+[8.149954] (-) TimerEvent: {}
+[8.250672] (-) TimerEvent: {}
+[8.273880] (service_ifaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[8.350846] (-) TimerEvent: {}
+[8.398465] (service_ifaces) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[8.430818] (service_ifaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[8.451016] (-) TimerEvent: {}
+[8.551884] (-) TimerEvent: {}
+[8.566901] (service_ifaces) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[8.567721] (service_ifaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[8.568071] (service_ifaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[8.568369] (service_ifaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[8.652059] (-) TimerEvent: {}
+[8.684583] (service_ifaces) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[8.752236] (-) TimerEvent: {}
+[8.852972] (-) TimerEvent: {}
+[8.953893] (-) TimerEvent: {}
+[8.955409] (service_ifaces) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[9.054074] (-) TimerEvent: {}
+[9.154722] (-) TimerEvent: {}
+[9.228532] (service_ifaces) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[9.240859] (service_ifaces) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[9.254883] (-) TimerEvent: {}
+[9.261717] (service_ifaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.355131] (-) TimerEvent: {}
+[9.446713] (service_ifaces) StdoutLine: {'line': b'-- Generating done\n'}
+[9.455246] (-) TimerEvent: {}
+[9.494330] (service_ifaces) StdoutLine: {'line': b'-- Build files have been written to: /home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces\n'}
+[9.515318] (service_ifaces) CommandEnded: {'returncode': 0}
+[9.517133] (service_ifaces) JobProgress: {'identifier': 'service_ifaces', 'progress': 'build'}
+[9.519622] (service_ifaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces', '--', '-j4', '-l4'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.91.192 58717 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover/lib:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj/ros2-rover-ws/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '401'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.91.192 58717 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble')]), 'shell': False}
+[9.555443] (-) TimerEvent: {}
+[9.656166] (-) TimerEvent: {}
+[9.741744] (service_ifaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[9.756393] (-) TimerEvent: {}
+[9.798482] (service_ifaces) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[9.847634] (service_ifaces) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_copy_service_ifaces\n'}
+[9.856609] (-) TimerEvent: {}
+[9.958988] (-) TimerEvent: {}
+[10.060692] (-) TimerEvent: {}
+[10.161602] (-) TimerEvent: {}
+[10.262726] (-) TimerEvent: {}
+[10.364847] (-) TimerEvent: {}
+[10.467437] (-) TimerEvent: {}
+[10.569112] (-) TimerEvent: {}
+[10.670706] (-) TimerEvent: {}
+[10.772395] (-) TimerEvent: {}
+[10.874063] (-) TimerEvent: {}
+[10.975629] (-) TimerEvent: {}
+[11.077254] (-) TimerEvent: {}
+[11.178823] (-) TimerEvent: {}
+[11.280609] (-) TimerEvent: {}
+[11.383016] (-) TimerEvent: {}
+[11.469547] (service_ifaces) StdoutLine: {'line': b'running egg_info\n'}
+[11.474948] (service_ifaces) StdoutLine: {'line': b'creating service_ifaces.egg-info\n'}
+[11.476394] (service_ifaces) StdoutLine: {'line': b'writing service_ifaces.egg-info/PKG-INFO\n'}
+[11.477681] (service_ifaces) StdoutLine: {'line': b'writing dependency_links to service_ifaces.egg-info/dependency_links.txt\n'}
+[11.479158] (service_ifaces) StdoutLine: {'line': b'writing top-level names to service_ifaces.egg-info/top_level.txt\n'}
+[11.480954] (service_ifaces) StdoutLine: {'line': b"writing manifest file 'service_ifaces.egg-info/SOURCES.txt'\n"}
+[11.484336] (-) TimerEvent: {}
+[11.492843] (service_ifaces) StdoutLine: {'line': b"reading manifest file 'service_ifaces.egg-info/SOURCES.txt'\n"}
+[11.496078] (service_ifaces) StdoutLine: {'line': b"writing manifest file 'service_ifaces.egg-info/SOURCES.txt'\n"}
+[11.584851] (-) TimerEvent: {}
+[11.684991] (service_ifaces) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_build_service_ifaces_egg\n'}
+[11.685663] (-) TimerEvent: {}
+[11.727605] (service_ifaces) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/service_ifaces__rosidl_generator_c.dir/rosidl_generator_c/service_ifaces/srv/detail/des_data__functions.c.o\x1b[0m\n'}
+[11.733288] (service_ifaces) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/service_ifaces__rosidl_generator_c.dir/rosidl_generator_c/service_ifaces/srv/detail/spd_limit__functions.c.o\x1b[0m\n'}
+[11.782587] (service_ifaces) StdoutLine: {'line': b'[ 10%] Built target service_ifaces__cpp\n'}
+[11.785891] (-) TimerEvent: {}
+[11.842127] (service_ifaces) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[11.846618] (service_ifaces) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[11.886104] (-) TimerEvent: {}
+[11.987859] (-) TimerEvent: {}
+[12.089363] (-) TimerEvent: {}
+[12.099020] (service_ifaces) StdoutLine: {'line': b'[ 20%] \x1b[32m\x1b[1mLinking C shared library libservice_ifaces__rosidl_generator_c.so\x1b[0m\n'}
+[12.099997] (service_ifaces) StdoutLine: {'line': b'[ 20%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[12.189599] (-) TimerEvent: {}
+[12.291045] (-) TimerEvent: {}
+[12.350597] (service_ifaces) StdoutLine: {'line': b'[ 20%] Built target service_ifaces__rosidl_generator_c\n'}
+[12.391306] (-) TimerEvent: {}
+[12.420572] (service_ifaces) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[12.491520] (-) TimerEvent: {}
+[12.592910] (-) TimerEvent: {}
+[12.694318] (-) TimerEvent: {}
+[12.795896] (-) TimerEvent: {}
+[12.897467] (-) TimerEvent: {}
+[12.998875] (-) TimerEvent: {}
+[13.101471] (-) TimerEvent: {}
+[13.202946] (-) TimerEvent: {}
+[13.304882] (-) TimerEvent: {}
+[13.379212] (service_ifaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/service_ifaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/service_ifaces/srv/des_data__type_support.cpp.o\x1b[0m\n'}
+[13.405092] (-) TimerEvent: {}
+[13.506872] (-) TimerEvent: {}
+[13.610474] (-) TimerEvent: {}
+[13.712391] (-) TimerEvent: {}
+[13.813936] (-) TimerEvent: {}
+[13.816684] (service_ifaces) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/service_ifaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/service_ifaces/srv/detail/dds_fastrtps/des_data__type_support.cpp.o\x1b[0m\n'}
+[13.895375] (service_ifaces) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/service_ifaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/service_ifaces/srv/detail/des_data__type_support.cpp.o\x1b[0m\n'}
+[13.914144] (-) TimerEvent: {}
+[14.015127] (-) TimerEvent: {}
+[14.115968] (-) TimerEvent: {}
+[14.216867] (-) TimerEvent: {}
+[14.317927] (-) TimerEvent: {}
+[14.345266] (service_ifaces) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/service_ifaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/service_ifaces/srv/detail/des_data__type_support_c.cpp.o\x1b[0m\n'}
+[14.418231] (-) TimerEvent: {}
+[14.519325] (-) TimerEvent: {}
+[14.620273] (-) TimerEvent: {}
+[14.721437] (-) TimerEvent: {}
+[14.822607] (-) TimerEvent: {}
+[14.923738] (-) TimerEvent: {}
+[15.025091] (-) TimerEvent: {}
+[15.091781] (service_ifaces) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/service_ifaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/service_ifaces/srv/spd_limit__type_support.cpp.o\x1b[0m\n'}
+[15.125381] (-) TimerEvent: {}
+[15.226416] (-) TimerEvent: {}
+[15.327312] (-) TimerEvent: {}
+[15.428430] (-) TimerEvent: {}
+[15.529492] (-) TimerEvent: {}
+[15.630543] (-) TimerEvent: {}
+[15.731656] (-) TimerEvent: {}
+[15.832664] (-) TimerEvent: {}
+[15.933864] (-) TimerEvent: {}
+[16.035216] (-) TimerEvent: {}
+[16.136549] (-) TimerEvent: {}
+[16.238116] (-) TimerEvent: {}
+[16.316793] (service_ifaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/service_ifaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/service_ifaces/srv/detail/spd_limit__type_support.cpp.o\x1b[0m\n'}
+[16.338403] (-) TimerEvent: {}
+[16.439493] (-) TimerEvent: {}
+[16.449183] (service_ifaces) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/service_ifaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/service_ifaces/srv/detail/dds_fastrtps/spd_limit__type_support.cpp.o\x1b[0m\n'}
+[16.539699] (-) TimerEvent: {}
+[16.641234] (-) TimerEvent: {}
+[16.645036] (service_ifaces) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/service_ifaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/service_ifaces/srv/detail/spd_limit__type_support_c.cpp.o\x1b[0m\n'}
+[16.741471] (-) TimerEvent: {}
+[16.844127] (-) TimerEvent: {}
+[16.845588] (service_ifaces) StdoutLine: {'line': b'[ 46%] \x1b[32m\x1b[1mLinking CXX shared library libservice_ifaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[16.944385] (-) TimerEvent: {}
+[17.046373] (-) TimerEvent: {}
+[17.076944] (service_ifaces) StdoutLine: {'line': b'[ 46%] Built target service_ifaces__rosidl_typesupport_cpp\n'}
+[17.146003] (service_ifaces) StdoutLine: {'line': b'[ 48%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[17.147001] (-) TimerEvent: {}
+[17.249141] (-) TimerEvent: {}
+[17.350166] (-) TimerEvent: {}
+[17.451142] (-) TimerEvent: {}
+[17.552448] (-) TimerEvent: {}
+[17.653606] (-) TimerEvent: {}
+[17.754559] (-) TimerEvent: {}
+[17.855968] (-) TimerEvent: {}
+[17.957023] (-) TimerEvent: {}
+[18.057982] (-) TimerEvent: {}
+[18.159596] (-) TimerEvent: {}
+[18.261586] (-) TimerEvent: {}
+[18.362536] (-) TimerEvent: {}
+[18.463545] (-) TimerEvent: {}
+[18.564801] (-) TimerEvent: {}
+[18.666883] (-) TimerEvent: {}
+[18.755194] (service_ifaces) StdoutLine: {'line': b'[ 51%] \x1b[32m\x1b[1mLinking CXX shared library libservice_ifaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[18.767141] (-) TimerEvent: {}
+[18.868992] (-) TimerEvent: {}
+[18.971270] (-) TimerEvent: {}
+[19.019287] (service_ifaces) StdoutLine: {'line': b'[ 53%] \x1b[32m\x1b[1mLinking CXX shared library libservice_ifaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[19.071489] (-) TimerEvent: {}
+[19.120054] (service_ifaces) StdoutLine: {'line': b'[ 56%] \x1b[32m\x1b[1mLinking CXX shared library libservice_ifaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[19.166660] (service_ifaces) StdoutLine: {'line': b'[ 56%] Built target service_ifaces__rosidl_typesupport_introspection_cpp\n'}
+[19.171681] (-) TimerEvent: {}
+[19.241284] (service_ifaces) StdoutLine: {'line': b'[ 58%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[19.272062] (-) TimerEvent: {}
+[19.365318] (service_ifaces) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding C object CMakeFiles/service_ifaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/service_ifaces/srv/detail/des_data__type_support.c.o\x1b[0m\n'}
+[19.372334] (-) TimerEvent: {}
+[19.474158] (-) TimerEvent: {}
+[19.486031] (service_ifaces) StdoutLine: {'line': b'[ 61%] Built target service_ifaces__rosidl_typesupport_fastrtps_c\n'}
+[19.540841] (service_ifaces) StdoutLine: {'line': b'[ 61%] Built target service_ifaces__rosidl_typesupport_fastrtps_cpp\n'}
+[19.545591] (service_ifaces) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding C object CMakeFiles/service_ifaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/service_ifaces/srv/detail/spd_limit__type_support.c.o\x1b[0m\n'}
+[19.574341] (-) TimerEvent: {}
+[19.675457] (-) TimerEvent: {}
+[19.765645] (service_ifaces) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking C shared library libservice_ifaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[19.775693] (-) TimerEvent: {}
+[19.876478] (-) TimerEvent: {}
+[19.923840] (service_ifaces) StdoutLine: {'line': b'[ 66%] Built target service_ifaces__rosidl_typesupport_introspection_c\n'}
+[19.976627] (-) TimerEvent: {}
+[20.077268] (-) TimerEvent: {}
+[20.177896] (-) TimerEvent: {}
+[20.278536] (-) TimerEvent: {}
+[20.379290] (-) TimerEvent: {}
+[20.480170] (-) TimerEvent: {}
+[20.549752] (service_ifaces) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/service_ifaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/service_ifaces/srv/des_data__type_support.cpp.o\x1b[0m\n'}
+[20.551796] (service_ifaces) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/service_ifaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/service_ifaces/srv/spd_limit__type_support.cpp.o\x1b[0m\n'}
+[20.580433] (-) TimerEvent: {}
+[20.681862] (-) TimerEvent: {}
+[20.729682] (service_ifaces) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libservice_ifaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[20.782034] (-) TimerEvent: {}
+[20.882842] (-) TimerEvent: {}
+[20.921476] (service_ifaces) StdoutLine: {'line': b'[ 74%] Built target service_ifaces__rosidl_typesupport_c\n'}
+[20.983033] (-) TimerEvent: {}
+[21.034985] (service_ifaces) StdoutLine: {'line': b'[ 74%] Built target service_ifaces\n'}
+[21.083264] (-) TimerEvent: {}
+[21.150968] (service_ifaces) StdoutLine: {'line': b'[ 76%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[21.183405] (-) TimerEvent: {}
+[21.284061] (-) TimerEvent: {}
+[21.384758] (-) TimerEvent: {}
+[21.485405] (-) TimerEvent: {}
+[21.586009] (-) TimerEvent: {}
+[21.686675] (-) TimerEvent: {}
+[21.787374] (-) TimerEvent: {}
+[21.888005] (-) TimerEvent: {}
+[21.988659] (-) TimerEvent: {}
+[22.089249] (-) TimerEvent: {}
+[22.189849] (-) TimerEvent: {}
+[22.290457] (-) TimerEvent: {}
+[22.391104] (-) TimerEvent: {}
+[22.491714] (-) TimerEvent: {}
+[22.592315] (-) TimerEvent: {}
+[22.692959] (-) TimerEvent: {}
+[22.793551] (-) TimerEvent: {}
+[22.894180] (-) TimerEvent: {}
+[22.995025] (-) TimerEvent: {}
+[23.096123] (-) TimerEvent: {}
+[23.196986] (-) TimerEvent: {}
+[23.210056] (service_ifaces) StdoutLine: {'line': b'[ 76%] Built target service_ifaces__py\n'}
+[23.297208] (-) TimerEvent: {}
+[23.321967] (service_ifaces) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding C object CMakeFiles/service_ifaces__rosidl_generator_py.dir/rosidl_generator_py/service_ifaces/srv/_des_data_s.c.o\x1b[0m\n'}
+[23.325189] (service_ifaces) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/service_ifaces__rosidl_generator_py.dir/rosidl_generator_py/service_ifaces/srv/_spd_limit_s.c.o\x1b[0m\n'}
+[23.397393] (-) TimerEvent: {}
+[23.498158] (-) TimerEvent: {}
+[23.599247] (-) TimerEvent: {}
+[23.700111] (-) TimerEvent: {}
+[23.801027] (-) TimerEvent: {}
+[23.868585] (service_ifaces) StdoutLine: {'line': b'[ 84%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/service_ifaces/libservice_ifaces__rosidl_generator_py.so\x1b[0m\n'}
+[23.901247] (-) TimerEvent: {}
+[24.002147] (-) TimerEvent: {}
+[24.088016] (service_ifaces) StdoutLine: {'line': b'[ 84%] Built target service_ifaces__rosidl_generator_py\n'}
+[24.102328] (-) TimerEvent: {}
+[24.203285] (-) TimerEvent: {}
+[24.206185] (service_ifaces) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/service_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[24.208932] (service_ifaces) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/service_ifaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[24.211130] (service_ifaces) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/service_ifaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[24.303470] (-) TimerEvent: {}
+[24.404794] (-) TimerEvent: {}
+[24.506156] (-) TimerEvent: {}
+[24.607962] (-) TimerEvent: {}
+[24.709701] (-) TimerEvent: {}
+[24.811622] (-) TimerEvent: {}
+[24.818743] (service_ifaces) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/service_ifaces/service_ifaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[24.819929] (service_ifaces) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/service_ifaces/service_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[24.820899] (service_ifaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/service_ifaces/service_ifaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[24.912071] (-) TimerEvent: {}
+[25.013302] (-) TimerEvent: {}
+[25.100308] (service_ifaces) StdoutLine: {'line': b'[100%] Built target service_ifaces__rosidl_typesupport_c__pyext\n'}
+[25.108461] (service_ifaces) StdoutLine: {'line': b'[100%] Built target service_ifaces__rosidl_typesupport_introspection_c__pyext\n'}
+[25.110429] (service_ifaces) StdoutLine: {'line': b'[100%] Built target service_ifaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[25.113456] (-) TimerEvent: {}
+[25.165320] (service_ifaces) CommandEnded: {'returncode': 0}
+[25.167537] (service_ifaces) JobProgress: {'identifier': 'service_ifaces', 'progress': 'install'}
+[25.218757] (service_ifaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces'], 'cwd': '/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'curry'), ('SSH_CLIENT', '172.30.91.192 58717 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover/lib:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/lib:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/lib:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/curry'), ('OLDPWD', '/home/curry/wilson_proj/ros2-rover-ws/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'curry'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '401'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/curry/.local/bin:/opt/ros/humble/bin:/home/curry/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('PWD', '/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '172.30.91.192 58717 172.30.81.58 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process/lib/python3.10/site-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position/local/lib/python3.10/dist-packages:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_rover:/home/curry/wilson_proj/ros2-rover-ws/install/rovercon_msgs:/home/curry/wilson_proj/ros2-rover-ws/install/package_test:/home/curry/wilson_proj/ros2-rover-ws/install/package_rover_control:/home/curry/wilson_proj/ros2-rover-ws/install/package_position_process:/home/curry/wilson_proj/ros2-rover-ws/install/package_navigate_route:/home/curry/wilson_proj/ros2-rover-ws/install/package_image_process:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_mainrocon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_rovercon:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_positions:/home/curry/wilson_proj/ros2-rover-ws/install/ifaces_position:/home/curry/wilson_proj/ros2-rover-ws/install/action_interfaces:/opt/ros/humble')]), 'shell': False}
+[25.222061] (-) TimerEvent: {}
+[25.258453] (service_ifaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[25.259537] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/ament_index/resource_index/rosidl_interfaces/service_ifaces\n'}
+[25.260916] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces\n'}
+[25.261690] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/msg\n'}
+[25.262376] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[25.263960] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv\n'}
+[25.264579] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail\n'}
+[25.265402] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__functions.h\n'}
+[25.266633] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__functions.c\n'}
+[25.267873] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__struct.h\n'}
+[25.268968] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__type_support.h\n'}
+[25.270089] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__functions.h\n'}
+[25.271330] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__struct.h\n'}
+[25.272413] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__functions.c\n'}
+[25.273602] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__type_support.h\n'}
+[25.274698] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/des_data.h\n'}
+[25.275766] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/spd_limit.h\n'}
+[25.277396] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/environment/library_path.sh\n'}
+[25.278606] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/environment/library_path.dsv\n'}
+[25.280528] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_generator_c.so\n'}
+[25.283195] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_generator_c.so" to ""\n'}
+[25.283713] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces\n'}
+[25.284099] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/msg\n'}
+[25.284511] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[25.285601] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv\n'}
+[25.286118] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail\n'}
+[25.286514] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__rosidl_typesupport_fastrtps_c.h\n'}
+[25.287813] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__rosidl_typesupport_fastrtps_c.h\n'}
+[25.289308] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_fastrtps_c.so\n'}
+[25.291892] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[25.292378] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces\n'}
+[25.292750] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/msg\n'}
+[25.293159] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[25.294176] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv\n'}
+[25.294603] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/des_data.hpp\n'}
+[25.295699] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/spd_limit.hpp\n'}
+[25.296680] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail\n'}
+[25.297167] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__builder.hpp\n'}
+[25.298318] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__traits.hpp\n'}
+[25.299674] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__struct.hpp\n'}
+[25.300800] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__traits.hpp\n'}
+[25.301928] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__struct.hpp\n'}
+[25.303138] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__builder.hpp\n'}
+[25.304269] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__type_support.hpp\n'}
+[25.305379] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__type_support.hpp\n'}
+[25.306620] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces\n'}
+[25.307050] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/msg\n'}
+[25.307530] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[25.308656] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv\n'}
+[25.309096] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail\n'}
+[25.309472] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/dds_fastrtps\n'}
+[25.310320] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[25.311686] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[25.313196] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[25.316014] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[25.316506] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces\n'}
+[25.316940] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/msg\n'}
+[25.317333] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[25.318360] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv\n'}
+[25.318838] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail\n'}
+[25.319306] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__rosidl_typesupport_introspection_c.h\n'}
+[25.320604] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__type_support.c\n'}
+[25.321846] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__rosidl_typesupport_introspection_c.h\n'}
+[25.322228] (-) TimerEvent: {}
+[25.323174] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__type_support.c\n'}
+[25.324770] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_introspection_c.so\n'}
+[25.327277] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[25.327753] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_c.so\n'}
+[25.330148] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_c.so" to ""\n'}
+[25.330655] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces\n'}
+[25.331036] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv\n'}
+[25.331433] (service_ifaces) StdoutLine: {'line': b'-- Up-to-date: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail\n'}
+[25.331772] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[25.333068] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__type_support.cpp\n'}
+[25.334369] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/spd_limit__rosidl_typesupport_introspection_cpp.hpp\n'}
+[25.335764] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/include/service_ifaces/service_ifaces/srv/detail/des_data__type_support.cpp\n'}
+[25.337331] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_introspection_cpp.so\n'}
+[25.339964] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[25.340468] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_cpp.so\n'}
+[25.342777] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_typesupport_cpp.so" to ""\n'}
+[25.343311] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/environment/pythonpath.sh\n'}
+[25.344597] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/environment/pythonpath.dsv\n'}
+[25.345655] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces-0.0.0-py3.10.egg-info\n'}
+[25.346723] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[25.348046] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[25.349142] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[25.350273] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[25.351585] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces\n'}
+[25.352438] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/service_ifaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[25.353863] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/srv\n'}
+[25.354599] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/srv/_spd_limit_s.c\n'}
+[25.355783] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/srv/__init__.py\n'}
+[25.356815] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/srv/_des_data.py\n'}
+[25.357968] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/srv/_spd_limit.py\n'}
+[25.359177] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/srv/_des_data_s.c\n'}
+[25.360490] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_c.c\n'}
+[25.361835] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[25.363319] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/service_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[25.364740] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/__init__.py\n'}
+[25.365753] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/libservice_ifaces__rosidl_generator_py.so\n'}
+[25.367220] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/service_ifaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[25.368726] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[25.422404] (-) TimerEvent: {}
+[25.523049] (-) TimerEvent: {}
+[25.555509] (service_ifaces) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces'...\n"}
+[25.556766] (service_ifaces) StdoutLine: {'line': b"Compiling '/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/__init__.py'...\n"}
+[25.557694] (service_ifaces) StdoutLine: {'line': b"Listing '/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/srv'...\n"}
+[25.558684] (service_ifaces) StdoutLine: {'line': b"Compiling '/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/srv/__init__.py'...\n"}
+[25.559649] (service_ifaces) StdoutLine: {'line': b"Compiling '/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/srv/_des_data.py'...\n"}
+[25.560588] (service_ifaces) StdoutLine: {'line': b"Compiling '/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/srv/_spd_limit.py'...\n"}
+[25.583102] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/service_ifaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[25.586033] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/service_ifaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[25.587772] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/service_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[25.590835] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/service_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[25.592501] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/service_ifaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[25.595671] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/local/lib/python3.10/dist-packages/service_ifaces/service_ifaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[25.596246] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_generator_py.so\n'}
+[25.599102] (service_ifaces) StdoutLine: {'line': b'-- Set runtime path of "/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib/libservice_ifaces__rosidl_generator_py.so" to ""\n'}
+[25.599786] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/srv/DesData.idl\n'}
+[25.601043] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/srv/SpdLimit.idl\n'}
+[25.602143] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/srv/DesData.srv\n'}
+[25.603354] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/srv/DesData_Request.msg\n'}
+[25.604506] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/srv/DesData_Response.msg\n'}
+[25.605672] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/srv/SpdLimit.srv\n'}
+[25.606764] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/srv/SpdLimit_Request.msg\n'}
+[25.608031] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/srv/SpdLimit_Response.msg\n'}
+[25.609566] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/ament_index/resource_index/package_run_dependencies/service_ifaces\n'}
+[25.611203] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/ament_index/resource_index/parent_prefix_path/service_ifaces\n'}
+[25.612565] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/environment/ament_prefix_path.sh\n'}
+[25.613740] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/environment/ament_prefix_path.dsv\n'}
+[25.614899] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/environment/path.sh\n'}
+[25.616113] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/environment/path.dsv\n'}
+[25.617265] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/local_setup.bash\n'}
+[25.618396] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/local_setup.sh\n'}
+[25.619657] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/local_setup.zsh\n'}
+[25.620816] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/local_setup.dsv\n'}
+[25.621985] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/package.dsv\n'}
+[25.623164] (-) TimerEvent: {}
+[25.623652] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/ament_index/resource_index/packages/service_ifaces\n'}
+[25.625238] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/export_service_ifaces__rosidl_generator_cExport.cmake\n'}
+[25.626670] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/export_service_ifaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[25.628250] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/export_service_ifaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[25.629751] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/export_service_ifaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[25.631284] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/export_service_ifaces__rosidl_generator_cppExport.cmake\n'}
+[25.632855] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/export_service_ifaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[25.634312] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/export_service_ifaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[25.636027] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/service_ifaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[25.637483] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/service_ifaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[25.638964] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/service_ifaces__rosidl_typesupport_cExport.cmake\n'}
+[25.640447] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/service_ifaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[25.641984] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/service_ifaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[25.643483] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/service_ifaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[25.645034] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/service_ifaces__rosidl_typesupport_cppExport.cmake\n'}
+[25.646478] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/service_ifaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[25.647938] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/export_service_ifaces__rosidl_generator_pyExport.cmake\n'}
+[25.649346] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/export_service_ifaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[25.650671] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/rosidl_cmake-extras.cmake\n'}
+[25.652083] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[25.653448] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[25.654756] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[25.656153] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[25.657453] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[25.658730] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[25.660054] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/service_ifacesConfig.cmake\n'}
+[25.661121] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake/service_ifacesConfig-version.cmake\n'}
+[25.662264] (service_ifaces) StdoutLine: {'line': b'-- Installing: /home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/package.xml\n'}
+[25.669532] (service_ifaces) CommandEnded: {'returncode': 0}
+[25.723438] (-) TimerEvent: {}
+[25.766565] (service_ifaces) JobEnded: {'identifier': 'service_ifaces', 'rc': 0}
+[25.769009] (-) EventReactorShutdown: {}

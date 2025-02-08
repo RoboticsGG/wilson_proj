@@ -53,10 +53,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces
+=======
+CMAKE_SOURCE_DIR = /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 # Utility rule file for msgs_ifaces__cpp.
 
@@ -121,8 +128,13 @@ rosidl_generator_cpp/msgs_ifaces/msg/gnss_data.hpp: /opt/ros/humble/share/std_ms
 rosidl_generator_cpp/msgs_ifaces/msg/gnss_data.hpp: /opt/ros/humble/share/std_msgs/msg/UInt8MultiArray.idl
 rosidl_generator_cpp/msgs_ifaces/msg/gnss_data.hpp: /opt/ros/humble/share/builtin_interfaces/msg/Duration.idl
 rosidl_generator_cpp/msgs_ifaces/msg/gnss_data.hpp: /opt/ros/humble/share/builtin_interfaces/msg/Time.idl
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_cpp__arguments.json
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
+	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_cpp__arguments.json
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 rosidl_generator_cpp/msgs_ifaces/msg/detail/gnss_data__builder.hpp: rosidl_generator_cpp/msgs_ifaces/msg/gnss_data.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/msgs_ifaces/msg/detail/gnss_data__builder.hpp
@@ -154,6 +166,10 @@ CMakeFiles/msgs_ifaces__cpp.dir/clean:
 .PHONY : CMakeFiles/msgs_ifaces__cpp.dir/clean
 
 CMakeFiles/msgs_ifaces__cpp.dir/depend:
+<<<<<<< HEAD
 	cd /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles/msgs_ifaces__cpp.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles/msgs_ifaces__cpp.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 .PHONY : CMakeFiles/msgs_ifaces__cpp.dir/depend
 

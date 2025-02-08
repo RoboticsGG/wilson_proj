@@ -54,7 +54,11 @@ endif()
 add_library(msgs_ifaces::msgs_ifaces__rosidl_generator_py SHARED IMPORTED)
 
 set_target_properties(msgs_ifaces::msgs_ifaces__rosidl_generator_py PROPERTIES
+<<<<<<< HEAD
   INTERFACE_LINK_LIBRARIES "msgs_ifaces::msgs_ifaces__rosidl_generator_c;/usr/lib/x86_64-linux-gnu/libpython3.10.so;msgs_ifaces::msgs_ifaces__rosidl_typesupport_c;std_msgs::std_msgs__rosidl_generator_py;builtin_interfaces::builtin_interfaces__rosidl_generator_py"
+=======
+  INTERFACE_LINK_LIBRARIES "msgs_ifaces::msgs_ifaces__rosidl_generator_c;/usr/lib/aarch64-linux-gnu/libpython3.10.so;msgs_ifaces::msgs_ifaces__rosidl_typesupport_c;std_msgs::std_msgs__rosidl_generator_py;builtin_interfaces::builtin_interfaces__rosidl_generator_py"
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 )
 
 if(CMAKE_VERSION VERSION_LESS 2.8.12)

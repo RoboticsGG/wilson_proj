@@ -1,0 +1,20 @@
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:35:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ in namespace ‘[01m[Kservice_ifaces[m[K’ does not name a type
+   35 |     service_ifaces::[01;31m[Kmsg[m[K::GnssData cur_pose_msg_;
+      |                     [01;31m[K^~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:[m[K In member function ‘[01m[Kvoid PoseProcessor::topic_cur_callback(msgs_ifaces::msg::GnssData_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:54:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcur_pose_msg_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcur_pose_sub_[m[K’?
+   54 |         [01;31m[Kcur_pose_msg_[m[K.date = msg->date;
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+      |         [32m[Kcur_pose_sub_[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:[m[K In member function ‘[01m[Kvoid PoseProcessor::processData()[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:87:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcur_pose_msg_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcur_pose_sub_[m[K’?
+   87 |         if ([01;31m[Kcur_pose_msg_[m[K.latitude == 0.0 && cur_pose_msg_.longitude == 0.0) {
+      |             [01;31m[K^~~~~~~~~~~~~[m[K
+      |             [32m[Kcur_pose_sub_[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:91:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kcur_pose_msg_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcur_pose_sub_[m[K’?
+   91 |         double distance = haversine_distance([01;31m[Kcur_pose_msg_[m[K.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
+      |                                              [01;31m[K^~~~~~~~~~~~~[m[K
+      |                                              [32m[Kcur_pose_sub_[m[K
+gmake[2]: *** [CMakeFiles/node_position_process.dir/build.make:76: CMakeFiles/node_position_process.dir/src/node_pose_proc.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node_position_process.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

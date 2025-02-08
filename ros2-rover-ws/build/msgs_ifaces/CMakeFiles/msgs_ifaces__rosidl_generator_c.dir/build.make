@@ -53,10 +53,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces
+=======
+CMAKE_SOURCE_DIR = /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 # Include any dependencies generated for this target.
 include CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/depend.make
@@ -115,8 +122,13 @@ rosidl_generator_c/msgs_ifaces/msg/gnss_data.h: /opt/ros/humble/share/std_msgs/m
 rosidl_generator_c/msgs_ifaces/msg/gnss_data.h: /opt/ros/humble/share/std_msgs/msg/UInt8MultiArray.idl
 rosidl_generator_c/msgs_ifaces/msg/gnss_data.h: /opt/ros/humble/share/builtin_interfaces/msg/Duration.idl
 rosidl_generator_c/msgs_ifaces/msg/gnss_data.h: /opt/ros/humble/share/builtin_interfaces/msg/Time.idl
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c__arguments.json
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
+	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c__arguments.json
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.h: rosidl_generator_c/msgs_ifaces/msg/gnss_data.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.h
@@ -133,6 +145,7 @@ rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c: rosidl_generat
 CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o: CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o: rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c
 CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o: CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o -MF CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o.d -o CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o -c /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c
 
@@ -143,6 +156,18 @@ CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/ms
 CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c -o CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o -MF CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o.d -o CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.o -c /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c
+
+CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c > CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.i
+
+CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c -o CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__functions.c.s
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 # Object files for target msgs_ifaces__rosidl_generator_c
 msgs_ifaces__rosidl_generator_c_OBJECTS = \
@@ -158,7 +183,11 @@ libmsgs_ifaces__rosidl_generator_c.so: /opt/ros/humble/lib/libbuiltin_interfaces
 libmsgs_ifaces__rosidl_generator_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libmsgs_ifaces__rosidl_generator_c.so: /opt/ros/humble/lib/librcutils.so
 libmsgs_ifaces__rosidl_generator_c.so: CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library libmsgs_ifaces__rosidl_generator_c.so"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library libmsgs_ifaces__rosidl_generator_c.so"
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -174,6 +203,10 @@ CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/depend: rosidl_generator_c/msgs_i
 CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/depend: rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__struct.h
 CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/depend: rosidl_generator_c/msgs_ifaces/msg/detail/gnss_data__type_support.h
 CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/depend: rosidl_generator_c/msgs_ifaces/msg/gnss_data.h
+<<<<<<< HEAD
 	cd /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 .PHONY : CMakeFiles/msgs_ifaces__rosidl_generator_c.dir/depend
 

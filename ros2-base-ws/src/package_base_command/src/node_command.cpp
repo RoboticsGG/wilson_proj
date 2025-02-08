@@ -37,22 +37,25 @@ private:
 
         if (spd_client_->wait_for_service(std::chrono::seconds(2))) {
             auto future = spd_client_->async_send_request(speed_request);
-            future.then([this](decltype(future) result) {
-                if (result.valid()) {
-                    RCLCPP_INFO(this->get_logger(), "Speed Service Response: %s", result.get()->spd_result.c_str());
-                }
-            });
+            auto future_result = future.get();
+            if (future_result) {
+                RCLCPP_INFO(this->get_logger(), "Speed Service Response: %s", future_result->spd_result.c_str());
+            } else {
+                RCLCPP_WARN(this->get_logger(), "Failed to receive Speed Service response.");
+            }
         } else {
             RCLCPP_WARN(this->get_logger(), "Speed Service unavailable.");
         }
+
     
         if (des_client_->wait_for_service(std::chrono::seconds(2))) {
             auto future = des_client_->async_send_request(destination_request);
-            future.then([this](decltype(future) result) {
-                if (result.valid()) {
-                    RCLCPP_INFO(this->get_logger(), "Destination Service Response: %s", result.get()->result_fser.c_str());
-                }
-            });
+            auto future_result = future.get();
+            if (future_result) {
+                RCLCPP_INFO(this->get_logger(), "Destination Service Response: %s", future_result->result_fser.c_str());
+            } else {
+                RCLCPP_WARN(this->get_logger(), "Failed to receive Destination Service response.");
+            }
         } else {
             RCLCPP_WARN(this->get_logger(), "Destination Service unavailable.");
         }

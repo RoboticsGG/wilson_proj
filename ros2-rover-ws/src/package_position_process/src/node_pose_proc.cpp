@@ -43,11 +43,11 @@ private:
 
     void handle_destination_request(const std::shared_ptr<service_ifaces::srv::DesData::Request> request,
                                     std::shared_ptr<service_ifaces::srv::DesData::Response> response) {
-        des_lat_ = request->des_lat;
-        des_long_ = request->des_long;
+        des_lat_.store(request->des_lat);
+        des_long_.store(request->des_long);
 
-        response->result_fser = "Destination set to (" + std::to_string(des_lat_) + ", " + std::to_string(des_long_) + ")";
-        RCLCPP_INFO(this->get_logger(), "Destination set via service: Lat=%.6f, Lon=%.6f", des_lat_, des_long_);
+        response->result_fser = "Destination set to (" + std::to_string(des_lat_.load()) + ", " + std::to_string(des_long_.load()) + ")";
+        RCLCPP_INFO(this->get_logger(), "Destination set via service: Lat=%.6f, Lon=%.6f", des_lat_.load(), des_long_.load());
     }
 
     void topic_cur_callback(const msgs_ifaces::msg::GnssData::SharedPtr msg) {
@@ -87,7 +87,7 @@ private:
             RCLCPP_WARN(this->get_logger(), "Current position not set. Waiting for data.");
             return;
         }
-        double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
+        double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_.load(), des_long_.load());
         RCLCPP_INFO(this->get_logger(), "Calculated Distance: %.2f km", distance);
     }
 };

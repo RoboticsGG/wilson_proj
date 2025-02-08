@@ -16,6 +16,7 @@ public:
     Node_Command(float rover_spd, float des_lat, float des_long)
     : Node("node_command"), rover_spd_(rover_spd), des_lat_(des_lat), des_long_(des_long) {
         spd_client_ = this->create_client<service_ifaces::srv::SpdLimit>("spd_limit");
+
         des_client_ = rclcpp_action::create_client<DesData>(this, "des_data");
 
         RCLCPP_INFO(this->get_logger(), "Command Node is running...");
@@ -60,14 +61,7 @@ private:
         auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
 
         send_goal_options.goal_response_callback =
-            [this](std::shared_future<GoalHandleDesData::SharedPtr> future) {
-                auto goal_handle = future.get(); 
-                if (!goal_handle) {
-                    RCLCPP_ERROR(this->get_logger(), "Destination Action goal was rejected.");
-                } else {
-                    RCLCPP_INFO(this->get_logger(), "Destination Action goal accepted.");
-                }
-            };
+            std::bind(&Node_Command::goal_response_callback_, this, std::placeholders::_1);
 
         send_goal_options.feedback_callback =
             [this](GoalHandleDesData::SharedPtr goal_handle, const std::shared_ptr<const DesData::Feedback> feedback) {
@@ -84,6 +78,15 @@ private:
             };
 
         des_client_->async_send_goal(goal_msg, send_goal_options);
+    }
+
+     void goal_response_callback_(std::shared_future<GoalHandleDesData::SharedPtr> future) {
+        auto goal_handle = future.get();
+        if (!goal_handle) {
+            RCLCPP_ERROR(this->get_logger(), "Destination Action goal was rejected.");
+        } else {
+            RCLCPP_INFO(this->get_logger(), "Destination Action goal accepted.");
+        }
     }
 };
 

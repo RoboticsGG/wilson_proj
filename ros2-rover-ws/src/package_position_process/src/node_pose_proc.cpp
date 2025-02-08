@@ -79,7 +79,7 @@ private:
         RCLCPP_INFO(this->get_logger(), "Calculated Distance: %.2f km", distance);
 
         auto feedback_msg = std::make_shared<DesData::Feedback>();
-        feedback_msg->distance = distance;
+        feedback_msg->dis_remain = distance;
 
         if (distance < 0.5) {
             // Destination reached

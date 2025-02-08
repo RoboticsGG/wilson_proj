@@ -14,7 +14,7 @@ public:
         );
 
         des_service_ = this->create_service<ifaces_position::srv::DesData>(
-            "set_destination",
+            "des_data",
             std::bind(&PoseProcessor::handle_destination_request, this, std::placeholders::_1, std::placeholders::_2)
         );
 

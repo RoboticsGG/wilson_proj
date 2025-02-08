@@ -32,7 +32,7 @@ private:
     rclcpp::Publisher<msgs_ifaces::msg::GnssData>::SharedPtr publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 
-    service_ifaces::msg::GnssData cur_pose_msg_;
+    msgs_ifaces::msg::GnssData cur_pose_msg_;
 
     float des_lat_;
     float des_long_;

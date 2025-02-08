@@ -46,8 +46,8 @@ private:
             RCLCPP_WARN(this->get_logger(), "Speed Service unavailable.");
         }
     
-        if (destination_client_->wait_for_service(std::chrono::seconds(2))) {
-            auto future = destination_client_->async_send_request(destination_request);
+        if (des_client_->wait_for_service(std::chrono::seconds(2))) {
+            auto future = des_client_->async_send_request(destination_request);
             future.then([this](decltype(future) result) {
                 if (result.valid()) {
                     RCLCPP_INFO(this->get_logger(), "Destination Service Response: %s", result.get()->result_fser.c_str());

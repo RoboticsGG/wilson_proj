@@ -2,17 +2,20 @@
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
-#include <service_ifaces/srv/des_data.hpp>
+#include <action_ifaces/action/des_data.hpp>
 #include <service_ifaces/srv/spd_limit.hpp>
 #include <cstdlib>
 #include <ctime>
 
 class Node_Command : public rclcpp::Node {
 public:
+    using DesData = action_ifaces::action::DesData; 
+    using GoalHandleDesData = rclcpp_action::ClientGoalHandle<DesData>;
+
     Node_Command(float rover_spd, float des_lat, float des_long)
     : Node("node_command"), rover_spd_(rover_spd), des_lat_(des_lat), des_long_(des_long) {
         spd_client_ = this->create_client<service_ifaces::srv::SpdLimit>("spd_limit");
-        des_client_ = this->create_client<service_ifaces::srv::DesData>("des_data");
+        des_client_ = rclcpp_action::create_client<DesData>(this, "des_data")
 
         RCLCPP_INFO(this->get_logger(), "Command Node is running...");
         send_service_requests();
@@ -20,46 +23,66 @@ public:
 
 private:
     rclcpp::Client<service_ifaces::srv::SpdLimit>::SharedPtr spd_client_;
-    rclcpp::Client<service_ifaces::srv::DesData>::SharedPtr des_client_;
+    rclcpp_action::Client<DesData>::SharedPtr des_client_;
     float rover_spd_;
     float des_lat_;
     float des_long_;
 
     void send_service_requests() {
-    auto speed_request = std::make_shared<service_ifaces::srv::SpdLimit::Request>();
-    speed_request->rover_spd = rover_spd_;
+        auto speed_request = std::make_shared<service_ifaces::srv::SpdLimit::Request>();
+        speed_request->rover_spd = rover_spd_;
 
-    auto destination_request = std::make_shared<service_ifaces::srv::DesData::Request>();
-    destination_request->des_lat = des_lat_;
-    destination_request->des_long = des_long_;
-
-    // Call Speed Service asynchronously
-    if (spd_client_->wait_for_service(std::chrono::seconds(2))) {
-        auto future = spd_client_->async_send_request(speed_request,
-            [this](rclcpp::Client<service_ifaces::srv::SpdLimit>::SharedFuture future_result) {
-                if (future_result.valid()) {
-                    RCLCPP_INFO(this->get_logger(), "Speed Service Response: %s", future_result.get()->spd_result.c_str());
-                } else {
-                    RCLCPP_WARN(this->get_logger(), "Failed to receive Speed Service response.");
-                }
-            });
-    } else {
-        RCLCPP_WARN(this->get_logger(), "Speed Service unavailable.");
-    }
-
-    // Call Destination Service asynchronously
-    if (des_client_->wait_for_service(std::chrono::seconds(2))) {
-        auto future = des_client_->async_send_request(destination_request,
-            [this](rclcpp::Client<service_ifaces::srv::DesData>::SharedFuture future_result) {
-                if (future_result.valid()) {
-                    RCLCPP_INFO(this->get_logger(), "Destination Service Response: %s", future_result.get()->result_fser.c_str());
-                } else {
-                    RCLCPP_WARN(this->get_logger(), "Failed to receive Destination Service response.");
-                }
-            });
-    } else {
-        RCLCPP_WARN(this->get_logger(), "Destination Service unavailable.");
+        if (spd_client_->wait_for_service(std::chrono::seconds(2))) {
+            auto future = spd_client_->async_send_request(speed_request,
+                [this](rclcpp::Client<service_ifaces::srv::SpdLimit>::SharedFuture future_result) {
+                    if (future_result.valid()) {
+                        RCLCPP_INFO(this->get_logger(), "Speed Service Response: %s", future_result.get()->spd_result.c_str());
+                    } else {
+                        RCLCPP_WARN(this->get_logger(), "Failed to receive Speed Service response.");
+                    }
+                });
+        } else {
+            RCLCPP_WARN(this->get_logger(), "Speed Service unavailable.");
         }
+
+        // Destination Action Request หลบ blockings execution
+        if (!des_client_->wait_for_action_server(std::chrono::seconds(2))) {
+            RCLCPP_WARN(this->get_logger(), "Destination Action server is not available.");
+            return;
+        }
+
+        auto goal_msg = DesData::Goal();
+        goal_msg.des_lat = des_lat_;
+        goal_msg.des_long = des_long_;
+
+        RCLCPP_INFO(this->get_logger(), "Sending destination goal...");
+
+        auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
+        send_goal_options.goal_response_callback =
+            [this](std::shared_future<GoalHandleDesData::SharedPtr> future) {
+                auto goal_handle = future.get();
+                if (!goal_handle) {
+                    RCLCPP_ERROR(this->get_logger(), "Destination Action goal was rejected.");
+                } else {
+                    RCLCPP_INFO(this->get_logger(), "Destination Action goal accepted.");
+                }
+            };
+
+        send_goal_options.feedback_callback =
+            [this](GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
+                RCLCPP_INFO(this->get_logger(), "Destination Progress: %s", feedback->status.c_str());
+            };
+
+        send_goal_options.result_callback =
+            [this](const GoalHandleDesData::WrappedResult &result) {
+                if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
+                    RCLCPP_INFO(this->get_logger(), "Destination Action Result: %s", result.result->result_fser.c_str());
+                } else {
+                    RCLCPP_ERROR(this->get_logger(), "Destination Action failed.");
+                }
+            };
+
+        des_client_->async_send_goal(goal_msg, send_goal_options);
     }
 };
 

@@ -2,21 +2,21 @@
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
 #include <msgs_ifaces/msg/gnss_data.hpp>
-#include <action_ifaces/srv/des_data.hpp>
+#include <service_ifaces/srv/des_data.hpp>
 #include <cmath>
 
 class PoseProcessor : public rclcpp::Node {
 public:
-    using DesData = service_ifaces::action::DesData;  
-    using GoalHandleDesData = rclcpp_action::ClientGoalHandle<DesData>;
-
     PoseProcessor() : Node("pose_processor"), des_lat_(0.0), des_long_(0.0) {
         cur_pose_sub_ = this->create_subscription<msgs_ifaces::msg::GnssData>(
             "gnss_data", 10,
             std::bind(&PoseProcessor::topic_cur_callback, this, std::placeholders::_1)
         );
 
-        des_client_ = rclcpp_action::create_client<DesData>(this, "des_data"); 
+        des_service_ = this->create_service<service_ifaces::srv::DesData>(
+            "des_data",
+            std::bind(&PoseProcessor::handle_destination_request, this, std::placeholders::_1, std::placeholders::_2)
+        );
 
         timer_ = this->create_wall_timer(
             std::chrono::seconds(5), 
@@ -28,7 +28,7 @@ public:
 
 private:
     rclcpp::Subscription<msgs_ifaces::msg::GnssData>::SharedPtr cur_pose_sub_;
-    rclcpp_action::Client<DesData>::SharedPtr des_client_;
+    rclcpp::Service<service_ifaces::srv::DesData>::SharedPtr des_service_;
     rclcpp::Publisher<msgs_ifaces::msg::GnssData>::SharedPtr publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 
@@ -36,6 +36,15 @@ private:
 
     float des_lat_;
     float des_long_;
+
+    void handle_destination_request(const std::shared_ptr<service_ifaces::srv::DesData::Request> request,
+                                    std::shared_ptr<service_ifaces::srv::DesData::Response> response) {
+        des_lat_ =request->des_lat;
+        des_long_ = request->des_long;
+
+        response->result_fser = "Destination set to (" + std::to_string(des_lat_) + ", " + std::to_string(des_long_) + ")";
+        RCLCPP_INFO(this->get_logger(), "Destination set via service: Lat=%.6f, Lon=%.6f", des_lat_, des_long_);
+    }
 
     void topic_cur_callback(const msgs_ifaces::msg::GnssData::SharedPtr msg) {
         cur_pose_msg_.date = msg->date;
@@ -76,28 +85,6 @@ private:
         }
         double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
         RCLCPP_INFO(this->get_logger(), "Calculated Distance: %.2f km", distance);
-
-        auto feedback_msg = std::make_shared<DesData::Feedback>();
-        feedback_msg->distance = distance;
-
-        if (distance < 0.5) {
-            // Destination reached
-            auto result_msg = std::make_shared<DesData::Result>();
-            result_msg->result_fser = "Destination reached.";
-            RCLCPP_INFO(this->get_logger(), "Distance below 0.5 km, destination reached.");
-            auto goal_handle = des_client_->get_goal_handle();
-            des_client_->async_send_goal(goal_handle->get_goal_id(), result_msg);
-        } else {
-            // Send feedback to the action server
-            if (des_client_->wait_for_action_server(std::chrono::seconds(1))) {
-                auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
-                send_goal_options.feedback_callback = [this](GoalHandleDesData::SharedPtr,
-                                                             const std::shared_ptr<const DesData::Feedback> feedback) {
-                    RCLCPP_INFO(this->get_logger(), "Distance: %.2f km", feedback->distance);
-                };
-                des_client_->async_send_goal(feedback_msg, send_goal_options);
-            }
-        }
     }
 };
 

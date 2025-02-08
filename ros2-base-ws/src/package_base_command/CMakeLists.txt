@@ -43,12 +43,16 @@ rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorCont
 #---------------------------node_carcontrol---------------------------------------
 
 #---------------------------node_command---------------------------------------
+target_link_libraries(node_command ifaces_base::ifaces_base)
+
+
 add_executable(node_command src/node_command.cpp)
 ament_target_dependencies(node_command rclcpp std_msgs ifaces_base)
 
 target_include_directories(node_command PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)
+
 target_compile_features(node_command PUBLIC c_std_99 cxx_std_17)
 
 install(TARGETS node_command

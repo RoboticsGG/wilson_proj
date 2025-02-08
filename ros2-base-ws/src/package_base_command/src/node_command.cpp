@@ -28,10 +28,10 @@ private:
     rclcpp::TimerBase::SharedPtr timer_;
 
     void send_service_requests(){
-        auto speed_request = std::make_shared<your_package::srv::SetSpeedLimit::Request>();
+        auto speed_request = std::make_shared<ifaces_base::srv::SetSpeedLimit::Request>();
         speed_request->rover_spd = 30;
 
-        auto destination_request = std::make_shared<your_package::srv::SetDestination::Request>();
+        auto destination_request = std::make_shared<ifaces_base::srv::SetDestination::Request>();
         destination_request->des_lat = 12.345;
         destination_request->des_long = 67.890;
 

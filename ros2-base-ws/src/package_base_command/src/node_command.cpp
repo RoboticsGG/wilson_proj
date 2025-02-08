@@ -31,9 +31,9 @@ private:
         auto speed_request = std::make_shared<ifaces_base::srv::SpdLimit::Request>();
         speed_request->rover_spd = 30;
 
-        auto destination_request = std::make_shared<ifaces_base::srv::SetDestination::Request>();
-        destination_request->des_lat = 12.345;
-        destination_request->des_long = 67.890;
+        auto destination_request = std::make_shared<ifaces_base::srv::DesData::Request>();
+        destination_request->des_lat = 0.00;
+        destination_request->des_long = 0.00;
 
         if (spd_client_->wait_for_service(std::chrono::seconds(2))) {
             auto future = spd_client_->async_send_request(speed_request);

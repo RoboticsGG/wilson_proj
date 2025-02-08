@@ -29,7 +29,7 @@ public:
 private:
     rclcpp::Subscription<msgs_ifaces::msg::GnssData>::SharedPtr cur_pose_sub_;
     rclcpp::Service<service_ifaces::srv::DesData>::SharedPtr des_service_;
-    rclcpp::Publisher<service_ifaces::msg::GnssData>::SharedPtr publisher_;
+    rclcpp::Publisher<msgs_ifaces::msg::GnssData>::SharedPtr publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 
     service_ifaces::msg::GnssData cur_pose_msg_;

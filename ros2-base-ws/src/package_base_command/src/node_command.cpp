@@ -16,7 +16,7 @@ public:
     Node_Command(float rover_spd, float des_lat, float des_long)
     : Node("node_command"), rover_spd_(rover_spd), des_lat_(des_lat), des_long_(des_long) {
         spd_client_ = this->create_client<service_ifaces::srv::SpdLimit>("spd_limit");
-        des_client_ = rclcpp_action::create_client<DesData>(this, "des_data")
+        des_client_ = rclcpp_action::create_client<DesData>(this, "des_data");
 
         RCLCPP_INFO(this->get_logger(), "Command Node is running...");
         send_service_requests();

@@ -23,7 +23,7 @@ class Node_Rovercontrol : public rclcpp::Node {
 public:
     Node_Rovercontrol() : Node("node_rovercontrol") {
         spd_service_ = this->create_service<ifaces_rover::srv::SpdLimit>("spd_limit",
-            std::bind(&Node_Rovercontrol::handle_spd_request, this, std::placeholders::_1)
+            std::bind(&Node_Rovercontrol::handle_spd_request, this, std::placeholders::_1, std::placeholders::_2)
         );
 
         topic_direct_sub_ = this->create_subscription<std_msgs::msg::Float32MultiArray>(

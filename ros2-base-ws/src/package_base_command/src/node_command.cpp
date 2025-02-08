@@ -29,7 +29,7 @@ private:
     float des_lat_;
     float des_long_;
 
-    void send_service_requests() {
+     void send_service_requests() {
         auto speed_request = std::make_shared<service_ifaces::srv::SpdLimit::Request>();
         speed_request->rover_spd = rover_spd_;
 
@@ -46,20 +46,19 @@ private:
             RCLCPP_WARN(this->get_logger(), "Speed Service unavailable.");
         }
 
-        // Destination Action Request หลบ blockings execution
+        // Destination Action Request
         if (!des_client_->wait_for_action_server(std::chrono::seconds(2))) {
             RCLCPP_WARN(this->get_logger(), "Destination Action server is not available.");
             return;
         }
 
         auto goal_msg = DesData::Goal();
-        goal_msg.des_lat = des_lat_;
-        goal_msg.des_long = des_long_;
+        goal_msg.des_lat = des_lat_; 
+        goal_msg.des_long = des_long_; 
 
         RCLCPP_INFO(this->get_logger(), "Sending destination goal...");
 
         auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
-
         send_goal_options.goal_response_callback =
             [this](std::shared_future<GoalHandleDesData::SharedPtr> future) {
                 auto goal_handle = future.get();
@@ -70,10 +69,9 @@ private:
                 }
             };
 
-
         send_goal_options.feedback_callback =
             [this](GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
-                RCLCPP_INFO(this->get_logger(), "Destination Progress: %.2f", feedback->dis_remain);
+                RCLCPP_INFO(this->get_logger(), "Remaining Distance: %.2f km", feedback->dis_remain);
             };
 
         send_goal_options.result_callback =

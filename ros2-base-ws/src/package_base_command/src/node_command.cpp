@@ -18,7 +18,6 @@ public:
     Node_Command(float rover_spd, float des_lat, float des_long)
     : Node("node_command"), rover_spd_(rover_spd), des_lat_(des_lat), des_long_(des_long) {
         spd_client_ = this->create_client<service_ifaces::srv::SpdLimit>("spd_limit");
-        
         des_client_ = rclcpp_action::create_client<DesData>(this, "des_data");
 
         RCLCPP_INFO(this->get_logger(), "Command Node is running...");
@@ -38,7 +37,13 @@ private:
 
         if (spd_client_->wait_for_service(std::chrono::seconds(2))) {
             auto future = spd_client_->async_send_request(speed_request,
-                std::bind(&Node_Command::handle_speed_response, this, std::placeholders::_1));
+                [this](rclcpp::Client<service_ifaces::srv::SpdLimit>::SharedFuture future_result) {
+                    if (future_result.valid()) {
+                        RCLCPP_INFO(this->get_logger(), "Speed Service Response: %s", future_result.get()->spd_result.c_str());
+                    } else {
+                        RCLCPP_WARN(this->get_logger(), "Failed to receive Speed Service response.");
+                    }
+                });
         } else {
             RCLCPP_WARN(this->get_logger(), "Speed Service unavailable.");
         }
@@ -54,24 +59,18 @@ private:
 
         RCLCPP_INFO(this->get_logger(), "Sending destination goal...");
 
-        rclcpp_action::Client<DesData>::SendGoalOptions send_goal_options;
-        send_goal_options.goal_response_callback = std::bind(&Node_Command::goal_response_callback, this, std::placeholders::_1);
-        send_goal_options.feedback_callback = std::bind(&Node_Command::feedback_callback, this, std::placeholders::_1, std::placeholders::_2);
-        send_goal_options.result_callback = std::bind(&Node_Command::result_callback, this, std::placeholders::_1);
+        auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
+        send_goal_options.goal_response_callback =
+            std::bind(&Node_Command::goal_response_callback, this, std::placeholders::_1);
+        send_goal_options.feedback_callback =
+            std::bind(&Node_Command::feedback_callback, this, std::placeholders::_1, std::placeholders::_2);
+        send_goal_options.result_callback =
+            std::bind(&Node_Command::result_callback, this, std::placeholders::_1);
 
         des_client_->async_send_goal(goal_msg, send_goal_options);
     }
 
-    void handle_speed_response(rclcpp::Client<service_ifaces::srv::SpdLimit>::SharedFuture future_result) {
-        if (future_result.valid()) {
-            RCLCPP_INFO(this->get_logger(), "Speed Service Response: %s", future_result.get()->spd_result.c_str());
-        } else {
-            RCLCPP_WARN(this->get_logger(), "Failed to receive Speed Service response.");
-        }
-    }
-
-    void goal_response_callback(std::shared_future<GoalHandleDesData::SharedPtr> future) {
-        auto goal_handle = future.get();
+    void goal_response_callback(GoalHandleDesData::SharedPtr goal_handle) {
         if (!goal_handle) {
             RCLCPP_ERROR(this->get_logger(), "Destination Action goal was rejected.");
         } else {
@@ -80,12 +79,12 @@ private:
     }
 
     void feedback_callback(GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
-        RCLCPP_INFO(this->get_logger(), "Remaining Distance: %.2f km", feedback->dis_remain);
+        RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
     }
 
     void result_callback(const GoalHandleDesData::WrappedResult &result) {
         if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
-            RCLCPP_INFO(this->get_logger(), "Destination Action Result: %s", result.result->result_fser.c_str());
+            RCLCPP_INFO(this->get_logger(), "Destination Reached: %s", result.result->result_fser.c_str());
         } else {
             RCLCPP_ERROR(this->get_logger(), "Destination Action failed.");
         }

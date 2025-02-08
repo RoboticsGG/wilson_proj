@@ -74,6 +74,7 @@ private:
                 RCLCPP_INFO(this->get_logger(), "Remaining Distance: %.2f km", feedback->dis_remain);
             };
 
+
         send_goal_options.result_callback =
             [this](const GoalHandleDesData::WrappedResult &result) {
                 if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {

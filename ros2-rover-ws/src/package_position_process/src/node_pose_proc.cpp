@@ -8,7 +8,7 @@
 
 class PoseProcessor : public rclcpp::Node {
 public:
-    using DesData = service_ifaces::action::DesData;  
+    using DesData = action_ifaces::action::DesData;  
     using GoalHandleDesData = rclcpp_action::ClientGoalHandle<DesData>;
 
     PoseProcessor() : Node("pose_processor"), des_lat_(0.0), des_long_(0.0) {

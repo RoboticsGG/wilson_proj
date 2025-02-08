@@ -48,7 +48,7 @@ private:
         return R * c; // in km
     }
 
-    rclcpp_action::GoalResponse handle_goal(  # UPDATED: Handle goal with correct parameters
+    rclcpp_action::GoalResponse handle_goal( 
         const std::shared_ptr<GoalHandleDesData> goal_handle) {
 
         RCLCPP_INFO(this->get_logger(), "Received goal request to move to (%.6f, %.6f)",

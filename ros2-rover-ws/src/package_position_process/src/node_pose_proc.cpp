@@ -34,14 +34,15 @@ private:
 
     msgs_ifaces::msg::GnssData cur_pose_msg_;
 
-    float des_lat_;
-    float des_long_;
+    // float des_lat_;
+    // float des_long_;
+    std::atomic<float> des_lat_{0.0};
+    std::atomic<float> des_long_{0.0};
 
-    std::mutex data_lock_;
+
 
     void handle_destination_request(const std::shared_ptr<service_ifaces::srv::DesData::Request> request,
                                     std::shared_ptr<service_ifaces::srv::DesData::Response> response) {
-        std::lock_guard<std::mutex> lock(data_lock_);
         des_lat_ = request->des_lat;
         des_long_ = request->des_long;
 
@@ -50,7 +51,6 @@ private:
     }
 
     void topic_cur_callback(const msgs_ifaces::msg::GnssData::SharedPtr msg) {
-        std::lock_guard<std::mutex> lock(data_lock_);
         cur_pose_msg_.date = msg->date;
         cur_pose_msg_.time = msg->time;
         cur_pose_msg_.num_satellites = msg->num_satellites;
@@ -79,7 +79,6 @@ private:
     }
 
     void processData() {
-        std::lock_guard<std::mutex> lock(data_lock_);
         if (des_lat_ == 0.0 && des_long_ == 0.0) {
             RCLCPP_WARN(this->get_logger(), "Destination not set. Waiting for data.");
             return;

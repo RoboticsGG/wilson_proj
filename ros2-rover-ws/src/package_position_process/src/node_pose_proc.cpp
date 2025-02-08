@@ -13,7 +13,8 @@ public:
 
     PoseProcessor() : Node("pose_processor"), des_lat_(0.0), des_long_(0.0) {
         action_server_ = rclcpp_action::create_server<DesData>(
-            this, "des_data",
+            this, 
+            "des_data",
             std::bind(&PoseProcessor::handle_goal, this, std::placeholders::_1, std::placeholders::_2),
             std::bind(&PoseProcessor::handle_cancel, this, std::placeholders::_1),
             std::bind(&PoseProcessor::handle_accepted, this, std::placeholders::_1)
@@ -50,7 +51,7 @@ private:
 
     rclcpp_action::GoalResponse handle_goal(
         const std::shared_ptr<GoalHandleDesData> goal_handle) {
-        
+
         RCLCPP_INFO(this->get_logger(), "Received goal request to move to (%.6f, %.6f)",
                     goal_handle->get_goal()->des_lat, goal_handle->get_goal()->des_long);
 

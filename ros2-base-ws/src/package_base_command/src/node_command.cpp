@@ -59,8 +59,8 @@ private:
             });
     } else {
         RCLCPP_WARN(this->get_logger(), "Destination Service unavailable.");
+        }
     }
-};
 
 
     // void send_service_requests() {
@@ -95,7 +95,7 @@ private:
     //         RCLCPP_WARN(this->get_logger(), "Destination Service unavailable.");
     //     }
     // }
-//};
+};
 
 int main(int argc, char *argv[]) {
     rclcpp::init(argc, argv);

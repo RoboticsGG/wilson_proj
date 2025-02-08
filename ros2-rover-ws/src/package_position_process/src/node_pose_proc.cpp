@@ -12,14 +12,14 @@ public:
     using GoalHandleDesData = rclcpp_action::ServerGoalHandle<DesData>;
 
     PoseProcessor() : Node("pose_processor"), des_lat_(0.0), des_long_(0.0) {
-        action_server_ = rclcpp_action::create_server<DesData>(  # UPDATED: Correct action server creation
+        action_server_ = rclcpp_action::create_server<DesData>(  
             this, "des_data",
-            std::bind(&PoseProcessor::handle_goal, this, std::placeholders::_1),  # UPDATED: Binding handle_goal
-            std::bind(&PoseProcessor::handle_cancel, this, std::placeholders::_1),  # UPDATED: Binding handle_cancel
-            std::bind(&PoseProcessor::handle_accepted, this, std::placeholders::_1)  # UPDATED: Binding handle_accepted
+            std::bind(&PoseProcessor::handle_goal, this, std::placeholders::_1),  
+            std::bind(&PoseProcessor::handle_cancel, this, std::placeholders::_1),  
+            std::bind(&PoseProcessor::handle_accepted, this, std::placeholders::_1) 
         );
 
-        gnss_subscriber_ = this->create_subscription<msgs_ifaces::msg::GnssData>(  # UPDATED: GNSS data subscription
+        gnss_subscriber_ = this->create_subscription<msgs_ifaces::msg::GnssData>(  
             "gnss_data", 10, std::bind(&PoseProcessor::gnss_callback, this, std::placeholders::_1)
         );
 
@@ -76,7 +76,7 @@ private:
         goal_handle->publish_feedback(feedback);
 
         auto result = std::make_shared<DesData::Result>();
-        result->result_fser = "Destination reached.";  # UPDATED: Setting result in the correct structure
+        result->result_fser = "Destination reached."; 
 
         goal_handle->succeed(result);
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
@@ -88,11 +88,11 @@ private:
         return rclcpp_action::CancelResponse::ACCEPT;
     }
 
-    void handle_accepted(const std::shared_ptr<GoalHandleDesData> goal_handle) {  # UPDATED: handle_accepted method
+    void handle_accepted(const std::shared_ptr<GoalHandleDesData> goal_handle) {  
         rclcpp::spin_until_future_complete(this->get_node_base_interface(), goal_handle->get_goal()->des_lat);
     }
 
-    void gnss_callback(const msgs_ifaces::msg::GnssData::SharedPtr msg) {  # UPDATED: Correct GNSS callback
+    void gnss_callback(const msgs_ifaces::msg::GnssData::SharedPtr msg) {  
         current_lat_ = msg->latitude;
         current_lon_ = msg->longitude;
 

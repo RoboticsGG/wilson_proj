@@ -24,7 +24,7 @@ add_executable(node_gnss src/node_gnss.cpp)
 ament_target_dependencies(node_gnss rclcpp std_msgs jsoncpp msgs_ifaces)
 
 add_executable(node_position_process src/node_pose_proc.cpp)
-ament_target_dependencies(node_position_process rclcpp rclcpp_action std_msgs action_ifaces msgs_ifaces)
+ament_target_dependencies(node_position_process rclcpp rclcpp_action rclcpp_components std_msgs action_ifaces msgs_ifaces)
 
 target_link_libraries(node_gnss jsoncpp)
 

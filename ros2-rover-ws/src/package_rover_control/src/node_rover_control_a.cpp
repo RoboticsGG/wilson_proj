@@ -10,7 +10,7 @@
 
 #include <msgs_rovercon/msg/sub_rocon.hpp>
 #include <msgs_mainrocon/msg/main_rocon.hpp>
-#include <ifaces_rover/srv/spd_limit.hpp>
+#include <service_ifaces/srv/spd_limit.hpp>
 
 // class Motors_Rovercontrol {
 // public:
@@ -22,7 +22,7 @@
 class Node_Rovercontrol : public rclcpp::Node {
 public:
     Node_Rovercontrol() : Node("node_rovercontrol") {
-        spd_service_ = this->create_service<ifaces_rover::srv::SpdLimit>("spd_limit",
+        spd_service_ = this->create_service<service_ifaces::srv::SpdLimit>("spd_limit",
             std::bind(&Node_Rovercontrol::handle_spd_request, this, std::placeholders::_1, std::placeholders::_2)
         );
 
@@ -55,8 +55,8 @@ private:
         }
     }
 
-    void handle_spd_request(const std::shared_ptr<ifaces_rover::srv::SpdLimit::Request> request,
-                            std::shared_ptr<ifaces_rover::srv::SpdLimit::Response> response) {
+    void handle_spd_request(const std::shared_ptr<service_ifaces::srv::SpdLimit::Request> request,
+                            std::shared_ptr<service_ifaces::srv::SpdLimit::Response> response) {
         std::lock_guard<std::mutex> lock(data_lock_);
         spd_msg_ = request->rover_spd;
         response->spd_result = "Speed Limit set to " + std::to_string(request->rover_spd);
@@ -81,7 +81,7 @@ private:
         RCLCPP_INFO(this->get_logger(), "################################################");
   }
 
-    rclcpp::Service<ifaces_rover::srv::SpdLimit>::SharedPtr spd_service_;
+    rclcpp::Service<service_ifaces::srv::SpdLimit>::SharedPtr spd_service_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
     rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
     rclcpp::TimerBase::SharedPtr timer_;

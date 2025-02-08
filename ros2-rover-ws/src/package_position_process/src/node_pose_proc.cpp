@@ -1,19 +1,19 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
-#include <ifaces_position/msg/gnss_data.hpp>
-#include <ifaces_position/srv/des_data.hpp>
+#include <service_ifaces/msg/gnss_data.hpp>
+#include <service_ifaces/srv/des_data.hpp>
 #include <cmath>
 
 class PoseProcessor : public rclcpp::Node {
 public:
     PoseProcessor() : Node("pose_processor"), des_lat_(0.0), des_long_(0.0) {
-        cur_pose_sub_ = this->create_subscription<ifaces_position::msg::GnssData>(
+        cur_pose_sub_ = this->create_subscription<service_ifaces::msg::GnssData>(
             "gnss_data", 10,
             std::bind(&PoseProcessor::topic_cur_callback, this, std::placeholders::_1)
         );
 
-        des_service_ = this->create_service<ifaces_position::srv::DesData>(
+        des_service_ = this->create_service<service_ifaces::srv::DesData>(
             "des_data",
             std::bind(&PoseProcessor::handle_destination_request, this, std::placeholders::_1, std::placeholders::_2)
         );
@@ -27,20 +27,20 @@ public:
     }
 
 private:
-    rclcpp::Subscription<ifaces_position::msg::GnssData>::SharedPtr cur_pose_sub_;
-    rclcpp::Service<ifaces_position::srv::DesData>::SharedPtr des_service_;
-    rclcpp::Publisher<ifaces_position::msg::GnssData>::SharedPtr publisher_;
+    rclcpp::Subscription<service_ifaces::msg::GnssData>::SharedPtr cur_pose_sub_;
+    rclcpp::Service<service_ifaces::srv::DesData>::SharedPtr des_service_;
+    rclcpp::Publisher<service_ifaces::msg::GnssData>::SharedPtr publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 
-    ifaces_position::msg::GnssData cur_pose_msg_;
+    service_ifaces::msg::GnssData cur_pose_msg_;
 
     float des_lat_;
     float des_long_;
 
     std::mutex data_lock_;
 
-    void handle_destination_request(const std::shared_ptr<ifaces_position::srv::DesData::Request> request,
-                                    std::shared_ptr<ifaces_position::srv::DesData::Response> response) {
+    void handle_destination_request(const std::shared_ptr<service_ifaces::srv::DesData::Request> request,
+                                    std::shared_ptr<service_ifaces::srv::DesData::Response> response) {
         std::lock_guard<std::mutex> lock(data_lock_);
         des_lat_ = request->des_lat;
         des_long_ = request->des_long;
@@ -49,7 +49,7 @@ private:
         RCLCPP_INFO(this->get_logger(), "Destination set via service: Lat=%.6f, Lon=%.6f", des_lat_, des_long_);
     }
 
-    void topic_cur_callback(const ifaces_position::msg::GnssData::SharedPtr msg) {
+    void topic_cur_callback(const service_ifaces::msg::GnssData::SharedPtr msg) {
         std::lock_guard<std::mutex> lock(data_lock_);
         cur_pose_msg_.date = msg->date;
         cur_pose_msg_.time = msg->time;

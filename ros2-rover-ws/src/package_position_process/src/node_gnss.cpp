@@ -1,5 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
-#include "ifaces_position/msg/gnss_data.hpp"  // Use your custom ROS 2 message
+#include "msgs_ifaces/msg/gnss_data.hpp"  // Use your custom ROS 2 message
 #include <json/json.h>
 #include <fstream>
 #include <sstream>
@@ -13,7 +13,7 @@ using namespace std::chrono_literals;
 class GNSSPublisher : public rclcpp::Node {
 public:
     GNSSPublisher() : Node("gnss_publisher") {
-        publisher_ = this->create_publisher<ifaces_position::msg::GnssData>("gnss_data", 10);
+        publisher_ = this->create_publisher<msgs_ifaces::msg::GnssData>("gnss_data", 10);
 
         // Open Serial Port
         serial_port_ = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY | O_NDELAY);
@@ -44,7 +44,7 @@ public:
     }
 
 private:
-    rclcpp::Publisher<ifaces_position::msg::GnssData>::SharedPtr publisher_;
+    rclcpp::Publisher<msgs_ifaces::msg::GnssData>::SharedPtr publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
     int serial_port_;
 
@@ -76,7 +76,7 @@ private:
                 std::string date = date_time.substr(0, date_time.find(" "));
                 std::string time = date_time.substr(date_time.find(" ") + 1);
 
-                auto msg = ifaces_position::msg::GnssData();
+                auto msg = msgs_ifaces::msg::GnssData();
                 msg.date = date;
                 msg.time = time;
                 msg.num_satellites = numSatellites;

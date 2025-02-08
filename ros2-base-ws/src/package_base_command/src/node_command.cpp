@@ -46,22 +46,22 @@ private:
             RCLCPP_WARN(this->get_logger(), "Speed Service unavailable.");
         }
 
-        // Destination Action Request
         if (!des_client_->wait_for_action_server(std::chrono::seconds(2))) {
             RCLCPP_WARN(this->get_logger(), "Destination Action server is not available.");
             return;
         }
 
         auto goal_msg = DesData::Goal();
-        goal_msg.des_lat = des_lat_; 
-        goal_msg.des_long = des_long_; 
+        goal_msg.des_lat = des_lat_;
+        goal_msg.des_long = des_long_;
 
         RCLCPP_INFO(this->get_logger(), "Sending destination goal...");
 
         auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
+
         send_goal_options.goal_response_callback =
             [this](std::shared_future<GoalHandleDesData::SharedPtr> future) {
-                auto goal_handle = future.get();
+                auto goal_handle = future.get(); 
                 if (!goal_handle) {
                     RCLCPP_ERROR(this->get_logger(), "Destination Action goal was rejected.");
                 } else {
@@ -70,15 +70,14 @@ private:
             };
 
         send_goal_options.feedback_callback =
-            [this](GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
+            [this](GoalHandleDesData::SharedPtr goal_handle, const std::shared_ptr<const DesData::Feedback> feedback) {
                 RCLCPP_INFO(this->get_logger(), "Remaining Distance: %.2f km", feedback->dis_remain);
             };
-
 
         send_goal_options.result_callback =
             [this](const GoalHandleDesData::WrappedResult &result) {
                 if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
-                    RCLCPP_INFO(this->get_logger(), "Destination Action Result: %s", result.result->result_fser.c_str());
+                    RCLCPP_INFO(this->get_logger(), "Destination Action Result: %s", result.result->result_fser);
                 } else {
                     RCLCPP_ERROR(this->get_logger(), "Destination Action failed.");
                 }

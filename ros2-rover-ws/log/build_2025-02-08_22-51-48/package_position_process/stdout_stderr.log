@@ -1,0 +1,313 @@
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found service_ifaces: 0.0.0 (/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake)
+-- Found msgs_ifaces: 0.0.0 (/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces/share/msgs_ifaces/cmake)
+-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/include>
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/curry/wilson_proj/ros2-rover-ws/build/package_position_process
+[35m[1mConsolidate compiler generated dependencies of target node_gnss[0m
+[35m[1mConsolidate compiler generated dependencies of target node_position_process[0m
+[ 50%] Built target node_gnss
+[ 75%] [32mBuilding CXX object CMakeFiles/node_position_process.dir/src/node_pose_proc.cpp.o[0m
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:30:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ is not a member of ‘[01m[Kservice_ifaces[m[K’
+   30 |     rclcpp::Subscription<service_ifaces::[01;31m[Kmsg[m[K::GnssData>::SharedPtr cur_pose_sub_;
+      |                                          [01;31m[K^~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:30:42:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/duration.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/qos.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp:32[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:42[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp:30[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:45[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Krcl_interfaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:23[m[K,
+                 from [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstatistics_msgs::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/string.hpp:7[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:2[m[K:
+[01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/string__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd_msgs::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces/include/msgs_ifaces/msgs_ifaces/msg/gnss_data.hpp:7[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:4[m[K:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces/include/msgs_ifaces/msgs_ifaces/msg/detail/gnss_data__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmsgs_ifaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:30:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   30 |     rclcpp::Subscription<service_ifaces::msg::GnssData[01;31m[K>[m[K::SharedPtr cur_pose_sub_;
+      |                                                       [01;31m[K^[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:30:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:30:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:30:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:30:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   30 |     rclcpp::Subscription<service_ifaces::msg::GnssData>::[01;31m[KSharedPtr[m[K cur_pose_sub_;
+      |                                                          [01;31m[K^~~~~~~~~[m[K
+      |                                                                   [32m[K;[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:30:68:[m[K [01;31m[Kerror: [m[K‘[01m[Kcur_pose_sub_[m[K’ does not name a type
+   30 |     rclcpp::Subscription<service_ifaces::msg::GnssData>::SharedPtr [01;31m[Kcur_pose_sub_[m[K;
+      |                                                                    [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:32:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ is not a member of ‘[01m[Kservice_ifaces[m[K’
+   32 |     rclcpp::Publisher<service_ifaces::[01;31m[Kmsg[m[K::GnssData>::SharedPtr publisher_;
+      |                                       [01;31m[K^~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:32:39:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/duration.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/qos.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp:32[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:42[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp:30[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:45[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Krcl_interfaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:23[m[K,
+                 from [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstatistics_msgs::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/string.hpp:7[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:2[m[K:
+[01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/string__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd_msgs::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces/include/msgs_ifaces/msgs_ifaces/msg/gnss_data.hpp:7[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:4[m[K:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces/include/msgs_ifaces/msgs_ifaces/msg/detail/gnss_data__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmsgs_ifaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:32:52:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   32 |     rclcpp::Publisher<service_ifaces::msg::GnssData[01;31m[K>[m[K::SharedPtr publisher_;
+      |                                                    [01;31m[K^[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:32:55:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   32 |     rclcpp::Publisher<service_ifaces::msg::GnssData>::[01;31m[KSharedPtr[m[K publisher_;
+      |                                                       [01;31m[K^~~~~~~~~[m[K
+      |                                                                [32m[K;[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:32:55:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kint PoseProcessor::SharedPtr[m[K’
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:30:58:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kint PoseProcessor::SharedPtr[m[K’
+   30 |     rclcpp::Subscription<service_ifaces::msg::GnssData>::[01;36m[KSharedPtr[m[K cur_pose_sub_;
+      |                                                          [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:32:65:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ does not name a type; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+   32 |     rclcpp::Publisher<service_ifaces::msg::GnssData>::SharedPtr [01;31m[Kpublisher_[m[K;
+      |                                                                 [01;31m[K^~~~~~~~~~[m[K
+      |                                                                 [32m[Krmw_publisher_t[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:35:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ in namespace ‘[01m[Kservice_ifaces[m[K’ does not name a type
+   35 |     service_ifaces::[01;31m[Kmsg[m[K::GnssData cur_pose_msg_;
+      |                     [01;31m[K^~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:52:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ in namespace ‘[01m[Kservice_ifaces[m[K’ does not name a type
+   52 |     void topic_cur_callback(const service_ifaces::[01;31m[Kmsg[m[K::GnssData::SharedPtr msg) {
+      |                                                   [01;31m[K^~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:52:64:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+   52 |     void topic_cur_callback(const service_ifaces::msg::GnssData[01;31m[K::[m[KSharedPtr msg) {
+      |                                                                [01;31m[K^~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:52:64:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+   52 |     void topic_cur_callback[34m[K([m[Kconst service_ifaces::msg::GnssData[01;31m[K:[m[K[32m[K:[m[KSharedPtr msg) {
+      |                            [34m[K~[m[K                                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                                                [32m[K)[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:52:56:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   52 |     void topic_cur_callback(const service_ifaces::msg::[01;31m[KGnssData[m[K::SharedPtr msg) {
+      |                                                        [01;31m[K^~~~~~~~[m[K
+      |                                                                [32m[K;[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:52:66:[m[K [01;31m[Kerror: [m[K‘[01m[KSharedPtr[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+   52 |     void topic_cur_callback(const service_ifaces::msg::GnssData::[01;31m[KSharedPtr[m[K msg) {
+      |                                                                  [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:[m[K In constructor ‘[01m[KPoseProcessor::PoseProcessor()[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:11:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcur_pose_sub_[m[K’ was not declared in this scope
+   11 |         [01;31m[Kcur_pose_sub_[m[K = this->create_subscription<service_ifaces::msg::GnssData>(
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:11:67:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ is not a member of ‘[01m[Kservice_ifaces[m[K’
+   11 |         cur_pose_sub_ = this->create_subscription<service_ifaces::[01;31m[Kmsg[m[K::GnssData>(
+      |                                                                   [01;31m[K^~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:11:67:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/duration.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/qos.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp:32[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:42[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp:30[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:45[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Krcl_interfaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:23[m[K,
+                 from [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstatistics_msgs::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/string.hpp:7[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:2[m[K:
+[01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/string__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd_msgs::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces/include/msgs_ifaces/msgs_ifaces/msg/gnss_data.hpp:7[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:4[m[K:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces/include/msgs_ifaces/msgs_ifaces/msg/detail/gnss_data__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmsgs_ifaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:11:31:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+   11 |         cur_pose_sub_ = this->[01;31m[Kcreate_subscription<service_ifaces::msg::GnssData>[m[K(
+      |                               [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:11:81:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KPoseProcessor::create_subscription<<expression error> >(const char [10], int, std::_Bind_helper<false, void (PoseProcessor::*)(...), PoseProcessor*, const std::_Placeholder<1>&>::type)[m[K’
+   11 |         cur_pose_sub_ = [01;31m[Kthis->create_subscription<service_ifaces::msg::GnssData>([m[K
+      |                         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   12 | [01;31m[K            "gnss_data", 10,[m[K
+      |             [01;31m[K~~~~~~~~~~~~~~~~[m[K                                                     
+   13 | [01;31m[K            std::bind(&PoseProcessor::topic_cur_callback, this, std::placeholders::_1)[m[K
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+   14 | [01;31m[K        )[m[K;
+      |         [01;31m[K~[m[K                                                                        
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+  219 |   [01;36m[Kcreate_subscription[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:11:81:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   11 |         cur_pose_sub_ = [01;31m[Kthis->create_subscription<service_ifaces::msg::GnssData>([m[K
+      |                         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   12 | [01;31m[K            "gnss_data", 10,[m[K
+      |             [01;31m[K~~~~~~~~~~~~~~~~[m[K                                                     
+   13 | [01;31m[K            std::bind(&PoseProcessor::topic_cur_callback, this, std::placeholders::_1)[m[K
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+   14 | [01;31m[K        )[m[K;
+      |         [01;31m[K~[m[K                                                                        
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:[m[K In member function ‘[01m[Kvoid PoseProcessor::processData()[m[K’:
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:87:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcur_pose_msg_[m[K’ was not declared in this scope
+   87 |         if ([01;31m[Kcur_pose_msg_[m[K.latitude == 0.0 && cur_pose_msg_.longitude == 0.0) {
+      |             [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:91:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kcur_pose_msg_[m[K’ was not declared in this scope
+   91 |         double distance = haversine_distance([01;31m[Kcur_pose_msg_[m[K.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
+      |                                              [01;31m[K^~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node_position_process.dir/build.make:76: CMakeFiles/node_position_process.dir/src/node_pose_proc.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node_position_process.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

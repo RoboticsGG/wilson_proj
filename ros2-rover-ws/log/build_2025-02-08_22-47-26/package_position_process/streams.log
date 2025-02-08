@@ -1,0 +1,36 @@
+[0.093s] Invoking command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_position_process -- -j4 -l4
+[0.277s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.504s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[1.775s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.791s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.826s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.903s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.975s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.157s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.169s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[3.504s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.922s] -- Found service_ifaces: 0.0.0 (/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/share/service_ifaces/cmake)
+[3.997s] -- Found msgs_ifaces: 0.0.0 (/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces/share/msgs_ifaces/cmake)
+[4.106s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[4.574s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[4.576s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/include>
+[4.577s] -- Configured cppcheck exclude dirs and/or files: 
+[4.581s] -- Added test 'lint_cmake' to check CMake code style
+[4.593s] -- Added test 'uncrustify' to check C / C++ code style
+[4.593s] -- Configured uncrustify additional arguments: 
+[4.595s] -- Added test 'xmllint' to check XML markup files
+[4.602s] -- Configuring done
+[4.712s] -- Generating done
+[4.727s] -- Build files have been written to: /home/curry/wilson_proj/ros2-rover-ws/build/package_position_process
+[4.949s] [35m[1mConsolidate compiler generated dependencies of target node_position_process[0m
+[4.993s] [35m[1mConsolidate compiler generated dependencies of target node_gnss[0m
+[5.107s] [ 25%] [32mBuilding CXX object CMakeFiles/node_position_process.dir/src/node_pose_proc.cpp.o[0m
+[5.146s] [ 75%] Built target node_gnss
+[6.812s] [01m[K/home/curry/wilson_proj/ros2-rover-ws/src/package_position_process/src/node_pose_proc.cpp:4:10:[m[K [01;31m[Kfatal error: [m[Kservice_ifaces/msg/gnss_data.hpp: No such file or directory
+[6.812s]     4 | #include [01;31m[K<service_ifaces/msg/gnss_data.hpp>[m[K
+[6.813s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[6.813s] compilation terminated.
+[6.824s] gmake[2]: *** [CMakeFiles/node_position_process.dir/build.make:76: CMakeFiles/node_position_process.dir/src/node_pose_proc.cpp.o] Error 1
+[6.825s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node_position_process.dir/all] Error 2
+[6.826s] gmake: *** [Makefile:146: all] Error 2
+[6.833s] Invoked command in '/home/curry/wilson_proj/ros2-rover-ws/build/package_position_process' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/curry/wilson_proj/ros2-rover-ws/build/package_position_process -- -j4 -l4

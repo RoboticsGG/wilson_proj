@@ -8,7 +8,7 @@
 class PoseProcessor : public rclcpp::Node {
 public:
     PoseProcessor() : Node("pose_processor"), des_lat_(0.0), des_long_(0.0) {
-        cur_pose_sub_ = this->create_subscription<service_ifaces::msg::GnssData>(
+        cur_pose_sub_ = this->create_subscription<msgs_ifaces::msg::GnssData>(
             "gnss_data", 10,
             std::bind(&PoseProcessor::topic_cur_callback, this, std::placeholders::_1)
         );
@@ -27,7 +27,7 @@ public:
     }
 
 private:
-    rclcpp::Subscription<service_ifaces::msg::GnssData>::SharedPtr cur_pose_sub_;
+    rclcpp::Subscription<msgs_ifaces::msg::GnssData>::SharedPtr cur_pose_sub_;
     rclcpp::Service<service_ifaces::srv::DesData>::SharedPtr des_service_;
     rclcpp::Publisher<service_ifaces::msg::GnssData>::SharedPtr publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
@@ -49,7 +49,7 @@ private:
         RCLCPP_INFO(this->get_logger(), "Destination set via service: Lat=%.6f, Lon=%.6f", des_lat_, des_long_);
     }
 
-    void topic_cur_callback(const service_ifaces::msg::GnssData::SharedPtr msg) {
+    void topic_cur_callback(const msgs_ifaces::msg::GnssData::SharedPtr msg) {
         std::lock_guard<std::mutex> lock(data_lock_);
         cur_pose_msg_.date = msg->date;
         cur_pose_msg_.time = msg->time;

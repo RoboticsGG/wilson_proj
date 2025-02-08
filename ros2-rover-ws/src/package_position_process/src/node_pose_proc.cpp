@@ -1,12 +1,14 @@
+#include <rclcpp/rclcpp.hpp>
 #include <rclcpp_action/rclcpp_action.hpp>
+#include <msgs_ifaces/msg/gnss_data.hpp>
 #include <action_ifaces/action/des_data.hpp>
 #include <cmath>
 
-using DesData = action_ifaces::action::DesData;
-using GoalHandleDesData = rclcpp_action::ServerGoalHandle<DesData>;
-
 class PoseProcessor : public rclcpp::Node {
 public:
+    using DesData = action_ifaces::action::DesData;
+    using GoalHandleDesData = rclcpp_action::ServerGoalHandle<DesData>;
+
     PoseProcessor() : Node("pose_processor"), des_lat_(0.0), des_long_(0.0) {
         action_server_ = rclcpp_action::create_server<DesData>(
             this, "des_data",
@@ -38,39 +40,30 @@ private:
         return R * c; // in km
     }
 
-    // Handle the goal from the client
     rclcpp_action::GoalResponse handle_goal(
         const std::shared_ptr<GoalHandleDesData> goal_handle) {
         
         RCLCPP_INFO(this->get_logger(), "Received goal request to move to (%.6f, %.6f)",
                     goal_handle->get_goal()->des_lat, goal_handle->get_goal()->des_long);
 
-        // Start feedback loop
         std::shared_ptr<DesData::Feedback> feedback = std::make_shared<DesData::Feedback>();
         feedback->dis_remain = haversine_distance(0.0, 0.0, goal_handle->get_goal()->des_lat, goal_handle->get_goal()->des_long);
 
-        // Send initial feedback with remaining distance
         goal_handle->publish_feedback(feedback);
 
-        // Simulate moving towards the goal and update feedback
         while (feedback->dis_remain > 0.5) {
-            // For the sake of the example, assume we decrease the distance by 0.1 km
             feedback->dis_remain -= 0.1;
 
             RCLCPP_INFO(this->get_logger(), "Distance remaining: %.2f km", feedback->dis_remain);
 
-            // Publish feedback with updated distance
             goal_handle->publish_feedback(feedback);
 
-            // Simulate some time passing (to mimic action progress)
             rclcpp::sleep_for(std::chrono::seconds(1));
         }
 
-        // When distance is less than 0.5 km, stop the action
-        feedback->dis_remain = 0.0; // Assume arrival at destination
+        feedback->dis_remain = 0.0; 
         goal_handle->publish_feedback(feedback);
 
-        // Send result and complete the goal
         auto result = std::make_shared<DesData::Result>();
         result->result_fser = "Destination reached.";
 
@@ -78,19 +71,23 @@ private:
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
 
-    // Cancel the goal (can be used to preempt the action)
     rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<GoalHandleDesData> goal_handle) {
         RCLCPP_INFO(this->get_logger(), "Goal is being canceled.");
         goal_handle->canceled(std::make_shared<DesData::Result>());
         return rclcpp_action::CancelResponse::ACCEPT;
     }
 
-    // Handle the goal when it's accepted
     void handle_accepted(const std::shared_ptr<GoalHandleDesData> goal_handle) {
-        // Goal accepted, start processing
         rclcpp::spin_until_future_complete(this->get_node_base_interface(), goal_handle->get_goal()->des_lat);
     }
 };
+
+int main(int argc, char *argv[]) {
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<PoseProcessor>());
+    rclcpp::shutdown();
+    return 0;
+}
 
 
 // #include <rclcpp/rclcpp.hpp>

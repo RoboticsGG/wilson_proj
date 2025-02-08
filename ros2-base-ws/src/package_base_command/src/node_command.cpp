@@ -59,6 +59,7 @@ private:
         RCLCPP_INFO(this->get_logger(), "Sending destination goal...");
 
         auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
+
         send_goal_options.goal_response_callback =
             [this](std::shared_future<GoalHandleDesData::SharedPtr> future) {
                 auto goal_handle = future.get();
@@ -69,9 +70,10 @@ private:
                 }
             };
 
+
         send_goal_options.feedback_callback =
             [this](GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
-                RCLCPP_INFO(this->get_logger(), "Destination Progress: %s", feedback->status.c_str());
+                RCLCPP_INFO(this->get_logger(), "Destination Progress: %.2f", feedback->dis_remain);
             };
 
         send_goal_options.result_callback =

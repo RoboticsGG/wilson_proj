@@ -77,7 +77,7 @@ private:
         send_goal_options.result_callback =
             [this](const GoalHandleDesData::WrappedResult &result) {
                 if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
-                    RCLCPP_INFO(this->get_logger(), "Destination Action Result: %s", result.result->result_fser);
+                    RCLCPP_INFO(this->get_logger(), "Destination Action Result: %s", result.result->result_fser.c_str());
                 } else {
                     RCLCPP_ERROR(this->get_logger(), "Destination Action failed.");
                 }

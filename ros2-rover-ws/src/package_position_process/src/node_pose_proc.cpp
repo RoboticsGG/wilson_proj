@@ -7,7 +7,7 @@
 
 class PoseProcessor : public rclcpp::Node {
 public:
-    PoseProcessor() : Node("pose_processor"), destination_a_(0.0), destination_b_(0.0) {
+    PoseProcessor() : Node("pose_processor"), des_lat_(0.0), des_long_(0.0) {
         cur_pose_sub_ = this->create_subscription<ifaces_position::msg::GnssData>(
             "gnss_data", 10,
             std::bind(&PoseProcessor::topic_cur_callback, this, std::placeholders::_1)
@@ -27,15 +27,26 @@ public:
     }
 
 private:
+    rclcpp::Subscription<ifaces_position::msg::GnssData>::SharedPtr cur_pose_sub_;
+    rclcpp::Service<ifaces_position::srv::DesData>::SharedPtr des_service_;
+    rclcpp::Publisher<ifaces_position::msg::GnssData>::SharedPtr publisher_;
+    rclcpp::TimerBase::SharedPtr timer_;
+
+    ifaces_position::msg::GnssData cur_pose_msg_;
+
+    float des_lat_;
+    float des_long_;
+
+    std::mutex data_lock_;
 
     void handle_destination_request(const std::shared_ptr<ifaces_position::srv::DesData::Request> request,
                                     std::shared_ptr<ifaces_position::srv::DesData::Response> response) {
         std::lock_guard<std::mutex> lock(data_lock_);
-        destination_a_ = request->latitude;
-        destination_b_ = request->longitude;
+        des_lat_ = request->des_lat;
+        des_long_ = request->des_long;
 
-        response->des_result = "Destination set to (" + std::to_string(destination_a_) + ", " + std::to_string(destination_b_) + ")";
-        RCLCPP_INFO(this->get_logger(), "Destination set via service: Lat=%.6f, Lon=%.6f", destination_a_, destination_b_);
+        response->des_result = "Destination set to (" + std::to_string(des_lat_) + ", " + std::to_string(des_long_) + ")";
+        RCLCPP_INFO(this->get_logger(), "Destination set via service: Lat=%.6f, Lon=%.6f", des_lat_, des_long_);
     }
 
     void topic_cur_callback(const ifaces_position::msg::GnssData::SharedPtr msg) {
@@ -69,7 +80,7 @@ private:
 
     void processData() {
         std::lock_guard<std::mutex> lock(data_lock_);
-        if (destination_a_ == 0.0 && destination_b_ == 0.0) {
+        if (des_lat_ == 0.0 && des_long_ == 0.0) {
             RCLCPP_WARN(this->get_logger(), "Destination not set. Waiting for data.");
             return;
         }
@@ -77,21 +88,9 @@ private:
             RCLCPP_WARN(this->get_logger(), "Current position not set. Waiting for data.");
             return;
         }
-        double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, destination_a_, destination_b_);
+        double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
         RCLCPP_INFO(this->get_logger(), "Calculated Distance: %.2f km", distance);
     }
-
-    rclcpp::Subscription<ifaces_position::msg::GnssData>::SharedPtr cur_pose_sub_;
-    rclcpp::Service<ifaces_position::srv::DesData>::SharedPtr des_service_;
-    rclcpp::Publisher<ifaces_position::msg::GnssData>::SharedPtr publisher_;
-    rclcpp::TimerBase::SharedPtr timer_;
-
-    ifaces_position::msg::GnssData cur_pose_msg_;
-
-    float destination_a_;
-    float destination_b_;
-
-    std::mutex data_lock_;
 };
 
 int main(int argc, char *argv[]) {

@@ -27,12 +27,12 @@ find_package(std_msgs REQUIRED)
 find_package(std_srvs)
 find_package(msgs_rovercon REQUIRED)
 find_package(msgs_mainrocon REQUIRED)
-find_package(ifaces_rover REQUIRED)
+find_package(service_ifaces REQUIRED)
 
 
 #---------------------------node_rover_control---------------------------------------
 add_executable(node_rovercontrol src/node_rover_control_a.cpp)
-ament_target_dependencies(node_rovercontrol rclcpp geometry_msgs std_msgs msgs_rovercon msgs_mainrocon ifaces_rover)
+ament_target_dependencies(node_rovercontrol rclcpp geometry_msgs std_msgs msgs_rovercon msgs_mainrocon service_ifaces)
 
 target_include_directories(node_rovercontrol PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

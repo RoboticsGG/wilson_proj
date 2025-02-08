@@ -85,6 +85,7 @@ private:
     void result_callback(const GoalHandleDesData::WrappedResult &result) {
         if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
             RCLCPP_INFO(this->get_logger(), "Destination Reached: %s", result.result->result_fser.c_str());
+            rclcpp::shutdown();
         } else {
             RCLCPP_ERROR(this->get_logger(), "Destination Action failed.");
         }

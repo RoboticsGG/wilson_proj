@@ -43,9 +43,6 @@ rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorCont
 #---------------------------node_carcontrol---------------------------------------
 
 #---------------------------node_command---------------------------------------
-target_link_libraries(node_command ifaces_base::ifaces_base)
-
-
 add_executable(node_command src/node_command.cpp)
 ament_target_dependencies(node_command rclcpp std_msgs ifaces_base)
 

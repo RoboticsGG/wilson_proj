@@ -45,7 +45,7 @@ rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorCont
 
 #---------------------------node_command---------------------------------------
 add_executable(node_command src/node_command.cpp)
-ament_target_dependencies(node_command rclcpp std_msgs service_ifaces action_ifaces)
+ament_target_dependencies(node_command rclcpp rclcpp_action std_msgs service_ifaces action_ifaces)
 
 target_include_directories(node_command PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

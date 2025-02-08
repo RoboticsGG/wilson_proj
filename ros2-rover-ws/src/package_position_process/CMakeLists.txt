@@ -8,10 +8,12 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_action REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(jsoncpp REQUIRED)
 find_package(action_ifaces REQUIRED)
 find_package(msgs_ifaces REQUIRED)
+
 
 include_directories(/usr/include/jsoncpp)
 # uncomment the following section in order to fill in
@@ -22,7 +24,7 @@ add_executable(node_gnss src/node_gnss.cpp)
 ament_target_dependencies(node_gnss rclcpp std_msgs jsoncpp msgs_ifaces)
 
 add_executable(node_position_process src/node_pose_proc.cpp)
-ament_target_dependencies(node_position_process rclcpp std_msgs action_ifaces msgs_ifaces)
+ament_target_dependencies(node_position_process rclcpp rclcpp_action std_msgs action_ifaces msgs_ifaces)
 
 target_link_libraries(node_gnss jsoncpp)
 

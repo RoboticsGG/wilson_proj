@@ -19,11 +19,20 @@ public:
             std::bind(&PoseProcessor::handle_accepted, this, std::placeholders::_1)
         );
 
+        cur_pose_sub_ = this->create_subscription<msgs_ifaces::msg::GnssData>(
+            "gnss_data", 10,
+            std::bind(&PoseProcessor::topic_cur_callback, this, std::placeholders::_1)
+        );
+
         RCLCPP_INFO(this->get_logger(), "PoseProcessor Action Server Initialized.");
     }
 
 private:
     rclcpp_action::Server<DesData>::SharedPtr action_server_;
+    rclcpp::Subscription<msgs_ifaces::msg::GnssData>::SharedPtr cur_pose_sub_;
+    
+    msgs_ifaces::msg::GnssData cur_pose_msg_;
+
     float des_lat_;
     float des_long_;
 
@@ -43,11 +52,39 @@ private:
         std::thread{std::bind(&PoseProcessor::execute, this, goal_handle)}.detach();
     }
 
+    void topic_cur_callback(const msgs_ifaces::msg::GnssData::SharedPtr msg) {
+        cur_pose_msg_.date = msg->date;
+        cur_pose_msg_.time = msg->time;
+        cur_pose_msg_.num_satellites = msg->num_satellites;
+        cur_pose_msg_.fix = msg->fix;
+        cur_pose_msg_.latitude = msg->latitude;
+        cur_pose_msg_.longitude = msg->longitude;
+
+        RCLCPP_INFO(this->get_logger(), "Received GNSS Data: Date=%s, Time=%s, Sat=%d, Fix=%d, Lat=%f, Lon=%f",
+                    cur_pose_msg_.date.c_str(), cur_pose_msg_.time.c_str(), cur_pose_msg_.num_satellites, cur_pose_msg_.fix, cur_pose_msg_.latitude, cur_pose_msg_.longitude);
+
+        
+    }
+
+    double haversine_distance(double lat1, double lon1, double lat2, double lon2) {
+        double R = 6371.0; // Earth radius in km
+        double phi1 = lat1 * M_PI / 180; // φ, λ in radians
+        double phi2 = lat2 * M_PI / 180;
+        double delta_phi = (lat2 - lat1) * M_PI / 180;
+        double delta_lambda = (lon2 - lon1) * M_PI / 180;
+
+        double a = sin(delta_phi/2) * sin(delta_phi/2) +
+                cos(phi1) * cos(phi2) * sin(delta_lambda/2) * sin(delta_lambda/2);
+        double c = 2 * atan2(sqrt(a), sqrt(1-a));
+
+        return R * c; // in km
+    }
+
     void execute(const std::shared_ptr<GoalHandleDesData> goal_handle) {
         auto feedback = std::make_shared<DesData::Feedback>();
 
-        while (true) {
-            float distance = 0.3; 
+        while (rclcpp::ok()) {
+            double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
             feedback->dis_remain = distance;
             goal_handle->publish_feedback(feedback);
             RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);

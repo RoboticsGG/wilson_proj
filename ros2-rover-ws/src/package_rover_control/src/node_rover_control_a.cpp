@@ -55,10 +55,10 @@ private:
     rclcpp::TimerBase::SharedPtr timer_;
 
     //std::vector<float> ro_ctrl_msg_;
-    float ro_ctrl_msg1_ = 2.0;
-    float ro_ctrl_msg2_ = 0.0;
-    uint8_t spd_msg_ = 0;
-    bool cc_rcon_msg_ = false;
+    float ro_ctrl_msg1_;
+    float ro_ctrl_msg2_;
+    uint8_t spd_msg_;
+    bool cc_rcon_msg_;
 
     std::mutex data_lock_;
 

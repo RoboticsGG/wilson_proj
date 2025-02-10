@@ -24,12 +24,15 @@ public:
             std::bind(&PoseProcessor::topic_cur_callback, this, std::placeholders::_1)
         );
 
+        cc_rcon_pub_ = this->create_publisher<std_msgs::msg::Bool>("cc_rcon", 10);
+
         RCLCPP_INFO(this->get_logger(), "PoseProcessor Action Server Initialized.");
     }
 
 private:
     rclcpp_action::Server<DesData>::SharedPtr action_server_;
     rclcpp::Subscription<msgs_ifaces::msg::GnssData>::SharedPtr cur_pose_sub_;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr cc_rcon_pub_;
     
     msgs_ifaces::msg::GnssData cur_pose_msg_;
 
@@ -82,21 +85,26 @@ private:
 
     void execute(const std::shared_ptr<GoalHandleDesData> goal_handle) {
         auto feedback = std::make_shared<DesData::Feedback>();
+        std_msgs::msg::Bool cc_rcon_msg;
 
         while (rclcpp::ok()) {
+            //double distance = 0.1;
             double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
             feedback->dis_remain = distance;
             goal_handle->publish_feedback(feedback);
             RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
 
-            if (distance < 0.5) {
+            if (distance < 0.2) {
+                cc_rcon_msg.data = true;
                 auto result = std::make_shared<DesData::Result>();
                 result->result_fser = "Arrived at Destination";
                 goal_handle->succeed(result);
                 RCLCPP_INFO(this->get_logger(), "Destination Reached!");
                 return;
+            } else {
+                cc_rcon_msg.data = false;
             }
-
+            cc_rcon_pub_->publish(cc_rcon_msg);
             std::this_thread::sleep_for(std::chrono::seconds(2));
         }
     }

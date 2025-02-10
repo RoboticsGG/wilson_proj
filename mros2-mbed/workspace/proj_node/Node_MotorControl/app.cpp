@@ -48,7 +48,7 @@ uint8_t period_PWM = 20;
 //     motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
 //     MROS2_INFO("fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d", msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
 // }
-void userCallback(const msgs_mainrocon::msg::MainRocon::SharedPtr *msg)
+void userCallback(msgs_mainrocon::msg::MainRocon *msg)
 {
     static msgs_mainrocon::msg::MainRocon prev_msg;
 

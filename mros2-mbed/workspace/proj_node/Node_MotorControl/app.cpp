@@ -40,13 +40,33 @@ DigitalOut MortorBWEN(PF_13);
 uint8_t servo_center = 100;
 uint8_t period_PWM = 20;
 
-void userCallback(msgs_mainrocon::msg::MainRocon *msg)
+// void userCallback(msgs_mainrocon::msg::MainRocon *msg)
+// {
+//     MROS2_INFO("########## Subscribe topic pub_rovercontrol ###############");
+//     float dutycy = frontControl(msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg);
+//     auto [percent_dutycycle, EN_A, EN_B] = backControl(msg->mainrocon_msg.bdr_msg, msg->mainrocon_msg.spd_msg);
+//     motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
+//     MROS2_INFO("fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d", msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
+// }
+void userCallback(const msgs_mainrocon::msg::MainRocon::SharedPtr msg)
 {
+    static msgs_mainrocon::msg::MainRocon prev_msg;
+
+    if (memcmp(&prev_msg, msg, sizeof(msgs_mainrocon::msg::MainRocon)) == 0) {
+        return;
+    }
+
+    prev_msg = *msg;
+
     MROS2_INFO("########## Subscribe topic pub_rovercontrol ###############");
     float dutycy = frontControl(msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg);
     auto [percent_dutycycle, EN_A, EN_B] = backControl(msg->mainrocon_msg.bdr_msg, msg->mainrocon_msg.spd_msg);
+
     motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
-    MROS2_INFO("fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d", msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
+
+    MROS2_INFO("fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d", 
+        msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, 
+        msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
 }
 
 float frontControl(uint8_t frontDirection, float diff_degree) {
@@ -118,7 +138,7 @@ int main()
   mros2::Node node = mros2::Node::create_node("mros2_node");
   //mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
   
-  mros2::Subscriber sub = node.create_subscription<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10, userCallback);
+  mros2::Subscriber sub = node.create_subscription<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10, userCallback, mros2::QoS(10).best_effort());
   
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");

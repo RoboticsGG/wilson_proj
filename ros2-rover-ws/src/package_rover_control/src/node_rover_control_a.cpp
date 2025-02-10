@@ -99,6 +99,7 @@ private:
 
         {
             std::lock_guard<std::mutex> lock(data_lock_);
+
             if (cc_rcon_msg_) {
                 subrocon.fdr_msg = 2;
                 subrocon.ro_ctrl_msg = 0;
@@ -113,8 +114,9 @@ private:
             }
             
             mainrocon.mainrocon_msg = subrocon;
-            topic_rocon_pub_->publish(mainrocon);
         }
+
+        topic_rocon_pub_->publish(mainrocon);
 
         RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", 
                     mainrocon.mainrocon_msg.fdr_msg, 

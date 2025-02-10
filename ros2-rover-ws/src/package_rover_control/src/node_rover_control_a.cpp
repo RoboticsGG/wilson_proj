@@ -77,7 +77,10 @@ private:
 
     void topic_cc_rcon_callback(const std_msgs::msg::Bool::SharedPtr msg) {
         std::lock_guard<std::mutex> lock(data_lock_);
-        cc_rcon_msg_ = msg->data;
+        if (msg->data != cc_rcon_msg_) { 
+            cc_rcon_msg_ = msg->data;
+            RCLCPP_INFO(this->get_logger(), "cc_rcon updated: %s", msg->data ? "TRUE" : "FALSE");
+        }   
     }
 
     void handle_spd_request(const std::shared_ptr<service_ifaces::srv::SpdLimit::Request> request,
@@ -94,24 +97,30 @@ private:
         auto subrocon = msgs_rovercon::msg::SubRocon();
         auto mainrocon = msgs_mainrocon::msg::MainRocon();
 
-        if (cc_rcon_msg_ == true) {
-            subrocon.fdr_msg = 2;
-            subrocon.ro_ctrl_msg = 0;
-            subrocon.spd_msg = 0;
-            subrocon.bdr_msg = 0; // 1 = fw, 2 = bw, 0 = stop
+        {
+            std::lock_guard<std::mutex> lock(data_lock_);
+            if (cc_rcon_msg_) {
+                subrocon.fdr_msg = 2;
+                subrocon.ro_ctrl_msg = 0;
+                subrocon.spd_msg = 0;
+                subrocon.bdr_msg = 0; // 1 = fw, 2 = bw, 0 = stop
 
-        } else {
-            subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
-            subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
-            subrocon.spd_msg = spd_msg_;
-            subrocon.bdr_msg = 1;
+            } else {
+                subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
+                subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
+                subrocon.spd_msg = spd_msg_;
+                subrocon.bdr_msg = 1;
+            }
+            
+            mainrocon.mainrocon_msg = subrocon;
+            topic_rocon_pub_->publish(mainrocon);
         }
-        
-        std::lock_guard<std::mutex> lock(data_lock_);
-        mainrocon.mainrocon_msg = subrocon;
-        topic_rocon_pub_->publish(mainrocon);
 
-        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", mainrocon.mainrocon_msg.fdr_msg, mainrocon.mainrocon_msg.ro_ctrl_msg, mainrocon.mainrocon_msg.spd_msg, mainrocon.mainrocon_msg.bdr_msg);
+        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", 
+                    mainrocon.mainrocon_msg.fdr_msg, 
+                    mainrocon.mainrocon_msg.ro_ctrl_msg, 
+                    mainrocon.mainrocon_msg.spd_msg, 
+                    mainrocon.mainrocon_msg.bdr_msg);
         RCLCPP_INFO(this->get_logger(), "################################################");
   }
 };

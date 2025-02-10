@@ -28,6 +28,7 @@ public:
         cc_rcon_pub_ = this->create_publisher<std_msgs::msg::Bool>("cc_rcon", 10);
 
         RCLCPP_INFO(this->get_logger(), "PoseProcessor Action Server Initialized.");
+        RCLCPP_INFO(this->get_logger(), "Waiting for goals...");
     }
 
 private:
@@ -91,8 +92,8 @@ private:
         std_msgs::msg::Bool cc_rcon_msg;
 
         while (rclcpp::ok()) {
-            double distance = 0.1;
-            //double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
+            //double distance = 0.1;
+            double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
             feedback->dis_remain = distance;
             goal_handle->publish_feedback(feedback);
             RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);

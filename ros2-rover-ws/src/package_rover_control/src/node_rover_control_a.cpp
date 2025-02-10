@@ -99,6 +99,7 @@ private:
             subrocon.ro_ctrl_msg = 0;
             subrocon.spd_msg = 0;
             subrocon.bdr_msg = 0; // 1 = fw, 2 = bw, 0 = stop
+            
         } else {
             subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
             subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
@@ -109,7 +110,7 @@ private:
         mainrocon.mainrocon_msg = subrocon;
         topic_rocon_pub_->publish(mainrocon);
 
-        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %.d]", mainrocon.mainrocon_msg.fdr_msg, mainrocon.mainrocon_msg.ro_ctrl_msg, mainrocon.mainrocon_msg.spd_msg, mainrocon.mainrocon_msg.bdr_msg);
+        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", mainrocon.mainrocon_msg.fdr_msg, mainrocon.mainrocon_msg.ro_ctrl_msg, mainrocon.mainrocon_msg.spd_msg, mainrocon.mainrocon_msg.bdr_msg);
         RCLCPP_INFO(this->get_logger(), "################################################");
   }
 };

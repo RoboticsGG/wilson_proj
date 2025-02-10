@@ -94,7 +94,7 @@ private:
         auto subrocon = msgs_rovercon::msg::SubRocon();
         auto mainrocon = msgs_mainrocon::msg::MainRocon();
 
-        if cc_rcon_msg_ == true {
+        if (cc_rcon_msg_ == true) {
             subrocon.fdr_msg = 2;
             subrocon.ro_ctrl_msg = 0;
             subrocon.spd_msg = 0;

@@ -58,7 +58,7 @@ private:
     float ro_ctrl_msg1_;
     float ro_ctrl_msg2_;
     uint8_t spd_msg_;
-    bool cc_rcon_msg_;
+    bool cc_rcon_msg_ = false;
 
     std::mutex data_lock_;
 

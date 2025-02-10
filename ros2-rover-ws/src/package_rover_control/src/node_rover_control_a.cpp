@@ -31,6 +31,11 @@ public:
             std::bind(&Node_Rovercontrol::topic_direct_callback, this, std::placeholders::_1)
         );
 
+        topic_cc_rcon_sub_ = this->create_subscription<std_msgs::msg::Bool>(
+            "cc_rcon", 10,
+            std::bind(&Node_Rovercontrol::topic_cc_rcon_callback, this, std::placeholders::_1)
+        );
+
         topic_rocon_pub_ = this->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
 
         timer_ = this->create_wall_timer(
@@ -42,6 +47,20 @@ public:
     }
 
 private:
+    rclcpp::Service<service_ifaces::srv::SpdLimit>::SharedPtr spd_service_;
+    rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr topic_cc_rcon_sub_;
+    rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
+    rclcpp::TimerBase::SharedPtr timer_;
+
+    //std::vector<float> ro_ctrl_msg_;
+    float ro_ctrl_msg1_ = 2.0;
+    float ro_ctrl_msg2_ = 0.0;
+    uint8_t spd_msg_ = 0;
+    bool cc_rcon_msg_ = false;
+
+    std::mutex data_lock_;
+
     void topic_direct_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg) {
     if (msg->data.size() >= 2) {
         std::lock_guard<std::mutex> lock(data_lock_);
@@ -53,6 +72,11 @@ private:
     } else {
         RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_direction.");
         }
+    }
+
+    void topic_cc_rcon_callback(const std_msgs::msg::Bool::SharedPtr msg) {
+        std::lock_guard<std::mutex> lock(data_lock_);
+        cc_rcon_msg_ = msg->data;
     }
 
     void handle_spd_request(const std::shared_ptr<service_ifaces::srv::SpdLimit::Request> request,
@@ -69,10 +93,17 @@ private:
         auto subrocon = msgs_rovercon::msg::SubRocon();
         auto mainrocon = msgs_mainrocon::msg::MainRocon();
 
-        subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
-        subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
-        subrocon.spd_msg = spd_msg_;
-        subrocon.bdr_msg = 1;
+        if cc_rcon_msg_ == true {
+            subrocon.fdr_msg = 2;
+            subrocon.ro_ctrl_msg = 0;
+            subrocon.spd_msg = 0;
+            subrocon.bdr_msg = 0; // 1 = fw, 2 = bw, 0 = stop
+        } else {
+            subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
+            subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
+            subrocon.spd_msg = spd_msg_;
+            subrocon.bdr_msg = 1;
+        }
 
         mainrocon.mainrocon_msg = subrocon;
         topic_rocon_pub_->publish(mainrocon);
@@ -80,18 +111,6 @@ private:
         RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %.d]", mainrocon.mainrocon_msg.fdr_msg, mainrocon.mainrocon_msg.ro_ctrl_msg, mainrocon.mainrocon_msg.spd_msg, mainrocon.mainrocon_msg.bdr_msg);
         RCLCPP_INFO(this->get_logger(), "################################################");
   }
-
-    rclcpp::Service<service_ifaces::srv::SpdLimit>::SharedPtr spd_service_;
-    rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
-    rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
-    rclcpp::TimerBase::SharedPtr timer_;
-
-    //std::vector<float> ro_ctrl_msg_;
-    float ro_ctrl_msg1_;
-    float ro_ctrl_msg2_;
-    uint8_t spd_msg_;
-
-    std::mutex data_lock_;
 };
 
 int main(int argc, char *argv[]) {

@@ -138,7 +138,7 @@ int main()
   mros2::Node node = mros2::Node::create_node("mros2_node");
   //mros2::Publisher pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
   
-  mros2::Subscriber sub = node.create_subscription<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10, userCallback, mros2::QoS(10).best_effort());
+  mros2::Subscriber sub = node.create_subscription<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10, userCallback);
   
   osDelay(1000);
   MROS2_INFO("ready to pub/sub message\r\n---");

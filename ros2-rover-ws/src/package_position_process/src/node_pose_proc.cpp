@@ -100,7 +100,7 @@ private:
             if (distance < 0.2) {
                 cc_rcon_msg.data = true;
 
-                if (!goal_reached){
+                if (!goal_reached_){
                     auto result = std::make_shared<DesData::Result>();
                     result->result_fser = "Arrived at Destination";
                     goal_handle->succeed(result);

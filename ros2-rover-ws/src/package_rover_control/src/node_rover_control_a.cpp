@@ -40,7 +40,7 @@ public:
         topic_rocon_pub_ = this->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
 
         timer_ = this->create_wall_timer(
-            std::chrono::seconds(2), 
+            std::chrono::seconds(4), 
             std::bind(&Node_Rovercontrol::timer_callback, this)
         );
         RCLCPP_INFO(this->get_logger(), "Version : A");

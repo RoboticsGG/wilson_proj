@@ -3,6 +3,7 @@
 #include <std_msgs/msg/u_int8.hpp>
 #include <std_msgs/msg/u_int16.hpp>
 #include <std_msgs/msg/float64.hpp>
+#include <std_msgs/msg/bool.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
 
 #include <string>

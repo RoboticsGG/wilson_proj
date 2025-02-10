@@ -39,11 +39,13 @@ private:
 
     float des_lat_;
     float des_long_;
+    bool goal_reached_;
 
     rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID&, std::shared_ptr<const DesData::Goal> goal) {
         RCLCPP_INFO(this->get_logger(), "Received new goal: Lat=%.6f, Lon=%.6f", goal->des_lat, goal->des_long);
         des_lat_ = goal->des_lat;
         des_long_ = goal->des_long;
+        goal_reached_ = false;
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
 
@@ -64,8 +66,8 @@ private:
         cur_pose_msg_.latitude = msg->latitude;
         cur_pose_msg_.longitude = msg->longitude;
 
-        RCLCPP_INFO(this->get_logger(), "Received GNSS Data: Date=%s, Time=%s, Sat=%d, Fix=%d, Lat=%f, Lon=%f",
-                    cur_pose_msg_.date.c_str(), cur_pose_msg_.time.c_str(), cur_pose_msg_.num_satellites, cur_pose_msg_.fix, cur_pose_msg_.latitude, cur_pose_msg_.longitude);
+        //RCLCPP_INFO(this->get_logger(), "Received GNSS Data: Date=%s, Time=%s, Sat=%d, Fix=%d, Lat=%f, Lon=%f",
+                    //cur_pose_msg_.date.c_str(), cur_pose_msg_.time.c_str(), cur_pose_msg_.num_satellites, cur_pose_msg_.fix, cur_pose_msg_.latitude, cur_pose_msg_.longitude);
 
         
     }
@@ -97,15 +99,25 @@ private:
 
             if (distance < 0.2) {
                 cc_rcon_msg.data = true;
-                auto result = std::make_shared<DesData::Result>();
-                result->result_fser = "Arrived at Destination";
-                goal_handle->succeed(result);
-                RCLCPP_INFO(this->get_logger(), "Destination Reached!");
-                return;
+
+                if (!goal_reached){
+                    auto result = std::make_shared<DesData::Result>();
+                    result->result_fser = "Arrived at Destination";
+                    goal_handle->succeed(result);
+                    RCLCPP_INFO(this->get_logger(), "Destination Reached!");
+                    goal_reached_ = true;
+                }
+                // auto result = std::make_shared<DesData::Result>();
+                // result->result_fser = "Arrived at Destination";
+                // goal_handle->succeed(result);
+                // RCLCPP_INFO(this->get_logger(), "Destination Reached!");
+                // return;
             } else {
                 cc_rcon_msg.data = false;
             }
             cc_rcon_pub_->publish(cc_rcon_msg);
+            RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
+
             std::this_thread::sleep_for(std::chrono::seconds(2));
         }
     }

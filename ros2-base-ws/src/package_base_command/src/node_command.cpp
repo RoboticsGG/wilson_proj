@@ -106,16 +106,19 @@ private:
 int main(int argc, char *argv[]) {
     rclcpp::init(argc, argv);
     
-    if (argc != 4) {
-        RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Usage: NodeCommand <rover_spd> <des_lat> <des_long>");
-        return 1;
-    }
+    auto node = std::make_shared<NodeCommand>();  
+    rclcpp::spin(node);
     
-    float rover_spd = std::stof(argv[1]);
-    float des_lat = std::stof(argv[2]);
-    float des_long = std::stof(argv[3]);
+    // if (argc != 4) {
+    //     RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Usage: NodeCommand <rover_spd> <des_lat> <des_long>");
+    //     return 1;
+    // }
     
-    rclcpp::spin(std::make_shared<NodeCommand>(rover_spd, des_lat, des_long));
+    // float rover_spd = std::stof(argv[1]);
+    // float des_lat = std::stof(argv[2]);
+    // float des_long = std::stof(argv[3]);
+    
+    // rclcpp::spin(std::make_shared<NodeCommand>(rover_spd, des_lat, des_long));
     rclcpp::shutdown();
     return 0;
 }

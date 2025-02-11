@@ -15,8 +15,7 @@ public:
     using DesData = action_ifaces::action::DesData; 
     using GoalHandleDesData = rclcpp_action::ClientGoalHandle<DesData>;
 
-    Node_Command()
-    : Node("node_command") {
+    Node_Command() : Node("node_command") {
 
         this->declare_parameter("rover_spd", 0.0);
         this->declare_parameter("des_lat", 0.0);

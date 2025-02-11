@@ -54,9 +54,12 @@ $<INSTALL_INTERFACE:include>)
 target_compile_features(node_command PUBLIC c_std_99 cxx_std_17)
 
 install(TARGETS node_command
-  DESTINATION lib/${PROJECT_NAME}
+  DESTINATION lib/${PROJECT_NAME})
+
+install(
   DIRECTORY config/
-  DESTINATION share/${PROJECT_NAME}/config)
+  DESTINATION share/${PROJECT_NAME}/config
+)
 #---------------------------node_command---------------------------------------
 
 

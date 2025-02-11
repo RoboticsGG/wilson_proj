@@ -17,11 +17,11 @@ public:
 
     NodeCommand() : Node("node_command") {
 
-        this->declare_parameter("rover_spd", 0.0);
+        this->declare_parameter("rover_spd", 0);
         this->declare_parameter("des_lat", 0.0);
         this->declare_parameter("des_long", 0.0);
 
-        rover_spd_ = this->get_parameter("rover_spd").as_double();
+        rover_spd_ = this->get_parameter("rover_spd").as_uint8();
         des_lat_ = this->get_parameter("des_lat").as_double();
         des_long_ = this->get_parameter("des_long").as_double();
 
@@ -108,7 +108,7 @@ int main(int argc, char *argv[]) {
     
     auto node = std::make_shared<NodeCommand>();  
     rclcpp::spin(node);
-    
+
     // if (argc != 4) {
     //     RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Usage: NodeCommand <rover_spd> <des_lat> <des_long>");
     //     return 1;

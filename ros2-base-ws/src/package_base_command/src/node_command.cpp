@@ -10,12 +10,12 @@
 #include <memory>
 #include <future>
 
-class Node_Command : public rclcpp::Node {
+class NodeCommand : public rclcpp::Node {
 public:
     using DesData = action_ifaces::action::DesData; 
     using GoalHandleDesData = rclcpp_action::ClientGoalHandle<DesData>;
 
-    Node_Command() : Node("node_command") {
+    NodeCommand() : Node("node_command") {
 
         this->declare_parameter("rover_spd", 0.0);
         this->declare_parameter("des_lat", 0.0);
@@ -72,11 +72,11 @@ private:
 
         auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
         send_goal_options.goal_response_callback =
-            std::bind(&Node_Command::goal_response_callback, this, std::placeholders::_1);
+            std::bind(&NodeCommand::goal_response_callback, this, std::placeholders::_1);
         send_goal_options.feedback_callback =
-            std::bind(&Node_Command::feedback_callback, this, std::placeholders::_1, std::placeholders::_2);
+            std::bind(&NodeCommand::feedback_callback, this, std::placeholders::_1, std::placeholders::_2);
         send_goal_options.result_callback =
-            std::bind(&Node_Command::result_callback, this, std::placeholders::_1);
+            std::bind(&NodeCommand::result_callback, this, std::placeholders::_1);
 
         des_client_->async_send_goal(goal_msg, send_goal_options);
     }
@@ -107,7 +107,7 @@ int main(int argc, char *argv[]) {
     rclcpp::init(argc, argv);
     
     if (argc != 4) {
-        RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Usage: node_command <rover_spd> <des_lat> <des_long>");
+        RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Usage: NodeCommand <rover_spd> <des_lat> <des_long>");
         return 1;
     }
     
@@ -115,7 +115,7 @@ int main(int argc, char *argv[]) {
     float des_lat = std::stof(argv[2]);
     float des_long = std::stof(argv[3]);
     
-    rclcpp::spin(std::make_shared<Node_Command>(rover_spd, des_lat, des_long));
+    rclcpp::spin(std::make_shared<NodeCommand>(rover_spd, des_lat, des_long));
     rclcpp::shutdown();
     return 0;
 }

@@ -21,7 +21,7 @@ public:
         this->declare_parameter("des_lat", 0.0);
         this->declare_parameter("des_long", 0.0);
 
-        rover_spd_ = this->get_parameter("rover_spd").as_uint8();
+        rover_spd_ = this->get_parameter("rover_spd").as_int();
         des_lat_ = this->get_parameter("des_lat").as_double();
         des_long_ = this->get_parameter("des_long").as_double();
 

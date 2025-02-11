@@ -97,33 +97,36 @@ private:
         auto subrocon = msgs_rovercon::msg::SubRocon();
         auto mainrocon = msgs_mainrocon::msg::MainRocon();
 
-        // subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
-        // subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
-        // subrocon.spd_msg = spd_msg_;
-        // subrocon.bdr_msg = 1;
+        subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
+        subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
+        subrocon.spd_msg = 20;
+        subrocon.bdr_msg = 1;
 
-        // mainrocon.mainrocon_msg = subrocon;
-
-        {
-            std::lock_guard<std::mutex> lock(data_lock_);
-
-            if (cc_rcon_msg_ == true) {
-                subrocon.fdr_msg = 2;
-                subrocon.ro_ctrl_msg = 0;
-                subrocon.spd_msg = 0;
-                subrocon.bdr_msg = 0; // 1 = fw, 2 = bw, 0 = stop
-
-            } else {
-                subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
-                subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
-                subrocon.spd_msg = 20;
-                subrocon.bdr_msg = 1;
-            }
-            
-            mainrocon.mainrocon_msg = subrocon;
-        }
-
+        mainrocon.mainrocon_msg = subrocon;
         topic_rocon_pub_->publish(mainrocon);
+
+        // {
+        //     std::lock_guard<std::mutex> lock(data_lock_);
+
+        //     if (cc_rcon_msg_ == true) {
+        //         subrocon.fdr_msg = 2;
+        //         subrocon.ro_ctrl_msg = 0;
+        //         subrocon.spd_msg = 0;
+        //         subrocon.bdr_msg = 0; // 1 = fw, 2 = bw, 0 = stop.
+        //         mainrocon.mainrocon_msg = subrocon;
+        //         topic_rocon_pub_->publish(mainrocon);
+
+        //     } else {
+        //         subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
+        //         subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
+        //         subrocon.spd_msg = 20;
+        //         subrocon.bdr_msg = 1;
+        //         mainrocon.mainrocon_msg = subrocon;
+        //         topic_rocon_pub_->publish(mainrocon);
+        //     }
+        // }
+
+        
 
         RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", 
                     mainrocon.mainrocon_msg.fdr_msg, 

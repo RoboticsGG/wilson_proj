@@ -20,28 +20,28 @@ find_package(action_ifaces REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-#---------------------------node_carcontrol---------------------------------------
-add_library(motorcontrol SHARED
-  src/node_carcontrol.cpp)
+# #---------------------------node_carcontrol---------------------------------------
+# add_library(motorcontrol SHARED
+#   src/node_carcontrol.cpp)
 
-target_include_directories(motorcontrol PRIVATE
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
+# target_include_directories(motorcontrol PRIVATE
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#   $<INSTALL_INTERFACE:include>)
 
-  ament_target_dependencies(motorcontrol
-  "action_interfaces"
-  "rclcpp"
-  "rclcpp_action"
-  "rclcpp_components")
+#   ament_target_dependencies(motorcontrol
+#   "action_interfaces"
+#   "rclcpp"
+#   "rclcpp_action"
+#   "rclcpp_components")
 
-install(TARGETS
-  motorcontrol
-  ARCHIVE DESTINATION lib
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
-)
-rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorControlActionClient" EXECUTABLE node_motor_control)
-#---------------------------node_carcontrol---------------------------------------
+# install(TARGETS
+#   motorcontrol
+#   ARCHIVE DESTINATION lib
+#   LIBRARY DESTINATION lib
+#   RUNTIME DESTINATION bin
+# )
+# rclcpp_components_register_node(motorcontrol PLUGIN "motorcontrol_cpp::MotorControlActionClient" EXECUTABLE node_motor_control)
+# #---------------------------node_carcontrol---------------------------------------
 
 #---------------------------node_command---------------------------------------
 add_executable(node_command src/node_command.cpp)
@@ -54,7 +54,9 @@ $<INSTALL_INTERFACE:include>)
 target_compile_features(node_command PUBLIC c_std_99 cxx_std_17)
 
 install(TARGETS node_command
-  DESTINATION lib/${PROJECT_NAME})
+  DESTINATION lib/${PROJECT_NAME}
+  DIRECTORY config/
+  DESTINATION share/${PROJECT_NAME}/config)
 #---------------------------node_command---------------------------------------
 
 

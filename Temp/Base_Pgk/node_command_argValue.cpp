@@ -15,24 +15,12 @@ public:
     using DesData = action_ifaces::action::DesData; 
     using GoalHandleDesData = rclcpp_action::ClientGoalHandle<DesData>;
 
-    Node_Command()
-    : Node("node_command") {
-
-        this->declare_parameter("rover_spd", 0.0);
-        this->declare_parameter("des_lat", 0.0);
-        this->declare_parameter("des_long", 0.0);
-
-        rover_spd_ = this->get_parameter("rover_spd").as_double();
-        des_lat_ = this->get_parameter("des_lat").as_double();
-        des_long_ = this->get_parameter("des_long").as_double();
-
-        RCLCPP_INFO(this->get_logger(), "Loaded Parameters: rover_spd=%.2f, des_lat=%.6f, des_long=%.6f", 
-                    rover_spd_, des_lat_, des_long_);
-
+    Node_Command(float rover_spd, float des_lat, float des_long)
+    : Node("node_command"), rover_spd_(rover_spd), des_lat_(des_lat), des_long_(des_long) {
         spd_client_ = this->create_client<service_ifaces::srv::SpdLimit>("spd_limit");
         des_client_ = rclcpp_action::create_client<DesData>(this, "des_data");
 
-        //RCLCPP_INFO(this->get_logger(), "Command Node is running...");
+        RCLCPP_INFO(this->get_logger(), "Command Node is running...");
         send_service_requests();
     }
 

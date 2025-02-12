@@ -3,9 +3,9 @@
 #include <msgs_mainrocon/msg/main_rocon.hpp>
 #include <msgs_rovercon/msg/sub_rocon.hpp>
 
-class Node_Bridge : public rclcpp::Node {
+class NodeBridge : public rclcpp::Node {
     public:
-        Node_Bridge() : Node("node_bridge") {
+        NodeBridge() : Node("node_bridge") {
             rclcpp::Context::SharedPtr context_sub = std::make_shared<rclcpp::Context>();
             rclcpp::InitOptions init_options_sub;
             init_options_sub.set_domain_id(2);  // Domain ID 2 for Subscriber
@@ -41,11 +41,11 @@ class Node_Bridge : public rclcpp::Node {
     private:
         void topic_callback(msgs_mainrocon::msg::MainRocon *msg)
         {
-            RCLCPP_INFO(this->get_logger(), "Received on /topic_a: '%s'", msg->data.c_str());
+            RCLCPP_INFO(this->get_logger(), "Received on /pub_rovercontrol");
 
             // Publish received message to /topic_b
-            auto new_msg = std_msgs::msg::String();
-            new_msg.data = "Relayed: " + msg->data;
+            auto new_msg = msgs_mainrocon::msg::MainRocon();
+            new_msg.data = msg->data;
             publisher_->publish(new_msg);
             RCLCPP_INFO(this->get_logger(), "Published on /topic_b: [%d, %.2f, %d, %d]", 
                         msg->mainrocon_msg.fdr_msg, 

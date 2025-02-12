@@ -31,7 +31,7 @@ find_package(service_ifaces REQUIRED)
 
 
 #---------------------------node_rover_control---------------------------------------
-add_executable(node_rovercontrol src/node_rover_control_a.cpp)
+add_executable(node_rovercontrol src/node_rover_control.cpp)
 ament_target_dependencies(node_rovercontrol rclcpp geometry_msgs std_msgs msgs_rovercon msgs_mainrocon service_ifaces)
 
 target_include_directories(node_rovercontrol PUBLIC
@@ -55,6 +55,10 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 #---------------------------node_rover_control---------------------------------------
+
+add_executable(domain_bridge src/bridge_node.cpp)
+ament_target_dependencies(domain_bridge rclcpp std_msgs msgs_mainrocon)
+install(TARGETS domain_bridge DESTINATION lib/${PROJECT_NAME})
 
 
 #---------------------------node_carcontrol---------------------------------------

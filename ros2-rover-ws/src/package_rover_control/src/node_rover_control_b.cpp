@@ -59,10 +59,10 @@ public:
         
         RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized (Subscriber: Domain 2, Publisher: Domain 1)");
         
-        timer_ = pub_node_->create_wall_timer(
-            std::chrono::seconds(2), 
-            std::bind(&Node_Rovercontrol::timer_callback, pub_node_)
-        );
+        // timer_ = pub_node_->create_wall_timer(
+        //     std::chrono::seconds(2), 
+        //     std::bind(&Node_Rovercontrol::timer_callback, pub_node_)
+        // );
         // Add nodes to executor and spin in separate thread
         executor_.add_node(sub_node_);
         executor_.add_node(pub_node_);
@@ -84,7 +84,7 @@ private:
     rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr topic_cc_rcon_sub_;
     rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
     //rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
-    rclcpp::TimerBase::SharedPtr timer_;
+    //rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::executors::MultiThreadedExecutor executor_;
     std::thread executor_thread_;
 
@@ -103,9 +103,13 @@ private:
             ro_ctrl_msg2_ = msg->data[1];
             //RCLCPP_INFO(this->get_logger(), "Received on topic_direction: x = %.2f, y = %.2f", ro_ctrl_msg1_, ro_ctrl_msg2_);
         }
-    } else {
-        RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_direction.");
-        }
+        
+        } else {
+            RCLCPP_WARN(this->get_logger(), "Received insufficient data on topic_direction.");
+            }
+        
+        Node_Rovercontrol::timer_callback();
+    
     }
 
     void topic_cc_rcon_callback(const std_msgs::msg::Bool::SharedPtr msg) {

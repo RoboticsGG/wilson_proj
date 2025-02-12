@@ -15,10 +15,8 @@ public:
     subscription_ = sub_node_->create_subscription<msgs_mainrocon::msg::MainRocon>(
       "pub_rovercontrol_d1", 10, std::bind(&NodeBridge::topic_callback, this, std::placeholders::_1));
 
-
+    }
 private:
-
-
   void topic_callback(const msgs_mainrocon::msg::MainRocon::SharedPtr msg) {
     RCLCPP_INFO(this->get_logger(), "Received on /pub_rovercontrol_d1");
 
@@ -40,7 +38,6 @@ private:
     }
     rclcpp::Node::SharedPtr sub_node_;
     rclcpp::Subscription<msgs_mainrocon::msg::MainRocon>::SharedPtr subscription_;
-}
 };
 
 

@@ -35,7 +35,7 @@ void publisher_thread() {
     setenv("ROS_DOMAIN_ID", "1", 1); 
 
     auto node = std::make_shared<rclcpp::Node>("domain_bridge_publisher");
-    auto pub = node->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
+    auto pub = node->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_a", 10);
 
     while (rclcpp::ok()) {
         std::unique_lock<std::mutex> lock(queue_mutex);

@@ -29,7 +29,7 @@ public:
         node_options_pub.context(context_pub);
         pub_node_ = std::make_shared<rclcpp::Node>("pub_node", node_options_pub);
 
-        publisher_ = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
+        publisher_ = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_d1", 10);
 
         RCLCPP_INFO(this->get_logger(), "NodeBridge initialized (Subscriber: Domain 2, Publisher: Domain 1)");
 

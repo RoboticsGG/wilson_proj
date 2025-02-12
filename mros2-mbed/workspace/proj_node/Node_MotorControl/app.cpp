@@ -40,34 +40,35 @@ DigitalOut MortorBWEN(PF_13);
 uint8_t servo_center = 100;
 uint8_t period_PWM = 20;
 
-// void userCallback(msgs_mainrocon::msg::MainRocon *msg)
-// {
-//     MROS2_INFO("########## Subscribe topic pub_rovercontrol ###############");
-//     float dutycy = frontControl(msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg);
-//     auto [percent_dutycycle, EN_A, EN_B] = backControl(msg->mainrocon_msg.bdr_msg, msg->mainrocon_msg.spd_msg);
-//     motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
-//     MROS2_INFO("fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d", msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
-// }
 void userCallback(msgs_mainrocon::msg::MainRocon *msg)
 {
-    static msgs_mainrocon::msg::MainRocon prev_msg;
-
-    if (memcmp(&prev_msg, msg, sizeof(msgs_mainrocon::msg::MainRocon)) == 0) {
-        return;
-    }
-
-    prev_msg = *msg;
-
     MROS2_INFO("########## Subscribe topic pub_rovercontrol ###############");
     float dutycy = frontControl(msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg);
     auto [percent_dutycycle, EN_A, EN_B] = backControl(msg->mainrocon_msg.bdr_msg, msg->mainrocon_msg.spd_msg);
-
     motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
-
-    MROS2_INFO("fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d", 
-        msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, 
-        msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
+    MROS2_INFO("fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d", msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
 }
+
+// void userCallback(msgs_mainrocon::msg::MainRocon *msg)
+// {
+//     static msgs_mainrocon::msg::MainRocon prev_msg;
+
+//     if (memcmp(&prev_msg, msg, sizeof(msgs_mainrocon::msg::MainRocon)) == 0) {
+//         return;
+//     }
+
+//     prev_msg = *msg;
+
+//     MROS2_INFO("########## Subscribe topic pub_rovercontrol ###############");
+//     float dutycy = frontControl(msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg);
+//     auto [percent_dutycycle, EN_A, EN_B] = backControl(msg->mainrocon_msg.bdr_msg, msg->mainrocon_msg.spd_msg);
+
+//     motorDrive(dutycy, EN_A, EN_B, period_PWM, percent_dutycycle);
+
+//     MROS2_INFO("fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d", 
+//         msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, 
+//         msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
+// }
 
 float frontControl(uint8_t frontDirection, float diff_degree) {
     uint8_t degree = 0;

@@ -27,8 +27,8 @@ find_package(msgs_mainrocon REQUIRED)
 
 add_executable(node_client_act src/node_client_act.cpp)
 
-add_executable(pub_node src/pub_node.cpp)
-ament_target_dependencies(pub_node rclcpp std_msgs)
+add_executable(node_pub_d src/node_pub_d.cpp)
+ament_target_dependencies(node_pub_d rclcpp std_msgs)
 
 add_executable(sub_node src/sub_node.cpp)
 ament_target_dependencies(sub_node rclcpp std_msgs)
@@ -44,7 +44,7 @@ target_include_directories(node_client_act PUBLIC
   $<INSTALL_INTERFACE:include>)
 target_compile_features(node_client_act PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
-target_include_directories(pub_node PUBLIC
+target_include_directories(node_pub_d PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
 
@@ -63,7 +63,7 @@ target_include_directories(node_rov_datasub PUBLIC
 install(TARGETS node_client_act
   DESTINATION lib/${PROJECT_NAME})
 
-install(TARGETS pub_node
+install(TARGETS node_pub_d
   DESTINATION lib/${PROJECT_NAME})
 
 install(TARGETS sub_node

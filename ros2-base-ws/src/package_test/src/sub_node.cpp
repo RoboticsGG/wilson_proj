@@ -12,7 +12,7 @@ using std::placeholders::_1;
 class Subscriber : public rclcpp::Node {
 public:
   Subscriber() : Node("mros2_sub") {
-    subscription_ = sub_node_->create_subscription<msgs_mainrocon::msg::MainRocon>(
+    subscription_ = this->create_subscription<msgs_mainrocon::msg::MainRocon>(
       "pub_rovercontrol_d1", 10, std::bind(&Subscriber::topic_callback, this, std::placeholders::_1));
 
     }

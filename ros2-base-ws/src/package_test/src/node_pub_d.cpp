@@ -1,44 +1,43 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 #include <chrono>
-#include <functional>
 #include <memory>
 #include <string>
 
 using namespace std::chrono_literals;
 
-void publish_message(const std::string& node_name, int domain_id) {
-  // Set the domain ID environment variable.
-  setenv("ROS_DOMAIN_ID", std::to_string(domain_id).c_str(), 1);
+class PubNode : public rclcpp::Node {
+public:
+    PubNode(const std::string& name, int domain_id)
+        : Node(name) {
+        auto publisher = this->create_publisher<std_msgs::msg::String>("topic_dn", 10);
 
-  rclcpp::init(0, nullptr); // Initialize ROS 2 without argc/argv
-  auto node = std::make_shared<rclcpp::Node>(node_name);
+        auto timer_callback = [publisher, name, domain_id]() {
+            auto message = std_msgs::msg::String();
+            message.data = "Hello from " + name + " (Domain " + std::to_string(domain_id) + ")";
+            RCLCPP_INFO(rclcpp::get_logger(name), "Publishing: '%s'", message.data.c_str());
+            publisher->publish(message);
+        };
 
-  auto publisher = node->create_publisher<std_msgs::msg::String>("topic_dn", 10);
+        timer_ = this->create_wall_timer(500ms, timer_callback);
+    }
 
-  auto timer_callback = [&]() {
-    auto message = std_msgs::msg::String();
-    message.data = "Hello from " + node_name + " (Domain " + std::to_string(domain_id) + ")";
-    RCLCPP_INFO(node->get_logger(), "Publishing: '%s'", message.data.c_str());
-    publisher->publish(message);
-  };
+private:
+    rclcpp::TimerBase::SharedPtr timer_;
+};
 
-  auto timer = node->create_wall_timer(500ms, timer_callback);
+int main(int argc, char* argv[]) {
+    rclcpp::init(argc, argv);  // Initialize ROS 2 only once
 
-  rclcpp::spin(node); // Spin the node within this function.
-  rclcpp::shutdown();
-}
+    auto node1 = std::make_shared<PubNode>("node1", 1);
+    auto node2 = std::make_shared<PubNode>("node2", 2);
 
-int main(int argc, char * argv[]){
+    rclcpp::executors::MultiThreadedExecutor executor;
+    executor.add_node(node1);
+    executor.add_node(node2);
 
-  (void)argc;
-  (void)argv;  
-  // Create and run the nodes in separate threads.
-  std::thread node1_thread(publish_message, "node1", 1);
-  std::thread node2_thread(publish_message, "node2", 2);
+    executor.spin();  // Run both nodes in the same process
+    rclcpp::shutdown();
 
-  node1_thread.join();
-  node2_thread.join();
-
-  return 0;
+    return 0;
 }

@@ -13,7 +13,7 @@ class NodeBridge : public rclcpp::Node {
 
             sub_node_ = std::make_shared<rclcpp::Node>("sub_node", init_options_sub);
             subscription_ = sub_node_->create_subscription<msgs_mainrocon::msg::MainRocon>(
-                "pub_rovercontrol", 10, std::bind(&CombinedNode::topic_callback, this, std::placeholders::_1));
+                "pub_rovercontrol", 10, std::bind(&NodeBridge::topic_callback, this, std::placeholders::_1));
 
             // Set Domain ID for Publisher
             rclcpp::Context::SharedPtr context_pub = std::make_shared<rclcpp::Context>();
@@ -45,13 +45,17 @@ class NodeBridge : public rclcpp::Node {
 
             // Publish received message to /topic_b
             auto new_msg = msgs_mainrocon::msg::MainRocon();
-            new_msg.data = *msg;
+            new_msg.fdr_msg = msg->mainrocon_msg.fdr_msg;
+            new_msg.ro_ctrl_msg = msg->mainrocon_msg.ro_ctrl_msg;
+            new_msg.spd_msg = msg->mainrocon_msg.spd_msg;
+            new_msg.bdr_msg = msg->mainrocon_msg.bdr_msg;
+
             publisher_->publish(new_msg);
             RCLCPP_INFO(this->get_logger(), "Published on /topic_b: [%d, %.2f, %d, %d]", 
-                        msg->mainrocon_msg.fdr_msg, 
-                        msg->mainrocon_msg.ro_ctrl_msg, 
-                        msg->mainrocon_msg.spd_msg, 
-                        msg->mainrocon_msg.bdr_msg);
+                        msg->new_msg.fdr_msg, 
+                        msg->new_msg.ro_ctrl_msg, 
+                        msg->new_msg.spd_msg, 
+                        msg->new_msg.bdr_msg);
         }
 
         rclcpp::Node::SharedPtr sub_node_;

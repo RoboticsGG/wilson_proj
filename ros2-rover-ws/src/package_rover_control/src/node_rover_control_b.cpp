@@ -59,7 +59,7 @@ public:
         
         RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized (Subscriber: Domain 2, Publisher: Domain 1)");
         
-        timer_ = this->create_wall_timer(
+        timer_ = pub_node_->create_wall_timer(
             std::chrono::seconds(2), 
             std::bind(&Node_Rovercontrol::timer_callback, pub_node_)
         );

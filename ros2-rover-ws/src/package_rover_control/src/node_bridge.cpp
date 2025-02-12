@@ -12,9 +12,8 @@ std::condition_variable queue_cv;
 
 // **Thread 1: Subscriber (Domain 2)**
 void subscriber_thread() {
-    setenv("ROS_DOMAIN_ID", "2", 1);
-    rclcpp::init(0, nullptr);
-    
+    setenv("ROS_DOMAIN_ID", "2", 1); // Set Domain ID before node creation
+
     auto node = std::make_shared<rclcpp::Node>("domain_bridge_subscriber");
     auto sub = node->create_subscription<msgs_mainrocon::msg::MainRocon>(
         "pub_rovercontrol", 10,
@@ -31,13 +30,11 @@ void subscriber_thread() {
     );
 
     rclcpp::spin(node);
-    rclcpp::shutdown();
 }
 
 // **Thread 2: Publisher (Domain 1)**
 void publisher_thread() {
-    setenv("ROS_DOMAIN_ID", "1", 1);
-    rclcpp::init(0, nullptr);
+    setenv("ROS_DOMAIN_ID", "1", 1); // Set Domain ID before node creation
 
     auto node = std::make_shared<rclcpp::Node>("domain_bridge_publisher");
     auto pub = node->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
@@ -55,19 +52,18 @@ void publisher_thread() {
         
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
-
-    rclcpp::shutdown();
 }
 
 int main(int argc, char *argv[]) {
-    (void) argc;
-    (void) argv;
+    rclcpp::init(argc, argv);  // ✅ Initialize ROS **once** in main()
 
     std::thread sub_thread(subscriber_thread);
     std::thread pub_thread(publisher_thread);
 
     sub_thread.join();
     pub_thread.join();
+
+    rclcpp::shutdown();  // ✅ Shutdown ROS only once
 
     return 0;
 }

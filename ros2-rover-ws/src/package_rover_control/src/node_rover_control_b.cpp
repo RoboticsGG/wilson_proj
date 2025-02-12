@@ -56,9 +56,13 @@ public:
 
         //topic_rocon_pub_ = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_d1", 10);
         topic_rocon_pub_ = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
-
+        
         RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized (Subscriber: Domain 2, Publisher: Domain 1)");
-
+        
+        timer_ = this->create_wall_timer(
+            std::chrono::seconds(2), 
+            std::bind(&Node_Rovercontrol::timer_callback, pub_node_)
+        );
         // Add nodes to executor and spin in separate thread
         executor_.add_node(sub_node_);
         executor_.add_node(pub_node_);

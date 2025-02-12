@@ -2,26 +2,45 @@
 #include <functional>
 #include <memory>
 #include <string>
-
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
+#include <msgs_mainrocon/msg/main_rocon.hpp>
+#include <msgs_rovercon/msg/sub_rocon.hpp>
 
 using std::placeholders::_1;
 
-class Subscriber : public rclcpp::Node
-{
+class Subscriber : public rclcpp::Node {
 public:
-  Subscriber() : Node("mros2_sub")
-  {
-    subscriber_ = this->create_subscription<std_msgs::msg::String>("to_linux", rclcpp::QoS(10).best_effort(), std::bind(&Subscriber::topic_callback, this, _1));
-  }
+  Subscriber() : Node("mros2_sub") {
+    subscription_ = sub_node_->create_subscription<msgs_mainrocon::msg::MainRocon>(
+      "pub_rovercontrol_d1", 10, std::bind(&NodeBridge::topic_callback, this, std::placeholders::_1));
+
 
 private:
-  void topic_callback(const std_msgs::msg::String::SharedPtr msg) const
-  {
-    RCLCPP_INFO(this->get_logger(), "Subscribed msg: '%s'", msg->data.c_str());
-  }
-  rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscriber_;
+
+    rclcpp::Node::SharedPtr sub_node_;
+    rclcpp::Subscription<msgs_mainrocon::msg::MainRocon>::SharedPtr subscription_;
+
+  void topic_callback(const msgs_mainrocon::msg::MainRocon::SharedPtr msg) {
+    RCLCPP_INFO(this->get_logger(), "Received on /pub_rovercontrol_d1");
+
+    auto new_mainmsg = msgs_mainrocon::msg::MainRocon();
+    auto new_msg = msgs_rovercon::msg::SubRocon();
+
+    new_msg.fdr_msg = msg->mainrocon_msg.fdr_msg;
+    new_msg.ro_ctrl_msg = msg->mainrocon_msg.ro_ctrl_msg;
+    new_msg.spd_msg = msg->mainrocon_msg.spd_msg;
+    new_msg.bdr_msg = msg->mainrocon_msg.bdr_msg;
+
+    new_mainmsg.mainrocon_msg = new_msg;
+
+    RCLCPP_INFO(this->get_logger(), "Forwarded message to /pub_rovercontrol_d1: [%d, %.2f, %d, %d]", 
+        new_mainmsg.mainrocon_msg.fdr_msg, 
+        new_mainmsg.mainrocon_msg.ro_ctrl_msg, 
+        new_mainmsg.mainrocon_msg.spd_msg, 
+        new_mainmsg.mainrocon_msg.bdr_msg);
+    }
+}
 };
 
 

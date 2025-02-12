@@ -31,7 +31,7 @@ add_executable(node_pub_d src/node_pub_d.cpp)
 ament_target_dependencies(node_pub_d rclcpp std_msgs)
 
 add_executable(sub_node src/sub_node.cpp)
-ament_target_dependencies(sub_node rclcpp std_msgs)
+ament_target_dependencies(sub_node rclcpp std_msgs msgs_rovercon msgs_mainrocon)
 
 add_executable(echoreply_node src/echoreply_node.cpp)
 ament_target_dependencies(echoreply_node rclcpp std_msgs)

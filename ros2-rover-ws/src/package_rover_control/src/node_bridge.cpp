@@ -26,7 +26,11 @@ private:
     rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr pub_;
 
     void message_callback(const msgs_mainrocon::msg::MainRocon::SharedPtr msg) {
-        RCLCPP_INFO(this->get_logger(), "Received: '%s'", msg->data.c_str());
+        RCLCPP_INFO(this->get_logger(), "Received Data: [%d, %.2f, %d, %d]", 
+                    msg->mainrocon_msg.fdr_msg, 
+                    msg->mainrocon_msg.ro_ctrl_msg, 
+                    msg->mainrocon_msg.spd_msg, 
+                    msg->mainrocon_msg.bdr_msg);
 
         // Switch to Domain 1 (Publisher)
         setenv("ROS_DOMAIN_ID", "1", 1);
@@ -37,7 +41,7 @@ private:
         pub_ = node->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
 
         pub_->publish(*msg);
-        RCLCPP_INFO(node->get_logger(), "Forwarded to Domain 2: '%s'", msg->data.c_str());
+        RCLCPP_INFO(node->get_logger(), "Forwarded to Domain 2");
 
         rclcpp::spin_some(node);
     }

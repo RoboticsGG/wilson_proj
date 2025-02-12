@@ -7,7 +7,7 @@ class NodeBridge : public rclcpp::Node {
     public:
         NodeBridge() : Node("node_bridge") {
             rclcpp::Context::SharedPtr context_sub = std::make_shared<rclcpp::Context>();
-            rclcpp::InitOptions init_options_sub;
+            rclcpp::NodeOptions init_options_sub;
             init_options_sub.set_domain_id(2);  // Domain ID 2 for Subscriber
             context_sub->init(0, nullptr, init_options_sub);
 
@@ -17,7 +17,7 @@ class NodeBridge : public rclcpp::Node {
 
             // Set Domain ID for Publisher
             rclcpp::Context::SharedPtr context_pub = std::make_shared<rclcpp::Context>();
-            rclcpp::InitOptions init_options_pub;
+            rclcpp::NodeOptions init_options_pub;
             init_options_pub.set_domain_id(1);  // Domain ID 1 for Publisher
             context_pub->init(0, nullptr, init_options_pub);
 

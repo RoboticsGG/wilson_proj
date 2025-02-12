@@ -56,9 +56,9 @@ if(BUILD_TESTING)
 endif()
 #---------------------------node_rover_control---------------------------------------
 
-add_executable(domain_bridge src/node_bridge.cpp)
-ament_target_dependencies(domain_bridge rclcpp std_msgs msgs_mainrocon)
-install(TARGETS domain_bridge DESTINATION lib/${PROJECT_NAME})
+add_executable(node_bridge src/node_bridge.cpp)
+ament_target_dependencies(node_bridge rclcpp std_msgs msgs_mainrocon)
+install(TARGETS node_bridge DESTINATION lib/${PROJECT_NAME})
 
 
 #---------------------------node_carcontrol---------------------------------------

@@ -29,8 +29,10 @@ void publish_message(const std::string& node_name, int domain_id) {
   rclcpp::shutdown();
 }
 
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]){
+
+  (void)argc;
+  (void)argv;  
   // Create and run the nodes in separate threads.
   std::thread node1_thread(publish_message, "node1", 1);
   std::thread node2_thread(publish_message, "node2", 2);

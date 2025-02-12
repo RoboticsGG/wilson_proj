@@ -18,8 +18,6 @@ public:
 
 private:
 
-    rclcpp::Node::SharedPtr sub_node_;
-    rclcpp::Subscription<msgs_mainrocon::msg::MainRocon>::SharedPtr subscription_;
 
   void topic_callback(const msgs_mainrocon::msg::MainRocon::SharedPtr msg) {
     RCLCPP_INFO(this->get_logger(), "Received on /pub_rovercontrol_d1");
@@ -40,6 +38,8 @@ private:
         new_mainmsg.mainrocon_msg.spd_msg, 
         new_mainmsg.mainrocon_msg.bdr_msg);
     }
+    rclcpp::Node::SharedPtr sub_node_;
+    rclcpp::Subscription<msgs_mainrocon::msg::MainRocon>::SharedPtr subscription_;
 }
 };
 

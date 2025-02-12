@@ -31,7 +31,7 @@ class NodeBridge : public rclcpp::Node {
             executor_thread_ = std::thread([this]() { executor_.spin(); });
         }
 
-        ~CombinedNode()
+        ~NodeBridge()
         {
             executor_.cancel();
             if (executor_thread_.joinable())
@@ -45,7 +45,7 @@ class NodeBridge : public rclcpp::Node {
 
             // Publish received message to /topic_b
             auto new_msg = msgs_mainrocon::msg::MainRocon();
-            new_msg.data = msg->data;
+            new_msg.data = *msg;
             publisher_->publish(new_msg);
             RCLCPP_INFO(this->get_logger(), "Published on /topic_b: [%d, %.2f, %d, %d]", 
                         msg->mainrocon_msg.fdr_msg, 

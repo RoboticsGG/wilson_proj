@@ -149,6 +149,9 @@ private:
             }
             mainrocon.mainrocon_msg = subrocon;
         }
+
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        
         topic_rocon_pub_->publish(mainrocon);
 
         
@@ -160,28 +163,6 @@ private:
                     mainrocon.mainrocon_msg.bdr_msg);
         RCLCPP_INFO(this->get_logger(), "################################################");
   }
-
-    // void topic_callback(const msgs_mainrocon::msg::MainRocon::SharedPtr msg) {
-    //     RCLCPP_INFO(this->get_logger(), "Received on /pub_rovercontrol");
-
-    //     auto new_mainmsg = msgs_mainrocon::msg::MainRocon();
-    //     auto new_msg = msgs_rovercon::msg::SubRocon();
-
-    //     new_msg.fdr_msg = msg->mainrocon_msg.fdr_msg;
-    //     new_msg.ro_ctrl_msg = msg->mainrocon_msg.ro_ctrl_msg;
-    //     new_msg.spd_msg = msg->mainrocon_msg.spd_msg;
-    //     new_msg.bdr_msg = msg->mainrocon_msg.bdr_msg;
-
-    //     new_mainmsg.mainrocon_msg = new_msg;
-
-    //     topic_rocon_pub_->publish(new_mainmsg);
-
-    //     RCLCPP_INFO(this->get_logger(), "Forwarded message to /pub_rovercontrol_d1: [%d, %.2f, %d, %d]", 
-    //         new_mainmsg.mainrocon_msg.fdr_msg, 
-    //         new_mainmsg.mainrocon_msg.ro_ctrl_msg, 
-    //         new_mainmsg.mainrocon_msg.spd_msg, 
-    //         new_mainmsg.mainrocon_msg.bdr_msg);
-    // }
 
 };
 

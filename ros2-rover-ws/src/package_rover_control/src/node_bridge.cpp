@@ -44,18 +44,23 @@ class NodeBridge : public rclcpp::Node {
             RCLCPP_INFO(this->get_logger(), "Received on /pub_rovercontrol");
 
             // Publish received message to /topic_b
-            auto new_msg = msgs_mainrocon::msg::MainRocon();
+            auto new_mainmsg = msgs_mainrocon::msg::MainRocon();
+            auto new_msg = msgs_rovercon::msg::SubRocon();
+        
             new_msg.fdr_msg = msg->mainrocon_msg.fdr_msg;
             new_msg.ro_ctrl_msg = msg->mainrocon_msg.ro_ctrl_msg;
             new_msg.spd_msg = msg->mainrocon_msg.spd_msg;
             new_msg.bdr_msg = msg->mainrocon_msg.bdr_msg;
 
-            publisher_->publish(new_msg);
+            new_mainmsg.mainrocon_msg = new_msg;
+
+            publisher_->publish(new_mainmsg);
+            
             RCLCPP_INFO(this->get_logger(), "Published on /topic_b: [%d, %.2f, %d, %d]", 
-                        msg->new_msg.fdr_msg, 
-                        msg->new_msg.ro_ctrl_msg, 
-                        msg->new_msg.spd_msg, 
-                        msg->new_msg.bdr_msg);
+                new_mainmsg.mainrocon_msg.fdr_msg, 
+                new_mainmsg.mainrocon_msg.ro_ctrl_msg, 
+                new_mainmsg.mainrocon_msg.spd_msg, 
+                new_mainmsg.mainrocon_msg.bdr_msg);
         }
 
         rclcpp::Node::SharedPtr sub_node_;

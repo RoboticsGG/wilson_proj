@@ -84,6 +84,7 @@ private:
     rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr topic_cc_rcon_sub_;
     rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
     //rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
+    rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::executors::MultiThreadedExecutor executor_;
     std::thread executor_thread_;
 

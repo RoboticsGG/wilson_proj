@@ -96,15 +96,7 @@ private:
     void timer_callback() {
         auto subrocon = msgs_rovercon::msg::SubRocon();
         auto mainrocon = msgs_mainrocon::msg::MainRocon();
-
-        // subrocon.fdr_msg = static_cast<uint8_t>(ro_ctrl_msg1_);
-        // subrocon.ro_ctrl_msg = ro_ctrl_msg2_;
-        // subrocon.spd_msg = 20;
-        // subrocon.bdr_msg = 1;
-
-        // mainrocon.mainrocon_msg = subrocon;
-        // topic_rocon_pub_->publish(mainrocon);
-
+        
         {
             std::lock_guard<std::mutex> lock(data_lock_);
 

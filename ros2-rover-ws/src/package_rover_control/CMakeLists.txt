@@ -31,7 +31,7 @@ find_package(service_ifaces REQUIRED)
 
 
 #---------------------------node_rover_control---------------------------------------
-add_executable(node_rovercontrol src/node_rover_control.cpp)
+add_executable(node_rovercontrol src/node_rover_control_b.cpp)
 ament_target_dependencies(node_rovercontrol rclcpp geometry_msgs std_msgs msgs_rovercon msgs_mainrocon service_ifaces)
 
 target_include_directories(node_rovercontrol PUBLIC

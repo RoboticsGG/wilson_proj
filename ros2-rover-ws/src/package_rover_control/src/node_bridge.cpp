@@ -60,9 +60,9 @@ void publisher_thread() {
 }
 
 int main(int argc, char *argv[]) {
+    (void) argc;
+    (void) argv;
 
-    void argc;
-    void argv;
     std::thread sub_thread(subscriber_thread);
     std::thread pub_thread(publisher_thread);
 

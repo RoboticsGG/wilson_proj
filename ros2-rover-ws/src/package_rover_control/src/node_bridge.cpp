@@ -39,7 +39,7 @@ class NodeBridge : public rclcpp::Node {
         }
         
     private:
-        void topic_callback(msgs_mainrocon::msg::MainRocon *msg)
+        void topic_callback(const msgs_mainrocon::msg::MainRocon::SharedPtr msg)
         {
             RCLCPP_INFO(this->get_logger(), "Received on /pub_rovercontrol");
 
@@ -55,8 +55,8 @@ class NodeBridge : public rclcpp::Node {
             new_mainmsg.mainrocon_msg = new_msg;
 
             publisher_->publish(new_mainmsg);
-            
-            RCLCPP_INFO(this->get_logger(), "Published on /topic_b: [%d, %.2f, %d, %d]", 
+
+            RCLCPP_INFO(this->get_logger(), "Forwarded message to /pub_rovercontrol_d1: [%d, %.2f, %d, %d]", 
                 new_mainmsg.mainrocon_msg.fdr_msg, 
                 new_mainmsg.mainrocon_msg.ro_ctrl_msg, 
                 new_mainmsg.mainrocon_msg.spd_msg, 

@@ -28,20 +28,22 @@ class CameraNode(Node):
                 color_frame = frames.get_color_frame()
                 depth_frame = frames.get_depth_frame()
 
+                print("OKOKOK")
+
                 if not color_frame or not depth_frame:
                     continue
 
-                # Process the frames and create message
-                color_image = np.asanyarray(color_frame.get_data())
-                depth_image = np.asanyarray(depth_frame.get_data())
+                # # Process the frames and create message
+                # color_image = np.asanyarray(color_frame.get_data())
+                # depth_image = np.asanyarray(depth_frame.get_data())
                 
-                # Example: Extract some data, could be processed further
-                avg_depth = np.mean(depth_image[depth_image > 0])  # Simple average depth for example
+                # # Example: Extract some data, could be processed further
+                # avg_depth = np.mean(depth_image[depth_image > 0])  # Simple average depth for example
 
-                # Create message and publish
-                message = Float32MultiArray()
-                message.data = [float(avg_depth)]  # You can add more fields here as needed
-                self.publisher_.publish(message)
+                # # Create message and publish
+                # message = Float32MultiArray()
+                # message.data = [float(avg_depth)]  # You can add more fields here as needed
+                # self.publisher_.publish(message)
 
         except Exception as e:
             self.get_logger().error(f"Camera error: {e}")

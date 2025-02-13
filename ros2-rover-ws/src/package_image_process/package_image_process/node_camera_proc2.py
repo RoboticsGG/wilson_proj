@@ -107,11 +107,11 @@ class ImageProcess(Node):
             device = devices[0]  # 
             config.enable_device(device.get_info(rs.camera_info.serial_number))
 
-        pipeline.start(config, timeout_ms=10000)
+        pipeline.start(config)
         
         try:
             while rclpy.ok():
-                frames = pipeline.wait_for_frames()
+                frames = pipeline.wait_for_frames(timeout_ms=10000)
                 color_frame = frames.get_color_frame()
                 depth_frame = frames.get_depth_frame()
                 if not color_frame or not depth_frame:

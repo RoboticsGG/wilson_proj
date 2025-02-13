@@ -94,6 +94,19 @@ class ImageProcess(Node):
         config = rs.config()
         config.enable_stream(rs.stream.color, 640, 360, rs.format.bgr8, 30)
         config.enable_stream(rs.stream.depth, 640, 360, rs.format.z16, 30)
+
+        ctx = rs.context()
+        devices = ctx.query_devices()
+
+        if len(devices) == 0:
+            raise RuntimeError("No RealSense devices connected")
+        else:
+            for i, dev in enumerate(devices):
+                print(f"Device {i}: {dev.get_info(rs.camera_info.name)}")
+
+            device = devices[0]  # 
+            config.enable_device(device.get_info(rs.camera_info.serial_number))
+
         pipeline.start(config)
         
         try:

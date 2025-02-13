@@ -142,7 +142,7 @@ int main()
   
   mros2::Subscriber sub = node.create_subscription<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10, userCallback);
   
-  osDelay(1000);
+  osDelay(700);
   MROS2_INFO("ready to pub/sub message\r\n---");
 
   mros2::spin();

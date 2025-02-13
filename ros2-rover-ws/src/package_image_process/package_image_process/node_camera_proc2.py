@@ -113,6 +113,7 @@ class ImageProcess(Node):
                     self.latest_data["degree_diff"] = degree_diff
                     self.latest_data["objblock"] = objblock
                 
+                self.get_logger().info(f"Direction: {direction}, Degree Diff: {degree_diff}, ObjBlock: {objblock}")
                 # cv2.imshow('Camera View', color_image)
                 # if cv2.waitKey(1) & 0xFF == ord('q'):
                 #     break

@@ -150,12 +150,9 @@ private:
             mainrocon.mainrocon_msg = subrocon;
         }
 
-        std::this_thread::sleep_for(std::chrono::seconds(2));
-
         topic_rocon_pub_->publish(mainrocon);
 
         
-
         RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", 
                     mainrocon.mainrocon_msg.fdr_msg, 
                     mainrocon.mainrocon_msg.ro_ctrl_msg, 

@@ -126,8 +126,8 @@ try:
             cv2.line(img, (2*part_width, 0), (2*part_width, img.shape[0]), (0, 0, 255), 2)
 
         # Show images
-        cv2.imshow('Intel RealSense Depth', cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET))
-        cv2.imshow('Intel RealSense Color', color_image)
+        # cv2.imshow('Intel RealSense Depth', cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET))
+        # cv2.imshow('Intel RealSense Color', color_image)
 
         time.sleep(1)
 

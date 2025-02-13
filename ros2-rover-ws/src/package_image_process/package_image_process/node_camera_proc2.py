@@ -113,9 +113,9 @@ class ImageProcess(Node):
                     self.latest_data["degree_diff"] = degree_diff
                     self.latest_data["objblock"] = objblock
                 
-                cv2.imshow('Camera View', color_image)
-                if cv2.waitKey(1) & 0xFF == ord('q'):
-                    break
+                # cv2.imshow('Camera View', color_image)
+                # if cv2.waitKey(1) & 0xFF == ord('q'):
+                #     break
         except Exception as e:
             self.get_logger().error(f"Camera error: {e}")
         finally:

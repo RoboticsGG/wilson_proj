@@ -107,7 +107,7 @@ class ImageProcess(Node):
             device = devices[0]  # 
             config.enable_device(device.get_info(rs.camera_info.serial_number))
 
-        pipeline.start(config)
+        pipeline.start(config, timeout_ms=10000)
         
         try:
             while rclpy.ok():

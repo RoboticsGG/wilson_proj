@@ -3,6 +3,7 @@
 #include <chrono>
 #include <memory>
 #include <string>
+#include <mutex>
 #include <msgs_rovercon/msg/sub_rocon.hpp>
 #include <msgs_mainrocon/msg/main_rocon.hpp>
 
@@ -22,6 +23,8 @@ public:
 private:
     rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
     rclcpp::TimerBase::SharedPtr timer_;
+
+    std::mutex data_lock_;
 
     void timer_callback() {
       auto subrocon = msgs_rovercon::msg::SubRocon();

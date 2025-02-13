@@ -16,7 +16,7 @@ public:
         );
 
         timer_ = this->create_wall_timer(
-            std::chrono::milliseconds(700), 
+            std::chrono::milliseconds(1000), 
             std::bind(&Node_D5Bridge::timer_callback, this)
         );
 

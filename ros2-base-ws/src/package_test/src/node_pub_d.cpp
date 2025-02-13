@@ -11,7 +11,7 @@
 class PubNode : public rclcpp::Node {
 public:
     PubNode() : Node("test_pub") {
-      topic_rocon_pub_ = this->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
+      topic_rocon_pub_ = this->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_way1", 10);
 
       timer_ = this->create_wall_timer(
         std::chrono::seconds(2), 

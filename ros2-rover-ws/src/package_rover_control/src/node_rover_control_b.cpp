@@ -55,7 +55,7 @@ public:
         pub_node_ = std::make_shared<rclcpp::Node>("pub_node", node_options_pub);
 
         //topic_rocon_pub_ = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_d1", 10);
-        topic_rocon_pub_ = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol", 10);
+        topic_rocon_pub_ = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_d5", 10);
         
         RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized (Subscriber: Domain 2, Publisher: Domain 1)");
         

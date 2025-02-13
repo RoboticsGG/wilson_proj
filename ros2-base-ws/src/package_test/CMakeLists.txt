@@ -28,7 +28,7 @@ find_package(msgs_mainrocon REQUIRED)
 add_executable(node_client_act src/node_client_act.cpp)
 
 add_executable(node_pub_d src/node_pub_d.cpp)
-ament_target_dependencies(node_pub_d rclcpp std_msgs)
+ament_target_dependencies(node_pub_d rclcpp std_msgs msgs_rovercon msgs_mainrocon)
 
 add_executable(sub_node src/sub_node.cpp)
 ament_target_dependencies(sub_node rclcpp std_msgs msgs_rovercon msgs_mainrocon)

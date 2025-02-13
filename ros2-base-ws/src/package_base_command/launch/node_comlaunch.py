@@ -6,9 +6,9 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
     # Declare launch arguments with string values (ROS 2 arguments are passed as strings)
-    rover_spd_arg = DeclareLaunchArgument('rover_spd', default_value='20', description='Speed of the rover')
-    des_lat_arg = DeclareLaunchArgument('des_lat', default_value='7.007286', description='Destination Latitude')
-    des_long_arg = DeclareLaunchArgument('des_long', default_value='100.50203', description='Destination Longitude')
+    rover_spd_arg = DeclareLaunchArgument('rover_spd', default_value='0', description='Speed of the rover')
+    des_lat_arg = DeclareLaunchArgument('des_lat', default_value='0.000000', description='Destination Latitude')
+    des_long_arg = DeclareLaunchArgument('des_long', default_value='0.00000', description='Destination Longitude')
 
     return LaunchDescription([
         rover_spd_arg,

@@ -66,6 +66,10 @@ class ImageProcess(Node):
         else:
             self.get_logger().info("No line detected")
             return 2, 0.00
+        
+    def compute_avg_depth(self, region):
+        valid_depths = region[(region > 0) & (region < 300)]
+        return np.mean(valid_depths) if valid_depths.size > 0 else 300
 
     def check_object_blockage(self, depth_frame):
         depth_image = np.asanyarray(depth_frame.get_data())
@@ -78,9 +82,9 @@ class ImageProcess(Node):
         middle_part = depth_cm[:, part_width:2*part_width]
         right_part = depth_cm[:, 2*part_width:]
 
-        left_avg = np.mean(left_part[left_part > 0])
-        middle_avg = np.mean(middle_part[middle_part > 0])
-        right_avg = np.mean(right_part[right_part > 0])
+        left_avg = self.compute_avg_depth(left_part)
+        middle_avg = self.compute_avg_depth(middle_part)
+        right_avg = self.compute_avg_depth(right_part)
 
         objblock = 1.0 if any(avg < 25 for avg in [left_avg, middle_avg, right_avg]) else 0.0
         return objblock

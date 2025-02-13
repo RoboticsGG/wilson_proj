@@ -92,7 +92,6 @@ private:
         std_msgs::msg::Bool cc_rcon_msg;
 
         while (rclcpp::ok()) {
-            //double distance = 0.1;
             double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
             feedback->dis_remain = distance;
             goal_handle->publish_feedback(feedback);
@@ -108,11 +107,6 @@ private:
                     RCLCPP_INFO(this->get_logger(), "Destination Reached!");
                     goal_reached_ = true;
                 }
-                // auto result = std::make_shared<DesData::Result>();
-                // result->result_fser = "Arrived at Destination";
-                // goal_handle->succeed(result);
-                // RCLCPP_INFO(this->get_logger(), "Destination Reached!");
-                // return;
             } else {
                 cc_rcon_msg.data = false;
             }

@@ -25,9 +25,6 @@ public:
         node_options_sub.context(context_sub);
         sub_node_ = std::make_shared<rclcpp::Node>("sub_node", node_options_sub);
 
-        // subscription_ = sub_node_->create_subscription<msgs_mainrocon::msg::MainRocon>(
-        //     "pub_rovercontrol", 10, std::bind(&Node_Rovercontrol::topic_callback, this, std::placeholders::_1));
-
         spd_service_ = sub_node_->create_service<service_ifaces::srv::SpdLimit>("spd_limit",
             std::bind(&Node_Rovercontrol::handle_spd_request, this, std::placeholders::_1, std::placeholders::_2)
         );
@@ -44,7 +41,7 @@ public:
 
 
 
-        // Initialize context for publisher (Domain ID 1)
+        // Initialize context for publisher (Domain ID 5)
         rclcpp::InitOptions init_options_pub;
         init_options_pub.set_domain_id(5);
         rclcpp::Context::SharedPtr context_pub = std::make_shared<rclcpp::Context>();
@@ -54,16 +51,10 @@ public:
         node_options_pub.context(context_pub);
         pub_node_ = std::make_shared<rclcpp::Node>("pub_node", node_options_pub);
 
-        //topic_rocon_pub_ = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_d1", 10);
         topic_rocon_pub_ = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_d5", 10);
         
         RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized (Subscriber: Domain 2, Publisher: Domain 1)");
         
-        // timer_ = pub_node_->create_wall_timer(
-        //     std::chrono::seconds(2), 
-        //     std::bind(&Node_Rovercontrol::timer_callback, pub_node_)
-        // );
-        // Add nodes to executor and spin in separate thread
         executor_.add_node(sub_node_);
         executor_.add_node(pub_node_);
         executor_thread_ = std::thread([this]() { executor_.spin(); });
@@ -78,13 +69,10 @@ public:
 private:
     rclcpp::Node::SharedPtr sub_node_;
     rclcpp::Node::SharedPtr pub_node_;
-    //rclcpp::Subscription<msgs_mainrocon::msg::MainRocon>::SharedPtr subscription_;
     rclcpp::Service<service_ifaces::srv::SpdLimit>::SharedPtr spd_service_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
     rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr topic_cc_rcon_sub_;
     rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
-    //rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
-    //rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::executors::MultiThreadedExecutor executor_;
     std::thread executor_thread_;
 

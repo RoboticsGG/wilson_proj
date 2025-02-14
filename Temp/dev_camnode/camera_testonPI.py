@@ -32,6 +32,8 @@ try:
         cv2.imshow('Color Frame', color_image)
         cv2.imshow('Depth Frame', depth_image)
 
+        print("OKOKOK")
+
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 finally:

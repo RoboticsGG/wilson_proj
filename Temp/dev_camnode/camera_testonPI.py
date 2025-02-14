@@ -7,8 +7,8 @@ pipeline = rs.pipeline()
 config = rs.config()
 
 # Set the stream parameters
-config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 15)
-config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 15)
+config.enable_stream(rs.stream.color, 424, 240, rs.format.bgr8, 15)
+config.enable_stream(rs.stream.depth, 424, 240, rs.format.z16, 15)
 
 # Start the pipeline
 pipeline.start(config)

@@ -78,19 +78,19 @@ private:
 
     float ro_ctrl_msg1_;
     float ro_ctrl_msg2_;
-    float objblock_msg_;
+    //float objblock_msg_;
     uint8_t spd_msg_;
     bool cc_rcon_msg_;
 
     std::mutex data_lock_;
 
     void topic_direct_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg) {
-    if (msg->data.size() >= 3) {
+    if (msg->data.size() >= 2) {
         std::lock_guard<std::mutex> lock(data_lock_);
         if (msg->data[0] != ro_ctrl_msg1_ || msg->data[1] != ro_ctrl_msg2_) {
             ro_ctrl_msg1_ = msg->data[0];
             ro_ctrl_msg2_ = msg->data[1];
-            objblock_msg_ = msg->data[2];
+            //objblock_msg_ = msg->data[2];
 
             //RCLCPP_INFO(this->get_logger(), "Received on topic_direction: x = %.2f, y = %.2f", ro_ctrl_msg1_, ro_ctrl_msg2_);
         }
@@ -127,7 +127,7 @@ private:
         {
             std::lock_guard<std::mutex> lock(data_lock_);
 
-            if (cc_rcon_msg_ == true || objblock_msg_ == 1.0) {
+            if (cc_rcon_msg_ == true) {
                 subrocon.fdr_msg = 2;
                 subrocon.ro_ctrl_msg = 0;
                 subrocon.spd_msg = 0;

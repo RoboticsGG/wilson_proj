@@ -21,8 +21,6 @@ setup(
     entry_points={
         'console_scripts': [
             'node_image_process = package_image_process.node_image_process:main',
-            'node_camera_proc2 = package_image_process.node_camera_proc2:main',
-            'node_camera = package_image_process.camera_node:main',
         ],
     },
 )

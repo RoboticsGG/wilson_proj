@@ -19,11 +19,11 @@ try:
         color_frame = frames.get_color_frame()
         #depth_frame = frames.get_depth_frame()
 
-        if not color_frame or not depth_frame:
-            continue
-
-        # if not color_frame :
+        # if not color_frame or not depth_frame:
         #     continue
+
+        if not color_frame :
+            continue
 
         color_image = np.asanyarray(color_frame.get_data())
         #depth_image = np.asanyarray(depth_frame.get_data())

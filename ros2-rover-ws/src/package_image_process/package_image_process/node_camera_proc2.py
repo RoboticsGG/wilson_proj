@@ -99,9 +99,9 @@ class ImageProcess(Node):
                     self.latest_data["degree_diff"] = degree_diff
 
                 self.get_logger().info(f"Direction: {direction}, Degree Diff: {degree_diff}")
-                # cv2.imshow('Camera View', frame)
-                # if cv2.waitKey(1) & 0xFF == ord('q'):
-                #     break
+                cv2.imshow('Camera View', frame)
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    break
         except Exception as e:
             self.get_logger().error(f"Camera error: {e}")
         finally:

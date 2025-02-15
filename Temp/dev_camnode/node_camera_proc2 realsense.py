@@ -1,8 +1,9 @@
+import pyrealsense2 as rs
 import cv2
 import numpy as np
 import rclpy
 import threading
-import os
+import time
 from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
 
@@ -13,7 +14,7 @@ class ImageProcess(Node):
         self.timer_period = 1
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
 
-        self.latest_data = {"direction": 2, "degree_diff": 0.0}
+        self.latest_data = {"direction": 2, "degree_diff": 0.0, "objblock": 0.0}
         self.data_lock = threading.Lock()
 
         self.camera_thread = threading.Thread(target=self.read_camera_continuously)
@@ -24,10 +25,11 @@ class ImageProcess(Node):
         with self.data_lock:
             direction = self.latest_data["direction"]
             degree_diff = self.latest_data["degree_diff"]
+            objblock = self.latest_data["objblock"]
 
         degree_diff = round(degree_diff, 2)
         combined_message = Float32MultiArray()
-        combined_message.data = [float(direction), float(degree_diff)]
+        combined_message.data = [float(direction), float(degree_diff), float(objblock)]
 
         self.get_logger().info(f"Publishing: {combined_message.data}")
         self.publisher_.publish(combined_message)
@@ -64,51 +66,79 @@ class ImageProcess(Node):
         else:
             self.get_logger().info("No line detected")
             return 2, 0.00
+        
+    def compute_avg_depth(self, region):
+        valid_depths = region[(region > 0) & (region < 300)]
+        return np.mean(valid_depths) if valid_depths.size > 0 else 300
 
-    def get_next_filename(self, base_name="output", extension="avi"):
-        counter = 1
-        while os.path.exists(f"{base_name}_{counter}.{extension}"):
-            counter += 1
-        return f"{base_name}_{counter}.{extension}"
+    def check_object_blockage(self, depth_frame):
+        depth_image = np.asanyarray(depth_frame.get_data())
+        depth_cm = depth_image * 0.1
+
+        width = depth_cm.shape[1]
+        part_width = width // 3
+
+        left_part = depth_cm[:, :part_width]
+        middle_part = depth_cm[:, part_width:2*part_width]
+        right_part = depth_cm[:, 2*part_width:]
+
+        left_avg = self.compute_avg_depth(left_part)
+        middle_avg = self.compute_avg_depth(middle_part)
+        right_avg = self.compute_avg_depth(right_part)
+
+        objblock = 1.0 if any(avg < 25 for avg in [left_avg, middle_avg, right_avg]) else 0.0
+        return objblock
 
     def read_camera_continuously(self):
-        cap = cv2.VideoCapture(0)
-        if not cap.isOpened():
-            self.get_logger().error("Error: Could not open webcam.")
-            return
+        pipeline = rs.pipeline()
+        config = rs.config()
+        config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 15)
+        config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 15)
 
-        fourcc = cv2.VideoWriter_fourcc(*'XVID')
-        output_filename = self.get_next_filename()
-        out = cv2.VideoWriter(output_filename, fourcc, 20.0, (640, 480))
+        ctx = rs.context()
+        devices = ctx.query_devices()
 
+        if len(devices) == 0:
+            raise RuntimeError("No RealSense devices connected")
+        else:
+            for i, dev in enumerate(devices):
+                print(f"Device {i}: {dev.get_info(rs.camera_info.name)}")
+
+            device = devices[0]  # 
+            config.enable_device(device.get_info(rs.camera_info.serial_number))
+
+        pipeline.start(config)
+        
         try:
             while rclpy.ok():
-                ret, frame = cap.read()
-                if not ret:
+                frames = pipeline.wait_for_frames(timeout_ms=10000)
+                color_frame = frames.get_color_frame()
+                depth_frame = frames.get_depth_frame()
+                if not color_frame or not depth_frame:
                     continue
 
-                out.write(frame)  # Save raw video
-                hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+                color_image = np.asanyarray(color_frame.get_data())
+                hsv_img = cv2.cvtColor(color_image, cv2.COLOR_BGR2HSV)
                 gray_white = self.filter_white_lines(hsv_img)
                 edges = self.detect_line(gray_white)
                 center_x, _ = self.contour_find_line(edges)
                 direction, degree_diff = self.control_robot(center_x, 640)
+                objblock = self.check_object_blockage(depth_frame)
 
                 with self.data_lock:
                     self.latest_data["direction"] = direction
                     self.latest_data["degree_diff"] = degree_diff
-
-                self.get_logger().info(f"Direction: {direction}, Degree Diff: {degree_diff}")
-                # cv2.imshow('Camera View', frame)
+                    self.latest_data["objblock"] = objblock
+                
+                self.get_logger().info(f"Direction: {direction}, Degree Diff: {degree_diff}, ObjBlock: {objblock}")
+                # cv2.imshow('Camera View', color_image)
                 # if cv2.waitKey(1) & 0xFF == ord('q'):
                 #     break
         except Exception as e:
             self.get_logger().error(f"Camera error: {e}")
         finally:
-            cap.release()
-            out.release()
+            pipeline.stop()
             cv2.destroyAllWindows()
-
 
 def main(args=None):
     rclpy.init(args=args)
@@ -116,7 +146,6 @@ def main(args=None):
     rclpy.spin(image_process)
     image_process.destroy_node()
     rclpy.shutdown()
-
 
 if __name__ == "__main__":
     main()

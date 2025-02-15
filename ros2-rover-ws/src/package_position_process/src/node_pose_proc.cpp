@@ -97,7 +97,7 @@ private:
             goal_handle->publish_feedback(feedback);
             RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
 
-            if (distance < 0.2) {
+            if (distance < 0.02) {
                 cc_rcon_msg.data = true;
 
                 if (!goal_reached_){

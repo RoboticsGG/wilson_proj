@@ -79,29 +79,33 @@ private:
             RCLCPP_ERROR(this->get_logger(), "Serial port not open!");
             return;
         }
-
+    
         char buffer[256];
         int bytes_read = read(serial_port_, buffer, sizeof(buffer) - 1);
-        
+    
         if (bytes_read > 0) {
-            buffer[bytes_read] = '\0';  
+            buffer[bytes_read] = '\0';  // Null-terminate string
             std::string json_data(buffer);
-
+    
+            // Trim whitespace and newlines
+            json_data.erase(std::remove(json_data.begin(), json_data.end(), '\r'), json_data.end());
+            json_data.erase(std::remove(json_data.begin(), json_data.end(), '\n'), json_data.end());
+    
             Json::CharReaderBuilder reader;
             Json::Value root;
             std::string errs;
             std::istringstream ss(json_data);
-
+    
             if (Json::parseFromStream(reader, ss, &root, &errs)) {
                 std::string date_time = root["time"].asString();
                 int numSatellites = root["numSatellites"].asInt();
                 bool fix = root["fix"].asBool();
                 double latitude = root["latitude"].asDouble();
                 double longitude = root["longitude"].asDouble();
-
+    
                 std::string date = date_time.substr(0, date_time.find(" "));
                 std::string time = date_time.substr(date_time.find(" ") + 1);
-
+    
                 auto msg = msgs_ifaces::msg::GnssData();
                 msg.date = date;
                 msg.time = time;
@@ -109,21 +113,21 @@ private:
                 msg.fix = fix;
                 msg.latitude = latitude;
                 msg.longitude = longitude;
-
+    
                 publisher_->publish(msg);
                 RCLCPP_INFO(this->get_logger(), "Published GNSS Data: Date=%s, Time=%s, Sat=%d, Fix=%d, Lat=%f, Lon=%f",
                             msg.date.c_str(), msg.time.c_str(), msg.num_satellites, msg.fix, msg.latitude, msg.longitude);
-
+    
                 // Write data to CSV
                 csv_file_ << date << "," << time << "," << numSatellites << "," << fix 
                           << "," << latitude << "," << longitude << "\n";
             } else {
-                RCLCPP_WARN(this->get_logger(), "Invalid JSON received!");
+                RCLCPP_WARN(this->get_logger(), "Invalid JSON received! Error: %s | Data: %s", errs.c_str(), json_data.c_str());
             }
         } else {
             RCLCPP_WARN(this->get_logger(), "No data received from GNSS device.");
         }
-    }
+    }    
 };
 
 int main(int argc, char **argv) {

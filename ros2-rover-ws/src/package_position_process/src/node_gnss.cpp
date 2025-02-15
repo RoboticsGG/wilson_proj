@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <chrono>
+#include <ctime>
 #include <fcntl.h>
 #include <unistd.h>
 #include <termios.h>
@@ -12,8 +13,20 @@ using namespace std::chrono_literals;
 
 class GNSSPublisher : public rclcpp::Node {
 public:
-    GNSSPublisher() : Node("gnss_publisher"), csv_file_("gnss_data.csv", std::ios::app) {
+    GNSSPublisher() : Node("gnss_publisher") {
         publisher_ = this->create_publisher<msgs_ifaces::msg::GnssData>("gnss_data", 10);
+
+        // Generate a unique filename using a timestamp
+        std::string filename = generateFileName();
+        csv_file_.open(filename, std::ios::out);
+
+        if (!csv_file_.is_open()) {
+            RCLCPP_ERROR(this->get_logger(), "Failed to open CSV file for writing!");
+            return;
+        }
+
+        // Write CSV header
+        csv_file_ << "Date,Time,NumSatellites,Fix,Latitude,Longitude\n";
 
         // Open Serial Port
         serial_port_ = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY | O_NDELAY);
@@ -33,11 +46,6 @@ public:
         options.c_cflag |= CS8;
         tcsetattr(serial_port_, TCSANOW, &options);
 
-        // Write CSV header if file is empty
-        if (csv_file_.tellp() == 0) {
-            csv_file_ << "Date,Time,NumSatellites,Fix,Latitude,Longitude\n";
-        }
-
         // Timer to publish every 1 second
         timer_ = this->create_wall_timer(1s, std::bind(&GNSSPublisher::readSerialData, this));
     }
@@ -54,6 +62,17 @@ private:
     rclcpp::TimerBase::SharedPtr timer_;
     int serial_port_;
     std::ofstream csv_file_;
+
+    std::string generateFileName() {
+        auto now = std::chrono::system_clock::now();
+        std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+        std::tm *timeinfo = std::localtime(&now_c);
+
+        char buffer[50];
+        std::strftime(buffer, sizeof(buffer), "gnss_%Y%m%d_%H%M%S.csv", timeinfo);
+
+        return std::string(buffer);
+    }
 
     void readSerialData() {
         if (serial_port_ == -1) {

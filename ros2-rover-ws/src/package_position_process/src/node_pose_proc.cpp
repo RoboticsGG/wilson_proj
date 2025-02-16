@@ -96,10 +96,12 @@ private:
         while (rclcpp::ok()) {
             if (cur_pose_msg_.latitude == 0.0 && cur_pose_msg_.longitude == 0.0) {
                 RCLCPP_WARN(this->get_logger(), "Waiting for GNSS Data...");
+                cc_rcon_msg.data = true;
                 std::this_thread::sleep_for(std::chrono::seconds(2));
                 continue;
             } else if (des_lat_ == 0.0 && des_long_ == 0.0) {
                 RCLCPP_WARN(this->get_logger(), "Waiting for Destination Data...");
+                cc_rcon_msg.data = true;
                 std::this_thread::sleep_for(std::chrono::seconds(2));
                 continue;
             }
@@ -123,22 +125,21 @@ private:
                     } else {
                         cc_rcon_msg.data = false;
                     }
-                    cc_rcon_pub_->publish(cc_rcon_msg);
-                    RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
-
-                    std::this_thread::sleep_for(std::chrono::seconds(2));
+                    // cc_rcon_pub_->publish(cc_rcon_msg);
+                    // RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
+                    //std::this_thread::sleep_for(std::chrono::seconds(2));
                 } else {
                     auto result = std::make_shared<DesData::Result>();
                     result->result_fser = "Goal Cancelled";
                     goal_handle->canceled(result);
                     RCLCPP_WARN(this->get_logger(), "Goal Cancelled!");
                     goal_cancelled_ = false;
-                    cc_rcon_msg.data = false;
-                    cc_rcon_pub_->publish(cc_rcon_msg);
-                    RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
+                    cc_rcon_msg.data = false;   
                 }
-                
-            } 
+            }
+            
+            cc_rcon_pub_->publish(cc_rcon_msg);
+            RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false"); 
         }
     }
 };

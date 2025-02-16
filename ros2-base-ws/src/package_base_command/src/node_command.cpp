@@ -171,27 +171,14 @@ int main(int argc, char *argv[]) {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<NodeCommand>();
 
-    std::thread input_thread([node]() {
-        std::string input;
-        while (rclcpp::ok()) {
-            std::cout << "Type 'stp' to stop the rover and cancel the goal: ";
-            std::getline(std::cin, input);
-            if (input == "stp") {
-                RCLCPP_INFO(node->get_logger(), "Stopping rover and canceling goal...");
-                node->cancel_goal();
-                rclcpp::shutdown();
-                break;
-            }
-        }
+    // Handle Ctrl+C (SIGINT) to stop the rover before shutdown
+    rclcpp::on_shutdown([node]() {
+        RCLCPP_WARN(node->get_logger(), "Shutdown requested. Stopping the rover...");
+        node->cancel_goal();
+        rclcpp::sleep_for(std::chrono::seconds(1));  // Allow time for cancellation
     });
 
     rclcpp::spin(node);
     rclcpp::shutdown();
-    input_thread.join();
     return 0;
-    // rclcpp::init(argc, argv);
-    // auto node = std::make_shared<NodeCommand>();  
-    // rclcpp::spin(node);
-    // rclcpp::shutdown();
-    // return 0;
 }

@@ -76,11 +76,11 @@ private:
     rclcpp::executors::MultiThreadedExecutor executor_;
     std::thread executor_thread_;
 
-    float ro_ctrl_msg1_;
-    float ro_ctrl_msg2_;
+    float ro_ctrl_msg1_ = 0;
+    float ro_ctrl_msg2_ = 0;
     //float objblock_msg_;
-    uint8_t spd_msg_;
-    bool cc_rcon_msg_;
+    uint8_t spd_msg_ = 0;
+    bool cc_rcon_msg_ = true;
 
     std::mutex data_lock_;
 

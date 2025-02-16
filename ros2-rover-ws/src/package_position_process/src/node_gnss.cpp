@@ -122,7 +122,7 @@ private:
                 csv_file_ << date << "," << time << "," << numSatellites << "," << fix 
                           << "," << latitude << "," << longitude << "\n";
             } else {
-                RCLCPP_WARN(this->get_logger(), "Invalid JSON received! Error: %s | Data: %s", errs.c_str(), json_data.c_str());
+                //RCLCPP_WARN(this->get_logger(), "Invalid JSON received!");
             }
         } else {
             RCLCPP_WARN(this->get_logger(), "No data received from GNSS device.");

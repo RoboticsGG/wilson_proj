@@ -70,7 +70,7 @@ private:
 
         RCLCPP_INFO(this->get_logger(), "Sending destination goal...");
 
-        auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
+        auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions(); //set up callback
         send_goal_options.goal_response_callback =
             std::bind(&NodeCommand::goal_response_callback, this, std::placeholders::_1);
         send_goal_options.feedback_callback =
@@ -78,7 +78,7 @@ private:
         send_goal_options.result_callback =
             std::bind(&NodeCommand::result_callback, this, std::placeholders::_1);
 
-        des_client_->async_send_goal(goal_msg, send_goal_options);
+        des_client_->async_send_goal(goal_msg, send_goal_options); // send goal
     }
 
     void goal_response_callback(GoalHandleDesData::SharedPtr goal_handle) {
@@ -105,20 +105,8 @@ private:
 
 int main(int argc, char *argv[]) {
     rclcpp::init(argc, argv);
-    
     auto node = std::make_shared<NodeCommand>();  
     rclcpp::spin(node);
-
-    // if (argc != 4) {
-    //     RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Usage: NodeCommand <rover_spd> <des_lat> <des_long>");
-    //     return 1;
-    // }
-    
-    // float rover_spd = std::stof(argv[1]);
-    // float des_lat = std::stof(argv[2]);
-    // float des_long = std::stof(argv[3]);
-    
-    // rclcpp::spin(std::make_shared<NodeCommand>(rover_spd, des_lat, des_long));
     rclcpp::shutdown();
     return 0;
 }

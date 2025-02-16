@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #ROS2_ROVER_START#
-source ~/wilson_proj/ros2-rover-ws/install/setup.bash || exit 1
+source ./ros2-rover-ws/install/setup.bash || exit 1
 export ROS_DOMAIN_ID=2
 ros2 run package_position_process node_gnss || exit 1
 ros2 run package_position_process node_position_process || exit 1

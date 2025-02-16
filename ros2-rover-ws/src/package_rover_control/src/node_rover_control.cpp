@@ -127,7 +127,7 @@ private:
         {
             std::lock_guard<std::mutex> lock(data_lock_);
 
-            if (cc_rcon_msg_ == true || spd_msg_ == 0) {
+            if (cc_rcon_msg_ == true) {
                 subrocon.fdr_msg = 2;
                 subrocon.ro_ctrl_msg = 0;
                 subrocon.spd_msg = 0;

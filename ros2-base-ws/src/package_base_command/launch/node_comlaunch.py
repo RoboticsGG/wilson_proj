@@ -1,6 +1,6 @@
 import os
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, Log, Shutdown
+from launch.actions import DeclareLaunchArgument
 from launch_ros.actions import Node
 from launch.substitutions import LaunchConfiguration
 
@@ -23,11 +23,7 @@ def generate_launch_description():
                 'rover_spd': LaunchConfiguration('rover_spd'),
                 'des_lat': LaunchConfiguration('des_lat'),
                 'des_long': LaunchConfiguration('des_long')
-            }],
-            on_exit=Shutdown(),         # Ensure proper shutdown when stopping
-            emulate_tty=True,           # Fix issues with logs not appearing properly
-            output='screen',            # Print logs to terminal
-            shutdown_timeout=20.0       # Give extra time to properly stop
+            }]
         )
     ])
 

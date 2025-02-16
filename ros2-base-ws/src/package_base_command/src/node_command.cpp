@@ -171,14 +171,59 @@ int main(int argc, char *argv[]) {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<NodeCommand>();
 
-    // Handle Ctrl+C (SIGINT) to stop the rover before shutdown
+    // Handle SIGINT (Ctrl+C) to stop the rover before shutting down
     rclcpp::on_shutdown([node]() {
         RCLCPP_WARN(node->get_logger(), "Shutdown requested. Stopping the rover...");
+
+        // Attempt to cancel the goal
         node->cancel_goal();
-        rclcpp::sleep_for(std::chrono::seconds(1));  // Allow time for cancellation
+
+        // Give some time for the cancellation request to process
+        rclcpp::sleep_for(std::chrono::seconds(2)); 
+
+        RCLCPP_WARN(node->get_logger(), "Shutdown complete.");
     });
 
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
 }
+
+int main(int argc, char *argv[]) {
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<NodeCommand>();
+
+    // Handle SIGINT (Ctrl+C) to stop the rover before shutting down
+    rclcpp::on_shutdown([node]() {
+        RCLCPP_WARN(node->get_logger(), "Shutdown requested. Stopping the rover...");
+
+        // Attempt to cancel the goal
+        node->cancel_goal();
+
+        // Give some time for the cancellation request to process
+        rclcpp::sleep_for(std::chrono::seconds(2)); 
+
+        RCLCPP_WARN(node->get_logger(), "Shutdown complete.");
+    });
+
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}
+
+
+// int main(int argc, char *argv[]) {
+//     rclcpp::init(argc, argv);
+//     auto node = std::make_shared<NodeCommand>();
+
+//     // Handle Ctrl+C (SIGINT) to stop the rover before shutdown
+//     rclcpp::on_shutdown([node]() {
+//         RCLCPP_WARN(node->get_logger(), "Shutdown requested. Stopping the rover...");
+//         node->cancel_goal();
+//         rclcpp::sleep_for(std::chrono::seconds(1));  // Allow time for cancellation
+//     });
+
+//     rclcpp::spin(node);
+//     rclcpp::shutdown();
+//     return 0;
+// }

@@ -14,7 +14,5 @@ ros2 run package_rover_control node_rovercontrol &
 export ROS_DOMAIN_ID=5
 ros2 run package_rover_control node_d5bridge &
 
-# Wait for all background jobs to finish before exiting the script
-wait
 
 echo "ROS2 Rover Start Complete!"

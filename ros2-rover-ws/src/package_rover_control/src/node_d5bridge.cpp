@@ -20,7 +20,7 @@ public:
             std::bind(&Node_D5Bridge::timer_callback, this)
         );
 
-        RCLCPP_INFO(this->get_logger(), "Node initialized: Listening to 'pub_rovercontrol' and Republishing to 'pub_rovercontrol_way1'");
+        //RCLCPP_INFO(this->get_logger(), "Node initialized: Listening to 'pub_rovercontrol' and Republishing to 'pub_rovercontrol_way1'");
     }
 
 private:

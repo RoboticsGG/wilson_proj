@@ -58,7 +58,7 @@ private:
         std_msgs::msg::Bool cc_rcon_msg;
         cc_rcon_msg.data = true;
         cc_rcon_pub_->publish(cc_rcon_msg);
-        //RCLCPP_INFO(this->get_logger(), "cc_rcon published: true");
+        RCLCPP_INFO(this->get_logger(), "cc_rcon published: true");
         return rclcpp_action::CancelResponse::ACCEPT;
     }
 

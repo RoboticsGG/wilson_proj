@@ -107,7 +107,7 @@ private:
         std::lock_guard<std::mutex> lock(data_lock_);
         if (msg->data != cc_rcon_msg_) { 
             cc_rcon_msg_ = msg->data;
-            //RCLCPP_INFO(this->get_logger(), "cc_rcon updated: %s", msg->data ? "TRUE" : "FALSE");
+            RCLCPP_INFO(this->get_logger(), "cc_rcon updated: %s", msg->data ? "TRUE" : "FALSE");
         }   
     }
 
@@ -116,7 +116,7 @@ private:
         std::lock_guard<std::mutex> lock(data_lock_);
         spd_msg_ = request->rover_spd;
         response->spd_result = "Speed Limit set to " + std::to_string(request->rover_spd);
-        //RCLCPP_INFO(this->get_logger(), "Speed Limit set to %d", request->rover_spd);
+        RCLCPP_INFO(this->get_logger(), "Speed Limit set to %d", request->rover_spd);
     }
 
 

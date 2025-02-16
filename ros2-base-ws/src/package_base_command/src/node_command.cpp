@@ -113,7 +113,7 @@ private:
             };
         send_goal_options.feedback_callback =
             [this](GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
-                RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
+                //RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
             };
         send_goal_options.result_callback =
             [this](const GoalHandleDesData::WrappedResult &result) {

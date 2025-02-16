@@ -142,6 +142,7 @@ private:
         }
 
         topic_rocon_pub_->publish(mainrocon);
+        std::this_thread::sleep_for(std::chrono::seconds(2));
 
         
         RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", 

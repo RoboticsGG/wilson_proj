@@ -115,7 +115,7 @@ private:
                 msg.longitude = longitude;
     
                 publisher_->publish(msg);
-                RCLCPP_INFO(this->get_logger(), "Published GNSS Data: Date=%s, Time=%s, Sat=%d, Fix=%d, Lat=%f, Lon=%f",
+                //RCLCPP_INFO(this->get_logger(), "Published GNSS Data: Date=%s, Time=%s, Sat=%d, Fix=%d, Lat=%f, Lon=%f",
                             msg.date.c_str(), msg.time.c_str(), msg.num_satellites, msg.fix, msg.latitude, msg.longitude);
     
                 // Write data to CSV
@@ -125,7 +125,7 @@ private:
                 //RCLCPP_WARN(this->get_logger(), "Invalid JSON received!");
             }
         } else {
-            RCLCPP_WARN(this->get_logger(), "No data received from GNSS device.");
+            //RCLCPP_WARN(this->get_logger(), "No data received from GNSS device.");
         }
     }    
 };

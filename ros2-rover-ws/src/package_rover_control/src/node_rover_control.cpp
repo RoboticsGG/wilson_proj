@@ -53,7 +53,7 @@ public:
 
         topic_rocon_pub_ = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_d5", 10);
         
-        RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized (Subscriber: Domain 2, Publisher: Domain 1)");
+        //RCLCPP_INFO(this->get_logger(), "Node_Rovercontrol initialized (Subscriber: Domain 2, Publisher: Domain 1)");
         
         executor_.add_node(sub_node_);
         executor_.add_node(pub_node_);
@@ -107,7 +107,7 @@ private:
         std::lock_guard<std::mutex> lock(data_lock_);
         if (msg->data != cc_rcon_msg_) { 
             cc_rcon_msg_ = msg->data;
-            RCLCPP_INFO(this->get_logger(), "cc_rcon updated: %s", msg->data ? "TRUE" : "FALSE");
+            //RCLCPP_INFO(this->get_logger(), "cc_rcon updated: %s", msg->data ? "TRUE" : "FALSE");
         }   
     }
 
@@ -116,7 +116,7 @@ private:
         std::lock_guard<std::mutex> lock(data_lock_);
         spd_msg_ = request->rover_spd;
         response->spd_result = "Speed Limit set to " + std::to_string(request->rover_spd);
-        RCLCPP_INFO(this->get_logger(), "Speed Limit set to %d", request->rover_spd);
+        //RCLCPP_INFO(this->get_logger(), "Speed Limit set to %d", request->rover_spd);
     }
 
 
@@ -144,12 +144,12 @@ private:
         topic_rocon_pub_->publish(mainrocon);
 
         
-        RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", 
+        //RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", 
                     mainrocon.mainrocon_msg.fdr_msg, 
                     mainrocon.mainrocon_msg.ro_ctrl_msg, 
                     mainrocon.mainrocon_msg.spd_msg, 
                     mainrocon.mainrocon_msg.bdr_msg);
-        RCLCPP_INFO(this->get_logger(), "################################################");
+        //RCLCPP_INFO(this->get_logger(), "################################################");
   }
 
 };

@@ -30,7 +30,7 @@ class ImageProcess(Node):
         combined_message = Float32MultiArray()
         combined_message.data = [float(direction), float(degree_diff)]
 
-        self.get_logger().info(f"Publishing: {combined_message.data}")
+        #self.get_logger().info(f"Publishing: {combined_message.data}")
         self.publisher_.publish(combined_message)
 
     def filter_white_lines(self, image):
@@ -63,7 +63,7 @@ class ImageProcess(Node):
             else:
                 return 2, 0.00  # Forward
         else:
-            self.get_logger().info("No line detected")
+            #self.get_logger().info("No line detected")
             return 2, 0.00
 
     def get_next_filename(self, base_name="output", extension="avi"):
@@ -75,7 +75,7 @@ class ImageProcess(Node):
     def read_camera_continuously(self):
         cap = cv2.VideoCapture(0)  # Open the camera once
         if not cap.isOpened():
-            self.get_logger().error("Error: Could not open webcam.")
+            #self.get_logger().error("Error: Could not open webcam.")
             return
 
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
@@ -103,7 +103,7 @@ class ImageProcess(Node):
                     self.latest_data["direction"] = direction
                     self.latest_data["degree_diff"] = degree_diff
 
-                self.get_logger().info(f"Direction: {direction}, Degree Diff: {degree_diff}")
+                #self.get_logger().info(f"Direction: {direction}, Degree Diff: {degree_diff}")
 
                 # cv2.imshow("Camera View", frame)
                 # if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -111,7 +111,8 @@ class ImageProcess(Node):
                 #     break
 
         except Exception as e:
-            self.get_logger().error(f"Camera error: {e}")
+            pass
+            #self.get_logger().error(f"Camera error: {e}")
         finally:
             cap.release()
             out.release()

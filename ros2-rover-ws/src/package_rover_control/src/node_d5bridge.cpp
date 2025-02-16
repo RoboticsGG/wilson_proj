@@ -38,11 +38,11 @@ private:
         latest_msg_ = *msg;  
         msg_received_ = true;
 
-        //RCLCPP_INFO(this->get_logger(), "Received from 'pub_rovercontrol_d5': [fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d]",
-                    // msg->mainrocon_msg.fdr_msg, 
-                    // msg->mainrocon_msg.ro_ctrl_msg, 
-                    // msg->mainrocon_msg.spd_msg, 
-                    // msg->mainrocon_msg.bdr_msg);
+        RCLCPP_INFO(this->get_logger(), "Received from 'pub_rovercontrol_d5': [fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d]",
+                    msg->mainrocon_msg.fdr_msg, 
+                    msg->mainrocon_msg.ro_ctrl_msg, 
+                    msg->mainrocon_msg.spd_msg, 
+                    msg->mainrocon_msg.bdr_msg);
     }
 
     void timer_callback() {
@@ -51,13 +51,13 @@ private:
         if (msg_received_) {
             topic_rocon_pub_->publish(latest_msg_);
             
-            //RCLCPP_INFO(this->get_logger(), "Republished to 'pub_rovercontrol': [fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d]",
-                        // latest_msg_.mainrocon_msg.fdr_msg, 
-                        // latest_msg_.mainrocon_msg.ro_ctrl_msg, 
-                        // latest_msg_.mainrocon_msg.spd_msg, 
-                        // latest_msg_.mainrocon_msg.bdr_msg);
+            RCLCPP_INFO(this->get_logger(), "Republished to 'pub_rovercontrol': [fdr_msg: %d, ro_ctrl_msg: %.2f, spd_msg: %d, bdr_msg: %d]",
+                        latest_msg_.mainrocon_msg.fdr_msg, 
+                        latest_msg_.mainrocon_msg.ro_ctrl_msg, 
+                        latest_msg_.mainrocon_msg.spd_msg, 
+                        latest_msg_.mainrocon_msg.bdr_msg);
         } else {
-            //RCLCPP_WARN(this->get_logger(), "No message received from 'pub_rovercontrol' yet.");
+            RCLCPP_WARN(this->get_logger(), "No message received from 'pub_rovercontrol' yet.");
         }
     }
 };

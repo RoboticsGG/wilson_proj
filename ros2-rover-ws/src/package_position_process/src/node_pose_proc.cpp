@@ -100,21 +100,21 @@ private:
     
         while (rclcpp::ok()) {
             if (!goal_handle->is_active()) {  
-                //RCLCPP_WARN(this->get_logger(), "Execution stopped: Goal was canceled.");
+                RCLCPP_WARN(this->get_logger(), "Execution stopped: Goal was canceled.");
                 return;  // Exit the function to prevent errors
             }
     
             if (cur_pose_msg_.latitude == 0.0 && cur_pose_msg_.longitude == 0.0) {
-                //RCLCPP_WARN(this->get_logger(), "Waiting for GNSS Data...");
+                RCLCPP_WARN(this->get_logger(), "Waiting for GNSS Data...");
                 cc_rcon_msg.data = true;
             } else if (des_lat_ == 0.0 && des_long_ == 0.0) {
-                //RCLCPP_WARN(this->get_logger(), "Waiting for Destination Data...");
+                RCLCPP_WARN(this->get_logger(), "Waiting for Destination Data...");
                 cc_rcon_msg.data = true;
             } else {
                 double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
                 feedback->dis_remain = distance;
                 goal_handle->publish_feedback(feedback);
-                //RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
+                RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
     
                 if (distance < 0.02) {
                     cc_rcon_msg.data = true;
@@ -123,7 +123,7 @@ private:
                         auto result = std::make_shared<DesData::Result>();
                         result->result_fser = "Arrived at Destination";
                         goal_handle->succeed(result);
-                        //RCLCPP_INFO(this->get_logger(), "Destination Reached!");
+                        RCLCPP_INFO(this->get_logger(), "Destination Reached!");
                         goal_reached_ = true;
                     }
                 } else {
@@ -132,7 +132,7 @@ private:
             }
     
             cc_rcon_pub_->publish(cc_rcon_msg);
-            //RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
+            RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
             std::this_thread::sleep_for(std::chrono::seconds(2));
         }
     }

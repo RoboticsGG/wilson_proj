@@ -3,6 +3,7 @@ import numpy as np
 import rclpy
 import threading
 import os
+import time
 from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
 
@@ -72,42 +73,54 @@ class ImageProcess(Node):
         return f"{base_name}_{counter}.{extension}"
 
     def read_camera_continuously(self):
-        cap = cv2.VideoCapture(0)
-        if not cap.isOpened():
-            self.get_logger().error("Error: Could not open webcam.")
-            return
+        while rclpy.ok():
+            cap = cv2.VideoCapture(0)
+            if not cap.isOpened():
+                self.get_logger().error("Error: Could not open webcam. Retrying in 2 seconds...")
+                cap.release()
+                time.sleep(2)
+                continue  # Retry opening the camera
+            
+            cap = cv2.VideoCapture(0)
+            cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+            cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+            cap.set(cv2.CAP_PROP_FPS, 30)
 
-        fourcc = cv2.VideoWriter_fourcc(*'XVID')
-        output_filename = self.get_next_filename()
-        out = cv2.VideoWriter(output_filename, fourcc, 20.0, (640, 480))
+            if not cap.isOpened():
+                self.get_logger().error("Error: Could not open webcam.")
+                return
 
-        try:
-            while rclpy.ok():
-                ret, frame = cap.read()
-                if not ret:
-                    continue
+            fourcc = cv2.VideoWriter_fourcc(*'XVID')
+            output_filename = self.get_next_filename()
+            out = cv2.VideoWriter(output_filename, fourcc, 20.0, (640, 480))
 
-                out.write(frame)  # Save raw video
-                hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-                gray_white = self.filter_white_lines(hsv_img)
-                edges = self.detect_line(gray_white)
-                center_x, _ = self.contour_find_line(edges)
-                direction, degree_diff = self.control_robot(center_x, 640)
+            try:
+                while rclpy.ok():
+                    ret, frame = cap.read()
+                    if not ret:
+                        continue
 
-                with self.data_lock:
-                    self.latest_data["direction"] = direction
-                    self.latest_data["degree_diff"] = degree_diff
+                    out.write(frame)  # Save raw video
+                    hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+                    gray_white = self.filter_white_lines(hsv_img)
+                    edges = self.detect_line(gray_white)
+                    center_x, _ = self.contour_find_line(edges)
+                    direction, degree_diff = self.control_robot(center_x, 640)
 
-                self.get_logger().info(f"Direction: {direction}, Degree Diff: {degree_diff}")
-                # cv2.imshow('Camera View', frame)
-                if cv2.waitKey(1) & 0xFF == ord('q'):
-                    break
-        except Exception as e:
-            self.get_logger().error(f"Camera error: {e}")
-        finally:
-            cap.release()
-            out.release()
-            cv2.destroyAllWindows()
+                    with self.data_lock:
+                        self.latest_data["direction"] = direction
+                        self.latest_data["degree_diff"] = degree_diff
+
+                    self.get_logger().info(f"Direction: {direction}, Degree Diff: {degree_diff}")
+                    cv2.imshow('Camera View', frame)
+                    if cv2.waitKey(1) & 0xFF == ord('q'):
+                        break
+            except Exception as e:
+                self.get_logger().error(f"Camera error: {e}")
+            finally:
+                cap.release()
+                out.release()
+                cv2.destroyAllWindows()
 
 
 def main(args=None):

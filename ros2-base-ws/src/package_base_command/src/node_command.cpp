@@ -52,16 +52,16 @@ public:
             RCLCPP_ERROR(this->get_logger(), "Cancel request failed.");
         }
 
-        rover_spd_ = 0;
-        auto speed_request = std::make_shared<service_ifaces::srv::SpdLimit::Request>();
-        speed_request->rover_spd = rover_spd_;
+        // rover_spd_ = 0;
+        // auto speed_request = std::make_shared<service_ifaces::srv::SpdLimit::Request>();
+        // speed_request->rover_spd = rover_spd_;
 
-        if (spd_client_->wait_for_service(std::chrono::seconds(2))) {
-            spd_client_->async_send_request(speed_request);
-            RCLCPP_INFO(this->get_logger(), "Speed set to 0 successfully.");
-        } else {
-            RCLCPP_WARN(this->get_logger(), "Speed Service unavailable, unable to set speed to 0.");
-        }
+        // if (spd_client_->wait_for_service(std::chrono::seconds(2))) {
+        //     spd_client_->async_send_request(speed_request);
+        //     RCLCPP_INFO(this->get_logger(), "Speed set to 0 successfully.");
+        // } else {
+        //     RCLCPP_WARN(this->get_logger(), "Speed Service unavailable, unable to set speed to 0.");
+        // }
     }
 
 private:
@@ -109,61 +109,61 @@ private:
 
         RCLCPP_INFO(this->get_logger(), "Sending destination goal...");
 
-        // auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
-        // send_goal_options.goal_response_callback =
-        //     [this](GoalHandleDesData::SharedPtr goal_handle) {
-        //         if (!goal_handle) {
-        //             RCLCPP_ERROR(this->get_logger(), "Destination Action goal was rejected.");
-        //         } else {
-        //             RCLCPP_INFO(this->get_logger(), "Destination Action goal accepted.");
-        //             goal_handle_ = goal_handle;
-        //         }
-        //     };
-        // send_goal_options.feedback_callback =
-        //     [this](GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
-        //         RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
-        //     };
-        // send_goal_options.result_callback =
-        //     [this](const GoalHandleDesData::WrappedResult &result) {
-        //         if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
-        //             RCLCPP_INFO(this->get_logger(), "Destination Reached: %s", result.result->result_fser.c_str());
-        //         } else {
-        //             RCLCPP_ERROR(this->get_logger(), "Destination Action failed.");
-        //         }
-        //     };
-
-        // des_client_->async_send_goal(goal_msg, send_goal_options);
-
-        auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions(); //set up callback
+        auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions();
         send_goal_options.goal_response_callback =
-            std::bind(&NodeCommand::goal_response_callback, this, std::placeholders::_1);
+            [this](GoalHandleDesData::SharedPtr goal_handle) {
+                if (!goal_handle) {
+                    RCLCPP_ERROR(this->get_logger(), "Destination Action goal was rejected.");
+                } else {
+                    RCLCPP_INFO(this->get_logger(), "Destination Action goal accepted.");
+                    goal_handle_ = goal_handle;
+                }
+            };
         send_goal_options.feedback_callback =
-            std::bind(&NodeCommand::feedback_callback, this, std::placeholders::_1, std::placeholders::_2);
+            [this](GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
+                RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
+            };
         send_goal_options.result_callback =
-            std::bind(&NodeCommand::result_callback, this, std::placeholders::_1);
+            [this](const GoalHandleDesData::WrappedResult &result) {
+                if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
+                    RCLCPP_INFO(this->get_logger(), "Destination Reached: %s", result.result->result_fser.c_str());
+                } else {
+                    RCLCPP_ERROR(this->get_logger(), "Destination Action failed.");
+                }
+            };
 
-        des_client_->async_send_goal(goal_msg, send_goal_options); // send goal
-    }
+        des_client_->async_send_goal(goal_msg, send_goal_options);
 
-    void goal_response_callback(GoalHandleDesData::SharedPtr goal_handle) {
-        if (!goal_handle) {
-            RCLCPP_ERROR(this->get_logger(), "Destination Action goal was rejected.");
-        } else {
-            RCLCPP_INFO(this->get_logger(), "Destination Action goal accepted.");
-        }
-    }
+    //     auto send_goal_options = rclcpp_action::Client<DesData>::SendGoalOptions(); //set up callback
+    //     send_goal_options.goal_response_callback =
+    //         std::bind(&NodeCommand::goal_response_callback, this, std::placeholders::_1);
+    //     send_goal_options.feedback_callback =
+    //         std::bind(&NodeCommand::feedback_callback, this, std::placeholders::_1, std::placeholders::_2);
+    //     send_goal_options.result_callback =
+    //         std::bind(&NodeCommand::result_callback, this, std::placeholders::_1);
 
-    void feedback_callback(GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
-        RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
-    }
+    //     des_client_->async_send_goal(goal_msg, send_goal_options); // send goal
+    // }
 
-    void result_callback(const GoalHandleDesData::WrappedResult &result) {
-        if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
-            RCLCPP_INFO(this->get_logger(), "Destination Reached: %s", result.result->result_fser.c_str());
-            rclcpp::shutdown();
-        } else {
-            RCLCPP_ERROR(this->get_logger(), "Destination Action failed.");
-        }
+    // void goal_response_callback(GoalHandleDesData::SharedPtr goal_handle) {
+    //     if (!goal_handle) {
+    //         RCLCPP_ERROR(this->get_logger(), "Destination Action goal was rejected.");
+    //     } else {
+    //         RCLCPP_INFO(this->get_logger(), "Destination Action goal accepted.");
+    //     }
+    // }
+
+    // void feedback_callback(GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
+    //     RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
+    // }
+
+    // void result_callback(const GoalHandleDesData::WrappedResult &result) {
+    //     if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
+    //         RCLCPP_INFO(this->get_logger(), "Destination Reached: %s", result.result->result_fser.c_str());
+    //         rclcpp::shutdown();
+    //     } else {
+    //         RCLCPP_ERROR(this->get_logger(), "Destination Action failed.");
+    //     }
     }
 };
 

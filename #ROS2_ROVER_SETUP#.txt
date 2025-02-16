@@ -1,0 +1,26 @@
+#ROS2_ROVER_SETUP#
+1.cd wilson_proj/ros2-rover-ws
+2.sudo rm -rf build/ install /log
+3.colcon build --packages-select action_ifaces ifaces_position ifaces_rover msgs_ifaces msgs_rovercon service_ifaces
+4.source install/setup.bash
+5.colcon build
+6.source install/setup.bash
+
+#ROS2_ROVER_START#
+1.SOURCE ~/wilson_proj/ros2-rover-ws/install/setup.bash
+2.export ROS_DOMAIN_ID=2
+3.ros2 run package_position_process node_gnss
+4.ros2 run package_position_process node_position_process
+5.ros2 run package_image_process node_camera_proc2
+6.ros2 run package_rover_control node_rovercontrol
+7.export ROS_DOMAIN_ID=5
+8.ros2 run package_rover_control node_d5bridge
+
+#ROS2_BASE_SETUP#
+1.cd wilson_proj/ros2-base-ws
+2.sudo rm -rf build/ install/ log/
+3.colcon build --packages-select action_ifaces service_ifaces msgs_rovercon
+4.source install/setup.bash
+5.colcon build
+6.source install/setup.bash
+7.export ROS_DOMAIN_ID=2

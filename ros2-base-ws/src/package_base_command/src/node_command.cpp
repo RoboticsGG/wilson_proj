@@ -36,6 +36,8 @@ public:
     }
 
     void cancel_goal() {
+        RCLCPP_INFO(this->get_logger(), "cancel_goal() called.");
+
         if (!goal_handle_) {
             RCLCPP_WARN(this->get_logger(), "No active goal to cancel.");
             return;
@@ -43,6 +45,12 @@ public:
 
         RCLCPP_INFO(this->get_logger(), "Cancelling goal and stopping the rover...");
         auto cancel_future = des_client_->async_cancel_goal(goal_handle_);
+
+        if (cancel_future.valid()) {
+            RCLCPP_INFO(this->get_logger(), "Cancel request sent.");
+        } else {
+            RCLCPP_ERROR(this->get_logger(), "Cancel request failed.");
+        }
 
         rover_spd_ = 0;
         auto speed_request = std::make_shared<service_ifaces::srv::SpdLimit::Request>();
@@ -113,7 +121,7 @@ private:
             };
         send_goal_options.feedback_callback =
             [this](GoalHandleDesData::SharedPtr, const std::shared_ptr<const DesData::Feedback> feedback) {
-                //RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
+                RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
             };
         send_goal_options.result_callback =
             [this](const GoalHandleDesData::WrappedResult &result) {
@@ -167,8 +175,9 @@ int main(int argc, char *argv[]) {
         std::string input;
         while (rclcpp::ok()) {
             std::cout << "Type 'stp' to stop the rover and cancel the goal: ";
-            std::cin >> input;
+            std::getline(std::cin, input);
             if (input == "stp") {
+                RCLCPP_INFO(node->get_logger(), "Stopping rover and canceling goal...");
                 node->cancel_goal();
                 rclcpp::shutdown();
                 break;

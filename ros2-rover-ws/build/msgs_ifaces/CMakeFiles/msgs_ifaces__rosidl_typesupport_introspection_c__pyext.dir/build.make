@@ -53,17 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces
-=======
 CMAKE_SOURCE_DIR = /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 # Include any dependencies generated for this target.
 include CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/depend.make
@@ -79,18 +72,6 @@ include CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/fl
 CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o: CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/flags.make
 CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o: rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c
 CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o: CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/compiler_depend.ts
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o -MF CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o.d -o CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o -c /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c
-
-CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c > CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.i
-
-CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c -o CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.s
-=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o -MF CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o.d -o CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o -c /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c
 
@@ -101,7 +82,6 @@ CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_gen
 CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c -o CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.s
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 # Object files for target msgs_ifaces__rosidl_typesupport_introspection_c__pyext
 msgs_ifaces__rosidl_typesupport_introspection_c__pyext_OBJECTS = \
@@ -110,48 +90,6 @@ msgs_ifaces__rosidl_typesupport_introspection_c__pyext_OBJECTS = \
 # External object files for target msgs_ifaces__rosidl_typesupport_introspection_c__pyext
 msgs_ifaces__rosidl_typesupport_introspection_c__pyext_EXTERNAL_OBJECTS =
 
-<<<<<<< HEAD
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/build.make
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: rosidl_generator_py/msgs_ifaces/libmsgs_ifaces__rosidl_generator_py.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/libpython3.10.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: libmsgs_ifaces__rosidl_typesupport_introspection_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: libmsgs_ifaces__rosidl_typesupport_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_py.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/librmw.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/libpython3.10.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: libmsgs_ifaces__rosidl_generator_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/libfastcdr.so.1.0.24
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/librmw.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/librosidl_typesupport_introspection_cpp.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/librosidl_typesupport_introspection_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/librosidl_typesupport_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/librosidl_runtime_c.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: /opt/ros/humble/lib/librcutils.so
-rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so: CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/link.txt --verbose=$(VERBOSE)
-
-# Rule to build all files generated by this target.
-CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/build: rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
-=======
 rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so: CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/msgs_ifaces/_msgs_ifaces_s.ep.rosidl_typesupport_introspection_c.c.o
 rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so: CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/build.make
 rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so: rosidl_generator_py/msgs_ifaces/libmsgs_ifaces__rosidl_generator_py.so
@@ -192,7 +130,6 @@ rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_
 
 # Rule to build all files generated by this target.
 CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/build: rosidl_generator_py/msgs_ifaces/msgs_ifaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 .PHONY : CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/build
 
 CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/clean:
@@ -200,10 +137,6 @@ CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/clean:
 .PHONY : CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/clean
 
 CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/depend:
-<<<<<<< HEAD
-	cd /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/DependInfo.cmake --color=$(COLOR)
-=======
 	cd /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 .PHONY : CMakeFiles/msgs_ifaces__rosidl_typesupport_introspection_c__pyext.dir/depend
 

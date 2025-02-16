@@ -74,7 +74,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_position_process/node_position_process")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_position_process/node_position_process"
-         OLD_RPATH "/opt/ros/humble/lib:/home/curry/wilson_proj/ros2-rover-ws/install/service_ifaces/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces/lib:"
+         OLD_RPATH "/opt/ros/humble/lib:/home/curry/wilson_proj/ros2-rover-ws/install/action_ifaces/lib:/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/package_position_process/node_position_process")

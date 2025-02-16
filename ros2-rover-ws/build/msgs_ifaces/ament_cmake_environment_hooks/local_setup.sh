@@ -2,11 +2,7 @@
 
 # since this file is sourced use either the provided AMENT_CURRENT_PREFIX
 # or fall back to the destination set at configure time
-<<<<<<< HEAD
-: ${AMENT_CURRENT_PREFIX:="/home/yupi/wilson_proj/ros2-rover-ws/install/msgs_ifaces"}
-=======
 : ${AMENT_CURRENT_PREFIX:="/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces"}
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 if [ ! -d "$AMENT_CURRENT_PREFIX" ]; then
   if [ -z "$COLCON_CURRENT_PREFIX" ]; then
     echo "The compile time prefix path '$AMENT_CURRENT_PREFIX' doesn't " \

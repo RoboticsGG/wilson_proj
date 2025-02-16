@@ -69,28 +69,28 @@ include CMakeFiles/node_rovercontrol.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/node_rovercontrol.dir/flags.make
 
-CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: CMakeFiles/node_rovercontrol.dir/flags.make
-CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: /home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp
-CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o: CMakeFiles/node_rovercontrol.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o -MF CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o.d -o CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o -c /home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp
+CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o: CMakeFiles/node_rovercontrol.dir/flags.make
+CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o: /home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp
+CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o: CMakeFiles/node_rovercontrol.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/curry/wilson_proj/ros2-rover-ws/build/package_rover_control/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o -MF CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o.d -o CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o -c /home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp
 
-CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp > CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.i
+CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp > CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.i
 
-CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control_a.cpp -o CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.s
+CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/curry/wilson_proj/ros2-rover-ws/src/package_rover_control/src/node_rover_control.cpp -o CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.s
 
 # Object files for target node_rovercontrol
 node_rovercontrol_OBJECTS = \
-"CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o"
+"CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o"
 
 # External object files for target node_rovercontrol
 node_rovercontrol_EXTERNAL_OBJECTS =
 
-node_rovercontrol: CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o
+node_rovercontrol: CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o
 node_rovercontrol: CMakeFiles/node_rovercontrol.dir/build.make
 node_rovercontrol: /opt/ros/humble/lib/librclcpp.so
 node_rovercontrol: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_c.so

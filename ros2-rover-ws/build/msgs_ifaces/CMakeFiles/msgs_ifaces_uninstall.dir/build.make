@@ -53,17 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces
-=======
 CMAKE_SOURCE_DIR = /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 # Utility rule file for msgs_ifaces_uninstall.
 
@@ -74,11 +67,7 @@ include CMakeFiles/msgs_ifaces_uninstall.dir/compiler_depend.make
 include CMakeFiles/msgs_ifaces_uninstall.dir/progress.make
 
 CMakeFiles/msgs_ifaces_uninstall:
-<<<<<<< HEAD
-	/usr/bin/cmake -P /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
-=======
 	/usr/bin/cmake -P /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 msgs_ifaces_uninstall: CMakeFiles/msgs_ifaces_uninstall
 msgs_ifaces_uninstall: CMakeFiles/msgs_ifaces_uninstall.dir/build.make
@@ -93,10 +82,6 @@ CMakeFiles/msgs_ifaces_uninstall.dir/clean:
 .PHONY : CMakeFiles/msgs_ifaces_uninstall.dir/clean
 
 CMakeFiles/msgs_ifaces_uninstall.dir/depend:
-<<<<<<< HEAD
-	cd /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles/msgs_ifaces_uninstall.dir/DependInfo.cmake --color=$(COLOR)
-=======
 	cd /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles/msgs_ifaces_uninstall.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 .PHONY : CMakeFiles/msgs_ifaces_uninstall.dir/depend
 

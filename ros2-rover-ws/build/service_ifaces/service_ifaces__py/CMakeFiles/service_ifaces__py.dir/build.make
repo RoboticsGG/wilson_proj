@@ -69,10 +69,8 @@ include service_ifaces__py/CMakeFiles/service_ifaces__py.dir/progress.make
 service_ifaces__py/CMakeFiles/service_ifaces__py: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c
 service_ifaces__py/CMakeFiles/service_ifaces__py: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_introspection_c.c
 service_ifaces__py/CMakeFiles/service_ifaces__py: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_c.c
-service_ifaces__py/CMakeFiles/service_ifaces__py: rosidl_generator_py/service_ifaces/srv/_des_data.py
 service_ifaces__py/CMakeFiles/service_ifaces__py: rosidl_generator_py/service_ifaces/srv/_spd_limit.py
 service_ifaces__py/CMakeFiles/service_ifaces__py: rosidl_generator_py/service_ifaces/srv/__init__.py
-service_ifaces__py/CMakeFiles/service_ifaces__py: rosidl_generator_py/service_ifaces/srv/_des_data_s.c
 service_ifaces__py/CMakeFiles/service_ifaces__py: rosidl_generator_py/service_ifaces/srv/_spd_limit_s.c
 
 rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/lib/rosidl_generator_py/rosidl_generator_py
@@ -88,7 +86,6 @@ rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastr
 rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/rosidl_generator_py/resource/_msg.py.em
 rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/rosidl_generator_py/resource/_srv_pkg_typesupport_entry_point.c.em
 rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/rosidl_generator_py/resource/_srv.py.em
-rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/service_ifaces/srv/DesData.idl
 rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/service_ifaces/srv/SpdLimit.idl
 rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/Byte.idl
@@ -131,17 +128,11 @@ rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_intro
 rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_c.c: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_c.c
 
-rosidl_generator_py/service_ifaces/srv/_des_data.py: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/service_ifaces/srv/_des_data.py
-
 rosidl_generator_py/service_ifaces/srv/_spd_limit.py: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/service_ifaces/srv/_spd_limit.py
 
 rosidl_generator_py/service_ifaces/srv/__init__.py: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/service_ifaces/srv/__init__.py
-
-rosidl_generator_py/service_ifaces/srv/_des_data_s.c: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/service_ifaces/srv/_des_data_s.c
 
 rosidl_generator_py/service_ifaces/srv/_spd_limit_s.c: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/service_ifaces/srv/_spd_limit_s.c
@@ -150,8 +141,6 @@ service_ifaces__py: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosi
 service_ifaces__py: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_fastrtps_c.c
 service_ifaces__py: rosidl_generator_py/service_ifaces/_service_ifaces_s.ep.rosidl_typesupport_introspection_c.c
 service_ifaces__py: rosidl_generator_py/service_ifaces/srv/__init__.py
-service_ifaces__py: rosidl_generator_py/service_ifaces/srv/_des_data.py
-service_ifaces__py: rosidl_generator_py/service_ifaces/srv/_des_data_s.c
 service_ifaces__py: rosidl_generator_py/service_ifaces/srv/_spd_limit.py
 service_ifaces__py: rosidl_generator_py/service_ifaces/srv/_spd_limit_s.c
 service_ifaces__py: service_ifaces__py/CMakeFiles/service_ifaces__py

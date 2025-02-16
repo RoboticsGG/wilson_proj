@@ -2,11 +2,7 @@
 # ament_cmake_core/cmake/uninstall_target/ament_cmake_uninstall_target.cmake.in
 
 function(ament_cmake_uninstall_target_remove_empty_directories path)
-<<<<<<< HEAD
-  set(install_space "/home/yupi/wilson_proj/ros2-rover-ws/install/msgs_ifaces")
-=======
   set(install_space "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces")
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
   if(install_space STREQUAL "")
     message(FATAL_ERROR "The CMAKE_INSTALL_PREFIX variable must not be empty")
   endif()
@@ -33,11 +29,7 @@ function(ament_cmake_uninstall_target_remove_empty_directories path)
 endfunction()
 
 # uninstall files installed using the standard install() function
-<<<<<<< HEAD
-set(install_manifest "/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/install_manifest.txt")
-=======
 set(install_manifest "/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/install_manifest.txt")
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 if(NOT EXISTS "${install_manifest}")
   message(FATAL_ERROR "Cannot find install manifest: ${install_manifest}")
 endif()

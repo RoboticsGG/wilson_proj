@@ -4,11 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DRCUTILS_ENABLE_FAULT_INJECTION -DROSIDL_TYPESUPPORT_INTROSPECTION_C_BUILDING_DLL_msgs_ifaces -DROS_PACKAGE_NAME=\"msgs_ifaces\"
 
-<<<<<<< HEAD
-C_INCLUDES = -I/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_typesupport_introspection_c -I/home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c -isystem /opt/ros/humble/include/std_msgs -isystem /opt/ros/humble/include/builtin_interfaces -isystem /opt/ros/humble/include/rosidl_runtime_c -isystem /opt/ros/humble/include/rcutils -isystem /opt/ros/humble/include/rosidl_typesupport_interface -isystem /opt/ros/humble/include/rosidl_typesupport_introspection_c
-=======
 C_INCLUDES = -I/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_typesupport_introspection_c -I/home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_c -isystem /opt/ros/humble/include/std_msgs -isystem /opt/ros/humble/include/builtin_interfaces -isystem /opt/ros/humble/include/rosidl_runtime_c -isystem /opt/ros/humble/include/rcutils -isystem /opt/ros/humble/include/rosidl_typesupport_interface -isystem /opt/ros/humble/include/rosidl_typesupport_introspection_c
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 C_FLAGS = -fPIC -Wall -std=gnu11
 

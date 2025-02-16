@@ -53,17 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces
-=======
 CMAKE_SOURCE_DIR = /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 # Utility rule file for ament_cmake_python_copy_msgs_ifaces.
 
@@ -74,11 +67,7 @@ include CMakeFiles/ament_cmake_python_copy_msgs_ifaces.dir/compiler_depend.make
 include CMakeFiles/ament_cmake_python_copy_msgs_ifaces.dir/progress.make
 
 CMakeFiles/ament_cmake_python_copy_msgs_ifaces:
-<<<<<<< HEAD
-	/usr/bin/cmake -E copy_directory /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/ament_cmake_python/msgs_ifaces/msgs_ifaces
-=======
 	/usr/bin/cmake -E copy_directory /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/rosidl_generator_py/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/ament_cmake_python/msgs_ifaces/msgs_ifaces
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 
 ament_cmake_python_copy_msgs_ifaces: CMakeFiles/ament_cmake_python_copy_msgs_ifaces
 ament_cmake_python_copy_msgs_ifaces: CMakeFiles/ament_cmake_python_copy_msgs_ifaces.dir/build.make
@@ -93,10 +82,6 @@ CMakeFiles/ament_cmake_python_copy_msgs_ifaces.dir/clean:
 .PHONY : CMakeFiles/ament_cmake_python_copy_msgs_ifaces.dir/clean
 
 CMakeFiles/ament_cmake_python_copy_msgs_ifaces.dir/depend:
-<<<<<<< HEAD
-	cd /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles/ament_cmake_python_copy_msgs_ifaces.dir/DependInfo.cmake --color=$(COLOR)
-=======
 	cd /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/src/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/CMakeFiles/ament_cmake_python_copy_msgs_ifaces.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 .PHONY : CMakeFiles/ament_cmake_python_copy_msgs_ifaces.dir/depend
 

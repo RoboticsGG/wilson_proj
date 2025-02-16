@@ -1,10 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/service_ifaces__cpp"
-  "rosidl_generator_cpp/service_ifaces/srv/des_data.hpp"
-  "rosidl_generator_cpp/service_ifaces/srv/detail/des_data__builder.hpp"
-  "rosidl_generator_cpp/service_ifaces/srv/detail/des_data__struct.hpp"
-  "rosidl_generator_cpp/service_ifaces/srv/detail/des_data__traits.hpp"
-  "rosidl_generator_cpp/service_ifaces/srv/detail/des_data__type_support.hpp"
   "rosidl_generator_cpp/service_ifaces/srv/detail/spd_limit__builder.hpp"
   "rosidl_generator_cpp/service_ifaces/srv/detail/spd_limit__struct.hpp"
   "rosidl_generator_cpp/service_ifaces/srv/detail/spd_limit__traits.hpp"

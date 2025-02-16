@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o"
-  "CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o.d"
+  "CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o"
+  "CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o.d"
   "node_rovercontrol"
   "node_rovercontrol.pdb"
 )

@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-# Install script for directory: /home/yupi/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py
-
-# Set the install prefix
-if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yupi/wilson_proj/ros2-rover-ws/install/msgs_ifaces")
-=======
 # Install script for directory: /home/curry/wilson_proj/ros2-rover-ws/build/msgs_ifaces/msgs_ifaces__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
   set(CMAKE_INSTALL_PREFIX "/home/curry/wilson_proj/ros2-rover-ws/install/msgs_ifaces")
->>>>>>> 853639c2818e0241e03fbc8b470071454a1f9bd8
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

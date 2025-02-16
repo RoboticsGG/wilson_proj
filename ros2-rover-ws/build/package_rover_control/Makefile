@@ -210,29 +210,66 @@ node_rovercontrol/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/build
 .PHONY : node_rovercontrol/fast
 
-src/node_rover_control_a.o: src/node_rover_control_a.cpp.o
-.PHONY : src/node_rover_control_a.o
+#=============================================================================
+# Target rules for targets named node_d5bridge
+
+# Build rule for target.
+node_d5bridge: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 node_d5bridge
+.PHONY : node_d5bridge
+
+# fast build rule for target.
+node_d5bridge/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_d5bridge.dir/build.make CMakeFiles/node_d5bridge.dir/build
+.PHONY : node_d5bridge/fast
+
+src/node_d5bridge.o: src/node_d5bridge.cpp.o
+.PHONY : src/node_d5bridge.o
 
 # target to build an object file
-src/node_rover_control_a.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.o
-.PHONY : src/node_rover_control_a.cpp.o
+src/node_d5bridge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_d5bridge.dir/build.make CMakeFiles/node_d5bridge.dir/src/node_d5bridge.cpp.o
+.PHONY : src/node_d5bridge.cpp.o
 
-src/node_rover_control_a.i: src/node_rover_control_a.cpp.i
-.PHONY : src/node_rover_control_a.i
+src/node_d5bridge.i: src/node_d5bridge.cpp.i
+.PHONY : src/node_d5bridge.i
 
 # target to preprocess a source file
-src/node_rover_control_a.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.i
-.PHONY : src/node_rover_control_a.cpp.i
+src/node_d5bridge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_d5bridge.dir/build.make CMakeFiles/node_d5bridge.dir/src/node_d5bridge.cpp.i
+.PHONY : src/node_d5bridge.cpp.i
 
-src/node_rover_control_a.s: src/node_rover_control_a.cpp.s
-.PHONY : src/node_rover_control_a.s
+src/node_d5bridge.s: src/node_d5bridge.cpp.s
+.PHONY : src/node_d5bridge.s
 
 # target to generate assembly for a file
-src/node_rover_control_a.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control_a.cpp.s
-.PHONY : src/node_rover_control_a.cpp.s
+src/node_d5bridge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_d5bridge.dir/build.make CMakeFiles/node_d5bridge.dir/src/node_d5bridge.cpp.s
+.PHONY : src/node_d5bridge.cpp.s
+
+src/node_rover_control.o: src/node_rover_control.cpp.o
+.PHONY : src/node_rover_control.o
+
+# target to build an object file
+src/node_rover_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.o
+.PHONY : src/node_rover_control.cpp.o
+
+src/node_rover_control.i: src/node_rover_control.cpp.i
+.PHONY : src/node_rover_control.i
+
+# target to preprocess a source file
+src/node_rover_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.i
+.PHONY : src/node_rover_control.cpp.i
+
+src/node_rover_control.s: src/node_rover_control.cpp.s
+.PHONY : src/node_rover_control.s
+
+# target to generate assembly for a file
+src/node_rover_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/node_rovercontrol.dir/build.make CMakeFiles/node_rovercontrol.dir/src/node_rover_control.cpp.s
+.PHONY : src/node_rover_control.cpp.s
 
 # Help Target
 help:
@@ -249,10 +286,14 @@ help:
 	@echo "... test"
 	@echo "... package_rover_control_uninstall"
 	@echo "... uninstall"
+	@echo "... node_d5bridge"
 	@echo "... node_rovercontrol"
-	@echo "... src/node_rover_control_a.o"
-	@echo "... src/node_rover_control_a.i"
-	@echo "... src/node_rover_control_a.s"
+	@echo "... src/node_d5bridge.o"
+	@echo "... src/node_d5bridge.i"
+	@echo "... src/node_d5bridge.s"
+	@echo "... src/node_rover_control.o"
+	@echo "... src/node_rover_control.i"
+	@echo "... src/node_rover_control.s"
 .PHONY : help
 
 

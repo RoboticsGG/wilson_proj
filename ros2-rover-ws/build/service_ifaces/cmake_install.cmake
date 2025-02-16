@@ -356,23 +356,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/service_ifaces/srv" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces/rosidl_adapter/service_ifaces/srv/DesData.idl")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/service_ifaces/srv" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces/rosidl_adapter/service_ifaces/srv/SpdLimit.idl")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/service_ifaces/srv" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/src/service_ifaces/srv/DesData.srv")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/service_ifaces/srv" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces/rosidl_cmake/srv/DesData_Request.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/service_ifaces/srv" TYPE FILE FILES "/home/curry/wilson_proj/ros2-rover-ws/build/service_ifaces/rosidl_cmake/srv/DesData_Response.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

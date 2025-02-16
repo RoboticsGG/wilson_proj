@@ -54,6 +54,11 @@ private:
         RCLCPP_WARN(this->get_logger(), "Goal Cancelled!");
         des_lat_ = 0.0; 
         des_long_ = 0.0;
+
+        std_msgs::msg::Bool cc_rcon_msg;
+        cc_rcon_msg.data = true;
+        cc_rcon_pub_->publish(cc_rcon_msg);
+        RCLCPP_INFO(this->get_logger(), "cc_rcon published: true");
         return rclcpp_action::CancelResponse::ACCEPT;
     }
 
@@ -92,46 +97,90 @@ private:
     void execute(const std::shared_ptr<GoalHandleDesData> goal_handle) {
         auto feedback = std::make_shared<DesData::Feedback>();
         std_msgs::msg::Bool cc_rcon_msg;
-
+    
         while (rclcpp::ok()) {
+            if (!goal_handle->is_active()) {  
+                RCLCPP_WARN(this->get_logger(), "Execution stopped: Goal was canceled.");
+                return;  // Exit the function to prevent errors
+            }
+    
             if (cur_pose_msg_.latitude == 0.0 && cur_pose_msg_.longitude == 0.0) {
                 RCLCPP_WARN(this->get_logger(), "Waiting for GNSS Data...");
                 cc_rcon_msg.data = true;
-                continue;
             } else if (des_lat_ == 0.0 && des_long_ == 0.0) {
                 RCLCPP_WARN(this->get_logger(), "Waiting for Destination Data...");
                 cc_rcon_msg.data = true;
-                continue;
-            }
-            else{
-
-                    double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
-                    feedback->dis_remain = distance;
-                    goal_handle->publish_feedback(feedback);
-                    RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
-
-                    if (distance < 0.02) {
-                        cc_rcon_msg.data = true;
-
-                        if (!goal_reached_){
-                            auto result = std::make_shared<DesData::Result>();
-                            result->result_fser = "Arrived at Destination";
-                            goal_handle->succeed(result);
-                            RCLCPP_INFO(this->get_logger(), "Destination Reached!");
-                            goal_reached_ = true;
-                        }
-                    } else {
-                        cc_rcon_msg.data = false;
+            } else {
+                double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
+                feedback->dis_remain = distance;
+                goal_handle->publish_feedback(feedback);
+                RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
+    
+                if (distance < 0.02) {
+                    cc_rcon_msg.data = true;
+    
+                    if (!goal_reached_) {
+                        auto result = std::make_shared<DesData::Result>();
+                        result->result_fser = "Arrived at Destination";
+                        goal_handle->succeed(result);
+                        RCLCPP_INFO(this->get_logger(), "Destination Reached!");
+                        goal_reached_ = true;
                     }
-                    // cc_rcon_pub_->publish(cc_rcon_msg);
-                    // RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
-                    //std::this_thread::sleep_for(std::chrono::seconds(2));
+                } else {
+                    cc_rcon_msg.data = false;
+                }
             }
+    
             cc_rcon_pub_->publish(cc_rcon_msg);
             RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
             std::this_thread::sleep_for(std::chrono::seconds(2));
         }
     }
+    
+
+    // void execute(const std::shared_ptr<GoalHandleDesData> goal_handle) {
+    //     auto feedback = std::make_shared<DesData::Feedback>();
+    //     std_msgs::msg::Bool cc_rcon_msg;
+
+    //     while (rclcpp::ok()) {
+    //         if (cur_pose_msg_.latitude == 0.0 && cur_pose_msg_.longitude == 0.0) {
+    //             RCLCPP_WARN(this->get_logger(), "Waiting for GNSS Data...");
+    //             cc_rcon_msg.data = true;
+    //             continue;
+    //         } else if (des_lat_ == 0.0 && des_long_ == 0.0) {
+    //             RCLCPP_WARN(this->get_logger(), "Waiting for Destination Data...");
+    //             cc_rcon_msg.data = true;
+    //             continue;
+    //         }
+    //         else{
+
+    //                 double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
+    //                 feedback->dis_remain = distance;
+    //                 goal_handle->publish_feedback(feedback);
+    //                 RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
+
+    //                 if (distance < 0.02) {
+    //                     cc_rcon_msg.data = true;
+
+    //                     if (!goal_reached_){
+    //                         auto result = std::make_shared<DesData::Result>();
+    //                         result->result_fser = "Arrived at Destination";
+    //                         goal_handle->succeed(result);
+    //                         RCLCPP_INFO(this->get_logger(), "Destination Reached!");
+    //                         goal_reached_ = true;
+    //                     }
+    //                 } else {
+    //                     cc_rcon_msg.data = false;
+    //                 }
+    //                 // cc_rcon_pub_->publish(cc_rcon_msg);
+    //                 // RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
+    //                 //std::this_thread::sleep_for(std::chrono::seconds(2));
+    //         }
+    //         cc_rcon_pub_->publish(cc_rcon_msg);
+    //         RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
+    //         std::this_thread::sleep_for(std::chrono::seconds(2));
+    //     }
+    // }
 };
 
 int main(int argc, char *argv[]) {

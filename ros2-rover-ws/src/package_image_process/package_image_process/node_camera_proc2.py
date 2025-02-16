@@ -74,7 +74,7 @@ class ImageProcess(Node):
 
     def read_camera_continuously(self):
         while rclpy.ok():
-            cap = cv2.VideoCapture(0)
+            cap = cv2.VideoCapture(1)
             if not cap.isOpened():
                 self.get_logger().error("Error: Could not open webcam. Retrying in 2 seconds...")
                 cap.release()
@@ -117,7 +117,7 @@ class ImageProcess(Node):
                     if cv2.waitKey(1) & 0xFF == ord('q'):
                         self.get_logger().info("Exiting camera loop.")
                         break  
-                    
+
             except Exception as e:
                 self.get_logger().error(f"Camera error: {e}")
             finally:

@@ -145,10 +145,10 @@ private:
 
         
         //RCLCPP_INFO(this->get_logger(), "Publishing to pub_rovercontrol: [%d, %.2f, %d, %d]", 
-                    mainrocon.mainrocon_msg.fdr_msg, 
-                    mainrocon.mainrocon_msg.ro_ctrl_msg, 
-                    mainrocon.mainrocon_msg.spd_msg, 
-                    mainrocon.mainrocon_msg.bdr_msg);
+                    // mainrocon.mainrocon_msg.fdr_msg, 
+                    // mainrocon.mainrocon_msg.ro_ctrl_msg, 
+                    // mainrocon.mainrocon_msg.spd_msg, 
+                    // mainrocon.mainrocon_msg.bdr_msg);
         //RCLCPP_INFO(this->get_logger(), "################################################");
   }
 

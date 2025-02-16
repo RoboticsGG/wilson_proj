@@ -41,7 +41,6 @@ private:
     float des_lat_;
     float des_long_;
     bool goal_reached_;
-    bool goal_cancelled_ = false;
 
     rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID&, std::shared_ptr<const DesData::Goal> goal) {
         RCLCPP_INFO(this->get_logger(), "Received new goal: Lat=%.6f, Lon=%.6f", goal->des_lat, goal->des_long);
@@ -53,7 +52,8 @@ private:
 
     rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<GoalHandleDesData>) {
         RCLCPP_WARN(this->get_logger(), "Goal Cancelled!");
-        goal_cancelled_ = true;
+        des_lat_ = 0.0; 
+        des_long_ = 0.0;
         return rclcpp_action::CancelResponse::ACCEPT;
     }
 
@@ -104,7 +104,7 @@ private:
                 continue;
             }
             else{
-                if (goal_cancelled_ == false) {
+
                     double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
                     feedback->dis_remain = distance;
                     goal_handle->publish_feedback(feedback);
@@ -126,14 +126,6 @@ private:
                     // cc_rcon_pub_->publish(cc_rcon_msg);
                     // RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
                     //std::this_thread::sleep_for(std::chrono::seconds(2));
-                } else {
-                    auto result = std::make_shared<DesData::Result>();
-                    result->result_fser = "Goal Cancelled";
-                    goal_handle->canceled(result);
-                    RCLCPP_WARN(this->get_logger(), "Goal Cancelled!");
-                    goal_cancelled_ = false;
-                    cc_rcon_msg.data = false;   
-                }
             }
             cc_rcon_pub_->publish(cc_rcon_msg);
             RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");

@@ -55,12 +55,16 @@ class ImageProcess(Node):
         return None, None
 
     def control_robot(self, contour_center_x, img_center):
+        print(f"contour_center_x : {contour_center_x}, img_center : {img_center}")
         if contour_center_x is not None:
-            if (contour_center_x < img_center) and (img_center - contour_center_x > 42):
-                return 1, (180/640) * (img_center - contour_center_x)  # Left
-            elif (contour_center_x > img_center) and (contour_center_x - img_center > 42):
-                return 3, (180/640) * (contour_center_x - img_center)  # Right
+            if (contour_center_x < img_center) and abs(img_center - contour_center_x > 1):
+                print("L")
+                return 1, (180/640) * abs(img_center - contour_center_x)  # Left
+            if (contour_center_x > img_center) and abs(contour_center_x - img_center > 1):
+                print("R")
+                return 3, (180/640) * abs(contour_center_x - img_center)  # Right
             else:
+                print("FW")
                 return 2, 0.00  # Forward
         else:
             #self.get_logger().info("No line detected")
@@ -97,7 +101,7 @@ class ImageProcess(Node):
                 gray_white = self.filter_white_lines(hsv_img)
                 edges = self.detect_line(gray_white)
                 center_x, _ = self.contour_find_line(edges)
-                direction, degree_diff = self.control_robot(center_x, 640)
+                direction, degree_diff = self.control_robot(center_x, 320)
 
                 with self.data_lock:
                     self.latest_data["direction"] = direction

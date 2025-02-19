@@ -50,14 +50,11 @@ private:
     float des_long_;
     bool goal_reached_;
 
-    auto despose_msgs = std_msgs::msg::Float64MultiArray();
-
     rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID&, std::shared_ptr<const DesData::Goal> goal) {
         //RCLCPP_INFO(this->get_logger(), "Received new goal: Lat=%.6f, Lon=%.6f", goal->des_lat, goal->des_long);
         des_lat_ = goal->des_lat;
         des_long_ = goal->des_long;
 
-        despose_msgs.data = {des_lat_, des_long_};
         goal_reached_ = false;
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
@@ -79,6 +76,8 @@ private:
     }
 
     void topic_cur_callback(const msgs_ifaces::msg::GnssData::SharedPtr msg) {
+        auto despose_msgs = std_msgs::msg::Float64MultiArray();
+        despose_msgs.data = {des_lat_, des_long_};
         topic_despose_pub->publish(despose_msgs);
         
         cur_pose_msg_.date = msg->date;

@@ -14,6 +14,8 @@ find_package(std_msgs REQUIRED)
 find_package(std_srvs)
 find_package(service_ifaces REQUIRED)
 find_package(action_ifaces REQUIRED)
+find_package(msgs_ifaces REQUIRED)
+find_package(msgs_mainrocon REQUIRED)
 
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -22,6 +24,7 @@ find_package(action_ifaces REQUIRED)
 #---------------------------node_command---------------------------------------
 add_executable(node_command src/node_command.cpp)
 ament_target_dependencies(node_command rclcpp rclcpp_action rclcpp_components std_msgs service_ifaces action_ifaces)
+
 
 target_include_directories(node_command PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -41,6 +44,16 @@ install(
   DIRECTORY launch/
   DESTINATION share/${PROJECT_NAME}/launch
 )
+
 #---------------------------node_command---------------------------------------
+add_executable(node_monitoring src/node_monitoring.cpp)
+ament_target_dependencies(node_monitoring rclcpp std_msgs msgs_ifaces msgs_mainrocon)
+
+install(TARGETS
+node_monitoring
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+
 
 ament_package()

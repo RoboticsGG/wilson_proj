@@ -90,9 +90,9 @@ private:
             f_dir_ = "Stay Middle";
         }
 
-        if (bdr_msg_ == 1 && cc_rcon==false) {
+        if (bdr_msg_ == 1 && cc_rcon_==false) {
             b_dir_ = "Forward at speed: " + std::to_string(spd_msg_);
-        } else if (bdr_msg_ == 2 && cc_rcon==false) {
+        } else if (bdr_msg_ == 2 && cc_rcon_==false) {
             b_dir_ = "Backward at speed: " + std::to_string(spd_msg_);
         } else {
             b_dir_ = "Stop";

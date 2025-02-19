@@ -21,6 +21,8 @@ class ImageProcess(Node):
         self.video_thread.daemon = True
         self.video_thread.start()
 
+        print("ImageProcess node started")
+
     def timer_callback(self):
         with self.data_lock:
             direction = self.latest_data["direction"]

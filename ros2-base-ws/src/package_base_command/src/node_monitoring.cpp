@@ -105,7 +105,7 @@ private:
         RCLCPP_INFO(this->get_logger(), "########## Status Update ##########");
         RCLCPP_INFO(this->get_logger(), "Target coordinates: %f, %f", des_lat_, des_long_);
         RCLCPP_INFO(this->get_logger(), "Current coordinates: %f, %f", current_lat_, current_long_);
-        RCLCPP_INFO(this->get_logger(), "Remaining distance: %f", dis_remain_);
+        RCLCPP_INFO(this->get_logger(), "Remaining distance: %f KM", dis_remain_);
         RCLCPP_INFO(this->get_logger(), "Rover Front Direction: %s", f_dir_.c_str());
         RCLCPP_INFO(this->get_logger(), "Rover Back Direction: %s", b_dir_.c_str());
         RCLCPP_INFO(this->get_logger(), "##################################");

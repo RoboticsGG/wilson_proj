@@ -38,7 +38,9 @@ public:
             "cc_rcon", 10,
             std::bind(&Node_Rovercontrol::topic_cc_rcon_callback, this, std::placeholders::_1)
         );
+
         topic_rocon_pub_d2 = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_d1", 10);
+        
 
 
 
@@ -80,6 +82,7 @@ private:
 
     float ro_ctrl_msg1_;
     float ro_ctrl_msg2_;
+
     //float objblock_msg_;
     uint8_t spd_msg_;
     bool cc_rcon_msg_;

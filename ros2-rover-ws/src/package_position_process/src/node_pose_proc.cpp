@@ -2,6 +2,7 @@
 #include "rclcpp_action/rclcpp_action.hpp"
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
+#include <std_msgs/msg/float64_multi_array.hpp>
 #include <std_msgs/msg/bool.hpp>
 #include <msgs_ifaces/msg/gnss_data.hpp>
 #include <action_ifaces/action/des_data.hpp>
@@ -27,6 +28,10 @@ public:
 
         cc_rcon_pub_ = this->create_publisher<std_msgs::msg::Bool>("cc_rcon", 10);
 
+        dis_remain_ = this->create_publisher<std_msgs::msg::Float64>("dis_remain", 10);
+
+        topic_despose_pub = pub_node_->create_publisher<std_msgs::msg::Float64MultiArray>("pub_despose", 10);
+
         RCLCPP_INFO(this->get_logger(), "PoseProcessor Action Server Initialized.");
         RCLCPP_INFO(this->get_logger(), "Waiting for goals...");
     }
@@ -35,6 +40,8 @@ private:
     rclcpp_action::Server<DesData>::SharedPtr action_server_;
     rclcpp::Subscription<msgs_ifaces::msg::GnssData>::SharedPtr cur_pose_sub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr cc_rcon_pub_;
+    rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr dis_remain_;
+    rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr topic_despose_pub;
     
     msgs_ifaces::msg::GnssData cur_pose_msg_;
 
@@ -42,10 +49,14 @@ private:
     float des_long_;
     bool goal_reached_;
 
+    auto despose_msgs = std_msgs::msg::Float64MultiArray();
+
     rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID&, std::shared_ptr<const DesData::Goal> goal) {
         //RCLCPP_INFO(this->get_logger(), "Received new goal: Lat=%.6f, Lon=%.6f", goal->des_lat, goal->des_long);
         des_lat_ = goal->des_lat;
         des_long_ = goal->des_long;
+
+        despose_msgs.data = {des_lat_, des_long_};
         goal_reached_ = false;
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
@@ -67,6 +78,8 @@ private:
     }
 
     void topic_cur_callback(const msgs_ifaces::msg::GnssData::SharedPtr msg) {
+        topic_despose_pub->publish(despose_msgs);
+        
         cur_pose_msg_.date = msg->date;
         cur_pose_msg_.time = msg->time;
         cur_pose_msg_.num_satellites = msg->num_satellites;
@@ -94,50 +107,6 @@ private:
         return R * c; // in km
     }
 
-    // void execute(const std::shared_ptr<GoalHandleDesData> goal_handle) {
-    //     auto feedback = std::make_shared<DesData::Feedback>();
-    //     std_msgs::msg::Bool cc_rcon_msg;
-    
-    //     while (rclcpp::ok()) {
-    //         if (!goal_handle->is_active()) {  
-    //             RCLCPP_WARN(this->get_logger(), "Execution stopped: Goal was canceled.");
-    //             return;  // Exit the function to prevent errors
-    //         }
-    
-    //         if (cur_pose_msg_.latitude == 0.0 && cur_pose_msg_.longitude == 0.0) {
-    //             RCLCPP_WARN(this->get_logger(), "Waiting for GNSS Data...");
-    //             cc_rcon_msg.data = true;
-    //         } else if (des_lat_ == 0.0 && des_long_ == 0.0) {
-    //             RCLCPP_WARN(this->get_logger(), "Waiting for Destination Data...");
-    //             cc_rcon_msg.data = true;
-    //         } else {
-    //             double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
-    //             feedback->dis_remain = distance;
-    //             goal_handle->publish_feedback(feedback);
-    //             RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
-    
-    //             if (distance < 0.02) {
-    //                 cc_rcon_msg.data = true;
-    
-    //                 if (!goal_reached_) {
-    //                     auto result = std::make_shared<DesData::Result>();
-    //                     result->result_fser = "Arrived at Destination";
-    //                     goal_handle->succeed(result);
-    //                     RCLCPP_INFO(this->get_logger(), "Destination Reached!");
-    //                     goal_reached_ = true;
-    //                 }
-    //             } else {
-    //                 cc_rcon_msg.data = false;
-    //             }
-    //         }
-    
-    //         cc_rcon_pub_->publish(cc_rcon_msg);
-    //         RCLCPP_INFO(this->get_logger(), "cc_rcon published: %s", cc_rcon_msg.data ? "true" : "false");
-    //         std::this_thread::sleep_for(std::chrono::seconds(2));
-    //     }
-    // }
-    
-
     void execute(const std::shared_ptr<GoalHandleDesData> goal_handle) {
         auto feedback = std::make_shared<DesData::Feedback>();
         std_msgs::msg::Bool cc_rcon_msg;
@@ -158,6 +127,7 @@ private:
 
                     double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
                     feedback->dis_remain = distance;
+                    dis_remain_->publish(distance);
                     goal_handle->publish_feedback(feedback);
                     RCLCPP_INFO(this->get_logger(), "Distance Remaining: %.2f km", feedback->dis_remain);
 

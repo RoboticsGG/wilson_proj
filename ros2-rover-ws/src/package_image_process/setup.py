@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             'node_image_process = package_image_process.node_image_process:main',
             'node_camera_proc2 = package_image_process.node_camera_proc2:main',
+            'node_playback_cam = package_image_process.node_playback_cam:main',
         ],
     },
 )

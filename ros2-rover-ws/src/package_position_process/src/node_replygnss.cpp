@@ -31,33 +31,46 @@ private:
             RCLCPP_ERROR(this->get_logger(), "Failed to open GNSS data file: %s", file_path.c_str());
             return;
         }
-
+    
         std::string line;
+        bool is_header = true;  // Assume first line is a header
+    
         while (std::getline(file, line)) {
+            if (is_header) {  // Skip the first line (header)
+                is_header = false;
+                continue;
+            }
+    
             std::stringstream ss(line);
             std::string date, time, num_satellites, fix, latitude, longitude;
-            
+    
             std::getline(ss, date, ',');
             std::getline(ss, time, ',');
             std::getline(ss, num_satellites, ',');
             std::getline(ss, fix, ',');
             std::getline(ss, latitude, ',');
             std::getline(ss, longitude, ',');
-
-            msgs_ifaces::msg::GnssData gnss_msg;
-            gnss_msg.date = date;
-            gnss_msg.time = time;
-            gnss_msg.num_satellites = std::stoi(num_satellites);
-            gnss_msg.fix = (fix == "true" || fix == "1");
-            gnss_msg.latitude = std::stod(latitude);
-            gnss_msg.longitude = std::stod(longitude);
-
-            gnss_data_.push_back(gnss_msg);
+    
+            try {
+                msgs_ifaces::msg::GnssData gnss_msg;
+                gnss_msg.date = date;
+                gnss_msg.time = time;
+                gnss_msg.num_satellites = std::stoi(num_satellites);
+                gnss_msg.fix = (fix == "true" || fix == "1");
+                gnss_msg.latitude = std::stod(latitude);
+                gnss_msg.longitude = std::stod(longitude);
+    
+                gnss_data_.push_back(gnss_msg);
+            } catch (const std::exception& e) {
+                RCLCPP_WARN(this->get_logger(), "Skipping invalid row: %s", line.c_str());
+                continue;  // Skip invalid rows instead of crashing
+            }
         }
-
+    
         file.close();
         RCLCPP_INFO(this->get_logger(), "Loaded %zu GNSS data entries from CSV.", gnss_data_.size());
     }
+    
 
     void publishGnssData() {
         if (gnss_data_.empty()) {

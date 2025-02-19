@@ -6,38 +6,40 @@
 #include "msgs_mainrocon/msg/main_rocon.hpp"
 #include "msgs_rovercon/msg/sub_rocon.hpp"
 
-class TopicSubscriber : public rclcpp::Node {
+class NodeMonitoring : public rclcpp::Node {
 public:
-    TopicSubscriber() : Node("topic_subscriber") {
+    NodeMonitoring() : Node("topic_subscriber") {
         sub_cc_rcon_ = this->create_subscription<std_msgs::msg::Bool>(
             "/cc_rcon", 10, 
-            std::bind(&TopicSubscriber::cc_rcon_callback, this, std::placeholders::_1)
+            std::bind(&NodeMonitoring::cc_rcon_callback, this, std::placeholders::_1)
         );
         
         sub_dis_remain_ = this->create_subscription<std_msgs::msg::Float64>(
             "/dis_remain", 10, 
-            std::bind(&TopicSubscriber::dis_remain_callback, this, std::placeholders::_1)
+            std::bind(&NodeMonitoring::dis_remain_callback, this, std::placeholders::_1)
         );
         
         sub_gnss_data_ = this->create_subscription<msgs_ifaces::msg::GnssData>(
             "/gnss_data", 10, 
-            std::bind(&TopicSubscriber::gnss_data_callback, this, std::placeholders::_1)
+            std::bind(&NodeMonitoring::gnss_data_callback, this, std::placeholders::_1)
         );
         
         sub_pub_despose_ = this->create_subscription<std_msgs::msg::Float64MultiArray>(
             "/pub_despose", 10, 
-            std::bind(&TopicSubscriber::pub_despose_callback, this, std::placeholders::_1)
+            std::bind(&NodeMonitoring::pub_despose_callback, this, std::placeholders::_1)
         );
         
         sub_pub_rovercontrol_d2_ = this->create_subscription<msgs_mainrocon::msg::MainRocon>(
             "/pub_rovercontrol_d2", 10, 
-            std::bind(&TopicSubscriber::pub_rovercontrol_callback, this, std::placeholders::_1)
+            std::bind(&NodeMonitoring::pub_rovercontrol_callback, this, std::placeholders::_1)
         );
 
         timer_ = this->create_wall_timer(
             std::chrono::milliseconds(1000), 
-            std::bind(&TopicSubscriber::timer_callback, this)
+            std::bind(&NodeMonitoring::timer_callback, this)
         );
+
+        RCLCPP_INFO(this->get_logger(), "Node Monitoring Initialized.");
     }
 
 private:
@@ -119,7 +121,7 @@ private:
 
 int main(int argc, char *argv[]) {
     rclcpp::init(argc, argv);
-    auto node = std::make_shared<TopicSubscriber>();
+    auto node = std::make_shared<NodeMonitoring>();
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;

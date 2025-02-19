@@ -93,16 +93,16 @@ private:
         
     }
 
-    Float64 haversine_distance(Float64 lat1, Float64 lon1, Float64 lat2, Float64 lon2) {
-        Float64 R = 6371.0; // Earth radius in km
-        Float64 phi1 = lat1 * M_PI / 180; // φ, λ in radians
-        Float64 phi2 = lat2 * M_PI / 180;
-        Float64 delta_phi = (lat2 - lat1) * M_PI / 180;
-        Float64 delta_lambda = (lon2 - lon1) * M_PI / 180;
+    double haversine_distance(double lat1, double lon1, double lat2, double lon2) {
+        double R = 6371.0; // Earth radius in km
+        double phi1 = lat1 * M_PI / 180; // φ, λ in radians
+        double phi2 = lat2 * M_PI / 180;
+        double delta_phi = (lat2 - lat1) * M_PI / 180;
+        double delta_lambda = (lon2 - lon1) * M_PI / 180;
 
-        Float64 a = sin(delta_phi/2) * sin(delta_phi/2) +
+        double a = sin(delta_phi/2) * sin(delta_phi/2) +
                 cos(phi1) * cos(phi2) * sin(delta_lambda/2) * sin(delta_lambda/2);
-        Float64 c = 2 * atan2(sqrt(a), sqrt(1-a));
+        double c = 2 * atan2(sqrt(a), sqrt(1-a));
 
         return R * c; // in km
     }
@@ -125,7 +125,7 @@ private:
             }
             else{
 
-                    Float64 distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
+                    double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
                     feedback->dis_remain = distance;
                     dis_remain_->publish(distance);
                     goal_handle->publish_feedback(feedback);

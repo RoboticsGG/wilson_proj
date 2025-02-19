@@ -75,7 +75,7 @@ class ImageProcess(Node):
             return
 
         while rclpy.ok():
-            cap = cv2.VideoCapture(self.video_path)
+            cap = cv2.VideoCapture(self.video_path, cv2.CAP_FFMPEG)
             if not cap.isOpened():
                 self.get_logger().error("Error: Could not open video file.")
                 return
@@ -84,7 +84,11 @@ class ImageProcess(Node):
                 while rclpy.ok():
                     ret, frame = cap.read()
                     if not ret:
-                        break  # Restart the video when it reaches the end
+                        break  
+
+                    if frame is None or frame.shape[0] == 0 or frame.shape[1] == 0:
+                        self.get_logger().warn("Skipping corrupted frame...")
+                        continue  
 
                     hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
                     gray_white = self.filter_white_lines(hsv_img)
@@ -96,7 +100,7 @@ class ImageProcess(Node):
                         self.latest_data["direction"] = direction
                         self.latest_data["degree_diff"] = degree_diff
 
-                cap.release()  # Close the video file before reopening it
+                cap.release()  
                 self.get_logger().info("Restarting video...")
 
             except Exception as e:

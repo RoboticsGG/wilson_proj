@@ -1,2 +1,0 @@
-
-string spd_result

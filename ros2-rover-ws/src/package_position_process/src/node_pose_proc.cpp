@@ -128,7 +128,7 @@ private:
                     double distance = haversine_distance(cur_pose_msg_.latitude, cur_pose_msg_.longitude, des_lat_, des_long_);
                     feedback->dis_remain = distance;
 
-                    std_msgs::msg::Float64 msg;
+                    std_msgs::msg::Float64 disremain_msg_;
                     disremain_msg_.data = distance;
                     dis_remain_->publish(disremain_msg_);
 

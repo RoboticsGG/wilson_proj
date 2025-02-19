@@ -3,7 +3,7 @@
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
 #include <std_msgs/msg/float64_multi_array.hpp>
-#include <std_msgs/msg/float64.hpp>
+#include <std_msgs/msg/double.hpp>
 #include <std_msgs/msg/bool.hpp>
 #include <msgs_ifaces/msg/gnss_data.hpp>
 #include <action_ifaces/action/des_data.hpp>
@@ -29,9 +29,9 @@ public:
 
         cc_rcon_pub_ = this->create_publisher<std_msgs::msg::Bool>("cc_rcon", 10);
 
-        dis_remain_ = this->create_publisher<std_msgs::msg::Float64>("dis_remain", 10);
+        dis_remain_ = this->create_publisher<std_msgs::msg::Double>("dis_remain", 10);
 
-        topic_despose_pub = pub_node_->create_publisher<std_msgs::msg::Float64MultiArray>("pub_despose", 10);
+        topic_despose_pub = this->create_publisher<std_msgs::msg::Float64MultiArray>("pub_despose", 10);
 
         RCLCPP_INFO(this->get_logger(), "PoseProcessor Action Server Initialized.");
         RCLCPP_INFO(this->get_logger(), "Waiting for goals...");
@@ -41,7 +41,7 @@ private:
     rclcpp_action::Server<DesData>::SharedPtr action_server_;
     rclcpp::Subscription<msgs_ifaces::msg::GnssData>::SharedPtr cur_pose_sub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr cc_rcon_pub_;
-    rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr dis_remain_;
+    rclcpp::Publisher<std_msgs::msg::Double>::SharedPtr dis_remain_;
     rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr topic_despose_pub;
     
     msgs_ifaces::msg::GnssData cur_pose_msg_;

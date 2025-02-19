@@ -53,16 +53,16 @@ class ImageProcess(Node):
         return None, None
 
     def control_robot(self, contour_center_x, img_center):
-        print(f"contour_center_x : {contour_center_x}, img_center : {img_center}")
+        #print(f"contour_center_x : {contour_center_x}, img_center : {img_center}")
         if contour_center_x is not None:
             if (contour_center_x < img_center) and abs(img_center - contour_center_x > 1):
-                print("L")
+                #print("L")
                 return 1, (180/640) * abs(img_center - contour_center_x)  # Left
             if (contour_center_x > img_center) and abs(contour_center_x - img_center > 1):
-                print("R")
+                #print("R")
                 return 3, (180/640) * abs(contour_center_x - img_center)  # Right
             else:
-                print("FW")
+                #print("FW")
                 return 2, 0.00  # Forward
         else:
             return 2, 0.00

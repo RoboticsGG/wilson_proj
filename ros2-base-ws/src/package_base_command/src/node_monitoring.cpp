@@ -33,35 +33,83 @@ public:
             "/pub_rovercontrol_d2", 10, 
             std::bind(&TopicSubscriber::pub_rovercontrol_callback, this, std::placeholders::_1)
         );
+
+        timer_ = this->create_wall_timer(
+            std::chrono::milliseconds(1000), 
+            std::bind(&TopicSubscriber::timer_callback, this)
+        );
     }
 
 private:
+    bool cc_rcon_;
+    float dis_remain_;
+    float current_lat_;
+    float current_long_;
+    float des_lat_;
+    float des_long_;
+
+    uint8_t fdr_msg_;
+    float ro_ctrl_msg_;
+    uint8_t spd_msg_;
+    uint8_t bdr_msg_;
+
+    std::string f_dir_;
+    std::string b_dir_;
+
+    msgs_ifaces::msg::GnssData cur_pose_msg_;
+
     void cc_rcon_callback(const std_msgs::msg::Bool::SharedPtr msg) {
-        RCLCPP_INFO(this->get_logger(), "Received on /cc_rcon: %s", msg->data ? "TRUE" : "FALSE");
+        cc_rcon_ = msg->data;
     }
     
     void dis_remain_callback(const std_msgs::msg::Float64::SharedPtr msg) {
-        RCLCPP_INFO(this->get_logger(), "Received on /dis_remain: %f", msg->data);
+        dis_remain_ = msg->data;
     }
     
     void gnss_data_callback(const msgs_ifaces::msg::GnssData::SharedPtr msg) {
-        RCLCPP_INFO(this->get_logger(), "Received on /gnss_data: date=%s, time=%s, num_satellites=%d, fix=%s, lat=%f, lon=%f", 
-                    msg->date.c_str(), msg->time.c_str(), msg->num_satellites, msg->fix ? "TRUE" : "FALSE", msg->latitude, msg->longitude);
+        current_lat_ = msg->latitude;
+        current_long_ = msg->longitude;
     }
     
     void pub_despose_callback(const std_msgs::msg::Float64MultiArray::SharedPtr msg) {
-        std::string values = "";
-        for (auto val : msg->data) {
-            values += std::to_string(val) + " ";
-        }
-        RCLCPP_INFO(this->get_logger(), "Received on /pub_despose: [%s]", values.c_str());
+        des_lat_ = msg->data[0];
+        des_long_ = msg->data[1];
     }
     
     void pub_rovercontrol_callback(const msgs_mainrocon::msg::MainRocon::SharedPtr msg) {
-        RCLCPP_INFO(this->get_logger(), "Received on /pub_rovercontrol_d2: fdr_msg=%d, ro_ctrl_msg=%f, spd_msg=%d, bdr_msg=%d", 
-                    msg->mainrocon_msg.fdr_msg, msg->mainrocon_msg.ro_ctrl_msg, msg->mainrocon_msg.spd_msg, msg->mainrocon_msg.bdr_msg);
+        fdr_msg_ = msg->mainrocon_msg.fdr_msg;
+        ro_ctrl_msg_ = msg->mainrocon_msg.ro_ctrl_msg;
+        spd_msg_ = msg->mainrocon_msg.spd_msg;
+        bdr_msg_ = msg->mainrocon_msg.bdr_msg;
+
+        if (fdr_msg_ == 1) {
+            f_dir_ = "Turn Left: " + std::to_string(ro_ctrl_msg_) + " Degree";
+        } else if (fdr_msg_ == 3) {
+            f_dir_ = "Turn Right: " + std::to_string(ro_ctrl_msg_) + " Degree";
+        } else {
+            f_dir_ = "Stay Middle";
+        }
+
+        if (bdr_msg_ == 1 && cc_rcon==false) {
+            b_dir_ = "Forward at speed: " + std::to_string(spd_msg_);
+        } else if (bdr_msg_ == 2 && cc_rcon==false) {
+            b_dir_ = "Backward at speed: " + std::to_string(spd_msg_);
+        } else {
+            b_dir_ = "Stop";
+        }
     }
     
+    void timer_callback() {
+        RCLCPP_INFO(this->get_logger(), "########## Status Update ##########");
+        RCLCPP_INFO(this->get_logger(), "Target coordinates: %f, %f", des_lat_, des_long_);
+        RCLCPP_INFO(this->get_logger(), "Current coordinates: %f, %f", current_lat_, current_long_);
+        RCLCPP_INFO(this->get_logger(), "Remaining distance: %f", dis_remain_);
+        RCLCPP_INFO(this->get_logger(), "Rover Front Direction: %s", f_dir_.c_str());
+        RCLCPP_INFO(this->get_logger(), "Rover Back Direction: %s", b_dir_.c_str());
+        RCLCPP_INFO(this->get_logger(), "##################################");
+    }
+
+    rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr sub_cc_rcon_;
     rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr sub_dis_remain_;
     rclcpp::Subscription<msgs_ifaces::msg::GnssData>::SharedPtr sub_gnss_data_;

@@ -38,6 +38,7 @@ public:
             "cc_rcon", 10,
             std::bind(&Node_Rovercontrol::topic_cc_rcon_callback, this, std::placeholders::_1)
         );
+        topic_rocon_pub_d2 = pub_node_->create_publisher<msgs_mainrocon::msg::MainRocon>("pub_rovercontrol_d1", 10);
 
 
 
@@ -73,6 +74,7 @@ private:
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr topic_direct_sub_;
     rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr topic_cc_rcon_sub_;
     rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_;
+    rclcpp::Publisher<msgs_mainrocon::msg::MainRocon>::SharedPtr topic_rocon_pub_d2;
     rclcpp::executors::MultiThreadedExecutor executor_;
     std::thread executor_thread_;
 
@@ -140,6 +142,7 @@ private:
             }
             mainrocon.mainrocon_msg = subrocon;
             topic_rocon_pub_->publish(mainrocon);
+            topic_rocon_pub_d2->publish(mainrocon);
         }
 
         

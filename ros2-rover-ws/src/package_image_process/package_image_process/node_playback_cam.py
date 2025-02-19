@@ -16,6 +16,7 @@ class ImageProcess(Node):
         self.latest_data = {"direction": 2, "degree_diff": 0.0}
         self.data_lock = threading.Lock()
 
+        self.video_path = "/home/curry/wilson_proj/ros2-rover-ws/src/package_image_process/vdo_record/fullrun_data.avi"
         self.video_thread = threading.Thread(target=self.read_video)
         self.video_thread.daemon = True
         self.video_thread.start()
@@ -67,13 +68,12 @@ class ImageProcess(Node):
             return 2, 0.00
 
     def read_video(self):
-        video_path = "A.avi"
-        if not os.path.exists(video_path):
-            self.get_logger().error(f"Error: Video file '{video_path}' not found.")
+        if not os.path.exists(self.video_path):
+            self.get_logger().error(f"Error: Video file '{self.video_path}' not found.")
             return
 
         while rclpy.ok():
-            cap = cv2.VideoCapture(video_path)
+            cap = cv2.VideoCapture(self.video_path)
             if not cap.isOpened():
                 self.get_logger().error("Error: Could not open video file.")
                 return

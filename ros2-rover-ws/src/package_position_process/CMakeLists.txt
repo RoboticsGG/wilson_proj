@@ -27,6 +27,14 @@ ament_target_dependencies(node_gnss rclcpp std_msgs jsoncpp msgs_ifaces)
 add_executable(node_position_process src/node_pose_proc.cpp)
 ament_target_dependencies(node_position_process rclcpp rclcpp_action rclcpp_components std_msgs action_ifaces msgs_ifaces)
 
+add_executable(node_replygnss src/node_replygnss.cpp)
+ament_target_dependencies(node_replygnss rclcpp std_msgs msgs_ifaces)
+
+# Install the executable
+install(TARGETS node_replygnss
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 target_link_libraries(node_gnss jsoncpp)
 
 target_include_directories(node_gnss PUBLIC

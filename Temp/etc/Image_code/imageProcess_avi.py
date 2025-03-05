@@ -3,25 +3,25 @@ import cv2
 import numpy as np
 
 def function_FixCropImage(h, s, v):
-    top = [0, 280]
-    low = [600, 720]
-    left = [0, 350]
-    right = [900, 1280]
+    # top = [0, 280]
+    # low = [600, 720]
+    # left = [0, 350]
+    # right = [900, 1280]
 
-    h[top[0]:top[1], :] = 179
-    h[low[0]:low[1], :] = 179
-    h[:, left[0]:left[1]] = 179
-    h[:, right[0]:right[1]] = 179
+    # h[top[0]:top[1], :] = 179
+    # h[low[0]:low[1], :] = 179
+    # h[:, left[0]:left[1]] = 179
+    # h[:, right[0]:right[1]] = 179
 
-    s[top[0]:top[1], :] = 255
-    s[low[0]:low[1], :] = 255
-    s[:, left[0]:left[1]] = 255
-    s[:, right[0]:right[1]] = 255
+    # s[top[0]:top[1], :] = 255
+    # s[low[0]:low[1], :] = 255
+    # s[:, left[0]:left[1]] = 255
+    # s[:, right[0]:right[1]] = 255
 
-    v[top[0]:top[1], :] = 0
-    v[low[0]:low[1], :] = 0
-    v[:, left[0]:left[1]] = 0
-    v[:, right[0]:right[1]] = 0
+    # v[top[0]:top[1], :] = 0
+    # v[low[0]:low[1], :] = 0
+    # v[:, left[0]:left[1]] = 0
+    # v[:, right[0]:right[1]] = 0
     return cv2.merge([h, s, v])
 
 def filter_white_lines(image):
@@ -68,16 +68,16 @@ def contour_find_line(edges, color_image):
     return None, None
 
 def refer_point(color_image):
-    cv2.circle(color_image, (625, 440), 5, (0, 0, 255), -1)
+    cv2.circle(color_image, (320, 240), 5, (0, 0, 255), -1)
     return None
 
 def control_robot(contour_center_x, img_center):
     if contour_center_x is not None:
-        if (contour_center_x < img_center) and (img_center - contour_center_x > 42):
+        if (contour_center_x < img_center) and (img_center - contour_center_x > 1):
             pixel_diff = img_center - contour_center_x
             degree_diff = (180/1280) * pixel_diff
             print("Turn left : ", degree_diff)
-        elif (contour_center_x > img_center) and (contour_center_x - img_center > 42):
+        elif (contour_center_x > img_center) and (contour_center_x - img_center > 1):
             pixel_diff = contour_center_x - img_center
             degree_diff = (180/1280) * pixel_diff
             print("Turn right : ", degree_diff)
@@ -86,63 +86,6 @@ def control_robot(contour_center_x, img_center):
     else:
         print("No line detected")
 
-
-def read_bag_with_opencv(bag_file_path):
-    pipeline = rs.pipeline()
-    config = rs.config()
-    try:
-        print(f"Reading bag file: {bag_file_path}")
-        config.enable_device_from_file(bag_file_path)
-        config.enable_stream(rs.stream.color, 1280, 720, rs.format.rgb8, 30)
-        pipeline.start(config)
-        print("Pipeline started successfully.")
-
-        while True:
-            try:
-                frames = pipeline.wait_for_frames()
-            except RuntimeError as e:
-                print(f"Error while waiting for frames: {e}")
-                break
-
-            color_frame = frames.get_color_frame()
-            if not color_frame:
-                print("No color frame available, skipping frame.")
-                continue
-
-            color_image = np.asarray(color_frame.get_data())
-            hsv_img = cv2.cvtColor(color_image, cv2.COLOR_RGB2HSV)
-            h, s, v = cv2.split(hsv_img)
-            crop_img = function_FixCropImage(h, s, v)
-
-            gray_white = filter_white_lines(crop_img)
-            edges = detect_line(gray_white)
-
-            center_x, center_y = contour_find_line(gray_white, color_image)
-            center_x1, center_y1 = find_line_center(edges, color_image)
-
-            _ = refer_point(color_image)
-
-            # control_robot(center_x, gray_white.shape[1])
-            control_robot(center_x, 625)
-
-            #cv2.imshow('crop_img', crop_img)
-            cv2.imshow('Filtered White Lines', gray_white)
-            cv2.imshow('Edges', edges)
-            cv2.imshow('Original Image', color_image)
-
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                print("Exiting...")
-                break
-
-    except Exception as e:
-        print(f"Error reading bag file: {e}")
-
-    finally:
-        try:
-            pipeline.stop()
-        except RuntimeError as stop_error:
-            print(f"Pipeline stop error: {stop_error}")
-        cv2.destroyAllWindows()
 
 def read_avi_with_opencv(avi_file_path):
     cap = cv2.VideoCapture(avi_file_path)
@@ -169,7 +112,7 @@ def read_avi_with_opencv(avi_file_path):
 
         _ = refer_point(color_image)
 
-        control_robot(center_x, 625)
+        control_robot(center_x, 320)
 
         cv2.imshow('Filtered White Lines', gray_white)
         cv2.imshow('Edges', edges)
@@ -183,7 +126,7 @@ def read_avi_with_opencv(avi_file_path):
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    bag_file_path = r"D:/Playground_Project/ROS2_TestCode/Proj_Sample_Data/first.bag"
-    read_bag_with_opencv(bag_file_path)
-    # avi_file_path = r"D:/Playground_Project/ROS2_TestCode/Proj_Sample_Data/FirstRun_Data/fullrun_data.avi"
-    # read_avi_with_opencv(avi_file_path)
+    # bag_file_path = r"D:/Playground_Project/ROS2_TestCode/Proj_Sample_Data/first.bag"
+    # read_bag_with_opencv(bag_file_path)
+    avi_file_path = r"D:/Playground_Project/ROS2_TestCode/Proj_Sample_Data/FirstRun_Data/fullrun_data.avi"
+    read_avi_with_opencv(avi_file_path)

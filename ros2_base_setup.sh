@@ -10,3 +10,6 @@ source install/setup.bash || exit 1
 export ROS_DOMAIN_ID=2
 
 echo "ROS2 Base Setup Complete!"
+
+
+#ros2 launch package_base_command node_comlaunch.py rover_spd:=30 des_lat:=7.123456 des_long:=100.654321

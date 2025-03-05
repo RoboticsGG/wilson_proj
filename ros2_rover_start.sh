@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #ROS2_ROVER_START#
+#source wilson_proj/ros2-rover-ws/install/setup.bash
 source ./ros2-rover-ws/install/setup.bash || exit 1
 export ROS_DOMAIN_ID=2
 
